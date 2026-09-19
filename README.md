@@ -877,7 +877,141 @@ Segundo Segmento:
 
 ## 2.4. Big Picture EventStorming
 
-## 2.5. Ubiquitous Language
+<img src="assets/img/big.jpeg" alt="logo" /> 
+
+## 2.5 Ubiquitous Language
+
+El Ubiquitous Language define un lenguaje común entre los actores del sistema, permitiendo una comunicación clara y consistente durante el desarrollo de la solución. En este proyecto, se integran conceptos relacionados con la administración de edificios inteligentes (Smart Buildings), automatización mediante IoT, monitoreo de recursos y seguridad residencial.
+
+---
+
+## Usuarios y Segmentos
+
+### Administrador de Edificios
+Persona responsable de supervisar la operación de uno o varios edificios o condominios. Gestiona residentes, pagos, incidencias, reservas de áreas comunes y monitorea los dispositivos IoT instalados.
+
+### Propietario e Inquilino
+Residente que utiliza la plataforma para consultar información de su unidad, realizar pagos, reservar áreas comunes, recibir notificaciones y acceder a servicios inteligentes del edificio.
+
+### Personal de Mantenimiento
+Usuario encargado de atender incidencias técnicas relacionadas con infraestructura, dispositivos IoT, sistemas de iluminación, agua y seguridad.
+
+---
+
+## Funcionalidades Core para Administradores
+
+### Edificio
+Conjunto de unidades residenciales administradas dentro de la plataforma.
+
+### Unidad Residencial
+Departamento o espacio asignado a uno o varios residentes dentro de un edificio.
+
+### Residente
+Persona vinculada a una unidad residencial con acceso a funcionalidades específicas del sistema.
+
+### Área Común
+Espacio compartido por los residentes, como salón de eventos, gimnasio, zona de parrillas o áreas recreativas.
+
+### Reserva
+Solicitud realizada por un residente para utilizar un área común en una fecha y horario determinados.
+
+### Incidencia
+Problema o evento reportado relacionado con infraestructura, servicios o dispositivos del edificio.
+
+### Notificación
+Mensaje enviado automáticamente a administradores o residentes para informar eventos importantes.
+
+### Reporte Financiero
+Documento generado por el sistema que resume ingresos, pagos pendientes y movimientos económicos del edificio.
+
+---
+
+## Funcionalidades IoT (NÚCLEO DEL PROYECTO)
+
+### Sensor IoT
+Dispositivo conectado capaz de recopilar datos del entorno y transmitirlos al sistema en tiempo real.
+
+### Iluminación Inteligente
+Sistema que controla automáticamente las luces de áreas comunes mediante sensores de movimiento o reglas configuradas.
+
+### Control de Acceso Inteligente
+Mecanismo que permite autorizar o restringir el ingreso a determinadas áreas mediante credenciales digitales.
+
+### Sensor de Movimiento
+Dispositivo encargado de detectar presencia de personas en áreas comunes para activar automatizaciones.
+
+### Monitoreo de Tanque de Agua
+Proceso que supervisa continuamente el nivel de agua almacenada para prevenir desabastecimientos.
+
+### Detección de Fugas
+Funcionalidad que identifica posibles pérdidas de agua y genera alertas automáticas.
+
+### Riego Automático
+Sistema que activa el riego de áreas verdes según horarios programados o condiciones ambientales detectadas.
+
+### Calidad del Aire
+Indicador obtenido mediante sensores que monitorean variables como CO₂, temperatura, humedad y ventilación.
+
+### Alerta Inteligente
+Notificación generada automáticamente cuando se detecta una condición fuera de los parámetros establecidos.
+
+### Consumo de Recursos
+Registro y monitoreo del uso de agua y energía dentro del edificio.
+
+### Dashboard IoT
+Panel centralizado que permite visualizar en tiempo real el estado de los sensores, dispositivos y recursos monitoreados.
+
+---
+
+## Funcionalidades Core para Residentes
+
+### Estado de Cuenta
+Resumen de pagos realizados, deudas pendientes y movimientos asociados a una unidad residencial.
+
+### Pago de Mantenimiento
+Proceso mediante el cual el residente realiza el abono de las cuotas correspondientes al edificio.
+
+### Historial de Pagos
+Registro histórico de todos los pagos efectuados por el residente.
+
+### Comunicado
+Anuncio emitido por la administración para informar novedades, eventos o disposiciones importantes.
+
+### Encuesta
+Mecanismo que permite recopilar opiniones y votaciones de los residentes sobre decisiones comunitarias.
+
+### Votación
+Proceso mediante el cual los residentes participan en decisiones relacionadas con la gestión del edificio.
+
+### Seguimiento de Incidencias
+Funcionalidad que permite conocer el estado actual de un problema reportado.
+
+---
+
+## Gestión de Dispositivos IoT
+
+### Dispositivo IoT
+Equipo físico conectado al sistema capaz de recopilar información o ejecutar acciones automáticas.
+
+### Estado del Dispositivo
+Condición actual del dispositivo (activo, inactivo, desconectado o en mantenimiento).
+
+### Regla de Automatización
+Condición configurada para ejecutar acciones automáticas basadas en eventos detectados por sensores.
+
+### Evento IoT
+Acción o situación detectada por un dispositivo, como movimiento, fuga de agua o variación en la calidad del aire.
+
+### Historial de Eventos
+Registro cronológico de todas las actividades generadas por sensores y dispositivos IoT.
+
+### Monitoreo en Tiempo Real
+Visualización instantánea de datos generados por sensores y dispositivos conectados.
+
+---
+
+
+
 
 # Capítulo III: Requirements Specification
 
