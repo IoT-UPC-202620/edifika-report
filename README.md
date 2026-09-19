@@ -30,7 +30,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr><td style="border: 1px solid black;">Acuña Corahua, Jonatan Ariel</td><td style="border: 1px solid black;">u202</td></tr>
+    <tr><td style="border: 1px solid black;">Acuña Corahua, Jonatan Ariel</td><td style="border: 1px solid black;">u20211b995</td></tr>
     <tr><td style="border: 1px solid black;">Collantes Carrillo, Diego Mateo</td><td style="border: 1px solid black;">u2023</td></tr>
     <tr><td style="border: 1px solid black;">Landa Ortiz, Sergio Javier</td><td style="border: 1px solid black;">u2023</td></tr>
     <tr><td style="border: 1px solid black;">Ortiz Cardenas, Johanna Antuanete</td><td style="border: 1px solid black;">u202310358</td></tr>
@@ -60,6 +60,66 @@
     </tr>
   </thead>
   <tbody>
+    <tr>
+      <td>1.0.0</td>
+      <td>30/08/2026</td>
+      <td>Acuña Corahua, Jonatan Ariel</td>
+      <td>Estructuración inicial del informe de proyecto y organización de carpetas por capítulos según las pautas del trabajo final.</td>
+    </tr>
+    <tr>
+      <td>1.1.0</td>
+      <td>04/09/2026</td>
+      <td>Acuña Corahua, Jonatan Ariel</td>
+      <td>Migración de contenidos base del proyecto y organización inicial de los recursos gráficos en el directorio de assets.</td>
+    </tr>
+    <tr>
+      <td>1.2.0</td>
+      <td>05/09/2026</td>
+      <td>Acuña Corahua, Jonatan Ariel</td>
+      <td>Configuración del entorno Docker y pipeline automatizado para compilación del informe a formato PDF con Pandoc y plantilla Eisvogel.</td>
+    </tr>
+    <tr>
+      <td>1.3.0</td>
+      <td>06/09/2026</td>
+      <td>Acuña Corahua, Jonatan Ariel</td>
+      <td>Desarrollo del filtro Lua personalizado para el ajuste automático de anchos de columnas y bordes en tablas complejas del PDF.</td>
+    </tr>
+    <tr>
+      <td>1.4.0</td>
+      <td>08/09/2026</td>
+      <td>Acuña Corahua, Jonatan Ariel</td>
+      <td>Modelado inicial de la arquitectura del sistema C4 (Landscape, Context, Container y Deployment Views) mediante Structurizr DSL.</td>
+    </tr>
+    <tr>
+      <td>1.5.0</td>
+      <td>10/09/2026</td>
+      <td>Acuña Corahua, Jonatan Ariel</td>
+      <td>Especificación de los Bounded Contexts estratégicos y redacción preliminar de la arquitectura de microservicios en el Capítulo IV.</td>
+    </tr>
+    <tr>
+      <td>1.6.0</td>
+      <td>11/09/2026</td>
+      <td>Acuña Corahua, Jonatan Ariel</td>
+      <td>Definición del Design-Level EventStorming para la extensión IoT, catalogación estructurada de eventos y exportación de datos en CSV.</td>
+    </tr>
+    <tr>
+      <td>1.7.0</td>
+      <td>12/09/2026</td>
+      <td>Acuña Corahua, Jonatan Ariel</td>
+      <td>Elaboración de diagramas de Domain Storytelling en PlantUML para los flujos de colaboración entre Bounded Contexts.</td>
+    </tr>
+    <tr>
+      <td>1.8.0</td>
+      <td>12/09/2026</td>
+      <td>Acuña Corahua, Jonatan Ariel</td>
+      <td>Actualización del modelo C4 en Structurizr DSL con microservicios IoT, nivel Edge Computing on-premise y nodos físicos ESP32.</td>
+    </tr>
+    <tr>
+      <td>1.9.0</td>
+      <td>13/09/2026</td>
+      <td>Acuña Corahua, Jonatan Ariel</td>
+      <td>Modelado táctico DDD (diagramas de clases para servicios IoT), diseño de persistencia híbrida (PostgreSQL y TimescaleDB) y consolidación integral del Capítulo IV.</td>
+    </tr>
     <tr>
       <td>AV1</td>
       <td>18/09/2026</td>
@@ -214,6 +274,24 @@ AV1 (20/09/2026):
       - [4.2.9.6. Bounded Context Software Architecture Code Level Diagrams](#4296-bounded-context-software-architecture-code-level-diagrams)
         - [4.2.9.6.1. Bounded Context Domain Layer Class Diagrams](#42961-bounded-context-domain-layer-class-diagrams)
         - [4.2.9.6.2. Bounded Context Database Design Diagram](#42962-bounded-context-database-design-diagram)
+    - [4.2.10. Bounded Context: Smart Lighting & Automation](#4210-bounded-context-smart-lighting--automation)
+      - [4.2.10.1. Domain Layer](#42101-domain-layer)
+      - [4.2.10.2. Interface Layer](#42102-interface-layer)
+      - [4.2.10.3. Application Layer](#42103-application-layer)
+      - [4.2.10.4. Infrastructure Layer](#42104-infrastructure-layer)
+      - [4.2.10.5. Bounded Context Software Architecture Component Level Diagrams](#42105-bounded-context-software-architecture-component-level-diagrams)
+      - [4.2.10.6. Bounded Context Software Architecture Code Level Diagrams](#42106-bounded-context-software-architecture-code-level-diagrams)
+        - [4.2.10.6.1. Bounded Context Domain Layer Class Diagrams](#421061-bounded-context-domain-layer-class-diagrams)
+        - [4.2.10.6.2. Bounded Context Database Design Diagram](#421062-bounded-context-database-design-diagram)
+    - [4.2.11. Bounded Context: IoT Telemetry & Analytics](#4211-bounded-context-iot-telemetry--analytics)
+      - [4.2.11.1. Domain Layer](#42111-domain-layer)
+      - [4.2.11.2. Interface Layer](#42112-interface-layer)
+      - [4.2.11.3. Application Layer](#42113-application-layer)
+      - [4.2.11.4. Infrastructure Layer](#42114-infrastructure-layer)
+      - [4.2.11.5. Bounded Context Software Architecture Component Level Diagrams](#42115-bounded-context-software-architecture-component-level-diagrams)
+      - [4.2.11.6. Bounded Context Software Architecture Code Level Diagrams](#42116-bounded-context-software-architecture-code-level-diagrams)
+        - [4.2.11.6.1. Bounded Context Domain Layer Class Diagrams](#421161-bounded-context-domain-layer-class-diagrams)
+        - [4.2.11.6.2. Bounded Context Database Design Diagram](#421162-bounded-context-database-design-diagram)
     - [Conclusiones](#conclusiones)
 - [Conclusiones y Recomendaciones](#conclusiones-y-recomendaciones)
 - [Referencias Bibliográficas](#referencias-bibliográficas)
