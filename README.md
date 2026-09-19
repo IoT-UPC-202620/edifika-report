@@ -243,14 +243,14 @@ AV1: <br><br>
 Landa Ortiz, Sergio Javier<br><br>
 AV1: <br><br>
 
+Lizarbe Alvarez, Ariana Nickole<br><br>
+AV1: Participé activamente en las entrevistas realizadas a los usuarios para recopilar información sobre sus necesidades, comportamientos y problemas. Además, elaboré los User Stories, el Product Backlog y el Impact Mapping, contribuyendo a organizar los requerimientos, priorizar funcionalidades y relacionar las necesidades identificadas con los objetivos del producto. Estas actividades permitieron aportar al trabajo colaborativo y facilitar la toma de decisiones del equipo durante la definición de la solución. <br><br>
+
 Ortiz Cardenas, Johanna Antuanete<br><br>
 AV1: <br><br>
 
 Perez Tuesta, Gabriel<br><br>
 AV1: Asumí el desarrollo de los principales artefactos de investigación y análisis centrados en el usuario. Diseñé las entrevistas para la validación del segmento objetivo, elaboré el User Persona, el Customer Journey Map, el Análisis Competitivo y la User Task Matrix, contribuyendo a comprender las necesidades de los usuarios, identificar oportunidades de mejora y establecer una base sólida para la definición de requerimientos y funcionalidades del producto.<br><br>
-
-Lizarbe Alvarez, Ariana Nickole<br><br>
-AV1: <br><br>
 
 Sarmiento Medina, Loreley<br><br>
 AV1: 
@@ -271,14 +271,14 @@ AV1: <br><br>
 Landa Ortiz, Sergio Javier<br><br>
 AV1: <br><br>
 
+Lizarbe Alvarez, Ariana Nickole<br><br>
+AV1: Participé en la planificación y desarrollo de las actividades de investigación y definición del producto. Colaboré en las entrevistas con usuarios y elaboré los User Stories, Product Backlog e Impact Mapping, organizando los requerimientos y funcionalidades de acuerdo con los objetivos identificados. Con estas actividades contribuí al cumplimiento de los objetivos de la etapa y a mantener una organización clara del trabajo del equipo. <br><br>
+
 Ortiz Cardenas, Johanna Antuanete<br><br>
 AV1: <br><br>
 
 Perez Tuesta, Gabriel<br><br>
 AV1: Planifiqué y desarrollé las actividades relacionadas con la investigación de usuarios y el análisis del contexto del producto. Diseñé las entrevistas, elaboré el User Persona, el Journey Map, el Análisis Competitivo y la User Task Matrix, cumpliendo con los objetivos establecidos para la fase de descubrimiento y validación inicial del proyecto.<br><br>
-
-Lizarbe Alvarez, Ariana Nickole<br><br>
-AV1: <br><br>
 
 Sarmiento Medina, Loreley<br><br>
 AV1: 
