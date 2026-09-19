@@ -49,7 +49,7 @@
 
 ## Registro de Versiones del Informe
 
-<div align="center">
+<div align="center">I
 <table>
   <thead>
     <tr>
@@ -321,14 +321,14 @@ AV1: <br><br>
 Landa Ortiz, Sergio Javier<br><br>
 AV1: <br><br>
 
+Lizarbe Alvarez, Ariana Nickole<br><br>
+AV1: Participé activamente en las entrevistas realizadas a los usuarios para recopilar información sobre sus necesidades, comportamientos y problemas. Además, elaboré los User Stories, el Product Backlog y el Impact Mapping, contribuyendo a organizar los requerimientos, priorizar funcionalidades y relacionar las necesidades identificadas con los objetivos del producto. Estas actividades permitieron aportar al trabajo colaborativo y facilitar la toma de decisiones del equipo durante la definición de la solución. <br><br>
+
 Ortiz Cardenas, Johanna Antuanete<br><br>
 AV1: <br><br>
 
 Perez Tuesta, Gabriel<br><br>
 AV1: Asumí el desarrollo de los principales artefactos de investigación y análisis centrados en el usuario. Diseñé las entrevistas para la validación del segmento objetivo, elaboré el User Persona, el Customer Journey Map, el Análisis Competitivo y la User Task Matrix, contribuyendo a comprender las necesidades de los usuarios, identificar oportunidades de mejora y establecer una base sólida para la definición de requerimientos y funcionalidades del producto.<br><br>
-
-Lizarbe Alvarez, Ariana Nickole<br><br>
-AV1: <br><br>
 
 Sarmiento Medina, Loreley<br><br>
 AV1: 
@@ -349,14 +349,14 @@ AV1: <br><br>
 Landa Ortiz, Sergio Javier<br><br>
 AV1: <br><br>
 
+Lizarbe Alvarez, Ariana Nickole<br><br>
+AV1: Participé en la planificación y desarrollo de las actividades de investigación y definición del producto. Colaboré en las entrevistas con usuarios y elaboré los User Stories, Product Backlog e Impact Mapping, organizando los requerimientos y funcionalidades de acuerdo con los objetivos identificados. Con estas actividades contribuí al cumplimiento de los objetivos de la etapa y a mantener una organización clara del trabajo del equipo. <br><br>
+
 Ortiz Cardenas, Johanna Antuanete<br><br>
 AV1: <br><br>
 
 Perez Tuesta, Gabriel<br><br>
 AV1: Planifiqué y desarrollé las actividades relacionadas con la investigación de usuarios y el análisis del contexto del producto. Diseñé las entrevistas, elaboré el User Persona, el Journey Map, el Análisis Competitivo y la User Task Matrix, cumpliendo con los objetivos establecidos para la fase de descubrimiento y validación inicial del proyecto.<br><br>
-
-Lizarbe Alvarez, Ariana Nickole<br><br>
-AV1: <br><br>
 
 Sarmiento Medina, Loreley<br><br>
 AV1: 
@@ -389,8 +389,8 @@ Convertirnos en la plataforma de referencia para la gestión de condominios, sie
 | ![team member profile photo](assets/img/profiles/diego_collantes.png) **Collantes Carrillo, Diego Mateo (u2023)** | |
 | ![team member profile photo](assets/img/profiles/sergio_landa.png) **Landa Ortiz, Sergio Javier (u2023)** | |
 | ![team member profile photo](assets/img/profiles/antuanete_ortiz.png) **Ortiz Cardenas, Johanna Antuanete (u202310358)** | Mi nombre es Johanna Antuanete Ortiz Cardenas, tengo 20 años y actualmente curso el octavo ciclo de la carrera de Ingeniería de Software en la Universidad Peruana de Ciencias Aplicadas. Me considero una persona proactiva, responsable y orientada a la calidad, con especial interés en el desarrollo frontend, área en la que disfruto crear interfaces intuitivas y visualmente atractivas. Me apasiona mantenerme actualizada sobre las últimas tendencias y avances tecnológicos, lo que me permite aportar soluciones modernas y fundamentadas a cada proyecto. En mi tiempo libre, disfruto escuchar música y leer cómics, actividades que nutren mi creatividad y perspectiva. En el marco de este proyecto grupal, me comprometo a colaborar de manera activa y responsable, aportando ideas de valor y cumpliendo con los entregables en los plazos establecidos, con el objetivo de alcanzar resultados de alta calidad. |
-| ![team member profile photo](assets/img/profiles/gabriel_perez.png) **Perez Tuesta, Gabriel (u202321281)** | Soy Gabriel Perez Tuesta, tengo 23 años. Soy estudiante de la UPC de la carrera de Ingeniería de Software y me encuentro cursando el séptimo ciclo. Cuento con habilidades de programación en C++ y Python, así como aptitudes para el desarrollo en UX y UI. Asimismo, en cuanto a habilidades extracurriculares, he contribuido en proyectos con edición de video y fomentando una actitud colaborativa en el equipo. |
-| ![team member profile photo](assets/img/profiles/ariana_lizarbe.png) **Lizarbe Alvarez, Ariana Nickole (u2023)** | |
+| ![team member profile photo](assets/img/profiles/gabriel.png) **Perez Tuesta, Gabriel (u202321281)** | Soy Gabriel Perez Tuesta, tengo 23 años. Soy estudiante de la UPC de la carrera de Ingeniería de Software y me encuentro cursando el séptimo ciclo. Cuento con habilidades de programación en C++ y Python, así como aptitudes para el desarrollo en UX y UI. Asimismo, en cuanto a habilidades extracurriculares, he contribuido en proyectos con edición de video y fomentando una actitud colaborativa en el equipo. |
+| ![team member profile photo](assets/img/profiles/ariana_lizarbe.jpg) **Lizarbe Alvarez, Ariana Nickole (u202311704)** | Mi nombre es Ariana Lizarbe, tengo 21 años y me encuentro cursando el octavo ciclo de Ingeniería de Software en la UPC. Me considero una persona responsable y aplicada, siempre estoy dispuesta a aprender nuevos conceptos y tecnologías. Además de ello, trabajo muy bien en equipo, logrando dividir y delegar tareas a mis compañeros de manera eficiente. |
 | ![team member profile photo](assets/img/profiles/loreley_sarmiento.jpg) **Sarmiento Medina, Loreley (u202310005)** | Mi nombre es Loreley Sarmiento, tengo 20 años y actualmente curso la carrera de Ingeniería de Software. Me considero una persona responsable, organizada y con buena disposición para el trabajo en equipo, ya que valoro la comunicación y la colaboración como elementos clave para lograr buenos resultados. Me interesa seguir aprendiendo constantemente y asumir nuevos retos que me permitan fortalecer mis habilidades.En este proyecto, busco participar de manera activa, apoyar a mis compañeros, aportar ideas que contribuyan al desarrollo del equipo y cumplir con las tareas asignadas dentro de los plazos establecidos, con el objetivo de alcanzar un resultado de calidad. |
 
 ## 1.2. Solution Profile
@@ -858,6 +858,15 @@ Para el diseño de las entrevistas se utilizó el método de entrevistas semiest
 | **Link del video** | `https://upcedupe-my.sharepoint.com/:v:/g/personal/u202310358_upc_edu_pe/IQCrGL7_ZORtSbK1HjVPRnKSAV6DqNEu28FqeS0W-wKJ7Rk?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=PPJ5TV`  |
 | **Foto entrevista** |<img src="assets/img/interviews/prop2.png" alt="logo" width="500"/>  |
 | **Resumen** |Se entrevistó a Melina López, propietaria de un departamento, ella indica que no suele estar al tanto de las reuniones del edificio debido a la falta de tiempo. En cuanto a los pagos, envía los comprobantes por correo al administrador y mantiene un archivo físico como respaldo, ya que de lo contrario no tendría un historial accesible, asumiendo que la administración podría brindárselo si lo solicita. Señala que el proceso de reserva de espacios es el más tedioso, pues implica consultar disponibilidad, dejar garantía, realizar pagos y luego hacer seguimiento para su devolución, lo que la obliga a estar constantemente detrás de la administración. Además, le incomoda la gran cantidad de mensajes en el grupo de WhatsApp, donde se pierde información relevante. Finalmente, se muestra abierta al uso de una aplicación que centralice la información, considerando que actualmente los eventos y reuniones ya se comunican mediante un tablero. |
+
+| **ENTREVISTA 2** | |
+|---|---|
+| **Nombre entrevistado** | Rodrigo Chavez |
+| **Edad** | 20 |
+| **Departamento** | San Martin de Porres |
+| **Link del video** | [Link del video de la entrevista](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202311704_upc_edu_pe/IQAI31E2KPwVRIDiWA_kvuUbAX7b1n0Xhowp2KzW16Ut_vw?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=M9Fwl0) |
+| **Foto entrevista** | <img src="assets/img/interviews/prop1.png" alt="logo" width="500"/> |
+| **Resumen** | Se entrevistó a Rodrigo Chávez, quien es un inquilino en un condominio en el distrito de San Martin de Porres. Rodrigo comenta que, la principal comunicación con vecinos y propietarios es a través de WhatsApp, lo cual le parece dificultoso y molesto. Nos indica que el acceso a sus comprobantes de pago es únicamente mediante las conversaciones con el propietario o buscando en su aplicación del banco. Le encantaría tener una aplicación que englobe todos estos problemas. |
 
 ### 2.2.3. Análisis de entrevistas
 
@@ -2400,6 +2409,10 @@ Para el diseño de las entrevistas se utilizó el método de entrevistas semiest
 
 
 ## 3.2. Impact Mapping
+
+El Impact Map muestra la relación entre el objetivo de negocio de Edifika y los cambios de comportamiento esperados en los usuarios clave: administradores y residentes. A partir de este análisis, se definen los impactos principales que la solución busca generar en cada tipo de usuario y los entregables necesarios para lograrlo, los cuales están directamente vinculados a las historias de usuario planteadas. Esto permite asegurar que cada funcionalidad desarrollada responda a necesidades reales y contribuya al cumplimiento del objetivo del sistema.
+
+<img src="assets/img/impact/mapping.png" alt="logo" width="500"/>
 
 ## 3.3. Product Backlog
 
