@@ -858,6 +858,7 @@ Primer Segmento:
 Segundo Segmento:
 
 
+<img src="assets/img/j2.png" alt="logo" /> 
 
 ### 2.3.4. Empathy Mapping
 
