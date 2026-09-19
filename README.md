@@ -2822,6 +2822,23 @@ El **Visitor** es el segmento que cierra el circuito Landing Page → Web/Mobile
 
 #### 4.1.3.2. Software Architecture Context Level Diagrams
 
+El Context Diagram toma el paisaje anterior y fija el foco en EDIFIKA: la plataforma se representa como una caja única en el centro —sin abrir su interior— rodeada por los usuarios que la operan y por los sistemas de terceros con los que se integra. Es el nivel de abstracción con el que se conversa con stakeholders no técnicos: qué entra, qué sale y con quién se habla, sin comprometer todavía ninguna decisión de tecnología.
+
+![Context Diagram](assets/img/context-diagram.png)
+
+*Figura. System Context View de EDIFIKA. Elaborado por el equipo aplicando C4 Model con Structurizr DSL (Structurizr, s.f.).*
+
+Las interacciones representadas son:
+
+- **Visitor → EDIFIKA:** consulta información del modelo de negocio, contenido por segmento objetivo y precios a través del Landing Page.
+- **Administrator → EDIFIKA:** gestiona la operación del condominio, aprueba reservas y monitorea alertas (incluidas las alertas de consumo anómalo y de falla de luminarias que produce el nivel IoT).
+- **Owner or Tenant → EDIFIKA:** consulta deudas, paga, reserva áreas comunes, **genera tokens QR de acceso** y **activa la iluminación** de áreas comunes.
+- **EDIFIKA → Culqi:** procesa los pagos en línea (HTTPS/REST).
+- **EDIFIKA → Cloudinary:** sube y recupera las imágenes asociadas a comunicados oficiales y publicaciones del foro (HTTPS/REST).
+- **EDIFIKA → Firebase Cloud Messaging:** envía las notificaciones push de los eventos del sistema a los usuarios móviles (HTTPS/REST).
+
+Las integraciones con terceros se acotan deliberadamente a tres: la pasarela de pagos, el servicio de gestión de imágenes y el servicio de notificaciones push. El resto de las capacidades —incluidas las de acceso físico, iluminación y telemetría— se resuelve dentro de EDIFIKA, de modo que ningún flujo crítico de la operación del condominio queda condicionado a la disponibilidad de un proveedor externo.
+
 #### 4.1.3.3. Software Architecture Container Level Diagrams
 
 #### 4.1.3.4. Software Architecture Deployment Diagrams
