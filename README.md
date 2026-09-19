@@ -2453,7 +2453,6 @@ En esta sección, se presenta el Product Backlog como una recopilación organiza
 | 44 | TS17 | Comunicación con dispositivos ESP32 mediante protocolo MQTT | Como desarrollador, quiero implementar la comunicación entre el microservicio IoT Access Management y las placas ESP32 mediante MQTT, para recibir lecturas de sensores y enviar comandos de actuación en tiempo real. | EP-TS | 8 | Should Have |
 
 # Capítulo IV: Solution Software Design
-## 4.1. Strategic-Level Domain-Driven Design
 
 ## 4.1. Strategic-Level Domain-Driven Design
 
