@@ -877,6 +877,9 @@ Segundo Segmento:
 
 ## 2.4. Big Picture EventStorming
 
+En esta seccción se presenta el trabajo realizado durante la sesion de Big Picture event storming enfocada en comprender el dominio general del negocio. Para ello se utilizaran post-its para mapear los eventos significativos que ocurre en el flujo operativo actual.Esta actividad permite agrupar las interacciones en bloques funcionales lógicos, asegurando que la solución tecnológica satisfaga los requisitos reales del flujo operativo
+
+
 <img src="assets/img/big.jpeg" alt="logo" /> 
 
 ## 2.5 Ubiquitous Language
