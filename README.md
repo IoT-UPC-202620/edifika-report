@@ -2473,6 +2473,45 @@ Un resultado relevante del paso *Storm your events* es que el dominio explorado 
 
 #### 4.1.1.1. Candidate Context Discovery
 
+Tomando como insumo el EventStorm de 4.1.1, el equipo aplicó las tres técnicas de Candidate Context Discovery en conjunto — no de forma excluyente — sobre el tablero ya organizado en commands, policies y read models:
+
+- **Look-for-pivotal-events:** se buscaron los eventos que marcan un cambio de estado entre procesos de negocio distintos, es decir, los puntos donde un flujo termina y dispara (vía policy) el inicio de otro. `Reserva aceptada` es pivotal porque dispara la habilitación de acceso físico; `Pago fue registrado` / `Deuda marcada como pagada` es pivotal porque libera al residente de una suspensión de acceso; `Residente moroso fue detectado` es pivotal porque cruza de Payment hacia el control de acceso. Estos pivotes son los que terminaron materializándose como los eventos de integración entre contextos documentados en 4.1.1.2 y 4.1.2.
+- **Start-with-value:** se identificaron las partes del dominio con mayor valor diferencial para el negocio, usando como referencia directa el análisis competitivo del Capítulo II (Estrategia 2: "Diferenciación mediante integración IoT"). De las capacidades IoT exploradas en el storm — iluminación inteligente, control de acceso, monitoreo de tanque de agua, detección de fugas, riego automático — el equipo priorizó **acceso físico** y **iluminación/energía** por ser las de mayor valor demostrable dentro del alcance de un proyecto académico con hardware real (ESP32), y descartó riego y monitoreo de agua por requerir sensores/actuadores adicionales (electroválvulas, sensores de humedad de suelo, sensores de nivel) sin un actor de negocio que los reclamara como prioridad en el Capítulo III.
+- **Start-with-simple:** el timeline ya organizado en el paso 2 de EventStorming se descompuso en sub-timelines secuenciales por proceso (autenticación → gestión residencial → reservas → pagos → comunicación/foro → reportes, y luego los tres sub-timelines IoT), cada uno lo bastante simple como para sostener un propósito de negocio propio — ese es, en esencia, el criterio de corte que produjo los 11 candidatos de la tabla siguiente.
+
+La tabla resume, por cada proceso de negocio que sí se mantuvo en el alcance, el *Command* y *Actor* que lo origina, los *Domain Events* producidos, y las *Policies* / *Read Models* agregados en el paso 4 — es decir, el nivel de detalle sobre el que se hizo el corte de bounded contexts:
+
+| Proceso de negocio | Command (Actor) | Domain Events clave | Policy | Read Model |
+|---|---|---|---|---|
+| Autenticación (IAM/Auth) | Completar formulario de registro (Residente/Administrador) · Iniciar sesión | Usuario registrado, Rol asignado a usuario, Usuario autenticado, Credenciales rechazadas, Sesión cerrada | Un residente desactivado no puede iniciar sesión | — |
+| Gestión residencial | Registrar edificio y unidades (Administrador) | Edificio registrado, Unidad registrada, Residente vinculado a unidad | Rol de usuario debe ser administrador | Directorio de unidades y residentes |
+| Reservas | Registrar área común (Administrador) · Solicitar/Cancelar reserva (Residente) | Área común registrada, Reglas de área común registradas, Reserva solicitada, Reserva aceptada/rechazada, Reserva cancelada | — | Calendario de reservas |
+| Pagos y deudas | Registrar pago (Residente) | Deuda generada, Pago fue registrado, Pago rechazado, Deuda marcada como pagada, Recordatorio de deuda enviado | Si el pago es rechazado, la deuda permanece pendiente | Estado de cuenta del residente |
+| Comunicados y foro | Publicar anuncio (Administrador) · Agregar comentario / Crear encuesta / Votar (Residente) | Anuncio publicado, Comentario agregado, Encuesta creada, Voto registrado, Encuesta finalizada | — | Muro de anuncios, Resultados de la encuesta |
+| Reportes | Generar reporte financiero (Administrador) | Reporte financiero generado, Reporte financiero exportado | — | Dashboard financiero |
+| Notificaciones (transversal) | *(Sistema, automático)* | Notificación enviada, Notificación leída, Notificación de deuda fue enviada, Notificación enviada a usuario/administrador | — | — |
+| Acceso físico (IoT) | Escanear tarjeta (Residente) | Tarjeta RFID/NFC fue escaneada, Residente fue validado, Acceso fue concedido/rechazado/denegado, Puerta fue abierta, Tarjeta no reconocida, Residente moroso fue detectado | Si el residente es moroso, denegar el acceso | — |
+| Iluminación inteligente (IoT) | Activar interruptor manual (Residente/Administrador) | Movimiento detectado/no detectado en área común, Luces encendidas/apagadas automáticamente, Temporizador de inactividad iniciado, Fallo de conexión en sensor detectado, Luces permanecieron en modo seguro | Si no hay movimiento por 3 minutos, apagar luces | — |
+| *Riego y monitoreo de agua (descartado — ver start-with-value)* | *Activar riego manual* | *Riego activado/detenido automáticamente, Humedad del suelo medida, Fuga detectada, Nivel de agua medido, Fallo en válvula detectado* | *Si la humedad es suficiente, omitir el riego · Si el nivel es crítico o hay fuga, enviar alerta inmediata* | *Historial de riego, Panel de nivel de tanque de agua* |
+
+A partir de este corte por proceso de negocio, y de la incorporación del nivel IoT priorizado, se identificaron **11 bounded contexts candidatos**, cada uno implementado como un microservicio independiente (más el API Gateway y el Edge API como componentes de infraestructura transversal, no bounded contexts de dominio). Los ocho primeros cubren la gestión administrativa del condominio; los tres últimos son los que sobrevivieron el filtro start-with-value dentro del nivel IoT:
+
+| Bounded Context candidato | Responsabilidad principal |
+|---|---|
+| IAM / Auth | Registro, autenticación (JWT) y gestión de usuarios y roles (administradores/residentes). |
+| Residential Management | Registro de edificios, unidades y vinculación de residentes a sus unidades. |
+| Reservation | Disponibilidad, reserva y aprobación de uso de áreas comunes. |
+| Payment | Registro de deudas, pagos, comprobantes e integración con la pasarela Culqi. |
+| Communication | Publicación de comunicados oficiales y encuestas a la comunidad. |
+| Notification | Envío de notificaciones push (Firebase Cloud Messaging) originadas por eventos de otros contextos. |
+| Report | Generación y exportación de reportes financieros y de morosidad. |
+| Forum | Muro comunitario de mensajes entre residentes. |
+| IoT Access Management | Permisos de acceso a áreas comunes, credenciales RFID y QR dinámico, y control de cerraduras según reservas activas. |
+| Smart Lighting & Automation | Reglas de automatización y control de luminarias de áreas comunes según presencia, lux ambiental, horarios de reserva y override manual. |
+| IoT Telemetry & Analytics | Ingesta de telemetría de sensores, cálculo cuantitativo de consumo energético (kWh), estadísticas y detección de anomalías de hardware. |
+
+En cuanto a la persistencia, el modelo de despliegue actual concentra los datos de negocio de los contextos de gestión e IoT en una instancia PostgreSQL, y reserva una instancia TimescaleDB dedicada a las series de telemetría de alta frecuencia, cuyo perfil de escritura y consulta es distinto al transaccional (ver 4.1.3.4).
+
 #### 4.1.1.2. Domain Message Flows Modeling
 
 #### 4.1.1.3. Bounded Context Canvases
