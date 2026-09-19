@@ -2770,6 +2770,35 @@ Ninguna de las siete preguntas llevó a mover una línea del context map de la t
 
 ### 4.1.3. Software Architecture
 
+La arquitectura se modeló con **C4 Model** aplicando *Diagram-as-Code* mediante **Structurizr DSL**. El modelo fuente único vive en [`arquitectura/diagrama.dsl`](https://github.com/IoT-UPC-202620/Reporte/blob/main/arquitectura/diagrama.dsl) y de él se generan las cuatro vistas que se presentan a continuación (System Landscape, System Context, Container y Deployment), de modo que los cuatro diagramas son siempre consistentes entre sí por construcción.
+
+La solución adopta una **arquitectura IoT distribuida en tres niveles** —*Cloud Computing*, *Edge Computing* y *IoT Devices con Embedded Systems*— y se apoya en los siguientes estilos y patrones:
+
+- **Microservices Architecture:** escalabilidad y disponibilidad independientes; un fallo en Comunicados no interrumpe Pagos ni el control de accesos.
+- **Layered Architecture** dentro de cada microservicio (Interface / Application / Domain / Infrastructure).
+- **API Gateway Pattern:** punto único de entrada, autenticación JWT, rate limiting y enrutamiento.
+- **Event-Driven Architecture:** un *Message & Event Broker* AMQP/MQTT desacopla la publicación de eventos de dominio de su consumo.
+- **Saga Pattern coreografiado:** consistencia entre contextos sin locks distribuidos (ver 4.1.1.2).
+- **CQRS parcial:** Report separa la lectura de reportes de las operaciones de escritura de los demás contextos.
+- **Edge Computing offline-first:** el Edge API cachea credenciales y reservas activas, y mantiene operativos los accesos y la iluminación de áreas comunes aunque se caiga el enlace WAN del condominio.
+
+| Categoría | Herramienta / Tecnología |
+|---|---|
+| IDE | Visual Studio Code / IntelliJ IDEA |
+| Landing Page | HTML5 / CSS3 / JavaScript |
+| Framework Frontend Web | Angular / TypeScript (SPA) |
+| Mobile Application | Flutter / Dart |
+| Lenguaje / Framework Backend | Java / Spring Boot / Spring Data JPA |
+| API Gateway | Spring Cloud Gateway / Java |
+| Edge API | Python / Flask / Peewee ORM / SQLite |
+| Embedded Applications | ESP32 / C++ |
+| Mensajería y eventos | EMQX / RabbitMQ (AMQP y MQTT) |
+| Base de Datos | PostgreSQL (datos de negocio) / TimescaleDB (series de telemetría) |
+| Servicios externos | Culqi (pagos) / Cloudinary (imágenes) / Firebase Cloud Messaging (push) |
+| Diagramación de arquitectura | Structurizr DSL (C4 Model) |
+| Testing | JUnit / Mockito |
+| CI / CD | GitHub Actions |
+
 #### 4.1.3.1. Software Architecture System Landscape Diagram
 
 #### 4.1.3.2. Software Architecture Context Level Diagrams
