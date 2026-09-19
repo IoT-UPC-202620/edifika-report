@@ -787,7 +787,7 @@ Para el diseño de las entrevistas se utilizó el método de entrevistas semiest
 | **Edad** | 20 |
 | **Departamento** | San Martin de Porres |
 | **Link del video** | [Link del video de la entrevista](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202311704_upc_edu_pe/IQAI31E2KPwVRIDiWA_kvuUbAX7b1n0Xhowp2KzW16Ut_vw?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=M9Fwl0) |
-| **Foto entrevista** | <img src="../assets/img/rodrigo.png" alt=""> |
+| **Foto entrevista** | <img src="assets/img/interviews/prop1.png" alt="logo" width="500"/> |
 | **Resumen** | Se entrevistó a Rodrigo Chávez, quien es un inquilino en un condominio en el distrito de San Martin de Porres. Rodrigo comenta que, la principal comunicación con vecinos y propietarios es a través de WhatsApp, lo cual le parece dificultoso y molesto. Nos indica que el acceso a sus comprobantes de pago es únicamente mediante las conversaciones con el propietario o buscando en su aplicación del banco. Le encantaría tener una aplicación que englobe todos estos problemas. |
 
 ### 2.2.3. Análisis de entrevistas
