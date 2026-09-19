@@ -2914,6 +2914,9 @@ La elección de infraestructura responde al perfil de carga de cada pieza: los c
 Este mismo diagrama se referencia en 6.1.4 como Deployment Diagram del capítulo de implementación, según lo solicitado por el enunciado.
 
 ## 4.2. Tactical-Level Domain-Driven Design
+
+Cada bounded context se documenta a continuación separando Domain, Interface, Application e Infrastructure Layer. La subsección 4.2.X.1–4.2.X.4 da el diccionario en prosa (nombre, propósito e intención de cada clase, con sus atributos y relaciones principales); el detalle exacto de atributos tipados, métodos, *scope* y multiplicidad que pide el statement para el nivel de código vive en el Class Diagram UML de 4.2.X.6.1 de cada contexto (los 11 contextos ya cuentan con el suyo, ver 4.2.1–4.2.11) — evitando así transcribir en texto plano el mismo detalle que el diagrama ya expresa formalmente.
+
 ### 4.2.1. Bounded Context: IAM / Auth
 
 #### 4.2.1.1. Domain Layer
@@ -2982,7 +2985,6 @@ Representa la sesión activa de un usuario autenticado, junto con su vigencia.
 |---|---|---|
 | UserDomainService | Validar las reglas de negocio de usuarios y roles antes de persistir o autenticar una cuenta. | - El correo electrónico debe ser único en todo el sistema.<br>- Las credenciales deben cumplir el formato mínimo de seguridad.<br>- Todo usuario debe tener un rol válido asignado.<br>- Método: `validateUserRules(user)`. |
 
-
 #### 4.2.1.2. Interface Layer
 
 Esta capa expone el bounded context al exterior, recibiendo las solicitudes HTTP provenientes del API Gateway y traduciéndolas en comandos hacia la Application Layer.
@@ -2998,7 +3000,6 @@ Punto de entrada del microservicio de autenticación. Recibe las peticiones de l
 | `validateSession` | `validateSession(token: String): ResponseEntity<Boolean>` | Verifica si un token de sesión sigue siendo válido. |
 
 El `AuthController` no contiene lógica de negocio: su responsabilidad es exclusivamente recibir, validar el formato de la solicitud y delegar.
-
 
 #### 4.2.1.3. Application Layer
 
@@ -3025,7 +3026,6 @@ Clases principales:
 | Generar token | generateToken(user) | Construye y firma un JWT a partir de los datos del usuario autenticado. |
 | Validar token | validateToken(token) | Comprueba la firma y el tiempo de vigencia de un token recibido. |
 
-
 #### 4.2.1.4. Infrastructure Layer
 
 Esta capa implementa el acceso a los recursos externos que el bounded context necesita para operar, garantizando la persistencia de los datos conforme a los contratos definidos en el Domain Layer.
@@ -3045,10 +3045,9 @@ La clase principal de esta capa es:
 | findByEmail(String email) | Recupera un usuario a partir de su correo electrónico. |
 | existsByEmail(String email) | Verifica si ya existe una cuenta registrada con ese correo. |
 
-
 #### 4.2.1.5. Bounded Context Software Architecture Component Level Diagrams
 
-![Componentes IAM/Auth](../assets/img/ComponentView_Auth_Service.png)
+![Componentes IAM/Auth](assets/img/ComponentView_Auth_Service.png)
 
 *Figura. Diagrama de Componentes — Auth Service. Elaborado utilizando Structurizr (Structurizr, s.f.).*
 
@@ -3058,15 +3057,15 @@ En esta sección se presenta el nivel de mayor detalle de implementación del bo
 
 ##### 4.2.1.6.1. Bounded Context Domain Layer Class Diagrams
 
-![Clases IAM — vista general](../assets/img/iam-auth.png)
+![Clases IAM — vista general](assets/img/iam-auth.png)
 
 *Figura. Diagrama de Clases IAM — vista general. Elaborado utilizando PlantUML Editor (PlantUML, s.f.).*
 
-![Clases IAM — capas de Aplicación y Dominio](../assets/img/iam-auth1.png)
+![Clases IAM — capas de Aplicación y Dominio](assets/img/iam-auth1.png)
 
 *Figura. Diagrama de Clases IAM — capas de Aplicación y Dominio. Elaborado utilizando PlantUML Editor (PlantUML, s.f.).*
 
-![Clases IAM — capas de Infraestructura e Interfaces](../assets/img/iam-auth2.png)
+![Clases IAM — capas de Infraestructura e Interfaces](assets/img/iam-auth2.png)
 
 *Figura. Diagrama de Clases IAM — capas de Infraestructura e Interfaces. Elaborado utilizando PlantUML Editor (PlantUML, s.f.).*
 
@@ -3078,7 +3077,7 @@ La relación entre ambas tablas es `UserRol (1) —— (N) User`: un rol puede a
 
 El resto de tablas del modelo de EDIFIKA (Payments, Reservations, Forum, Notifications, etc.) hacen referencia a `User.id_user`, pero corresponden a otros bounded contexts del sistema y no forman parte de este diagrama.
 
-![ERD consolidado](../assets/img/Edifika_ERD_2.png)
+![ERD consolidado](assets/img/Edifika_ERD_2.png)
 
 *Figura. Diagrama Entidad-Relación consolidado (incluye las tablas de IAM). Elaborado utilizando LucidChart (LucidChart, s.f.).*
 
@@ -3086,147 +3085,411 @@ El resto de tablas del modelo de EDIFIKA (Payments, Reservations, Forum, Notific
 
 #### 4.2.2.1. Domain Layer
 
+`Building` (Entity: dirección, nombre), `Unit` (Entity: número, torre, vínculo a residente), relación Residente–Unidad.
+
 #### 4.2.2.2. Interface Layer
+
+`ResidentialController` (registro de edificios/unidades, vinculación de residentes).
 
 #### 4.2.2.3. Application Layer
 
+`ResidentialCommandServiceImpl` / `ResidentialQueryServiceImpl`.
+
 #### 4.2.2.4. Infrastructure Layer
 
+Implementación JPA sobre PostgreSQL, base de datos independiente del microservicio.
+
 #### 4.2.2.5. Bounded Context Software Architecture Component Level Diagrams
+
+![Componentes Residential Management](assets/img/ComponentView_Residential_Service.png)
+
+*Figura. Diagrama de Componentes — Residential Management Service. Elaborado utilizando Structurizr (Structurizr, s.f.).*
 
 #### 4.2.2.6. Bounded Context Software Architecture Code Level Diagrams
 
 ##### 4.2.2.6.1. Bounded Context Domain Layer Class Diagrams
 
+![Clases Residential Management](assets/img/residential_class_diagramm.png)
+
+*Figura. Diagrama de Clases — Residential Management. Elaborado utilizando PlantUML Editor (PlantUML, s.f.).*
+
 ##### 4.2.2.6.2. Bounded Context Database Design Diagram
+
+> ⚠️ Ver nota de ERD consolidado en 4.2.1.6.2.
+
+![ERD consolidado](assets/img/Edifika_ERD_2.png)
+
+*Figura. Diagrama Entidad-Relación consolidado (incluye las tablas de Residential Management).*
 
 ### 4.2.3. Bounded Context: Reservation Management
 
 #### 4.2.3.1. Domain Layer
 
+`CommonArea` (Entity: nombre, reglas de uso, horarios, habilitada/deshabilitada), `Reservation` (Entity/Aggregate: estado PENDIENTE/APROBADO, fecha, horario).
+
 #### 4.2.3.2. Interface Layer
+
+`ReservationController`, `CommonAreaController`.
 
 #### 4.2.3.3. Application Layer
 
+`ReservationCommandServiceImpl` / `ReservationQueryServiceImpl`, `CommonAreaCommandServiceImpl` — valida disponibilidad y evita duplicados antes de crear una reserva; emite el evento de aprobación (ver 4.1.1.2).
+
 #### 4.2.3.4. Infrastructure Layer
 
+Implementación JPA sobre PostgreSQL propia del microservicio.
+
 #### 4.2.3.5. Bounded Context Software Architecture Component Level Diagrams
+
+![Componentes Reservation](assets/img/ComponentView_Reservation_Service.png)
+
+*Figura. Diagrama de Componentes — Reservation Service. Elaborado utilizando Structurizr (Structurizr, s.f.).*
 
 #### 4.2.3.6. Bounded Context Software Architecture Code Level Diagrams
 
 ##### 4.2.3.6.1. Bounded Context Domain Layer Class Diagrams
 
+![Clases Reservation](assets/img/reservation_class_diagramm.png)
+
+*Figura. Diagrama de Clases — Reservation. Elaborado utilizando PlantUML Editor (PlantUML, s.f.).*
+
 ##### 4.2.3.6.2. Bounded Context Database Design Diagram
+
+> ⚠️ Ver nota de ERD consolidado en 4.2.1.6.2.
+
+![ERD consolidado](assets/img/Edifika_ERD_2.png)
+
+*Figura. Diagrama Entidad-Relación consolidado (incluye las tablas de Reservation).*
 
 ### 4.2.4. Bounded Context: Payment
 
 #### 4.2.4.1. Domain Layer
 
+`Debt` (Entity: monto, periodo, unidad), `Payment` (Aggregate: estado PENDIENTE/PAGADO, comprobante). Repository Pattern aplicado para desacoplar estas reglas de la persistencia.
+
 #### 4.2.4.2. Interface Layer
+
+`PaymentController` (registro de pagos, consulta de deuda, aprobación).
 
 #### 4.2.4.3. Application Layer
 
+`PaymentCommandServiceImpl` / `PaymentQueryServiceImpl` — orquesta la Saga de aprobación (actualiza estado → genera constancia PDF → emite evento `PagoAprobado`) y su compensación si Culqi falla.
+
 #### 4.2.4.4. Infrastructure Layer
 
+Implementación JPA sobre PostgreSQL; **Adapter Pattern (Anti-Corruption Layer)** hacia la pasarela de pagos **Culqi**, traduciendo su API externa a la interfaz propia del sistema.
+
 #### 4.2.4.5. Bounded Context Software Architecture Component Level Diagrams
+
+![Componentes Payment](assets/img/ComponentView_Payment_Service.png)
+
+*Figura. Diagrama de Componentes — Payment Service. Elaborado utilizando Structurizr (Structurizr, s.f.).*
 
 #### 4.2.4.6. Bounded Context Software Architecture Code Level Diagrams
 
 ##### 4.2.4.6.1. Bounded Context Domain Layer Class Diagrams
 
+![Clases Payment](assets/img/payment_class.png)
+
+*Figura. Diagrama de Clases — Payment. Elaborado utilizando PlantUML Editor (PlantUML, s.f.).*
+
 ##### 4.2.4.6.2. Bounded Context Database Design Diagram
+
+> ⚠️ Ver nota de ERD consolidado en 4.2.1.6.2.
+
+![ERD consolidado](assets/img/Edifika_ERD_2.png)
+
+*Figura. Diagrama Entidad-Relación consolidado (incluye las tablas de Payment).*
 
 ### 4.2.5. Bounded Context: Notification
 
 #### 4.2.5.1. Domain Layer
 
+`Notification` (Entity: tipo, destinatario, estado de envío), `DeviceToken` (Entity: token del dispositivo del residente).
+
 #### 4.2.5.2. Interface Layer
+
+`NotificationController`, `DeviceTokenController`.
 
 #### 4.2.5.3. Application Layer
 
+`NotificationCommandServiceImpl` / `NotificationQueryServiceImpl`, `DeviceTokenCommandServiceImpl` / `DeviceTokenQueryServiceImpl`. **Factory Pattern** para crear el tipo de notificación (Push/Email/SMS) según el evento de origen (comunicado, pago o reserva aprobados — ver 4.1.1.2), sin acoplar la creación a la lógica de envío. Reacciona a eventos emitidos por Communication, Payment y Reservation.
+
 #### 4.2.5.4. Infrastructure Layer
 
+Implementación JPA sobre PostgreSQL; cliente de **Firebase Cloud Messaging** para el envío de notificaciones push; compensación que marca una notificación como pendiente de reintento si el envío falla.
+
 #### 4.2.5.5. Bounded Context Software Architecture Component Level Diagrams
+
+![Componentes Notification](assets/img/ComponentView_Notification_Service.png)
+
+*Figura. Diagrama de Componentes — Notification Service. Elaborado utilizando Structurizr (Structurizr, s.f.).*
 
 #### 4.2.5.6. Bounded Context Software Architecture Code Level Diagrams
 
 ##### 4.2.5.6.1. Bounded Context Domain Layer Class Diagrams
 
+![Clases Notification](assets/img/notifications_class.png)
+
+*Figura. Diagrama de Clases — Notification. Elaborado utilizando PlantUML Editor (PlantUML, s.f.).*
+
 ##### 4.2.5.6.2. Bounded Context Database Design Diagram
+
+> ⚠️ Ver nota de ERD consolidado en 4.2.1.6.2.
+
+![ERD consolidado](assets/img/Edifika_ERD_2.png)
+
+*Figura. Diagrama Entidad-Relación consolidado (incluye las tablas de Notification).*
 
 ### 4.2.6. Bounded Context: Communication
 
 #### 4.2.6.1. Domain Layer
 
+`Announcement`/Comunicado (Entity: título, contenido, alcance, trazabilidad de lectura), `Poll`/Encuesta (Entity: opciones, votos).
+
 #### 4.2.6.2. Interface Layer
+
+`CommunicationController` (publicación de comunicados y encuestas).
 
 #### 4.2.6.3. Application Layer
 
+`CommunicationCommandServiceImpl` / `CommunicationQueryServiceImpl` — guarda el comunicado y emite el evento `ComunicadoPublicado` (Saga coreografiada, ver 4.1.1.2); valida el límite de un mensaje diario por residente (HTTP 429 si se excede) y el voto único por encuesta (HTTP 409 si se duplica).
+
 #### 4.2.6.4. Infrastructure Layer
 
+Implementación JPA sobre PostgreSQL propia del microservicio.
+
 #### 4.2.6.5. Bounded Context Software Architecture Component Level Diagrams
+
+![Componentes Communication](assets/img/ComponentView_Communication_Service.png)
+
+*Figura. Diagrama de Componentes — Communication Service. Elaborado utilizando Structurizr (Structurizr, s.f.).*
 
 #### 4.2.6.6. Bounded Context Software Architecture Code Level Diagrams
 
 ##### 4.2.6.6.1. Bounded Context Domain Layer Class Diagrams
 
+![Clases Communication](assets/img/communications_class.png)
+
+*Figura. Diagrama de Clases — Communication. Elaborado utilizando PlantUML Editor (PlantUML, s.f.).*
+
 ##### 4.2.6.6.2. Bounded Context Database Design Diagram
+
+> ⚠️ Ver nota de ERD consolidado en 4.2.1.6.2.
+
+![ERD consolidado](assets/img/Edifika_ERD_2.png)
+
+*Figura. Diagrama Entidad-Relación consolidado (incluye las tablas de Communication).*
 
 ### 4.2.7. Bounded Context: Forum
 
 #### 4.2.7.1. Domain Layer
 
+`Post` (Entity: mensaje del muro comunitario, autor, fecha), regla de límite diario de publicaciones por residente.
+
 #### 4.2.7.2. Interface Layer
+
+`PostController` (publicación y consulta de mensajes del muro).
 
 #### 4.2.7.3. Application Layer
 
+`PostCommandServiceImpl` / `PostQueryServiceImpl` — valida el límite diario de publicaciones (HTTP 429 si se excede).
+
 #### 4.2.7.4. Infrastructure Layer
 
+Implementación JPA sobre PostgreSQL propia del microservicio.
+
 #### 4.2.7.5. Bounded Context Software Architecture Component Level Diagrams
+
+![Componentes Forum](assets/img/ComponentView_ForumNotifications.png)
+
+*Figura. Diagrama de Componentes — Forum Service. Elaborado utilizando Structurizr (Structurizr, s.f.).*
 
 #### 4.2.7.6. Bounded Context Software Architecture Code Level Diagrams
 
 ##### 4.2.7.6.1. Bounded Context Domain Layer Class Diagrams
 
+![Clases Forum](assets/img/forum_class.png)
+
+*Figura. Diagrama de Clases — Forum. Elaborado utilizando PlantUML Editor (PlantUML, s.f.).*
+
 ##### 4.2.7.6.2. Bounded Context Database Design Diagram
+
+> ⚠️ Ver nota de ERD consolidado en 4.2.1.6.2.
+
+![ERD consolidado](assets/img/Edifika_ERD_2.png)
+
+*Figura. Diagrama Entidad-Relación consolidado (incluye las tablas de Forum).*
 
 ### 4.2.8. Bounded Context: Report
 
 #### 4.2.8.1. Domain Layer
 
+Modelo de lectura `FinancialReport` (consolidado de ingresos, egresos y deudas por periodo) — este contexto es mayormente de solo lectura (CQRS), sin agregados transaccionales propios.
+
 #### 4.2.8.2. Interface Layer
+
+`ReportController` (generación y exportación de reportes, consulta de morosos).
 
 #### 4.2.8.3. Application Layer
 
+`ReportCommandServiceImpl` / `ReportQueryServiceImpl` — consulta datos de Payment vía REST y consolida el reporte. **Factory Pattern** para generar el archivo de salida en el formato solicitado (PDF o Excel) sin acoplar la lógica de creación a la de exportación.
+
 #### 4.2.8.4. Infrastructure Layer
 
+Cliente REST hacia Payment Service; generador de archivos PDF/Excel.
+
 #### 4.2.8.5. Bounded Context Software Architecture Component Level Diagrams
+
+![Componentes Report](assets/img/ComponentView_Report_Service.png)
+
+*Figura. Diagrama de Componentes — Report Service. Elaborado utilizando Structurizr (Structurizr, s.f.).*
 
 #### 4.2.8.6. Bounded Context Software Architecture Code Level Diagrams
 
 ##### 4.2.8.6.1. Bounded Context Domain Layer Class Diagrams
 
+![Clases Report](assets/img/reports_class.png)
+
+*Figura. Diagrama de Clases — Report. Elaborado utilizando PlantUML Editor (PlantUML, s.f.).*
+
 ##### 4.2.8.6.2. Bounded Context Database Design Diagram
+
+> ⚠️ Ver nota de ERD consolidado en 4.2.1.6.2. Al ser un contexto mayormente de solo lectura, gran parte de su "persistencia" es en realidad la de Payment consultada vía REST.
+
+![ERD consolidado](assets/img/Edifika_ERD_2.png)
+
+*Figura. Diagrama Entidad-Relación consolidado.*
 
 ### 4.2.9. Bounded Context: IoT Access Management
 
 #### 4.2.9.1. Domain Layer
 
+`AccessCredential` (Aggregate Root: credencial de acceso de un residente, con tipo RFID o QR dinámico, identificador, titular, vigencia y estado ACTIVE/SUSPENDED/REVOKED), `AccessPermission` (Entity: habilitación de un residente sobre un área común, derivada de una reserva aprobada y acotada a su ventana horaria), `AccessAttempt` (Entity: intento de acceso registrado con dispositivo, credencial presentada, resultado y marca de tiempo — es la bitácora auditable del contexto). Value Objects: `RfidUid`, `QrToken` (token de un solo uso con TTL), `TimeWindow`. Domain Service: `AccessDecisionService`, que concentra la regla de negocio central del contexto —una credencial concede acceso solo si está activa, el residente no está moroso y existe un permiso vigente para esa área en ese instante—. Interfaces `AccessCredentialRepository`, `AccessPermissionRepository` y `AccessAttemptRepository`.
+
 #### 4.2.9.2. Interface Layer
+
+`AccessCredentialController` (emisión, suspensión y revocación de credenciales RFID), `QrAccessController` (generación del QR dinámico que el residente muestra en la puerta), `DoorControlController` (apertura remota por parte del administrador), `AccessAuditController` (consulta de la bitácora de accesos). Como *Consumers*: `ReservationEventConsumer` y `PaymentEventConsumer`, suscritos a los eventos que llegan por el broker.
 
 #### 4.2.9.3. Application Layer
 
+`AccessCredentialCommandService` (alta, suspensión y revocación), `QrTokenCommandService` (emisión del token con TTL y marca de un solo uso), `AccessQueryService` (consultas de credenciales, permisos y bitácora). Event Handlers: `ReservationApprovedEventHandler` —crea el `AccessPermission` temporal para el área reservada— y `ResidentMarkedDelinquentEventHandler` —suspende las credenciales del residente moroso—. Tras cada resolución de acceso publica `PhysicalAccessGranted` o `PhysicalAccessDenied`.
+
 #### 4.2.9.4. Infrastructure Layer
 
+Implementación JPA de los repositorios sobre PostgreSQL; `EdgeGatewaySyncClient`, cliente REST que empuja al Edge API las credenciales activas, las reservas vigentes y la blacklist para que el condominio siga operando sin conexión; publicador AMQP/MQTT de los eventos del contexto.
+
 #### 4.2.9.5. Bounded Context Software Architecture Component Level Diagrams
+
+![Componentes IoT Access Management](assets/img/ComponentView_Access_Service.png)
+
+*Figura. Diagrama de Componentes — IoT Access Management Service. Elaborado utilizando Structurizr (Structurizr, s.f.). Fuente en [`arquitectura/diagrama.dsl`](https://github.com/IoT-UPC-202620/Reporte/blob/main/arquitectura/diagrama.dsl).*
 
 #### 4.2.9.6. Bounded Context Software Architecture Code Level Diagrams
 
 ##### 4.2.9.6.1. Bounded Context Domain Layer Class Diagrams
 
+![Clases IoT Access Management](assets/img/access-management-class.png)
+
+*Figura. Diagrama de Clases — IoT Access Management. Elaborado con PlantUML; fuente en [`plantuml/class-diagrams/access-management-class.puml`](https://github.com/IoT-UPC-202620/Reporte/blob/main/plantuml/class-diagrams/access-management-class.puml).*
+
 ##### 4.2.9.6.2. Bounded Context Database Design Diagram
+
+> ⚠️ **Nota:** las tablas de este contexto persisten en PostgreSQL (igual que el resto de contextos de gestión), pero se documentan en un ERD complementario en vez de en el ERD consolidado de 4.2.1.6.2 — ver nota en 4.2.11.6.2.
+
+![ERD extensión IoT](assets/img/iot-erd-extension.png)
+
+*Figura. Diagrama Entidad-Relación — extensión IoT (`access_credentials`, `access_permissions`, `access_attempts`). Elaborado con PlantUML; fuente en [`plantuml/database/iot-erd-extension.puml`](https://github.com/IoT-UPC-202620/Reporte/blob/main/plantuml/database/iot-erd-extension.puml).*
+
+### 4.2.10. Bounded Context: Smart Lighting & Automation
+
+#### 4.2.10.1. Domain Layer
+
+`AutomationRule` (Aggregate Root: regla que gobierna una o varias luminarias de un área común, con condición de presencia, umbral de lux, franja horaria, duración de apagado por inactividad y prioridad frente a otras reglas), `Luminaire` (Entity: luminaria física con ubicación, área común asociada, potencia nominal y estado ON/OFF), `OverrideCommand` (Entity: encendido o apagado manual solicitado por un usuario, con duración y motivo, que suspende temporalmente la automatización). Value Objects: `LuxThreshold`, `PresenceTimeout`, `LightingSchedule`, `BrightnessLevel`. Domain Service: `AutomationDecisionService`, que resuelve el estado objetivo de cada luminaria combinando presencia, lux ambiental, horario de reserva y override vigente, aplicando la precedencia entre reglas. Interfaces `AutomationRuleRepository`, `LuminaireRepository` y `OverrideCommandRepository`.
+
+#### 4.2.10.2. Interface Layer
+
+`AutomationRuleController` (CRUD de reglas de automatización por parte del administrador), `LightingOverrideController` (encendido/apagado manual desde la aplicación del residente o del administrador), `LuminaireController` (registro y consulta de luminarias y su estado). Como *Consumer*: `PresenceEventConsumer`, suscrito a los eventos de presencia y de inicio de reserva.
+
+#### 4.2.10.3. Application Layer
+
+`AutomationRuleCommandService`, `OverrideCommandService` (aplica el override y programa su expiración), `LightingQueryService`. Event Handlers: `AreaPresenceDetectedEventHandler` —enciende según la regla vigente cuando se detecta presencia y el lux ambiental está por debajo del umbral— y `ReservationStartedEventHandler` —enciende de forma programada el área al iniciar la reserva—. Publica `LuminaireTurnedOn`, `LuminaireTurnedOff` y `OverrideTriggered`.
+
+Los dos eventos consumidos por este contexto se cerraron de la siguiente forma en [`arquitectura/diagrama.dsl`](https://github.com/IoT-UPC-202620/Reporte/blob/main/arquitectura/diagrama.dsl):
+
+- **`AreaPresenceDetected`** lo publica el **Edge API**, no Telemetry: el Edge reenvía la lectura cruda del sensor PIR del nodo de iluminación como evento tan pronto la recibe por MQTT local, priorizando la latencia de encendido sobre la interpretación de dominio (que sí aplica Telemetry para sus propios fines analíticos, ver 4.2.11, pero por una ruta de datos separada).
+- **`ReservationStarted`** lo publica **Reservation**, mediante un scheduler interno que revisa periódicamente las reservas cuya ventana horaria acaba de comenzar — se mantiene toda la lógica de reservas en un único contexto en vez de que Smart Lighting consulte el calendario de Reservation por su cuenta.
+
+#### 4.2.10.4. Infrastructure Layer
+
+Implementación JPA de los repositorios sobre PostgreSQL; `EdgeCommandPublisher`, que envía por MQTT/REST al Edge API las reglas de programación y los comandos de override para que este los ejecute localmente sobre los nodos de iluminación; publicador AMQP/MQTT de los eventos del contexto.
+
+#### 4.2.10.5. Bounded Context Software Architecture Component Level Diagrams
+
+![Componentes Smart Lighting & Automation](assets/img/ComponentView_Lighting_Service.png)
+
+*Figura. Diagrama de Componentes — Smart Lighting & Automation Service. Elaborado utilizando Structurizr (Structurizr, s.f.). Fuente en [`arquitectura/diagrama.dsl`](https://github.com/IoT-UPC-202620/Reporte/blob/main/arquitectura/diagrama.dsl).*
+
+#### 4.2.10.6. Bounded Context Software Architecture Code Level Diagrams
+
+##### 4.2.10.6.1. Bounded Context Domain Layer Class Diagrams
+
+![Clases Smart Lighting & Automation](assets/img/lighting-automation-class.png)
+
+*Figura. Diagrama de Clases — Smart Lighting & Automation. Elaborado con PlantUML; fuente en [`plantuml/class-diagrams/lighting-automation-class.puml`](https://github.com/IoT-UPC-202620/Reporte/blob/main/plantuml/class-diagrams/lighting-automation-class.puml).*
+
+##### 4.2.10.6.2. Bounded Context Database Design Diagram
+
+> ⚠️ **Nota:** ver la misma figura y nota de ERD complementario de 4.2.9.6.2 — `automation_rules`, `luminaires` y `override_commands` son las tablas de este contexto dentro de ese mismo diagrama (persisten en PostgreSQL).
+
+### 4.2.11. Bounded Context: IoT Telemetry & Analytics
+
+> 📌 **Nota:** este es el contexto que sostiene el requisito del curso sobre procesamiento, cálculo mediante expresiones matemáticas y estadísticas, y visualización de información cuantitativa recolectada por los dispositivos IoT.
+
+#### 4.2.11.1. Domain Layer
+
+`SensorReading` (Value Object inmutable: lectura individual con dispositivo de origen, tipo de magnitud —presencia, lux o corriente—, valor, unidad y marca de tiempo), `EnergyConsumption` (Aggregate Root: consumo acumulado de una luminaria o área común en un periodo, calculado por integración de la potencia instantánea en el tiempo, `kWh = Σ(V × I × Δt) / 1000`), `ConsumptionBaseline` (Entity: línea base estadística por área —media y desviación estándar móviles— contra la que se contrasta el consumo observado), `AnomalyFlag` (Entity: marca de anomalía con tipo, severidad y evidencia). Value Objects: `MeasurementUnit`, `TimeBucket`, `ZScore`. Domain Services: `EnergyCalculationService` (integración temporal de la potencia) y `AnomalyDetectionService` (compara la muestra contra la baseline y distingue consumo anómalo de falla de luminaria, esta última caracterizada por corriente nula con la luminaria comandada en ON). Interfaces `TelemetryRepository`, `EnergyConsumptionRepository` y `BaselineRepository`.
+
+#### 4.2.11.2. Interface Layer
+
+`TelemetryQueryController` (series temporales y agregados que alimentan los dashboards de la Web Application), `EnergyReportController` (consumo por área y por periodo), `AnomalyController` (consulta de anomalías detectadas). Como *Consumer*: `TelemetryIngestionConsumer`, suscrito por MQTT a las lecturas crudas que el Edge API reenvía al broker.
+
+#### 4.2.11.3. Application Layer
+
+`TelemetryIngestionService` (valida, normaliza y persiste la lectura entrante), `EnergyCalculationCommandService` (recalcula el consumo del bucket temporal afectado), `BaselineRecalculationService` (actualiza media y desviación móviles), `AnomalyDetectionHandler` (evalúa cada nueva agregación contra la baseline) y `TelemetryQueryService` (resuelve las consultas de los dashboards). Publica `AbnormalConsumptionDetected` y `LuminaireFailureDetected`.
+
+#### 4.2.11.4. Infrastructure Layer
+
+Implementación del repositorio de series sobre **TimescaleDB** —hypertables particionadas por tiempo y agregados continuos para resolver las consultas del dashboard sin recorrer la serie cruda—, a diferencia del resto de contextos, que persisten en PostgreSQL relacional. Suscriptor MQTT hacia el broker y publicador AMQP/MQTT de los eventos de alerta.
+
+#### 4.2.11.5. Bounded Context Software Architecture Component Level Diagrams
+
+![Componentes IoT Telemetry & Analytics](assets/img/ComponentView_Telemetry_Service.png)
+
+*Figura. Diagrama de Componentes — IoT Telemetry & Analytics Service. Elaborado utilizando Structurizr (Structurizr, s.f.). Fuente en [`arquitectura/diagrama.dsl`](https://github.com/IoT-UPC-202620/Reporte/blob/main/arquitectura/diagrama.dsl).*
+
+#### 4.2.11.6. Bounded Context Software Architecture Code Level Diagrams
+
+##### 4.2.11.6.1. Bounded Context Domain Layer Class Diagrams
+
+![Clases IoT Telemetry & Analytics](assets/img/telemetry-analytics-class.png)
+
+*Figura. Diagrama de Clases — IoT Telemetry & Analytics. Elaborado con PlantUML; fuente en [`plantuml/class-diagrams/telemetry-analytics-class.puml`](https://github.com/IoT-UPC-202620/Reporte/blob/main/plantuml/class-diagrams/telemetry-analytics-class.puml).*
+
+##### 4.2.11.6.2. Bounded Context Database Design Diagram
+
+Por su naturaleza de series temporales, las tablas de este contexto (`sensor_readings` como hypertable, más `energy_consumption`, `consumption_baselines` y `anomaly_flags`) no forman parte del ERD relacional consolidado de 4.2.1.6.2 (LucidChart, solo PostgreSQL). Se documentan en el mismo ERD complementario de 4.2.9.6.2, separadas en su propio paquete TimescaleDB:
+
+![ERD extensión IoT](assets/img/iot-erd-extension.png)
+
+*Figura. Diagrama Entidad-Relación — extensión IoT, paquete TimescaleDB (`sensor_readings`, `energy_consumption`, `consumption_baselines`, `anomaly_flags`). Elaborado con PlantUML; fuente en [`plantuml/database/iot-erd-extension.puml`](https://github.com/IoT-UPC-202620/Reporte/blob/main/plantuml/database/iot-erd-extension.puml).*
 
 # Conclusiones
 # Conclusiones y Recomendaciones
 # Referencias Bibliográficas
+
+- Lucidchart. (s.f.). <https://www.lucidchart.com>
+- PlantUML. (s.f.). <https://plantuml.com>
+- Structurizr. (s.f.). <https://structurizr.com/>
+
 # Anexos
