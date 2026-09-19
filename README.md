@@ -781,6 +781,15 @@ Para el diseño de las entrevistas se utilizó el método de entrevistas semiest
 | **Foto entrevista** |<img src="assets/img/interviews/prop2.png" alt="logo" width="500"/>  |
 | **Resumen** |Se entrevistó a Melina López, propietaria de un departamento, ella indica que no suele estar al tanto de las reuniones del edificio debido a la falta de tiempo. En cuanto a los pagos, envía los comprobantes por correo al administrador y mantiene un archivo físico como respaldo, ya que de lo contrario no tendría un historial accesible, asumiendo que la administración podría brindárselo si lo solicita. Señala que el proceso de reserva de espacios es el más tedioso, pues implica consultar disponibilidad, dejar garantía, realizar pagos y luego hacer seguimiento para su devolución, lo que la obliga a estar constantemente detrás de la administración. Además, le incomoda la gran cantidad de mensajes en el grupo de WhatsApp, donde se pierde información relevante. Finalmente, se muestra abierta al uso de una aplicación que centralice la información, considerando que actualmente los eventos y reuniones ya se comunican mediante un tablero. |
 
+| **ENTREVISTA 2** | |
+|---|---|
+| **Nombre entrevistado** | Rodrigo Chavez |
+| **Edad** | 20 |
+| **Departamento** | San Martin de Porres |
+| **Link del video** | [Link del video de la entrevista](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202311704_upc_edu_pe/IQAI31E2KPwVRIDiWA_kvuUbAX7b1n0Xhowp2KzW16Ut_vw?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=M9Fwl0) |
+| **Foto entrevista** | <img src="../assets/img/rodrigo.png" alt=""> |
+| **Resumen** | Se entrevistó a Rodrigo Chávez, quien es un inquilino en un condominio en el distrito de San Martin de Porres. Rodrigo comenta que, la principal comunicación con vecinos y propietarios es a través de WhatsApp, lo cual le parece dificultoso y molesto. Nos indica que el acceso a sus comprobantes de pago es únicamente mediante las conversaciones con el propietario o buscando en su aplicación del banco. Le encantaría tener una aplicación que englobe todos estos problemas. |
+
 ### 2.2.3. Análisis de entrevistas
 
 ## **Segmento objetivo de administradores de edificios y condominios**
