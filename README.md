@@ -2455,8 +2455,22 @@ En esta sección, se presenta el Product Backlog como una recopilación organiza
 # Capítulo IV: Solution Software Design
 ## 4.1. Strategic-Level Domain-Driven Design
 
+## 4.1. Strategic-Level Domain-Driven Design
 
 ### 4.1.1. Design-Level EventStorming
+
+El equipo realizó la sesión de Design-Level EventStorming en **Miro**, siguiendo la progresión estándar de la técnica en cuatro pasos, cada uno construido sobre el anterior en el mismo tablero:
+
+1. **Storm your events** — volcado libre de todos los eventos de dominio identificados (notas naranjas), sin orden ni filtro, cubriendo tanto la gestión administrativa del condominio como las ideas de nivel IoT.
+2. **Organize your events** — reordenamiento de esos eventos en timelines/swimlanes por proceso de negocio, agrupando lo que ocurre en secuencia.
+3. **Add commands** — para cada evento, se agregó el *Command* (nota azul) que lo origina y el *Actor* (nota pequeña adjunta: Residente, Administrador o Sistema) que lo dispara.
+4. **Add read models, policies and system commands** — se incorporaron los *Read Models* (vistas que consultan los usuarios), las *Policies* (reglas "cuando ocurre X, entonces Y") que conectan eventos entre procesos distintos, y los *System Commands* que el propio sistema dispara de forma automática al cumplirse una policy.
+
+![Tablero de Design-Level EventStorming](assets/img/eventstorming-board.jpg)
+
+*Figura. Tablero de Design-Level EventStorming en Miro, en sus cuatro etapas (de izquierda a derecha: Storm, Organize, Commands, Read Models/Policies/System Commands). El export completo de las notas del tablero se conserva en [`assets/data/eventstorming-miro-export.csv`](assets/data/eventstorming-miro-export.csv) para trazabilidad.*
+
+Un resultado relevante del paso *Storm your events* es que el dominio explorado fue deliberadamente más amplio que el alcance final de la solución: junto con los eventos que terminaron mapeados a los 11 bounded contexts candidatos (ver 4.1.1.1), el equipo volcó también una rama completa de riego automático, monitoreo de tanque de agua y detección de fugas (`Riego fue activado automáticamente`, `Nivel crítico fue detectado`, `Fuga fue detectada`, entre otros), heredada de la exploración de mercado de Smart Buildings del Capítulo II. Esa rama no se promovió más allá del paso 2 del EventStorm — la decisión de descartarla como bounded context se explica en 4.1.1.1 — y por eso no vuelve a aparecer ni en el Capítulo III (requisitos) ni en el resto del Capítulo IV.
 
 #### 4.1.1.1. Candidate Context Discovery
 
