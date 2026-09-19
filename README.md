@@ -2801,6 +2801,25 @@ La solución adopta una **arquitectura IoT distribuida en tres niveles** —*Clo
 
 #### 4.1.3.1. Software Architecture System Landscape Diagram
 
+El System Landscape amplía el foco: en lugar de mirar hacia adentro de EDIFIKA, ubica la plataforma dentro del **ecosistema completo del negocio de administración de condominios**. A diferencia del Context Diagram, aquí EDIFIKA no se dibuja como sistema *en alcance* con un boundary propio, sino como un sistema más del paisaje, al mismo nivel que los servicios de terceros de los que depende. Esta vista permite discutir el modelo de negocio —quién llega al producto y por qué canal— antes de entrar a decisiones técnicas.
+
+![System Landscape Diagram](assets/img/system-landscape-diagram.png)
+
+*Figura. System Landscape View de EDIFIKA. Elaborado por el equipo aplicando C4 Model con Structurizr DSL (Structurizr, s.f.).*
+
+El paisaje está compuesto por tres segmentos de personas y tres sistemas externos:
+
+| Elemento | Tipo | Rol en el ecosistema |
+|---|---|---|
+| Visitor | Person | Prospecto anónimo que consulta el Landing Page estático para conocer el modelo de negocio, los segmentos objetivo y los precios antes de registrarse. |
+| Administrator | Person | Administra residentes, pagos, unidades, reservas, comunicados oficiales, foro, reportes y **reglas de automatización IoT**. |
+| Owner or Tenant | Person | Consulta deudas, paga, reserva áreas comunes, **accede a los espacios vía RFID/QR**, **interactúa con la iluminación** y participa del foro del edificio. |
+| Culqi | Software System | Pasarela de pagos externa para cuotas de mantenimiento, deudas y servicios (HTTPS/REST). |
+| Cloudinary | Software System | Servicio cloud externo de almacenamiento, optimización y entrega de las imágenes del foro y de los comunicados oficiales (HTTPS/REST). |
+| Firebase Cloud Messaging | Software System | Servicio externo de notificaciones push en tiempo real hacia las aplicaciones móviles (HTTPS/REST). |
+
+El **Visitor** es el segmento que cierra el circuito Landing Page → Web/Mobile Application exigido para la solución: llega de forma anónima al sitio estático y desde ahí los call-to-action lo dirigen a la aplicación que corresponde a su segmento. Los otros dos segmentos ya operan sobre la plataforma autenticados, con roles distintos sobre las mismas capacidades.
+
 #### 4.1.3.2. Software Architecture Context Level Diagrams
 
 #### 4.1.3.3. Software Architecture Container Level Diagrams
