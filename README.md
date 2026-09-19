@@ -2514,6 +2514,68 @@ En cuanto a la persistencia, el modelo de despliegue actual concentra los datos 
 
 #### 4.1.1.2. Domain Message Flows Modeling
 
+Para cada caso de negocio que involucra a más de un bounded context, el equipo primero elaboró el **Domain Story** correspondiente (técnica de Domain Storytelling: Actor → Activity numerada → Work Object, atravesando los bounded contexts involucrados) y luego lo complementó con un diagrama de secuencia UML de foco técnico (Saga Pattern, compensaciones), reformulado en términos de Command → Agregado → Event → Policy donde aplica. Los Domain Stories se elaboraron como diagrama-as-code con PlantUML — misma filosofía que el modelo C4/Structurizr de 4.1.3 — y su fuente vive en [`plantuml/domain-storytelling/`](https://github.com/IoT-UPC-202620/Reporte/tree/main/plantuml/domain-storytelling/).
+
+**Autenticación de administrador (Command: RegistrarAdministrador / IniciarSesión)**
+
+![Domain Story autenticación administrador](assets/img/domain-story-auth-admin.png)
+
+*Figura. Domain Story — el Administrador completa el formulario, que atraviesa el API Gateway hasta IAM/Auth, quien crea el Usuario con rol ADMIN y emite el Token JWT que habilita la sesión.*
+
+![Diagrama de secuencia autenticación administrador](assets/img/secuencia1.png)
+
+*Figura. IAM recibe el Command de registro/login vía API Gateway, valida contra su agregado de Usuario y responde con el token JWT (Event: SesiónIniciada).*
+
+**Autenticación de residente**
+
+![Domain Story autenticación residente](assets/img/domain-story-auth-resident.png)
+
+*Figura. Domain Story — a diferencia del administrador, el residente no se autorregistra: el Administrador registra el vínculo residente–unidad en Residential Management, que lo provee a IAM/Auth; recién entonces el Residente puede autenticarse.*
+
+![Diagrama de secuencia autenticación residente](assets/img/secuencia2.png)
+
+*Figura. A diferencia del administrador, el residente no se autorregistra: es Residential Management quien crea el vínculo residente–unidad; IAM solo valida credenciales y emite el token.*
+
+**Publicación de comunicados (Command: PublicarComunicado → Event: ComunicadoPublicado → Policy: notificar residentes)**
+
+![Domain Story comunicados](assets/img/domain-story-comunicados.png)
+
+*Figura. Domain Story — el Administrador publica el Comunicado en Communication, que dispara a Notification la creación y entrega de la Notificación Push al Residente; si el envío falla, queda pendiente de reintento.*
+
+![Diagrama de secuencia comunicados](assets/img/secuencia_comunicados.png)
+
+*Figura. Communication guarda el comunicado y emite el evento ComunicadoPublicado; una policy reacciona enviando las notificaciones push a través de Notification (vía Firebase). Si el envío falla, una acción compensatoria marca la notificación como pendiente de reintento sin afectar el comunicado ya guardado.*
+
+**Registro y aprobación de pagos (Command: RegistrarPago / AprobarPago → Event: PagoAprobado)**
+
+![Domain Story pagos](assets/img/domain-story-pagos.png)
+
+*Figura. Domain Story — el Residente registra el Pago en Payment, que lo envía a Culqi; según la confirmación, Payment aprueba y genera el Comprobante (o revierte la deuda) y notifica al Residente.*
+
+![Diagrama de secuencia gestión de pagos](assets/img/secuencia_pagos.png)
+
+*Figura. Payment registra el pago en estado PENDIENTE; al aprobarlo, emite el evento PagoAprobado que dispara la policy de notificación al residente. Si la pasarela Culqi falla, la compensación revierte la deuda a PENDIENTE.*
+
+**Reserva y aprobación de áreas comunes (Command: CrearReserva / AprobarReserva → Event: ReservaAprobada)**
+
+![Domain Story reservas](assets/img/domain-story-reservas.png)
+
+*Figura. Domain Story — el Residente solicita la Reserva, el Administrador la aprueba, y Reservation dispara en paralelo la habilitación del Permiso de Acceso (IoT Access Management) y la notificación al Residente.*
+
+![Diagrama de secuencia reserva de áreas comunes](assets/img/secuencia_reservas.png)
+
+*Figura. Reservation valida disponibilidad antes de crear la reserva; al aprobarla, emite ReservaAprobada, que dispara la notificación al residente vía Notification.*
+
+**Generación de reportes financieros (Query, sin Command/Event — solo lectura)**
+
+![Domain Story reportes](assets/img/domain-story-reportes.png)
+
+*Figura. Domain Story — el Administrador solicita el Reporte Financiero, Report consulta a Payment vía REST, consolida y exporta el reporte de vuelta al Administrador; al ser de solo lectura, no hay Policy ni compensación involucradas.*
+
+![Diagrama de secuencia reportes](assets/img/secuencia_reportes.png)
+
+*Figura. Report consulta datos de Payment vía REST para consolidar y exportar reportes; al ser de solo lectura, no participa del flujo de eventos/compensaciones de los demás contextos.*
+
 #### 4.1.1.3. Bounded Context Canvases
 
 ### 4.1.2. Context Mapping
