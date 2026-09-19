@@ -851,6 +851,14 @@ Para el diseño de las entrevistas se utilizó el método de entrevistas semiest
 
 ### 2.3.3. User Journey Mapping
 
+Primer Segmento:
+
+<img src="assets/img/j1.png" alt="logo" /> 
+
+Segundo Segmento:
+
+
+
 ### 2.3.4. Empathy Mapping
 
 ### Administrador de Condominio – Ricardo Mendoza
