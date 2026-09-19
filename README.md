@@ -49,7 +49,7 @@
 
 ## Registro de Versiones del Informe
 
-<div align="center">
+<div align="center">I
 <table>
   <thead>
     <tr>
@@ -2331,6 +2331,10 @@ Para el diseño de las entrevistas se utilizó el método de entrevistas semiest
 
 
 ## 3.2. Impact Mapping
+
+El Impact Map muestra la relación entre el objetivo de negocio de Edifika y los cambios de comportamiento esperados en los usuarios clave: administradores y residentes. A partir de este análisis, se definen los impactos principales que la solución busca generar en cada tipo de usuario y los entregables necesarios para lograrlo, los cuales están directamente vinculados a las historias de usuario planteadas. Esto permite asegurar que cada funcionalidad desarrollada responda a necesidades reales y contribuya al cumplimiento del objetivo del sistema.
+
+<img src="assets/img/impact/mapping.png" alt="logo" width="500"/>
 
 ## 3.3. Product Backlog
 
