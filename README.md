@@ -265,7 +265,7 @@ AV1 (20/09/2026):
       - [4.2.8.6. Bounded Context Software Architecture Code Level Diagrams](#4286-bounded-context-software-architecture-code-level-diagrams)
         - [4.2.8.6.1. Bounded Context Domain Layer Class Diagrams](#42861-bounded-context-domain-layer-class-diagrams)
         - [4.2.8.6.2. Bounded Context Database Design Diagram](#42862-bounded-context-database-design-diagram)
-    - [4.2.9. Bounded Context: Incident Management](#429-bounded-context-incident-management)
+      - [4.2.9. Bounded Context: IoT Access Management](#429-bounded-context-iot-access-management)
       - [4.2.9.1. Domain Layer](#4291-domain-layer)
       - [4.2.9.2. Interface Layer](#4292-interface-layer)
       - [4.2.9.3. Application Layer](#4293-application-layer)
@@ -274,7 +274,7 @@ AV1 (20/09/2026):
       - [4.2.9.6. Bounded Context Software Architecture Code Level Diagrams](#4296-bounded-context-software-architecture-code-level-diagrams)
         - [4.2.9.6.1. Bounded Context Domain Layer Class Diagrams](#42961-bounded-context-domain-layer-class-diagrams)
         - [4.2.9.6.2. Bounded Context Database Design Diagram](#42962-bounded-context-database-design-diagram)
-    - [4.2.10. Bounded Context: IoT Access Management](#4210-bounded-context-iot-access-management)
+    - [4.2.10. Bounded Context: Smart Lighting & Automation](#4210-bounded-context-smart-lighting--automation)
       - [4.2.10.1. Domain Layer](#42101-domain-layer)
       - [4.2.10.2. Interface Layer](#42102-interface-layer)
       - [4.2.10.3. Application Layer](#42103-application-layer)
@@ -283,7 +283,7 @@ AV1 (20/09/2026):
       - [4.2.10.6. Bounded Context Software Architecture Code Level Diagrams](#42106-bounded-context-software-architecture-code-level-diagrams)
         - [4.2.10.6.1. Bounded Context Domain Layer Class Diagrams](#421061-bounded-context-domain-layer-class-diagrams)
         - [4.2.10.6.2. Bounded Context Database Design Diagram](#421062-bounded-context-database-design-diagram)
-    - [4.2.11. Bounded Context: Smart Lighting & Automation](#4211-bounded-context-smart-lighting--automation)
+    - [4.2.11. Bounded Context: IoT Telemetry & Analytics](#4211-bounded-context-iot-telemetry--analytics)
       - [4.2.11.1. Domain Layer](#42111-domain-layer)
       - [4.2.11.2. Interface Layer](#42112-interface-layer)
       - [4.2.11.3. Application Layer](#42113-application-layer)
@@ -292,7 +292,7 @@ AV1 (20/09/2026):
       - [4.2.11.6. Bounded Context Software Architecture Code Level Diagrams](#42116-bounded-context-software-architecture-code-level-diagrams)
         - [4.2.11.6.1. Bounded Context Domain Layer Class Diagrams](#421161-bounded-context-domain-layer-class-diagrams)
         - [4.2.11.6.2. Bounded Context Database Design Diagram](#421162-bounded-context-database-design-diagram)
-    - [4.2.12. Bounded Context: IoT Telemetry & Analytics](#4212-bounded-context-iot-telemetry--analytics)
+    - [4.2.12. Bounded Context: Water Pump Leak Detection](#4212-bounded-context-water-pump-leak-detection)
       - [4.2.12.1. Domain Layer](#42121-domain-layer)
       - [4.2.12.2. Interface Layer](#42122-interface-layer)
       - [4.2.12.3. Application Layer](#42123-application-layer)
@@ -4657,12 +4657,165 @@ Por su naturaleza de series temporales, las tablas de este contexto (`sensor_rea
 
 *Figura. Diagrama Entidad-Relación — extensión IoT, paquete TimescaleDB (`sensor_readings`, `energy_consumption`, `consumption_baselines`, `anomaly_flags`). Elaborado con PlantUML.*
 
+### 4.2.12. Bounded Context: Water Pump Leak Detection
+
+#### 4.2.12.1. Domain Layer
+
+El agregado principal identificado es:
+
+**LeakDetectionRule** (Aggregate Root: regla que gobierna una o varias bombas de agua, con umbral de caudal, umbral de presión, franja horaria de consumo esperado y duración mínima de desviación antes de declarar una fuga), **WaterPump** (Entity: bomba física con ubicación, zona asociada, potencia nominal y estado `ON`/`OFF`/`FAULT`), **LeakAlert** (Entity: evento de fuga detectado, con severidad, evidencia y estado de resolución). Value Objects: `FlowThreshold`, `PressureThreshold`, `FlowRate`, `LeakSeverity`. Domain Service: **LeakDetectionService**, que compara la lectura de caudal y presión contra la línea base esperada de la zona y distingue una fuga real de un consumo legítimo fuera de horario. Interfaces `LeakDetectionRuleRepository`, `WaterPumpRepository` y `LeakAlertRepository`.
+
+## Aggregate: LeakDetectionRuleAggregate
+
+### Entity: LeakDetectionRule
+
+| Atributo | Tipo | Descripción |
+|---|---|---|
+| idRule | Long | Identificador único de la regla. |
+| idZone | Long | Zona hidráulica a la que aplica. |
+| flowThreshold | FlowThreshold | Caudal máximo esperado fuera de horario de consumo. |
+| pressureThreshold | PressureThreshold | Caída de presión mínima que dispara la evaluación. |
+| expectedWindow | LightingSchedule | Franja horaria de consumo esperado. |
+| minDeviationMinutes | Int | Duración mínima de desviación antes de declarar fuga. |
+| isActive | Boolean | Indica si la regla está vigente. |
+
+## Aggregate: WaterPumpAggregate
+
+### Entity: WaterPump
+
+| Atributo | Tipo | Descripción |
+|---|---|---|
+| idPump | Long | Identificador único de la bomba. |
+| idZone | Long | Zona hidráulica asociada. |
+| location | String | Ubicación física de la bomba. |
+| nominalFlow | Decimal | Caudal nominal de la bomba. |
+| state | PumpState | Estado actual de la bomba. |
+
+### Entity: LeakAlert
+
+| Atributo | Tipo | Descripción |
+|---|---|---|
+| idAlert | Long | Identificador único de la alerta. |
+| idPump | PumpId | Bomba en la que se detectó la desviación. |
+| severity | LeakSeverity | Severidad de la fuga detectada. |
+| evidence | String | Lectura de caudal/presión que sustenta la alerta. |
+| detectedAt | DateTime | Momento de la detección. |
+| resolvedAt | DateTime | Momento de resolución (si aplica). |
+| status | LeakAlertStatus | Estado de la alerta. |
+
+## ValueObject: FlowThreshold
+
+| Atributo | Tipo | Descripción |
+|---|---|---|
+| value | Decimal | Caudal límite antes de considerar una posible fuga. |
+
+## ValueObject: PressureThreshold
+
+| Atributo | Tipo | Descripción |
+|---|---|---|
+| value | Decimal | Caída de presión mínima que activa la evaluación. |
+
+## ValueObject: FlowRate
+
+| Atributo | Tipo | Descripción |
+|---|---|---|
+| value | Decimal | Caudal instantáneo medido. |
+| unit | String | Unidad de medida del caudal. |
+
+## Enumeration
+
+| Enumeración | Valores |
+|---|---|
+| PumpState | `ON`, `OFF`, `FAULT` |
+| LeakSeverity | `LOW`, `MEDIUM`, `HIGH` |
+| LeakAlertStatus | `OPEN`, `ACKNOWLEDGED`, `RESOLVED` |
+
+## Domain Services
+
+| Nombre | Responsabilidad | Reglas aplicadas |
+|---|---|---|
+| LeakDetectionService | Distinguir una fuga real de un consumo legítimo. | Un caudal por encima del umbral fuera de la franja horaria esperada, sostenido más allá de la duración mínima configurada, se declara fuga. Una caída de presión sin caudal correspondiente marca la bomba como `FAULT`. |
+
+#### 4.2.12.2. Interface Layer
+
+**LeakDetectionRuleController**: CRUD de reglas de detección por parte del administrador. **WaterPumpController**: registro y consulta de bombas y su estado. **LeakAlertController**: consulta y resolución de alertas de fuga. **PumpControlController**: apagado remoto manual de una bomba. Como *Consumer*: `FlowReadingEventConsumer`, suscrito a las lecturas de caudal y presión que reenvía el Edge API.
+
+#### 4.2.12.3. Application Layer
+
+## Event Handlers
+
+| Handler | Evento de origen | Descripción |
+|---|---|---|
+| FlowReadingReceivedEventHandler | FlowReadingReceived | Evalúa la lectura contra `LeakDetectionService`; si corresponde, crea la `LeakAlert` y ordena el corte de la bomba. |
+
+`LeakDetectionRuleCommandService`, `PumpControlCommandService` (ejecuta el comando de apagado y programa su confirmación) y `LeakQueryService` completan la capa. El contexto publica `LeakDetected`, `PumpShutOff` y `LeakResolved`.
+
+**`FlowReadingReceived`** lo publica el **Edge API**, no Telemetry: reenvía la lectura cruda del sensor de caudal/presión del nodo hidráulico como evento tan pronto la recibe por MQTT local, priorizando la latencia de corte sobre la interpretación de dominio, siguiendo el mismo criterio aplicado en `AreaPresenceDetected` (ver 4.2.10.3).
+
+#### 4.2.12.4. Infrastructure Layer
+
+## Repositories
+
+| Repositorio | Responsabilidad |
+|---|---|
+| LeakDetectionRuleRepository | Persistencia de reglas de detección. |
+| WaterPumpRepository | Persistencia de bombas. |
+| LeakAlertRepository | Persistencia de alertas de fuga. |
+
+Implementación JPA de los repositorios sobre PostgreSQL; `EdgeCommandPublisher`, que envía por MQTT/REST al Edge API el comando de corte de la bomba para que este lo ejecute localmente sobre el nodo hidráulico; publicador AMQP/MQTT de los eventos del contexto.
+
+#### 4.2.12.5. Bounded Context Software Architecture Component Level Diagrams
+
+![Componentes Water Pump Leak Detection](assets/img/component_leak.png)
+
+*Figura. Diagrama de Componentes — Water Pump Leak Detection Service. Elaborado utilizando Structurizr (Structurizr, s.f.).*
+
+#### 4.2.12.6. Bounded Context Software Architecture Code Level Diagrams
+
+##### 4.2.12.6.1. Bounded Context Domain Layer Class Diagrams
+
+
+![Clases Water Pump Leak Detection](assets/img/class_diagram_leak.png)
+
+*Figura. Diagrama de Clases — Water Pump Leak Detection. Elaborado con PlantUML.*
+
+##### 4.2.12.6.2. Bounded Context Database Design Diagram
+
+
+![ERD extensión Water Pump Leak Detection](assets/img/db_diagram_leak.png)
+
+*Figura. Diagrama Entidad-Relación — extensión Water Pump Leak Detection. Elaborado con PlantUML.*
+
+
 # Conclusiones
 # Conclusiones y Recomendaciones
+
+**Conclusiones**
+
+- El diseño por bounded context aísla reglas de negocio distintas (facturación, reservas, IoT) sin que un cambio en un contexto obligue a tocar otro; la comunicación entre Reservation, Smart Lighting y IoT Access Management ocurre solo por eventos, no por acoplamiento directo.
+- Separar PostgreSQL (datos transaccionales) de TimescaleDB (series de tiempo) resuelve el problema de escala de las lecturas de sensores, que crecen de forma continua y degradarían los dashboards de consumo si se consultaran contra un modelo relacional normal.
+- La regla de morosidad (`ResidentMarkedDelinquent`) es un acoplamiento intencional bien resuelto: Payment decide quién es moroso y IoT Access Management actúa sobre esa decisión suspendiendo credenciales, sin que ninguno duplique la lógica del otro.
+
+**Recomendaciones**
+
+- Definir un límite explícito de reintentos y de tiempo para `EdgeGatewaySyncClient`: si el Edge API pierde conexión, conviene declarar cuánto tiempo es aceptable operar en modo degradado con la última lista de credenciales sincronizada.
+- Formalizar un contrato de eventos versionado (Schema Registry o versión en el payload) para el Message & Event Broker, ya que varios contextos consumen los mismos eventos de Reservation y Payment; un cambio de esquema sin control rompería a todos a la vez.
+- Incorporar pruebas de contrato entre publicadores y consumidores de eventos (por ejemplo `ReservationApproved` y sus consumidores) para detectar incompatibilidades antes de desplegar, ya que la comunicación asíncrona no falla en tiempo de compilación.
+
 # Referencias Bibliográficas
 
-- Lucidchart. (s.f.). <https://www.lucidchart.com>
-- PlantUML. (s.f.). <https://plantuml.com>
-- Structurizr. (s.f.). <https://structurizr.com/>
+  - Aguilar, K. L. B. (2026). Vacíos regulatorios en la Ley de Propiedad en Condominio, análisis de conflictos recurrentes en su modalidad vertical ubicados en el Distrito Central (Tesis doctoral). Centro Universitario Tecnológico CEUTEC. `https://repositorio.unitec.edu/server/api/core/bitstreams/cd97bbd4-204c-49c8-9901-3d0a5a85d7f3/content`
+  - Condominos. (2024, 4 de noviembre). Manejo de chats de WhatsApp de vecinos en condominios. `https://www.condominos.app/sitio/detalle/OA/manejo-de-chats-de-whatsapp-de-vecinos-en-condominios`
+`https://www2.deloitte.com/us/en/insights/topics/digital-transformation.html`
+  - El Comercio. (2026, 3 de abril). Fallas en la gestión de edificios corporativos pueden generar sobrecostos de hasta 30%. `https://elcomercio.pe/economia/fallas-en-la-gestion-de-edificios-corporativos-pueden-generar-sobrecostos-de-hasta-30-noticia/`
+  - Gestión. (2023, 12 de septiembre). Advierten que deudas por gastos en condominios llevan a inquilinos a Infocorp. `https://gestion.pe/tu-dinero/inmobiliarias/advierten-que-deudas-por-gastos-en-condominios-llevan-a-inquilinos-a-infocorp-condominios-deudas-por-pagos-de-mantenimiento-noticia/`
+  - GitHub. (s.f.). `https://github.com/`
+  - Instituto Nacional de Estadística e Informática (INEI). (2023). Perú: Características de las viviendas particulares y hogares. `https://www.gob.pe/institucion/inei/informes-publicaciones/4377979-las-tecnologias-de-informacion-y-comunicacion-en-los-hogares-ene-feb-mar-2023`
+  - Lucidchart. (s.f.). `https://www.lucidchart.com`
+  - PlantUML. (s.f.). `https://plantuml.com`
+  - ProTool. (2026, 11 de marzo). Administrar un condominio por WhatsApp no es gestión, es un riesgo para la comunidad. `https://www.protool.cl/noticia_detalle.php?slug=administrar-condominios-por-whatsapp-no-es-gestion-es-riesgo`
+  - Sociedad Peruana de Bienes Raíces. (2024). Digitalización de edificios y condominios en Perú. `https://bienesraicess.com/blogs/digitalizacion-de-edificios-y-condominios-en-peru`
+  - UXPressia. (s.f.). `https://uxpressia.com/`
+  - Verastegui Leon, P. A., Mendoza Castañeda, J. L. D. C., Zapata Becerra, M. L., Capristan Leon, K. E., & Ravines Garcia, M. A. (2025). Propuesta de un plan estratégico para mejora de la Gestión en Edificios Multifamiliares en Lima Moderna: Caso De Estudio: MONARCH MANAGERS EIRL. Universidad Peruana de Ciencias Aplicadas. `https://repositorioacademico.upc.edu.pe/handle/10757/686137`
 
 # Anexos
