@@ -868,6 +868,15 @@ Para el diseño de las entrevistas se utilizó el método de entrevistas semiest
 | **Resumen** | El administrador Alejandro Galindo gestiona 4 edificios utilizando principalmente Excel, WhatsApp y registros manuales. Su principal problema es el seguimiento de pagos y la falta de confirmación sobre la recepción de comunicados. Considera viable adoptar una plataforma digital siempre que centralice pagos, comunicaciones y reservas, y tenga un costo accesible. |
 
 
+| **ENTREVISTA 2** | |
+|---|---|
+| **Nombre entrevistado** | Kattya Valentina |
+| **Edad** | 25 |
+| **Departamento** | San Miguel |
+| **Link del video** |[Link del video de la entrevista]([https://upcedupe-my.sharepoint.com/:v:/g/personal/u202321281_upc_edu_pe/IQAW5DBOyn8xS6ZiZVZwufEIAU9yh_7P6mIIpJ_RzxJp6is?e=kLEW30&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202321281_upc_edu_pe/IQBytTOuLENRRpzS9nYLELHKAVVSvtdyP9hPyITLZN-VWLU?e=nGaihv&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D))|
+| **Foto entrevista** |<img src="assets/img/kattya.jpeg" alt="logo" /> |
+| **Resumen** | La entrevistada administra 15 edificios utilizando principalmente Excel con macros, WhatsApp y plataformas bancarias para gestionar pagos y comunicaciones. Identifica como principal problema la emisión física de recibos y la falta de una solución centralizada para coordinar pagos, reservas y avisos a los residentes. Aunque ha evaluado varios sistemas de administración, considera que muchos son excesivamente complejos y generan confusión. Se muestra interesada en adoptar una plataforma digital que sea intuitiva, organizada, transparente y mantenga la información actualizada, considerando aceptable un costo alineado con los precios habituales del mercado. |
+
 **Segmento objetivo: Propietarios e Inquilinos:**
 
 | **ENTREVISTA 1** | |
