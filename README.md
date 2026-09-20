@@ -31,10 +31,10 @@
   </thead>
   <tbody>
     <tr><td style="border: 1px solid black;">Acuña Corahua, Jonatan Ariel</td><td style="border: 1px solid black;">u20211b995</td></tr>
-    <tr><td style="border: 1px solid black;">Collantes Carrillo, Diego Mateo</td><td style="border: 1px solid black;">u2023</td></tr>
-    <tr><td style="border: 1px solid black;">Landa Ortiz, Sergio Javier</td><td style="border: 1px solid black;">u2023</td></tr>
+    <tr><td style="border: 1px solid black;">Collantes Carrillo, Diego Mateo</td><td style="border: 1px solid black;">u202311823</td></tr>
+    <tr><td style="border: 1px solid black;">Landa Ortiz, Sergio Javier</td><td style="border: 1px solid black;">u202311086</td></tr>
     <tr><td style="border: 1px solid black;">Ortiz Cardenas, Johanna Antuanete</td><td style="border: 1px solid black;">u202310358</td></tr>
-    <tr><td style="border: 1px solid black;">Perez Tuesta, Gabriel</td><td style="border: 1px solid black;">u2023</td></tr>
+    <tr><td style="border: 1px solid black;">Perez Tuesta, Gabriel</td><td style="border: 1px solid black;">u202321281</td></tr>
     <tr><td style="border: 1px solid black;">Lizarbe Alvarez, Ariana Nickole/td><td style="border: 1px solid black;">u2023</td></tr>
     <tr><td style="border: 1px solid black;">Sarmiento Medina, Loreley</td><td style="border: 1px solid black;">u202310005</td></tr>
   </tbody>
@@ -192,11 +192,6 @@ AV1 (20/09/2026):
       - [4.1.3.2. Software Architecture Context Level Diagrams](#4132-software-architecture-context-level-diagrams)
       - [4.1.3.3. Software Architecture Container Level Diagrams](#4133-software-architecture-container-level-diagrams)
       - [4.1.3.4. Software Architecture Deployment Diagrams](#4134-software-architecture-deployment-diagrams)
-    - [4.1.4. Atributos de Calidad y Presupuesto de Rendimiento](#414-atributos-de-calidad-y-presupuesto-de-rendimiento)
-      - [4.1.4.1. Presupuesto de latencia](#4141-presupuesto-de-latencia)
-      - [4.1.4.2. Seguridad](#4142-seguridad)
-      - [4.1.4.3. Concurrencia y consistencia](#4143-concurrencia-y-consistencia)
-      - [4.1.4.4. Degradación y tolerancia a fallos](#4144-degradación-y-tolerancia-a-fallos)
   - [4.2. Tactical-Level Domain-Driven Design](#42-tactical-level-domain-driven-design)
     - [4.2.1. Bounded Context: IAM / Auth](#421-bounded-context-iam--auth)
       - [4.2.1.1. Domain Layer](#4211-domain-layer)
@@ -330,7 +325,8 @@ Acuña Corahua, Jonatan Ariel<br><br>
 AV1: Asumí el desarrollo de los principales artefactos de diseño de la solución. Modelé la arquitectura del sistema con C4 Model en Structurizr DSL (Landscape, Context, Container y Deployment, incluidos los microservicios IoT, el nivel de Edge Computing on-premise y los nodos físicos ESP32), definí los Bounded Contexts estratégicos, el Design-Level EventStorming de la extensión IoT y los diagramas de Domain Storytelling, y elaboré el modelado táctico DDD con la persistencia híbrida (PostgreSQL y TimescaleDB), consolidando el Capítulo IV como base común del diseño.<br><br>
 
 Collantes Carrillo, Diego Mateo<br><br>
-AV1: <br><br>
+AV1: Desarrollé liderazgo compartido al coordinar colaborativamente la sección de Strategic-Level Domain-Driven Design. Guié al equipo en el Design-Level EventStorming (Candidate Context Discovery, Domain Message Flows Modeling y Bounded Context Canvases) y en el desarrollo del Context Mapping, facilitando la alineación y estructuración estratégica del dominio del sistema. <br><br>
+
 
 Landa Ortiz, Sergio Javier<br><br>
 AV1: <br><br>
@@ -358,7 +354,7 @@ Acuña Corahua, Jonatan Ariel<br><br>
 AV1: Estructuré el repositorio del informe con una carpeta por capítulo según las pautas del trabajo final, migré los contenidos base y organicé los recursos gráficos en un directorio común de assets. Configuré un pipeline en Docker (Pandoc y Eisvogel, con filtros propios para tablas y HTML) que compila todo el informe a PDF y mantuve el Registro de Versiones, de modo que el equipo trabaje sobre una misma fuente y cada avance quede trazable.<br><br>
 
 Collantes Carrillo, Diego Mateo<br><br>
-AV1: <br><br>
+AV1: Fomenté un entorno colaborativo e inclusivo al coordinar la planificación y ejecución estratégica del dominio del proyecto (Strategic-Level Domain-Driven Design). Establecí metas claras facilitando el Design-Level EventStorming (Candidate Context Discovery, Domain Message Flows Modeling y Bounded Context Canvases) y organicé el trabajo en equipo para definir el Context Mapping, cumpliendo exitosamente con los objetivos planteados. <br><br>
 
 Landa Ortiz, Sergio Javier<br><br>
 AV1: <br><br>
@@ -400,9 +396,9 @@ Convertirnos en la plataforma de referencia para la gestión de condominios, sie
 | Estudiante | Descripción |
 |------------|-------------|
 | ![team member profile photo](assets/img/profiles/jonatan_acuna.jpeg) **Acuña Corahua, Jonatan Ariel (u20211b995)** | Soy estudiante del 8vo ciclo de la carrera de Ingeniería de Software en la UPC. Me gustó la carrera tras aprender desarrollo web y desde entonces, sigo aprendiendo para mejorar mis habilidades cada vez más, actualmente me enfoco en aprender tecnologías relacionadas a DevSecOps. En mi tiempo libre juego videojuegos y de vez en cuando salir en bicicleta|
-| ![team member profile photo](assets/img/profiles/diego_collantes.png) **Collantes Carrillo, Diego Mateo (u2023)** | |
-| ![team member profile photo](assets/img/profiles/sergio_landa.png) **Landa Ortiz, Sergio Javier (u2023)** | |
+| ![team member profile photo](assets/img/profiles/diego_collantes.png) **Collantes Carrillo, Diego Mateo (u202311823)** | Mi nombre es Diego Collantes. Tengo 21 años. Soy estudiante de octavo ciclo en la Universidad Peruana de Ciencias Aplicadas (UPC). Disfruto de leer, redactar y escuchar música en mi tiempo libre. Elegí esta carrera, ya que me interesó todo el proceso que hay detrás de cada aplicación o programa que usamos en nuestro día a día. Personalmente, espero ampliar mis conocimientos en este ámbito a lo largo de este curso. Además, estoy comprometido a contribuir en todo lo que sea posible con el equipo y a desempeñarme de manera adecuada. |
 | ![team member profile photo](assets/img/profiles/antuanete_ortiz.png) **Ortiz Cardenas, Johanna Antuanete (u202310358)** | Mi nombre es Johanna Antuanete Ortiz Cardenas, tengo 20 años y actualmente curso el octavo ciclo de la carrera de Ingeniería de Software en la Universidad Peruana de Ciencias Aplicadas. Me considero una persona proactiva, responsable y orientada a la calidad, con especial interés en el desarrollo frontend, área en la que disfruto crear interfaces intuitivas y visualmente atractivas. Me apasiona mantenerme actualizada sobre las últimas tendencias y avances tecnológicos, lo que me permite aportar soluciones modernas y fundamentadas a cada proyecto. En mi tiempo libre, disfruto escuchar música y leer cómics, actividades que nutren mi creatividad y perspectiva. En el marco de este proyecto grupal, me comprometo a colaborar de manera activa y responsable, aportando ideas de valor y cumpliendo con los entregables en los plazos establecidos, con el objetivo de alcanzar resultados de alta calidad. |
+| ![team member profile photo](assets/img//Sergio-Landa.jpeg) **Landa Ortiz, Sergio Javier (u202311086)** |Soy Sergio Landa Ortiz, tengo 20 años. Soy estudiante de la UPC de la carrera de Ingeniería de Software y me encuentro cursando el séptimo ciclo. Me considero una persona responsable y activa, siempre con la actitud de ofrecer ayuda al equipo, cuento con experiencia trabajando como desarrollador frontend. Asimismo, en cuanto a habilidades extracurriculares, soy bailarin y profesor de marinera norteña, me apasionan los deportes y estar actualizado con las nuevas tecnologias que se actualizan dia a dia en el mundo. || ![team member profile photo](assets/img/profiles/antuanete_ortiz.png) **Ortiz Cardenas, Johanna Antuanete (u202310358)** | Mi nombre es Johanna Antuanete Ortiz Cardenas, tengo 20 años y actualmente curso el octavo ciclo de la carrera de Ingeniería de Software en la Universidad Peruana de Ciencias Aplicadas. Me considero una persona proactiva, responsable y orientada a la calidad, con especial interés en el desarrollo frontend, área en la que disfruto crear interfaces intuitivas y visualmente atractivas. Me apasiona mantenerme actualizada sobre las últimas tendencias y avances tecnológicos, lo que me permite aportar soluciones modernas y fundamentadas a cada proyecto. En mi tiempo libre, disfruto escuchar música y leer cómics, actividades que nutren mi creatividad y perspectiva. En el marco de este proyecto grupal, me comprometo a colaborar de manera activa y responsable, aportando ideas de valor y cumpliendo con los entregables en los plazos establecidos, con el objetivo de alcanzar resultados de alta calidad. |
 | ![team member profile photo](assets/img/profiles/gabriel.png) **Perez Tuesta, Gabriel (u202321281)** | Soy Gabriel Perez Tuesta, tengo 23 años. Soy estudiante de la UPC de la carrera de Ingeniería de Software y me encuentro cursando el séptimo ciclo. Cuento con habilidades de programación en C++ y Python, así como aptitudes para el desarrollo en UX y UI. Asimismo, en cuanto a habilidades extracurriculares, he contribuido en proyectos con edición de video y fomentando una actitud colaborativa en el equipo. |
 | ![team member profile photo](assets/img/profiles/ariana_lizarbe.jpg) **Lizarbe Alvarez, Ariana Nickole (u202311704)** | Mi nombre es Ariana Lizarbe, tengo 21 años y me encuentro cursando el octavo ciclo de Ingeniería de Software en la UPC. Me considero una persona responsable y aplicada, siempre estoy dispuesta a aprender nuevos conceptos y tecnologías. Además de ello, trabajo muy bien en equipo, logrando dividir y delegar tareas a mis compañeros de manera eficiente. |
 | ![team member profile photo](assets/img/profiles/loreley_sarmiento.jpg) **Sarmiento Medina, Loreley (u202310005)** | Mi nombre es Loreley Sarmiento, tengo 20 años y actualmente curso la carrera de Ingeniería de Software. Me considero una persona responsable, organizada y con buena disposición para el trabajo en equipo, ya que valoro la comunicación y la colaboración como elementos clave para lograr buenos resultados. Me interesa seguir aprendiendo constantemente y asumir nuevos retos que me permitan fortalecer mis habilidades.En este proyecto, busco participar de manera activa, apoyar a mis compañeros, aportar ideas que contribuyan al desarrollo del equipo y cumplir con las tareas asignadas dentro de los plazos establecidos, con el objetivo de alcanzar un resultado de calidad. |
@@ -858,9 +854,28 @@ Para el diseño de las entrevistas se utilizó el método de entrevistas semiest
 | **Nombre entrevistado** |  Cesar Villalobos  |
 | **Edad** | 51 |
 | **Departamento** | Cercado de Lima  |
-| **Link del video** | `https://upcedupe-my.sharepoint.com/:v:/g/personal/u202310358_upc_edu_pe/IQDEXx-uGk1tS71xXaDeSeDeAf3fEODmStVZKztx7vcr0i8?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=5V6W7o` |
-| **Foto entrevista** |   <img src="assets/img/interviews/admin1.png" alt="logo" width="500"/>|
+| **Link del video** | [Link del video de la entrevista](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202310358_upc_edu_pe/IQDEXx-uGk1tS71xXaDeSeDeAf3fEODmStVZKztx7vcr0i8?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=5V6W7o) |
+| **Foto entrevista** |   <img src="assets/img/interviews/admin1.png" alt="logo" />|
 | **Resumen** | César es administrador de edificios en GWM EIRL y actualmente gestiona 15 edificios usando Excel con macros como herramienta principal, apoyándose en WhatsApp para coordinar reservas y comunicaciones, y en las páginas de los bancos para pagos. El proceso más tedioso es la emisión de recibos, que aún se hace de forma física en varios edificios y que desea digitalizar al 100%. Ha evaluado entre 3 y 4 sistemas sin éxito, ya que todos presentaban exceso de información que generaba confusión en los propietarios y una percepción de desorden o falta de transparencia. Como empresa tiene el objetivo claro de migrar a una plataforma digital, y considera que una app o sistema web mejoraría significativamente la comunicación y la gestión, siempre que sea ágil, ordenada, fácil de entender y con información siempre actualizada. En cuanto al precio, conoce el mercado y sabe que el rango habitual oscila entre 2 y 5 dólares por unidad al mes. |
+
+| **ENTREVISTA 2** | |
+|---|---|
+| **Nombre entrevistado** | Alejandro Galindo |
+| **Edad** | 26 |
+| **Departamento** | San Miguel |
+| **Link del video** |[Link del video de la entrevista](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202321281_upc_edu_pe/IQAW5DBOyn8xS6ZiZVZwufEIAU9yh_7P6mIIpJ_RzxJp6is?e=kLEW30&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D)|
+| **Foto entrevista** |<img src="assets/img/alejandro.jpeg" alt="logo" /> |
+| **Resumen** | El administrador Alejandro Galindo gestiona 4 edificios utilizando principalmente Excel, WhatsApp y registros manuales. Su principal problema es el seguimiento de pagos y la falta de confirmación sobre la recepción de comunicados. Considera viable adoptar una plataforma digital siempre que centralice pagos, comunicaciones y reservas, y tenga un costo accesible. |
+
+
+| **ENTREVISTA 2** | |
+|---|---|
+| **Nombre entrevistado** | Kattya Valentina |
+| **Edad** | 25 |
+| **Departamento** | San Miguel |
+| **Link del video** |[Link del video de la entrevista]([https://upcedupe-my.sharepoint.com/:v:/g/personal/u202321281_upc_edu_pe/IQAW5DBOyn8xS6ZiZVZwufEIAU9yh_7P6mIIpJ_RzxJp6is?e=kLEW30&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202321281_upc_edu_pe/IQBytTOuLENRRpzS9nYLELHKAVVSvtdyP9hPyITLZN-VWLU?e=nGaihv&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D))|
+| **Foto entrevista** |<img src="assets/img/kattya.jpeg" alt="logo" /> |
+| **Resumen** | La entrevistada administra 15 edificios utilizando principalmente Excel con macros, WhatsApp y plataformas bancarias para gestionar pagos y comunicaciones. Identifica como principal problema la emisión física de recibos y la falta de una solución centralizada para coordinar pagos, reservas y avisos a los residentes. Aunque ha evaluado varios sistemas de administración, considera que muchos son excesivamente complejos y generan confusión. Se muestra interesada en adoptar una plataforma digital que sea intuitiva, organizada, transparente y mantenga la información actualizada, considerando aceptable un costo alineado con los precios habituales del mercado. |
 
 **Segmento objetivo: Propietarios e Inquilinos:**
 
@@ -869,25 +884,38 @@ Para el diseño de las entrevistas se utilizó el método de entrevistas semiest
 | **Nombre entrevistado** | Melina Lopez  |
 | **Edad** | 51 |
 | **Departamento** | San Miguel  |
-| **Link del video** | `https://upcedupe-my.sharepoint.com/:v:/g/personal/u202310358_upc_edu_pe/IQCrGL7_ZORtSbK1HjVPRnKSAV6DqNEu28FqeS0W-wKJ7Rk?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=PPJ5TV`  |
-| **Foto entrevista** |<img src="assets/img/interviews/prop2.png" alt="logo" width="500"/>  |
+| **Link del video** | [Link del video de la entrevista](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202321281_upc_edu_pe/IQAW5DBOyn8xS6ZiZVZwufEIAU9yh_7P6mIIpJ_RzxJp6is?e=kLEW30&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D)  |
+| **Foto entrevista** |<img src="assets/img/interviews/prop2.png" alt="logo"/>  |
 | **Resumen** |Se entrevistó a Melina López, propietaria de un departamento, ella indica que no suele estar al tanto de las reuniones del edificio debido a la falta de tiempo. En cuanto a los pagos, envía los comprobantes por correo al administrador y mantiene un archivo físico como respaldo, ya que de lo contrario no tendría un historial accesible, asumiendo que la administración podría brindárselo si lo solicita. Señala que el proceso de reserva de espacios es el más tedioso, pues implica consultar disponibilidad, dejar garantía, realizar pagos y luego hacer seguimiento para su devolución, lo que la obliga a estar constantemente detrás de la administración. Además, le incomoda la gran cantidad de mensajes en el grupo de WhatsApp, donde se pierde información relevante. Finalmente, se muestra abierta al uso de una aplicación que centralice la información, considerando que actualmente los eventos y reuniones ya se comunican mediante un tablero. |
 
 | **ENTREVISTA 2** | |
 |---|---|
-| **Nombre entrevistado** | Rodrigo Chavez |
-| **Edad** | 20 |
-| **Departamento** | San Martin de Porres |
-| **Link del video** | [Link del video de la entrevista](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202311704_upc_edu_pe/IQAI31E2KPwVRIDiWA_kvuUbAX7b1n0Xhowp2KzW16Ut_vw?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=M9Fwl0) |
-| **Foto entrevista** | <img src="assets/img/interviews/prop1.png" alt="logo" width="500"/> |
-| **Resumen** | Se entrevistó a Rodrigo Chávez, quien es un inquilino en un condominio en el distrito de San Martin de Porres. Rodrigo comenta que, la principal comunicación con vecinos y propietarios es a través de WhatsApp, lo cual le parece dificultoso y molesto. Nos indica que el acceso a sus comprobantes de pago es únicamente mediante las conversaciones con el propietario o buscando en su aplicación del banco. Le encantaría tener una aplicación que englobe todos estos problemas. |
+| **Nombre entrevistado** | Jarol Panduro |
+| **Edad** | 30 |
+| **Departamento** | San Miguel |
+| **Link del video** | [Link del video de la entrevista](https://youtu.be/NHYPQzPL36M) |
+| **Foto entrevista** | <img src="assets/img/ser1.jpeg" alt="logo" /> |
+| **Resumen** | En este video, Jarol Panduro, un abogado de 30 años, detalla las principales deficiencias en la administración de su edificio. Explica que el proceso de pago del mantenimiento es tedioso porque requiere enviar capturas de pantalla por WhatsApp, y señala que no existe un sistema oficial para consultar su historial de pagos. Además, menciona problemas como la desorganización al reservar áreas comunes mediante cuadernos físicos, la falta de transparencia en los gastos administrativos, la lentitud en la comunicación oficial y lo anticuado que resulta el registro manual de visitas en la portería. Como solución, propone la implementación de una plataforma digital centralizada que permita registrar pagos automáticamente, reservar espacios y auditar los gastos de forma rápida y transparente.|
+
+| **ENTREVISTA 3** | |
+|---|---|
+| **Nombre entrevistado** | Marcelo Candia |
+| **Edad** | 25 |
+| **Departamento** | San Miguel |
+| **Link del video** | [Link del video de la entrevista](https://youtu.be/E5k60PHyvYI) |
+| **Foto entrevista** | <img src="assets/img/ser2.jpeg" alt="logo" /> |
+| **Resumen** | En la entrevista, Marcelo expone su frustración con la administración obsoleta y caótica de su edificio. Señala que los pagos de mantenimiento son tediosos porque exigen depósitos en cuentas específicas y la entrega de comprobantes físicos, sin aceptar billeteras digitales como Yape. Además, menciona problemas recurrentes como la falta de transparencia en los gastos anuales, la mala gestión en la reserva de áreas comunes que genera conflictos por cruces de horarios, y la lentitud de la administración para responder correos formales. También critica el uso de correos masivos que terminan llenándose de quejas irrelevantes de los vecinos y el engorroso proceso manual que se requiere para autorizar el ingreso de muebles grandes o mudanzas. Como solución ideal, sugiere la implementación de una aplicación o portal vecinal 100% automatizado que permita realizar pagos, reservas y reportes de fallas de manera digital las 24 horas del día, eliminando así el uso de papel|
 
 ### 2.2.3. Análisis de entrevistas
 
 ## **Segmento objetivo de administradores de edificios y condominios**
 
+Las entrevistas realizadas a César, administrador de GWM EIRL, y a Alejandro Galindo evidencian que ambos gestionan sus edificios principalmente mediante Excel, WhatsApp y procesos manuales, lo que genera dificultades en el control de pagos, la comunicación con los propietarios y la administración de reservas. César, quien administra 15 edificios, identifica como principal problema la emisión física de recibos y busca una digitalización completa de sus procesos, mientras que Alejandro, encargado de 4 edificios, destaca la falta de seguimiento eficiente de pagos y la incertidumbre sobre la recepción de comunicados. Ambos consideran que una plataforma digital podría mejorar significativamente la gestión siempre que centralice funciones clave como pagos, comunicaciones y reservas, sea fácil de usar, mantenga la información actualizada y tenga un costo accesible acorde a los precios habituales del mercado.
+
 
 ## **Segmento objetivo de propietarios e inquilinos**
+
+Las entrevistas realizadas a Melina López, Jarol Panduro y Marcelo muestran una insatisfacción común con los procesos tradicionales de administración de edificios. Los principales problemas identificados son la falta de un historial digital de pagos, la necesidad de enviar comprobantes manualmente, la escasa transparencia en los gastos administrativos, la desorganización en la reserva de áreas comunes y la saturación de información en canales de comunicación como WhatsApp y correos masivos. Además, destacan procesos poco eficientes para la gestión de visitas, mudanzas y solicitudes a la administración, así como la lentitud en la atención de consultas. Los tres entrevistados coinciden en que una plataforma digital centralizada mejoraría significativamente la experiencia de los propietarios al permitir gestionar pagos, reservas, comunicaciones y consultas de manera rápida, organizada, transparente y accesible desde cualquier momento, reduciendo la dependencia de procesos manuales y documentos físicos.
 
 
 ## 2.3. Needfinding
@@ -933,6 +961,15 @@ Para el diseño de las entrevistas se utilizó el método de entrevistas semiest
 
 ### 2.3.3. User Journey Mapping
 
+Primer Segmento:
+
+<img src="assets/img/j1.png" alt="logo" /> 
+
+Segundo Segmento:
+
+
+<img src="assets/img/j2.png" alt="logo" /> 
+
 ### 2.3.4. Empathy Mapping
 
 ### Administrador de Condominio – Ricardo Mendoza
@@ -950,7 +987,144 @@ Para el diseño de las entrevistas se utilizó el método de entrevistas semiest
 
 ## 2.4. Big Picture EventStorming
 
-## 2.5. Ubiquitous Language
+En esta seccción se presenta el trabajo realizado durante la sesion de Big Picture event storming enfocada en comprender el dominio general del negocio. Para ello se utilizaran post-its para mapear los eventos significativos que ocurre en el flujo operativo actual.Esta actividad permite agrupar las interacciones en bloques funcionales lógicos, asegurando que la solución tecnológica satisfaga los requisitos reales del flujo operativo
+
+
+<img src="assets/img/big.jpeg" alt="logo" /> 
+
+## 2.5 Ubiquitous Language
+
+El Ubiquitous Language define un lenguaje común entre los actores del sistema, permitiendo una comunicación clara y consistente durante el desarrollo de la solución. En este proyecto, se integran conceptos relacionados con la administración de edificios inteligentes (Smart Buildings), automatización mediante IoT, monitoreo de recursos y seguridad residencial.
+
+---
+
+## Usuarios y Segmentos
+
+### Administrador de Edificios
+Persona responsable de supervisar la operación de uno o varios edificios o condominios. Gestiona residentes, pagos, incidencias, reservas de áreas comunes y monitorea los dispositivos IoT instalados.
+
+### Propietario e Inquilino
+Residente que utiliza la plataforma para consultar información de su unidad, realizar pagos, reservar áreas comunes, recibir notificaciones y acceder a servicios inteligentes del edificio.
+
+### Personal de Mantenimiento
+Usuario encargado de atender incidencias técnicas relacionadas con infraestructura, dispositivos IoT, sistemas de iluminación, agua y seguridad.
+
+---
+
+## Funcionalidades Core para Administradores
+
+### Edificio
+Conjunto de unidades residenciales administradas dentro de la plataforma.
+
+### Unidad Residencial
+Departamento o espacio asignado a uno o varios residentes dentro de un edificio.
+
+### Residente
+Persona vinculada a una unidad residencial con acceso a funcionalidades específicas del sistema.
+
+### Área Común
+Espacio compartido por los residentes, como salón de eventos, gimnasio, zona de parrillas o áreas recreativas.
+
+### Reserva
+Solicitud realizada por un residente para utilizar un área común en una fecha y horario determinados.
+
+### Incidencia
+Problema o evento reportado relacionado con infraestructura, servicios o dispositivos del edificio.
+
+### Notificación
+Mensaje enviado automáticamente a administradores o residentes para informar eventos importantes.
+
+### Reporte Financiero
+Documento generado por el sistema que resume ingresos, pagos pendientes y movimientos económicos del edificio.
+
+---
+
+## Funcionalidades IoT (NÚCLEO DEL PROYECTO)
+
+### Sensor IoT
+Dispositivo conectado capaz de recopilar datos del entorno y transmitirlos al sistema en tiempo real.
+
+### Iluminación Inteligente
+Sistema que controla automáticamente las luces de áreas comunes mediante sensores de movimiento o reglas configuradas.
+
+### Control de Acceso Inteligente
+Mecanismo que permite autorizar o restringir el ingreso a determinadas áreas mediante credenciales digitales.
+
+### Sensor de Movimiento
+Dispositivo encargado de detectar presencia de personas en áreas comunes para activar automatizaciones.
+
+### Monitoreo de Tanque de Agua
+Proceso que supervisa continuamente el nivel de agua almacenada para prevenir desabastecimientos.
+
+### Detección de Fugas
+Funcionalidad que identifica posibles pérdidas de agua y genera alertas automáticas.
+
+### Riego Automático
+Sistema que activa el riego de áreas verdes según horarios programados o condiciones ambientales detectadas.
+
+### Calidad del Aire
+Indicador obtenido mediante sensores que monitorean variables como CO₂, temperatura, humedad y ventilación.
+
+### Alerta Inteligente
+Notificación generada automáticamente cuando se detecta una condición fuera de los parámetros establecidos.
+
+### Consumo de Recursos
+Registro y monitoreo del uso de agua y energía dentro del edificio.
+
+### Dashboard IoT
+Panel centralizado que permite visualizar en tiempo real el estado de los sensores, dispositivos y recursos monitoreados.
+
+---
+
+## Funcionalidades Core para Residentes
+
+### Estado de Cuenta
+Resumen de pagos realizados, deudas pendientes y movimientos asociados a una unidad residencial.
+
+### Pago de Mantenimiento
+Proceso mediante el cual el residente realiza el abono de las cuotas correspondientes al edificio.
+
+### Historial de Pagos
+Registro histórico de todos los pagos efectuados por el residente.
+
+### Comunicado
+Anuncio emitido por la administración para informar novedades, eventos o disposiciones importantes.
+
+### Encuesta
+Mecanismo que permite recopilar opiniones y votaciones de los residentes sobre decisiones comunitarias.
+
+### Votación
+Proceso mediante el cual los residentes participan en decisiones relacionadas con la gestión del edificio.
+
+### Seguimiento de Incidencias
+Funcionalidad que permite conocer el estado actual de un problema reportado.
+
+---
+
+## Gestión de Dispositivos IoT
+
+### Dispositivo IoT
+Equipo físico conectado al sistema capaz de recopilar información o ejecutar acciones automáticas.
+
+### Estado del Dispositivo
+Condición actual del dispositivo (activo, inactivo, desconectado o en mantenimiento).
+
+### Regla de Automatización
+Condición configurada para ejecutar acciones automáticas basadas en eventos detectados por sensores.
+
+### Evento IoT
+Acción o situación detectada por un dispositivo, como movimiento, fuga de agua o variación en la calidad del aire.
+
+### Historial de Eventos
+Registro cronológico de todas las actividades generadas por sensores y dispositivos IoT.
+
+### Monitoreo en Tiempo Real
+Visualización instantánea de datos generados por sensores y dispositivos conectados.
+
+---
+
+
+
 
 # Capítulo III: Requirements Specification
 
@@ -2418,8 +2592,36 @@ Para el diseño de las entrevistas se utilizó el método de entrevistas semiest
 
 ## Justificación y Trazabilidad de las Historias de Usuario
 
-| Historias de Usuario | User Persona | Necesidad / Pain Identificado | Justificación |
-|---------------------|--------------|-------------------------------|---------------|
+| **Historias de Usuario**                                   | **User Persona**          | **Necesidad / Pain Identificado**                                            | **Justificación**                                                                                                                                                                                                           |
+| ---------------------------------------------------------- | ------------------------- | ---------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **US04 – Verificar información de usuarios**               | Administrador             | Información de residentes gestionada mediante procesos manuales.             | Se justifica por la necesidad del administrador de mantener información organizada y actualizada en un sistema centralizado, reduciendo la dependencia de registros manuales.                                               |
+| **US05 – Actualizar información de usuarios**              | Administrador             | Dificultad para mantener actualizados los datos de residentes.               | Los administradores actualmente utilizan Excel y registros manuales, por lo que disponer de información actualizable desde la plataforma permite mantener los datos centralizados.                                          |
+| **US07 – Registrar edificio y unidades**                   | Administrador             | Gestión de múltiples edificios y unidades mediante herramientas separadas.   | César administra 15 edificios y actualmente utiliza Excel como herramienta principal, evidenciando la necesidad de centralizar la información de los edificios y sus unidades.                                              |
+| **US13 – Publicar comunicados oficiales**                  | Administrador             | Información dispersa entre WhatsApp, correos y otros medios.                 | Los administradores identificaron dificultades para comunicar información de manera organizada. Una plataforma permitiría centralizar los comunicados oficiales y reducir la dependencia de canales dispersos.              |
+| **US15 – Seguimiento de visualización**                    | Administrador             | Falta de confirmación sobre si los comunicados fueron recibidos.             | Alejandro señaló específicamente la falta de confirmación sobre la recepción de comunicados, por lo que conocer quién los visualizó responde directamente a esta necesidad.                                                 |
+| **US18 – Aprobar o rechazar reservas**                     | Administrador             | Desorganización en la gestión de reservas de áreas comunes.                  | Las entrevistas evidencian que las reservas se realizan mediante procesos manuales y pueden generar conflictos. Contar con aprobación administrativa permite controlar las solicitudes.                                     |
+| **US19 – Evitar reservas duplicadas**                      | Administrador             | Cruces de horarios y conflictos al reservar áreas comunes.                   | Marcelo menciona problemas recurrentes por cruces de horarios en las reservas, por lo que evitar reservas duplicadas responde directamente a este problema.                                                                 |
+| **US23 – Registrar pagos en el sistema**                   | Administrador             | Seguimiento de pagos mediante comprobantes enviados manualmente.             | Alejandro identifica el seguimiento de pagos como uno de sus principales problemas. Además, los propietarios actualmente envían comprobantes por WhatsApp o correo, justificando la centralización del registro de pagos.   |
+| **US24 – Visualizar residentes morosos**                   | Administrador             | Dificultad para controlar y hacer seguimiento de pagos pendientes.           | La falta de un seguimiento eficiente de pagos identificada por los administradores justifica disponer de una vista que permita identificar los pagos pendientes y a los residentes morosos.                                 |
+| **US25 – Generar reportes financieros**                    | Administrador             | Falta de transparencia y dificultad para revisar los gastos administrativos. | Jarol y Marcelo señalan problemas relacionados con la transparencia de los gastos. Los reportes financieros permitirían organizar esta información y facilitar su revisión.                                                 |
+| **US26 – Exportar reportes financieros**                   | Administrador             | Necesidad de compartir información financiera de manera organizada.          | La preocupación de los residentes por la transparencia de los gastos justifica contar con reportes que puedan ser compartidos con la comunidad.                                                                             |
+| **US31 – Notificación por reserva (Admin)**                | Administrador             | Necesidad de conocer oportunamente las solicitudes de reserva.               | La gestión de reservas constituye uno de los procesos problemáticos identificados en las entrevistas. Las notificaciones permitirían al administrador conocer nuevas solicitudes sin depender de mensajes informales.       |
+| **US32 – Consultar Leyes y Manuales**                      | Administrador / Residente | Información del edificio dispersa y necesidad de acceso organizado.          | Se relaciona con la necesidad general identificada de centralizar la información del condominio en una única plataforma, aunque las entrevistas no mencionan específicamente leyes o manuales.                              |
+| **US33 – Ver disponibilidad global (Admin)**               | Administrador             | Desorganización y cruces de horarios en áreas comunes.                       | La falta de organización en las reservas y los conflictos por horarios justifican disponer de una vista global de disponibilidad.                                                                                           |
+| **US34 – Activar/Desactivar cuentas**                      | Administrador             | Necesidad de gestionar el acceso a la información de la comunidad.           | Se relaciona con la centralización de la gestión de residentes en una plataforma digital, aunque esta necesidad no fue mencionada explícitamente durante las entrevistas.                                                   |
+| **US35 – Cancelar reserva (Admin)**                        | Administrador             | Problemas y conflictos derivados de la gestión manual de reservas.           | La posibilidad de cancelar reservas permite al administrador corregir situaciones derivadas de cambios, conflictos o restricciones en el uso de áreas comunes.                                                              |
+| **US36 – Crear encuestas o votaciones**                    | Administrador             | Necesidad de mejorar la comunicación y participación de los residentes.      | Se relaciona con la centralización de la comunicación comunitaria, aunque las entrevistas no mencionan directamente la necesidad de realizar encuestas o votaciones.                                                        |
+| **US37 – Moderar mensajes del muro comunitario**           | Administrador             | Saturación y desorganización de mensajes en canales como WhatsApp y correos. | Melina señala que la gran cantidad de mensajes en WhatsApp dificulta encontrar información relevante. Un espacio comunitario moderado permitiría organizar mejor la comunicación.                                           |
+| **US38 – Habilitar o deshabilitar área común**             | Administrador             | Necesidad de controlar adecuadamente la disponibilidad de áreas comunes.     | Los problemas identificados en la gestión y reserva de espacios justifican que el administrador pueda actualizar su disponibilidad según las condiciones reales del edificio.                                               |
+| **US39 – Configurar reglas de área común**                 | Administrador             | Procesos poco organizados para reservar y utilizar áreas comunes.            | Las entrevistas muestran problemas de organización en las reservas, por lo que establecer horarios y reglas permite regular el uso de los espacios.                                                                         |
+| **US40 – Ver historial de uso de áreas comunes**           | Administrador             | Falta de control y trazabilidad en las reservas.                             | La gestión manual de reservas dificulta mantener un historial organizado. Esta historia permite centralizar el registro de utilización de los espacios.                                                                     |
+| **US48 – Registrar tarjeta de acceso a áreas comunes**     | Administrador             | Necesidad de gestionar de forma centralizada el acceso a espacios.           | Se relaciona con la gestión de áreas comunes, aunque las entrevistas no identifican explícitamente el uso de tarjetas de acceso.                                                                                            |
+| **US49 – Desactivar acceso a áreas comunes por morosidad** | Administrador / Sistema   | Relación entre pagos pendientes y control de acceso.                         | Puede relacionarse con el problema de seguimiento de morosidad, pero las entrevistas no establecen explícitamente que el acceso deba restringirse por falta de pago.                                                        |
+| **US50 – Configurar horarios de riego automático**         | Administrador             | Optimización del mantenimiento de áreas verdes.                              | **No existe evidencia directa en las entrevistas** que sustente esta necesidad. Corresponde a una funcionalidad propuesta dentro del alcance del sistema.                                                                   |
+| **US51 – Riego automático según humedad del suelo**        | Sistema                   | Automatización del mantenimiento de áreas verdes.                            | **No existe evidencia directa en las entrevistas** que sustente esta necesidad.                                                                                                                                             |
+| **US52 – Detección de fugas en tanque de agua**            | Administrador             | Prevención de pérdidas relacionadas con infraestructura.                     | **No existe evidencia directa en las entrevistas** que sustente esta necesidad.                                                                                                                                             |
+| **US53 – Encendido automático de luces por movimiento**    | Sistema                   | Automatización y control de áreas comunes.                                   | **No existe evidencia directa en las entrevistas** que sustente esta necesidad.                                                                                                                                             |
+
 
 
 ## 3.2. Impact Mapping
