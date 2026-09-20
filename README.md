@@ -793,12 +793,21 @@ Para el diseño de las entrevistas se utilizó el método de entrevistas semiest
 
 | **ENTREVISTA 2** | |
 |---|---|
-| **Nombre entrevistado** | Rodrigo Chavez |
-| **Edad** | 20 |
-| **Departamento** | San Martin de Porres |
-| **Link del video** | [Link del video de la entrevista](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202311704_upc_edu_pe/IQAI31E2KPwVRIDiWA_kvuUbAX7b1n0Xhowp2KzW16Ut_vw?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=M9Fwl0) |
-| **Foto entrevista** | <img src="assets/img/interviews/prop1.png" alt="logo" width="500"/> |
-| **Resumen** | Se entrevistó a Rodrigo Chávez, quien es un inquilino en un condominio en el distrito de San Martin de Porres. Rodrigo comenta que, la principal comunicación con vecinos y propietarios es a través de WhatsApp, lo cual le parece dificultoso y molesto. Nos indica que el acceso a sus comprobantes de pago es únicamente mediante las conversaciones con el propietario o buscando en su aplicación del banco. Le encantaría tener una aplicación que englobe todos estos problemas. |
+| **Nombre entrevistado** | Jarol Panduro |
+| **Edad** | 30 |
+| **Departamento** | San Miguel |
+| **Link del video** | [Link del video de la entrevista](https://youtu.be/NHYPQzPL36M) |
+| **Foto entrevista** | <img src="assets/img/ser1.jpeg" alt="logo" /> |
+| **Resumen** | En este video, Jarol Panduro, un abogado de 30 años, detalla las principales deficiencias en la administración de su edificio. Explica que el proceso de pago del mantenimiento es tedioso porque requiere enviar capturas de pantalla por WhatsApp, y señala que no existe un sistema oficial para consultar su historial de pagos. Además, menciona problemas como la desorganización al reservar áreas comunes mediante cuadernos físicos, la falta de transparencia en los gastos administrativos, la lentitud en la comunicación oficial y lo anticuado que resulta el registro manual de visitas en la portería. Como solución, propone la implementación de una plataforma digital centralizada que permita registrar pagos automáticamente, reservar espacios y auditar los gastos de forma rápida y transparente.|
+
+| **ENTREVISTA 3** | |
+|---|---|
+| **Nombre entrevistado** | Marcelo Candia |
+| **Edad** | 25 |
+| **Departamento** | San Miguel |
+| **Link del video** | [Link del video de la entrevista](https://youtu.be/E5k60PHyvYI) |
+| **Foto entrevista** | <img src="assets/img/ser2.jpeg" alt="logo" /> |
+| **Resumen** | En la entrevista, Marcelo expone su frustración con la administración obsoleta y caótica de su edificio. Señala que los pagos de mantenimiento son tediosos porque exigen depósitos en cuentas específicas y la entrega de comprobantes físicos, sin aceptar billeteras digitales como Yape. Además, menciona problemas recurrentes como la falta de transparencia en los gastos anuales, la mala gestión en la reserva de áreas comunes que genera conflictos por cruces de horarios, y la lentitud de la administración para responder correos formales. También critica el uso de correos masivos que terminan llenándose de quejas irrelevantes de los vecinos y el engorroso proceso manual que se requiere para autorizar el ingreso de muebles grandes o mudanzas. Como solución ideal, sugiere la implementación de una aplicación o portal vecinal 100% automatizado que permita realizar pagos, reservas y reportes de fallas de manera digital las 24 horas del día, eliminando así el uso de papel|
 
 ### 2.2.3. Análisis de entrevistas
 
