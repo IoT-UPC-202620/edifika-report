@@ -121,23 +121,10 @@
       <td>Modelado táctico DDD (diagramas de clases para servicios IoT), diseño de persistencia híbrida (PostgreSQL y TimescaleDB) y consolidación integral del Capítulo IV.</td>
     </tr>
     <tr>
-      <td>AV1</td>
+      <td>1.10.0</td>
       <td>18/09/2026</td>
-      <td>
-        - Acuña Corahua, Jonatan Ariel <br>
-        - Collantes Carrillo, Diego Mateo <br>
-        - Landa Ortiz, Sergio Javier <br>
-        - Ortiz Cardenas, Johanna Antuanete <br>
-        - Perez Tuesta, Gabriel <br>
-        - Lizarbe Alvarez, Ariana Nickole <br>
-        - Sarmiento Medina, Loreley
-      </td>
-      <td>
-        - Capítulo I: Introducción <br>
-        - Capítulo II: Requirements Elicitation & Analysis <br>
-        - Capítulo III: Requirements Specification <br>
-        - Capítulo IV: Solution Software Design
-      </td>
+      <td>Ortiz Cardenas, Johanna Antuanete</td>
+      <td>Redacción y documentación de todos los Bounded Contexts del Capítulo IV (Domain Layer, Interface Layer, Application Layer e Infrastructure Layer). También colaboré en el diseño del Event Storming aidentificando comandos, eventos de dominio y políticas entre todos los bounded context de edifika.</td>
     </tr>
   </tbody>
 </table>
@@ -265,7 +252,7 @@ AV1 (20/09/2026):
       - [4.2.8.6. Bounded Context Software Architecture Code Level Diagrams](#4286-bounded-context-software-architecture-code-level-diagrams)
         - [4.2.8.6.1. Bounded Context Domain Layer Class Diagrams](#42861-bounded-context-domain-layer-class-diagrams)
         - [4.2.8.6.2. Bounded Context Database Design Diagram](#42862-bounded-context-database-design-diagram)
-    - [4.2.9. Bounded Context: Incident Management](#429-bounded-context-incident-management)
+      - [4.2.9. Bounded Context: IoT Access Management](#429-bounded-context-iot-access-management)
       - [4.2.9.1. Domain Layer](#4291-domain-layer)
       - [4.2.9.2. Interface Layer](#4292-interface-layer)
       - [4.2.9.3. Application Layer](#4293-application-layer)
@@ -274,7 +261,7 @@ AV1 (20/09/2026):
       - [4.2.9.6. Bounded Context Software Architecture Code Level Diagrams](#4296-bounded-context-software-architecture-code-level-diagrams)
         - [4.2.9.6.1. Bounded Context Domain Layer Class Diagrams](#42961-bounded-context-domain-layer-class-diagrams)
         - [4.2.9.6.2. Bounded Context Database Design Diagram](#42962-bounded-context-database-design-diagram)
-    - [4.2.10. Bounded Context: IoT Access Management](#4210-bounded-context-iot-access-management)
+    - [4.2.10. Bounded Context: Smart Lighting & Automation](#4210-bounded-context-smart-lighting--automation)
       - [4.2.10.1. Domain Layer](#42101-domain-layer)
       - [4.2.10.2. Interface Layer](#42102-interface-layer)
       - [4.2.10.3. Application Layer](#42103-application-layer)
@@ -283,7 +270,7 @@ AV1 (20/09/2026):
       - [4.2.10.6. Bounded Context Software Architecture Code Level Diagrams](#42106-bounded-context-software-architecture-code-level-diagrams)
         - [4.2.10.6.1. Bounded Context Domain Layer Class Diagrams](#421061-bounded-context-domain-layer-class-diagrams)
         - [4.2.10.6.2. Bounded Context Database Design Diagram](#421062-bounded-context-database-design-diagram)
-    - [4.2.11. Bounded Context: Smart Lighting & Automation](#4211-bounded-context-smart-lighting--automation)
+    - [4.2.11. Bounded Context: IoT Telemetry & Analytics](#4211-bounded-context-iot-telemetry--analytics)
       - [4.2.11.1. Domain Layer](#42111-domain-layer)
       - [4.2.11.2. Interface Layer](#42112-interface-layer)
       - [4.2.11.3. Application Layer](#42113-application-layer)
@@ -292,7 +279,7 @@ AV1 (20/09/2026):
       - [4.2.11.6. Bounded Context Software Architecture Code Level Diagrams](#42116-bounded-context-software-architecture-code-level-diagrams)
         - [4.2.11.6.1. Bounded Context Domain Layer Class Diagrams](#421161-bounded-context-domain-layer-class-diagrams)
         - [4.2.11.6.2. Bounded Context Database Design Diagram](#421162-bounded-context-database-design-diagram)
-    - [4.2.12. Bounded Context: IoT Telemetry & Analytics](#4212-bounded-context-iot-telemetry--analytics)
+    - [4.2.12. Bounded Context: Water Pump Leak Detection](#4212-bounded-context-water-pump-leak-detection)
       - [4.2.12.1. Domain Layer](#42121-domain-layer)
       - [4.2.12.2. Interface Layer](#42122-interface-layer)
       - [4.2.12.3. Application Layer](#42123-application-layer)
@@ -335,7 +322,7 @@ Lizarbe Alvarez, Ariana Nickole<br><br>
 AV1: Participé activamente en las entrevistas realizadas a los usuarios para recopilar información sobre sus necesidades, comportamientos y problemas. Además, elaboré los User Stories, el Product Backlog y el Impact Mapping, contribuyendo a organizar los requerimientos, priorizar funcionalidades y relacionar las necesidades identificadas con los objetivos del producto. Estas actividades permitieron aportar al trabajo colaborativo y facilitar la toma de decisiones del equipo durante la definición de la solución. <br><br>
 
 Ortiz Cardenas, Johanna Antuanete<br><br>
-AV1: <br><br>
+AV1: Participé en el Design-Level EventStorming de la extensión IoT, identificando los comandos, eventos de dominio y políticas que conectan los Bounded Contexts Reservation, Smart Lighting & Automation e IoT Access Management. A partir de ese modelo, redacté y documenté el Domain Layer, Interface Layer, Application Layer e Infrastructure Layer de todos los Bounded Contexts del Capítulo IV, incluyendo el nuevo contexto de Water Pump Leak Detection, junto con sus diagramas de clases y de entidad-relación en PlantUML. <br><br>
 
 Perez Tuesta, Gabriel<br><br>
 AV1: Asumí el desarrollo de los principales artefactos de investigación y análisis centrados en el usuario. Diseñé las entrevistas para la validación del segmento objetivo, elaboré el User Persona, el Customer Journey Map, el Análisis Competitivo y la User Task Matrix, contribuyendo a comprender las necesidades de los usuarios, identificar oportunidades de mejora y establecer una base sólida para la definición de requerimientos y funcionalidades del producto.<br><br>
@@ -363,7 +350,7 @@ Lizarbe Alvarez, Ariana Nickole<br><br>
 AV1: Participé en la planificación y desarrollo de las actividades de investigación y definición del producto. Colaboré en las entrevistas con usuarios y elaboré los User Stories, Product Backlog e Impact Mapping, organizando los requerimientos y funcionalidades de acuerdo con los objetivos identificados. Con estas actividades contribuí al cumplimiento de los objetivos de la etapa y a mantener una organización clara del trabajo del equipo. <br><br>
 
 Ortiz Cardenas, Johanna Antuanete<br><br>
-AV1: <br><br>
+AV1: Planifiqué las sesiones de Design-Level EventStorming para la extensión IoT, definiendo el alcance de eventos a modelar por cada Bounded Context. Cumplí con la meta de dejar documentado y homogéneo todo el Capítulo IV, redactando cada Bounded Context bajo el mismo formato y corrigiendo la numeración de secciones para mantener la trazabilidad del informe.<br><br>
 
 Perez Tuesta, Gabriel<br><br>
 AV1: Planifiqué y desarrollé las actividades relacionadas con la investigación de usuarios y el análisis del contexto del producto. Diseñé las entrevistas, elaboré el User Persona, el Journey Map, el Análisis Competitivo y la User Task Matrix, cumpliendo con los objetivos establecidos para la fase de descubrimiento y validación inicial del proyecto.<br><br>
@@ -1138,7 +1125,7 @@ Visualización instantánea de datos generados por sensores y dispositivos conec
 | EP04 | Gestión financiera y reportes | Esta épica se enfoca en la administración económica del edificio, permitiendo a los residentes consultar su deuda, registrar pagos y revisar su historial financiero. Los administradores pueden identificar morosos, generar y exportar reportes financieros. | US09, US21, US22, US23, US24, US25, US26, US27, US28, US30 |
 | EP05 | Infraestructura, seguridad y arquitectura técnica | Esta épica abarca todos los aspectos técnicos necesarios para el correcto funcionamiento del sistema Edifika, incluyendo la configuración de microservicios, autenticación JWT, API Gateway, bases de datos independientes, documentación de APIs, comunicación entre servicios y despliegue en la nube. Su objetivo es garantizar que la plataforma sea segura, escalable y mantenible. | TS01, TS02, TS03, TS04, TS05, TS06, TS07, TS08, TS09, TS10, TS11, TS12, TS13, TS14, TS15 |
 | EP06 | Landing Page e Interfaz Web | Esta épica cubre todas las funcionalidades visibles en la landing page pública de Edifika y la interfaz web de la aplicación. Incluye navegación, presentación de contenido y acceso a la plataforma, con el objetivo de atraer y convertir nuevos usuarios. | US41, US42, US43, US44, US45, US46, US47 |
-| EP07 | Smart Building e Internet de las Cosas (IoT) | Esta épica abarca la integración de dispositivos IoT dentro del edificio para automatizar y controlar el acceso a áreas comunes y unidades mediante sensores, cerraduras inteligentes y códigos QR. Permite a los residentes gestionar el acceso a sus reservas de forma remota, mientras que los administradores pueden monitorear en tiempo real el estado de los dispositivos, registrar eventos de apertura/cierre y detectar accesos no autorizados, fortaleciendo la seguridad y la eficiencia operativa del edificio. | US48, US49, US50, US51, US52, US53 |
+| EP07 | Smart Building e Internet de las Cosas (IoT) | Esta épica abarca la integración de dispositivos IoT dentro del edificio para automatizar y controlar el acceso a áreas comunes y unidades mediante sensores, cerraduras inteligentes. Permite a los residentes gestionar el acceso a sus reservas de forma remota, mientras que los administradores pueden monitorear en tiempo real el estado de los dispositivos, registrar eventos de apertura/cierre y detectar accesos no autorizados, fortaleciendo la seguridad y la eficiencia operativa del edificio. | US48, US49, US50, US51, US52, US53 |
 
 **User Stories:**
 
@@ -1482,7 +1469,7 @@ Visualización instantánea de datos generados por sensores y dispositivos conec
         <strong>Escenario 1: Reserva exitosa.</strong><br>
         Dado que el residente selecciona un horario disponible,<br>
         cuando confirma la reserva,<br>
-        entonces el sistema genera un código QR de acceso para ese turno.<br><br>
+        entonces el sistema da acceso para ese turno.<br><br>
         <strong>Escenario 2: Cruce de horarios.</strong><br>
         Dado que el residente intenta reservar un área común,<br>
         cuando el horario seleccionado ya está tomado,<br>
@@ -1502,7 +1489,7 @@ Visualización instantánea de datos generados por sensores y dispositivos conec
     <strong>Escenario 1: Aprobación exitosa.</strong><br>
     Dado que el admin recibe una solicitud de reserva pendiente,<br>
     cuando la aprueba desde el panel de administración,<br>
-    entonces el sistema confirma la reserva y notifica al residente con el código QR de acceso.<br><br>
+    entonces el sistema confirma la reserva y notifica al residente que tiene acceso.<br><br>
     <strong>Escenario 2: Rechazo con motivo.</strong><br>
     Dado que el admin decide rechazar una solicitud de reserva,<br>
     cuando ingresa el motivo y confirma el rechazo,<br>
@@ -2735,7 +2722,7 @@ A partir de este corte por proceso de negocio, y de la incorporación del nivel 
 | 4.2.7 | Forum | Muro comunitario de mensajes entre residentes. |
 | 4.2.8 | Report | Generación y exportación de reportes financieros y de morosidad. |
 | 4.2.9 | Incident Management | Reporte, seguimiento y escalacion de incidencias del edificio, y difusion de alertas de emergencia a la comunidad. |
-| 4.2.10 | IoT Access Management | Permisos de acceso a áreas comunes, credenciales RFID y QR dinámico, y control de cerraduras según reservas activas. |
+| 4.2.10 | IoT Access Management | Permisos de acceso a áreas comunes, credenciales RFID, y control de cerraduras según reservas activas. |
 | 4.2.11 | Smart Lighting & Automation | Reglas de automatización y control de luminarias de áreas comunes según presencia, lux ambiental, horarios de reserva y override manual. |
 | 4.2.12 | IoT Telemetry & Analytics | Ingesta de telemetría de sensores, cálculo cuantitativo de consumo energético (kWh), estadísticas y detección de anomalías de hardware. |
 
@@ -2871,7 +2858,7 @@ El orden de elaboración siguió el criterio de importancia pedido por el enunci
 | Campo | Detalle |
 |---|---|
 | Purpose | Decidir y auditar quién puede abrir físicamente un área común, combinando credenciales, reservas vigentes y estado de morosidad. |
-| Strategic Classification | Domain Role: **Core** (pilar de la propuesta de diferenciación IoT del Capítulo II) · Business Model: Revenue Protector / Compliance Enforcer · Evolution: **Custom Built** (la combinación RFID + QR dinámico + reservas + morosidad no es un producto de catálogo). |
+| Strategic Classification | Domain Role: **Core** (pilar de la propuesta de diferenciación IoT del Capítulo II) · Business Model: Revenue Protector / Compliance Enforcer · Evolution: **Custom Built** (la combinación RFID + reservas + morosidad no es un producto de catálogo). |
 | Ubiquitous Language | Access Credential (Credencial de Acceso), Access Permission (Permiso de Acceso), Access Attempt (Intento de Acceso), Delinquent Resident. |
 | Business Decisions | Una credencial concede acceso solo si está activa, el residente no está moroso y existe un permiso vigente para esa área en ese instante (`AccessDecisionService`, ver 4.2.10.1) · un residente moroso se suspende automáticamente. |
 | Inbound Communication | **Reservation** (Customer/Supplier, evento `ReservationApproved`) · **Payment** (Customer/Supplier, evento `ResidentMarkedDelinquent`). |
@@ -3007,7 +2994,7 @@ Sobre el mapa anterior, el equipo evaluó explícitamente las preguntas de dise�
 | Pregunta de diseño | Alternativa evaluada | Decisión final y razón |
 |---|---|---|
 | ¿Qué pasaría si **movemos** este capability a otro contexto? | Mover la decisión de acceso (`AccessDecisionService`) del cloud (IoT Access Management) al Edge API, para que abra la puerta sin ida y vuelta al cloud. | **Se descarta mover el contexto completo**, pero sí se replica su *resultado* (credenciales/permisos ya resueltos) en el Edge vía sincronización — el Edge cachea la decisión, no la recalcula. Mantiene a IoT Access Management como única fuente de verdad y evita que la regla de negocio (moroso → sin acceso) viva en dos lugares. |
-| ¿Qué pasaría si **descomponemos** el capability y movemos un sub-capability a otro contexto? | Separar la emisión/gestión de credenciales RFID/QR de la decisión de acceso en tiempo real, creando un contexto "Credential Management" aparte de "Access Decision". | **Se descarta**: ambos sub-capabilities comparten el mismo Aggregate (`AccessCredential`) y el mismo invariante (una credencial suspendida no debe poder decidir un acceso), partirlos forzaría una transacción distribuida para algo que hoy es una operación local. |
+| ¿Qué pasaría si **descomponemos** el capability y movemos un sub-capability a otro contexto? | Separar la emisión/gestión de credenciales RFID de la decisión de acceso en tiempo real, creando un contexto "Credential Management" aparte de "Access Decision". | **Se descarta**: ambos sub-capabilities comparten el mismo Aggregate (`AccessCredential`) y el mismo invariante (una credencial suspendida no debe poder decidir un acceso), partirlos forzaría una transacción distribuida para algo que hoy es una operación local. |
 | ¿Qué pasaría si **partimos** el bounded context en varios? | Partir Payment en "Billing" (deudas/cuotas) y "Payment Processing" (cobro/Culqi) como dos contextos independientes. | **Se descarta para el alcance actual**: el volumen de reglas de negocio no justifica el costo de coordinación entre dos contextos: la Saga de aprobación (4.1.1.2) necesita ambas responsabilidades en la misma transacción local. Queda anotado como refactor natural si el dominio de facturación creciera (ej. múltiples pasarelas de pago). |
 | ¿Qué pasaría si **tomamos capabilities de 3 contexts** para formar uno nuevo? | Extraer la lógica de "generar alerta" que hoy vive de forma repetida en IoT Access Management, Smart Lighting y IoT Telemetry, y consolidarla en un contexto nuevo. | **Ya resuelto por diseño**: ese contexto nuevo es exactamente **Notification** — los tres contextos IoT solo publican el evento de dominio (`PhysicalAccessDenied`, `AbnormalConsumptionDetected`, etc.) y es Notification quien concentra el *Factory Pattern* de creación de la alerta (push/email/SMS), evitando triplicar esa lógica. |
 | ¿Qué pasaría si **duplicamos** una funcionalidad para romper una dependencia? | Que Report mantenga su propia copia denormalizada de pagos/deudas (vía eventos) en lugar de consultar a Payment por REST síncrono. | **Se descarta por ahora** (queda como Design Critique de Report en 4.1.1.3): el volumen de datos y el timebox del proyecto no justifican construir un pipeline de proyecciones; se acepta el acoplamiento síncrono Report → Payment sabiendo que es la única lectura cross-context sin desacoplar del informe. |
@@ -3073,7 +3060,7 @@ El paisaje está compuesto por tres segmentos de personas y cuatro sistemas exte
 |---|---|---|
 | Visitor | Person | Prospecto anónimo que consulta el Landing Page estático para conocer el modelo de negocio, los segmentos objetivo y los precios antes de registrarse. |
 | Administrator | Person | Administra residentes, pagos, unidades, reservas, comunicados oficiales, foro, reportes y **reglas de automatización IoT**. |
-| Owner or Tenant | Person | Consulta deudas, paga, reserva áreas comunes, **accede a los espacios vía RFID/QR**, **interactúa con la iluminación** y participa del foro del edificio. |
+| Owner or Tenant | Person | Consulta deudas, paga, reserva áreas comunes, accede a los espacios vía RFID, interactúa con la iluminación y participa del foro del edificio. |
 | Culqi | Software System | Pasarela de pagos externa para cuotas de mantenimiento, deudas y servicios. Es la que habilita los medios de pago locales **Yape y Plin** además de tarjeta de crédito y débito, cumpliendo la táctica de adaptación al contexto local de 2.1.2 (HTTPS/REST). |
 | Cloudinary | Software System | Servicio cloud externo de almacenamiento, optimización y entrega de imágenes: publicaciones del foro, comunicados oficiales, **comprobantes de pago** (US22) y fotografías de incidencias (US08) (HTTPS/REST). |
 | Firebase Cloud Messaging | Software System | Servicio externo de notificaciones push en tiempo real hacia las aplicaciones móviles (HTTPS/REST). |
@@ -3093,7 +3080,7 @@ Las interacciones representadas son:
 
 - **Visitor → Edifika:** consulta información del modelo de negocio, contenido por segmento objetivo y precios a través del Landing Page.
 - **Administrator → Edifika:** gestiona la operación del condominio, aprueba reservas y monitorea alertas (incluidas las alertas de consumo anómalo y de falla de luminarias que produce el nivel IoT).
-- **Owner or Tenant → Edifika:** consulta deudas, paga, reserva áreas comunes, **genera tokens QR de acceso** y **activa la iluminación** de áreas comunes.
+- **Owner or Tenant → Edifika:** consulta deudas, paga, reserva áreas comunes, activa la iluminación de áreas comunes.
 - **Edifika → Culqi:** procesa los pagos en línea (HTTPS/REST).
 - **Edifika → Cloudinary:** sube y recupera las imágenes asociadas a comunicados oficiales y publicaciones del foro (HTTPS/REST).
 - **Edifika → Firebase Cloud Messaging:** envía las notificaciones push de los eventos del sistema a los usuarios móviles (HTTPS/REST).
@@ -3115,7 +3102,7 @@ El Container Diagram abre la caja de Edifika y muestra los **22 containers** que
 |---|---|---|---|
 | Presentación | Landing Page | HTML5 / CSS3 / JavaScript | Sitio estático que presenta el modelo de negocio, los segmentos objetivo y los precios, con call-to-action por segmento. |
 | Presentación | Web Application | Angular / TypeScript (SPA) | Pagos, reservas, comunicados, **dashboards de telemetría IoT** y reportes desde el navegador. |
-| Presentación | Mobile Application | Flutter / Dart | Pagos, reservas, comunicados, **generación de QR dinámico de acceso** y foro desde iOS y Android. |
+| Presentación | Mobile Application | Flutter / Dart | Pagos, reservas, comunicados, y foro desde iOS y Android. |
 | Entrada | API Gateway | Spring Cloud Gateway / Java | Punto único de entrada: enrutamiento, validación del token JWT mediante `BearerAuthorizationRequestFilter`, **políticas CORS** (TS15), rate limiting y publicación del canal **SSE** de disponibilidad en tiempo real. |
 | Cloud — gestión | IAM / Auth Service | Spring Boot / Spring Data JPA / Java | Autenticación, autorización, roles y emisión/validación de JWT. |
 | Cloud — gestión | Residential Management Service | Spring Boot / Spring Data JPA / Java | Edificios, unidades, residentes y su vínculo con las unidades. |
@@ -3126,14 +3113,14 @@ El Container Diagram abre la caja de Edifika y muestra los **22 containers** que
 | Cloud — gestión | Notification Service | Spring Boot / Spring Data JPA / Java | Consume eventos del sistema y envía las notificaciones push (incluidas las alertas IoT). |
 | Cloud — gestión | Report Service | Spring Boot / Spring Data JPA / Java | Reportes de pagos, morosidad, reservas y analítica de la comunidad. |
 | Cloud — gestión | Incident Management Service | Spring Boot / Spring Data JPA / Java | Reporte y seguimiento de incidencias del edificio y difusión de alertas de emergencia. |
-| Cloud — IoT | IoT Access Management Service | Spring Boot / Spring Data JPA / Java | Permisos de acceso a áreas comunes, credenciales RFID y QR dinámico, y control de cerraduras según reservas activas. |
+| Cloud — IoT | IoT Access Management Service | Spring Boot / Spring Data JPA / Java | Permisos de acceso a áreas comunes, credenciales RFID , y control de cerraduras según reservas activas. |
 | Cloud — IoT | Smart Lighting & Automation Service | Spring Boot / Spring Data JPA / Java | Control de luminarias según presencia, nivel de lux ambiental, horarios de reserva y override manual. |
 | Cloud — IoT | IoT Telemetry & Analytics Service | Spring Boot / Spring Data JPA / Java | Ingesta de telemetría, **cálculo cuantitativo de energía (kWh)**, estadísticas y detección de anomalías de hardware. |
 | Asincronía | Message & Event Broker | EMQX / RabbitMQ | Recibe y distribuye los eventos de dominio asíncronos (AMQP/MQTT): pagos, reservas, telemetría y comandos de actuadores. |
 | Datos | PostgreSQL Database | PostgreSQL | Usuarios, edificios, unidades, deudas, pagos, reservas, comunicados, foro, notificaciones y credenciales de acceso. |
 | Datos | Telemetry Database | TimescaleDB / PostgreSQL | Lecturas de sensores de alta frecuencia, registros de presencia, métricas de consumo y series ambientales. |
 | Edge | Edge API & Gateway Controller | Flask / Peewee ORM / SQLite / Python | Gateway on-premise: caché de credenciales offline, coordinación local de dispositivos y operación resiliente ante caídas de internet. |
-| Device | Common Area Access Controller | ESP32 / Embedded C++ | Lector RFID (RC522), escáner QR, sensor magnético de puerta, buzzer y relé de cerradura eléctrica. |
+| Device | Common Area Access Controller | ESP32 / Embedded C++ | Lector RFID (RC522), sensor magnético de puerta, buzzer y relé de cerradura eléctrica. |
 | Device | Smart Lighting & Sensing Node | ESP32 / Embedded C++ | Sensor de presencia PIR, sensor de lux LDR, sensor de corriente ACS712 y relé de luminaria. |
 
 **Documentación y contrato de las APIs**
@@ -3149,7 +3136,7 @@ Cada uno de los 12 microservicios expone su propia interfaz **Swagger / OpenAPI 
 5. **Sincronización REST (Cloud → Edge):** IoT Access Management sincroniza credenciales activas, reservas vigentes y blacklist; Smart Lighting envía reglas de programación y overrides manuales.
 6. **JDBC/SQL:** los microservicios de gestión e IoT persisten en PostgreSQL; Telemetry escribe y consulta agregaciones en TimescaleDB.
 7. **SSE (servidor → cliente):** Reservation publica a través del API Gateway un flujo Server-Sent Events con los cambios de disponibilidad de áreas comunes, de modo que un residente que está consultando un horario vea liberarse u ocuparse ese espacio sin recargar (US19 esc. 3 y Estrategia 6 de 2.1.2). Es el único canal de servidor a cliente que no pasa por notificación push.
-8. **Interacción física:** el residente presenta su tarjeta RFID o escanea el QR dinámico en la puerta, y su movimiento es detectado por el sensor PIR. Es el único canal del diagrama que no es de software.
+8. **Interacción física:** el residente presenta su tarjeta RFID, y su movimiento es detectado por el sensor PIR. Es el único canal del diagrama que no es de software.
 
 La distribución de responsabilidades sigue el mismo criterio en los tres niveles: el cloud concentra las reglas de negocio y la persistencia de largo plazo, el edge concentra la autonomía operativa de cada condominio, y los dispositivos se limitan a sensar y actuar. Esa separación es la que permite que un corte de internet degrade la solución en lugar de detenerla: los dispositivos siguen respondiendo al Edge API y este sigue decidiendo con su caché local.
 
@@ -3444,21 +3431,125 @@ El resto de tablas del modelo de Edifika (Payments, Reservations, Forum, Notific
 
 #### 4.2.2.1. Domain Layer
 
-`PropertyManager` (Aggregate Root: la administradora o junta que opera uno o varios edificios — es la raíz de tenencia del sistema y responde al caso real recogido en la entrevista de 2.2.2, donde un único administrador gestiona 15 edificios), `Building` (Aggregate Root: edificio administrado, con nombre, dirección, conjunto de torres y la administradora a la que pertenece), `Unit` (Entity: unidad residencial identificada por torre, piso y número, con estado `OCCUPIED`/`VACANT`), `ResidentUnitLink` (Entity: vínculo entre un residente y su unidad, con tipo `OWNER`/`TENANT` y vigencia — es el registro que habilita la creación de la cuenta del residente en IAM, ver 4.1.1.2). Value Objects: `Address`, `TowerId`, `UnitNumber`. Domain Service: `UnitAssignmentService`, que concentra la regla del contexto —un residente solo puede vincularse a una unidad activa y una unidad no admite dos vínculos `OWNER` simultáneos—. Interfaces `PropertyManagerRepository`, `BuildingRepository`, `UnitRepository` y `ResidentUnitLinkRepository`.
+El Domain Layer de Residential Management concentra la lógica de tenencia del sistema: qué administradora opera qué edificio, cómo se estructuran sus unidades y cómo se vincula un residente a la unidad que ocupa.
+
+Los agregados identificados son:
+
+**PropertyManager**: representa a la administradora o junta que opera uno o varios edificios. Es la raíz de tenencia del sistema y responde al caso real recogido en la entrevista, donde un único administrador gestiona 15 edificios.
+
+**Building**: representa el edificio administrado, con su conjunto de torres y unidades.
+
+La regla central del contexto se apoya en el Domain Service **UnitAssignmentService**.
+
+## Aggregate: PropertyManagerAggregate
+Representa a la administradora dada de alta en la plataforma y a los edificios que le pertenecen.
+
+### Entity: PropertyManager
+
+| Atributo | Tipo | Descripción |
+|---|---|---|
+| idPropertyManager | Long | Identificador único de la administradora. |
+| name | String | Nombre de la administradora o junta. |
+
+## Aggregate: BuildingAggregate
+Representa un edificio administrado y su padrón de unidades.
+
+### Entity: Building
+
+| Atributo | Tipo | Descripción |
+|---|---|---|
+| idBuilding | Long | Identificador único del edificio. |
+| idPropertyManager | PropertyManagerId | Referencia a la administradora propietaria. |
+| name | String | Nombre del edificio. |
+| address | Address | Dirección del edificio. |
+
+### Entity: Unit
+
+| Atributo | Tipo | Descripción |
+|---|---|---|
+| idUnit | Long | Identificador único de la unidad. |
+| idBuilding | BuildingId | Referencia al edificio al que pertenece. |
+| tower | TowerId | Torre a la que pertenece la unidad. |
+| number | UnitNumber | Número de la unidad dentro de la torre. |
+| status | UnitStatus | Estado actual de la unidad. |
+
+### Entity: ResidentUnitLink
+
+| Atributo | Tipo | Descripción |
+|---|---|---|
+| idLink | Long | Identificador único del vínculo. |
+| idResident | Long | Referencia al residente vinculado. |
+| idUnit | UnitId | Referencia a la unidad vinculada. |
+| type | LinkType | Tipo de vínculo (`OWNER`/`TENANT`). |
+| validFrom | DateTime | Inicio de vigencia del vínculo. |
+| validUntil | DateTime | Fin de vigencia del vínculo. |
+
+Este vínculo es el registro que habilita la creación de la cuenta del residente en IAM.
+
+## ValueObject: Address
+
+| Atributo | Tipo | Descripción |
+|---|---|---|
+| value | String | Dirección física del edificio. |
+
+## ValueObject: TowerId
+
+| Atributo | Tipo | Descripción |
+|---|---|---|
+| value | String | Identificador de la torre dentro del edificio. |
+
+## ValueObject: UnitNumber
+
+| Atributo | Tipo | Descripción |
+|---|---|---|
+| value | String | Número de la unidad dentro de la torre. |
+
+## Enumeration
+
+| Enumeración | Valores |
+|---|---|
+| UnitStatus | `OCCUPIED`, `VACANT` |
+| LinkType | `OWNER`, `TENANT` |
+
+## Domain Services
+
+| Nombre | Responsabilidad | Reglas aplicadas |
+|---|---|---|
+| UnitAssignmentService | Garantizar la coherencia de la asignación residente–unidad. | - Un residente solo puede vincularse a una unidad activa.<br>- Una unidad no admite dos vínculos `OWNER` simultáneos. |
 
 **Alcance multi-edificio.** Todas las consultas del contexto se resuelven acotadas al `PropertyManager` del administrador autenticado, de modo que un administrador con varios edificios opere sobre todos desde una misma sesión sin que los datos de administradoras distintas se mezclen. El `buildingId` viaja como parte del contexto de la petición hacia los demás microservicios, que lo usan para filtrar sus propios datos.
 
 #### 4.2.2.2. Interface Layer
 
-`BuildingController` (registro y consulta de edificios y sus unidades, US07), `UnitController` (alta, edición y estado de cada unidad), `ResidentUnitController` (vinculación de residentes y verificación de la información por torre y departamento, US04).
+**BuildingController**: registro y consulta de edificios y sus unidades (US07). **UnitController**: alta, edición y estado de cada unidad. **ResidentUnitController**: vinculación de residentes y verificación de la información por torre y departamento (US04).
 
 #### 4.2.2.3. Application Layer
 
-`BuildingCommandService` y `UnitCommandService` (alta y mantenimiento del padrón), `ResidentUnitCommandService` (crea y cierra el vínculo residente–unidad) y `ResidentialQueryService` (directorio de unidades y residentes, el Read Model identificado en 4.1.1.1). Publica `ResidentLinkedToUnit`, que habilita el alta de la cuenta del residente.
+Esta capa coordina el alta y mantenimiento del padrón de edificios, unidades y vínculos, sin definir reglas propias.
+
+## Residential Command Handler
+
+| Capability | Command Handler | Descripción |
+|---|---|---|
+| Registrar edificio | BuildingCommandService.handle(RegisterBuildingCommand) | Da de alta un edificio y sus torres. |
+| Registrar/editar unidad | UnitCommandService.handle(UpsertUnitCommand) | Crea o actualiza una unidad y su estado. |
+| Vincular residente | ResidentUnitCommandService.handle(LinkResidentCommand) | Crea el vínculo residente–unidad aplicando `UnitAssignmentService`. |
+| Cerrar vínculo | ResidentUnitCommandService.handle(CloseLinkCommand) | Cierra la vigencia de un vínculo existente. |
+
+`ResidentialQueryService` resuelve el directorio de unidades y residentes. El contexto publica `ResidentLinkedToUnit`, que habilita el alta de la cuenta del residente.
 
 #### 4.2.2.4. Infrastructure Layer
 
-Implementación JPA de los repositorios sobre PostgreSQL, con esquema propio del microservicio (TS05); `IamProvisioningClient`, cliente REST síncrono que entrega a IAM/Auth el vínculo residente–unidad que autoriza la creación de la cuenta (relación Customer/Supplier de 4.1.2).
+## Repositories
+
+| Repositorio | Responsabilidad |
+|---|---|
+| PropertyManagerRepository | Persistencia de administradoras. |
+| BuildingRepository | Persistencia de edificios. |
+| UnitRepository | Persistencia de unidades. |
+| ResidentUnitLinkRepository | Persistencia de vínculos residente–unidad. |
+
+Implementación JPA de los repositorios sobre PostgreSQL, con esquema propio del microservicio; `IamProvisioningClient`, cliente REST síncrono que entrega a IAM/Auth el vínculo residente–unidad que autoriza la creación de la cuenta.
 
 #### 4.2.2.5. Bounded Context Software Architecture Component Level Diagrams
 
@@ -3476,29 +3567,114 @@ Implementación JPA de los repositorios sobre PostgreSQL, con esquema propio del
 
 ##### 4.2.2.6.2. Bounded Context Database Design Diagram
 
-> ⚠️ Ver nota de ERD consolidado en 4.2.1.6.2.
-
 ![ERD consolidado](assets/img/Edifika_ERD_2.png)
 
-*Figura. Diagrama Entidad-Relación consolidado (incluye las tablas de Residential Management).*
+*Figura. Diagrama Entidad-Relación consolidado (incluye las tablas de Residential Management). Elaborado utilizando LucidChart (LucidChart, s.f.).*
+
+---
 
 ### 4.2.3. Bounded Context: Reservation
 
 #### 4.2.3.1. Domain Layer
 
-`Reservation` (Aggregate Root: solicitud de uso de un área común, con residente, ventana horaria y estado `PENDING`/`APPROVED`/`REJECTED`/`CANCELLED`), `CommonArea` (Entity: área común con nombre, aforo y estado `ENABLED`/`DISABLED` que el administrador conmuta según mantenimiento o restricciones, US38), `AreaRule` (Entity: reglas de uso de cada área —franja horaria permitida, duración máxima y anticipación mínima—, US39). Value Objects: `TimeWindow`, `ReservationStatus`, `AreaCapacity`. Domain Service: `AvailabilityService`, que resuelve la regla central del contexto —no se admite una reserva fuera de las reglas configuradas del área ni una segunda reserva sobre una ventana horaria ya ocupada (US19)—. Interfaces `ReservationRepository`, `CommonAreaRepository` y `AreaRuleRepository`.
+El agregado principal identificado es:
+
+**Reservation**: solicitud de uso de un área común, con residente, ventana horaria y estado. La regla central del contexto se resuelve mediante el Domain Service **AvailabilityService**.
+
+## Aggregate: ReservationAggregate
+
+### Entity: Reservation
+
+| Atributo | Tipo | Descripción |
+|---|---|---|
+| idReservation | Long | Identificador único de la reserva. |
+| idResident | Long | Residente que solicita la reserva. |
+| idCommonArea | CommonAreaId | Área común reservada. |
+| timeWindow | TimeWindow | Ventana horaria solicitada. |
+| status | ReservationStatus | Estado actual de la reserva. |
+
+## Aggregate: CommonAreaAggregate
+
+### Entity: CommonArea
+
+| Atributo | Tipo | Descripción |
+|---|---|---|
+| idCommonArea | Long | Identificador único del área común. |
+| name | String | Nombre del área. |
+| capacity | AreaCapacity | Aforo del área. |
+| status | CommonAreaStatus | Estado del área (`ENABLED`/`DISABLED`), que el administrador conmuta según mantenimiento o restricciones (US38). |
+
+### Entity: AreaRule
+
+| Atributo | Tipo | Descripción |
+|---|---|---|
+| idRule | Long | Identificador único de la regla. |
+| idCommonArea | CommonAreaId | Área común a la que aplica. |
+| allowedWindow | TimeWindow | Franja horaria permitida. |
+| maxDuration | Duration | Duración máxima de una reserva. |
+| minAdvance | Duration | Anticipación mínima exigida (US39). |
+
+## ValueObject: TimeWindow
+
+| Atributo | Tipo | Descripción |
+|---|---|---|
+| start | DateTime | Inicio de la ventana. |
+| end | DateTime | Fin de la ventana. |
+
+## ValueObject: AreaCapacity
+
+| Atributo | Tipo | Descripción |
+|---|---|---|
+| value | Int | Aforo máximo del área común. |
+
+## Enumeration
+
+| Enumeración | Valores |
+|---|---|
+| ReservationStatus | `PENDING`, `APPROVED`, `REJECTED`, `CANCELLED` |
+| CommonAreaStatus | `ENABLED`, `DISABLED` |
+
+## Domain Services
+
+| Nombre | Responsabilidad | Reglas aplicadas |
+|---|---|---|
+| AvailabilityService | Resolver la disponibilidad de un área común. | - No se admite una reserva fuera de las reglas configuradas del área.<br>- No se admite una segunda reserva sobre una ventana horaria ya ocupada (US19). |
 
 #### 4.2.3.2. Interface Layer
 
-`ReservationController` (solicitud y cancelación de reservas por el residente, US17 y US20), `ReservationApprovalController` (aprobación, rechazo y cancelación administrativa, US18 y US35), `CommonAreaController` (registro de áreas, habilitación/deshabilitación y configuración de reglas, US38 y US39), `AvailabilityQueryController` (disponibilidad del residente y mapa de ocupación global del administrador, US16 y US33; expone además el flujo **SSE** al que se suscriben los clientes para recibir los cambios de disponibilidad en vivo, US19 esc. 3), `ReservationHistoryController` (historial y estadísticas de uso, US40).
+**ReservationController**: solicitud y cancelación de reservas por el residente (US17, US20). **ReservationApprovalController**: aprobación, rechazo y cancelación administrativa (US18, US35). **CommonAreaController**: registro de áreas, habilitación/deshabilitación y configuración de reglas (US38, US39). **AvailabilityQueryController**: disponibilidad del residente y mapa de ocupación global del administrador (US16, US33); expone además el flujo **SSE** al que se suscriben los clientes para recibir los cambios de disponibilidad en vivo (US19 esc. 3). **ReservationHistoryController**: historial y estadísticas de uso (US40).
 
 #### 4.2.3.3. Application Layer
 
-`ReservationCommandService` (valida disponibilidad contra `AvailabilityService` antes de crear la reserva), `ReservationApprovalCommandService`, `CommonAreaCommandService`, `ReservationQueryService` (resuelve el calendario de reservas, Read Model de 4.1.1.1) y `ReservationSchedulerService`, el scheduler interno que detecta el inicio de cada ventana horaria. Publica `ReservationApproved` —que dispara en paralelo la notificación al residente y la habilitación del permiso de acceso físico—, `ReservationStarted` —consumido por Smart Lighting & Automation, ver 4.2.11.3— y `ReservationCancelled`. `AvailabilityBroadcastService` reemite estos mismos cambios por el canal SSE del API Gateway, de modo que un residente que esté consultando ese horario vea la actualización sin recargar. La unicidad de `(CommonArea, TimeWindow)` se garantiza en la transacción local: el segundo solicitante recibe **HTTP 409** (ver 4.1.4.3).
+## Reservation Command Handler
+
+| Capability | Command Handler | Descripción |
+|---|---|---|
+| Solicitar reserva | ReservationCommandService.handle(CreateReservationCommand) | Valida disponibilidad contra `AvailabilityService` antes de crear la reserva. |
+| Aprobar/rechazar reserva | ReservationApprovalCommandService.handle(ResolveReservationCommand) | Aplica la decisión administrativa sobre la reserva. |
+| Configurar área común | CommonAreaCommandService.handle(UpsertCommonAreaCommand) | Alta, habilitación/deshabilitación y reglas del área. |
+
+`ReservationQueryService` resuelve el calendario de reservas. `ReservationSchedulerService` es el scheduler interno que detecta el inicio de cada ventana horaria. `AvailabilityBroadcastService` reemite los cambios por el canal SSE del API Gateway, de modo que un residente que esté consultando ese horario vea la actualización sin recargar. La unicidad de `(CommonArea, TimeWindow)` se garantiza en la transacción local: el segundo solicitante recibe **HTTP 409**.
+
+## Domain Events Published
+
+| Evento | Disparado por | Consumido por |
+|---|---|---|
+| ReservationApproved | ReservationApprovalCommandService | Notification, IoT Access Management |
+| ReservationStarted | ReservationSchedulerService | Smart Lighting & Automation |
+| ReservationCancelled | ReservationApprovalCommandService / ReservationCommandService | Notification |
 
 #### 4.2.3.4. Infrastructure Layer
 
-Implementación JPA de los repositorios sobre PostgreSQL, con esquema propio del microservicio (TS05); publicador AMQP de los eventos del contexto hacia el Message & Event Broker.
+## Repositories
+
+| Repositorio | Responsabilidad |
+|---|---|
+| ReservationRepository | Persistencia de reservas. |
+| CommonAreaRepository | Persistencia de áreas comunes. |
+| AreaRuleRepository | Persistencia de reglas de uso por área. |
+
+Implementación JPA de los repositorios sobre PostgreSQL, con esquema propio del microservicio; publicador AMQP de los eventos del contexto hacia el Message & Event Broker.
 
 #### 4.2.3.5. Bounded Context Software Architecture Component Level Diagrams
 
@@ -3516,29 +3692,132 @@ Implementación JPA de los repositorios sobre PostgreSQL, con esquema propio del
 
 ##### 4.2.3.6.2. Bounded Context Database Design Diagram
 
-> ⚠️ Ver nota de ERD consolidado en 4.2.1.6.2.
-
 ![ERD consolidado](assets/img/Edifika_ERD_2.png)
 
-*Figura. Diagrama Entidad-Relación consolidado (incluye las tablas de Reservation).*
+*Figura. Diagrama Entidad-Relación consolidado (incluye las tablas de Reservation). Elaborado utilizando LucidChart (LucidChart, s.f.).*
+
+---
 
 ### 4.2.4. Bounded Context: Payment
 
 #### 4.2.4.1. Domain Layer
 
-`Payment` (Aggregate Root: pago de un residente con monto, medio, comprobante adjunto y estado `PENDING`/`IN_REVIEW`/`PAID`/`REJECTED`), `Debt` (Entity: deuda de mantenimiento de una unidad para un periodo, con estado `PENDING`/`IN_REVIEW`/`SETTLED`/`OVERDUE` — el estado `IN_REVIEW` es el que exige el Escenario 1 de US22 cuando el residente adjunta su comprobante y este aún no ha sido validado por el administrador), `Receipt` (Entity: constancia generada al aprobarse un pago), `PaymentProof` (Entity: comprobante adjuntado por el residente, con la referencia al archivo almacenado y el resultado de su revisión — US22 esc. 2 contempla que el administrador lo rechace por ilegible), `Expense` (Entity: egreso o factura del edificio registrada por el administrador, con categoría, proveedor, monto y periodo — es el origen de los egresos que US25 y US27 exigen reportar, y la tarea semanal "Registrar gastos y facturas" de la User Task Matrix de 2.3.2). Value Objects: `Money`, `BillingPeriod`, `PaymentStatus`, `PaymentMethod` (`CARD`/`YAPE`/`PLIN`/`MANUAL`). Domain Services: `DebtCalculationService` (consolida el saldo vigente de una unidad a partir de sus deudas y pagos aplicados) y `DelinquencyEvaluationService`, que concentra la regla con efecto fuera del contexto —un residente con deuda vencida se marca moroso, y esa marca es la que restringe su acceso físico (ver 4.2.10)—. Interfaces `PaymentRepository`, `DebtRepository`, `ReceiptRepository`, `PaymentProofRepository` y `ExpenseRepository`. Repository Pattern aplicado para desacoplar estas reglas de la persistencia.
+El agregado principal identificado es:
+
+**Payment**: pago de un residente con monto, medio, comprobante adjunto y estado. Las reglas del contexto se resuelven mediante los Domain Services **DebtCalculationService** y **DelinquencyEvaluationService**, este último con efecto fuera del contexto: un residente con deuda vencida se marca moroso, y esa marca restringe su acceso físico.
+
+## Aggregate: PaymentAggregate
+Agrupa el pago, su comprobante y la constancia generada al aprobarse.
+
+### Entity: Payment
+
+| Atributo | Tipo | Descripción |
+|---|---|---|
+| idPayment | Long | Identificador único del pago. |
+| idDebt | DebtId | Deuda que el pago cubre. |
+| amount | Money | Monto pagado. |
+| method | PaymentMethod | Medio de pago utilizado. |
+| status | PaymentStatus | Estado del pago. |
+
+### Entity: Debt
+
+| Atributo | Tipo | Descripción |
+|---|---|---|
+| idDebt | Long | Identificador único de la deuda. |
+| idUnit | UnitId | Unidad a la que corresponde la deuda. |
+| period | BillingPeriod | Periodo de mantenimiento facturado. |
+| amount | Money | Monto adeudado. |
+| status | DebtStatus | Estado de la deuda. El estado `IN_REVIEW` es el que exige el Escenario 1 de US22 cuando el residente adjunta su comprobante y este aún no ha sido validado por el administrador. |
+
+### Entity: Receipt
+
+| Atributo | Tipo | Descripción |
+|---|---|---|
+| idReceipt | Long | Identificador único de la constancia. |
+| idPayment | PaymentId | Pago sobre el que se emite. |
+| issuedAt | DateTime | Fecha de emisión. |
+
+### Entity: PaymentProof
+
+| Atributo | Tipo | Descripción |
+|---|---|---|
+| idProof | Long | Identificador único del comprobante. |
+| idPayment | PaymentId | Pago al que corresponde. |
+| fileReference | String | Referencia al archivo almacenado. |
+| reviewResult | String | Resultado de la revisión (US22 esc. 2 contempla el rechazo por comprobante ilegible). |
+
+## Entity independiente: Expense
+No forma parte del agregado Payment; registra los egresos del edificio a cargo del administrador. Es el origen de los egresos que US25 y US27 exigen reportar.
+
+| Atributo | Tipo | Descripción |
+|---|---|---|
+| idExpense | Long | Identificador único del egreso. |
+| idBuilding | BuildingId | Edificio al que corresponde el egreso. |
+| category | String | Categoría del egreso. |
+| provider | String | Proveedor asociado. |
+| amount | Money | Monto del egreso. |
+| period | BillingPeriod | Periodo del egreso. |
+
+## ValueObject: Money
+
+| Atributo | Tipo | Descripción |
+|---|---|---|
+| amount | Decimal | Monto monetario. |
+| currency | String | Moneda del monto. |
+
+## ValueObject: BillingPeriod
+
+| Atributo | Tipo | Descripción |
+|---|---|---|
+| month | Int | Mes del periodo de facturación. |
+| year | Int | Año del periodo de facturación. |
+
+## Enumeration
+
+| Enumeración | Valores |
+|---|---|
+| PaymentStatus | `PENDING`, `IN_REVIEW`, `PAID`, `REJECTED` |
+| DebtStatus | `PENDING`, `IN_REVIEW`, `SETTLED`, `OVERDUE` |
+| PaymentMethod | `CARD`, `YAPE`, `PLIN`, `MANUAL` |
+
+## Domain Services
+
+| Nombre | Responsabilidad | Reglas aplicadas |
+|---|---|---|
+| DebtCalculationService | Consolidar el saldo vigente de una unidad. | Suma las deudas y los pagos aplicados de la unidad. |
+| DelinquencyEvaluationService | Evaluar la morosidad del residente. | Un residente con deuda vencida se marca moroso; esa marca restringe su acceso físico. |
+
+Repository Pattern aplicado para desacoplar estas reglas de la persistencia.
 
 #### 4.2.4.2. Interface Layer
 
-`DebtController` (consulta de la deuda vigente del residente, US21), `PaymentController` (registro del pago con comprobante y pago en línea, US22 y US30), `PaymentApprovalController` (registro y aprobación de pagos por el administrador, US23), `DelinquencyController` (listado de residentes morosos, US24), `PaymentHistoryController` (consulta de pagos pasados, US28), `ExpenseController` (registro de egresos y facturas del edificio por el administrador) y `ExpenseSummaryController` (resumen de gastos visible para el residente, US27).
+**DebtController**: consulta de la deuda vigente del residente (US21). **PaymentController**: registro del pago con comprobante y pago en línea (US22, US30). **PaymentApprovalController**: registro y aprobación de pagos por el administrador (US23). **DelinquencyController**: listado de residentes morosos (US24). **PaymentHistoryController**: consulta de pagos pasados (US28). **ExpenseController**: registro de egresos y facturas del edificio por el administrador. **ExpenseSummaryController**: resumen de gastos visible para el residente (US27).
 
 #### 4.2.4.3. Application Layer
 
-`PaymentCommandService` — registra el pago, deja la deuda en `IN_REVIEW` al recibir el comprobante y orquesta la Saga de aprobación (actualiza el estado → genera la constancia → emite `PaymentApproved`), con su compensación si Culqi falla—, `DebtCommandService`, `ExpenseCommandService` (alta de egresos y facturas), `DelinquencyCommandService` (evalúa periódicamente las deudas vencidas) y `PaymentQueryService` (resuelve el estado de cuenta del residente, Read Model de 4.1.1.1). Publica `PaymentApproved`, consumido por Notification, y `ResidentMarkedDelinquent`, consumido por IoT Access Management.
+## Payment Command Handler
+
+| Capability | Command Handler | Descripción |
+|---|---|---|
+| Registrar pago | PaymentCommandService.handle(RegisterPaymentCommand) | Registra el pago, deja la deuda en `IN_REVIEW` al recibir el comprobante y orquesta la Saga de aprobación (actualiza el estado → genera la constancia → emite `PaymentApproved`), con compensación si Culqi falla. |
+| Registrar egreso | ExpenseCommandService.handle(RegisterExpenseCommand) | Da de alta un egreso o factura del edificio. |
+| Evaluar morosidad | DelinquencyCommandService.handle(EvaluateDelinquencyCommand) | Evalúa periódicamente las deudas vencidas. |
+
+`PaymentQueryService` resuelve el estado de cuenta del residente. El contexto publica `PaymentApproved` —consumido por Notification— y `ResidentMarkedDelinquent` —consumido por IoT Access Management—.
 
 #### 4.2.4.4. Infrastructure Layer
 
-Implementación JPA de los repositorios sobre PostgreSQL, con esquema propio del microservicio (TS05); **Adapter Pattern (Anti-Corruption Layer)** hacia la pasarela de pagos **Culqi**, traduciendo su API externa a la interfaz propia del sistema y habilitando tarjeta de crédito/débito junto con los medios locales **Yape y Plin** que exige la táctica de adaptación al contexto local de 2.1.2; **Adapter (ACL) hacia Cloudinary** para almacenar y servir las imágenes de los comprobantes de pago, con degradación independiente —si el adjunto no resuelve, el historial de pagos se sigue sirviendo desde PostgreSQL y la interfaz muestra "Detalles temporalmente no disponibles", según US22 esc. 3—; generador de la constancia de pago y publicador AMQP de los eventos del contexto.
+## Repositories
+
+| Repositorio | Responsabilidad |
+|---|---|
+| PaymentRepository | Persistencia de pagos. |
+| DebtRepository | Persistencia de deudas. |
+| ReceiptRepository | Persistencia de constancias de pago. |
+| PaymentProofRepository | Persistencia de comprobantes de pago. |
+| ExpenseRepository | Persistencia de egresos y facturas. |
+
+Implementación JPA de los repositorios sobre PostgreSQL, con esquema propio del microservicio; **Adapter Pattern (Anti-Corruption Layer)** hacia la pasarela de pagos **Culqi**, traduciendo su API externa a la interfaz propia del sistema y habilitando tarjeta de crédito/débito junto con los medios locales **Yape y Plin**; **Adapter (ACL) hacia Cloudinary** para almacenar y servir las imágenes de los comprobantes de pago, con degradación independiente —si el adjunto no resuelve, el historial de pagos se sigue sirviendo desde PostgreSQL y la interfaz muestra "Detalles temporalmente no disponibles", según US22 esc. 3—; generador de la constancia de pago y publicador AMQP de los eventos del contexto.
 
 #### 4.2.4.5. Bounded Context Software Architecture Component Level Diagrams
 
@@ -3556,29 +3835,103 @@ Implementación JPA de los repositorios sobre PostgreSQL, con esquema propio del
 
 ##### 4.2.4.6.2. Bounded Context Database Design Diagram
 
-> ⚠️ Ver nota de ERD consolidado en 4.2.1.6.2.
-
 ![ERD consolidado](assets/img/Edifika_ERD_2.png)
 
-*Figura. Diagrama Entidad-Relación consolidado (incluye las tablas de Payment).*
+*Figura. Diagrama Entidad-Relación consolidado (incluye las tablas de Payment). Elaborado utilizando LucidChart (LucidChart, s.f.).*
+
+---
 
 ### 4.2.5. Bounded Context: Notification
 
 #### 4.2.5.1. Domain Layer
 
-`Notification` (Aggregate Root: notificación dirigida a un destinatario, con tipo, canal, contenido y estado `PENDING`/`SENT`/`FAILED`/`READ`), `DeviceToken` (Entity: token del dispositivo móvil sobre el que se entrega el push), `NotificationPreference` (Entity: configuración por usuario de qué tipos de notificación desea recibir y por qué canal, US12). Value Objects: `Recipient`, `NotificationChannel` (`PUSH`/`EMAIL`/`SMS`), `NotificationType`, `Priority` (`NORMAL`/`EMERGENCY`). Domain Service: `NotificationRoutingService`, que resuelve a qué destinatarios y por qué canal corresponde entregar cada evento según las preferencias vigentes, con una excepción explícita: una notificación de prioridad `EMERGENCY` se envía **simultáneamente por push y por SMS** e **ignora las preferencias del usuario**, porque US08 exige alcanzar a todos los residentes en menos de 5 segundos. Interfaces `NotificationRepository`, `DeviceTokenRepository` y `NotificationPreferenceRepository`.
+El agregado principal identificado es:
+
+**Notification**: notificación dirigida a un destinatario, con tipo, canal, contenido y estado. La regla del contexto se resuelve mediante el Domain Service **NotificationRoutingService**.
+
+## Aggregate: NotificationAggregate
+
+### Entity: Notification
+
+| Atributo | Tipo | Descripción |
+|---|---|---|
+| idNotification | Long | Identificador único de la notificación. |
+| recipient | Recipient | Destinatario de la notificación. |
+| type | NotificationType | Tipo de notificación. |
+| channel | NotificationChannel | Canal de envío. |
+| priority | Priority | Prioridad de la notificación. |
+| content | String | Contenido de la notificación. |
+| status | NotificationStatus | Estado de entrega. |
+
+### Entity: DeviceToken
+
+| Atributo | Tipo | Descripción |
+|---|---|---|
+| idToken | Long | Identificador único del token. |
+| idUser | Long | Usuario propietario del dispositivo. |
+| token | String | Token del dispositivo móvil sobre el que se entrega el push. |
+
+### Entity: NotificationPreference
+
+| Atributo | Tipo | Descripción |
+|---|---|---|
+| idPreference | Long | Identificador único de la preferencia. |
+| idUser | Long | Usuario propietario de la preferencia. |
+| type | NotificationType | Tipo de notificación configurado. |
+| channel | NotificationChannel | Canal preferido para ese tipo (US12). |
+
+## ValueObject: Recipient
+
+| Atributo | Tipo | Descripción |
+|---|---|---|
+| idUser | Long | Identificador del destinatario. |
+
+## Enumeration
+
+| Enumeración | Valores |
+|---|---|
+| NotificationChannel | `PUSH`, `EMAIL`, `SMS` |
+| Priority | `NORMAL`, `EMERGENCY` |
+| NotificationStatus | `PENDING`, `SENT`, `FAILED`, `READ` |
+
+## Domain Services
+
+| Nombre | Responsabilidad | Reglas aplicadas |
+|---|---|---|
+| NotificationRoutingService | Resolver destinatarios y canal de entrega según las preferencias vigentes. | Una notificación de prioridad `EMERGENCY` se envía simultáneamente por push y por SMS e ignora las preferencias del usuario, porque US08 exige alcanzar a todos los residentes en menos de 5 segundos. |
 
 #### 4.2.5.2. Interface Layer
 
-`NotificationController` (bandeja y marcado de lectura del residente, US10), `DeviceTokenController` (registro y baja del token del dispositivo), `NotificationPreferenceController` (configuración de notificaciones, US12). Como *Consumers*: `AnnouncementEventConsumer`, `PaymentEventConsumer`, `ReservationEventConsumer`, `AccessEventConsumer`, `TelemetryAlertEventConsumer` e `IncidentEventConsumer`, suscritos por el broker a los seis contextos que publican eventos notificables.
+**NotificationController**: bandeja y marcado de lectura del residente (US10). **DeviceTokenController**: registro y baja del token del dispositivo. **NotificationPreferenceController**: configuración de notificaciones (US12). Como *Consumers*: `AnnouncementEventConsumer`, `PaymentEventConsumer`, `ReservationEventConsumer`, `AccessEventConsumer`, `TelemetryAlertEventConsumer` e `IncidentEventConsumer`, suscritos por el broker a los seis contextos que publican eventos notificables.
 
 #### 4.2.5.3. Application Layer
 
-`NotificationCommandService`, `NotificationQueryService`, `DeviceTokenCommandService` y `NotificationPreferenceCommandService`. **Factory Pattern** (`NotificationFactory`) para crear el tipo de notificación (Push/Email/SMS) según el evento de origen, sin acoplar la creación a la lógica de envío. Event Handlers: `AnnouncementPublishedEventHandler` (US10), `PaymentApprovedEventHandler`, `DebtReminderScheduler` (recordatorios de pago, US09), `ReservationApprovedEventHandler` (US11 hacia el residente y US31 hacia el administrador), `PhysicalAccessEventHandler`, `TelemetryAlertEventHandler`, `IncidentReportedEventHandler` (avisa al administrador con la ubicación exacta de la incidencia, US08 esc. 2) y `EmergencyDeclaredEventHandler` (difusión `EMERGENCY` a todo el edificio por push y SMS en paralelo, US08 esc. 1).
+**Factory Pattern** (`NotificationFactory`) para crear el tipo de notificación (Push/Email/SMS) según el evento de origen, sin acoplar la creación a la lógica de envío.
+
+## Event Handlers
+
+| Handler | Evento de origen | Descripción |
+|---|---|---|
+| AnnouncementPublishedEventHandler | AnnouncementPublished | Notifica al residente el nuevo comunicado (US10). |
+| PaymentApprovedEventHandler | PaymentApproved | Notifica la aprobación del pago. |
+| DebtReminderScheduler | (job periódico) | Recordatorios de pago (US09). |
+| ReservationApprovedEventHandler | ReservationApproved | Notifica al residente (US11) y al administrador (US31). |
+| PhysicalAccessEventHandler | PhysicalAccessGranted / PhysicalAccessDenied | Notifica eventos de acceso físico. |
+| TelemetryAlertEventHandler | AbnormalConsumptionDetected / LuminaireFailureDetected | Notifica alertas de telemetría. |
+| IncidentReportedEventHandler | IncidentReported | Avisa al administrador con la ubicación exacta de la incidencia (US08 esc. 2). |
+| EmergencyDeclaredEventHandler | EmergencyDeclared | Difusión `EMERGENCY` a todo el edificio por push y SMS en paralelo (US08 esc. 1). |
 
 #### 4.2.5.4. Infrastructure Layer
 
-Implementación JPA de los repositorios sobre PostgreSQL, con esquema propio del microservicio (TS05); cliente de **Firebase Cloud Messaging** (Anti-Corruption Layer) para el envío de notificaciones push y cliente de **Twilio** (Anti-Corruption Layer) para el envío de SMS, ambos invocados en paralelo —no en cascada— cuando la prioridad es `EMERGENCY`, de modo que el fallo o la lentitud de un canal no consuma el presupuesto de 5 segundos del otro; colas de reintento independientes por evento y compensación que marca la notificación como pendiente de reintento si el envío falla, sin afectar el estado del contexto que originó el evento (ver 4.1.1.2).
+## Repositories
+
+| Repositorio | Responsabilidad |
+|---|---|
+| NotificationRepository | Persistencia de notificaciones. |
+| DeviceTokenRepository | Persistencia de tokens de dispositivo. |
+| NotificationPreferenceRepository | Persistencia de preferencias de notificación. |
+
+Implementación JPA de los repositorios sobre PostgreSQL, con esquema propio del microservicio; cliente de **Firebase Cloud Messaging** (Anti-Corruption Layer) para el envío de notificaciones push y cliente de **Twilio** (Anti-Corruption Layer) para el envío de SMS, ambos invocados en paralelo —no en cascada— cuando la prioridad es `EMERGENCY`, de modo que el fallo o la lentitud de un canal no consuma el presupuesto de 5 segundos del otro; colas de reintento independientes por evento y compensación que marca la notificación como pendiente de reintento si el envío falla, sin afectar el estado del contexto que originó el evento.
 
 #### 4.2.5.5. Bounded Context Software Architecture Component Level Diagrams
 
@@ -3596,29 +3949,119 @@ Implementación JPA de los repositorios sobre PostgreSQL, con esquema propio del
 
 ##### 4.2.5.6.2. Bounded Context Database Design Diagram
 
-> ⚠️ Ver nota de ERD consolidado en 4.2.1.6.2.
-
 ![ERD consolidado](assets/img/Edifika_ERD_2.png)
 
-*Figura. Diagrama Entidad-Relación consolidado (incluye las tablas de Notification).*
+*Figura. Diagrama Entidad-Relación consolidado (incluye las tablas de Notification). Elaborado utilizando LucidChart (LucidChart, s.f.).*
+
+---
 
 ### 4.2.6. Bounded Context: Communication
 
 #### 4.2.6.1. Domain Layer
 
-`Announcement` / Comunicado (Aggregate Root: comunicado oficial con título, contenido, alcance y fecha de publicación), `Poll` / Encuesta (Aggregate Root: consulta a la comunidad con opciones, votos y estado `OPEN`/`CLOSED`, US36), `ReadReceipt` (Entity: registro de qué residente visualizó qué comunicado, que sostiene el seguimiento de alcance de US15), `Document` (Entity: normativa legal y manuales del edificio publicados para consulta, US32). Value Objects: `AnnouncementScope` (segmentación por tipo de usuario), `AnnouncementCategory` (categorización del anuncio: `MANTENIMIENTO`, `ADMINISTRATIVO`, `EVENTO`, `SEGURIDAD`, `OTRO`) y `PollOption`, `Reach`. La terna *confirmación de lectura · segmentación · categorización* es la que exige la táctica de comunicación centralizada de 2.1.2. Domain Services: `ReachTrackingService` (consolida el alcance real de un comunicado a partir de sus acuses de lectura) y `PollVotingService` (garantiza el voto único por residente y encuesta). Interfaces `AnnouncementRepository`, `PollRepository`, `ReadReceiptRepository` y `DocumentRepository`.
+Los agregados identificados son:
+
+**Announcement** (Comunicado): comunicado oficial con título, contenido, alcance y fecha de publicación. **Poll** (Encuesta): consulta a la comunidad con opciones, votos y estado (US36).
+
+La terna *confirmación de lectura · segmentación · categorización* es la que exige la táctica de comunicación centralizada del proyecto.
+
+## Aggregate: AnnouncementAggregate
+
+### Entity: Announcement
+
+| Atributo | Tipo | Descripción |
+|---|---|---|
+| idAnnouncement | Long | Identificador único del comunicado. |
+| title | String | Título del comunicado. |
+| content | String | Contenido del comunicado. |
+| scope | AnnouncementScope | Segmentación por tipo de usuario. |
+| category | AnnouncementCategory | Categoría del anuncio. |
+| publishedAt | DateTime | Fecha de publicación. |
+
+### Entity: ReadReceipt
+
+| Atributo | Tipo | Descripción |
+|---|---|---|
+| idReceipt | Long | Identificador único del acuse. |
+| idAnnouncement | AnnouncementId | Comunicado visualizado. |
+| idResident | Long | Residente que lo visualizó. |
+| readAt | DateTime | Momento de la lectura. Sostiene el seguimiento de alcance de US15. |
+
+### Entity: Document
+
+| Atributo | Tipo | Descripción |
+|---|---|---|
+| idDocument | Long | Identificador único del documento. |
+| title | String | Título del documento. |
+| fileReference | String | Referencia al archivo publicado. |
+
+Normativa legal y manuales del edificio publicados para consulta (US32).
+
+## Aggregate: PollAggregate
+
+### Entity: Poll
+
+| Atributo | Tipo | Descripción |
+|---|---|---|
+| idPoll | Long | Identificador único de la encuesta. |
+| question | String | Pregunta de la encuesta. |
+| status | PollStatus | Estado de la encuesta. |
+
+## ValueObject: AnnouncementScope
+
+| Atributo | Tipo | Descripción |
+|---|---|---|
+| value | String | Segmento de usuarios al que se dirige el comunicado. |
+
+## ValueObject: PollOption
+
+| Atributo | Tipo | Descripción |
+|---|---|---|
+| label | String | Texto de la opción. |
+| votes | Int | Número de votos recibidos. |
+
+## Enumeration
+
+| Enumeración | Valores |
+|---|---|
+| AnnouncementCategory | `MANTENIMIENTO`, `ADMINISTRATIVO`, `EVENTO`, `SEGURIDAD`, `OTRO` |
+| PollStatus | `OPEN`, `CLOSED` |
+
+## Domain Services
+
+| Nombre | Responsabilidad | Reglas aplicadas |
+|---|---|---|
+| ReachTrackingService | Consolidar el alcance real de un comunicado a partir de sus acuses de lectura. | — |
+| PollVotingService | Garantizar el voto único por residente y encuesta. | Un residente no puede votar dos veces la misma encuesta. |
 
 #### 4.2.6.2. Interface Layer
 
-`AnnouncementController` (publicación de comunicados oficiales y consulta del histórico, US13 y US14), `ReadReceiptController` (seguimiento de visualización, US15), `PollController` (creación, votación y cierre de encuestas, US36), `DocumentController` (consulta de leyes y manuales del edificio, US32).
+**AnnouncementController**: publicación de comunicados oficiales y consulta del histórico (US13, US14). **ReadReceiptController**: seguimiento de visualización (US15). **PollController**: creación, votación y cierre de encuestas (US36). **DocumentController**: consulta de leyes y manuales del edificio (US32).
 
 #### 4.2.6.3. Application Layer
 
-`AnnouncementCommandService` — guarda el comunicado y emite `AnnouncementPublished`, que dispara la Saga coreografiada de notificación (ver 4.1.1.2) —, `PollCommandService` (valida el voto único por encuesta, HTTP 409 si se duplica), `DocumentCommandService` y `CommunicationQueryService` (resuelve el muro de anuncios y los resultados de encuesta, Read Models de 4.1.1.1). Valida además el límite de un mensaje diario por residente (HTTP 429 si se excede). Publica `AnnouncementPublished` y `PollClosed`.
+## Communication Command Handler
+
+| Capability | Command Handler | Descripción |
+|---|---|---|
+| Publicar comunicado | AnnouncementCommandService.handle(PublishAnnouncementCommand) | Guarda el comunicado y emite `AnnouncementPublished`, que dispara la Saga coreografiada de notificación. |
+| Votar encuesta | PollCommandService.handle(VotePollCommand) | Valida el voto único por encuesta, **HTTP 409** si se duplica. |
+| Publicar documento | DocumentCommandService.handle(PublishDocumentCommand) | Publica una normativa o manual del edificio. |
+
+`CommunicationQueryService` resuelve el muro de anuncios y los resultados de encuesta. Valida además el límite de un mensaje diario por residente (**HTTP 429** si se excede). El contexto publica `AnnouncementPublished` y `PollClosed`.
 
 #### 4.2.6.4. Infrastructure Layer
 
-Implementación JPA de los repositorios sobre PostgreSQL, con esquema propio del microservicio (TS05); **Adapter Pattern (Anti-Corruption Layer)** hacia **Cloudinary** para el almacenamiento y la entrega de las imágenes adjuntas a los comunicados; publicador AMQP de los eventos del contexto.
+## Repositories
+
+| Repositorio | Responsabilidad |
+|---|---|
+| AnnouncementRepository | Persistencia de comunicados. |
+| PollRepository | Persistencia de encuestas. |
+| ReadReceiptRepository | Persistencia de acuses de lectura. |
+| DocumentRepository | Persistencia de documentos normativos. |
+
+Implementación JPA de los repositorios sobre PostgreSQL, con esquema propio del microservicio; **Adapter Pattern (Anti-Corruption Layer)** hacia **Cloudinary** para el almacenamiento y la entrega de las imágenes adjuntas a los comunicados; publicador AMQP de los eventos del contexto.
 
 #### 4.2.6.5. Bounded Context Software Architecture Component Level Diagrams
 
@@ -3636,35 +4079,109 @@ Implementación JPA de los repositorios sobre PostgreSQL, con esquema propio del
 
 ##### 4.2.6.6.2. Bounded Context Database Design Diagram
 
-> ⚠️ Ver nota de ERD consolidado en 4.2.1.6.2.
-
 ![ERD consolidado](assets/img/Edifika_ERD_2.png)
 
-*Figura. Diagrama Entidad-Relación consolidado (incluye las tablas de Communication).*
+*Figura. Diagrama Entidad-Relación consolidado (incluye las tablas de Communication). Elaborado utilizando LucidChart (LucidChart, s.f.).*
+
+---
 
 ### 4.2.7. Bounded Context: Forum
 
 #### 4.2.7.1. Domain Layer
 
-`Post` (Aggregate Root: publicación del muro comunitario con autor, contenido, fecha y estado `VISIBLE`/`HIDDEN`, este último aplicado por la moderación de US37), `Comment` (Entity: respuesta de un residente a una publicación), `ModerationAction` (Entity: registro auditable de qué administrador ocultó qué publicación y por qué motivo). Value Objects: `PostContent`, `DailyPostQuota`. Domain Services: `PostQuotaService` (hace cumplir el límite diario de publicaciones por residente) y `ModerationService` (aplica y revierte el ocultamiento de contenido inapropiado). Interfaces `PostRepository`, `CommentRepository` y `ModerationActionRepository`.
+El agregado principal identificado es:
+
+**Post**: publicación del muro comunitario con autor, contenido, fecha y estado. El estado `HIDDEN` es aplicado por la moderación de US37.
+
+## Aggregate: PostAggregate
+
+### Entity: Post
+
+| Atributo | Tipo | Descripción |
+|---|---|---|
+| idPost | Long | Identificador único de la publicación. |
+| idAuthor | Long | Residente autor de la publicación. |
+| content | PostContent | Contenido de la publicación. |
+| createdAt | DateTime | Fecha de creación. |
+| status | PostStatus | Estado de visibilidad. |
+
+### Entity: Comment
+
+| Atributo | Tipo | Descripción |
+|---|---|---|
+| idComment | Long | Identificador único del comentario. |
+| idPost | PostId | Publicación a la que responde. |
+| idAuthor | Long | Residente autor del comentario. |
+| content | String | Contenido del comentario. |
+
+### Entity: ModerationAction
+
+| Atributo | Tipo | Descripción |
+|---|---|---|
+| idAction | Long | Identificador único de la acción. |
+| idPost | PostId | Publicación moderada. |
+| idAdmin | Long | Administrador que ejecutó la acción. |
+| reason | String | Motivo del ocultamiento. |
+| actionAt | DateTime | Momento de la acción. Registro auditable de qué administrador ocultó qué publicación y por qué motivo. |
+
+## ValueObject: PostContent
+
+| Atributo | Tipo | Descripción |
+|---|---|---|
+| text | String | Texto de la publicación. |
+
+## ValueObject: DailyPostQuota
+
+| Atributo | Tipo | Descripción |
+|---|---|---|
+| maxPerDay | Int | Límite diario de publicaciones por residente. |
+
+## Enumeration
+
+| Enumeración | Valores |
+|---|---|
+| PostStatus | `VISIBLE`, `HIDDEN` |
+
+## Domain Services
+
+| Nombre | Responsabilidad | Reglas aplicadas |
+|---|---|---|
+| PostQuotaService | Hacer cumplir el límite diario de publicaciones por residente. | — |
+| ModerationService | Aplicar y revertir el ocultamiento de contenido inapropiado. | — |
 
 #### 4.2.7.2. Interface Layer
 
-`PostController` (publicación y consulta de mensajes del muro del edificio, US29), `CommentController` (respuestas a una publicación), `ModerationController` (revisión y ocultamiento de mensajes inapropiados por el administrador, US37).
+**PostController**: publicación y consulta de mensajes del muro del edificio (US29). **CommentController**: respuestas a una publicación. **ModerationController**: revisión y ocultamiento de mensajes inapropiados por el administrador (US37).
 
 #### 4.2.7.3. Application Layer
 
-`PostCommandService` (valida el límite diario de publicaciones vía `PostQuotaService`, HTTP 429 si se excede), `CommentCommandService`, `ModerationCommandService` y `ForumQueryService` (resuelve el muro del edificio filtrando las publicaciones ocultas).
+## Forum Command Handler
+
+| Capability | Command Handler | Descripción |
+|---|---|---|
+| Publicar mensaje | PostCommandService.handle(CreatePostCommand) | Valida el límite diario de publicaciones vía `PostQuotaService`, **HTTP 429** si se excede. |
+| Comentar publicación | CommentCommandService.handle(CreateCommentCommand) | Registra la respuesta a una publicación. |
+| Moderar publicación | ModerationCommandService.handle(HidePostCommand) | Oculta una publicación inapropiada y registra la `ModerationAction`. |
+
+`ForumQueryService` resuelve el muro del edificio filtrando las publicaciones ocultas.
 
 #### 4.2.7.4. Infrastructure Layer
 
-Implementación JPA de los repositorios sobre PostgreSQL, con esquema propio del microservicio (TS05); **Adapter Pattern (Anti-Corruption Layer)** hacia **Cloudinary** para las imágenes adjuntas a las publicaciones del foro.
+## Repositories
+
+| Repositorio | Responsabilidad |
+|---|---|
+| PostRepository | Persistencia de publicaciones. |
+| CommentRepository | Persistencia de comentarios. |
+| ModerationActionRepository | Persistencia de acciones de moderación. |
+
+Implementación JPA de los repositorios sobre PostgreSQL, con esquema propio del microservicio; **Adapter Pattern (Anti-Corruption Layer)** hacia **Cloudinary** para las imágenes adjuntas a las publicaciones del foro.
 
 #### 4.2.7.5. Bounded Context Software Architecture Component Level Diagrams
 
 ![Componentes Forum](assets/img/ComponentView_ForumNotifications.png)
 
-*Figura. Diagrama de Componentes — Forum Service. Elaborado utilizando Structurizr (Structurizr, s.f.). La figura presenta en un mismo lienzo los componentes de Forum y de Notification; los de Notification se detallan por separado en 4.2.5.5.*
+*Figura. Diagrama de Componentes — Forum Service. Elaborado utilizando Structurizr (Structurizr, s.f.). La figura presenta en un mismo lienzo los componentes de Forum y de Notification.*
 
 #### 4.2.7.6. Bounded Context Software Architecture Code Level Diagrams
 
@@ -3676,29 +4193,56 @@ Implementación JPA de los repositorios sobre PostgreSQL, con esquema propio del
 
 ##### 4.2.7.6.2. Bounded Context Database Design Diagram
 
-> ⚠️ Ver nota de ERD consolidado en 4.2.1.6.2.
-
 ![ERD consolidado](assets/img/Edifika_ERD_2.png)
 
-*Figura. Diagrama Entidad-Relación consolidado (incluye las tablas de Forum).*
+*Figura. Diagrama Entidad-Relación consolidado (incluye las tablas de Forum). Elaborado utilizando LucidChart (LucidChart, s.f.).*
+
+---
 
 ### 4.2.8. Bounded Context: Report
 
 #### 4.2.8.1. Domain Layer
 
-Modelos de lectura `FinancialReport` (consolidado de ingresos, egresos y deudas por periodo), `DelinquencyReport` (morosidad por unidad) y `EnergyConsumptionReport` (consumo energético del edificio, alimentado por IoT Telemetry & Analytics). Value Objects: `ReportPeriod`, `ExportFormat` (`PDF`/`EXCEL`). Domain Service: `ReportConsolidationService`, que unifica en una sola vista los datos que llegan de dos contextos distintos. Al ser un contexto mayormente de solo lectura (CQRS), **no posee agregados transaccionales propios**: su modelo son proyecciones construidas sobre datos de los que Payment e IoT Telemetry & Analytics siguen siendo dueños.
+Al ser un contexto mayormente de solo lectura (CQRS), **no posee agregados transaccionales propios**: su modelo son proyecciones construidas sobre datos de los que Payment e IoT Telemetry & Analytics siguen siendo dueños.
+
+## Read Models
+
+| Read Model | Descripción |
+|---|---|
+| FinancialReport | Consolidado de ingresos, egresos y deudas por periodo. |
+| DelinquencyReport | Morosidad por unidad. |
+| EnergyConsumptionReport | Consumo energético del edificio, alimentado por IoT Telemetry & Analytics. |
+
+## ValueObject: ReportPeriod
+
+| Atributo | Tipo | Descripción |
+|---|---|---|
+| from | Date | Inicio del periodo del reporte. |
+| to | Date | Fin del periodo del reporte. |
+
+## Enumeration
+
+| Enumeración | Valores |
+|---|---|
+| ExportFormat | `PDF`, `EXCEL` |
+
+## Domain Services
+
+| Nombre | Responsabilidad |
+|---|---|
+| ReportConsolidationService | Unificar en una sola vista los datos que llegan de Payment e IoT Telemetry & Analytics. |
 
 #### 4.2.8.2. Interface Layer
 
-`ReportController` (generación de reportes financieros y de morosidad, US25), `ReportExportController` (exportación del reporte en el formato solicitado para compartirlo con la comunidad, US26).
+**ReportController**: generación de reportes financieros y de morosidad (US25). **ReportExportController**: exportación del reporte en el formato solicitado para compartirlo con la comunidad (US26).
 
 #### 4.2.8.3. Application Layer
 
-`ReportQueryService` (consulta a Payment vía REST y consolida el reporte, Read Model *Dashboard financiero* de 4.1.1.1) y `ReportExportCommandService`. **Factory Pattern** (`ReportExporterFactory`) para generar el archivo de salida en el formato solicitado (PDF o Excel) sin acoplar la lógica de creación a la de exportación.
+`ReportQueryService` consulta a Payment vía REST y consolida el reporte (Dashboard financiero). `ReportExportCommandService` gestiona la exportación. **Factory Pattern** (`ReportExporterFactory`) para generar el archivo de salida en el formato solicitado (PDF o Excel) sin acoplar la lógica de creación a la de exportación.
 
 #### 4.2.8.4. Infrastructure Layer
 
-`PaymentQueryClient` y `TelemetryQueryClient`, clientes REST síncronos hacia Payment Service e IoT Telemetry & Analytics Service; generador de archivos PDF/Excel. Este contexto no persiste datos de negocio propios: su "persistencia" es la de los contextos que consulta (ver nota en 4.2.8.6.2).
+`PaymentQueryClient` y `TelemetryQueryClient`, clientes REST síncronos hacia Payment Service e IoT Telemetry & Analytics Service; generador de archivos PDF/Excel. Este contexto no persiste datos de negocio propios: su "persistencia" es la de los contextos que consulta.
 
 #### 4.2.8.5. Bounded Context Software Architecture Component Level Diagrams
 
@@ -3716,175 +4260,549 @@ Modelos de lectura `FinancialReport` (consolidado de ingresos, egresos y deudas 
 
 ##### 4.2.8.6.2. Bounded Context Database Design Diagram
 
-> ⚠️ Ver nota de ERD consolidado en 4.2.1.6.2. Al ser un contexto mayormente de solo lectura, gran parte de su "persistencia" es en realidad la de Payment consultada vía REST.
-
 ![ERD consolidado](assets/img/Edifika_ERD_2.png)
 
 *Figura. Diagrama Entidad-Relación consolidado.*
 
-### 4.2.9. Bounded Context: Incident Management
+---
 
-> 📌 **Nota:** este contexto se incorpora en esta revisión al detectarse que el reporte de incidencias estaba especificado en tres lugares del informe —el Escenario 2 de **US08** ("un residente detecta una fuga de gas, cuando reporta la incidencia desde la app, entonces el admin recibe una notificación con la ubicación exacta Torre/Dpto"), la User Task Matrix de 2.3.2 ("Reportar una avería o incidencia", prioridad Alta y frustración Alta para Andrea) y el Ubiquitous Language de 2.5 (*Incidencia*, *Seguimiento de Incidencias*)— sin que ningún bounded context lo implementara. Notification no podía cubrirlo porque es *downstream* puro: traduce eventos ajenos en avisos, no permite a un residente originar un hecho de dominio.
+### 4.2.9. Bounded Context: IoT Access Management
 
 #### 4.2.9.1. Domain Layer
 
-`Incident` (Aggregate Root: incidencia reportada por un residente o registrada por el administrador, con categoría, descripción, severidad, ubicación y estado `REPORTED`/`ACKNOWLEDGED`/`IN_PROGRESS`/`RESOLVED`/`CLOSED`), `IncidentUpdate` (Entity: cada cambio de estado o comentario de seguimiento, que sostiene el *Seguimiento de Incidencias* del Ubiquitous Language), `EmergencyBroadcast` (Entity: aviso de emergencia que el administrador difunde a todo el edificio, con acuse de recepción). Value Objects: `IncidentLocation` (torre y departamento exactos que exige el criterio de US08), `IncidentCategory` (`GAS_LEAK`, `WATER_LEAK`, `ELECTRICAL`, `ELEVATOR`, `SECURITY`, `OTHER`), `Severity` (`LOW`/`MEDIUM`/`HIGH`/`CRITICAL`). Domain Service: `IncidentEscalationService`, que concentra la regla del contexto —una incidencia de severidad `CRITICAL` se difunde de inmediato como `EmergencyBroadcast` a todo el edificio, mientras que el resto se enruta únicamente al administrador—. Interfaces `IncidentRepository`, `IncidentUpdateRepository` y `EmergencyBroadcastRepository`.
+El agregado principal identificado es:
+
+**AccessCredential**: credencial de acceso de un residente, con tipo RFID , identificador, titular, vigencia y estado. La regla de negocio central del contexto se resuelve mediante el Domain Service **AccessDecisionService**.
+
+## Aggregate: AccessCredentialAggregate
+
+### Entity: AccessCredential
+
+| Atributo | Tipo | Descripción |
+|---|---|---|
+| idCredential | Long | Identificador único de la credencial. |
+| idResident | Long | Titular de la credencial. |
+| type | CredentialType | Tipo de credencial (RFID). |
+| identifier | RfidUid | Identificador físico o token de la credencial. |
+| validFrom | DateTime | Inicio de vigencia. |
+| validUntil | DateTime | Fin de vigencia. |
+| status | CredentialStatus | Estado de la credencial. |
+
+### Entity: AccessPermission
+
+| Atributo | Tipo | Descripción |
+|---|---|---|
+| idPermission | Long | Identificador único del permiso. |
+| idResident | Long | Residente habilitado. |
+| idCommonArea | Long | Área común habilitada. |
+| window | TimeWindow | Ventana horaria vigente del permiso. |
+
+Habilitación de un residente sobre un área común, derivada de una reserva aprobada y acotada a su ventana horaria.
+
+### Entity: AccessAttempt
+
+| Atributo | Tipo | Descripción |
+|---|---|---|
+| idAttempt | Long | Identificador único del intento. |
+| deviceId | String | Dispositivo en el que se registró el intento. |
+| credentialPresented | String | Credencial presentada. |
+| result | AccessResult | Resultado del intento. |
+| occurredAt | DateTime | Marca de tiempo del intento. |
+
+Bitácora auditable del contexto.
+
+## ValueObject: RfidUid
+
+| Atributo | Tipo | Descripción |
+|---|---|---|
+| value | String | Identificador único de la tarjeta RFID. |
+
+
+## Enumeration
+
+| Enumeración | Valores |
+|---|---|
+| CredentialStatus | `ACTIVE`, `SUSPENDED`, `REVOKED` |
+| AccessResult | `GRANTED`, `DENIED` |
+
+## Domain Services
+
+| Nombre | Responsabilidad | Reglas aplicadas |
+|---|---|---|
+| AccessDecisionService | Resolver si una credencial concede acceso. | Una credencial concede acceso solo si está activa, el residente no está moroso y existe un permiso vigente para esa área en ese instante. |
 
 #### 4.2.9.2. Interface Layer
 
-`IncidentController` (reporte de una incidencia por el residente y consulta de su estado, US08 esc. 2), `IncidentTrackingController` (seguimiento y actualización del estado por el administrador), `EmergencyBroadcastController` (activación de una alerta de emergencia por el administrador, US08 esc. 1).
+**AccessCredentialController**: emisión, suspensión y revocación de credenciales RFID. **AccessController**: dar acceso a tarjetas. **DoorControlController**: apertura remota por parte del administrador. **AccessAuditController**: consulta de la bitácora de accesos. Como *Consumers*: `ReservationEventConsumer` y `PaymentEventConsumer`, suscritos a los eventos que llegan por el broker.
 
 #### 4.2.9.3. Application Layer
 
-`IncidentCommandService` (registra la incidencia, resuelve la ubicación contra Residential Management y evalúa la escalación), `IncidentTrackingCommandService` (transiciones de estado y comentarios de seguimiento), `EmergencyBroadcastCommandService` (difusión inmediata) e `IncidentQueryService` (bandeja de incidencias del administrador e historial del residente). Publica `IncidentReported`, `IncidentStatusChanged` y `EmergencyDeclared`; este último es el que Notification entrega por **push y SMS** dentro del presupuesto de 5 segundos fijado en US08 (ver 4.1.4).
+## Access Command Handler
+
+| Capability | Command Handler | Descripción |
+|---|---|---|
+| Emitir/suspender/revocar credencial | AccessCredentialCommandService.handle(...) | Gestiona el ciclo de vida de la credencial RFID. |
+
+
+`AccessQueryService` resuelve las consultas de credenciales, permisos y bitácora.
+
+## Event Handlers
+
+| Handler | Evento de origen | Descripción |
+|---|---|---|
+| ReservationApprovedEventHandler | ReservationApproved | Crea el `AccessPermission` temporal para el área reservada. |
+| ResidentMarkedDelinquentEventHandler | ResidentMarkedDelinquent | Suspende las credenciales del residente moroso. |
+
+Tras cada resolución de acceso el contexto publica `PhysicalAccessGranted` o `PhysicalAccessDenied`.
 
 #### 4.2.9.4. Infrastructure Layer
 
-Implementación JPA de los repositorios sobre PostgreSQL, con esquema propio del microservicio (TS05); `ResidentialLocationClient`, cliente REST hacia Residential Management para resolver la torre y el departamento del residente que reporta; **Adapter Pattern (Anti-Corruption Layer)** hacia **Cloudinary** para las fotografías adjuntas a la incidencia; publicador AMQP de los eventos del contexto.
+## Repositories
+
+| Repositorio | Responsabilidad |
+|---|---|
+| AccessCredentialRepository | Persistencia de credenciales. |
+| AccessPermissionRepository | Persistencia de permisos de acceso. |
+| AccessAttemptRepository | Persistencia de la bitácora de intentos. |
+
+Implementación JPA de los repositorios sobre PostgreSQL; `EdgeGatewaySyncClient`, cliente REST que empuja al Edge API las credenciales activas, las reservas vigentes y la blacklist para que el condominio siga operando sin conexión; publicador AMQP/MQTT de los eventos del contexto.
 
 #### 4.2.9.5. Bounded Context Software Architecture Component Level Diagrams
 
-> ⚠️ **Pendiente:** el Component View de este contexto debe generarse desde `arquitectura/diagrama.dsl` junto con el resto del modelo Structurizr, siguiendo el mismo formato que las figuras de 4.2.1.5 a 4.2.12.5.
+![Componentes IoT Access Management](assets/img/ComponentView_Access_Service.png)
+
+*Figura. Diagrama de Componentes — IoT Access Management Service. Elaborado utilizando Structurizr (Structurizr, s.f.).*
 
 #### 4.2.9.6. Bounded Context Software Architecture Code Level Diagrams
 
 ##### 4.2.9.6.1. Bounded Context Domain Layer Class Diagrams
 
-> ⚠️ **Pendiente:** diagrama de clases UML del Domain Layer, a elaborar con PlantUML en `plantuml/class-diagrams/incident-management-class.puml`.
+![Clases IoT Access Management](assets/img/access-management-class.png)
+
+*Figura. Diagrama de Clases — IoT Access Management. Elaborado con PlantUML.*
 
 ##### 4.2.9.6.2. Bounded Context Database Design Diagram
 
-> ⚠️ **Pendiente:** las tablas `incidents`, `incident_updates` y `emergency_broadcasts` persisten en PostgreSQL y deben incorporarse al ERD consolidado de 4.2.1.6.2.
+![ERD extensión IoT](assets/img/iot-erd-extension.png)
 
-### 4.2.10. Bounded Context: IoT Access Management
+*Figura. Diagrama Entidad-Relación — extensión IoT. Elaborado con PlantUML.*
+
+---
+
+### 4.2.10. Bounded Context: Smart Lighting & Automation
 
 #### 4.2.10.1. Domain Layer
 
-`AccessCredential` (Aggregate Root: credencial de acceso de un residente, con tipo RFID o QR dinámico, identificador, titular, vigencia y estado ACTIVE/SUSPENDED/REVOKED), `AccessPermission` (Entity: habilitación de un residente sobre un área común, derivada de una reserva aprobada y acotada a su ventana horaria), `AccessAttempt` (Entity: intento de acceso registrado con dispositivo, credencial presentada, resultado y marca de tiempo — es la bitácora auditable del contexto). Value Objects: `RfidUid`, `QrToken` (token de un solo uso con TTL), `TimeWindow`. Domain Service: `AccessDecisionService`, que concentra la regla de negocio central del contexto —una credencial concede acceso solo si está activa, el residente no está moroso y existe un permiso vigente para esa área en ese instante—. Interfaces `AccessCredentialRepository`, `AccessPermissionRepository` y `AccessAttemptRepository`.
+El agregado principal identificado es:
+
+**AutomationRule**: regla que gobierna una o varias luminarias de un área común, con condición de presencia, umbral de lux, franja horaria, duración de apagado por inactividad y prioridad frente a otras reglas. La regla se resuelve mediante el Domain Service **AutomationDecisionService**, que combina presencia, lux ambiental, horario de reserva y override vigente, aplicando la precedencia entre reglas.
+
+## Aggregate: AutomationRuleAggregate
+
+### Entity: AutomationRule
+
+| Atributo | Tipo | Descripción |
+|---|---|---|
+| idRule | Long | Identificador único de la regla. |
+| idCommonArea | Long | Área común a la que aplica. |
+| presenceRequired | Boolean | Condición de presencia. |
+| luxThreshold | LuxThreshold | Umbral de lux para activar la regla. |
+| schedule | LightingSchedule | Franja horaria de la regla. |
+| inactivityTimeout | PresenceTimeout | Duración de apagado por inactividad. |
+| priority | Int | Prioridad frente a otras reglas. |
+
+### Entity: Luminaire
+
+| Atributo | Tipo | Descripción |
+|---|---|---|
+| idLuminaire | Long | Identificador único de la luminaria. |
+| location | String | Ubicación física de la luminaria. |
+| idCommonArea | Long | Área común asociada. |
+| nominalPower | Decimal | Potencia nominal. |
+| state | LuminaireState | Estado ON/OFF. |
+
+### Entity: OverrideCommand
+
+| Atributo | Tipo | Descripción |
+|---|---|---|
+| idOverride | Long | Identificador único del comando. |
+| idLuminaire | Long | Luminaria afectada. |
+| requestedBy | Long | Usuario que solicita el override. |
+| action | OverrideAction | Encendido o apagado manual solicitado. |
+| duration | Duration | Duración del override. |
+| reason | String | Motivo del override, que suspende temporalmente la automatización. |
+
+## ValueObject: LuxThreshold
+
+| Atributo | Tipo | Descripción |
+|---|---|---|
+| value | Decimal | Umbral de lux ambiental. |
+
+## ValueObject: PresenceTimeout
+
+| Atributo | Tipo | Descripción |
+|---|---|---|
+| seconds | Int | Tiempo de inactividad antes de apagar. |
+
+## ValueObject: LightingSchedule
+
+| Atributo | Tipo | Descripción |
+|---|---|---|
+| start | Time | Inicio de la franja horaria. |
+| end | Time | Fin de la franja horaria. |
+
+## ValueObject: BrightnessLevel
+
+| Atributo | Tipo | Descripción |
+|---|---|---|
+| value | Decimal | Nivel de brillo objetivo. |
+
+## Enumeration
+
+| Enumeración | Valores |
+|---|---|
+| LuminaireState | `ON`, `OFF` |
+| OverrideAction | `ON`, `OFF` |
+
+## Domain Services
+
+| Nombre | Responsabilidad | Reglas aplicadas |
+|---|---|---|
+| AutomationDecisionService | Resolver el estado objetivo de cada luminaria. | Combina presencia, lux ambiental, horario de reserva y override vigente, aplicando la precedencia entre reglas. |
 
 #### 4.2.10.2. Interface Layer
 
-`AccessCredentialController` (emisión, suspensión y revocación de credenciales RFID), `QrAccessController` (generación del QR dinámico que el residente muestra en la puerta), `DoorControlController` (apertura remota por parte del administrador), `AccessAuditController` (consulta de la bitácora de accesos). Como *Consumers*: `ReservationEventConsumer` y `PaymentEventConsumer`, suscritos a los eventos que llegan por el broker.
+**AutomationRuleController**: CRUD de reglas de automatización por parte del administrador. **LightingOverrideController**: encendido/apagado manual desde la aplicación del residente o del administrador. **LuminaireController**: registro y consulta de luminarias y su estado. Como *Consumer*: `PresenceEventConsumer`, suscrito a los eventos de presencia y de inicio de reserva.
 
 #### 4.2.10.3. Application Layer
 
-`AccessCredentialCommandService` (alta, suspensión y revocación), `QrTokenCommandService` (emisión del token con TTL y marca de un solo uso), `AccessQueryService` (consultas de credenciales, permisos y bitácora). Event Handlers: `ReservationApprovedEventHandler` —crea el `AccessPermission` temporal para el área reservada— y `ResidentMarkedDelinquentEventHandler` —suspende las credenciales del residente moroso—. Tras cada resolución de acceso publica `PhysicalAccessGranted` o `PhysicalAccessDenied`.
+## Event Handlers
+
+| Handler | Evento de origen | Descripción |
+|---|---|---|
+| AreaPresenceDetectedEventHandler | AreaPresenceDetected | Enciende según la regla vigente cuando se detecta presencia y el lux ambiental está por debajo del umbral. |
+| ReservationStartedEventHandler | ReservationStarted | Enciende de forma programada el área al iniciar la reserva. |
+
+`AutomationRuleCommandService`, `OverrideCommandService` (aplica el override y programa su expiración) y `LightingQueryService` completan la capa. El contexto publica `LuminaireTurnedOn`, `LuminaireTurnedOff` y `OverrideTriggered`.
+
+Los dos eventos consumidos por este contexto se cerraron de la siguiente forma:
+
+- **`AreaPresenceDetected`** lo publica el **Edge API**, no Telemetry: el Edge reenvía la lectura cruda del sensor PIR del nodo de iluminación como evento tan pronto la recibe por MQTT local, priorizando la latencia de encendido sobre la interpretación de dominio (que sí aplica Telemetry para sus propios fines analíticos, pero por una ruta de datos separada).
+- **`ReservationStarted`** lo publica **Reservation**, mediante un scheduler interno que revisa periódicamente las reservas cuya ventana horaria acaba de comenzar — se mantiene toda la lógica de reservas en un único contexto en vez de que Smart Lighting consulte el calendario de Reservation por su cuenta.
 
 #### 4.2.10.4. Infrastructure Layer
 
-Implementación JPA de los repositorios sobre PostgreSQL; `EdgeGatewaySyncClient`, cliente REST que empuja al Edge API las credenciales activas, las reservas vigentes y la blacklist para que el condominio siga operando sin conexión; publicador AMQP/MQTT de los eventos del contexto.
+## Repositories
+
+| Repositorio | Responsabilidad |
+|---|---|
+| AutomationRuleRepository | Persistencia de reglas de automatización. |
+| LuminaireRepository | Persistencia de luminarias. |
+| OverrideCommandRepository | Persistencia de comandos de override. |
+
+Implementación JPA de los repositorios sobre PostgreSQL; `EdgeCommandPublisher`, que envía por MQTT/REST al Edge API las reglas de programación y los comandos de override para que este los ejecute localmente sobre los nodos de iluminación; publicador AMQP/MQTT de los eventos del contexto.
 
 #### 4.2.10.5. Bounded Context Software Architecture Component Level Diagrams
 
-![Componentes IoT Access Management](assets/img/ComponentView_Access_Service.png)
+![Componentes Smart Lighting & Automation](assets/img/ComponentView_Lighting_Service.png)
 
-*Figura. Diagrama de Componentes — IoT Access Management Service. Elaborado utilizando Structurizr (Structurizr, s.f.). Fuente en [`arquitectura/diagrama.dsl`](https://github.com/IoT-UPC-202620/edifika-report/blob/main/arquitectura/diagrama.dsl).*
+*Figura. Diagrama de Componentes — Smart Lighting & Automation Service. Elaborado utilizando Structurizr (Structurizr, s.f.).*
 
 #### 4.2.10.6. Bounded Context Software Architecture Code Level Diagrams
 
 ##### 4.2.10.6.1. Bounded Context Domain Layer Class Diagrams
 
-![Clases IoT Access Management](assets/img/access-management-class.png)
+![Clases Smart Lighting & Automation](assets/img/lighting-automation-class.png)
 
-*Figura. Diagrama de Clases — IoT Access Management. Elaborado con PlantUML; fuente en [`plantuml/class-diagrams/access-management-class.puml`](https://github.com/IoT-UPC-202620/edifika-report/blob/main/plantuml/class-diagrams/access-management-class.puml).*
+*Figura. Diagrama de Clases — Smart Lighting & Automation. Elaborado con PlantUML.*
 
 ##### 4.2.10.6.2. Bounded Context Database Design Diagram
 
-> ⚠️ **Nota:** las tablas de este contexto persisten en PostgreSQL (igual que el resto de contextos de gestión), pero se documentan en un ERD complementario en vez de en el ERD consolidado de 4.2.1.6.2 — ver nota en 4.2.12.6.2.
+![ERD consolidado](assets/img/db_diagram_lights.png)
 
-![ERD extensión IoT](assets/img/iot-erd-extension.png)
+*Figura. Diagrama Entidad-Relación — extensión Smart Lighting & Automation. Elaborado con PlantUML.*
 
-*Figura. Diagrama Entidad-Relación — extensión IoT (`access_credentials`, `access_permissions`, `access_attempts`). Elaborado con PlantUML; fuente en [`plantuml/database/iot-erd-extension.puml`](https://github.com/IoT-UPC-202620/edifika-report/blob/main/plantuml/database/iot-erd-extension.puml).*
+---
 
-### 4.2.11. Bounded Context: Smart Lighting & Automation
+### 4.2.11. Bounded Context: IoT Telemetry & Analytics
 
 #### 4.2.11.1. Domain Layer
 
-`AutomationRule` (Aggregate Root: regla que gobierna una o varias luminarias de un área común, con condición de presencia, umbral de lux, franja horaria, duración de apagado por inactividad y prioridad frente a otras reglas), `Luminaire` (Entity: luminaria física con ubicación, área común asociada, potencia nominal y estado ON/OFF), `OverrideCommand` (Entity: encendido o apagado manual solicitado por un usuario, con duración y motivo, que suspende temporalmente la automatización). Value Objects: `LuxThreshold`, `PresenceTimeout`, `LightingSchedule`, `BrightnessLevel`. Domain Service: `AutomationDecisionService`, que resuelve el estado objetivo de cada luminaria combinando presencia, lux ambiental, horario de reserva y override vigente, aplicando la precedencia entre reglas. Interfaces `AutomationRuleRepository`, `LuminaireRepository` y `OverrideCommandRepository`.
+El agregado principal identificado es:
+
+**EnergyConsumption**: consumo acumulado de una luminaria o área común en un periodo, calculado por integración de la potencia instantánea en el tiempo, `kWh = Σ(V × I × Δt) / 1000`.
+
+## Aggregate: EnergyConsumptionAggregate
+
+### Entity: EnergyConsumption
+
+| Atributo | Tipo | Descripción |
+|---|---|---|
+| idConsumption | Long | Identificador único del registro. |
+| idLuminaire | Long | Luminaria o área común medida. |
+| bucket | TimeBucket | Periodo de agregación. |
+| kwh | Decimal | Consumo acumulado en kWh. |
+
+### Entity: ConsumptionBaseline
+
+| Atributo | Tipo | Descripción |
+|---|---|---|
+| idBaseline | Long | Identificador único de la línea base. |
+| idCommonArea | Long | Área a la que corresponde la línea base. |
+| movingMean | Decimal | Media móvil de consumo. |
+| movingStdDev | Decimal | Desviación estándar móvil. |
+
+Línea base estadística por área contra la que se contrasta el consumo observado.
+
+### Entity: AnomalyFlag
+
+| Atributo | Tipo | Descripción |
+|---|---|---|
+| idFlag | Long | Identificador único de la marca. |
+| type | String | Tipo de anomalía. |
+| severity | String | Severidad de la anomalía. |
+| evidence | String | Evidencia de la anomalía. |
+| detectedAt | DateTime | Momento de la detección. |
+
+## ValueObject: SensorReading
+Value Object inmutable.
+
+| Atributo | Tipo | Descripción |
+|---|---|---|
+| deviceId | String | Dispositivo de origen. |
+| magnitudeType | String | Tipo de magnitud (presencia, lux o corriente). |
+| value | Decimal | Valor de la lectura. |
+| unit | MeasurementUnit | Unidad de medida. |
+| capturedAt | DateTime | Marca de tiempo de la lectura. |
+
+## ValueObject: MeasurementUnit
+
+| Atributo | Tipo | Descripción |
+|---|---|---|
+| value | String | Unidad de medida de la lectura. |
+
+## ValueObject: TimeBucket
+
+| Atributo | Tipo | Descripción |
+|---|---|---|
+| start | DateTime | Inicio del bucket temporal. |
+| end | DateTime | Fin del bucket temporal. |
+
+## ValueObject: ZScore
+
+| Atributo | Tipo | Descripción |
+|---|---|---|
+| value | Decimal | Puntuación Z usada para contrastar contra la baseline. |
+
+## Domain Services
+
+| Nombre | Responsabilidad | Reglas aplicadas |
+|---|---|---|
+| EnergyCalculationService | Integración temporal de la potencia. | `kWh = Σ(V × I × Δt) / 1000`. |
+| DeviceHealthService | Evaluar el *heartbeat* de cada dispositivo. | Marca el dispositivo `OFFLINE` cuando deja de emitir durante el tiempo límite configurado (TS16, TS17). |
+| AnomalyDetectionService | Comparar la muestra contra la baseline. | Distingue consumo anómalo de falla de luminaria, esta última caracterizada por corriente nula con la luminaria comandada en ON. |
 
 #### 4.2.11.2. Interface Layer
 
-`AutomationRuleController` (CRUD de reglas de automatización por parte del administrador), `LightingOverrideController` (encendido/apagado manual desde la aplicación del residente o del administrador), `LuminaireController` (registro y consulta de luminarias y su estado). Como *Consumer*: `PresenceEventConsumer`, suscrito a los eventos de presencia y de inicio de reserva.
+**TelemetryQueryController**: series temporales y agregados que alimentan los dashboards de la Web Application. **EnergyReportController**: consumo por área y por periodo. **AnomalyController**: consulta de anomalías detectadas. Como *Consumer*: `TelemetryIngestionConsumer`, suscrito por MQTT a las lecturas crudas que el Edge API reenvía al broker.
 
 #### 4.2.11.3. Application Layer
 
-`AutomationRuleCommandService`, `OverrideCommandService` (aplica el override y programa su expiración), `LightingQueryService`. Event Handlers: `AreaPresenceDetectedEventHandler` —enciende según la regla vigente cuando se detecta presencia y el lux ambiental está por debajo del umbral— y `ReservationStartedEventHandler` —enciende de forma programada el área al iniciar la reserva—. Publica `LuminaireTurnedOn`, `LuminaireTurnedOff` y `OverrideTriggered`.
-
-Los dos eventos consumidos por este contexto se cerraron de la siguiente forma en [`arquitectura/diagrama.dsl`](https://github.com/IoT-UPC-202620/edifika-report/blob/main/arquitectura/diagrama.dsl):
-
-- **`AreaPresenceDetected`** lo publica el **Edge API**, no Telemetry: el Edge reenvía la lectura cruda del sensor PIR del nodo de iluminación como evento tan pronto la recibe por MQTT local, priorizando la latencia de encendido sobre la interpretación de dominio (que sí aplica Telemetry para sus propios fines analíticos, ver 4.2.12, pero por una ruta de datos separada).
-- **`ReservationStarted`** lo publica **Reservation**, mediante un scheduler interno que revisa periódicamente las reservas cuya ventana horaria acaba de comenzar — se mantiene toda la lógica de reservas en un único contexto en vez de que Smart Lighting consulte el calendario de Reservation por su cuenta.
+`TelemetryIngestionService` (valida, normaliza y persiste la lectura entrante), `EnergyCalculationCommandService` (recalcula el consumo del bucket temporal afectado), `BaselineRecalculationService` (actualiza media y desviación móviles), `AnomalyDetectionHandler` (evalúa cada nueva agregación contra la baseline), `DeviceHealthMonitor` (job periódico que detecta la ausencia de mensajes de un dispositivo, lo marca `OFFLINE`, descarta los comandos pendientes hacia él y notifica al administrador sin afectar la comunicación con el resto) y `TelemetryQueryService` (resuelve las consultas de los dashboards). El contexto publica `AbnormalConsumptionDetected`, `LuminaireFailureDetected` y `DeviceWentOffline`.
 
 #### 4.2.11.4. Infrastructure Layer
 
-Implementación JPA de los repositorios sobre PostgreSQL; `EdgeCommandPublisher`, que envía por MQTT/REST al Edge API las reglas de programación y los comandos de override para que este los ejecute localmente sobre los nodos de iluminación; publicador AMQP/MQTT de los eventos del contexto.
+## Repositories
+
+| Repositorio | Responsabilidad |
+|---|---|
+| TelemetryRepository | Persistencia de lecturas crudas (`sensor_readings`, hypertable). |
+| EnergyConsumptionRepository | Persistencia del consumo agregado. |
+| BaselineRepository | Persistencia de las líneas base de consumo. |
+
+Implementación del repositorio de series sobre **TimescaleDB** —hypertables particionadas por tiempo y agregados continuos para resolver las consultas del dashboard sin recorrer la serie cruda—, a diferencia del resto de contextos, que persisten en PostgreSQL relacional. Suscriptor MQTT hacia el broker y publicador AMQP/MQTT de los eventos de alerta.
 
 #### 4.2.11.5. Bounded Context Software Architecture Component Level Diagrams
 
-![Componentes Smart Lighting & Automation](assets/img/ComponentView_Lighting_Service.png)
+![Componentes IoT Telemetry & Analytics](assets/img/ComponentView_Telemetry_Service.png)
 
-*Figura. Diagrama de Componentes — Smart Lighting & Automation Service. Elaborado utilizando Structurizr (Structurizr, s.f.). Fuente en [`arquitectura/diagrama.dsl`](https://github.com/IoT-UPC-202620/edifika-report/blob/main/arquitectura/diagrama.dsl).*
+*Figura. Diagrama de Componentes — IoT Telemetry & Analytics Service. Elaborado utilizando Structurizr (Structurizr, s.f.).*
 
 #### 4.2.11.6. Bounded Context Software Architecture Code Level Diagrams
 
 ##### 4.2.11.6.1. Bounded Context Domain Layer Class Diagrams
 
-![Clases Smart Lighting & Automation](assets/img/lighting-automation-class.png)
+![Clases IoT Telemetry & Analytics](assets/img/telemetry-analytics-class.png)
 
-*Figura. Diagrama de Clases — Smart Lighting & Automation. Elaborado con PlantUML; fuente en [`plantuml/class-diagrams/lighting-automation-class.puml`](https://github.com/IoT-UPC-202620/edifika-report/blob/main/plantuml/class-diagrams/lighting-automation-class.puml).*
+*Figura. Diagrama de Clases — IoT Telemetry & Analytics. Elaborado con PlantUML.*
 
 ##### 4.2.11.6.2. Bounded Context Database Design Diagram
 
-> ⚠️ **Nota:** ver la misma figura y nota de ERD complementario de 4.2.10.6.2 — `automation_rules`, `luminaires` y `override_commands` son las tablas de este contexto dentro de ese mismo diagrama (persisten en PostgreSQL).
+Por su naturaleza de series temporales, las tablas de este contexto (`sensor_readings` como hypertable, más `energy_consumption`, `consumption_baselines` y `anomaly_flags`) no forman parte del ERD relacional consolidado (LucidChart, solo PostgreSQL). Se documentan en el mismo ERD complementario de IoT Access Management, separadas en su propio paquete TimescaleDB:
 
-### 4.2.12. Bounded Context: IoT Telemetry & Analytics
+![ERD extensión IoT](assets/img/iot-erd-extension.png)
 
-> 📌 **Nota:** este es el contexto que sostiene el requisito del curso sobre procesamiento, cálculo mediante expresiones matemáticas y estadísticas, y visualización de información cuantitativa recolectada por los dispositivos IoT.
+*Figura. Diagrama Entidad-Relación — extensión IoT, paquete TimescaleDB (`sensor_readings`, `energy_consumption`, `consumption_baselines`, `anomaly_flags`). Elaborado con PlantUML.*
+
+### 4.2.12. Bounded Context: Water Pump Leak Detection
 
 #### 4.2.12.1. Domain Layer
 
-`SensorReading` (Value Object inmutable: lectura individual con dispositivo de origen, tipo de magnitud —presencia, lux o corriente—, valor, unidad y marca de tiempo), `EnergyConsumption` (Aggregate Root: consumo acumulado de una luminaria o área común en un periodo, calculado por integración de la potencia instantánea en el tiempo, `kWh = Σ(V × I × Δt) / 1000`), `ConsumptionBaseline` (Entity: línea base estadística por área —media y desviación estándar móviles— contra la que se contrasta el consumo observado), `AnomalyFlag` (Entity: marca de anomalía con tipo, severidad y evidencia). Value Objects: `MeasurementUnit`, `TimeBucket`, `ZScore`. Domain Services: `EnergyCalculationService` (integración temporal de la potencia), `DeviceHealthService` (evalúa el *heartbeat* de cada dispositivo y lo marca `OFFLINE` cuando deja de emitir durante el tiempo límite configurado, conforme exigen TS16 y TS17) y `AnomalyDetectionService` (compara la muestra contra la baseline y distingue consumo anómalo de falla de luminaria, esta última caracterizada por corriente nula con la luminaria comandada en ON). Interfaces `TelemetryRepository`, `EnergyConsumptionRepository` y `BaselineRepository`.
+El agregado principal identificado es:
+
+**LeakDetectionRule** (Aggregate Root: regla que gobierna una o varias bombas de agua, con umbral de caudal, umbral de presión, franja horaria de consumo esperado y duración mínima de desviación antes de declarar una fuga), **WaterPump** (Entity: bomba física con ubicación, zona asociada, potencia nominal y estado `ON`/`OFF`/`FAULT`), **LeakAlert** (Entity: evento de fuga detectado, con severidad, evidencia y estado de resolución). Value Objects: `FlowThreshold`, `PressureThreshold`, `FlowRate`, `LeakSeverity`. Domain Service: **LeakDetectionService**, que compara la lectura de caudal y presión contra la línea base esperada de la zona y distingue una fuga real de un consumo legítimo fuera de horario. Interfaces `LeakDetectionRuleRepository`, `WaterPumpRepository` y `LeakAlertRepository`.
+
+## Aggregate: LeakDetectionRuleAggregate
+
+### Entity: LeakDetectionRule
+
+| Atributo | Tipo | Descripción |
+|---|---|---|
+| idRule | Long | Identificador único de la regla. |
+| idZone | Long | Zona hidráulica a la que aplica. |
+| flowThreshold | FlowThreshold | Caudal máximo esperado fuera de horario de consumo. |
+| pressureThreshold | PressureThreshold | Caída de presión mínima que dispara la evaluación. |
+| expectedWindow | LightingSchedule | Franja horaria de consumo esperado. |
+| minDeviationMinutes | Int | Duración mínima de desviación antes de declarar fuga. |
+| isActive | Boolean | Indica si la regla está vigente. |
+
+## Aggregate: WaterPumpAggregate
+
+### Entity: WaterPump
+
+| Atributo | Tipo | Descripción |
+|---|---|---|
+| idPump | Long | Identificador único de la bomba. |
+| idZone | Long | Zona hidráulica asociada. |
+| location | String | Ubicación física de la bomba. |
+| nominalFlow | Decimal | Caudal nominal de la bomba. |
+| state | PumpState | Estado actual de la bomba. |
+
+### Entity: LeakAlert
+
+| Atributo | Tipo | Descripción |
+|---|---|---|
+| idAlert | Long | Identificador único de la alerta. |
+| idPump | PumpId | Bomba en la que se detectó la desviación. |
+| severity | LeakSeverity | Severidad de la fuga detectada. |
+| evidence | String | Lectura de caudal/presión que sustenta la alerta. |
+| detectedAt | DateTime | Momento de la detección. |
+| resolvedAt | DateTime | Momento de resolución (si aplica). |
+| status | LeakAlertStatus | Estado de la alerta. |
+
+## ValueObject: FlowThreshold
+
+| Atributo | Tipo | Descripción |
+|---|---|---|
+| value | Decimal | Caudal límite antes de considerar una posible fuga. |
+
+## ValueObject: PressureThreshold
+
+| Atributo | Tipo | Descripción |
+|---|---|---|
+| value | Decimal | Caída de presión mínima que activa la evaluación. |
+
+## ValueObject: FlowRate
+
+| Atributo | Tipo | Descripción |
+|---|---|---|
+| value | Decimal | Caudal instantáneo medido. |
+| unit | String | Unidad de medida del caudal. |
+
+## Enumeration
+
+| Enumeración | Valores |
+|---|---|
+| PumpState | `ON`, `OFF`, `FAULT` |
+| LeakSeverity | `LOW`, `MEDIUM`, `HIGH` |
+| LeakAlertStatus | `OPEN`, `ACKNOWLEDGED`, `RESOLVED` |
+
+## Domain Services
+
+| Nombre | Responsabilidad | Reglas aplicadas |
+|---|---|---|
+| LeakDetectionService | Distinguir una fuga real de un consumo legítimo. | Un caudal por encima del umbral fuera de la franja horaria esperada, sostenido más allá de la duración mínima configurada, se declara fuga. Una caída de presión sin caudal correspondiente marca la bomba como `FAULT`. |
 
 #### 4.2.12.2. Interface Layer
 
-`TelemetryQueryController` (series temporales y agregados que alimentan los dashboards de la Web Application), `EnergyReportController` (consumo por área y por periodo), `AnomalyController` (consulta de anomalías detectadas). Como *Consumer*: `TelemetryIngestionConsumer`, suscrito por MQTT a las lecturas crudas que el Edge API reenvía al broker.
+**LeakDetectionRuleController**: CRUD de reglas de detección por parte del administrador. **WaterPumpController**: registro y consulta de bombas y su estado. **LeakAlertController**: consulta y resolución de alertas de fuga. **PumpControlController**: apagado remoto manual de una bomba. Como *Consumer*: `FlowReadingEventConsumer`, suscrito a las lecturas de caudal y presión que reenvía el Edge API.
 
 #### 4.2.12.3. Application Layer
 
-`TelemetryIngestionService` (valida, normaliza y persiste la lectura entrante), `EnergyCalculationCommandService` (recalcula el consumo del bucket temporal afectado), `BaselineRecalculationService` (actualiza media y desviación móviles), `AnomalyDetectionHandler` (evalúa cada nueva agregación contra la baseline), `DeviceHealthMonitor` (job periódico que detecta la ausencia de mensajes de un dispositivo, lo marca `OFFLINE`, descarta los comandos pendientes hacia él y notifica al administrador sin afectar la comunicación con el resto — TS16 y TS17) y `TelemetryQueryService` (resuelve las consultas de los dashboards). Publica `AbnormalConsumptionDetected`, `LuminaireFailureDetected` y `DeviceWentOffline`.
+## Event Handlers
+
+| Handler | Evento de origen | Descripción |
+|---|---|---|
+| FlowReadingReceivedEventHandler | FlowReadingReceived | Evalúa la lectura contra `LeakDetectionService`; si corresponde, crea la `LeakAlert` y ordena el corte de la bomba. |
+
+`LeakDetectionRuleCommandService`, `PumpControlCommandService` (ejecuta el comando de apagado y programa su confirmación) y `LeakQueryService` completan la capa. El contexto publica `LeakDetected`, `PumpShutOff` y `LeakResolved`.
+
+**`FlowReadingReceived`** lo publica el **Edge API**, no Telemetry: reenvía la lectura cruda del sensor de caudal/presión del nodo hidráulico como evento tan pronto la recibe por MQTT local, priorizando la latencia de corte sobre la interpretación de dominio, siguiendo el mismo criterio aplicado en `AreaPresenceDetected` (ver 4.2.10.3).
 
 #### 4.2.12.4. Infrastructure Layer
 
-Implementación del repositorio de series sobre **TimescaleDB** —hypertables particionadas por tiempo y agregados continuos para resolver las consultas del dashboard sin recorrer la serie cruda—, a diferencia del resto de contextos, que persisten en PostgreSQL relacional. Suscriptor MQTT hacia el broker y publicador AMQP/MQTT de los eventos de alerta.
+## Repositories
+
+| Repositorio | Responsabilidad |
+|---|---|
+| LeakDetectionRuleRepository | Persistencia de reglas de detección. |
+| WaterPumpRepository | Persistencia de bombas. |
+| LeakAlertRepository | Persistencia de alertas de fuga. |
+
+Implementación JPA de los repositorios sobre PostgreSQL; `EdgeCommandPublisher`, que envía por MQTT/REST al Edge API el comando de corte de la bomba para que este lo ejecute localmente sobre el nodo hidráulico; publicador AMQP/MQTT de los eventos del contexto.
 
 #### 4.2.12.5. Bounded Context Software Architecture Component Level Diagrams
 
-![Componentes IoT Telemetry & Analytics](assets/img/ComponentView_Telemetry_Service.png)
+![Componentes Water Pump Leak Detection](assets/img/component_leak.png)
 
-*Figura. Diagrama de Componentes — IoT Telemetry & Analytics Service. Elaborado utilizando Structurizr (Structurizr, s.f.). Fuente en [`arquitectura/diagrama.dsl`](https://github.com/IoT-UPC-202620/edifika-report/blob/main/arquitectura/diagrama.dsl).*
+*Figura. Diagrama de Componentes — Water Pump Leak Detection Service. Elaborado utilizando Structurizr (Structurizr, s.f.).*
 
 #### 4.2.12.6. Bounded Context Software Architecture Code Level Diagrams
 
 ##### 4.2.12.6.1. Bounded Context Domain Layer Class Diagrams
 
-![Clases IoT Telemetry & Analytics](assets/img/telemetry-analytics-class.png)
 
-*Figura. Diagrama de Clases — IoT Telemetry & Analytics. Elaborado con PlantUML; fuente en [`plantuml/class-diagrams/telemetry-analytics-class.puml`](https://github.com/IoT-UPC-202620/edifika-report/blob/main/plantuml/class-diagrams/telemetry-analytics-class.puml).*
+![Clases Water Pump Leak Detection](assets/img/class_diagram_leak.png)
+
+*Figura. Diagrama de Clases — Water Pump Leak Detection. Elaborado con PlantUML.*
 
 ##### 4.2.12.6.2. Bounded Context Database Design Diagram
 
-Por su naturaleza de series temporales, las tablas de este contexto (`sensor_readings` como hypertable, más `energy_consumption`, `consumption_baselines` y `anomaly_flags`) no forman parte del ERD relacional consolidado de 4.2.1.6.2 (LucidChart, solo PostgreSQL). Se documentan en el mismo ERD complementario de 4.2.10.6.2, separadas en su propio paquete TimescaleDB:
 
-![ERD extensión IoT](assets/img/iot-erd-extension.png)
+![ERD extensión Water Pump Leak Detection](assets/img/db_diagram_leak.png)
 
-*Figura. Diagrama Entidad-Relación — extensión IoT, paquete TimescaleDB (`sensor_readings`, `energy_consumption`, `consumption_baselines`, `anomaly_flags`). Elaborado con PlantUML; fuente en [`plantuml/database/iot-erd-extension.puml`](https://github.com/IoT-UPC-202620/edifika-report/blob/main/plantuml/database/iot-erd-extension.puml).*
+*Figura. Diagrama Entidad-Relación — extensión Water Pump Leak Detection. Elaborado con PlantUML.*
+
 
 # Conclusiones
 # Conclusiones y Recomendaciones
+
+**Conclusiones**
+
+- El diseño por bounded context aísla reglas de negocio distintas (facturación, reservas, IoT) sin que un cambio en un contexto obligue a tocar otro; la comunicación entre Reservation, Smart Lighting y IoT Access Management ocurre solo por eventos, no por acoplamiento directo.
+- Separar PostgreSQL (datos transaccionales) de TimescaleDB (series de tiempo) resuelve el problema de escala de las lecturas de sensores, que crecen de forma continua y degradarían los dashboards de consumo si se consultaran contra un modelo relacional normal.
+- La regla de morosidad (`ResidentMarkedDelinquent`) es un acoplamiento intencional bien resuelto: Payment decide quién es moroso y IoT Access Management actúa sobre esa decisión suspendiendo credenciales, sin que ninguno duplique la lógica del otro.
+
+**Recomendaciones**
+
+- Definir un límite explícito de reintentos y de tiempo para `EdgeGatewaySyncClient`: si el Edge API pierde conexión, conviene declarar cuánto tiempo es aceptable operar en modo degradado con la última lista de credenciales sincronizada.
+- Formalizar un contrato de eventos versionado (Schema Registry o versión en el payload) para el Message & Event Broker, ya que varios contextos consumen los mismos eventos de Reservation y Payment; un cambio de esquema sin control rompería a todos a la vez.
+- Incorporar pruebas de contrato entre publicadores y consumidores de eventos (por ejemplo `ReservationApproved` y sus consumidores) para detectar incompatibilidades antes de desplegar, ya que la comunicación asíncrona no falla en tiempo de compilación.
+
 # Referencias Bibliográficas
 
-- Lucidchart. (s.f.). <https://www.lucidchart.com>
-- PlantUML. (s.f.). <https://plantuml.com>
-- Structurizr. (s.f.). <https://structurizr.com/>
+  - Aguilar, K. L. B. (2026). Vacíos regulatorios en la Ley de Propiedad en Condominio, análisis de conflictos recurrentes en su modalidad vertical ubicados en el Distrito Central (Tesis doctoral). Centro Universitario Tecnológico CEUTEC. `https://repositorio.unitec.edu/server/api/core/bitstreams/cd97bbd4-204c-49c8-9901-3d0a5a85d7f3/content`
+  - Condominos. (2024, 4 de noviembre). Manejo de chats de WhatsApp de vecinos en condominios. `https://www.condominos.app/sitio/detalle/OA/manejo-de-chats-de-whatsapp-de-vecinos-en-condominios`
+`https://www2.deloitte.com/us/en/insights/topics/digital-transformation.html`
+  - El Comercio. (2026, 3 de abril). Fallas en la gestión de edificios corporativos pueden generar sobrecostos de hasta 30%. `https://elcomercio.pe/economia/fallas-en-la-gestion-de-edificios-corporativos-pueden-generar-sobrecostos-de-hasta-30-noticia/`
+  - Gestión. (2023, 12 de septiembre). Advierten que deudas por gastos en condominios llevan a inquilinos a Infocorp. `https://gestion.pe/tu-dinero/inmobiliarias/advierten-que-deudas-por-gastos-en-condominios-llevan-a-inquilinos-a-infocorp-condominios-deudas-por-pagos-de-mantenimiento-noticia/`
+  - GitHub. (s.f.). `https://github.com/`
+  - Instituto Nacional de Estadística e Informática (INEI). (2023). Perú: Características de las viviendas particulares y hogares. `https://www.gob.pe/institucion/inei/informes-publicaciones/4377979-las-tecnologias-de-informacion-y-comunicacion-en-los-hogares-ene-feb-mar-2023`
+  - Lucidchart. (s.f.). `https://www.lucidchart.com`
+  - PlantUML. (s.f.). `https://plantuml.com`
+  - ProTool. (2026, 11 de marzo). Administrar un condominio por WhatsApp no es gestión, es un riesgo para la comunidad. `https://www.protool.cl/noticia_detalle.php?slug=administrar-condominios-por-whatsapp-no-es-gestion-es-riesgo`
+  - Sociedad Peruana de Bienes Raíces. (2024). Digitalización de edificios y condominios en Perú. `https://bienesraicess.com/blogs/digitalizacion-de-edificios-y-condominios-en-peru`
+  - UXPressia. (s.f.). `https://uxpressia.com/`
+  - Verastegui Leon, P. A., Mendoza Castañeda, J. L. D. C., Zapata Becerra, M. L., Capristan Leon, K. E., & Ravines Garcia, M. A. (2025). Propuesta de un plan estratégico para mejora de la Gestión en Edificios Multifamiliares en Lima Moderna: Caso De Estudio: MONARCH MANAGERS EIRL. Universidad Peruana de Ciencias Aplicadas. `https://repositorioacademico.upc.edu.pe/handle/10757/686137`
 
 # Anexos
