@@ -12,7 +12,7 @@
 
 <h4>Docente: Verla Olivera, David Carlos</h4>
 
-<h3>Informe de "AV1"</h3>
+<h3>Informe de Trabajo Final</h3>
 
 <h4>Nombre del Startup: Condomia</h4>
 <h4>Nombre del Producto: Edifika</h4>
@@ -133,7 +133,7 @@
 ## **Project Report Collaboration Insights**
 
 AV1 (20/09/2026):
-
+  <img src="assets/img/interviews/in.jpeg" alt="logo" />
 
 ## **Contenido**
 - [CAPÍTULO I: Introducción](#capítulo-i-introducción)
