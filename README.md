@@ -31,7 +31,7 @@
   </thead>
   <tbody>
     <tr><td style="border: 1px solid black;">Acuña Corahua, Jonatan Ariel</td><td style="border: 1px solid black;">u20211b995</td></tr>
-    <tr><td style="border: 1px solid black;">Collantes Carrillo, Diego Mateo</td><td style="border: 1px solid black;">u2023</td></tr>
+    <tr><td style="border: 1px solid black;">Collantes Carrillo, Diego Mateo</td><td style="border: 1px solid black;">u202311823</td></tr>
     <tr><td style="border: 1px solid black;">Landa Ortiz, Sergio Javier</td><td style="border: 1px solid black;">u202311086</td></tr>
     <tr><td style="border: 1px solid black;">Ortiz Cardenas, Johanna Antuanete</td><td style="border: 1px solid black;">u202310358</td></tr>
     <tr><td style="border: 1px solid black;">Perez Tuesta, Gabriel</td><td style="border: 1px solid black;">u202321281</td></tr>
@@ -192,11 +192,6 @@ AV1 (20/09/2026):
       - [4.1.3.2. Software Architecture Context Level Diagrams](#4132-software-architecture-context-level-diagrams)
       - [4.1.3.3. Software Architecture Container Level Diagrams](#4133-software-architecture-container-level-diagrams)
       - [4.1.3.4. Software Architecture Deployment Diagrams](#4134-software-architecture-deployment-diagrams)
-    - [4.1.4. Atributos de Calidad y Presupuesto de Rendimiento](#414-atributos-de-calidad-y-presupuesto-de-rendimiento)
-      - [4.1.4.1. Presupuesto de latencia](#4141-presupuesto-de-latencia)
-      - [4.1.4.2. Seguridad](#4142-seguridad)
-      - [4.1.4.3. Concurrencia y consistencia](#4143-concurrencia-y-consistencia)
-      - [4.1.4.4. Degradación y tolerancia a fallos](#4144-degradación-y-tolerancia-a-fallos)
   - [4.2. Tactical-Level Domain-Driven Design](#42-tactical-level-domain-driven-design)
     - [4.2.1. Bounded Context: IAM / Auth](#421-bounded-context-iam--auth)
       - [4.2.1.1. Domain Layer](#4211-domain-layer)
@@ -330,7 +325,8 @@ Acuña Corahua, Jonatan Ariel<br><br>
 AV1: Asumí el desarrollo de los principales artefactos de diseño de la solución. Modelé la arquitectura del sistema con C4 Model en Structurizr DSL (Landscape, Context, Container y Deployment, incluidos los microservicios IoT, el nivel de Edge Computing on-premise y los nodos físicos ESP32), definí los Bounded Contexts estratégicos, el Design-Level EventStorming de la extensión IoT y los diagramas de Domain Storytelling, y elaboré el modelado táctico DDD con la persistencia híbrida (PostgreSQL y TimescaleDB), consolidando el Capítulo IV como base común del diseño.<br><br>
 
 Collantes Carrillo, Diego Mateo<br><br>
-AV1: <br><br>
+AV1: Desarrollé liderazgo compartido al coordinar colaborativamente la sección de Strategic-Level Domain-Driven Design. Guié al equipo en el Design-Level EventStorming (Candidate Context Discovery, Domain Message Flows Modeling y Bounded Context Canvases) y en el desarrollo del Context Mapping, facilitando la alineación y estructuración estratégica del dominio del sistema. <br><br>
+
 
 Landa Ortiz, Sergio Javier<br><br>
 AV1: <br><br>
@@ -358,7 +354,7 @@ Acuña Corahua, Jonatan Ariel<br><br>
 AV1: Estructuré el repositorio del informe con una carpeta por capítulo según las pautas del trabajo final, migré los contenidos base y organicé los recursos gráficos en un directorio común de assets. Configuré un pipeline en Docker (Pandoc y Eisvogel, con filtros propios para tablas y HTML) que compila todo el informe a PDF y mantuve el Registro de Versiones, de modo que el equipo trabaje sobre una misma fuente y cada avance quede trazable.<br><br>
 
 Collantes Carrillo, Diego Mateo<br><br>
-AV1: <br><br>
+AV1: Fomenté un entorno colaborativo e inclusivo al coordinar la planificación y ejecución estratégica del dominio del proyecto (Strategic-Level Domain-Driven Design). Establecí metas claras facilitando el Design-Level EventStorming (Candidate Context Discovery, Domain Message Flows Modeling y Bounded Context Canvases) y organicé el trabajo en equipo para definir el Context Mapping, cumpliendo exitosamente con los objetivos planteados. <br><br>
 
 Landa Ortiz, Sergio Javier<br><br>
 AV1: <br><br>
