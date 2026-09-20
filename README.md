@@ -6,7 +6,7 @@
 <h3>Universidad Peruana de Ciencias Aplicadas</h3>
 <h3>Ingeniería de Software</h3>
 
-<h4>1ASI0572 - Desarrollo de Soluciones IOT<br>202610</h4>
+<h4>1ASI0572 - Desarrollo de Soluciones IOT<br>202620</h4>
 
 <h4>NRC: 8740</h4>
 
