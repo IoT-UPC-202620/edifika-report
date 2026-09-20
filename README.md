@@ -860,9 +860,19 @@ Para el diseño de las entrevistas se utilizó el método de entrevistas semiest
 | **Nombre entrevistado** |  Cesar Villalobos  |
 | **Edad** | 51 |
 | **Departamento** | Cercado de Lima  |
-| **Link del video** | `https://upcedupe-my.sharepoint.com/:v:/g/personal/u202310358_upc_edu_pe/IQDEXx-uGk1tS71xXaDeSeDeAf3fEODmStVZKztx7vcr0i8?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=5V6W7o` |
-| **Foto entrevista** |   <img src="assets/img/interviews/admin1.png" alt="logo" width="500"/>|
+| **Link del video** | [Link del video de la entrevista](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202310358_upc_edu_pe/IQDEXx-uGk1tS71xXaDeSeDeAf3fEODmStVZKztx7vcr0i8?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=5V6W7o) |
+| **Foto entrevista** |   <img src="assets/img/interviews/admin1.png" alt="logo" />|
 | **Resumen** | César es administrador de edificios en GWM EIRL y actualmente gestiona 15 edificios usando Excel con macros como herramienta principal, apoyándose en WhatsApp para coordinar reservas y comunicaciones, y en las páginas de los bancos para pagos. El proceso más tedioso es la emisión de recibos, que aún se hace de forma física en varios edificios y que desea digitalizar al 100%. Ha evaluado entre 3 y 4 sistemas sin éxito, ya que todos presentaban exceso de información que generaba confusión en los propietarios y una percepción de desorden o falta de transparencia. Como empresa tiene el objetivo claro de migrar a una plataforma digital, y considera que una app o sistema web mejoraría significativamente la comunicación y la gestión, siempre que sea ágil, ordenada, fácil de entender y con información siempre actualizada. En cuanto al precio, conoce el mercado y sabe que el rango habitual oscila entre 2 y 5 dólares por unidad al mes. |
+
+| **ENTREVISTA 2** | |
+|---|---|
+| **Nombre entrevistado** | Alejandro Galindo |
+| **Edad** | 26 |
+| **Departamento** | San Miguel |
+| **Link del video** |[Link del video de la entrevista](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202321281_upc_edu_pe/IQAW5DBOyn8xS6ZiZVZwufEIAU9yh_7P6mIIpJ_RzxJp6is?e=kLEW30&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D)|
+| **Foto entrevista** |<img src="assets/img/alejandro.jpeg" alt="logo" /> |
+| **Resumen** | El administrador Alejandro Galindo gestiona 4 edificios utilizando principalmente Excel, WhatsApp y registros manuales. Su principal problema es el seguimiento de pagos y la falta de confirmación sobre la recepción de comunicados. Considera viable adoptar una plataforma digital siempre que centralice pagos, comunicaciones y reservas, y tenga un costo accesible. |
+
 
 **Segmento objetivo: Propietarios e Inquilinos:**
 
@@ -871,25 +881,38 @@ Para el diseño de las entrevistas se utilizó el método de entrevistas semiest
 | **Nombre entrevistado** | Melina Lopez  |
 | **Edad** | 51 |
 | **Departamento** | San Miguel  |
-| **Link del video** | `https://upcedupe-my.sharepoint.com/:v:/g/personal/u202310358_upc_edu_pe/IQCrGL7_ZORtSbK1HjVPRnKSAV6DqNEu28FqeS0W-wKJ7Rk?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=PPJ5TV`  |
-| **Foto entrevista** |<img src="assets/img/interviews/prop2.png" alt="logo" width="500"/>  |
+| **Link del video** | [Link del video de la entrevista](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202321281_upc_edu_pe/IQAW5DBOyn8xS6ZiZVZwufEIAU9yh_7P6mIIpJ_RzxJp6is?e=kLEW30&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D)  |
+| **Foto entrevista** |<img src="assets/img/interviews/prop2.png" alt="logo"/>  |
 | **Resumen** |Se entrevistó a Melina López, propietaria de un departamento, ella indica que no suele estar al tanto de las reuniones del edificio debido a la falta de tiempo. En cuanto a los pagos, envía los comprobantes por correo al administrador y mantiene un archivo físico como respaldo, ya que de lo contrario no tendría un historial accesible, asumiendo que la administración podría brindárselo si lo solicita. Señala que el proceso de reserva de espacios es el más tedioso, pues implica consultar disponibilidad, dejar garantía, realizar pagos y luego hacer seguimiento para su devolución, lo que la obliga a estar constantemente detrás de la administración. Además, le incomoda la gran cantidad de mensajes en el grupo de WhatsApp, donde se pierde información relevante. Finalmente, se muestra abierta al uso de una aplicación que centralice la información, considerando que actualmente los eventos y reuniones ya se comunican mediante un tablero. |
 
 | **ENTREVISTA 2** | |
 |---|---|
-| **Nombre entrevistado** | Rodrigo Chavez |
-| **Edad** | 20 |
-| **Departamento** | San Martin de Porres |
-| **Link del video** | [Link del video de la entrevista](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202311704_upc_edu_pe/IQAI31E2KPwVRIDiWA_kvuUbAX7b1n0Xhowp2KzW16Ut_vw?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=M9Fwl0) |
-| **Foto entrevista** | <img src="assets/img/interviews/prop1.png" alt="logo" width="500"/> |
-| **Resumen** | Se entrevistó a Rodrigo Chávez, quien es un inquilino en un condominio en el distrito de San Martin de Porres. Rodrigo comenta que, la principal comunicación con vecinos y propietarios es a través de WhatsApp, lo cual le parece dificultoso y molesto. Nos indica que el acceso a sus comprobantes de pago es únicamente mediante las conversaciones con el propietario o buscando en su aplicación del banco. Le encantaría tener una aplicación que englobe todos estos problemas. |
+| **Nombre entrevistado** | Jarol Panduro |
+| **Edad** | 30 |
+| **Departamento** | San Miguel |
+| **Link del video** | [Link del video de la entrevista](https://youtu.be/NHYPQzPL36M) |
+| **Foto entrevista** | <img src="assets/img/ser1.jpeg" alt="logo" /> |
+| **Resumen** | En este video, Jarol Panduro, un abogado de 30 años, detalla las principales deficiencias en la administración de su edificio. Explica que el proceso de pago del mantenimiento es tedioso porque requiere enviar capturas de pantalla por WhatsApp, y señala que no existe un sistema oficial para consultar su historial de pagos. Además, menciona problemas como la desorganización al reservar áreas comunes mediante cuadernos físicos, la falta de transparencia en los gastos administrativos, la lentitud en la comunicación oficial y lo anticuado que resulta el registro manual de visitas en la portería. Como solución, propone la implementación de una plataforma digital centralizada que permita registrar pagos automáticamente, reservar espacios y auditar los gastos de forma rápida y transparente.|
+
+| **ENTREVISTA 3** | |
+|---|---|
+| **Nombre entrevistado** | Marcelo Candia |
+| **Edad** | 25 |
+| **Departamento** | San Miguel |
+| **Link del video** | [Link del video de la entrevista](https://youtu.be/E5k60PHyvYI) |
+| **Foto entrevista** | <img src="assets/img/ser2.jpeg" alt="logo" /> |
+| **Resumen** | En la entrevista, Marcelo expone su frustración con la administración obsoleta y caótica de su edificio. Señala que los pagos de mantenimiento son tediosos porque exigen depósitos en cuentas específicas y la entrega de comprobantes físicos, sin aceptar billeteras digitales como Yape. Además, menciona problemas recurrentes como la falta de transparencia en los gastos anuales, la mala gestión en la reserva de áreas comunes que genera conflictos por cruces de horarios, y la lentitud de la administración para responder correos formales. También critica el uso de correos masivos que terminan llenándose de quejas irrelevantes de los vecinos y el engorroso proceso manual que se requiere para autorizar el ingreso de muebles grandes o mudanzas. Como solución ideal, sugiere la implementación de una aplicación o portal vecinal 100% automatizado que permita realizar pagos, reservas y reportes de fallas de manera digital las 24 horas del día, eliminando así el uso de papel|
 
 ### 2.2.3. Análisis de entrevistas
 
 ## **Segmento objetivo de administradores de edificios y condominios**
 
+Las entrevistas realizadas a César, administrador de GWM EIRL, y a Alejandro Galindo evidencian que ambos gestionan sus edificios principalmente mediante Excel, WhatsApp y procesos manuales, lo que genera dificultades en el control de pagos, la comunicación con los propietarios y la administración de reservas. César, quien administra 15 edificios, identifica como principal problema la emisión física de recibos y busca una digitalización completa de sus procesos, mientras que Alejandro, encargado de 4 edificios, destaca la falta de seguimiento eficiente de pagos y la incertidumbre sobre la recepción de comunicados. Ambos consideran que una plataforma digital podría mejorar significativamente la gestión siempre que centralice funciones clave como pagos, comunicaciones y reservas, sea fácil de usar, mantenga la información actualizada y tenga un costo accesible acorde a los precios habituales del mercado.
+
 
 ## **Segmento objetivo de propietarios e inquilinos**
+
+Las entrevistas realizadas a Melina López, Jarol Panduro y Marcelo muestran una insatisfacción común con los procesos tradicionales de administración de edificios. Los principales problemas identificados son la falta de un historial digital de pagos, la necesidad de enviar comprobantes manualmente, la escasa transparencia en los gastos administrativos, la desorganización en la reserva de áreas comunes y la saturación de información en canales de comunicación como WhatsApp y correos masivos. Además, destacan procesos poco eficientes para la gestión de visitas, mudanzas y solicitudes a la administración, así como la lentitud en la atención de consultas. Los tres entrevistados coinciden en que una plataforma digital centralizada mejoraría significativamente la experiencia de los propietarios al permitir gestionar pagos, reservas, comunicaciones y consultas de manera rápida, organizada, transparente y accesible desde cualquier momento, reduciendo la dependencia de procesos manuales y documentos físicos.
 
 
 ## 2.3. Needfinding
@@ -935,6 +958,15 @@ Para el diseño de las entrevistas se utilizó el método de entrevistas semiest
 
 ### 2.3.3. User Journey Mapping
 
+Primer Segmento:
+
+<img src="assets/img/j1.png" alt="logo" /> 
+
+Segundo Segmento:
+
+
+<img src="assets/img/j2.png" alt="logo" /> 
+
 ### 2.3.4. Empathy Mapping
 
 ### Administrador de Condominio – Ricardo Mendoza
@@ -952,7 +984,144 @@ Para el diseño de las entrevistas se utilizó el método de entrevistas semiest
 
 ## 2.4. Big Picture EventStorming
 
-## 2.5. Ubiquitous Language
+En esta seccción se presenta el trabajo realizado durante la sesion de Big Picture event storming enfocada en comprender el dominio general del negocio. Para ello se utilizaran post-its para mapear los eventos significativos que ocurre en el flujo operativo actual.Esta actividad permite agrupar las interacciones en bloques funcionales lógicos, asegurando que la solución tecnológica satisfaga los requisitos reales del flujo operativo
+
+
+<img src="assets/img/big.jpeg" alt="logo" /> 
+
+## 2.5 Ubiquitous Language
+
+El Ubiquitous Language define un lenguaje común entre los actores del sistema, permitiendo una comunicación clara y consistente durante el desarrollo de la solución. En este proyecto, se integran conceptos relacionados con la administración de edificios inteligentes (Smart Buildings), automatización mediante IoT, monitoreo de recursos y seguridad residencial.
+
+---
+
+## Usuarios y Segmentos
+
+### Administrador de Edificios
+Persona responsable de supervisar la operación de uno o varios edificios o condominios. Gestiona residentes, pagos, incidencias, reservas de áreas comunes y monitorea los dispositivos IoT instalados.
+
+### Propietario e Inquilino
+Residente que utiliza la plataforma para consultar información de su unidad, realizar pagos, reservar áreas comunes, recibir notificaciones y acceder a servicios inteligentes del edificio.
+
+### Personal de Mantenimiento
+Usuario encargado de atender incidencias técnicas relacionadas con infraestructura, dispositivos IoT, sistemas de iluminación, agua y seguridad.
+
+---
+
+## Funcionalidades Core para Administradores
+
+### Edificio
+Conjunto de unidades residenciales administradas dentro de la plataforma.
+
+### Unidad Residencial
+Departamento o espacio asignado a uno o varios residentes dentro de un edificio.
+
+### Residente
+Persona vinculada a una unidad residencial con acceso a funcionalidades específicas del sistema.
+
+### Área Común
+Espacio compartido por los residentes, como salón de eventos, gimnasio, zona de parrillas o áreas recreativas.
+
+### Reserva
+Solicitud realizada por un residente para utilizar un área común en una fecha y horario determinados.
+
+### Incidencia
+Problema o evento reportado relacionado con infraestructura, servicios o dispositivos del edificio.
+
+### Notificación
+Mensaje enviado automáticamente a administradores o residentes para informar eventos importantes.
+
+### Reporte Financiero
+Documento generado por el sistema que resume ingresos, pagos pendientes y movimientos económicos del edificio.
+
+---
+
+## Funcionalidades IoT (NÚCLEO DEL PROYECTO)
+
+### Sensor IoT
+Dispositivo conectado capaz de recopilar datos del entorno y transmitirlos al sistema en tiempo real.
+
+### Iluminación Inteligente
+Sistema que controla automáticamente las luces de áreas comunes mediante sensores de movimiento o reglas configuradas.
+
+### Control de Acceso Inteligente
+Mecanismo que permite autorizar o restringir el ingreso a determinadas áreas mediante credenciales digitales.
+
+### Sensor de Movimiento
+Dispositivo encargado de detectar presencia de personas en áreas comunes para activar automatizaciones.
+
+### Monitoreo de Tanque de Agua
+Proceso que supervisa continuamente el nivel de agua almacenada para prevenir desabastecimientos.
+
+### Detección de Fugas
+Funcionalidad que identifica posibles pérdidas de agua y genera alertas automáticas.
+
+### Riego Automático
+Sistema que activa el riego de áreas verdes según horarios programados o condiciones ambientales detectadas.
+
+### Calidad del Aire
+Indicador obtenido mediante sensores que monitorean variables como CO₂, temperatura, humedad y ventilación.
+
+### Alerta Inteligente
+Notificación generada automáticamente cuando se detecta una condición fuera de los parámetros establecidos.
+
+### Consumo de Recursos
+Registro y monitoreo del uso de agua y energía dentro del edificio.
+
+### Dashboard IoT
+Panel centralizado que permite visualizar en tiempo real el estado de los sensores, dispositivos y recursos monitoreados.
+
+---
+
+## Funcionalidades Core para Residentes
+
+### Estado de Cuenta
+Resumen de pagos realizados, deudas pendientes y movimientos asociados a una unidad residencial.
+
+### Pago de Mantenimiento
+Proceso mediante el cual el residente realiza el abono de las cuotas correspondientes al edificio.
+
+### Historial de Pagos
+Registro histórico de todos los pagos efectuados por el residente.
+
+### Comunicado
+Anuncio emitido por la administración para informar novedades, eventos o disposiciones importantes.
+
+### Encuesta
+Mecanismo que permite recopilar opiniones y votaciones de los residentes sobre decisiones comunitarias.
+
+### Votación
+Proceso mediante el cual los residentes participan en decisiones relacionadas con la gestión del edificio.
+
+### Seguimiento de Incidencias
+Funcionalidad que permite conocer el estado actual de un problema reportado.
+
+---
+
+## Gestión de Dispositivos IoT
+
+### Dispositivo IoT
+Equipo físico conectado al sistema capaz de recopilar información o ejecutar acciones automáticas.
+
+### Estado del Dispositivo
+Condición actual del dispositivo (activo, inactivo, desconectado o en mantenimiento).
+
+### Regla de Automatización
+Condición configurada para ejecutar acciones automáticas basadas en eventos detectados por sensores.
+
+### Evento IoT
+Acción o situación detectada por un dispositivo, como movimiento, fuga de agua o variación en la calidad del aire.
+
+### Historial de Eventos
+Registro cronológico de todas las actividades generadas por sensores y dispositivos IoT.
+
+### Monitoreo en Tiempo Real
+Visualización instantánea de datos generados por sensores y dispositivos conectados.
+
+---
+
+
+
 
 # Capítulo III: Requirements Specification
 
