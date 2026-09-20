@@ -133,7 +133,10 @@
 ## **Project Report Collaboration Insights**
 
 AV1 (20/09/2026):
-  <img src="assets/img/interviews/in.jpeg" alt="logo" />
+<br>
+<p align="center">
+  <img src="assets/img/in.jpeg" alt="logo" />
+</p>
 
 ## **Contenido**
 - [CAPÍTULO I: Introducción](#capítulo-i-introducción)
