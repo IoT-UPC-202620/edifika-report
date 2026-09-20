@@ -121,23 +121,10 @@
       <td>Modelado táctico DDD (diagramas de clases para servicios IoT), diseño de persistencia híbrida (PostgreSQL y TimescaleDB) y consolidación integral del Capítulo IV.</td>
     </tr>
     <tr>
-      <td>AV1</td>
+      <td>1.10.0</td>
       <td>18/09/2026</td>
-      <td>
-        - Acuña Corahua, Jonatan Ariel <br>
-        - Collantes Carrillo, Diego Mateo <br>
-        - Landa Ortiz, Sergio Javier <br>
-        - Ortiz Cardenas, Johanna Antuanete <br>
-        - Perez Tuesta, Gabriel <br>
-        - Lizarbe Alvarez, Ariana Nickole <br>
-        - Sarmiento Medina, Loreley
-      </td>
-      <td>
-        - Capítulo I: Introducción <br>
-        - Capítulo II: Requirements Elicitation & Analysis <br>
-        - Capítulo III: Requirements Specification <br>
-        - Capítulo IV: Solution Software Design
-      </td>
+      <td>Ortiz Cardenas, Johanna Antuanete</td>
+      <td>Redacción y documentación de todos los Bounded Contexts del Capítulo IV (Domain Layer, Interface Layer, Application Layer e Infrastructure Layer). También colaboré en el diseño del Event Storming aidentificando comandos, eventos de dominio y políticas entre todos los bounded context de edifika.</td>
     </tr>
   </tbody>
 </table>
@@ -335,7 +322,7 @@ Lizarbe Alvarez, Ariana Nickole<br><br>
 AV1: Participé activamente en las entrevistas realizadas a los usuarios para recopilar información sobre sus necesidades, comportamientos y problemas. Además, elaboré los User Stories, el Product Backlog y el Impact Mapping, contribuyendo a organizar los requerimientos, priorizar funcionalidades y relacionar las necesidades identificadas con los objetivos del producto. Estas actividades permitieron aportar al trabajo colaborativo y facilitar la toma de decisiones del equipo durante la definición de la solución. <br><br>
 
 Ortiz Cardenas, Johanna Antuanete<br><br>
-AV1: <br><br>
+AV1: Participé en el Design-Level EventStorming de la extensión IoT, identificando los comandos, eventos de dominio y políticas que conectan los Bounded Contexts Reservation, Smart Lighting & Automation e IoT Access Management. A partir de ese modelo, redacté y documenté el Domain Layer, Interface Layer, Application Layer e Infrastructure Layer de todos los Bounded Contexts del Capítulo IV, incluyendo el nuevo contexto de Water Pump Leak Detection, junto con sus diagramas de clases y de entidad-relación en PlantUML. <br><br>
 
 Perez Tuesta, Gabriel<br><br>
 AV1: Asumí el desarrollo de los principales artefactos de investigación y análisis centrados en el usuario. Diseñé las entrevistas para la validación del segmento objetivo, elaboré el User Persona, el Customer Journey Map, el Análisis Competitivo y la User Task Matrix, contribuyendo a comprender las necesidades de los usuarios, identificar oportunidades de mejora y establecer una base sólida para la definición de requerimientos y funcionalidades del producto.<br><br>
@@ -363,7 +350,7 @@ Lizarbe Alvarez, Ariana Nickole<br><br>
 AV1: Participé en la planificación y desarrollo de las actividades de investigación y definición del producto. Colaboré en las entrevistas con usuarios y elaboré los User Stories, Product Backlog e Impact Mapping, organizando los requerimientos y funcionalidades de acuerdo con los objetivos identificados. Con estas actividades contribuí al cumplimiento de los objetivos de la etapa y a mantener una organización clara del trabajo del equipo. <br><br>
 
 Ortiz Cardenas, Johanna Antuanete<br><br>
-AV1: <br><br>
+AV1: Planifiqué las sesiones de Design-Level EventStorming para la extensión IoT, definiendo el alcance de eventos a modelar por cada Bounded Context. Cumplí con la meta de dejar documentado y homogéneo todo el Capítulo IV, redactando cada Bounded Context bajo el mismo formato y corrigiendo la numeración de secciones para mantener la trazabilidad del informe.<br><br>
 
 Perez Tuesta, Gabriel<br><br>
 AV1: Planifiqué y desarrollé las actividades relacionadas con la investigación de usuarios y el análisis del contexto del producto. Diseñé las entrevistas, elaboré el User Persona, el Journey Map, el Análisis Competitivo y la User Task Matrix, cumpliendo con los objetivos establecidos para la fase de descubrimiento y validación inicial del proyecto.<br><br>
