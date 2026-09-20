@@ -61,70 +61,23 @@
   </thead>
   <tbody>
     <tr>
-      <td>1.0.0</td>
-      <td>30/08/2026</td>
-      <td>Acuña Corahua, Jonatan Ariel</td>
-      <td>Estructuración inicial del informe de proyecto y organización de carpetas por capítulos según las pautas del trabajo final.</td>
-    </tr>
-    <tr>
-      <td>1.1.0</td>
-      <td>04/09/2026</td>
-      <td>Acuña Corahua, Jonatan Ariel</td>
-      <td>Migración de contenidos base del proyecto y organización inicial de los recursos gráficos en el directorio de assets.</td>
-    </tr>
-    <tr>
-      <td>1.2.0</td>
-      <td>05/09/2026</td>
-      <td>Acuña Corahua, Jonatan Ariel</td>
-      <td>Configuración del entorno Docker y pipeline automatizado para compilación del informe a formato PDF con Pandoc y plantilla Eisvogel.</td>
-    </tr>
-    <tr>
-      <td>1.3.0</td>
-      <td>06/09/2026</td>
-      <td>Acuña Corahua, Jonatan Ariel</td>
-      <td>Desarrollo del filtro Lua personalizado para el ajuste automático de anchos de columnas y bordes en tablas complejas del PDF.</td>
-    </tr>
-    <tr>
-      <td>1.4.0</td>
-      <td>08/09/2026</td>
-      <td>Acuña Corahua, Jonatan Ariel</td>
-      <td>Modelado inicial de la arquitectura del sistema C4 (Landscape, Context, Container y Deployment Views) mediante Structurizr DSL.</td>
-    </tr>
-    <tr>
-      <td>1.5.0</td>
-      <td>10/09/2026</td>
-      <td>Acuña Corahua, Jonatan Ariel</td>
-      <td>Especificación de los Bounded Contexts estratégicos y redacción preliminar de la arquitectura de microservicios en el Capítulo IV.</td>
-    </tr>
-    <tr>
-      <td>1.6.0</td>
-      <td>11/09/2026</td>
-      <td>Acuña Corahua, Jonatan Ariel</td>
-      <td>Definición del Design-Level EventStorming para la extensión IoT, catalogación estructurada de eventos y exportación de datos en CSV.</td>
-    </tr>
-    <tr>
-      <td>1.7.0</td>
-      <td>12/09/2026</td>
-      <td>Acuña Corahua, Jonatan Ariel</td>
-      <td>Elaboración de diagramas de Domain Storytelling en PlantUML para los flujos de colaboración entre Bounded Contexts.</td>
-    </tr>
-    <tr>
-      <td>1.8.0</td>
-      <td>12/09/2026</td>
-      <td>Acuña Corahua, Jonatan Ariel</td>
-      <td>Actualización del modelo C4 en Structurizr DSL con microservicios IoT, nivel Edge Computing on-premise y nodos físicos ESP32.</td>
-    </tr>
-    <tr>
-      <td>1.9.0</td>
-      <td>13/09/2026</td>
-      <td>Acuña Corahua, Jonatan Ariel</td>
-      <td>Modelado táctico DDD (diagramas de clases para servicios IoT), diseño de persistencia híbrida (PostgreSQL y TimescaleDB) y consolidación integral del Capítulo IV.</td>
-    </tr>
-    <tr>
-      <td>1.10.0</td>
-      <td>18/09/2026</td>
-      <td>Ortiz Cardenas, Johanna Antuanete</td>
-      <td>Redacción y documentación de todos los Bounded Contexts del Capítulo IV (Domain Layer, Interface Layer, Application Layer e Infrastructure Layer). También colaboré en el diseño del Event Storming aidentificando comandos, eventos de dominio y políticas entre todos los bounded context de edifika.</td>
+      <td>AVN1</td>
+      <td>20/09/2026</td>
+      <td>
+        - Acuña Corahua, Jonatan Ariel <br>
+        - Collantes Carrillo, Diego Mateo <br>
+        - Landa Ortiz, Sergio Javier <br>
+        - Ortiz Cardenas, Johanna Antuanete <br>
+        - Perez Tuesta, Gabriel <br>
+        - Lizarbe Alvarez, Ariana Nickole <br>
+        - Sarmiento Medina, Loreley
+      </td>
+      <td>
+        - Capítulo I: Introducción <br>
+        - Capítulo II: Requirements Elicitation & Analysis <br>
+        - Capítulo III: Requirements Specification <br>
+        - Capítulo IV: Solution Software Design
+      </td>
     </tr>
   </tbody>
 </table>
