@@ -6145,6 +6145,23 @@ Implementación JPA de los repositorios sobre PostgreSQL; `EdgeCommandPublisher`
 
 ### 6.1.1. Software Development Environment Configuration
 
+Esta subsección registra las herramientas utilizadas para desarrollar el **Edge Gateway** (servicio Edge del proyecto). Las herramientas de los demás productos digitales (Landing Page, Web Services, Web Applications y Mobile Applications) se agregan en este mismo cuadro conforme se incorporan.
+
+| Producto de software | Versión | Propósito en el proyecto | Referencia |
+|---|---|---|---|
+| Python | 3.12 (imagen Docker) | Lenguaje del Edge Gateway, según el enunciado para Edge Services | https://www.python.org/downloads/ |
+| Flask | 3.1.3 | Framework web del Edge Gateway (API REST local) | https://flask.palletsprojects.com/ |
+| flask-smorest | 0.47.0 | Definición de endpoints y documentación OpenAPI/Swagger | https://flask-smorest.readthedocs.io/ |
+| marshmallow | 4.3.1 | Validación de solicitudes REST y de mensajes MQTT | https://marshmallow.readthedocs.io/ |
+| Peewee ORM | 4.5.2 | Acceso a datos del Edge Gateway, según el enunciado | https://docs.peewee-orm.com/ |
+| SQLite | incluido en Python | Base de datos local del Edge Gateway (modo WAL) | https://www.sqlite.org/ |
+| paho-mqtt | 2.1.0 | Cliente MQTT para comunicarse con los nodos ESP32 | https://eclipse.dev/paho/ |
+| Eclipse Mosquitto | 2 | Broker MQTT local entre los nodos ESP32 y el Edge Gateway | https://mosquitto.org/ |
+| gunicorn | 26.2.0 | Servidor de aplicación del contenedor del Edge Gateway | https://gunicorn.org/ |
+| pytest | 9.1.1 | Pruebas unitarias y de integración del Edge Gateway | https://docs.pytest.org/ |
+| Docker y Docker Compose | 29.8 / 5.5 | Empaquetado y despliegue local de todo el servicio | https://www.docker.com/products/docker-desktop/ |
+| GitHub | — | Control de versiones y repositorio del Edge Gateway | https://github.com/ |
+
 ### 6.1.2. Source Code Management
 
 El código fuente se gestiona en GitHub, dentro de la organización pública del equipo. Cada producto digital tiene su propio repositorio, que incluye el proyecto y sus archivos de pruebas.
