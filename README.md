@@ -1115,13 +1115,13 @@ Visualización instantánea de datos generados por sensores y dispositivos conec
 | EP02 | Comunicación centralizada | Esta épica aborda la gestión de notificaciones y comunicados dentro del edificio, permitiendo mantener informados a los residentes sobre incidencias, pagos, reservas y anuncios importantes. Incluye la personalización de notificaciones y el seguimiento de visualización de comunicados. | US08, US10, US12, US13, US14, US15, US29, US31, US32, US36, US37 |
 | EP03 | Gestión de áreas comunes | Esta épica se centra en la administración y uso eficiente de las áreas comunes del edificio. Permite a los residentes consultar disponibilidad, realizar y cancelar reservas, mientras que los administradores pueden aprobar solicitudes y evitar conflictos de horario. | US11, US16, US17, US18, US19, US20, US33, US35, US38, US39, US40 |
 | EP04 | Gestión financiera y reportes | Esta épica se enfoca en la administración económica del edificio, permitiendo a los residentes consultar su deuda, registrar pagos y revisar su historial financiero. Los administradores pueden identificar morosos, generar y exportar reportes financieros. | US09, US21, US22, US23, US24, US25, US26, US27, US28, US30 |
-| EP05 | Infraestructura, seguridad y arquitectura técnica | Esta épica abarca todos los aspectos técnicos necesarios para el correcto funcionamiento del sistema Edifika, incluyendo la configuración de microservicios, autenticación JWT, API Gateway, bases de datos independientes, documentación de APIs, comunicación entre servicios y despliegue en la nube. Su objetivo es garantizar que la plataforma sea segura, escalable y mantenible. | TS01, TS02, TS03, TS04, TS05, TS06, TS07, TS08, TS09, TS10, TS11, TS12, TS13, TS14, TS15, TS16, TS17, TS18, TS19, TS20, TS21, TS22, TS23, TS24, TS25, TS26, TS27, TS28, TS29, TS30 |
+| EP05 | Infraestructura, seguridad y arquitectura técnica | Esta épica abarca todos los aspectos técnicos necesarios para el correcto funcionamiento del sistema Edifika, incluyendo la configuración de microservicios, autenticación JWT, API Gateway, bases de datos independientes, documentación de APIs, comunicación entre servicios y despliegue en la nube. Su objetivo es garantizar que la plataforma sea segura, escalable y mantenible. | TS01, TS02, TS03, TS04, TS05, TS06, TS07, TS08, TS09, TS10, TS11, TS12, TS13, TS14, TS15, TS16, TS17, TS18, TS19, TS20, TS21, TS22, TS23, TS24, TS25, TS26, TS27, TS28, TS29, TS30, TS31, TS32, TS33, TS34 |
 | EP06 | Landing Page e Interfaz Web | Esta épica cubre todas las funcionalidades visibles en la landing page pública de Edifika y la interfaz web de la aplicación. Incluye navegación, presentación de contenido y acceso a la plataforma, con el objetivo de atraer y convertir nuevos usuarios. | US41, US42, US43, US44, US45, US46, US47 |
 | EP07 | Smart Building e Internet de las Cosas (IoT) | Esta épica abarca la integración de dispositivos IoT dentro del edificio para automatizar y controlar el acceso a áreas comunes y unidades mediante sensores, cerraduras inteligentes. Permite a los residentes gestionar el acceso a sus reservas de forma remota, mientras que los administradores pueden monitorear en tiempo real el estado de los dispositivos, registrar eventos de apertura/cierre y detectar accesos no autorizados, fortaleciendo la seguridad y la eficiencia operativa del edificio. | US48, US49, US50, US51, US52, US53, US54, US55, US56 |
 | EP08 | Iluminación inteligente y automatización | Esta épica abarca la automatización de la iluminación de áreas comunes mediante reglas configurables (presencia, lux, horario y prioridad), el control manual temporal (override) y la gestión del inventario de luminarias, buscando mejorar la seguridad y reducir el consumo energético. | US57, US58, US59, US60 |
 | EP09 | Telemetría y analítica IoT | Esta épica cubre la ingesta, almacenamiento y análisis de las lecturas de los sensores. Permite al administrador visualizar consumo energético, recibir alertas de consumo anómalo y fallas de luminarias, y monitorear el estado de conexión de los dispositivos. | US61, US62, US63, US64, US65 |
 | EP10 | Detección de fugas en bombas de agua | Esta épica se enfoca en prevenir pérdidas de agua mediante la detección automática de fugas a partir de caudal y presión, el corte de bombas, la gestión de alertas y la detección de fallas de equipos hidráulicos. | US66, US67, US68, US69, US70 |
-| EP11 | Edge Gateway e integración con dispositivos ESP32 | Esta épica abarca el servicio Edge Gateway (Python y FastAPI) que se ejecuta en el edificio y se comunica por MQTT local con los nodos ESP32 (lector RFID, cerradura eléctrica, buzzer, pantalla OLED, sensor de humedad y sensor ultrasónico). Resuelve accesos con una caché local, opera sin conexión a internet y se sincroniza con la nube. | US71, US72, US73, US74, US75, US76, US77, US78, US79, US80, US81, US82, US83, US84, US85, US86, US87, US88, US89, US90, US91 |
+| EP11 | Edge Gateway e integración con dispositivos ESP32 | Esta épica abarca el servicio Edge Gateway (Python, Flask, Peewee ORM y SQLite) que se ejecuta en el edificio y se comunica por MQTT local con los nodos ESP32 (lector RFID, cerradura eléctrica, buzzer, pantalla OLED, sensor de humedad y sensor ultrasónico). Resuelve accesos con una caché local, opera sin conexión a internet y se sincroniza con la nube. | US71, US72, US73, US74, US75, US76, US77, US78, US79, US80, US81, US82, US83, US84, US85, US86, US87, US88, US89, US90, US91, US92, US93 |
 
 **User Stories:**
 
@@ -3308,17 +3308,17 @@ Visualización instantánea de datos generados por sensores y dispositivos conec
 
 <tr>
   <td>TS23</td>
-  <td>Configuración base del Edge Gateway con Python y FastAPI</td>
-  <td>Como desarrollador, quiero crear el servicio Edge Gateway con Python y FastAPI con configuración por variables de entorno y endpoint de salud, para tener una base ejecutable y desplegable en el equipo del edificio.</td>
+  <td>Configuración base del Edge Gateway con Python, Flask, Peewee ORM y SQLite</td>
+  <td>Como desarrollador, quiero crear el servicio Edge Gateway con Python, Flask, Peewee ORM y SQLite con configuración por variables de entorno y endpoint de salud, para tener una base ejecutable y desplegable en el equipo del edificio.</td>
   <td>
     <strong>Escenario 1: Arranque del servicio</strong><br>
     Dado que el servicio se inicia con la configuración requerida,<br>
-    cuando FastAPI termina de levantar,<br>
+    cuando Flask termina de levantar,<br>
     entonces el endpoint GET /health responde 200 en menos de 200 ms con el estado del servicio, de la base local y del broker.<br><br>
     <strong>Escenario 2: Documentación de la API</strong><br>
-    Dado que el desarrollador accede a /docs,<br>
+    Dado que el desarrollador accede a la interfaz Swagger (OpenAPI) del servicio,<br>
     cuando la interfaz carga,<br>
-    entonces muestra todos los endpoints con sus esquemas de solicitud y respuesta generados desde los modelos Pydantic.<br><br>
+    entonces muestra todos los endpoints con sus esquemas de solicitud y respuesta definidos en los esquemas de validación.<br><br>
     <strong>Escenario 3: Configuración faltante</strong><br>
     Dado que falta una variable de entorno obligatoria,<br>
     cuando el servicio intenta iniciar,<br>
@@ -3335,7 +3335,7 @@ Visualización instantánea de datos generados por sensores y dispositivos conec
     <strong>Escenario 1: Mensaje válido</strong><br>
     Dado que un ESP32 publica una lectura que cumple el esquema (deviceId, tipo, valor, unidad y marca de tiempo),<br>
     cuando el Edge Gateway la recibe en su tópico,<br>
-    entonces la valida con el modelo Pydantic y la procesa en menos de 100 ms.<br><br>
+    entonces la valida con su esquema de validación y la procesa en menos de 100 ms.<br><br>
     <strong>Escenario 2: Mensaje inválido</strong><br>
     Dado que llega un mensaje con campos faltantes o tipos incorrectos,<br>
     cuando el Edge Gateway lo valida,<br>
@@ -3661,12 +3661,139 @@ Visualización instantánea de datos generados por sensores y dispositivos conec
   <td>EP05</td>
 </tr>
 
+
+<tr>
+  <td><strong>US92</strong></td>
+  <td>Calibrar los sensores de un nodo</td>
+  <td>Como administrador, quiero calibrar los sensores de un nodo (altura del tanque, umbral de humedad baja y umbral de nivel crítico), para que las lecturas y las alertas reflejen las condiciones reales del edificio.</td>
+  <td>
+    <strong>Escenario 1: Calibración exitosa</strong><br>
+    Dado que el administrador define una altura de tanque de 150 cm, un umbral de humedad baja de 30 % y un nivel crítico de 15 %,<br>
+    cuando guarda la calibración,<br>
+    entonces el Edge Gateway aplica los valores a las lecturas siguientes y reporta el cambio a la nube.<br><br>
+    <strong>Escenario 2: Valores fuera de rango</strong><br>
+    Dado que el administrador ingresa una altura de tanque menor a 10 cm o un umbral mayor a 100 %,<br>
+    cuando intenta guardar la calibración,<br>
+    entonces el sistema retorna 422 indicando el valor inválido y mantiene la calibración vigente.<br><br>
+    <strong>Escenario 3: Nodo no registrado</strong><br>
+    Dado que el identificador del nodo no existe en el Edge Gateway,<br>
+    cuando el administrador intenta calibrarlo,<br>
+    entonces el sistema retorna 404 sin crear ni modificar ningún registro.
+  </td>
+  <td>EP11</td>
+</tr>
+
+<tr>
+  <td><strong>US93</strong></td>
+  <td>Consultar el estado del Edge Gateway sin internet</td>
+  <td>Como administrador, quiero consultar desde el sistema local el estado del Edge Gateway, sus nodos y los eventos pendientes de enviar, para operar y diagnosticar el edificio aunque no haya internet.</td>
+  <td>
+    <strong>Escenario 1: Estado general</strong><br>
+    Dado que el edificio no tiene conexión a internet,<br>
+    cuando el administrador consulta el estado del Edge Gateway,<br>
+    entonces el sistema muestra la cantidad de nodos por estado, los eventos pendientes de envío, la última sincronización con la nube y si la caché está desactualizada.<br><br>
+    <strong>Escenario 2: Eventos pendientes</strong><br>
+    Dado que existen eventos que aún no fueron entregados a la nube,<br>
+    cuando el administrador consulta la cola de eventos,<br>
+    entonces el sistema los lista en orden cronológico con su tipo, la cantidad de intentos y el último error.<br><br>
+    <strong>Escenario 3: Consulta sin autorización</strong><br>
+    Dado que la solicitud no incluye un token válido,<br>
+    cuando se consulta el estado o la cola de eventos,<br>
+    entonces el sistema retorna 401 y no revela información del edificio.
+  </td>
+  <td>EP11</td>
+</tr>
+
+<tr>
+  <td>TS31</td>
+  <td>Despliegue del Edge Gateway con Docker Compose</td>
+  <td>Como desarrollador, quiero desplegar el Edge Gateway, el broker MQTT y un backend simulado con Docker Compose, para ejecutar y demostrar toda la solución con un solo comando.</td>
+  <td>
+    <strong>Escenario 1: Arranque completo</strong><br>
+    Dado que el desarrollador ejecuta docker compose up,<br>
+    cuando los servicios superan sus verificaciones de salud,<br>
+    entonces el Edge Gateway responde 200 en /health, conectado al broker MQTT y al backend.<br><br>
+    <strong>Escenario 2: Persistencia tras reinicio</strong><br>
+    Dado que el Edge Gateway tiene credenciales y eventos pendientes almacenados,<br>
+    cuando se reinicia su contenedor,<br>
+    entonces recupera la información desde el volumen sin pérdida de datos.<br><br>
+    <strong>Escenario 3: Broker aún no disponible</strong><br>
+    Dado que el broker MQTT todavía no está listo o se cae,<br>
+    cuando el Edge Gateway intenta conectarse,<br>
+    entonces reintenta con espera creciente sin terminar el proceso y se suscribe de nuevo al reconectar.
+  </td>
+  <td>EP05</td>
+</tr>
+
+<tr>
+  <td>TS32</td>
+  <td>Simulador de nodos ESP32 para pruebas sin hardware</td>
+  <td>Como desarrollador, quiero un simulador de nodos ESP32 que respete el contrato MQTT, para probar el Edge Gateway sin depender del hardware físico.</td>
+  <td>
+    <strong>Escenario 1: Nodo virtual en operación</strong><br>
+    Dado que el simulador se ejecuta con el identificador de un nodo registrado,<br>
+    cuando transcurre el intervalo de muestreo,<br>
+    entonces publica el heartbeat y las lecturas de humedad y ultrasonido conforme al contrato y confirma los comandos recibidos.<br><br>
+    <strong>Escenario 2: Lectura de una tarjeta</strong><br>
+    Dado que el desarrollador indica un UID de tarjeta,<br>
+    cuando el simulador lo publica como lectura de acceso,<br>
+    entonces muestra el resultado recibido del Edge Gateway y termina con código 0 si el acceso fue concedido y 1 si fue denegado.<br><br>
+    <strong>Escenario 3: Cerradura que no responde</strong><br>
+    Dado que el simulador se ejecuta sin confirmar comandos,<br>
+    cuando el Edge Gateway envía una orden de apertura,<br>
+    entonces la orden expira y el Edge Gateway reporta una alerta de cerradura sin respuesta.
+  </td>
+  <td>EP05</td>
+</tr>
+
+<tr>
+  <td>TS33</td>
+  <td>Contrato de integración entre el Edge Gateway y el backend</td>
+  <td>Como desarrollador, quiero un contrato de integración entre el Edge Gateway y el backend con entrega por lotes e idempotencia, para transportar la información de los nodos sin pérdidas ni duplicados.</td>
+  <td>
+    <strong>Escenario 1: Entrega idempotente por lotes</strong><br>
+    Dado que el Edge Gateway envía un lote de eventos, cada uno con un identificador único,<br>
+    cuando el backend los acepta,<br>
+    entonces responde con los identificadores aceptados y un reenvío del mismo lote no duplica ningún evento.<br><br>
+    <strong>Escenario 2: Error transitorio</strong><br>
+    Dado que el backend responde 5xx, 429 o no está disponible,<br>
+    cuando el Edge Gateway intenta entregar los eventos,<br>
+    entonces los conserva en su cola y reintenta con espera creciente (máximo 60 segundos) sin perder el orden cronológico.<br><br>
+    <strong>Escenario 3: Rechazo permanente</strong><br>
+    Dado que el backend rechaza un evento con un error 4xx distinto de 401, 403, 408 y 429,<br>
+    cuando se agotan 5 intentos,<br>
+    entonces el Edge Gateway descarta ese evento, lo registra y continúa con los siguientes sin bloquear la cola.
+  </td>
+  <td>EP05</td>
+</tr>
+
+<tr>
+  <td>TS34</td>
+  <td>Pruebas automatizadas del Edge Gateway</td>
+  <td>Como desarrollador, quiero una suite de pruebas automatizadas del Edge Gateway que no dependa del broker ni de la red, para detectar regresiones antes de cada integración.</td>
+  <td>
+    <strong>Escenario 1: Ejecución aislada</strong><br>
+    Dado que el desarrollador ejecuta la suite en un equipo sin broker MQTT ni internet,<br>
+    cuando las pruebas se ejecutan,<br>
+    entonces todas usan dobles de prueba para el broker y el backend, cada una con su propia base de datos, y terminan en menos de 30 segundos.<br><br>
+    <strong>Escenario 2: Cobertura de escenarios</strong><br>
+    Dado que cada historia del Edge Gateway define sus escenarios de aceptación,<br>
+    cuando se revisa la suite,<br>
+    entonces existe al menos una prueba por escenario, incluidos los casos de error.<br><br>
+    <strong>Escenario 3: Detección de regresiones</strong><br>
+    Dado que un cambio altera una regla de negocio, como el orden de entrega de eventos o la decisión de acceso,<br>
+    cuando se ejecuta la suite,<br>
+    entonces al menos una prueba falla e indica el comportamiento que cambió.
+  </td>
+  <td>EP05</td>
+</tr>
+
   </tbody>
 </table>
 
 **Criterios transversales de aceptación para historias IoT**
 
-Las siguientes condiciones aplican a todas las historias de las épicas EP07 a EP11 y a las historias técnicas TS16 a TS30, además de los escenarios específicos de cada historia:
+Las siguientes condiciones aplican a todas las historias de las épicas EP07 a EP11 y a las historias técnicas TS16 a TS34, además de los escenarios específicos de cada historia:
 
 - **Confirmación de actuación:** todo comando enviado a un dispositivo (abrir, encender, apagar, cortar) debe ser confirmado mediante un mensaje ACK; si no se recibe dentro del tiempo límite, la acción se registra como fallida y se notifica.
 - **Trazabilidad:** toda acción de actuación o cambio de configuración registra quién lo realizó (usuario o sistema), cuándo y sobre qué dispositivo.
@@ -3747,6 +3874,8 @@ Las siguientes condiciones aplican a todas las historias de las épicas EP07 a E
 | **US89 – Activar el modo mantenimiento en un dispositivo** | Administrador | Falsas alertas y riesgos al intervenir dispositivos. | **No existe evidencia directa en las entrevistas** que sustente esta necesidad. Corresponde a una funcionalidad propuesta dentro del alcance IoT del sistema. |
 | **US90 – Acceder a un área con el teléfono móvil** | Residente | Dependencia de llevar una tarjeta física para ingresar. | Extiende US71 (tarjeta RFID) a un segundo medio de credencial. **No existe evidencia directa en las entrevistas** que sustente esta necesidad. Corresponde a una funcionalidad propuesta dentro del alcance IoT del sistema. |
 | **US91 – Revocar la credencial móvil de un teléfono** | Residente / Administrador | Riesgo de acceso indebido por pérdida de un teléfono. | Equivale para el teléfono al reporte de tarjeta extraviada de US48. **No existe evidencia directa en las entrevistas** que sustente esta necesidad. Corresponde a una funcionalidad propuesta dentro del alcance IoT del sistema. |
+| **US92 – Calibrar los sensores de un nodo** | Administrador | Lecturas que no representan el tanque ni el área verde reales. | Complementa US76, US77 y US78, que dependen de valores calibrados. **No existe evidencia directa en las entrevistas** que sustente esta necesidad. Corresponde a una funcionalidad propuesta dentro del alcance IoT del sistema. |
+| **US93 – Consultar el estado del Edge Gateway sin internet** | Administrador | Falta de visibilidad del sistema cuando se cae internet. | Responde al requisito de operación sin conexión del Edge (Cap. IV) y respalda el registro manual de US86. **No existe evidencia directa en las entrevistas** que sustente esta necesidad. Corresponde a una funcionalidad propuesta dentro del alcance IoT del sistema. |
 
 
 
@@ -3841,7 +3970,7 @@ En esta sección, se presenta el Product Backlog como una recopilación organiza
 | 77 | US81 | Sincronizar credenciales, reservas y blacklist desde la nube | Como sistema, quiero que el Edge Gateway reciba y mantenga actualizada una copia local de credenciales, reservas vigentes y blacklist, para decidir accesos sin depender de internet. | EP11 | 5 | Must Have |
 | 78 | US82 | Reenviar telemetría y eventos a la nube | Como sistema, quiero que el Edge Gateway reenvíe las lecturas de los sensores y los eventos hacia la nube, para alimentar la analítica y las alertas. | EP11 | 5 | Should Have |
 | 79 | US83 | Ejecutar comandos remotos sobre los dispositivos | Como administrador, quiero enviar comandos desde la nube (abrir cerradura, activar alerta sonora o mensaje en pantalla) y que el Edge Gateway los ejecute en el dispositivo, para atender situaciones a distancia. | EP11 | 3 | Should Have |
-| 80 | TS23 | Configuración base del Edge Gateway con Python y FastAPI | Como desarrollador, quiero crear el servicio Edge Gateway con Python y FastAPI con configuración por variables de entorno y endpoint de salud, para tener una base ejecutable y desplegable en el equipo del edificio. | EP-TS | 5 | Must Have |
+| 80 | TS23 | Configuración base del Edge Gateway con Python, Flask, Peewee ORM y SQLite | Como desarrollador, quiero crear el servicio Edge Gateway con Python, Flask, Peewee ORM y SQLite con configuración por variables de entorno y endpoint de salud, para tener una base ejecutable y desplegable en el equipo del edificio. | EP-TS | 5 | Must Have |
 | 81 | TS24 | Contrato de mensajes MQTT entre el Edge Gateway y los ESP32 | Como desarrollador, quiero definir y validar el contrato de tópicos y mensajes JSON entre el Edge Gateway y los nodos ESP32, para que firmware y servicio evolucionen sin romperse. | EP-TS | 5 | Must Have |
 | 82 | TS25 | Persistencia local con SQLite y cola de salida | Como desarrollador, quiero almacenar localmente credenciales, lecturas y eventos pendientes en SQLite, para garantizar la operación offline y la entrega confiable a la nube. | EP-TS | 5 | Must Have |
 | 83 | TS26 | Firmware base del ESP32 con lectura de sensores y reconexión | Como desarrollador, quiero implementar el firmware base del ESP32 que lea los sensores, controle los actuadores y mantenga la conexión Wi-Fi y MQTT, para que el nodo opere de forma autónoma y recuperable. | EP-TS | 8 | Must Have |
@@ -3857,6 +3986,12 @@ En esta sección, se presenta el Product Backlog como una recopilación organiza
 | 93 | US90 | Acceder a un área con el teléfono móvil | Como residente, quiero acercar mi teléfono con la app de Edifika al nodo de acceso para ingresar a un área común, igual que con mi tarjeta RFID. | EP11 | 8 | Should Have |
 | 94 | US91 | Revocar la credencial móvil de un teléfono | Como residente o administrador, quiero revocar la credencial móvil de un teléfono perdido o reemplazado, para que nadie pueda usarlo para ingresar. | EP11 | 5 | Should Have |
 | 95 | TS30 | Verificación de credenciales móviles firmadas en el Edge Gateway | Como desarrollador, quiero que el Edge Gateway verifique credenciales móviles firmadas criptográficamente sin consultar la nube, para aceptar teléfonos de forma segura incluso sin internet. | EP-TS | 8 | Should Have |
+| 96 | US92 | Calibrar los sensores de un nodo | Como administrador, quiero calibrar los sensores de un nodo (altura del tanque, umbral de humedad baja y umbral de nivel crítico), para que las lecturas y las alertas reflejen las condiciones reales del edificio. | EP11 | 3 | Should Have |
+| 97 | US93 | Consultar el estado del Edge Gateway sin internet | Como administrador, quiero consultar desde el sistema local el estado del Edge Gateway, sus nodos y los eventos pendientes de enviar, para operar y diagnosticar el edificio aunque no haya internet. | EP11 | 3 | Should Have |
+| 98 | TS31 | Despliegue del Edge Gateway con Docker Compose | Como desarrollador, quiero desplegar el Edge Gateway, el broker MQTT y un backend simulado con Docker Compose, para ejecutar y demostrar toda la solución con un solo comando. | EP-TS | 5 | Should Have |
+| 99 | TS32 | Simulador de nodos ESP32 para pruebas sin hardware | Como desarrollador, quiero un simulador de nodos ESP32 que respete el contrato MQTT, para probar el Edge Gateway sin depender del hardware físico. | EP-TS | 3 | Should Have |
+| 100 | TS33 | Contrato de integración entre el Edge Gateway y el backend | Como desarrollador, quiero un contrato de integración entre el Edge Gateway y el backend con entrega por lotes e idempotencia, para transportar la información de los nodos sin pérdidas ni duplicados. | EP-TS | 5 | Must Have |
+| 101 | TS34 | Pruebas automatizadas del Edge Gateway | Como desarrollador, quiero una suite de pruebas automatizadas del Edge Gateway que no dependa del broker ni de la red, para detectar regresiones antes de cada integración. | EP-TS | 5 | Should Have |
 
 # Capítulo IV: Solution Software Design
 
@@ -6012,9 +6147,81 @@ Implementación JPA de los repositorios sobre PostgreSQL; `EdgeCommandPublisher`
 
 ### 6.1.2. Source Code Management
 
+El código fuente se gestiona en GitHub, dentro de la organización pública del equipo. Cada producto digital tiene su propio repositorio, que incluye el proyecto y sus archivos de pruebas.
+
+| Producto | Repositorio |
+|---|---|
+| Edge Gateway (Python, Flask, Peewee, SQLite) | https://github.com/IoT-UPC-202620/Edifika-Microservice-IoT-Gateway |
+
+**GitFlow.** El Edge Gateway aplica GitFlow con las siguientes ramas:
+
+| Rama | Origen | Destino | Convención de nombre | Ejemplo |
+|---|---|---|---|---|
+| `main` | — | — | Contiene solo versiones publicadas, cada una con su tag | `v0.1.0` |
+| `develop` | `main` | — | Rama de integración | `develop` |
+| Feature | `develop` | `develop` (merge `--no-ff`) | `feature/<ID de historia>-<nombre corto>` | `feature/US71-access-control` |
+| Release | `develop` | `main` y `develop` | `release/<versión>` | `release/0.1.0` |
+| Hotfix | `main` | `main` y `develop` | `hotfix/<nombre>` | `hotfix/lock-timeout` |
+
+Cada historia o grupo de historias relacionadas se desarrolla en su propia rama feature y se integra a `develop` mediante un merge sin avance rápido (`--no-ff`), de modo que el historial conserve qué cambios pertenecen a cada historia.
+
+**Semantic Versioning.** Las versiones siguen el formato `MAJOR.MINOR.PATCH`. La primera versión funcional es la **0.1.0**: se preparó en `release/0.1.0` (con su `CHANGELOG.md`), se integró a `main` y se etiquetó como `v0.1.0`.
+
+**Conventional Commits.** Los mensajes de commit usan el formato `<tipo>(<ámbito>): <descripción>`, con los tipos `feat`, `fix`, `docs`, `test`, `chore` y `refactor`, y mencionan entre paréntesis los identificadores de las historias implementadas. Por ejemplo: `feat(access): resolve RFID access locally with lock, buzzer and OLED feedback (US71-US75, US87)`.
+
 ### 6.1.3. Source Code Style Guide & Coding Conventions
 
+Convenciones adoptadas para el código Python del Edge Gateway:
+
+| Aspecto | Convención |
+|---|---|
+| Estilo general | PEP 8 (https://peps.python.org/pep-0008/) |
+| Documentación | Docstrings según PEP 257 (https://peps.python.org/pep-0257/) en módulos y clases públicas |
+| Nomenclatura | En inglés. `snake_case` para funciones, variables y módulos; `PascalCase` para clases; `MAYUSCULAS_CON_GUION_BAJO` para constantes |
+| Tipado | Anotaciones de tipo en las firmas públicas de los servicios |
+| Organización | Capas separadas: `api` (interfaz REST), `services` (reglas de negocio), `mqtt` (contrato y mensajería), `models` y `db` (persistencia) |
+| Mensajes al usuario | Inglés como idioma por defecto (mensajes de la API, de la pantalla OLED y de la documentación Swagger), según el enunciado |
+| Configuración | Solo mediante variables de entorno con el prefijo `EDGE_`; ningún secreto en el código |
+| Pruebas | Un archivo por componente; el nombre de cada prueba describe el comportamiento esperado, y los escenarios Dado/Cuando/Entonces de las historias se traducen en pruebas `pytest` |
+| Commits y ramas | Conventional Commits y GitFlow (ver 6.1.2) |
+
 ### 6.1.4. Software Deployment Configuration
+
+El Edge Gateway se despliega con **Docker Compose**, junto con el broker MQTT y un backend simulado. La solución completa se levanta con un solo comando:
+
+```bash
+docker compose up --build                  # broker + Edge Gateway + backend simulado
+docker compose --profile sim up --build    # además, dos nodos ESP32 virtuales
+```
+
+**Servicios del `docker-compose.yml`**
+
+| Servicio | Imagen | Puerto | Función |
+|---|---|---|---|
+| `mosquitto` | `eclipse-mosquitto:2` | 1883 | Broker MQTT local. Verificación de salud con `mosquitto_sub` |
+| `edge-gateway` | Construida desde el `Dockerfile` (`python:3.12-slim`) | 8000 | API REST, Swagger (`/docs`) y `/health` |
+| `mock-cloud` | Misma imagen | 9000 | Backend simulado que recibe los eventos y entrega las credenciales |
+| `seed`, `sim-door`, `sim-garden` | Misma imagen (perfil `sim`) | — | Registro de los nodos de demostración y dos ESP32 virtuales |
+
+**Decisiones de despliegue**
+
+- El Edge Gateway se ejecuta con **un solo worker** de gunicorn (y varios hilos), porque el cliente MQTT y los planificadores de tareas deben existir una única vez.
+- La base de datos SQLite se guarda en el volumen `edge-data`, de modo que sobrevive a los reinicios del contenedor. El broker conserva su estado en el volumen `mosquitto-data`.
+- El Edge Gateway espera a que el broker y el backend superen sus verificaciones de salud antes de iniciar (`depends_on` con `service_healthy`). Si el broker se cae después, el cliente reintenta la conexión con espera creciente.
+- El contenedor se ejecuta con un usuario sin privilegios y define su propio `HEALTHCHECK` sobre `/health`.
+
+**Variables de entorno principales**
+
+| Variable | Valor por defecto en Compose | Descripción |
+|---|---|---|
+| `EDGE_SERVICE_TOKEN` | `dev-service-token` | Token Bearer de la API REST local (obligatorio) |
+| `EDGE_MQTT_HOST` | `mosquitto` | Broker MQTT |
+| `EDGE_CLOUD_BASE_URL` | `http://mock-cloud:9000` | Backend al que se envían los eventos |
+| `EDGE_CLOUD_TOKEN` | `dev-cloud-token` | Credencial del Edge Gateway ante el backend |
+| `EDGE_DATABASE_PATH` | `/data/edge-gateway.db` | Archivo SQLite |
+| `EDGE_TIMEZONE` | `America/Lima` | Zona horaria de los horarios de las áreas |
+
+Los valores se pueden sobrescribir con un archivo `.env` (ver `.env.example`). La topología desplegada se representa en el Deployment Diagram de la sección 4.1.3.4.
 
 ## 6.2. Landing Page, Services & Applications Implementation
 
@@ -6028,13 +6235,186 @@ Implementación JPA de los repositorios sobre PostgreSQL; `EdgeCommandPublisher`
 
 #### 6.2.1.4. Development Evidence for Sprint Review
 
+El Edge Gateway se desarrolló en ramas feature de GitFlow. Cada rama se integró a `develop` con su commit convencional, y el release `0.1.0` se integró a `main`. Repositorio: https://github.com/IoT-UPC-202620/Edifika-Microservice-IoT-Gateway
+
+| Rama | Commit | Historias | Qué se desarrolló |
+|---|---|---|---|
+| `feature/TS23-flask-base` | `b846d26` | TS23 | Aplicación Flask, configuración por variables de entorno, `/health`, Swagger y token Bearer |
+| `feature/TS25-local-persistence` | `d962edc` | TS25 | Modelos Peewee sobre SQLite (modo WAL) y cola de salida de eventos (outbox) |
+| `feature/TS24-mqtt-contract` | `6daef9c` | TS24 | Contrato MQTT versionado, router de mensajes, puente paho-mqtt y comandos con confirmación (ACK) |
+| `feature/US79-US80-device-registry` | `90a80df` | US79, US80, US85 | Registro de nodos, heartbeat, detección de nodos sin conexión y sincronización de reloj |
+| `feature/US71-access-control` | `ab2d202` | US71–US75, US87 | Decisión local de acceso RFID, cerradura, buzzer y OLED, horarios por área y registro manual de tarjetas |
+| `feature/US76-sensor-telemetry` | `6a80218` | US76–US78, US92 | Lecturas de humedad y ultrasonido, nivel de agua, alertas locales y calibración |
+| `feature/TS33-cloud-integration` | `9ca706a` | TS33, US75, US81, US82, US93 | Envío por lotes al backend, sincronización de la caché y endpoints de estado local |
+| `feature/US83-remote-commands-maintenance` | `da711b3` | US83, US89 | Comandos remotos y modo mantenimiento |
+| `feature/TS31-docker-compose` | `fb0a2db` | TS31, TS32, TS33 | Docker Compose, simulador de nodos y backend simulado |
+| `feature/docs-readme` | `4e7bd48` | — | Documentación del repositorio |
+| `release/0.1.0` | `171a6f9` | — | Preparación de la versión 0.1.0 y `CHANGELOG.md` |
+
+**Estructura del código**
+
+```
+main.py                    punto de entrada (gunicorn main:app)
+edge_gateway/
+  config.py  gateway.py    configuración · raíz de composición y tareas en segundo plano
+  mqtt/                    contrato (esquemas), router y puente paho-mqtt
+  services/                access, devices, telemetry, commands, remote, outbox, sync, alerts, credentials
+  api/                     blueprints REST y esquemas
+  models.py  db.py         modelos Peewee · configuración de SQLite
+mock_cloud/                backend simulado para pruebas locales
+simulator/                 nodos ESP32 virtuales
+tests/                     suite de pruebas pytest
+```
+
+El código de la aplicación tiene cerca de 2 700 líneas y las pruebas cerca de 1 900.
+
+**Decisiones de diseño relevantes**
+
+- **Offline first:** las decisiones de acceso nunca consultan la nube; todo lo que debe llegar al backend pasa por la cola de salida en SQLite. Un registro y su evento se escriben en una misma transacción.
+- **Alertas con estado:** cada condición (humedad baja, nivel crítico de agua, nodo sin conexión) se anuncia una vez al producirse y una vez al resolverse, no por cada lectura.
+- **Mantenimiento significa desactivado:** un nodo en mantenimiento no procesa tarjetas, lecturas, comandos ni genera alertas hasta que el mantenimiento termina, de forma manual o por vencimiento.
+- **Cola con prioridad:** si la cola de salida se llena, se descartan primero las lecturas de telemetría más antiguas; los accesos y las alertas nunca se descartan.
+
 #### 6.2.1.5. Testing Suite Evidence for Sprint Review
+
+Las pruebas se encuentran en la carpeta `tests/` del repositorio y se ejecutan con `pytest`. La suite tiene **188 pruebas** que **no necesitan broker MQTT ni internet**: el broker, el backend y el reloj se reemplazan con dobles de prueba (`FakePublisher`, `FakeCloud`, `FakeClock`), y cada prueba usa su propia base de datos SQLite temporal. La suite completa se ejecuta en unos 12 segundos.
+
+```bash
+pip install -r requirements-dev.txt
+pytest
+# 188 passed
+```
+
+| Archivo de pruebas | Pruebas | Qué verifica | Historias |
+|---|---|---|---|
+| `test_base.py` | 6 | Arranque, `/health`, Swagger/OpenAPI y configuración obligatoria | TS23 |
+| `test_persistence.py` | 7 | Modo WAL, persistencia tras reinicio, escritura atómica y límite de la cola | TS25 |
+| `test_mqtt_contract.py` | 21 | Esquemas, versión de contrato, router resistente a mensajes inválidos y puente MQTT | TS24 |
+| `test_commands.py` | 9 | Comandos, ACK, tiempos de espera y alerta de cerradura sin respuesta | TS24, US72 |
+| `test_devices.py` | 19 | Registro de nodos, heartbeat, desconexión, recuperación, sincronización de reloj, planificador y API | US79, US80, US85 |
+| `test_access.py` | 29 | Decisiones de acceso (tarjeta válida, desconocida, bloqueada, vencida, sin reserva, fuera de horario), lecturas repetidas, intentos denegados y API | US71–US75, US87 |
+| `test_telemetry.py` | 28 | Validación de lecturas, nivel de agua, filtro de picos, alertas con histéresis y calibración | US76–US78, US92 |
+| `test_cloud_integration.py` | 38 | Entrega por lotes, reintentos, caída y recuperación de la nube, cliente HTTP, sincronización y estado local | TS33, US75, US81, US82, US93 |
+| `test_remote_and_maintenance.py` | 26 | Comandos remotos, errores HTTP y modo mantenimiento | US83, US89 |
+| `test_mock_cloud.py` | 5 | Backend simulado: autenticación, idempotencia y sincronización | TS33 |
+| **Total** | **188** | | |
+
+**Escenarios de aceptación.** Los escenarios Dado/Cuando/Entonces de cada historia (Capítulo III) se tradujeron en pruebas con nombres descriptivos. Por ejemplo, el escenario de US75 "Registro local sin internet" se verifica en `test_access_attempts_made_while_offline_reach_the_cloud_afterwards`, y el de US89 "Nodo desactivado durante el mantenimiento" en `test_node_in_maintenance_rejects_every_remote_command_even_from_an_admin`.
+
+**Verificación de la suite.** Se comprobó que las pruebas detectan errores reales introduciendo fallos a propósito: invertir el orden de entrega de eventos, eliminar la espera entre reintentos y quitar la protección de las tarjetas registradas sin conexión. En los tres casos al menos una prueba falló y señaló el comportamiento alterado.
 
 #### 6.2.1.6. Execution Evidence for Sprint Review
 
+Se ejecutó el servicio completo de extremo a extremo: broker MQTT real, backend simulado, Edge Gateway y nodos ESP32 virtuales, que se comunican con el contrato MQTT descrito en 6.2.1.7. Para esta verificación el broker fue un broker MQTT de código abierto ejecutado en el mismo equipo.
+
+**1. Arranque y salud.** El Edge Gateway se conectó al broker, sincronizó la caché con el backend y reportó todas sus dependencias en estado correcto:
+
+```
+INFO edge_gateway.mqtt.bridge: Connected to MQTT broker localhost:1883
+INFO edge_gateway.services.sync: Cache synchronised to version 1: {'credentials': 1, 'permissions': 1, 'areaSchedules': 1, 'removed': 0}
+GET /health -> {"status":"ok", "checks":{"database":{"ok":true}, "outbox":{...,"pending":0}, "cache":{"version":1,"stale":false}, "mqtt":{"ok":true}}}
+```
+
+**2. Registro de nodos y primer heartbeat.** Se registraron dos nodos mediante la API; a los pocos segundos de iniciar los nodos virtuales ambos pasaron de `INACTIVE` a `ACTIVE`:
+
+```
+esp32-door-01   ACTIVE
+esp32-garden-01 ACTIVE
+```
+
+**3. Lectura de tarjetas en la puerta.** Una tarjeta con reserva vigente abre la puerta y una tarjeta desconocida es rechazada; en ambos casos el nodo recibe qué mostrar en la pantalla OLED y qué sonido emitir:
+
+```
+[esp32-door-01] -> card 04A1B2C3
+[esp32-door-01] <- access_result {"result": "GRANTED", "reason": "ok", "message": "Access granted", "buzzer": "granted", "name": "Ana Perez", "lockMs": 5000}
+
+[esp32-door-01] -> card DEADBEEF
+[esp32-door-01] <- access_result {"result": "DENIED", "reason": "unknown_credential", "message": "Card not registered", "buzzer": "denied"}
+```
+
+**4. Operación sin internet.** Se simuló la caída del backend. Con el backend caído, la tarjeta válida igualmente abrió la puerta y los eventos quedaron en la cola local; al restablecerse el servicio llegaron todos, en orden y sin duplicados:
+
+```
+(backend caído)   [esp32-door-01] GRANTED: Access granted
+                  status -> outbox: {'pending': 17, 'consecutiveFailures': 2, 'lastError': 'HTTP 503'}
+(backend restaurado)
+                  backend recibió los 3 accesos (GRANTED, DENIED, GRANTED) y 100 lecturas; pendientes en cola: 4 (lecturas nuevas)
+```
+
+**5. Comandos remotos y mantenimiento.** El Edge Gateway ejecuta comandos solo en nodos activos y espera su confirmación:
+
+```
+POST /devices/esp32-door-01/commands  {"type":"unlock","params":{"durationMs":3000}}  -> 200 {"status":"ACKED"}
+PUT  /devices/esp32-door-01/maintenance {"enabled":true,"durationMinutes":30}          -> 200 status MAINTENANCE
+POST /devices/esp32-door-01/commands  {"type":"unlock"}                                -> 409 "Device under maintenance"
+tarjeta presentada en mantenimiento                                                    -> DENIED: Under maintenance
+```
+
+Además, el backend recibió el resultado de cada comando remoto con el administrador que lo solicitó (`requestedBy`).
+
+**6. Seguridad básica.** Una solicitud sin token Bearer a la API responde `401`.
+
 #### 6.2.1.7. Services Documentation Evidence for Sprint Review
 
+El Edge Gateway documenta su API REST con **OpenAPI/Swagger**: la interfaz está disponible en `/docs` y la especificación en `/openapi.json`. Todos los endpoints, excepto `/health`, requieren el token Bearer configurado en `EDGE_SERVICE_TOKEN`. Los textos de la documentación y de las respuestas están en inglés, idioma por defecto del proyecto.
+
+**Endpoints de la API REST local**
+
+| Método | Ruta | Descripción | Historias |
+|---|---|---|---|
+| GET | `/health` | Estado del servicio y de sus dependencias (base de datos, broker, cola de eventos y caché) | TS23 |
+| POST | `/api/v1/devices` | Registrar un nodo; queda `INACTIVE` hasta su primer heartbeat | US79 |
+| GET | `/api/v1/devices` | Listar los nodos | US80, US93 |
+| GET | `/api/v1/devices/{device_id}` | Consultar un nodo | US80 |
+| PATCH | `/api/v1/devices/{device_id}/settings` | Calibrar altura del tanque y umbrales | US92 |
+| PUT | `/api/v1/devices/{device_id}/maintenance` | Activar o finalizar el modo mantenimiento | US89 |
+| POST | `/api/v1/devices/{device_id}/commands` | Ejecutar un comando (abrir cerradura, mostrar mensaje, sonar buzzer) y esperar su confirmación | US83 |
+| POST | `/api/v1/credentials` | Registrar una tarjeta manualmente, también sin internet | US86 (registro manual) |
+| GET | `/api/v1/credentials` | Listar las credenciales en caché | US93 |
+| PATCH | `/api/v1/credentials/{uid}/status` | Activar, suspender o revocar una credencial | US91 (bloqueo manual) |
+| GET | `/api/v1/access-attempts` | Bitácora de accesos, con la credencial enmascarada | US55, US93 |
+| GET | `/api/v1/readings` | Lecturas de sensores | US65 |
+| POST | `/api/v1/sync` | Recibir credenciales, reservas y horarios enviados por la nube | US81 |
+| GET | `/api/v1/status` | Estado del Edge Gateway: nodos, cola de eventos y caché | US93 |
+| GET | `/api/v1/outbox` | Eventos pendientes de enviar a la nube | US93 |
+
+Los errores tienen una forma común: `{"code": 409, "status": "Conflict", "message": "..."}`. Los errores de validación (`422`) incluyen un objeto `errors` con el detalle de cada campo.
+
+**Contrato MQTT entre los nodos y el Edge Gateway** (prefijo `edifika/v1`, versión de esquema 1). Todos los mensajes son JSON con la versión `v` y la marca de tiempo `ts` del reloj del nodo.
+
+| Sentido | Tópico | Contenido |
+|---|---|---|
+| Nodo → Edge | `edifika/v1/nodes/{deviceId}/heartbeat` | `deviceId`, `ts`, `fw` (versión de firmware, opcional) |
+| Nodo → Edge | `edifika/v1/nodes/{deviceId}/access` | `credentialType` (`RFID`), `credential` (UID de la tarjeta) |
+| Nodo → Edge | `edifika/v1/nodes/{deviceId}/readings` | `sensor` (`humidity` o `ultrasonic`), `value` (puede ser nulo si el sensor no midió), `unit` |
+| Nodo → Edge | `edifika/v1/nodes/{deviceId}/ack` | `commandId`, `status` (`OK` o `FAILED`), `detail` |
+| Edge → Nodo | `edifika/v1/nodes/{deviceId}/commands` | `commandId`, `type`, `params` |
+
+Tipos de comando que debe atender el firmware: `access_result` (resultado de una lectura de tarjeta: abrir `lockMs`, mensaje para la OLED y patrón del buzzer), `unlock`, `display`, `buzzer`, `alert` (alerta local, por ejemplo nivel crítico de agua), `maintenance` y `time_sync`. El nodo debe confirmar con un `ack` cada comando que incluya `commandId`. Un mensaje con una versión de esquema distinta o con un formato inválido se descarta y se reporta a la nube una sola vez por dispositivo.
+
+**Contrato entre el Edge Gateway y el backend.** Las llamadas incluyen `Authorization: Bearer <token>` y el encabezado `X-Gateway-Id`.
+
+| Operación | Descripción |
+|---|---|
+| `POST /api/v1/edge/events` | Entrega por lotes de eventos `{eventId, kind, occurredAt, payload}`. El backend responde con los `eventId` aceptados y **debe deduplicar por `eventId`**, porque la entrega es al menos una vez. Tipos de evento: `access_attempt`, `reading`, `alert`, `device_status`, `command_result` y `credential_changed` |
+| `GET /api/v1/edge/sync?since={versión}` | Credenciales, ventanas de reserva y horarios de áreas. Entrega una copia completa (`full: true`) o solo los cambios desde la versión indicada |
+
+Ante un error `5xx`, `401`, `403`, `408`, `429` o una falla de red, el Edge Gateway conserva los eventos y reintenta con espera creciente (máximo 60 segundos). Ante cualquier otro error `4xx`, descarta el evento tras 5 intentos para que no bloquee la cola.
+
 #### 6.2.1.8. Software Deployment Evidence for Sprint Review
+
+El despliegue del Edge Gateway se define de forma reproducible en el repositorio (https://github.com/IoT-UPC-202620/Edifika-Microservice-IoT-Gateway):
+
+| Archivo | Contenido |
+|---|---|
+| `Dockerfile` | Imagen del Edge Gateway (`python:3.12-slim`, usuario sin privilegios, `HEALTHCHECK` y gunicorn con un worker) |
+| `docker-compose.yml` | Servicios `mosquitto`, `edge-gateway`, `mock-cloud` y, con el perfil `sim`, `seed`, `sim-door` y `sim-garden`; volúmenes `edge-data` y `mosquitto-data` |
+| `mosquitto/mosquitto.conf` | Configuración del broker MQTT local |
+| `.env.example` | Variables de entorno que se pueden sobrescribir |
+
+El archivo `docker-compose.yml` se validó con `docker compose config`, que confirma la sintaxis y la resolución de sus variables, y los seis servicios (`mosquitto`, `edge-gateway`, `mock-cloud`, `seed`, `sim-door` y `sim-garden`) quedan definidos. Los pasos de despliegue están en la sección 6.1.4.
+
+> **Pendiente de evidencia:** capturas de la ejecución de `docker compose up --build` con los contenedores en estado `healthy` y de la interfaz Swagger en `http://localhost:8000/docs`.
 
 #### 6.2.1.9. Team Collaboration Insights during Sprint
 
