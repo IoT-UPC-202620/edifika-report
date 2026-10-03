@@ -15,16 +15,26 @@ Carpeta de trabajo para el diagrama de circuito y el firmware del nodo ESP32 de 
 | Sensor ultrasónico | Nivel del tanque de agua |
 | Reloj (RTC) | Hora del nodo |
 
-## Contenido previsto
+## Contenido
 
 ```
 wokwi/
-├── README.md        # Este archivo
-├── diagram.json     # Circuito del nodo (Wokwi / Cirkit Designer)
-├── wokwi.toml       # Configuración del proyecto Wokwi
-├── firmware/        # Código del ESP32
-└── docs/            # Imágenes exportadas del circuito y fotos del montaje físico para el informe
+├── README.md              # Este archivo
+├── diagram.json           # Circuito del nodo (Wokwi)
+├── rfid-rc522.chip.json   # Chip personalizado: pines del lector RC522
+├── rfid-rc522.chip.c      # Chip personalizado: stub (solo representa el módulo)
+├── docs/pinout.md         # Mapa de pines y decisiones de cableado para el informe
+├── wokwi.toml             # (pendiente) Configuración del proyecto Wokwi
+├── firmware/              # (pendiente) Código del ESP32
+└── docs/                  # (pendiente) Capturas del circuito y fotos del montaje físico
 ```
+
+## Cómo abrirlo en Wokwi
+
+1. En https://wokwi.com crear un proyecto **ESP32** nuevo.
+2. Reemplazar el contenido de `diagram.json` con el de este repositorio.
+3. Agregar los archivos `rfid-rc522.chip.json` y `rfid-rc522.chip.c` al proyecto (Wokwi compila el chip al cargarlo).
+4. Si algún cable no se dibuja bien, reacomodar las partes arrastrándolas; las posiciones del archivo son aproximadas.
 
 ## Notas
 
