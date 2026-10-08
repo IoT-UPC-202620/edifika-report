@@ -4860,11 +4860,47 @@ Para lograr esto, vamos a detallar 4 puntos clave, relacionados al branding, tip
 
 #### 5.4.1. Applications Wireframes
 
+**Login**
+
 <p align="center">
   <img src="assets/img/login.jpeg" alt="Login" width="800" />
 </p>
 
+**Register**
 
+<p align="center">
+  <img src="assets/img/register.jpeg" alt="Register" width="800" />
+</p>
+
+**Dashboard**
+
+<p align="center">
+  <img src="assets/img/dashboard.jpeg" alt="Dashboard" width="800" />
+</p>
+
+**Units & Residents**
+<p align="center">
+  <img src="assets/img/units.jpeg" alt="Units" width="800" />
+</p>
+
+**Common Areas**
+
+<p align="center">
+  <img src="assets/img/common.jpeg" alt="Common" width="800" />
+</p>
+
+**Finance**
+<p align="center">
+  <img src="assets/img/finance.jpeg" alt="Finance" width="800" />
+</p>
+
+**Community Wall**
+
+<p align="center">
+  <img src="assets/img/community.jpeg" alt="Community" width="800" />
+</p>
+
+Link del Figma: https://www.figma.com/design/ty6TOS7jOtA6f0111hRNGo/Edifika---Login-Mockup?node-id=19-339&t=GfR39Vruiix1XYFB-0
 
 #### 5.4.2. Applications Wireflow Diagrams
 
@@ -4893,7 +4929,47 @@ User goal:
 
 #### 5.4.3. Applications Mock-Ups
 
+**Login**
 
+<p align="center">
+  <img src="assets/img/login1.jpeg" alt="Login" width="800" />
+</p>
+
+**Register**
+
+<p align="center">
+  <img src="assets/img/register1.jpeg" alt="Register" width="800" />
+</p>
+
+**Dashboard**
+
+<p align="center">
+  <img src="assets/img/dashboard1.jpeg" alt="Dashboard" width="800" />
+</p>
+
+**Units & Residents**
+<p align="center">
+  <img src="assets/img/units1.jpeg" alt="Units" width="800" />
+</p>
+
+**Common Areas**
+
+<p align="center">
+  <img src="assets/img/common1.jpeg" alt="Common" width="800" />
+</p>
+
+**Finance**
+<p align="center">
+  <img src="assets/img/finance1.jpeg" alt="Finance" width="800" />
+</p>
+
+**Community Wall**
+
+<p align="center">
+  <img src="assets/img/community1.jpeg" alt="Community" width="800" />
+</p>
+
+Link del Figma: https://www.figma.com/design/ty6TOS7jOtA6f0111hRNGo/Edifika---Login-Mockup?node-id=0-1&p=f&t=GfR39Vruiix1XYFB-0
 
 #### 5.4.4. Applications User Flow Diagrams
 
