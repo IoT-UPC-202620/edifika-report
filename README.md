@@ -4860,7 +4860,9 @@ Para lograr esto, vamos a detallar 4 puntos clave, relacionados al branding, tip
 
 #### 5.4.1. Applications Wireframes
 
-
+<p align="center">
+  <img src="assets/img/login.jpeg" alt="Login" width="800" />
+</p>
 
 
 
