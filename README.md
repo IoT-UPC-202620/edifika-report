@@ -4729,6 +4729,279 @@ Implementación JPA de los repositorios sobre PostgreSQL; `EdgeCommandPublisher`
 
 *Figura. Diagrama Entidad-Relación — extensión Water Pump Leak Detection. Elaborado con PlantUML.*
 
+## Capítulo V: Solution UI/UX Design
+
+### 5.1. Style Guidelines
+
+#### 5.1.1. General Style Guidelines
+
+En esta seccion, hemos decidido establecer ciertas directrices del estilo las cuales pueden garantizar coherencia visual y de comunicación en las aplicaciones.
+Para lograr esto, vamos a detallar 4 puntos clave, relacionados al branding, tipografía, colores, spacing y el tono de comunicación. 
+
+**Branding**
+
+
+**Lenguaje Aplicado**
+
+
+**Paleta de Colores**
+
+
+
+**Tipografía**
+
+- Para titulos 
+
+
+- Para cuerpo de texto
+
+
+- Espaciado
+
+
+
+#### 5.1.2. Web, Mobile and IoT Style Guidelines
+
+
+
+**Web Style Guidelines**
+
+
+
+**Mobile Style Guidelines**
+
+
+
+**IoT Style Guidelines**
+
+
+
+### 5.2. Information Architecture
+
+
+
+#### 5.2.1. Organization Systems
+
+
+
+**Jerárquica (Visual Hierarchy):** <br>
+
+
+**Secuencial (Step-by-step):** <br>
+
+
+**Por tópicos:** <br>
+
+
+**Según audiencia (Personalización):** <br>
+
+
+#### 5.2.2. Labelling Systems
+
+
+**Acciones con verbos descriptivos:** <br>
+
+
+**Categorías uniformes:** <br>
+
+
+**Mensajes y estados comprensibles:** <br>
+
+
+**Contenido de la landing orientado al usuario:** <br>
+
+#### 5.2.3. SEO Tags and Meta Tags
+
+
+### **Landing:**
+
+### **App:**
+
+
+
+#### 5.2.4. Searching Systems
+
+
+
+
+#### 5.2.5. Navigation Systems
+
+
+
+
+
+
+### 5.3. Landing Page UI Design
+
+#### 5.3.1. Landing Page Wireframe
+
+
+
+
+### **Landing Page Wireframe Web**
+
+
+
+<br>
+
+#### 5.3.2. Landing Page Mock-Up
+
+### **Landing Page Mock-Up Mobile**
+
+
+
+### **Landing Page Mock-Up Web**
+
+
+
+
+
+### 5.4. Applications UX/UI Design
+
+#### 5.4.1. Applications Wireframes
+
+
+
+
+
+#### 5.4.2. Applications Wireflow Diagrams
+
+**1. Wireflow 1: **
+
+User Persona: 
+User goal:
+
+
+
+
+**2. Wireflow 2: **
+
+User Persona:   
+User goal:
+
+
+
+**3. Wireflow 3: **
+
+User Persona:   
+User goal:
+
+
+
+
+#### 5.4.3. Applications Mock-Ups
+
+
+
+#### 5.4.4. Applications User Flow Diagrams
+
+**User Flow 1: **
+
+**User Persona:**   
+**User goal:** 
+
+**Pantallas base:**
+
+- Register
+- Login
+- Dashboard
+
+**Happy path:**
+
+
+
+**Unhappy paths:**
+
+
+
+
+
+---
+
+**User Flow 2: **
+
+**User Persona:**   
+**User goal:** 
+
+**Pantallas base:**
+
+
+
+**Happy path:**
+
+
+
+**Unhappy paths:**
+
+
+
+
+
+---
+
+**User Flow 3: **
+
+**User Persona:**   
+**User goal:** 
+
+**Pantallas base:**
+
+
+
+**Happy path:**
+
+
+
+**Unhappy paths:**
+
+
+
+
+
+### 5.5. Application Prototyping
+
+
+
+### 5.6. Iot Device Desing
+
+La propuesta de diseño de los dispositivos IoT de Condominia se fundamenta en tres criterios principales: integración directa con el protocolo MQTT para transmisión de datos en tiempo real, bajo consumo energético para uso cotidiano sin interrupciones, y coherencia estética con la guía de estilos de la plataforma. Los dispositivos actúan como la primera capa de captura de datos objetivos, complementando la experiencia digital con información biométrica sin intervención manual del usuario.
+ 
+
+* **Microcontrolador:** ESP32 DevKit V1
+* **Protocolo:** MQTT sobre Wi-Fi
+* **Broker:** AWS IoT Core
+* **Firmware:** C++ (Arduino framework)
+* **Simulator:** Wokwi
+
+ **Dispositivo 01: Botella Inteligente (Smart Bottle)**
+ 
+#### Descripción y criterios de diseño
+ 
+La Botella Inteligente monitorea el consumo de agua del usuario en tiempo real mediante un sensor de flujo de efecto Hall **YF-S201**. Cuando el usuario bebe, el flujo de agua hace girar la turbina interna del sensor, generando pulsos digitales que el ESP32 cuenta y convierte en mililitros usando la fórmula de calibración `mL = pulsos / 7.5`. Los datos se publican vía MQTT al tópico `jameofit/hydration/{userId}` cada vez que se detecta ingesta, actualizando el dashboard de Gestión de Objetivos instantáneamente.
+ 
+
+El diseño físico sigue la guía de estilos IoT de JameoFit: carcasa compacta de plástico ABS mate, con el LED RGB visible en la tapa superior y la pantalla OLED en la franja lateral. La carga se realiza mediante USB-C a través del módulo TP4056 integrado en la base.
+
+**Componentes**
+
+| Componente | Función |
+| :--- | :--- |
+| **ESP32 DevKit V1** | MCU principal — Wi-Fi, MQTT, lógica de negocio. |
+| **YF-S201** | Sensor de flujo Hall Effect — 1–30 L/min. |
+| **OLED SSD1306 (128×64)** | Display I2C 0.96" — retroalimentación visual. |
+| **WS2812B RGB LED** | Indicador de estado de hidratación. |
+| **LiPo 3.7V 2000mAh** | Fuente de energía recargable portátil. |
+| **TP4056 (USB-C)** | Módulo de carga y protección de LiPo. |
+
+<p align="center">
+  <img src="assets/TP/botella_iot.png" alt=" Botella Inteligente" width="700"/>
+</p>
+
+**Simulación en Wokwi**
+
+
+
+
 
 # Conclusiones
 # Conclusiones y Recomendaciones
