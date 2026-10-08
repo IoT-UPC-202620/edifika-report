@@ -4949,7 +4949,7 @@ User goal:
 
 **Units & Residents**
 <p align="center">
-  <img src="assets/img/units1.jpeg" alt="Units" width="800" />
+  <img src="assets/img/unit1.jpeg" alt="Units" width="800" />
 </p>
 
 **Common Areas**
