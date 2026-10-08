@@ -4904,27 +4904,46 @@ Link del Figma: https://www.figma.com/design/ty6TOS7jOtA6f0111hRNGo/Edifika---Lo
 
 #### 5.4.2. Applications Wireflow Diagrams
 
-**1. Wireflow 1: **
+**1. Wireflow 1: Registro e inicio de sesión del administrador**
 
-User Persona: 
-User goal:
+User Persona: Administrador
+User goal: El administrador quiere registrarse o iniciar sesión para acceder a Edifika y gestionar su edificio.
 
+<p align="center">
+  <img src="assets/img/xd1.jpeg" alt="Community" width="800" />
+</p>
 
-
-
-**2. Wireflow 2: **
-
-User Persona:   
-User goal:
+Este flujo representa el acceso inicial del administrador a la aplicación web. Puede crear una cuenta aceptando el reglamento interno, volver al inicio de sesión e ingresar al dashboard, desde donde accede a unidades, áreas comunes, finanzas y muro comunitario.
 
 
 
-**3. Wireflow 3: **
+**2. Wireflow 2: Reserva de un área común **
 
-User Persona:   
-User goal:
+User Persona: Usuario  
+User goal: El usuario quiere reservar un área común en una fecha y horario disponibles, y ver su reserva en el calendario.
 
+<p align="center">
+  <img src="assets/img/xd2.1.jpeg" alt="Community" width="800" />
+</p>
+<p align="center">
+  <img src="assets/img/xd2.2.jpeg" alt="Community" width="800" />
+</p>
+<p align="center">
+  <img src="assets/img/xd2.3.jpeg" alt="Community" width="800" />
+</p>
 
+Este flujo muestra cómo se registra una reserva desde el calendario de áreas comunes. Si el horario elegido ya está ocupado, el sistema avisa y permite elegir otro; si está libre, la reserva queda confirmada y aparece en el calendario.
+
+**3. Wireflow 3: Seguimiento financiero y morosidad**
+
+User Persona: Administrador 
+User goal: El administrador quiere revisar los ingresos y las deudas del edificio e identificar a los residentes morosos para enviarles un aviso.
+
+<p align="center">
+  <img src="assets/img/xd3.jpeg" alt="Community" width="800" />
+</p>
+
+Este flujo parte del dashboard hacia la sección Finance, donde se revisan los indicadores y la lista de residentes con saldos pendientes. Desde ahí el administrador envía un aviso de cobro.
 
 
 #### 5.4.3. Applications Mock-Ups
