@@ -3867,7 +3867,7 @@ La relación entre ambas tablas es `UserRol (1) —— (N) User`: un rol puede a
 
 El resto de tablas del modelo de Edifika (Payments, Reservations, Forum, Notifications, etc.) hacen referencia a `User.id_user`, pero corresponden a otros bounded contexts del sistema y no forman parte de este diagrama.
 
-![ERD consolidado](assets/img/Edifika_ERD_2.png)
+![ERD consolidado](assets/img/Edifika_ERD_03.png)
 
 *Figura. Diagrama Entidad-Relación consolidado (incluye las tablas de IAM). Elaborado utilizando LucidChart (LucidChart, s.f.).*
 
@@ -4011,7 +4011,7 @@ Implementación JPA de los repositorios sobre PostgreSQL, con esquema propio del
 
 ##### 4.2.2.6.2. Bounded Context Database Design Diagram
 
-![ERD consolidado](assets/img/Edifika_ERD_2.png)
+![ERD consolidado](assets/img/Edifika_ERD_03.png)
 
 *Figura. Diagrama Entidad-Relación consolidado (incluye las tablas de Residential Management). Elaborado utilizando LucidChart (LucidChart, s.f.).*
 
@@ -4136,7 +4136,7 @@ Implementación JPA de los repositorios sobre PostgreSQL, con esquema propio del
 
 ##### 4.2.3.6.2. Bounded Context Database Design Diagram
 
-![ERD consolidado](assets/img/Edifika_ERD_2.png)
+![ERD consolidado](assets/img/Edifika_ERD_03.png)
 
 *Figura. Diagrama Entidad-Relación consolidado (incluye las tablas de Reservation). Elaborado utilizando LucidChart (LucidChart, s.f.).*
 
@@ -4279,7 +4279,7 @@ Implementación JPA de los repositorios sobre PostgreSQL, con esquema propio del
 
 ##### 4.2.4.6.2. Bounded Context Database Design Diagram
 
-![ERD consolidado](assets/img/Edifika_ERD_2.png)
+![ERD consolidado](assets/img/Edifika_ERD_03.png)
 
 *Figura. Diagrama Entidad-Relación consolidado (incluye las tablas de Payment). Elaborado utilizando LucidChart (LucidChart, s.f.).*
 
@@ -4393,7 +4393,7 @@ Implementación JPA de los repositorios sobre PostgreSQL, con esquema propio del
 
 ##### 4.2.5.6.2. Bounded Context Database Design Diagram
 
-![ERD consolidado](assets/img/Edifika_ERD_2.png)
+![ERD consolidado](assets/img/Edifika_ERD_03.png)
 
 *Figura. Diagrama Entidad-Relación consolidado (incluye las tablas de Notification). Elaborado utilizando LucidChart (LucidChart, s.f.).*
 
@@ -4523,7 +4523,7 @@ Implementación JPA de los repositorios sobre PostgreSQL, con esquema propio del
 
 ##### 4.2.6.6.2. Bounded Context Database Design Diagram
 
-![ERD consolidado](assets/img/Edifika_ERD_2.png)
+![ERD consolidado](assets/img/Edifika_ERD_03.png)
 
 *Figura. Diagrama Entidad-Relación consolidado (incluye las tablas de Communication). Elaborado utilizando LucidChart (LucidChart, s.f.).*
 
@@ -4637,7 +4637,7 @@ Implementación JPA de los repositorios sobre PostgreSQL, con esquema propio del
 
 ##### 4.2.7.6.2. Bounded Context Database Design Diagram
 
-![ERD consolidado](assets/img/Edifika_ERD_2.png)
+![ERD consolidado](assets/img/Edifika_ERD_03.png)
 
 *Figura. Diagrama Entidad-Relación consolidado (incluye las tablas de Forum). Elaborado utilizando LucidChart (LucidChart, s.f.).*
 
@@ -4704,7 +4704,7 @@ Al ser un contexto mayormente de solo lectura (CQRS), **no posee agregados trans
 
 ##### 4.2.8.6.2. Bounded Context Database Design Diagram
 
-![ERD consolidado](assets/img/Edifika_ERD_2.png)
+![ERD consolidado](assets/img/Edifika_ERD_03.png)
 
 *Figura. Diagrama Entidad-Relación consolidado.*
 
@@ -5088,134 +5088,218 @@ Por su naturaleza de series temporales, las tablas de este contexto (`sensor_rea
 
 *Figura. Diagrama Entidad-Relación — extensión IoT, paquete TimescaleDB (`sensor_readings`, `energy_consumption`, `consumption_baselines`, `anomaly_flags`). Elaborado con PlantUML.*
 
-### 4.2.12. Bounded Context: Water Pump Leak Detection
+### 4.2.12. Bounded Context: Smart Irrigation
 
 #### 4.2.12.1. Domain Layer
 
-El agregado principal identificado es:
+El Domain Layer del bounded context Smart Irrigation concentra la lógica de negocio relacionada con la automatización del riego de las áreas verdes de los edificios administrados mediante Edifika. Este contexto permite configurar zonas de riego, establecer horarios y umbrales de humedad del suelo, ejecutar el riego automáticamente y registrar el resultado de cada operación. Asimismo, contempla la intervención manual del administrador y la identificación de fallas durante la ejecución.
 
-**LeakDetectionRule** (Aggregate Root: regla que gobierna una o varias bombas de agua, con umbral de caudal, umbral de presión, franja horaria de consumo esperado y duración mínima de desviación antes de declarar una fuga), **WaterPump** (Entity: bomba física con ubicación, zona asociada, potencia nominal y estado `ON`/`OFF`/`FAULT`), **LeakAlert** (Entity: evento de fuga detectado, con severidad, evidencia y estado de resolución). Value Objects: `FlowThreshold`, `PressureThreshold`, `FlowRate`, `LeakSeverity`. Domain Service: **LeakDetectionService**, que compara la lectura de caudal y presión contra la línea base esperada de la zona y distingue una fuga real de un consumo legítimo fuera de horario. Interfaces `LeakDetectionRuleRepository`, `WaterPumpRepository` y `LeakAlertRepository`.
+Los agregados principales identificados son:
 
-## Aggregate: LeakDetectionRuleAggregate
+**IrrigationZone**: representa una zona de riego del edificio, con su configuración de humedad y duración predeterminada. Constituye la raíz del agregado y permite gestionar las programaciones y ejecuciones asociadas.
 
-### Entity: LeakDetectionRule
+**IrrigationRun**: representa una ejecución de riego, con su origen, momento de inicio, finalización y resultado. Permite mantener la trazabilidad de las operaciones automáticas y manuales.
 
-| Atributo | Tipo | Descripción |
-|---|---|---|
-| idRule | Long | Identificador único de la regla. |
-| idZone | Long | Zona hidráulica a la que aplica. |
-| flowThreshold | FlowThreshold | Caudal máximo esperado fuera de horario de consumo. |
-| pressureThreshold | PressureThreshold | Caída de presión mínima que dispara la evaluación. |
-| expectedWindow | LightingSchedule | Franja horaria de consumo esperado. |
-| minDeviationMinutes | Int | Duración mínima de desviación antes de declarar fuga. |
-| isActive | Boolean | Indica si la regla está vigente. |
+La validación de las reglas de negocio se apoya en el Domain Service **IrrigationDecisionService**, encargado de evaluar los horarios programados, los umbrales de humedad, las solicitudes manuales y las condiciones necesarias para ejecutar el riego.
 
-## Aggregate: WaterPumpAggregate
+##### Aggregate: IrrigationZoneAggregate
 
-### Entity: WaterPump
+Agrupa la configuración de una zona de riego y las programaciones que determinan su funcionamiento. Garantiza que las programaciones sean coherentes y que las ejecuciones automáticas respeten las condiciones definidas.
+
+**Entity: IrrigationZone**
 
 | Atributo | Tipo | Descripción |
 |---|---|---|
-| idPump | Long | Identificador único de la bomba. |
-| idZone | Long | Zona hidráulica asociada. |
-| location | String | Ubicación física de la bomba. |
-| nominalFlow | Decimal | Caudal nominal de la bomba. |
-| state | PumpState | Estado actual de la bomba. |
+| idZone | Long | Identificador único de la zona de riego. |
+| idBuilding | Long | Edificio al que pertenece la zona. |
+| name | String | Nombre de la zona de riego. |
+| deviceCode | String | Código del dispositivo IoT asociado. |
+| moistureThreshold | MoistureThreshold | Umbral de humedad configurado para determinar si corresponde regar. |
+| defaultDurationMinutes | Int | Duración predeterminada del riego en minutos. |
+| status | IrrigationZoneStatus | Estado operativo de la zona. |
 
-### Entity: LeakAlert
-
-| Atributo | Tipo | Descripción |
-|---|---|---|
-| idAlert | Long | Identificador único de la alerta. |
-| idPump | PumpId | Bomba en la que se detectó la desviación. |
-| severity | LeakSeverity | Severidad de la fuga detectada. |
-| evidence | String | Lectura de caudal/presión que sustenta la alerta. |
-| detectedAt | DateTime | Momento de la detección. |
-| resolvedAt | DateTime | Momento de resolución (si aplica). |
-| status | LeakAlertStatus | Estado de la alerta. |
-
-## ValueObject: FlowThreshold
+**Entity: IrrigationSchedule**
 
 | Atributo | Tipo | Descripción |
 |---|---|---|
-| value | Decimal | Caudal límite antes de considerar una posible fuga. |
+| idSchedule | Long | Identificador único de la programación. |
+| idZone | Long | Zona de riego asociada. |
+| daysOfWeek | String | Días de la semana en los que se programa el riego. |
+| startTime | Time | Hora de inicio programada. |
+| durationMinutes | Int | Duración del riego programado. |
+| status | IrrigationScheduleStatus | Estado de la programación. |
 
-## ValueObject: PressureThreshold
+##### Aggregate: IrrigationRunAggregate
+
+Registra cada ejecución de riego, independientemente de que haya sido iniciada por una programación automática o por una solicitud manual. Mantiene el resultado de la operación y las fallas que puedan presentarse.
+
+**Entity: IrrigationRun**
 
 | Atributo | Tipo | Descripción |
 |---|---|---|
-| value | Decimal | Caída de presión mínima que activa la evaluación. |
+| idRun | Long | Identificador único de la ejecución. |
+| idZone | Long | Zona donde se ejecuta el riego. |
+| idSchedule | Long | Programación asociada, cuando corresponde. |
+| triggerType | IrrigationTriggerType | Origen de la ejecución. |
+| requestedBy | Long | Identificador del administrador que solicita el riego manual, cuando corresponde. |
+| moistureBefore | Decimal | Humedad del suelo registrada antes del riego. |
+| startedAt | DateTime | Momento de inicio de la ejecución. |
+| endedAt | DateTime | Momento de finalización de la ejecución. |
+| status | IrrigationRunStatus | Estado de la ejecución. |
+| failureReason | String | Motivo de falla, cuando corresponde. |
 
-## ValueObject: FlowRate
+##### Value Objects
+
+**MoistureThreshold**
 
 | Atributo | Tipo | Descripción |
 |---|---|---|
-| value | Decimal | Caudal instantáneo medido. |
-| unit | String | Unidad de medida del caudal. |
+| value | Decimal | Valor del umbral de humedad configurado para una zona. |
 
-## Enumeration
+**SoilMoisture**
+
+| Atributo | Tipo | Descripción |
+|---|---|---|
+| value | Decimal | Humedad del suelo obtenida desde el dispositivo IoT. |
+| capturedAt | DateTime | Fecha y hora de la medición. |
+
+**IrrigationDuration**
+
+| Atributo | Tipo | Descripción |
+|---|---|---|
+| minutes | Int | Duración de la ejecución de riego en minutos. |
+
+##### Enumerations
 
 | Enumeración | Valores |
 |---|---|
-| PumpState | `ON`, `OFF`, `FAULT` |
-| LeakSeverity | `LOW`, `MEDIUM`, `HIGH` |
-| LeakAlertStatus | `OPEN`, `ACKNOWLEDGED`, `RESOLVED` |
+| IrrigationZoneStatus | `ACTIVE`, `INACTIVE` |
+| IrrigationScheduleStatus | `ACTIVE`, `INACTIVE` |
+| IrrigationTriggerType | `SCHEDULED`, `MANUAL` |
+| IrrigationRunStatus | `PENDING`, `RUNNING`, `COMPLETED`, `FAILED`, `SKIPPED` |
 
-## Domain Services
+Estos valores representan el modelo propuesto para expresar los estados de las entidades y deberán corresponder con los valores persistidos en PostgreSQL.
+
+##### Domain Services
 
 | Nombre | Responsabilidad | Reglas aplicadas |
 |---|---|---|
-| LeakDetectionService | Distinguir una fuga real de un consumo legítimo. | Un caudal por encima del umbral fuera de la franja horaria esperada, sostenido más allá de la duración mínima configurada, se declara fuga. Una caída de presión sin caudal correspondiente marca la bomba como `FAULT`. |
+| IrrigationDecisionService | Determinar si debe ejecutarse el riego de una zona. | Comprueba que la zona esté habilitada, verifica la programación y evalúa la humedad del suelo. Omite el riego automático cuando la humedad supera el umbral configurado. |
+| IrrigationScheduleService | Validar las programaciones de riego. | Impide que existan horarios de riego superpuestos para una misma zona. |
+| IrrigationExecutionService | Validar las transiciones de estado de una ejecución. | Registra el inicio y finalización de cada riego. Si la válvula no confirma la orden, registra la ejecución como fallida. |
 
 #### 4.2.12.2. Interface Layer
 
-**LeakDetectionRuleController**: CRUD de reglas de detección por parte del administrador. **WaterPumpController**: registro y consulta de bombas y su estado. **LeakAlertController**: consulta y resolución de alertas de fuga. **PumpControlController**: apagado remoto manual de una bomba. Como *Consumer*: `FlowReadingEventConsumer`, suscrito a las lecturas de caudal y presión que reenvía el Edge API.
+Esta capa expone las operaciones del bounded context mediante interfaces REST accesibles desde el API Gateway. Permite al administrador configurar las zonas de riego, gestionar las programaciones, consultar el historial de ejecuciones y solicitar la activación o detención manual del riego.
+
+**IrrigationZoneController**: permite registrar, actualizar, consultar y habilitar o deshabilitar zonas de riego.
+
+**IrrigationScheduleController**: permite crear, modificar y desactivar las programaciones de riego, incluyendo sus horarios, días y duraciones.
+
+**IrrigationControlController**: recibe las solicitudes del administrador para iniciar o detener manualmente una ejecución de riego.
+
+**IrrigationRunController**: permite consultar el estado y el historial de las ejecuciones de riego.
+
+Como consumidores de eventos, se consideran:
+
+- **SoilMoistureEventConsumer**: recibe las lecturas de humedad proporcionadas por IoT Telemetry & Analytics para evaluar las condiciones de riego.
+- **IrrigationExecutionEventConsumer**: recibe las confirmaciones de ejecución y los estados reportados por el Edge API, incluyendo fallas en la operación de la válvula.
+
+Los controladores no contienen lógica de negocio; delegan la coordinación de las operaciones a los servicios de la Application Layer.
 
 #### 4.2.12.3. Application Layer
 
-## Event Handlers
+La Application Layer coordina los casos de uso del contexto Smart Irrigation y gestiona la comunicación con Edge API. Utiliza los servicios del dominio para validar las condiciones de riego y los repositorios para persistir las configuraciones y los resultados de ejecución.
+
+##### Irrigation Command Handler
+
+| Capability | Command Handler | Descripción |
+|---|---|---|
+| Configurar zona | IrrigationZoneCommandService.handle(UpsertIrrigationZoneCommand) | Registra o actualiza una zona y su umbral de humedad. |
+| Programar riego | IrrigationScheduleCommandService.handle(ConfigureScheduleCommand) | Configura horarios y duraciones, validando la ausencia de superposiciones. |
+| Iniciar riego manual | IrrigationCommandService.handle(StartManualIrrigationCommand) | Solicita la apertura de la válvula de una zona. |
+| Detener riego manual | IrrigationCommandService.handle(StopManualIrrigationCommand) | Solicita el cierre de la válvula para finalizar el riego. |
+
+##### Event Handlers
 
 | Handler | Evento de origen | Descripción |
 |---|---|---|
-| FlowReadingReceivedEventHandler | FlowReadingReceived | Evalúa la lectura contra `LeakDetectionService`; si corresponde, crea la `LeakAlert` y ordena el corte de la bomba. |
+| SoilMoistureUpdatedEventHandler | `SoilMoistureUpdated` | Actualiza la información de humedad utilizada para evaluar el riego. |
+| IrrigationStartedEventHandler | `IrrigationStarted` | Registra el inicio confirmado de una ejecución. |
+| IrrigationCompletedEventHandler | `IrrigationCompleted` | Registra la finalización del riego. |
+| IrrigationFailedEventHandler | `IrrigationFailed` | Registra el fallo de ejecución y permite generar una notificación al administrador. |
 
-`LeakDetectionRuleCommandService`, `PumpControlCommandService` (ejecuta el comando de apagado y programa su confirmación) y `LeakQueryService` completan la capa. El contexto publica `LeakDetected`, `PumpShutOff` y `LeakResolved`.
+**IrrigationSchedulerService** coordina las programaciones definidas por el administrador. Las condiciones y horarios sincronizados con Edge API permiten que la ejecución física del riego continúe localmente cuando no existe conexión con Cloud Computing.
 
-**`FlowReadingReceived`** lo publica el **Edge API**, no Telemetry: reenvía la lectura cruda del sensor de caudal/presión del nodo hidráulico como evento tan pronto la recibe por MQTT local, priorizando la latencia de corte sobre la interpretación de dominio, siguiendo el mismo criterio aplicado en `AreaPresenceDetected` (ver 4.2.10.3).
+**IrrigationQueryService** permite consultar las zonas, programaciones y ejecuciones registradas.
+
+El contexto publica los eventos `IrrigationStarted`, `IrrigationCompleted` e `IrrigationFailed`. Los eventos de falla pueden ser consumidos por Notification para informar al administrador.
+
+La ejecución se realiza mediante comandos enviados al Edge API, que coordina la activación del relé de la válvula solenoide del nodo ESP32. La telemetría del sensor de humedad y del sensor de flujo se transmite mediante MQTT y es gestionada por IoT Telemetry & Analytics.
 
 #### 4.2.12.4. Infrastructure Layer
 
-## Repositories
+La Infrastructure Layer proporciona los mecanismos de persistencia y comunicación necesarios para ejecutar las operaciones del bounded context Smart Irrigation.
+
+##### Repositories
 
 | Repositorio | Responsabilidad |
 |---|---|
-| LeakDetectionRuleRepository | Persistencia de reglas de detección. |
-| WaterPumpRepository | Persistencia de bombas. |
-| LeakAlertRepository | Persistencia de alertas de fuga. |
+| IrrigationZoneRepository | Persistencia de zonas y configuraciones de humedad. |
+| IrrigationScheduleRepository | Persistencia de los horarios y duraciones programadas. |
+| IrrigationRunRepository | Persistencia del historial y estado de las ejecuciones. |
 
-Implementación JPA de los repositorios sobre PostgreSQL; `EdgeCommandPublisher`, que envía por MQTT/REST al Edge API el comando de corte de la bomba para que este lo ejecute localmente sobre el nodo hidráulico; publicador AMQP/MQTT de los eventos del contexto.
+Los repositorios se implementan mediante Spring Data JPA sobre PostgreSQL, utilizando el esquema correspondiente a Irrigation Database.
+
+**EdgeCommandPublisher**: componente encargado de transmitir las programaciones, umbrales de humedad y comandos de apertura o cierre de válvulas hacia Edge API mediante las interfaces de comunicación definidas en la arquitectura.
+
+La comunicación con el Edge API permite que las reglas se ejecuten localmente sobre el nodo ESP32, mientras que la sincronización con Cloud Computing mantiene la configuración y el historial de ejecuciones.
+
+Las lecturas continuas de humedad y flujo de agua no se almacenan en la base de datos transaccional de Smart Irrigation. Son responsabilidad de IoT Telemetry & Analytics, que utiliza TimescaleDB para persistir datos de series temporales.
+
+El contexto también dispone de integración con el Message & Event Broker para publicar los eventos asociados a las ejecuciones y sus fallas.
 
 #### 4.2.12.5. Bounded Context Software Architecture Component Level Diagrams
 
-![Componentes Water Pump Leak Detection](assets/img/component_leak.png)
+El diagrama de componentes de Smart Irrigation Service representa la organización interna del microservicio y las dependencias entre sus capas.
 
-*Figura. Diagrama de Componentes — Water Pump Leak Detection Service. Elaborado utilizando Structurizr (Structurizr, s.f.).*
+Incluye los controladores REST de configuración y control de riego, los servicios de aplicación responsables de coordinar los casos de uso, los servicios de dominio que validan las reglas de riego y los repositorios que proporcionan persistencia mediante PostgreSQL.
+
+Asimismo, representa la integración con el Edge API, encargado de coordinar la ejecución física de los comandos sobre los dispositivos ESP32, y con el Message & Event Broker para el intercambio de eventos.
+
+**Figura pendiente:** Diagrama de Componentes — Smart Irrigation Service. Elaborar utilizando Structurizr, reemplazando el anterior diagrama de Water Pump Leak Detection.
 
 #### 4.2.12.6. Bounded Context Software Architecture Code Level Diagrams
 
+En esta sección se detalla la estructura interna del bounded context Smart Irrigation mediante diagramas de clases y del diseño de base de datos, manteniendo la separación entre las responsabilidades del dominio, la aplicación, las interfaces y la infraestructura.
+
 ##### 4.2.12.6.1. Bounded Context Domain Layer Class Diagrams
 
+El diagrama de clases representa los agregados IrrigationZoneAggregate e IrrigationRunAggregate y las entidades IrrigationZone, IrrigationSchedule e IrrigationRun.
 
-![Clases Water Pump Leak Detection](assets/img/class_diagram_leak.png)
+También incluye los Value Objects que encapsulan las condiciones de humedad y duración, las enumeraciones que representan los estados y los Domain Services que aplican las reglas de programación y ejecución.
 
-*Figura. Diagrama de Clases — Water Pump Leak Detection. Elaborado con PlantUML.*
+Las relaciones entre entidades permiten identificar las programaciones de cada zona y mantener la trazabilidad de sus ejecuciones.
+
+
 
 ##### 4.2.12.6.2. Bounded Context Database Design Diagram
 
+El modelo entidad-relación del bounded context Smart Irrigation está compuesto principalmente por las tablas `irrigation_zones`, `irrigation_schedules` e `irrigation_runs`.
 
-![ERD extensión Water Pump Leak Detection](assets/img/db_diagram_leak.png)
+La tabla `irrigation_zones` almacena las áreas verdes configuradas para riego, sus umbrales de humedad y su vinculación con el edificio y el dispositivo correspondiente.
 
-*Figura. Diagrama Entidad-Relación — extensión Water Pump Leak Detection. Elaborado con PlantUML.*
+La tabla `irrigation_schedules` registra las programaciones configuradas para cada zona, mientras que `irrigation_runs` conserva el historial de ejecuciones automáticas y manuales, incluyendo su estado, duración y posibles motivos de falla.
+
+Las relaciones principales son:
+
+- `irrigation_zones (1) — (N) irrigation_schedules`: una zona puede tener múltiples programaciones.
+- `irrigation_zones (1) — (N) irrigation_runs`: una zona puede registrar múltiples ejecuciones.
+- `irrigation_schedules (1) — (N) irrigation_runs`: una programación puede originar múltiples ejecuciones a lo largo del tiempo. La referencia es opcional para las ejecuciones manuales.
+
+La persistencia se realiza en PostgreSQL, mientras que las mediciones de humedad y flujo de agua se conservan en el contexto IoT Telemetry & Analytics mediante TimescaleDB.
+
+
 
 # Capítulo V: Solution UI/UX Design
 
@@ -7860,18 +7944,28 @@ El archivo `docker-compose.yml` se validó con `docker compose config`, que conf
 
 # Referencias Bibliográficas
 
-  - Aguilar, K. L. B. (2026). Vacíos regulatorios en la Ley de Propiedad en Condominio, análisis de conflictos recurrentes en su modalidad vertical ubicados en el Distrito Central (Tesis doctoral). Centro Universitario Tecnológico CEUTEC. `https://repositorio.unitec.edu/server/api/core/bitstreams/cd97bbd4-204c-49c8-9901-3d0a5a85d7f3/content`
-  - Condominos. (2024, 4 de noviembre). Manejo de chats de WhatsApp de vecinos en condominios. `https://www.condominos.app/sitio/detalle/OA/manejo-de-chats-de-whatsapp-de-vecinos-en-condominios`
-`https://www2.deloitte.com/us/en/insights/topics/digital-transformation.html`
-  - El Comercio. (2026, 3 de abril). Fallas en la gestión de edificios corporativos pueden generar sobrecostos de hasta 30%. `https://elcomercio.pe/economia/fallas-en-la-gestion-de-edificios-corporativos-pueden-generar-sobrecostos-de-hasta-30-noticia/`
-  - Gestión. (2023, 12 de septiembre). Advierten que deudas por gastos en condominios llevan a inquilinos a Infocorp. `https://gestion.pe/tu-dinero/inmobiliarias/advierten-que-deudas-por-gastos-en-condominios-llevan-a-inquilinos-a-infocorp-condominios-deudas-por-pagos-de-mantenimiento-noticia/`
-  - GitHub. (s.f.). `https://github.com/`
-  - Instituto Nacional de Estadística e Informática (INEI). (2023). Perú: Características de las viviendas particulares y hogares. `https://www.gob.pe/institucion/inei/informes-publicaciones/4377979-las-tecnologias-de-informacion-y-comunicacion-en-los-hogares-ene-feb-mar-2023`
-  - Lucidchart. (s.f.). `https://www.lucidchart.com`
-  - PlantUML. (s.f.). `https://plantuml.com`
-  - ProTool. (2026, 11 de marzo). Administrar un condominio por WhatsApp no es gestión, es un riesgo para la comunidad. `https://www.protool.cl/noticia_detalle.php?slug=administrar-condominios-por-whatsapp-no-es-gestion-es-riesgo`
-  - Sociedad Peruana de Bienes Raíces. (2024). Digitalización de edificios y condominios en Perú. `https://bienesraicess.com/blogs/digitalizacion-de-edificios-y-condominios-en-peru`
-  - UXPressia. (s.f.). `https://uxpressia.com/`
-  - Verastegui Leon, P. A., Mendoza Castañeda, J. L. D. C., Zapata Becerra, M. L., Capristan Leon, K. E., & Ravines Garcia, M. A. (2025). Propuesta de un plan estratégico para mejora de la Gestión en Edificios Multifamiliares en Lima Moderna: Caso De Estudio: MONARCH MANAGERS EIRL. Universidad Peruana de Ciencias Aplicadas. `https://repositorioacademico.upc.edu.pe/handle/10757/686137`
+- Affonso, E. O. T., Branco, R. R., Menezes, O. V. C., Guedes, A. L. A., Chinelli, C. K., Haddad, A. N., & Soares, C. A. P. (2024). The main barriers limiting the development of smart buildings. Buildings, 14(6), 1726. https://doi.org/10.3390/buildings14061726
+- Aguilar, K. L. B. (2026). Vacíos regulatorios en la Ley de Propiedad en Condominio, análisis de conflictos recurrentes en su modalidad vertical ubicados en el Distrito Central [Tesis doctoral, Centro Universitario Tecnológico CEUTEC]. https://repositorio.unitec.edu/server/api/core/bitstreams/cd97bbd4-204c-49c8-9901-3d0a5a85d7f3/content
+- Asto-Aguilar, D., Belen-Barreto, J., & Cabanillas-Carbonell, M. (2021). Mobile application for the automation of reservation and incident processes for condominiums. 2021 IEEE CHILEAN Conference on Electrical, Electronics Engineering, Information and Communication Technologies (CHILECON). https://doi.org/10.1109/CHILECON54041.2021.9702958
+- Banco Central de Reserva del Perú. (2025). Memoria 2025.
+- Bottero, M., Cavana, G., & Dell'Anna, F. (2023). Feasibility analysis of the application of building automation and control system and their interaction with occupant behavior. Energy Efficiency, 16, Article 83. https://doi.org/10.1007/s12053-023-10158-w
+- Condominos. (2024, 4 de noviembre). Manejo de chats de WhatsApp de vecinos en condominios. https://www.condominos.app/sitio/detalle/OA/manejo-de-chats-de-whatsapp-de-vecinos-en-condominios
+- Cueva-Villanueva, S., Espinoza-Morillas, S., Miranda-Alfaro, V., & Uceda-Yarango, A. (2025). Evaluación de la certificación EDGE en la eficiencia operativa de edificios multifamiliares. Hábitat Sustentable, 15(2), 66–75. https://doi.org/10.22320/07190700.2025.15.02.05
+- Deloitte. (s.f.). Digital transformation. https://www2.deloitte.com/us/en/insights/topics/digital-transformation.html
+- El Comercio. (2026, 3 de abril). Fallas en la gestión de edificios corporativos pueden generar sobrecostos de hasta 30%. https://elcomercio.pe/economia/fallas-en-la-gestion-de-edificios-corporativos-pueden-generar-sobrecostos-de-hasta-30-noticia/
+- Fabian Malvaceda, D. O. (2021). Estudio y diseño de instalaciones eléctricas para el ahorro energético en áreas comunes de edificación multifamiliar El Sol – Barranco, 2019 [Trabajo de suficiencia profesional].
+- Gestión. (2023, 12 de septiembre). Advierten que deudas por gastos en condominios llevan a inquilinos a Infocorp. https://gestion.pe/tu-dinero/inmobiliarias/advierten-que-deudas-por-gastos-en-condominios-llevan-a-inquilinos-a-infocorp-condominios-deudas-por-pagos-de-mantenimiento-noticia/
+- GitHub. (s.f.). GitHub. https://github.com/ 
+- Instituto Nacional de Estadística e Informática. (2023). Perú: Características de las viviendas particulares y hogares. https://www.gob.pe/institucion/inei/informes-publicaciones/4377979-las-tecnologias-de-informacion-y-comunicacion-en-los-hogares-ene-feb-mar-2023
+- Lucidchart. (s.f.). Lucidchart. https://www.lucidchart.com
+- Nieto-Cárdenas, G., Quevedo-Villalba, F., Villanueva-Llapa, A., & Raymundo, C. (2025). Digital platform to improve the administrative management of condominiums. 2025 IEEE 5th International Conference on Advanced Learning Technologies on Education & Research (ICALTER). https://doi.org/10.1109/ICALTER69698.2025.11355122
+- Ntafalias, A., Papadopoulos, P., Ramallo-González, A. P., Skarmeta-Gómez, A. F., Sánchez-Valverde, J., Vlachou, M. C., Marín-Pérez, R., Quesada-Sánchez, A., Purcell, F., & Wright, S. (2024). Smart buildings with legacy equipment: A case study on energy savings and cost reduction through an IoT platform in Ireland and Greece. Results in Engineering, 22, 102095. https://doi.org/10.1016/j.rineng.2024.102095
+- PlantUML. (s.f.). PlantUML. https://plantuml.com
+- ProTool. (2026, 11 de marzo). Administrar un condominio por WhatsApp no es gestión, es un riesgo para la comunidad. https://www.protool.cl/noticia_detalle.php?slug=administrar-condominios-por-whatsapp-no-es-gestion-es-riesgo
+- Sociedad Peruana de Bienes Raíces. (2024). Digitalización de edificios y condominios en Perú. https://bienesraicess.com/blogs/digitalizacion-de-edificios-y-condominios-en-peru
+- Trabelsi, R., Fersi, G., & Jmaiel, M. (2023). Access control in Internet of Things: A survey. Computers & Security, 135, 103472. https://doi.org/10.1016/j.cose.2023.103472
+- UXPressia. (s.f.). UXPressia. https://uxpressia.com/
+- Verastegui Leon, P. A., Mendoza Castañeda, J. L. D. C., Zapata Becerra, M. L., Capristan Leon, K. E., & Ravines Garcia, M. A. (2025). Propuesta de un plan estratégico para mejora de la gestión en edificios multifamiliares en Lima Moderna: Caso de estudio: MONARCH MANAGERS EIRL. Universidad Peruana de Ciencias Aplicadas. https://repositorioacademico.upc.edu.pe/handle/10757/686137
+- Yin, P., Luo, Z., & Pouramini, S. (2024). Case study on multi-objective Modified Supply-Demand-based Optimization Algorithm for energy-efficient building retrofitting. Sustainable Cities and Society, 114, 105734. https://doi.org/10.1016/j.scs.2024.105734
 
 # Anexos
