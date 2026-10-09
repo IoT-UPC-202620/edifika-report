@@ -3873,65 +3873,125 @@ El tamaño mínimo se calcula con la parte fija del CAPEX (S/ 2,253, que no depe
 
 ### 4.1.1. Design-Level EventStorming
 
-El equipo realizó la sesión de Design-Level EventStorming en **Miro**, siguiendo la progresión estándar de la técnica en cuatro pasos, cada uno construido sobre el anterior en el mismo tablero:
-
-1. **Storm your events**: volcado libre de todos los eventos de dominio identificados (notas naranjas), sin orden ni filtro, cubriendo tanto la gestión administrativa del condominio como las ideas de nivel IoT.
-2. **Organize your events**: reordenamiento de esos eventos en timelines/swimlanes por proceso de negocio, agrupando lo que ocurre en secuencia.
-3. **Add commands**: para cada evento, se agregó el *Command* (nota azul) que lo origina y el *Actor* (nota pequeña adjunta: Residente, Administrador o Sistema) que lo dispara.
-4. **Add read models, policies and system commands**: se incorporaron los *Read Models* (vistas que consultan los usuarios), las *Policies* (reglas "cuando ocurre X, entonces Y") que conectan eventos entre procesos distintos, y los *System Commands* que el propio sistema dispara de forma automática al cumplirse una policy.
-
-![Tablero de Design-Level EventStorming](assets/img/eventstorming-board.jpg)
+En esta sección se documenta el Design-Level EventStorming realizado en Miro, cuyo objetivo fue pasar de la visión general del negocio obtenida en el Big Picture a un modelo detallado del dominio de Edifika. A partir de los eventos identificados, el equipo los organizó en flujos, incorporó los comandos y actores que los provocan, y añadió las políticas, read models y sistemas que intervienen en cada proceso. El resultado sirvió como base para definir los bounded contexts y diseñar la arquitectura de la solución.
 
 #### 4.1.1.1. Candidate Context Discovery
 
-El equipo aplicó las tres técnicas de Candidate Context Discovery en conjunto, no de forma excluyente, sobre el tablero ya organizado en commands, policies y read models:
+##### Step 1: Unstructured Exploration
 
-- **Look-for-pivotal-events:** se buscaron los eventos que marcan un cambio de estado entre procesos de negocio distintos, es decir, los puntos donde un flujo termina y dispara (vía policy) el inicio de otro. `Reserva aceptada` es pivotal porque dispara la habilitación de acceso físico; `Pago fue registrado` / `Deuda marcada como pagada` es pivotal porque libera al residente de una suspensión de acceso; `Residente moroso fue detectado` es pivotal porque cruza de Payment hacia el control de acceso. Estos pivotes son los que terminaron materializándose como los eventos de integración entre contextos documentados en 4.1.1.2 y 4.1.2.
-- **Start-with-value:** se identificaron las partes del dominio con mayor valor diferencial para el negocio, usando como referencia directa las estrategias frente a competidores de 2.1.2, en particular la **Estrategia 6, "Gestión inteligente de áreas comunes"** (optimizar el uso de los recursos compartidos del condominio) y la **Estrategia 5, "Adaptación al contexto local"**,, que son las dos que el nivel IoT lleva más allá de lo que ofrecen Condo Control, Buildium y AppFolio. De las capacidades IoT exploradas en el storm —iluminación inteligente, control de acceso, riego automático, monitoreo de tanque de agua, detección de fugas y calidad del aire— el equipo priorizó **acceso físico**, **iluminación/energía** y **riego automático**. Las dos primeras son las de mayor valor demostrable dentro del alcance de un proyecto académico con hardware real (ESP32); el riego se incorporó porque reutiliza el mismo nodo ESP32 con solo un sensor de humedad de suelo capacitivo y una electroválvula de bajo costo (ver el análisis de costos de 3.3). Se **descartaron** el monitoreo del tanque de agua, la detección de fugas y la calidad del aire: requieren sensores de nivel, caudal, presión y gases que exceden el presupuesto de hardware por edificio, y ninguna de las entrevistas de 2.2 las planteó como necesidad.
+El equipo registró, sin un orden establecido, todos los eventos de dominio relevantes que pueden ocurrir en la operación de un condominio: registro de edificios y residentes, inicio de sesión, generación de deudas y pagos, reservas de áreas comunes, comunicados, notificaciones, control de accesos con tarjeta RFID e iluminación automática. Este paso permitió obtener una visión amplia del dominio antes de estructurarlo.
 
-  Esta decisión tiene un efecto directo sobre el Product Backlog de 3.3: las historias **US50** (configurar horarios de riego) y **US51** (riego según humedad del suelo) forman la épica **EP10** y se implementan en el bounded context **Smart Irrigation** (4.2.12), mientras que las historias de tanque y fugas (US52, US66–US70 y US77) y sus términos del Ubiquitous Language se retiraron del alcance. Las demás capacidades IoT quedan asignadas así: EP07 (US48, US49, US54–US56) en IoT Access Management, EP08 (US53, US57–US60) en Smart Lighting & Automation y EP09 (US61–US65) en IoT Telemetry & Analytics.
+![Design-Level EventStorming - Step 1](assets/img/big-picture-eventstorming.png)
 
-  En la misma iteración se retiró **Incident Management**, que en una primera versión del corte se había identificado como contexto candidato. Su única historia en el Capítulo III es **US08**, que solo exige difundir una alerta de emergencia a todo el edificio y avisar al administrador con la ubicación de quien la reporta. No requiere el ciclo de vida de un ticket (asignación, estados de atención, cierre), que es lo que habría justificado un contexto propio, y el Capítulo III no define el rol de *Personal de Mantenimiento* que lo atendería. Por eso la capacidad se absorbió en **Communication**, que ya publica contenido uno-a-muchos hacia los residentes, y en **Notification**, que entrega el push y el SMS.
-- **Start-with-simple:** el timeline ya organizado en el paso 2 de EventStorming se descompuso en sub-timelines secuenciales por proceso (autenticación → gestión residencial → reservas → pagos → comunicación/foro → reportes, y luego los cuatro sub-timelines IoT: acceso, iluminación, telemetría y riego), cada uno lo bastante simple como para sostener un propósito de negocio propio. Ese es, en esencia, el criterio de corte que produjo los 12 bounded contexts de la tabla siguiente.
+*Figura. Step 1: Unstructured Exploration. Elaborado por el equipo utilizando Miro (Miro, s.f.).*
 
-La tabla resume, por cada proceso de negocio que sí se mantuvo en el alcance, el *Command* y *Actor* que lo origina, los *Domain Events* producidos, y las *Policies* / *Read Models* agregados en el paso 4, es decir, el nivel de detalle sobre el que se hizo el corte de bounded contexts:
+##### Step 2: Organize your events
 
-| Proceso de negocio | Command (Actor) | Domain Events clave | Policy | Read Model |
-|---|---|---|---|---|
-| Autenticación (IAM/Auth) | Completar formulario de registro (Residente/Administrador) · Iniciar sesión | Usuario registrado, Rol asignado a usuario, Usuario autenticado, Credenciales rechazadas, Sesión cerrada | Un residente desactivado no puede iniciar sesión | — |
-| Gestión residencial | Registrar edificio y unidades (Administrador) | Edificio registrado, Unidad registrada, Residente vinculado a unidad | Rol de usuario debe ser administrador | Directorio de unidades y residentes |
-| Reservas | Registrar área común (Administrador) · Solicitar/Cancelar reserva (Residente) | Área común registrada, Reglas de área común registradas, Reserva solicitada, Reserva aceptada/rechazada, Reserva cancelada | — | Calendario de reservas |
-| Pagos y deudas | Registrar pago (Residente) | Deuda generada, Pago fue registrado, Pago rechazado, Deuda marcada como pagada, Recordatorio de deuda enviado | Si el pago es rechazado, la deuda permanece pendiente | Estado de cuenta del residente |
-| Comunicados y foro | Publicar anuncio (Administrador) · Agregar comentario / Crear encuesta / Votar (Residente) | Anuncio publicado, Comentario agregado, Encuesta creada, Voto registrado, Encuesta finalizada | — | Muro de anuncios, Resultados de la encuesta |
-| Alertas de emergencia (dentro de Communication) | Declarar emergencia (Administrador) · Reportar emergencia (Residente) | Emergencia declarada, Emergencia reportada | Si la declara el administrador, difundir a todo el edificio por push y SMS · Si la reporta un residente, avisar al administrador con torre y departamento | — |
-| Reportes | Generar reporte financiero (Administrador) | Reporte financiero generado, Reporte financiero exportado | — | Dashboard financiero |
-| Notificaciones (transversal) | *(Sistema, automático)* | Notificación enviada, Notificación leída, Notificación de deuda fue enviada, Notificación enviada a usuario/administrador | — | — |
-| Acceso físico (IoT) | Escanear tarjeta (Residente) | Tarjeta RFID/NFC fue escaneada, Residente fue validado, Acceso fue concedido/rechazado/denegado, Puerta fue abierta, Tarjeta no reconocida, Residente moroso fue detectado | Si el residente es moroso, denegar el acceso | — |
-| Iluminación inteligente (IoT) | Activar interruptor manual (Residente/Administrador) | Movimiento detectado/no detectado en área común, Luces encendidas/apagadas automáticamente, Temporizador de inactividad iniciado, Fallo de conexión en sensor detectado, Luces permanecieron en modo seguro | Si no hay movimiento por 3 minutos, apagar luces | — |
-| Riego automático (IoT) | Configurar programación de riego (Administrador) | Programación de riego registrada, Humedad del suelo medida, Riego activado/detenido automáticamente, Riego omitido por humedad suficiente, Fallo en válvula detectado | Si la humedad es suficiente, omitir el riego · Si la válvula no responde, notificar al administrador | Historial de riego |
-| *Tanque de agua, fugas y calidad del aire (descartado — ver start-with-value)* | *—* | *Nivel de agua medido, Fuga detectada, Calidad del aire medida* | *Si el nivel es crítico o hay fuga, enviar alerta inmediata* | *Panel de nivel de tanque de agua* |
+Los eventos se ordenaron en líneas de tiempo que representan el flujo cronológico de cada proceso, incluyendo los caminos alternativos y de error.
 
-A partir de este corte por proceso de negocio, y de la incorporación del nivel IoT priorizado, se identificaron **12 bounded contexts**, cada uno implementado como un microservicio independiente (más el API Gateway y el Edge API como componentes de infraestructura transversal, no bounded contexts de dominio). Los ocho primeros cubren la gestión administrativa del condominio; los cuatro últimos son los que sobrevivieron el filtro start-with-value dentro del nivel IoT. Este es el **catálogo único** de contextos de la solución: el resto del informe (context map, arquitectura C4 y diseño táctico) se refiere exactamente a estos 12.
+**Registro y autenticación.** El administrador completa el formulario de registro y, una vez registrado, inicia sesión y es autenticado hasta cerrar su sesión. El residente sigue un flujo similar: es registrado, se le asigna un rol, inicia sesión y es autenticado. En ambos casos el flujo contempla el rechazo de credenciales, y en el caso del residente, su desactivación.
 
-| Sección | Bounded Context | Responsabilidad principal |
-|---|---|---|
-| 4.2.1 | IAM / Auth | Registro, autenticación (JWT) y gestión de usuarios y roles (administradores/residentes). |
-| 4.2.2 | Residential Management | Registro de edificios, unidades y vinculación de residentes a sus unidades. |
-| 4.2.3 | Reservation | Disponibilidad, reserva y aprobación de uso de áreas comunes. |
-| 4.2.4 | Payment | Registro de deudas, pagos, comprobantes e integración con la pasarela Culqi. |
-| 4.2.5 | Notification | Envío de notificaciones push (Firebase Cloud Messaging) y SMS originadas por eventos de otros contextos. |
-| 4.2.6 | Communication | Publicación de comunicados oficiales y encuestas a la comunidad, y difusión de alertas de emergencia. |
-| 4.2.7 | Forum | Muro comunitario de mensajes entre residentes. |
-| 4.2.8 | Report | Generación y exportación de reportes financieros y de morosidad. |
-| 4.2.9 | IoT Access Management | Permisos de acceso a áreas comunes, credenciales RFID, y control de cerraduras según reservas activas. |
-| 4.2.10 | Smart Lighting & Automation | Reglas de automatización y control de luminarias de áreas comunes según presencia, lux ambiental, horarios de reserva y override manual. |
-| 4.2.11 | IoT Telemetry & Analytics | Ingesta de telemetría de sensores (corriente, presencia y humedad del suelo), cálculo cuantitativo de consumo energético (kWh), estadísticas y detección de anomalías de hardware. |
-| 4.2.12 | Smart Irrigation | Programación y ejecución del riego de áreas verdes según horarios y humedad del suelo, con registro de los riegos ejecutados, omitidos y fallidos. |
+![Design-Level EventStorming - Step 2 - Registro y autenticación](assets/img/design-eventstorming-step2-1.png)
 
-La columna **Sección** fija la numeración con la que cada contexto se desarrolla en 4.2 y se mantiene en todo el capítulo. La única sección que presenta los contextos en otro orden es 4.1.1.3, donde los canvases se elaboran por importancia estratégica según lo pide el enunciado; allí cada canvas indica entre paréntesis la sección que le corresponde.
+*Figura. Step 2: flujos de registro y autenticación. Elaborado por el equipo utilizando Miro (Miro, s.f.).*
 
+**Gestión residencial, reservas y pagos.** El administrador registra el edificio y sus unidades, y vincula a cada residente con su unidad. Para las reservas, se registra el área común y sus reglas; el residente solicita una reserva, que puede ser aceptada, rechazada o cancelada, y en cada caso se notifica al usuario y al administrador. En pagos, el sistema genera la deuda y envía un recordatorio; cuando el residente registra su pago, la deuda se marca como pagada o el pago es rechazado.
 
-En cuanto a la persistencia, se mantiene el principio de **database-per-service** comprometido en la historia técnica **TS05** del Capítulo III: cada microservicio es dueño exclusivo de sus tablas y ningún contexto lee directamente las de otro. Lo que el modelo de despliegue de 4.1.3.4 hace es *alojar* esos esquemas lógicamente independientes sobre dos instancias gestionadas en vez de sobre doce servidores separados, una instancia PostgreSQL para los esquemas de los contextos de gestión e IoT transaccionales, y una instancia TimescaleDB dedicada a las series de telemetría de alta frecuencia, cuyo perfil de escritura y consulta es incompatible con el transaccional. Es una decisión de infraestructura y de costo para el alcance académico del proyecto, no una relajación del aislamiento de datos entre contextos: la independencia lógica que exige TS05 se conserva íntegra.
+![Design-Level EventStorming - Step 2 - Gestión residencial, reservas y pagos](assets/img/design-eventstorming-step2-2.png)
+
+*Figura. Step 2: flujos de gestión residencial, reservas y pagos. Elaborado por el equipo utilizando Miro (Miro, s.f.).*
+
+**IoT: iluminación y control de accesos.** Cuando se detecta movimiento en un área común, las luces se encienden automáticamente y se inicia un temporizador de inactividad; si deja de detectarse movimiento, las luces se apagan. Si falla la conexión del sensor, se envía una notificación de mantenimiento y las luces permanecen en modo seguro; si el administrador activa el interruptor manual, el modo automático se pausa. En el control de accesos, el residente escanea su tarjeta RFID; si es reconocida, el acceso se concede y la puerta se abre. Si la tarjeta no es reconocida, el acceso se rechaza, y si el residente es moroso, el acceso se deniega y se le envía una notificación de deuda.
+
+![Design-Level EventStorming - Step 2 - IoT](assets/img/design-eventstorming-step2-3.png)
+
+*Figura. Step 2: flujos de iluminación y control de accesos. Elaborado por el equipo utilizando Miro (Miro, s.f.).*
+
+##### Step 3: Add commands and actors
+
+Se incorporaron los comandos (azul), que representan las acciones que provocan los eventos, y los actores (amarillo) que los ejecutan.
+
+**Registro y autenticación.** El administrador ejecuta *Completar formulario de registro*, *Iniciar sesión* y *Cerrar sesión*, y registra a los residentes con *Registrar residente*. El residente o inquilino ejecuta *Iniciar sesión* y *Cerrar sesión*.
+
+![Design-Level EventStorming - Step 3 - Registro y autenticación](assets/img/design-eventstorming-step3-1.png)
+
+*Figura. Step 3: comandos y actores de registro y autenticación. Elaborado por el equipo utilizando Miro (Miro, s.f.).*
+
+**Gestión residencial, reservas y pagos.** El administrador ejecuta *Registrar edificio y unidades* y *Actualizar residente*. El residente ejecuta *Solicitar reserva* y *Registrar pago*.
+
+![Design-Level EventStorming - Step 3 - Gestión residencial, reservas y pagos](assets/img/design-eventstorming-step3-2.png)
+
+*Figura. Step 3: comandos y actores de gestión residencial, reservas y pagos. Elaborado por el equipo utilizando Miro (Miro, s.f.).*
+
+**IoT: iluminación y control de accesos.** El administrador ejecuta *Activar interruptor manual* para pausar el modo automático, y el sistema ejecuta *Apagar luces* tras el periodo de inactividad. En el control de accesos, el residente ejecuta *Escanear tarjeta*.
+
+![Design-Level EventStorming - Step 3 - IoT](assets/img/design-eventstorming-step3-3.png)
+
+*Figura. Step 3: comandos y actores de iluminación y control de accesos. Elaborado por el equipo utilizando Miro (Miro, s.f.).*
+
+##### Step 4: Add read models, policies and system commands
+
+Se añadieron las políticas (morado), que definen las reglas de negocio que disparan o restringen acciones; los read models (verde), que representan la información que el actor consulta para decidir; y los sistemas (rosado) que ejecutan comandos automáticos.
+
+**Registro y autenticación.** Se definieron dos políticas: el rol de quien completa el registro inicial siempre debe ser administrador, y un residente desactivado no puede iniciar sesión. La autenticación es ejecutada por el sistema.
+
+![Design-Level EventStorming - Step 4 - Registro y autenticación](assets/img/design-eventstorming-step4-1.png)
+
+*Figura. Step 4: políticas y sistema de registro y autenticación. Elaborado por el equipo utilizando Miro (Miro, s.f.).*
+
+**Gestión residencial, reservas y pagos.** Se definieron tres read models: *Directorio de unidades y residentes*, que el administrador consulta al registrar edificios y unidades; *Calendario de reservas*, que el residente consulta antes de solicitar una reserva; y *Estado de cuenta del residente*, que resume sus deudas y pagos. La política de pagos establece que el pago solo se registra si el formato del comprobante es válido, y el sistema es quien registra el pago y marca la deuda como pagada.
+
+![Design-Level EventStorming - Step 4 - Gestión residencial, reservas y pagos](assets/img/design-eventstorming-step4-2.png)
+
+*Figura. Step 4: read models, políticas y sistema de gestión residencial, reservas y pagos. Elaborado por el equipo utilizando Miro (Miro, s.f.).*
+
+**IoT: iluminación y control de accesos.** En iluminación, la política establece que, si no se detecta movimiento durante 3 minutos, se apagan las luces, y el sistema detecta tanto el movimiento como las fallas de conexión del sensor. En control de accesos, la política establece que, si el residente no es moroso, siempre se le otorga el acceso, y el sistema es quien valida la tarjeta RFID escaneada.
+
+![Design-Level EventStorming - Step 4 - IoT](assets/img/design-eventstorming-step4-3.png)
+
+*Figura. Step 4: políticas y sistema de iluminación y control de accesos. Elaborado por el equipo utilizando Miro (Miro, s.f.).*
+
+#### Bounded Contexts
+
+Finalmente, los eventos, comandos y políticas se agruparon en bounded contexts con límites claros, de modo que cada uno tenga una responsabilidad única y pueda evolucionar y desplegarse de forma independiente.
+
+**Bounded Context: IAM.** Registro, autenticación, asignación de roles y cierre de sesión de administradores y residentes.
+
+![Bounded Context IAM](assets/img/bc-iam.png)
+
+**Bounded Context: Residential Management.** Registro de edificios y unidades, y vinculación y actualización de residentes.
+
+![Bounded Context Residential Management](assets/img/bc-residential-management.png)
+
+**Bounded Context: Payment.** Generación de deudas, recordatorios, registro y validación de pagos, y detección de morosidad.
+
+![Bounded Context Payment](assets/img/bc-payment.png)
+
+**Bounded Context: Reservation.** Registro de áreas comunes y sus reglas, y solicitud, aceptación, rechazo y cancelación de reservas.
+
+![Bounded Context Reservation](assets/img/bc-reservation.png)
+
+**Bounded Context: Communication.** Publicación de comunicados oficiales de la administración.
+
+![Bounded Context Communication](assets/img/bc-communication.png)
+
+**Bounded Context: Messaging / Forum.** Publicaciones y comentarios de los residentes en el foro del edificio.
+
+![Bounded Context Messaging Forum](assets/img/bc-forum.png)
+
+**Bounded Context: Notification.** Creación, envío, lectura y fallo de notificaciones a residentes y administradores.
+
+![Bounded Context Notification](assets/img/bc-notification.png)
+
+**Bounded Context: Report.** Generación y exportación de reportes financieros y de consumo.
+
+![Bounded Context Report](assets/img/bc-report.png)
+
+**Bounded Context: Smart Building.** Agrupa las capacidades IoT del edificio: escaneo y validación de tarjetas RFID con concesión o denegación de acceso, encendido y apagado automático de luces por presencia con temporizador de inactividad, modo seguro e interruptor manual, riego automático según horarios y humedad del suelo, e ingesta de las lecturas de los dispositivos para calcular consumo y detectar anomalías y fallas.
+
+![Bounded Context Smart Building](assets/img/bc-smart-building.png)
+
+En la etapa de arquitectura, Smart Building se refina en cuatro bounded contexts: IoT Access Management, Smart Lighting & Automation, Smart Irrigation e IoT Telemetry & Analytics porque cada capacidad tiene reglas, lenguaje y perfil de carga distintos.
 
 #### 4.1.1.2. Domain Message Flows Modeling
 
