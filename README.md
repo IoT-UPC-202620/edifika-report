@@ -564,205 +564,73 @@ Este segmento comprende a las personas que poseen o habitan unidades residencial
 ### 2.1.1. Análisis competitivo
 
 
- <table border="2" style="text-align: center; border-collapse: collapse; width: 100%;">
-  <tbody>
-    <tr>
-      <td colspan="6" style="padding: 8px; font-weight: bold;">Competitive Analysis Landscape</td>
-    </tr>
-    <tr>
-      <td colspan="2" style="padding: 8px; font-weight: bold;">¿Por qué llevar a cabo este análisis?</td>
-      <td colspan="4" style="padding: 8px;">
-        Este análisis permite comprender cómo distintas plataformas gestionan la administración de condominios, qué funcionalidades ofrecen y qué valor brindan a los usuarios. De esta manera, se identifican oportunidades de mejora, diferenciación y posicionamiento para Edifika dentro del mercado, especialmente frente a soluciones tradicionales y plataformas digitales existentes.
-      </td>
-    </tr>
-    <tr>
-      <td colspan="2" style="padding: 8px;"></td>
-      <td style="padding: 8px; font-weight: bold;">Edifika</td>
-      <td style="padding: 8px; font-weight: bold;">Condo Control</td>
-      <td style="padding: 8px; font-weight: bold;">Buildium</td>
-      <td style="padding: 8px; font-weight: bold;">AppFolio</td>
-    </tr>
-    <tr>
-      <td rowspan="2" style="padding: 8px; font-weight: bold; vertical-align: middle;">Perfil</td>
-      <td style="padding: 8px; font-weight: bold;">Overview</td>
-      <td style="padding: 8px; vertical-align: top;">Aplicación enfocada en la gestión de condominios en el contexto peruano, que centraliza pagos, reservas y comunicación en una sola plataforma accesible e intuitiva.</td>
-      <td style="padding: 8px; vertical-align: top;">Software de gestión de condominios que permite la comunicación entre residentes, gestión de documentos y administración de reservas.</td>
-      <td style="padding: 8px; vertical-align: top;">Plataforma de gestión inmobiliaria en la nube orientada a administradores profesionales, con herramientas financieras, operativas y de comunicación.</td>
-      <td style="padding: 8px; vertical-align: top;">Software integral de gestión de propiedades que permite administrar pagos, mantenimiento y comunicación desde una sola plataforma.</td>
-    </tr>
-    <tr>
-      <td style="padding: 8px; font-weight: bold;">Ventaja competitiva ¿Qué valor ofrece?</td>
-      <td style="padding: 8px; vertical-align: top;">Centraliza funciones clave en una interfaz simple, enfocada en la adopción real de usuarios que actualmente usan WhatsApp y Excel.</td>
-      <td style="padding: 8px; vertical-align: top;">Ofrece una plataforma estructurada para la comunicación y organización dentro del condominio.</td>
-      <td style="padding: 8px; vertical-align: top;">Proporciona herramientas avanzadas de gestión financiera y automatización para empresas administradoras.</td>
-      <td style="padding: 8px; vertical-align: top;">Integra múltiples funcionalidades con automatización y escalabilidad para grandes volúmenes de propiedades.</td>
-    </tr>
-    <tr>
-      <td rowspan="2" style="padding: 8px; font-weight: bold; vertical-align: middle;">Perfil de Marketing</td>
-      <td style="padding: 8px; font-weight: bold;">Mercado objetivo</td>
-      <td style="padding: 8px; vertical-align: top;">Condominios urbanos en Perú, administradores y residentes que buscan digitalizar su gestión.</td>
-      <td style="padding: 8px; vertical-align: top;">Condominios y asociaciones de propietarios, principalmente en mercados internacionales.</td>
-      <td style="padding: 8px; vertical-align: top;">Empresas administradoras de propiedades y profesionales inmobiliarios.</td>
-      <td style="padding: 8px; vertical-align: top;">Empresas de gestión inmobiliaria y administradores de múltiples propiedades.</td>
-    </tr>
-    <tr>
-      <td style="padding: 8px; font-weight: bold;">Estrategias de marketing</td>
-      <td style="padding: 8px; vertical-align: top;">Enfoque en simplicidad, adopción digital y solución de problemas reales en comunidades locales.</td>
-      <td style="padding: 8px; vertical-align: top;">Marketing digital enfocado en comunidades y administradores de condominios.</td>
-      <td style="padding: 8px; vertical-align: top;">Marketing B2B dirigido a empresas inmobiliarias con enfoque en eficiencia y automatización.</td>
-      <td style="padding: 8px; vertical-align: top;">Estrategias digitales enfocadas en empresas grandes y escalabilidad del servicio.</td>
-    </tr>
-    <tr>
-      <td rowspan="3" style="padding: 8px; font-weight: bold; vertical-align: middle;">Perfil de Producto</td>
-      <td style="padding: 8px; font-weight: bold;">Productos & Servicios</td>
-      <td style="padding: 8px; vertical-align: top; text-align: left;">
-        <ul>
-          <li>Gestión de pagos y deudas</li>
-          <li>Reserva de áreas comunes</li>
-          <li>Comunicados centralizados</li>
-        </ul>
-      </td>
-      <td style="padding: 8px; vertical-align: top; text-align: left;">
-        <ul>
-          <li>Gestión de documentos</li>
-          <li>Comunicación con residentes</li>
-          <li>Reservas de espacios</li>
-        </ul>
-      </td>
-      <td style="padding: 8px; vertical-align: top; text-align: left;">
-        <ul>
-          <li>Gestión financiera</li>
-          <li>Pagos en línea</li>
-          <li>Reportes y contabilidad</li>
-        </ul>
-      </td>
-      <td style="padding: 8px; vertical-align: top; text-align: left;">
-        <ul>
-          <li>Gestión de pagos</li>
-          <li>Mantenimiento</li>
-          <li>Automatización de procesos</li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td style="padding: 8px; font-weight: bold;">Precios & Costos</td>
-      <td style="padding: 8px; vertical-align: top; text-align: left;">
-        <ul>
-          <li>Modelo de suscripción mensual por condominio</li>
-          <li>Posible versión freemium</li>
-        </ul>
-      </td>
-      <td style="padding: 8px; vertical-align: top; text-align: left;">
-        <ul>
-          <li>Suscripción mensual según tamaño del condominio</li>
-        </ul>
-      </td>
-      <td style="padding: 8px; vertical-align: top; text-align: left;">
-        <ul>
-          <li>Suscripción mensual para empresas administradoras</li>
-        </ul>
-      </td>
-      <td style="padding: 8px; vertical-align: top; text-align: left;">
-        <ul>
-          <li>Modelo SaaS con precios escalables</li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td style="padding: 8px; font-weight: bold;">Canales de distribución</td>
-      <td style="padding: 8px; vertical-align: top; text-align: left;">
-        <ul>
-          <li>Aplicación móvil (iOS y Android)</li>
-          <li>Posible versión web</li>
-        </ul>
-      </td>
-      <td style="padding: 8px; vertical-align: top; text-align: left;">
-        <ul>
-          <li>Web y aplicación móvil</li>
-        </ul>
-      </td>
-      <td style="padding: 8px; vertical-align: top; text-align: left;">
-        <ul>
-          <li>Web (plataforma en la nube)</li>
-        </ul>
-      </td>
-      <td style="padding: 8px; vertical-align: top; text-align: left;">
-        <ul>
-          <li>Web y aplicación móvil</li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td rowspan="4" style="padding: 8px; font-weight: bold; vertical-align: middle;">Análisis SWOT</td>
-      <td style="padding: 8px; font-weight: bold;">Fortalezas</td>
-      <td style="padding: 8px; vertical-align: top;">Enfoque local, simplicidad y alta adaptabilidad al contexto peruano.</td>
-      <td style="padding: 8px; vertical-align: top;">Experiencia en gestión de condominios y comunicación estructurada.</td>
-      <td style="padding: 8px; vertical-align: top;">Plataforma robusta con herramientas financieras avanzadas.</td>
-      <td style="padding: 8px; vertical-align: top;">Alta escalabilidad y automatización.</td>
-    </tr>
-    <tr>
-      <td style="padding: 8px; font-weight: bold;">Debilidades</td>
-      <td style="padding: 8px; vertical-align: top;">Aplicación nueva con baja adopción inicial.</td>
-      <td style="padding: 8px; vertical-align: top;">Puede ser compleja para usuarios no tecnológicos.</td>
-      <td style="padding: 8px; vertical-align: top;">No está enfocada en usuarios pequeños o individuales.</td>
-      <td style="padding: 8px; vertical-align: top;">Curva de aprendizaje más alta.</td>
-    </tr>
-    <tr>
-      <td style="padding: 8px; font-weight: bold;">Oportunidades</td>
-      <td style="padding: 8px; vertical-align: top;">Alta demanda de digitalización en condominios en Perú.</td>
-      <td style="padding: 8px; vertical-align: top;">Expansión en mercados internacionales.</td>
-      <td style="padding: 8px; vertical-align: top;">Expansión en mercados emergentes.</td>
-      <td style="padding: 8px; vertical-align: top;">Innovación en automatización y servicios.</td>
-    </tr>
-    <tr>
-      <td style="padding: 8px; font-weight: bold;">Amenazas</td>
-      <td style="padding: 8px; vertical-align: top;">Resistencia al cambio y uso de herramientas informales.</td>
-      <td style="padding: 8px; vertical-align: top;">Competencia de nuevas apps más simples.</td>
-      <td style="padding: 8px; vertical-align: top;">Competencia de software especializado más accesible.</td>
-      <td style="padding: 8px; vertical-align: top;">Competencia creciente en el sector proptech.</td>
-    </tr>
-  </tbody>
-</table>
+| Categoría | Criterio | Edifika | Condo Control | Buildium | AppFolio |
+|---|---|---|---|---|---|
+| **Propósito** | **¿Por qué llevar a cabo este análisis?** | Identificar oportunidades de diferenciación para Edifika al comparar la gestión administrativa de condominios y la integración de tecnologías IoT, considerando pagos, reservas, comunicaciones, control de accesos e iluminación inteligente. | — | — | — |
+| **Perfil** | **Overview** | Plataforma propuesta por Condomia para condominios peruanos. Busca centralizar pagos, deudas, reservas y comunicados, incorporando control de accesos, iluminación automática y monitoreo IoT. | Software especializado en la administración de condominios y asociaciones residenciales, con funciones administrativas, comunicación y seguridad mediante integraciones. | Plataforma en la nube para gestionar propiedades y asociaciones residenciales, con herramientas financieras, operativas y de atención a residentes. | Plataforma de administración inmobiliaria con funciones financieras, operativas y conexiones con sistemas inteligentes mediante proveedores asociados. |
+| **Perfil** | **Ventaja competitiva: ¿Qué valor ofrece?** | Propone reunir la gestión administrativa y la supervisión IoT en una experiencia adaptada inicialmente a condominios de Lima Metropolitana. Su diferenciación deberá validarse. | Combina funciones para comunidades residenciales con integraciones especializadas de pagos y control de accesos, como ButterflyMX. | Ofrece herramientas financieras, gestión de residentes, automatización administrativa y reservas según el plan contratado. | Destaca por la amplitud de sus herramientas inmobiliarias y la posibilidad de integrar control de acceso y tecnología residencial inteligente. |
+| **Perfil de Marketing** | **Mercado objetivo** | Administradores, propietarios e inquilinos de condominios y edificios multifamiliares de Lima Metropolitana. | Condominios, asociaciones de propietarios y empresas administradoras de comunidades residenciales. | Administradores profesionales de propiedades, asociaciones residenciales y carteras inmobiliarias. | Empresas administradoras, operadores inmobiliarios y propietarios de carteras de inmuebles. |
+| **Perfil de Marketing** | **Estrategias de marketing** | Estrategia propuesta basada en demostraciones del producto, facilidad de uso, atención al mercado peruano y beneficios de integrar administración e IoT. | Promoción de soluciones para comunidades residenciales mediante demostraciones, recursos informativos y planes adaptados al tamaño de la comunidad. | Captación de administradores mediante contenidos especializados, demostraciones y presentación de beneficios de eficiencia operativa. | Promoción de una plataforma integral mediante demostraciones, contenido para profesionales inmobiliarios y un ecosistema de integraciones. |
+| **Perfil de Producto** | **Productos y servicios** | Gestión de pagos y deudas; reservas de áreas comunes; comunicados y notificaciones; control de accesos IoT; iluminación automática mediante sensores; monitoreo de dispositivos conectados. **Funcionalidades propuestas.** | Pagos en línea, reservas de espacios, comunicados, documentos, gestión de visitantes y acceso inteligente mediante integraciones como ButterflyMX. | Contabilidad, pagos, reportes, comunicación con residentes, mantenimiento y reservas de áreas comunes según el plan. | Gestión financiera, cobros, mantenimiento, comunicación, control de accesos inteligente e integración con tecnología residencial mediante socios como Homebase y PointCentral. |
+| **Perfil de Producto** | **Precios y costos** | Modelo propuesto de suscripción mensual por condominio, con costos de instalación y mantenimiento IoT por definir. No existe una tarifa comercial validada. | Planes y cotizaciones según las características de la comunidad. Algunas funciones e integraciones pueden representar costos adicionales. | Suscripción mediante planes escalonados según necesidades y unidades administradas. Algunas transacciones y funcionalidades tienen cargos adicionales. | Modelo comercial de suscripción con cotización según características de la cartera y funcionalidades requeridas. Las integraciones pueden implicar costos de terceros. |
+| **Perfil de Producto** | **Canales de distribución** | Plataforma web propuesta para administradores y residentes, con interfaz adaptable a dispositivos móviles. La disponibilidad de aplicaciones nativas dependerá del alcance de desarrollo. | Plataforma web, portal de residentes y aplicación móvil. | Plataforma web y aplicaciones móviles para administradores y residentes. | Plataforma web, aplicaciones móviles e integraciones con proveedores tecnológicos. |
+| **Análisis SWOT** | **Fortalezas** | Propuesta enfocada inicialmente en el contexto peruano; integración prevista entre gestión administrativa, accesos IoT e iluminación inteligente. | Especialización en condominios, herramientas de comunicación y ecosistema de integraciones de seguridad. | Funcionalidades financieras consolidadas, gestión de asociaciones y herramientas de automatización. | Amplia cobertura de procesos inmobiliarios, automatización y alianzas con proveedores de tecnología inteligente. |
+| **Análisis SWOT** | **Debilidades** | Producto nuevo sin adopción comercial demostrada; costos y mantenimiento del hardware IoT pendientes de validar; necesidad de probar la integración física y digital. | El uso de determinadas capacidades de seguridad depende de proveedores externos y de sus integraciones. | Su orientación principal es la administración inmobiliaria; no se verificó una solución nativa equivalente al control de iluminación común planteado para Edifika. | Algunas capacidades inteligentes dependen de integraciones externas; su amplitud funcional puede exceder las necesidades de condominios pequeños. |
+| **Análisis SWOT** | **Oportunidades** | Explorar la demanda local de digitalización residencial, automatización de iluminación y supervisión de accesos en áreas comunes. | Ampliar las integraciones y servicios disponibles para comunidades residenciales. | Extender sus servicios mediante integraciones y herramientas de automatización de propiedades. | Ampliar sus capacidades de edificios conectados mediante alianzas e integraciones tecnológicas. |
+| **Análisis SWOT** | **Amenazas** | Competidores establecidos con servicios similares; costos de dispositivos e instalación; riesgos de ciberseguridad, interoperabilidad y resistencia a la adopción. | Nuevas plataformas especializadas, cambios tecnológicos y dependencia de integraciones de terceros. | Competidores con mayor especialización residencial e incorporación de soluciones inteligentes. | Competencia de plataformas especializadas y riesgos vinculados a la integración de distintas tecnologías y proveedores. |
 
-Fuente: Elaboración propia del grupo de trabajo.
+**Fuente:** Elaboración propia a partir de la revisión de los sitios oficiales de Condo Control, Buildium y AppFolio (2026).
+
 
 ### 2.1.2. Estrategias y tácticas frente a competidores
 
-**Enfoque en la digitalización total del condominio**
+**Gestión administrativa e IoT en una misma plataforma**
 
-Estrategia: Diferenciarse de soluciones tradicionales (WhatsApp, Excel, papel) ofreciendo una plataforma centralizada y estructurada
+**Estrategia:** Diferenciar a Edifika mediante una propuesta que combine la administración de condominios con el control y monitoreo de sus instalaciones compartidas, evitando que ambas actividades dependan de sistemas separados.
 
-Táctica: Integrar en una sola app funcionalidades como pagos, comunicados, reservas y gestión de usuarios, evitando el uso de múltiples herramientas dispersas
+**Táctica:** Integrar la gestión de pagos, deudas, reservas y comunicados con funcionalidades IoT de control de accesos, iluminación automática y supervisión de dispositivos conectados.
 
 **Transparencia en la gestión administrativa**
 
-Estrategia: Generar confianza entre residentes y administradores mediante acceso claro a la información
+**Estrategia:** Fortalecer la confianza entre administradores y residentes facilitando el acceso a información organizada sobre las actividades y obligaciones del condominio.
 
-Táctica: Mostrar historiales de pagos, deudas (morosidad), reportes financieros y registros de decisiones accesibles en tiempo real para todos los usuarios autorizados
+**Táctica:** Incorporar consultas de pagos pendientes, estados de cuenta y reportes financieros, respetando los permisos asignados a cada usuario y la confidencialidad de la información.
 
-**Comunicación centralizada y efectiva**
+**Comunicación centralizada y accesible**
 
-Estrategia: Reemplazar la comunicación desordenada de múltiples canales por un sistema único y eficiente
+**Estrategia:** Reducir la dependencia de canales informales y facilitar la difusión de información relevante para la comunidad residencial.
 
-Táctica: Crear un sistema de notificaciones dentro de la app con confirmación de lectura, segmentación por tipo de usuario (residente/administrador) y categorización de anuncios
+**Táctica:** Implementar un módulo de comunicados y notificaciones que permita a los administradores publicar avisos y a los residentes consultarlos desde la plataforma.
 
-**Experiencia de usuario simple y accesible**
+**Experiencia de usuario simple y adaptable**
 
-Estrategia: Facilitar la adopción tecnológica incluso para usuarios no familiarizados con apps complejas
+**Estrategia:** Facilitar la adopción de Edifika mediante una experiencia sencilla para administradores, propietarios e inquilinos, considerando que sus necesidades y niveles de familiaridad tecnológica pueden variar.
 
-Táctica: Diseñar una interfaz intuitiva, con accesos rápidos (ej: “Pagar”, “Reservar”, “Ver avisos”) y procesos simplificados en pocos pasos
+**Táctica:** Diseñar interfaces diferenciadas por rol, con navegación clara y acceso directo a las funciones más utilizadas, como consultar pagos, reservar espacios, revisar comunicados y supervisar instalaciones.
 
-**Adaptación al contexto local (Perú / LATAM)**
+**Adaptación al contexto residencial peruano**
 
-Estrategia: Diferenciarse de competidores internacionales adaptándose a la realidad local
+**Estrategia:** Orientar inicialmente la propuesta a condominios de Lima Metropolitana, considerando sus procesos de administración, necesidades operativas y condiciones de implementación tecnológica.
 
-Táctica: Incluir métodos de pago locales (Yape, Plin), lenguaje adaptado, y funcionalidades específicas como control de morosos o juntas vecinales
+**Táctica:** Utilizar terminología y flujos administrativos acordes con el contexto local, contemplando mecanismos de registro y seguimiento de pagos utilizados en Perú. Evaluar posteriormente la integración con servicios como Yape y Plin, según su viabilidad técnica y comercial.
 
-**Gestión inteligente de áreas comunes**
+**Gestión coordinada de reservas y accesos IoT**
 
-Estrategia: Optimizar el uso de recursos compartidos dentro del condominio
+**Estrategia:** Mejorar la organización y supervisión del uso de áreas comunes mediante la relación entre las reservas realizadas por residentes y las autorizaciones de acceso correspondientes.
 
-Táctica: Implementar un calendario interactivo con disponibilidad en tiempo real, reglas automáticas de uso y confirmaciones instantáneas de reservas
+**Táctica:** Implementar un calendario de disponibilidad y confirmación de reservas, vinculado a mecanismos IoT de autorización y registro de accesos para los espacios que dispongan de dispositivos compatibles.
+
+**Automatización de iluminación en áreas comunes**
+
+**Estrategia:** Proponer un uso más eficiente de la energía mediante el control automático de la iluminación en espacios compartidos, como complemento a las funciones administrativas de Edifika.
+
+**Táctica:** Incorporar sensores de presencia conectados a dispositivos de control que permitan encender o apagar luminarias según la ocupación del espacio, considerando las condiciones de seguridad y funcionamiento de cada instalación.
+
+**Monitoreo y seguridad de dispositivos IoT**
+
+**Estrategia:** Favorecer la supervisión de los dispositivos conectados y proteger las operaciones vinculadas al control de accesos y a la automatización de instalaciones comunes.
+
+**Táctica:** Desarrollar un panel para consultar el estado de los dispositivos y sus eventos, establecer permisos de acceso según los roles autorizados e incorporar mecanismos de comunicación segura entre los componentes IoT y la plataforma.
 
 ## 2.2. Entrevistas
 ### 2.2.1. Diseño de entrevistas
