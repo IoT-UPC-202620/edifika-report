@@ -5830,6 +5830,41 @@ La navegación del sitio público se apoya en una barra superior fija con enlace
 
 ### 5.3.2. Landing Page Mock-Up
 
+**Primera vista**
+<p align="center">
+  <img src="assets/img/L1eraview.png" alt="L1eraview" width="400" />
+</p>
+
+**Funciones**
+<p align="center">
+  <img src="assets/img/Lfunciones.png" alt="Lfunciones" width="400" />
+</p>
+
+**Para quien**
+<p align="center">
+  <img src="assets/img/Lparaqn.png" alt="Lparaqn" width="400" />
+</p>
+
+**Planes**
+<p align="center">
+  <img src="assets/img/Lplanes.png" alt="Lplanes" width="400" />
+</p>
+
+**Equipo**
+<p align="center">
+  <img src="assets/img/Lequipo.png" alt="Lequipo" width="400" />
+</p>
+
+
+<p align="center">
+  <img src="assets/img/Lequipo2.png" alt="Lequipo2" width="400" />
+</p>
+
+**Solicitar Demo**
+<p align="center">
+  <img src="assets/img/Lsolidemo.png" alt="Lsolidemo" width="400" />
+</p>
+
 ### 5.4. Applications UX/UI Design
 
 
