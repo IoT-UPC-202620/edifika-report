@@ -6327,46 +6327,6 @@ El diseño de los dispositivos no introduce funcionalidades nuevas: materializa 
 | **TS17**, escenario 2 | Recibir comandos de actuación y confirmar con un ACK | Los nodos suscribidos a `cmd` ejecutan el comando y publican el estado resultante; el comando manual desde la aplicación es la excepción controlada a la regla de "una sola acción primaria por pantalla", con confirmación en la vista de detalle. |
 | **TS17**, escenario 3 | Pérdida del broker marca `OFFLINE`, descarta comandos pendientes y notifica sin afectar a los demás dispositivos | La caché local por nodo permite que cada dispositivo siga operando de forma independiente; un nodo sin enlace no arrastra a los demás, y los comandos pendientes hacia él se descartan en lugar de acumularse. |
 
-# Capítulo V: Solution UI/UX Design
-
-## 5.1. Style Guidelines
-
-### 5.1.1. General Style Guidelines
-
-### 5.1.2. Web, Mobile and IoT Style Guidelines
-
-## 5.2. Information Architecture
-
-### 5.2.1. Organization Systems
-
-### 5.2.2. Labeling Systems
-
-### 5.2.3. SEO Tags and Meta Tags
-
-### 5.2.4. Searching Systems
-
-### 5.2.5. Navigation Systems
-
-## 5.3. Landing Page UI Design
-
-### 5.3.1. Landing Page Wireframe
-
-### 5.3.2. Landing Page Mock-up
-
-## 5.4. Applications UX/UI Design
-
-### 5.4.1. Applications Wireframes
-
-### 5.4.2. Applications Wireflow Diagrams
-
-#### 5.4.2.1. Applications Mock-ups
-
-### 5.4.3. Applications User Flow Diagrams
-
-## 5.5. Applications Prototyping
-
-## 5.6. IoT Device Design
-
 # Capítulo VI: Product Implementation, Validation & Deployment
 
 ## 6.1. Software Configuration Management
@@ -6374,6 +6334,8 @@ El diseño de los dispositivos no introduce funcionalidades nuevas: materializa 
 ### 6.1.1. Software Development Environment Configuration
 
 Antes de comenzar, es importante definir claramente los requisitos de la plataforma EDIFIKA. Esto incluye las funcionalidades relacionadas con la gestión de usuarios, autenticación, acceso al sistema, presentación del producto mediante la Landing Page y futura integración con los demás módulos de la solución.
+
+Las herramientas se registran por tipo de actividad y, dentro de cada tipo, se incluyen las utilizadas en cada producto digital de EDIFIKA. Además de las de la Landing Page, el Frontend Web Application y los Web Services, esta sección incluye las del **Edge Gateway**, el servicio Edge del proyecto, que se incorporan a las mismas categorías junto con las de los productos digitales que se agreguen en el futuro.
 
 #### Project Management
 
@@ -6387,7 +6349,7 @@ Trello (SaaS)
 
 <img src="assets/img/trello.png" alt="context" width="200"/>
 
-*Figura 52. Plataforma Trello utilizada para la gestión y organización de tareas del proyecto EDIFIKA (Trello, s.f.).*
+*Figura. Plataforma Trello utilizada para la gestión y organización de tareas del proyecto EDIFIKA (Trello, s.f.).*
 
 
 #### Team Communication
@@ -6402,7 +6364,7 @@ Discord (SaaS / Aplicación de escritorio)
 
 <img src="assets/img/discord.png" alt="context" width="200"/>
 
-*Figura 53. Plataforma Discord utilizada para la comunicación y coordinación interna del equipo de desarrollo de EDIFIKA (Discord, s.f.).*
+*Figura. Plataforma Discord utilizada para la comunicación y coordinación interna del equipo de desarrollo de EDIFIKA (Discord, s.f.).*
 
 
 ### Product UX/UI Design
@@ -6417,9 +6379,7 @@ Figma (SaaS)
 
 <img src="assets/img/figma.png" alt="context" width="200"/>
 
-*Figura 54. Plataforma Figma utilizada para el diseño de interfaces, wireframes y prototipos visuales de la solución EDIFIKA (Figma, s.f.).*
-
-
+*Figura. Plataforma Figma utilizada para el diseño de interfaces, wireframes y prototipos visuales de la solución EDIFIKA (Figma, s.f.).*
 
 ## Software Development
 
@@ -6433,7 +6393,7 @@ GitHub (SaaS)
 
 <img src="assets/img/github.png" alt="context" width="200"/>
 
-*Figura 55. Plataforma GitHub utilizada para el control de versiones y colaboración en el desarrollo de los productos digitales de EDIFIKA (GitHub, s.f.).*
+*Figura. Plataforma GitHub utilizada para el control de versiones y colaboración en el desarrollo de los productos digitales de EDIFIKA (GitHub, s.f.).*
 
 
 
@@ -6447,7 +6407,7 @@ IntelliJ IDEA (Aplicación de escritorio)
 
 <img src="assets/img/intellidea.png" alt="context" width="200"/>
 
-*Figura 56. Entorno de desarrollo IntelliJ IDEA utilizado para la implementación del microservicio IAM basado en Spring Boot y Java (JetBrains, s.f.).*
+*Figura. Entorno de desarrollo IntelliJ IDEA utilizado para la implementación del microservicio IAM basado en Spring Boot y Java (JetBrains, s.f.).*
 
 
 
@@ -6462,7 +6422,7 @@ Visual Studio Code (Aplicación de escritorio)
 
 <img src="assets/img/visualstudiocode.png" alt="context" width="200"/>
 
-*Figura 57. Editor Visual Studio Code utilizado para el desarrollo frontend, edición de archivos Markdown y documentación técnica del proyecto EDIFIKA (Microsoft, s.f.).*
+*Figura. Editor Visual Studio Code utilizado para el desarrollo frontend, edición de archivos Markdown y documentación técnica del proyecto EDIFIKA (Microsoft, s.f.).*
 
 
 
@@ -6476,7 +6436,7 @@ Angular Framework
 
 <img src="assets/img/angular.png" alt="context" width="200"/>
 
-*Figura 58. Framework Angular utilizado para el desarrollo de la aplicación web frontend de EDIFIKA (Angular, s.f.).*
+*Figura. Framework Angular utilizado para el desarrollo de la aplicación web frontend de EDIFIKA (Angular, s.f.).*
 
 
 
@@ -6490,7 +6450,133 @@ Spring Boot Framework
 
 <img src="assets/img/springboot.png" alt="context" width="200"/>
 
-*Figura 59. Framework Spring Boot utilizado para la construcción y despliegue del microservicio IAM de EDIFIKA (Spring, s.f.).*
+*Figura. Framework Spring Boot utilizado para la construcción y despliegue del microservicio IAM de EDIFIKA (Spring, s.f.).*
+
+
+
+### Python
+
+**Propósito de Uso:**  
+Lenguaje de programación del Edge Gateway, según lo indicado en el enunciado para Edge Services. Se utiliza en el servicio que corre en el Raspberry Pi 4 del condominio (API REST, resolución de accesos, sincronización con la nube) y en las utilidades de apoyo: backend simulado y simulador de nodos ESP32.
+
+**Ruta de Referencia/Descarga:**  
+Python 3.12 (imagen Docker `python:3.12-slim`) — https://www.python.org/downloads/
+
+<img src="assets/img/python.png" alt="context" width="200"/>
+
+*Figura. Lenguaje Python utilizado para desarrollar el Edge Gateway del proyecto EDIFIKA (Python Software Foundation, s.f.).*
+
+
+
+### Flask
+
+**Propósito de Uso:**  
+Framework web del Edge Gateway. Expone la API REST local que permite consultar el estado de los nodos, revisar la bitácora de accesos y las lecturas de sensores, enviar comandos remotos y activar el modo mantenimiento de un dispositivo, además de servir la documentación de la interfaz en `/docs`.
+
+**Ruta de Referencia/Descarga:**  
+Flask 3.1.3 — https://flask.palletsprojects.com/
+
+<img src="assets/img/flask.png" alt="context" width="200"/>
+
+*Figura. Framework Flask utilizado para implementar la API REST local del Edge Gateway de EDIFIKA (Pallets, s.f.).*
+
+
+
+### flask-smorest
+
+**Propósito de Uso:**  
+Extensión de Flask empleada para definir los endpoints del Edge Gateway y generar automáticamente su documentación OpenAPI/Swagger, disponible en `/docs` y en `/openapi.json`. Centraliza la declaración de los esquemas de entrada y salida para que la documentación no se desactualice respecto del código.
+
+**Ruta de Referencia/Descarga:**  
+flask-smorest 0.47.0 — https://flask-smorest.readthedocs.io/
+
+<img src="assets/img/flask-smorest.png" alt="context" width="200"/>
+
+*Figura. Extensión flask-smorest utilizada para documentar la API del Edge Gateway con OpenAPI/Swagger (flask-smorest, s.f.).*
+
+
+
+### marshmallow
+
+**Propósito de Uso:**  
+Validación de datos y serialización. Valida tanto las solicitudes de la API REST local como los mensajes MQTT que intercambian el Edge Gateway y los nodos ESP32, de modo que un mensaje con un formato o una versión de contrato inválida se descarte y se reporte una sola vez a la nube, sin interrumpir la operación del edificio.
+
+**Ruta de Referencia/Descarga:**  
+marshmallow 4.3.1 — https://marshmallow.readthedocs.io/
+
+<img src="assets/img/marshmallow.png" alt="context" width="200"/>
+
+*Figura. Biblioteca marshmallow utilizada para validar los mensajes MQTT y las solicitudes de la API del Edge Gateway (marshmallow, s.f.).*
+
+
+
+### Peewee ORM
+
+**Propósito de Uso:**  
+ORM del Edge Gateway, según lo indicado en el enunciado. Modela los nodos registrados y su estado, las credenciales RFID y los permisos en caché local, la bitácora de accesos, las lecturas de sensores y la cola de salida de eventos hacia la nube, que es lo que permite operar sin conexión a internet.
+
+**Ruta de Referencia/Descarga:**  
+Peewee ORM 4.5.2 — https://docs.peewee-orm.com/
+
+<img src="assets/img/peewee.png" alt="context" width="200"/>
+
+*Figura. ORM Peewee utilizado para la persistencia local del Edge Gateway de EDIFIKA (Peewee, s.f.).*
+
+
+
+### SQLite
+
+**Propósito de Uso:**  
+Base de datos local del Edge Gateway, configurada en modo WAL. Persiste el estado de los dispositivos y la cola de eventos pendientes de enviar a la nube, y sobrevive a los reinicios del contenedor gracias al volumen `edge-data`. Al residir en el propio condominio, permite resolver accesos, lecturas y comandos aunque se caiga el enlace a internet.
+
+**Ruta de Referencia/Descarga:**  
+Incluido en Python 3.12 — https://www.sqlite.org/
+
+<img src="assets/img/sqlite.png" alt="context" width="200"/>
+
+*Figura. Base de datos SQLite utilizada por el Edge Gateway para operar sin conexión a internet (SQLite, s.f.).*
+
+
+
+### paho-mqtt
+
+**Propósito de Uso:**  
+Cliente MQTT del Edge Gateway. Suscribe los tópicos de heartbeat, intentos de acceso, lecturas y confirmaciones de los nodos ESP32, y publica los comandos que estos deben ejecutar: apertura de la cerradura, mensajes para la pantalla OLED, patrones del buzzer y sincronización de reloj.
+
+**Ruta de Referencia/Descarga:**  
+paho-mqtt 2.1.0 — https://eclipse.dev/paho/
+
+<img src="assets/img/paho-mqtt.png" alt="context" width="200"/>
+
+*Figura. Cliente MQTT paho-mqtt utilizado para la comunicación entre el Edge Gateway y los nodos ESP32 (Eclipse Foundation, s.f.).*
+
+
+
+### Eclipse Mosquitto
+
+**Propósito de Uso:**  
+Broker MQTT local del condominio, instalado en el Raspberry Pi 4 on-premise. Distribuye los mensajes entre el Edge Gateway y los nodos ESP32 sin salir del edificio y conserva su estado en el volumen `mosquitto-data`. Al no depender de la nube, una caída de internet no detiene la operación de accesos, iluminación y riego.
+
+**Ruta de Referencia/Descarga:**  
+Eclipse Mosquitto 2 — https://mosquitto.org/
+
+<img src="assets/img/mosquitto.png" alt="context" width="200"/>
+
+*Figura. Broker Eclipse Mosquitto instalado en el Edge Server del condominio para la mensajería MQTT local (Eclipse Foundation, s.f.).*
+
+
+
+### gunicorn
+
+**Propósito de Uso:**  
+Servidor de aplicación del contenedor del Edge Gateway. Se ejecuta con un único worker y varios hilos, porque el cliente MQTT y los planificadores de tareas (sincronización de caché, reintentos y alertas) deben existir una sola vez en el proceso.
+
+**Ruta de Referencia/Descarga:**  
+gunicorn 26.2.0 — https://gunicorn.org/
+
+<img src="assets/img/gunicorn.png" alt="context" width="200"/>
+
+*Figura. Servidor gunicorn utilizado para ejecutar el Edge Gateway dentro de su contenedor (gunicorn, s.f.).*
 
 
 
@@ -6507,7 +6593,7 @@ Postman (SaaS / Aplicación de escritorio)
 
 <img src="assets/img/postman.png" alt="context" width="200"/>
 
-*Figura 60. Plataforma Postman utilizada para realizar pruebas y validaciones de los endpoints REST del microservicio IAM (Postman, s.f.).*
+*Figura. Plataforma Postman utilizada para realizar pruebas y validaciones de los endpoints REST del microservicio IAM (Postman, s.f.).*
 
 
 
@@ -6521,7 +6607,21 @@ Swagger UI integrado en el microservicio IAM
 
 <img src="assets/img/swagger.png" alt="context" width="200"/>
 
-*Figura 61. Herramienta Swagger UI utilizada para la documentación y prueba visual de los endpoints expuestos por el backend de EDIFIKA (Swagger, s.f.).*
+*Figura. Herramienta Swagger UI utilizada para la documentación y prueba visual de los endpoints expuestos por el backend de EDIFIKA (Swagger, s.f.).*
+
+
+
+#### pytest
+
+**Propósito de Uso:**  
+Framework de pruebas del Edge Gateway. La suite de 188 pruebas se ejecuta sin broker MQTT y sin conexión a internet, reemplazando el broker, el backend y el reloj por dobles de prueba y usando una base de datos SQLite temporal por prueba, de modo que las regresiones se detecten antes de cada integración.
+
+**Ruta de Referencia/Descarga:**  
+pytest 9.1.1 — https://docs.pytest.org/
+
+<img src="assets/img/pytest.png" alt="context" width="200"/>
+
+*Figura. Framework pytest utilizado para las pruebas automatizadas del Edge Gateway de EDIFIKA (pytest, s.f.).*
 
 
 
@@ -6538,7 +6638,7 @@ GitHub Pages (SaaS)
 
 <img src="assets/img/githubpages.png" alt="context" width="200"/>
 
-*Figura 62. Plataforma GitHub Pages utilizada para el despliegue y visualización pública de la Landing Page de EDIFIKA (GitHub, s.f.).*
+*Figura. Plataforma GitHub Pages utilizada para el despliegue y visualización pública de la Landing Page de EDIFIKA (GitHub, s.f.).*
 
 
 
@@ -6552,7 +6652,21 @@ Render (PaaS - Plataforma como Servicio)
 
 <img src="assets/img/render.png" alt="context" width="200"/>
 
-*Figura 63. Plataforma Render utilizada para el despliegue en la nube del microservicio IAM desarrollado para EDIFIKA (Render, s.f.).*
+*Figura. Plataforma Render utilizada para el despliegue en la nube del microservicio IAM desarrollado para EDIFIKA (Render, s.f.).*
+
+
+
+#### Docker y Docker Compose
+
+**Propósito de Uso:**  
+Empaquetado y despliegue de todo el servicio Edge. La imagen del Edge Gateway, el broker MQTT local, el backend simulado y los nodos ESP32 virtuales se levantan con un solo comando, lo que permite ejecutar y demostrar la solución completa de forma reproducible tanto en el equipo de desarrollo como en el Raspberry Pi 4 del condominio.
+
+**Ruta de Referencia/Descarga:**  
+Docker 29.8 y Docker Compose 5.5 — https://www.docker.com/products/docker-desktop/
+
+<img src="assets/img/docker.png" alt="context" width="200"/>
+
+*Figura. Docker y Docker Compose utilizados para el empaquetado y despliegue del Edge Gateway de EDIFIKA (Docker Inc., s.f.).*
 
 
 
@@ -6569,7 +6683,7 @@ GitHub (SaaS)
 
 <img src="assets/img/github.png" alt="context" width="200"/>
 
-*Figura 64. Plataforma GitHub utilizada para el almacenamiento y versionado de la documentación técnica y código fuente del proyecto EDIFIKA (GitHub, s.f.).*
+*Figura. Plataforma GitHub utilizada para el almacenamiento y versionado de la documentación técnica y código fuente del proyecto EDIFIKA (GitHub, s.f.).*
 
 
 
@@ -6583,26 +6697,9 @@ Visual Studio Code (Aplicación de escritorio)
 
 <img src="assets/img/visualstudiocode.png" alt="context" width="200"/>
 
-*Figura 65. Editor Visual Studio Code utilizado para la edición y organización de la documentación técnica y archivos Markdown del proyecto EDIFIKA (Microsoft, s.f.).*
+*Figura. Editor Visual Studio Code utilizado para la edición y organización de la documentación técnica y archivos Markdown del proyecto EDIFIKA (Microsoft, s.f.).*
 
 Con esta configuración, nuestro equipo puede colaborar de manera eficiente y gestionar el ciclo de vida completo del desarrollo de EDIFIKA, desde la planificación y diseño hasta el desarrollo, pruebas, documentación, despliegue y mantenimiento.
-
-Esta subsección registra las herramientas utilizadas para desarrollar el **Edge Gateway** (servicio Edge del proyecto). Las herramientas de los demás productos digitales (Landing Page, Web Services, Web Applications y Mobile Applications) se agregan en este mismo cuadro conforme se incorporan.
-
-| Producto de software | Versión | Propósito en el proyecto | Referencia |
-|---|---|---|---|
-| Python | 3.12 (imagen Docker) | Lenguaje del Edge Gateway, según el enunciado para Edge Services | https://www.python.org/downloads/ |
-| Flask | 3.1.3 | Framework web del Edge Gateway (API REST local) | https://flask.palletsprojects.com/ |
-| flask-smorest | 0.47.0 | Definición de endpoints y documentación OpenAPI/Swagger | https://flask-smorest.readthedocs.io/ |
-| marshmallow | 4.3.1 | Validación de solicitudes REST y de mensajes MQTT | https://marshmallow.readthedocs.io/ |
-| Peewee ORM | 4.5.2 | Acceso a datos del Edge Gateway, según el enunciado | https://docs.peewee-orm.com/ |
-| SQLite | incluido en Python | Base de datos local del Edge Gateway (modo WAL) | https://www.sqlite.org/ |
-| paho-mqtt | 2.1.0 | Cliente MQTT para comunicarse con los nodos ESP32 | https://eclipse.dev/paho/ |
-| Eclipse Mosquitto | 2 | Broker MQTT local entre los nodos ESP32 y el Edge Gateway | https://mosquitto.org/ |
-| gunicorn | 26.2.0 | Servidor de aplicación del contenedor del Edge Gateway | https://gunicorn.org/ |
-| pytest | 9.1.1 | Pruebas unitarias y de integración del Edge Gateway | https://docs.pytest.org/ |
-| Docker y Docker Compose | 29.8 / 5.5 | Empaquetado y despliegue local de todo el servicio | https://www.docker.com/products/docker-desktop/ |
-| GitHub | — | Control de versiones y repositorio del Edge Gateway | https://github.com/ |
 
 ### 6.1.2. Source Code Management
 
@@ -6615,6 +6712,7 @@ El equipo utiliza GitHub para almacenar los productos digitales de EDIFIKA. Los 
 - **Landing Page:** contiene el sitio web informativo de EDIFIKA desplegado mediante GitHub Pages.
 - **Frontend Web Application:** contiene la aplicación web desarrollada con Angular.
 - **Backend Web Services:** contiene los microservicios backend, incluyendo el microservicio IAM desarrollado con Java, Spring Boot y Maven.
+- **Edge Gateway:** contiene el servicio Edge del proyecto IoT, desarrollado con Python, Flask, Peewee ORM y SQLite, junto con el simulador de nodos ESP32 y el backend simulado.
 
 Los URLs de los repositorios son los siguientes:
 
@@ -6624,6 +6722,10 @@ Los URLs de los repositorios son los siguientes:
 
 - **Backend Web Services - IAM Microservice:**  
   `https://github.com/Condomia/Edifika-Microservice-IAM`
+
+
+- **Edge Gateway (servicio Edge):**  
+  `https://github.com/IoT-UPC-202620/Edifika-Microservice-IoT-Gateway`
 
 URLs de despliegue actualmente disponibles:
 
@@ -6782,21 +6884,50 @@ chore(maven): update project dependencies
 
 El código fuente se gestiona en GitHub, dentro de la organización pública del equipo. Cada producto digital tiene su propio repositorio, que incluye el proyecto y sus archivos de pruebas.
 
-| Producto | Repositorio |
-|---|---|
-| Edge Gateway (Python, Flask, Peewee, SQLite) | https://github.com/IoT-UPC-202620/Edifika-Microservice-IoT-Gateway |
+**GitFlow.** El Edge Gateway aplica el mismo flujo de control de versiones descrito anteriormente, con las siguientes ramas propias:
 
-**GitFlow.** El Edge Gateway aplica GitFlow con las siguientes ramas:
+**Feature branches.** Se crea una rama desde `develop` por cada historia o grupo de historias relacionadas, y se integra a `develop` mediante un merge sin avance rápido (`--no-ff`), de modo que el historial conserve qué cambios pertenecen a cada historia.
 
-| Rama | Origen | Destino | Convención de nombre | Ejemplo |
-|---|---|---|---|---|
-| `main` | — | — | Contiene solo versiones publicadas, cada una con su tag | `v0.1.0` |
-| `develop` | `main` | — | Rama de integración | `develop` |
-| Feature | `develop` | `develop` (merge `--no-ff`) | `feature/<ID de historia>-<nombre corto>` | `feature/US71-access-control` |
-| Release | `develop` | `main` y `develop` | `release/<versión>` | `release/0.1.0` |
-| Hotfix | `main` | `main` y `develop` | `hotfix/<nombre>` | `hotfix/lock-timeout` |
+**Convención:**
 
-Cada historia o grupo de historias relacionadas se desarrolla en su propia rama feature y se integra a `develop` mediante un merge sin avance rápido (`--no-ff`), de modo que el historial conserve qué cambios pertenecen a cada historia.
+```text
+feature/<ID de historia>-<nombre corto>
+```
+
+Ejemplos:
+
+```text
+feature/US71-access-control
+feature/US79-US80-device-registry
+```
+
+**Release branches.** Se crea una rama desde `develop` al cerrar una versión, y se integra tanto a `main` como a `develop`. Cada versión publicada queda etiquetada en `main`.
+
+**Convención:**
+
+```text
+release/<versión>
+```
+
+Ejemplo:
+
+```text
+release/0.1.0
+```
+
+**Hotfix branches.** Se crea una rama desde `main` para corregir un fallo detectado en el condominio, y se integra a `main` y a `develop`.
+
+**Convención:**
+
+```text
+hotfix/<nombre>
+```
+
+Ejemplo:
+
+```text
+hotfix/lock-timeout
+```
 
 **Semantic Versioning.** Las versiones siguen el formato `MAJOR.MINOR.PATCH`. La primera versión funcional es la **0.1.0**: se preparó en `release/0.1.0` (con su `CHANGELOG.md`), se integró a `main` y se etiquetó como `v0.1.0`.
 
@@ -7146,25 +7277,68 @@ public class AuthenticationController {
 
 Se utiliza JWT como mecanismo de seguridad para proteger endpoints y validar el acceso de los usuarios autenticados.
 
-Convenciones adoptadas para el código Python del Edge Gateway:
+### Python
 
-| Aspecto | Convención |
-|---|---|
-| Estilo general | PEP 8 (https://peps.python.org/pep-0008/) |
-| Documentación | Docstrings según PEP 257 (https://peps.python.org/pep-0257/) en módulos y clases públicas |
-| Nomenclatura | En inglés. `snake_case` para funciones, variables y módulos; `PascalCase` para clases; `MAYUSCULAS_CON_GUION_BAJO` para constantes |
-| Tipado | Anotaciones de tipo en las firmas públicas de los servicios |
-| Organización | Capas separadas: `api` (interfaz REST), `services` (reglas de negocio), `mqtt` (contrato y mensajería), `models` y `db` (persistencia) |
-| Mensajes al usuario | Inglés como idioma por defecto (mensajes de la API, de la pantalla OLED y de la documentación Swagger), según el enunciado |
-| Configuración | Solo mediante variables de entorno con el prefijo `EDGE_`; ningún secreto en el código |
-| Pruebas | Un archivo por componente; el nombre de cada prueba describe el comportamiento esperado, y los escenarios Dado/Cuando/Entonces de las historias se traducen en pruebas `pytest` |
-| Commits y ramas | Conventional Commits y GitFlow (ver 6.1.2) |
+**Guía adoptada:**  
+Python Style Guide — PEP 8 (https://peps.python.org/pep-0008/)
+
+**Nomenclatura y convenciones:**
+
+- `snake_case` para funciones, variables y módulos.
+
+```python
+def resolve_access(credential):
+    pass
+```
+
+- `PascalCase` para clases.
+
+```python
+class AccessService:
+    pass
+```
+
+- `MAYUSCULAS_CON_GUION_BAJO` para constantes.
+
+```python
+MAX_OUTBOX_SIZE = 1000
+```
+
+- Docstrings según PEP 257 (https://peps.python.org/pep-0257/) en módulos y clases públicos.
+
+```python
+"""Decide un intento de acceso con la caché local del condominio."""
+```
+
+- Anotaciones de tipo en las firmas públicas de los servicios.
+
+```python
+def resolve_access(credential: str) -> AccessDecision:
+    pass
+```
+
+- Organización en capas separadas.
+
+```text
+edge_gateway/
+  api/          interfaz REST
+  services/     reglas de negocio
+  mqtt/         contrato y mensajería
+  models.py     modelos Peewee
+  db.py         configuración de SQLite
+```
+
+- Nombres en inglés.
+- Mensajes al usuario en inglés como idioma por defecto (respuestas de la API, textos de la pantalla OLED y documentación Swagger), según el enunciado.
+- Configuración únicamente mediante variables de entorno con el prefijo `EDGE_`; ningún secreto en el código.
+- Pruebas: un archivo por componente y nombre de prueba que describe el comportamiento esperado; los escenarios Dado/Cuando/Entonces de las historias se traducen en pruebas `pytest` (ver 6.1.1).
+- Commits y ramas: Conventional Commits y GitFlow (ver 6.1.2).
 
 ### 6.1.4. Software Deployment Configuration
 
-Esta sección describe la configuración y los pasos necesarios para realizar el despliegue exitoso de los productos digitales desarrollados en EDIFIKA. Actualmente, la solución cuenta con la **Landing Page desplegada en GitHub Pages** y el **microservicio IAM desplegado en Render**.
+Esta sección describe la configuración y los pasos necesarios para realizar el despliegue exitoso de los productos digitales desarrollados en EDIFIKA. Actualmente, la solución cuenta con la **Landing Page desplegada en GitHub Pages**, el **microservicio IAM desplegado en Render** y el **Edge Gateway desplegado on-premise con Docker Compose**.
 
-A continuación, se especifican los pasos para desplegar la Landing Page en GitHub Pages y los Web Services Backend en Render.
+A continuación, se especifican los pasos para desplegar la Landing Page en GitHub Pages, los Web Services Backend en Render y el Edge Gateway en el servidor del condominio.
 
 
 
@@ -7371,8 +7545,6 @@ Como parte de la configuración de despliegue, el equipo incluye el **Deployment
 
 <img src="assets/img/edifika-deployment-c4.png" alt="context"/>
 
-*Figura 66. Deployment Diagram del C4 Model. Elaborado por el equipo utilizando Structurizr (Structurizr, s.f.).*
-
 Este diagrama considera:
 
 - La **Landing Page** desplegada en **GitHub Pages**.
@@ -7382,41 +7554,99 @@ Este diagrama considera:
 - La comunicación entre el frontend y el microservicio IAM mediante HTTP/HTTPS.
 
 
-El Edge Gateway se despliega con **Docker Compose**, junto con el broker MQTT y un backend simulado. La solución completa se levanta con un solo comando:
+## Despliegue del Edge Gateway con Docker Compose
 
-```bash
-docker compose up --build                  # broker + Edge Gateway + backend simulado
-docker compose --profile sim up --build    # además, dos nodos ESP32 virtuales
+El Edge Gateway del proyecto IoT, implementado con Python, Flask, Peewee ORM y SQLite, se despliega en el servidor on-premise del condominio con **Docker Compose**, junto con el broker MQTT local y un backend simulado para las demostraciones. A diferencia de la Landing Page y de los Web Services, este servicio no se despliega en la nube: reside en el Raspberry Pi 4 instalado en el edificio (ver 4.1.3.4), de modo que el condominio siga operando aunque se caiga el enlace a internet.
+
+### Consideraciones previas al despliegue
+
+- Tener instalado Docker Engine con el plugin Compose (o Docker Desktop) en el equipo donde se levanta el servicio.
+- Contar con los archivos de despliegue del repositorio `https://github.com/IoT-UPC-202620/Edifika-Microservice-IoT-Gateway`: `Dockerfile`, `docker-compose.yml`, `mosquitto/mosquitto.conf` y `.env.example`.
+- Verificar que los puertos 1883 (broker MQTT), 8000 (API REST del Edge Gateway) y 9000 (backend simulado) estén libres en el equipo.
+- Verificar que la rama o el tag a desplegar sea una versión publicada, según el flujo de GitFlow descrito en 6.1.2.
+- No subir valores sensibles al repositorio: el archivo `.env` se crea localmente a partir de `.env.example` y no se versiona.
+
+Estructura del despliegue:
+
+```text
+edifika-microservice-iot-gateway/
+├── Dockerfile
+├── docker-compose.yml
+├── mosquitto/
+│   └── mosquitto.conf
+├── .env.example
+└── .env              (local, no versionado)
 ```
 
-**Servicios del `docker-compose.yml`**
+### Servicios del `docker-compose.yml`
 
-| Servicio | Imagen | Puerto | Función |
-|---|---|---|---|
-| `mosquitto` | `eclipse-mosquitto:2` | 1883 | Broker MQTT local. Verificación de salud con `mosquitto_sub` |
-| `edge-gateway` | Construida desde el `Dockerfile` (`python:3.12-slim`) | 8000 | API REST, Swagger (`/docs`) y `/health` |
-| `mock-cloud` | Misma imagen | 9000 | Backend simulado que recibe los eventos y entrega las credenciales |
-| `seed`, `sim-door`, `sim-garden` | Misma imagen (perfil `sim`) | — | Registro de los nodos de demostración y dos ESP32 virtuales |
+- `mosquitto`, imagen `eclipse-mosquitto:2`, puerto 1883: broker MQTT local, con verificación de salud mediante `mosquitto_sub`.
+- `edge-gateway`, construida desde el `Dockerfile` con `python:3.12-slim`, puerto 8000: API REST, documentación Swagger (`/docs`) y endpoint de salud `/health`.
+- `mock-cloud`, misma imagen, puerto 9000: backend simulado que recibe los eventos y entrega las credenciales.
+- `seed`, `sim-door` y `sim-garden`, misma imagen y perfil `sim`: registro de los nodos de demostración y dos ESP32 virtuales.
 
-**Decisiones de despliegue**
+### Variables de entorno
 
-- El Edge Gateway se ejecuta con **un solo worker** de gunicorn (y varios hilos), porque el cliente MQTT y los planificadores de tareas deben existir una única vez.
-- La base de datos SQLite se guarda en el volumen `edge-data`, de modo que sobrevive a los reinicios del contenedor. El broker conserva su estado en el volumen `mosquitto-data`.
+Todas las variables del servicio se declaran con el prefijo `EDGE_`:
+
+- `EDGE_SERVICE_TOKEN`, por defecto `dev-service-token`: token Bearer de la API REST local. Es obligatoria.
+- `EDGE_MQTT_HOST`, por defecto `mosquitto`: host del broker MQTT.
+- `EDGE_CLOUD_BASE_URL`, por defecto `http://mock-cloud:9000`: backend al que se envían los eventos.
+- `EDGE_CLOUD_TOKEN`, por defecto `dev-cloud-token`: credencial del Edge Gateway ante el backend.
+- `EDGE_DATABASE_PATH`, por defecto `/data/edge-gateway.db`: archivo SQLite del servicio.
+- `EDGE_TIMEZONE`, por defecto `America/Lima`: zona horaria de los horarios de las áreas.
+
+Los valores por defecto corresponden al archivo `docker-compose.yml` y pueden sobrescribirse con un archivo `.env`.
+
+### Pasos de despliegue
+
+#### 1. Preparar el repositorio
+
+a. Clonar o descargar el repositorio del Edge Gateway y ubicarse en la rama o el tag a desplegar.
+
+b. Crear el archivo de variables de entorno a partir del ejemplo y ajustar los valores:
+
+```bash
+cp .env.example .env
+```
+
+#### 2. Levantar los servicios
+
+a. Construir las imágenes y levantar el broker MQTT, el Edge Gateway y el backend simulado:
+
+```bash
+docker compose up --build
+```
+
+b. Levantar además los dos nodos ESP32 virtuales del perfil `sim`, para las demostraciones sin hardware físico:
+
+```bash
+docker compose --profile sim up --build
+```
+
+#### 3. Verificar el despliegue
+
+a. Consultar el endpoint de salud, que reporta el estado de la base de datos, la cola de eventos, la caché y la conexión al broker:
+
+```text
+http://localhost:8000/health
+```
+
+b. Abrir la documentación de la API en Swagger:
+
+```text
+http://localhost:8000/docs
+```
+
+c. Revisar los logs del contenedor `edge-gateway` para confirmar la conexión al broker y la sincronización inicial de la caché.
+
+### Decisiones de despliegue
+
+- El Edge Gateway se ejecuta con un solo worker de gunicorn (y varios hilos), porque el cliente MQTT y los planificadores de tareas deben existir una única vez.
+- La base de datos SQLite se guarda en el volumen `edge-data`, de modo que sobreviva a los reinicios del contenedor. El broker conserva su estado en el volumen `mosquitto-data`.
 - El Edge Gateway espera a que el broker y el backend superen sus verificaciones de salud antes de iniciar (`depends_on` con `service_healthy`). Si el broker se cae después, el cliente reintenta la conexión con espera creciente.
 - El contenedor se ejecuta con un usuario sin privilegios y define su propio `HEALTHCHECK` sobre `/health`.
-
-**Variables de entorno principales**
-
-| Variable | Valor por defecto en Compose | Descripción |
-|---|---|---|
-| `EDGE_SERVICE_TOKEN` | `dev-service-token` | Token Bearer de la API REST local (obligatorio) |
-| `EDGE_MQTT_HOST` | `mosquitto` | Broker MQTT |
-| `EDGE_CLOUD_BASE_URL` | `http://mock-cloud:9000` | Backend al que se envían los eventos |
-| `EDGE_CLOUD_TOKEN` | `dev-cloud-token` | Credencial del Edge Gateway ante el backend |
-| `EDGE_DATABASE_PATH` | `/data/edge-gateway.db` | Archivo SQLite |
-| `EDGE_TIMEZONE` | `America/Lima` | Zona horaria de los horarios de las áreas |
-
-Los valores se pueden sobrescribir con un archivo `.env` (ver `.env.example`). La topología desplegada se representa en el Deployment Diagram de la sección 4.1.3.4.
+- La topología desplegada se representa en el Deployment Diagram de la sección 4.1.3.4.
 
 ## 6.2. Landing Page, Services & Applications Implementation
 
