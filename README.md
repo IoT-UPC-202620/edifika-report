@@ -758,143 +758,68 @@ Segundo Segmento:
 
 ## 2.4. Big Picture EventStorming
 
-En esta seccción se presenta el trabajo realizado durante la sesion de Big Picture event storming enfocada en comprender el dominio general del negocio. Para ello se utilizaran post-its para mapear los eventos significativos que ocurre en el flujo operativo actual.Esta actividad permite agrupar las interacciones en bloques funcionales lógicos, asegurando que la solución tecnológica satisfaga los requisitos reales del flujo operativo
+En esta sección se presenta el resultado de la sesión de Big Picture EventStorming, técnica de modelado colaborativo que reconstruye el funcionamiento de un negocio a partir de los hechos relevantes que ocurren en él. La sesión se enfocó en comprender el dominio general de la administración de condominios: el equipo registró en post-its naranjas los eventos de dominio significativos del flujo operativo, redactados en tiempo pasado, como Deuda generada, Reserva aceptada, Tarjeta reconocida o Luces encendidas automáticamente. Este mapeo permitió identificar los hechos clave de la operación diaria del edificio y agruparlos luego en bloques funcionales lógicos, asegurando que la solución tecnológica responda a los requisitos reales del flujo operativo.
 
+![Big Picture EventStorming](assets/img/big-picture-eventstorming.png)
 
-<img src="assets/img/big.jpeg" alt="logo" /> 
+*Figura. Big Picture EventStorming de Edifika. Elaborado por el equipo utilizando Miro (Miro, s.f.).*
 
 ## 2.5 Ubiquitous Language
 
-El Ubiquitous Language define un lenguaje común entre los actores del sistema, permitiendo una comunicación clara y consistente durante el desarrollo de la solución. En este proyecto, se integran conceptos relacionados con la administración de edificios inteligentes (Smart Buildings), automatización mediante IoT, monitoreo de recursos y seguridad residencial.
+El Ubiquitous Language define un lenguaje común entre el equipo y los actores del negocio, de modo que los mismos términos se usen en las conversaciones, la documentación y el código. En este proyecto integra conceptos de administración de condominios y de automatización mediante IoT.
 
----
+### Usuarios
 
-## Usuarios y Segmentos
+- **Visitante:** persona anónima que consulta el Landing Page para conocer el modelo de negocio y los precios antes de registrarse.
+- **Administrador:** persona responsable de la operación de uno o varios edificios. Gestiona residentes, unidades, deudas, pagos, reservas, comunicados, reportes y reglas IoT desde la aplicación web.
+- **Residente (Propietario o Inquilino):** persona vinculada a una unidad que, desde la aplicación móvil, consulta y paga deudas, reserva áreas comunes, lee comunicados, participa del foro y accede a las áreas comunes con su tarjeta RFID.
 
-### Administrador de Edificios
-Persona responsable de supervisar la operación de uno o varios edificios o condominios. Gestiona residentes, pagos, incidencias, reservas de áreas comunes y monitorea los dispositivos IoT instalados.
+### Gestión del condominio
 
-### Propietario e Inquilino
-Residente que utiliza la plataforma para consultar información de su unidad, realizar pagos, reservar áreas comunes, recibir notificaciones y acceder a servicios inteligentes del edificio.
+- **Edificio:** conjunto de unidades residenciales administradas en la plataforma.
+- **Unidad:** departamento asignado a uno o varios residentes dentro de un edificio.
+- **Área común:** espacio compartido por los residentes, como salón de eventos, gimnasio o zona de parrillas.
+- **Regla de área común:** condición que define el uso de un área común, como su aforo máximo o el tipo de reserva permitido.
+- **Reserva:** solicitud de un residente para usar un área común en una fecha y horario determinados. Puede estar solicitada, aceptada, rechazada o cancelada.
+- **Deuda:** monto que una unidad debe pagar por un periodo de mantenimiento, con fecha de vencimiento.
+- **Deuda vencida:** deuda que no se pagó antes de su fecha de vencimiento.
+- **Residente moroso:** residente con al menos una deuda vencida. Su acceso a las áreas comunes queda restringido.
+- **Pago:** abono que realiza un residente para cancelar una deuda.
+- **Pago en línea:** pago con tarjeta, Yape o billetera móvil procesado a través de la pasarela de pagos.
+- **Pasarela de pagos:** servicio externo que procesa los cobros en línea (Culqi).
+- **Comprobante de pago:** imagen del voucher que el residente adjunta cuando paga fuera de línea, y que el administrador revisa.
+- **Constancia de pago:** documento que el sistema emite cuando un pago es aprobado.
+- **Estado de cuenta:** resumen de las deudas pendientes y los pagos realizados de una unidad.
+- **Historial de pagos:** registro de todos los pagos efectuados por el residente.
+- **Comunicado:** anuncio oficial emitido por la administración para informar novedades o disposiciones.
+- **Foro:** espacio privado de cada edificio donde los residentes publican y comentan.
+- **Publicación:** mensaje que un residente comparte en el foro, con texto e imagen opcional.
+- **Notificación:** mensaje push enviado a un residente o administrador para informar un evento relevante.
+- **Reporte financiero:** documento que resume ingresos, deudas pendientes y morosidad del edificio.
 
-### Personal de Mantenimiento
-Usuario encargado de atender incidencias técnicas relacionadas con infraestructura, dispositivos IoT, sistemas de iluminación, agua y seguridad.
+### IoT
 
----
-
-## Funcionalidades Core para Administradores
-
-### Edificio
-Conjunto de unidades residenciales administradas dentro de la plataforma.
-
-### Unidad Residencial
-Departamento o espacio asignado a uno o varios residentes dentro de un edificio.
-
-### Residente
-Persona vinculada a una unidad residencial con acceso a funcionalidades específicas del sistema.
-
-### Área Común
-Espacio compartido por los residentes, como salón de eventos, gimnasio, zona de parrillas o áreas recreativas.
-
-### Reserva
-Solicitud realizada por un residente para utilizar un área común en una fecha y horario determinados.
-
-### Incidencia
-Problema o evento reportado relacionado con infraestructura, servicios o dispositivos del edificio.
-
-### Notificación
-Mensaje enviado automáticamente a administradores o residentes para informar eventos importantes.
-
-### Reporte Financiero
-Documento generado por el sistema que resume ingresos, pagos pendientes y movimientos económicos del edificio.
-
----
-
-## Funcionalidades IoT (NÚCLEO DEL PROYECTO)
-
-### Sensor IoT
-Dispositivo conectado capaz de recopilar datos del entorno y transmitirlos al sistema en tiempo real.
-
-### Iluminación Inteligente
-Sistema que controla automáticamente las luces de áreas comunes mediante sensores de movimiento o reglas configuradas.
-
-### Control de Acceso Inteligente
-Mecanismo que permite autorizar o restringir el ingreso a determinadas áreas mediante credenciales digitales.
-
-### Sensor de Movimiento
-Dispositivo encargado de detectar presencia de personas en áreas comunes para activar automatizaciones.
-
-### Monitoreo de Tanque de Agua
-Proceso que supervisa continuamente el nivel de agua almacenada para prevenir desabastecimientos.
-
-### Detección de Fugas
-Funcionalidad que identifica posibles pérdidas de agua y genera alertas automáticas.
-
-### Riego Automático
-Sistema que activa el riego de áreas verdes según horarios programados o condiciones ambientales detectadas.
-
-### Calidad del Aire
-Indicador obtenido mediante sensores que monitorean variables como CO₂, temperatura, humedad y ventilación.
-
-### Alerta Inteligente
-Notificación generada automáticamente cuando se detecta una condición fuera de los parámetros establecidos.
-
-### Consumo de Recursos
-Registro y monitoreo del uso de agua y energía dentro del edificio.
-
-### Dashboard IoT
-Panel centralizado que permite visualizar en tiempo real el estado de los sensores, dispositivos y recursos monitoreados.
-
----
-
-## Funcionalidades Core para Residentes
-
-### Estado de Cuenta
-Resumen de pagos realizados, deudas pendientes y movimientos asociados a una unidad residencial.
-
-### Pago de Mantenimiento
-Proceso mediante el cual el residente realiza el abono de las cuotas correspondientes al edificio.
-
-### Historial de Pagos
-Registro histórico de todos los pagos efectuados por el residente.
-
-### Comunicado
-Anuncio emitido por la administración para informar novedades, eventos o disposiciones importantes.
-
-### Encuesta
-Mecanismo que permite recopilar opiniones y votaciones de los residentes sobre decisiones comunitarias.
-
-### Votación
-Proceso mediante el cual los residentes participan en decisiones relacionadas con la gestión del edificio.
-
-### Seguimiento de Incidencias
-Funcionalidad que permite conocer el estado actual de un problema reportado.
-
----
-
-## Gestión de Dispositivos IoT
-
-### Dispositivo IoT
-Equipo físico conectado al sistema capaz de recopilar información o ejecutar acciones automáticas.
-
-### Estado del Dispositivo
-Condición actual del dispositivo (activo, inactivo, desconectado o en mantenimiento).
-
-### Regla de Automatización
-Condición configurada para ejecutar acciones automáticas basadas en eventos detectados por sensores.
-
-### Evento IoT
-Acción o situación detectada por un dispositivo, como movimiento, fuga de agua o variación en la calidad del aire.
-
-### Historial de Eventos
-Registro cronológico de todas las actividades generadas por sensores y dispositivos IoT.
-
-### Monitoreo en Tiempo Real
-Visualización instantánea de datos generados por sensores y dispositivos conectados.
-
----
-
-
+- **Dispositivo IoT:** equipo físico instalado en el edificio que mide variables del entorno o ejecuta acciones. Puede estar activo, inactivo, desconectado o en mantenimiento.
+- **Edge Gateway:** equipo instalado en el condominio que coordina los dispositivos y sigue operando aunque se caiga el internet.
+- **Control de accesos:** mecanismo que autoriza o deniega el ingreso a un área común.
+- **Tarjeta RFID:** credencial física que el residente presenta en el lector para acceder a un área común.
+- **Credencial activa:** tarjeta RFID habilitada para un residente y un área común en un horario determinado.
+- **Acceso concedido / denegado:** resultado de validar una tarjeta RFID contra los permisos, la reserva vigente y la morosidad del residente.
+- **Iluminación inteligente:** encendido y apagado automático de las luces de áreas comunes según presencia, luz ambiental y horarios de reserva.
+- **Sensor de presencia:** sensor PIR que detecta movimiento de personas en un área común.
+- **Nivel de lux:** cantidad de luz ambiental medida por el sensor LDR.
+- **Temporizador de inactividad:** tiempo sin movimiento tras el cual las luces se apagan.
+- **Riego automático:** activación del riego de áreas verdes según horarios programados o la humedad del suelo.
+- **Humedad del suelo:** porcentaje de agua en la tierra medido por el sensor capacitivo.
+- **Umbral de humedad:** valor de humedad por debajo del cual se activa el riego.
+- **Override manual:** acción del administrador que anula temporalmente una regla automática de iluminación o riego.
+- **Regla de automatización:** condición configurada que dispara una acción automática a partir de lo que detecta un sensor.
+- **Telemetría:** datos que los dispositivos envían periódicamente, como presencia, lux, corriente, humedad y flujo de agua.
+- **Consumo de recursos:** energía (kWh) y agua consumidas en las áreas comunes, calculadas a partir de la telemetría.
+- **Anomalía:** consumo o lectura fuera de los parámetros esperados.
+- **Falla de dispositivo:** pérdida de conexión o mal funcionamiento detectado en un dispositivo IoT.
+- **Log de dispositivo:** registro cronológico de los eventos generados por un dispositivo.
+- **Dashboard IoT:** panel de la aplicación web donde el administrador ve el estado de los dispositivos y el consumo de recursos.
 
 
 # Capítulo III: Requirements Specification
