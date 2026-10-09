@@ -1,0 +1,6 @@
+{
+  "name": "rfid-rc522",
+  "author": "Edifika",
+  "pins": ["SDA", "SCK", "MOSI", "MISO", "IRQ", "GND", "RST", "3V3"],
+  "controls": []
+}

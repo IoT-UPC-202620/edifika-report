@@ -6,13 +6,13 @@
 <h3>Universidad Peruana de Ciencias Aplicadas</h3>
 <h3>Ingeniería de Software</h3>
 
-<h4>1ASI0572 - Desarrollo de Soluciones IOT<br>202610</h4>
+<h4>1ASI0572 - Desarrollo de Soluciones IOT<br>202620</h4>
 
 <h4>NRC: 8740</h4>
 
 <h4>Docente: Verla Olivera, David Carlos</h4>
 
-<h3>Informe de "AV1"</h3>
+<h3>Informe de Trabajo Final</h3>
 
 <h4>Nombre del Startup: Condomia</h4>
 <h4>Nombre del Producto: Edifika</h4>
@@ -33,9 +33,9 @@
     <tr><td style="border: 1px solid black;">Acuña Corahua, Jonatan Ariel</td><td style="border: 1px solid black;">u20211b995</td></tr>
     <tr><td style="border: 1px solid black;">Collantes Carrillo, Diego Mateo</td><td style="border: 1px solid black;">u202311823</td></tr>
     <tr><td style="border: 1px solid black;">Landa Ortiz, Sergio Javier</td><td style="border: 1px solid black;">u202311086</td></tr>
+	<tr><td style="border: 1px solid black;">Lizarbe Alvarez, Ariana Nickole</td><td style="border: 1px solid black;">u202311704</td></tr>
     <tr><td style="border: 1px solid black;">Ortiz Cardenas, Johanna Antuanete</td><td style="border: 1px solid black;">u202310358</td></tr>
     <tr><td style="border: 1px solid black;">Perez Tuesta, Gabriel</td><td style="border: 1px solid black;">u202321281</td></tr>
-    <tr><td style="border: 1px solid black;">Lizarbe Alvarez, Ariana Nickole/td><td style="border: 1px solid black;">u2023</td></tr>
     <tr><td style="border: 1px solid black;">Sarmiento Medina, Loreley</td><td style="border: 1px solid black;">u202310005</td></tr>
   </tbody>
 </table>
@@ -61,70 +61,23 @@
   </thead>
   <tbody>
     <tr>
-      <td>1.0.0</td>
-      <td>30/08/2026</td>
-      <td>Acuña Corahua, Jonatan Ariel</td>
-      <td>Estructuración inicial del informe de proyecto y organización de carpetas por capítulos según las pautas del trabajo final.</td>
-    </tr>
-    <tr>
-      <td>1.1.0</td>
-      <td>04/09/2026</td>
-      <td>Acuña Corahua, Jonatan Ariel</td>
-      <td>Migración de contenidos base del proyecto y organización inicial de los recursos gráficos en el directorio de assets.</td>
-    </tr>
-    <tr>
-      <td>1.2.0</td>
-      <td>05/09/2026</td>
-      <td>Acuña Corahua, Jonatan Ariel</td>
-      <td>Configuración del entorno Docker y pipeline automatizado para compilación del informe a formato PDF con Pandoc y plantilla Eisvogel.</td>
-    </tr>
-    <tr>
-      <td>1.3.0</td>
-      <td>06/09/2026</td>
-      <td>Acuña Corahua, Jonatan Ariel</td>
-      <td>Desarrollo del filtro Lua personalizado para el ajuste automático de anchos de columnas y bordes en tablas complejas del PDF.</td>
-    </tr>
-    <tr>
-      <td>1.4.0</td>
-      <td>08/09/2026</td>
-      <td>Acuña Corahua, Jonatan Ariel</td>
-      <td>Modelado inicial de la arquitectura del sistema C4 (Landscape, Context, Container y Deployment Views) mediante Structurizr DSL.</td>
-    </tr>
-    <tr>
-      <td>1.5.0</td>
-      <td>10/09/2026</td>
-      <td>Acuña Corahua, Jonatan Ariel</td>
-      <td>Especificación de los Bounded Contexts estratégicos y redacción preliminar de la arquitectura de microservicios en el Capítulo IV.</td>
-    </tr>
-    <tr>
-      <td>1.6.0</td>
-      <td>11/09/2026</td>
-      <td>Acuña Corahua, Jonatan Ariel</td>
-      <td>Definición del Design-Level EventStorming para la extensión IoT, catalogación estructurada de eventos y exportación de datos en CSV.</td>
-    </tr>
-    <tr>
-      <td>1.7.0</td>
-      <td>12/09/2026</td>
-      <td>Acuña Corahua, Jonatan Ariel</td>
-      <td>Elaboración de diagramas de Domain Storytelling en PlantUML para los flujos de colaboración entre Bounded Contexts.</td>
-    </tr>
-    <tr>
-      <td>1.8.0</td>
-      <td>12/09/2026</td>
-      <td>Acuña Corahua, Jonatan Ariel</td>
-      <td>Actualización del modelo C4 en Structurizr DSL con microservicios IoT, nivel Edge Computing on-premise y nodos físicos ESP32.</td>
-    </tr>
-    <tr>
-      <td>1.9.0</td>
-      <td>13/09/2026</td>
-      <td>Acuña Corahua, Jonatan Ariel</td>
-      <td>Modelado táctico DDD (diagramas de clases para servicios IoT), diseño de persistencia híbrida (PostgreSQL y TimescaleDB) y consolidación integral del Capítulo IV.</td>
-    </tr>
-    <tr>
-      <td>1.10.0</td>
-      <td>18/09/2026</td>
-      <td>Ortiz Cardenas, Johanna Antuanete</td>
-      <td>Redacción y documentación de todos los Bounded Contexts del Capítulo IV (Domain Layer, Interface Layer, Application Layer e Infrastructure Layer). También colaboré en el diseño del Event Storming aidentificando comandos, eventos de dominio y políticas entre todos los bounded context de edifika.</td>
+      <td>AVN1</td>
+      <td>20/09/2026</td>
+      <td>
+        - Acuña Corahua, Jonatan Ariel <br>
+        - Collantes Carrillo, Diego Mateo <br>
+        - Landa Ortiz, Sergio Javier <br>
+        - Ortiz Cardenas, Johanna Antuanete <br>
+        - Perez Tuesta, Gabriel <br>
+        - Lizarbe Alvarez, Ariana Nickole <br>
+        - Sarmiento Medina, Loreley
+      </td>
+      <td>
+        - Capítulo I: Introducción <br>
+        - Capítulo II: Requirements Elicitation & Analysis <br>
+        - Capítulo III: Requirements Specification <br>
+        - Capítulo IV: Solution Software Design
+      </td>
     </tr>
   </tbody>
 </table>
@@ -133,7 +86,10 @@
 ## **Project Report Collaboration Insights**
 
 AV1 (20/09/2026):
-
+<br>
+<p align="center">
+  <img src="assets/img/in.jpeg" alt="logo" />
+</p>
 
 ## **Contenido**
 - [CAPÍTULO I: Introducción](#capítulo-i-introducción)
@@ -288,7 +244,43 @@ AV1 (20/09/2026):
       - [4.2.12.6. Bounded Context Software Architecture Code Level Diagrams](#42126-bounded-context-software-architecture-code-level-diagrams)
         - [4.2.12.6.1. Bounded Context Domain Layer Class Diagrams](#421261-bounded-context-domain-layer-class-diagrams)
         - [4.2.12.6.2. Bounded Context Database Design Diagram](#421262-bounded-context-database-design-diagram)
-    - [Conclusiones](#conclusiones)
+- [CAPÍTULO V: Solution UI/UX Design](#capítulo-v-solution-uiux-design)
+  - [5.1. Style Guidelines](#51-style-guidelines)
+    - [5.1.1. General Style Guidelines](#511-general-style-guidelines)
+    - [5.1.2. Web, Mobile and IoT Style Guidelines](#512-web-mobile-and-iot-style-guidelines)
+  - [5.2. Information Architecture](#52-information-architecture)
+    - [5.2.1. Organization Systems](#521-organization-systems)
+    - [5.2.2. Labeling Systems](#522-labeling-systems)
+    - [5.2.3. SEO Tags and Meta Tags](#523-seo-tags-and-meta-tags)
+    - [5.2.4. Searching Systems](#524-searching-systems)
+    - [5.2.5. Navigation Systems](#525-navigation-systems)
+  - [5.3. Landing Page UI Design](#53-landing-page-ui-design)
+    - [5.3.1. Landing Page Wireframe](#531-landing-page-wireframe)
+    - [5.3.2. Landing Page Mock-up](#532-landing-page-mock-up)
+  - [5.4. Applications UX/UI Design](#54-applications-uxui-design)
+    - [5.4.1. Applications Wireframes](#541-applications-wireframes)
+    - [5.4.2. Applications Wireflow Diagrams](#542-applications-wireflow-diagrams)
+      - [5.4.2.1. Applications Mock-ups](#5421-applications-mock-ups)
+    - [5.4.3. Applications User Flow Diagrams](#543-applications-user-flow-diagrams)
+  - [5.5. Applications Prototyping](#55-applications-prototyping)
+  - [5.6. IoT Device Design](#56-iot-device-design)
+- [CAPÍTULO VI: Product Implementation, Validation & Deployment](#capítulo-vi-product-implementation-validation--deployment)
+  - [6.1. Software Configuration Management](#61-software-configuration-management)
+    - [6.1.1. Software Development Environment Configuration](#611-software-development-environment-configuration)
+    - [6.1.2. Source Code Management](#612-source-code-management)
+    - [6.1.3. Source Code Style Guide & Coding Conventions](#613-source-code-style-guide--coding-conventions)
+    - [6.1.4. Software Deployment Configuration](#614-software-deployment-configuration)
+  - [6.2. Landing Page, Services & Applications Implementation](#62-landing-page-services--applications-implementation)
+    - [6.2.1. Sprint 1](#621-sprint-1)
+      - [6.2.1.1. Sprint Planning 1](#6211-sprint-planning-1)
+      - [6.2.1.2. Aspect Leaders and Collaborators](#6212-aspect-leaders-and-collaborators)
+      - [6.2.1.3. Sprint Backlog 1](#6213-sprint-backlog-1)
+      - [6.2.1.4. Development Evidence for Sprint Review](#6214-development-evidence-for-sprint-review)
+      - [6.2.1.5. Testing Suite Evidence for Sprint Review](#6215-testing-suite-evidence-for-sprint-review)
+      - [6.2.1.6. Execution Evidence for Sprint Review](#6216-execution-evidence-for-sprint-review)
+      - [6.2.1.7. Services Documentation Evidence for Sprint Review](#6217-services-documentation-evidence-for-sprint-review)
+      - [6.2.1.8. Software Deployment Evidence for Sprint Review](#6218-software-deployment-evidence-for-sprint-review)
+      - [6.2.1.9. Team Collaboration Insights during Sprint](#6219-team-collaboration-insights-during-sprint)
 - [Conclusiones y Recomendaciones](#conclusiones-y-recomendaciones)
 - [Referencias Bibliográficas](#referencias-bibliográficas)
 - [Anexos](#anexos)
@@ -316,7 +308,7 @@ AV1: Desarrollé liderazgo compartido al coordinar colaborativamente la sección
 
 
 Landa Ortiz, Sergio Javier<br><br>
-AV1: <br><br>
+AV1: <br>Desarrollé el Capítulo I del informe, incluyendo la definición del Startup Profile, la descripción de la startup y de los integrantes del equipo, los antecedentes y la problemática, así como la aplicación del proceso Lean UX mediante la elaboración de los Problem Statements, Assumptions, Hypothesis Statements y Lean UX Canvas. Además, definí los segmentos objetivo del proyecto, proporcionando una base estructurada para que el equipo comprendiera el contexto de la solución y alineara las actividades de investigación y análisis desarrolladas en las siguientes etapas.<br>
 
 Lizarbe Alvarez, Ariana Nickole<br><br>
 AV1: Participé activamente en las entrevistas realizadas a los usuarios para recopilar información sobre sus necesidades, comportamientos y problemas. Además, elaboré los User Stories, el Product Backlog y el Impact Mapping, contribuyendo a organizar los requerimientos, priorizar funcionalidades y relacionar las necesidades identificadas con los objetivos del producto. Estas actividades permitieron aportar al trabajo colaborativo y facilitar la toma de decisiones del equipo durante la definición de la solución. <br><br>
@@ -328,7 +320,7 @@ Perez Tuesta, Gabriel<br><br>
 AV1: Asumí el desarrollo de los principales artefactos de investigación y análisis centrados en el usuario. Diseñé las entrevistas para la validación del segmento objetivo, elaboré el User Persona, el Customer Journey Map, el Análisis Competitivo y la User Task Matrix, contribuyendo a comprender las necesidades de los usuarios, identificar oportunidades de mejora y establecer una base sólida para la definición de requerimientos y funcionalidades del producto.<br><br>
 
 Sarmiento Medina, Loreley<br><br>
-AV1: 
+AV1:Participé en el Design-Level EventStorming, en la identificación de los Bounded Contexts y en la definición de sus capas Domain, Application, Interface e Infrastructure. Además, apoyé en la elaboración de User Stories y en correcciones generales del informe. 
 </td>
 <td>
 AV1: Durante esta entrega, el equipo desarrolló actividades de investigación y análisis orientadas a comprender el problema, identificar las necesidades de los usuarios y evaluar el contexto competitivo del producto. La elaboración del análisis competitivo, el diseño y ejecución de entrevistas, los User Personas, la User Task Matrix y el User Journey Map permitió obtener información relevante sobre los usuarios objetivo, sus necesidades, comportamientos y desafíos. Como resultado, se estableció una base sólida para la definición de requerimientos y la toma de decisiones en las siguientes etapas del proyecto, asegurando que la propuesta de solución estuviera alineada con las necesidades identificadas. Además, en el Capítulo IV el equipo pasó de la investigación al diseño de la solución: la arquitectura y los Bounded Contexts estratégicos quedaron definidos y sirvieron de base para el diseño táctico de cada contexto.
@@ -344,7 +336,7 @@ Collantes Carrillo, Diego Mateo<br><br>
 AV1: Fomenté un entorno colaborativo e inclusivo al coordinar la planificación y ejecución estratégica del dominio del proyecto (Strategic-Level Domain-Driven Design). Establecí metas claras facilitando el Design-Level EventStorming (Candidate Context Discovery, Domain Message Flows Modeling y Bounded Context Canvases) y organicé el trabajo en equipo para definir el Context Mapping, cumpliendo exitosamente con los objetivos planteados. <br><br>
 
 Landa Ortiz, Sergio Javier<br><br>
-AV1: <br><br>
+AV1: <br>Planifiqué y desarrollé el Capítulo I del proyecto, organizando la información relacionada con la startup, la problemática, el proceso Lean UX y los segmentos objetivo. Establecí una estructura clara para documentar el contexto y la propuesta inicial del producto, permitiendo que el equipo trabajara sobre una base común y alineada. Gracias a ello, se cumplieron los objetivos de la etapa inicial del proyecto y se facilitó el desarrollo de las actividades posteriores de investigación, validación y diseño de la solución.<br>
 
 Lizarbe Alvarez, Ariana Nickole<br><br>
 AV1: Participé en la planificación y desarrollo de las actividades de investigación y definición del producto. Colaboré en las entrevistas con usuarios y elaboré los User Stories, Product Backlog e Impact Mapping, organizando los requerimientos y funcionalidades de acuerdo con los objetivos identificados. Con estas actividades contribuí al cumplimiento de los objetivos de la etapa y a mantener una organización clara del trabajo del equipo. <br><br>
@@ -356,7 +348,7 @@ Perez Tuesta, Gabriel<br><br>
 AV1: Planifiqué y desarrollé las actividades relacionadas con la investigación de usuarios y el análisis del contexto del producto. Diseñé las entrevistas, elaboré el User Persona, el Journey Map, el Análisis Competitivo y la User Task Matrix, cumpliendo con los objetivos establecidos para la fase de descubrimiento y validación inicial del proyecto.<br><br>
 
 Sarmiento Medina, Loreley<br><br>
-AV1: 
+AV1:Colaboré en la organización y revisión de los Bounded Contexts, User Stories y artefactos del proyecto, realizando correcciones generales para mantener la consistencia del informe y contribuir al cumplimiento de los objetivos de la entrega. 
 </td>
 <td>
 AV1: Durante esta entrega, el equipo organizó y ejecutó las actividades correspondientes a la fase de investigación y análisis del proyecto. La planificación de entrevistas, el análisis del mercado y la construcción de artefactos centrados en el usuario permitieron recopilar información relevante y estructurar el conocimiento obtenido. Gracias a ello, se cumplieron los objetivos planteados para la etapa de descubrimiento, generando insumos que sirvieron como base para la definición de requerimientos y el diseño de la solución propuesta. Además, trabajar sobre un único repositorio del informe, con un pipeline automatizado para generar el PDF y un registro de versiones, permitió que los integrantes avanzaran en paralelo y que cada aporte quedara trazable en los commits.
@@ -370,13 +362,13 @@ AV1: Durante esta entrega, el equipo organizó y ejecutó las actividades corres
 ## 1.1. Startup Profile
 ### 1.1.1. Descripción de la Startup
 
-Condomia es una startup tecnológica enfocada en transformar la gestión de condominios y edificios residenciales mediante soluciones digitales accesibles, intuitivas y diseñadas para el día a día. Creemos firmemente que administrar una comunidad residencial puede y debe ser una experiencia ordenada, clara y eficiente para todos los actores involucrados. Nuestro equipo combina experiencia en tecnología, diseño y gestión para desarrollar herramientas que respondan a las necesidades reales de quienes conviven y administran estos espacios. Nuestro producto principal, Edifika, es una plataforma que centraliza en un único entorno digital la gestión y seguimiento de deudas y pagos, agiliza el proceso de reserva de áreas comunes y mantiene a toda la comunidad informada a través de comunicados oficiales estructurados, eliminando los procesos manuales y la información dispersa que podrían generar conflictos y desorganización. Apostamos por una tecnología que no solo resuelve problemas operativos, sino que también fortalece la comunicación interna y facilita la toma de decisiones colectivas dentro de cada edificio. Nuestro objetivo es convertirnos en el aliado digital de cada comunidad residencial, brindándole las herramientas necesarias para funcionar con transparencia, autonomía y confianza.
+Condomia es una startup tecnológica enfocada en transformar la gestión de condominios y edificios residenciales mediante soluciones digitales accesibles, intuitivas e innovadoras, diseñadas para responder a las necesidades cotidianas de las comunidades residenciales. Creemos que la administración y operación de estos espacios debe desarrollarse de manera ordenada, transparente y eficiente, facilitando la interacción entre administradores y residentes. Por ello, apostamos por la incorporación de tecnologías digitales que permitan modernizar los procesos administrativos, mejorar la comunicación y fortalecer la organización dentro de los edificios.
 
-**Misión:**
-Transformar la gestión de comunidades residenciales mediante soluciones digitales accesibles e intuitivas que centralicen los procesos administrativos, mejoren la comunicación y promuevan la transparencia entre administradores y residentes.
+Asimismo, Condomia busca impulsar la evolución hacia comunidades residenciales más inteligentes mediante la integración de tecnologías de automatización e Internet de las Cosas (IoT). Nuestro enfoque consiste en aprovechar estas tecnologías para optimizar la gestión operativa, facilitar la supervisión de espacios compartidos y promover un entorno residencial más conectado y eficiente. Aspiramos a convertirnos en un aliado tecnológico de las comunidades residenciales, contribuyendo a una gestión basada en la confianza, la innovación y la mejora continua.
 
-**Visión:**
-Convertirnos en la plataforma de referencia para la gestión de condominios, siendo el aliado digital de cada comunidad residencial que busca operar con orden y confianza.
+**Misión:** Desarrollar soluciones tecnológicas accesibles e innovadoras que integren digitalización y automatización para optimizar la gestión de comunidades residenciales, promoviendo la eficiencia, la transparencia y la comunicación.
+
+**Visión:** Ser una startup tecnológica referente en el Perú en la modernización de condominios y edificios residenciales, reconocida por impulsar comunidades más inteligentes, organizadas y conectadas.
 
 ### 1.1.2. Perfiles de integrantes del equipo
 
@@ -392,188 +384,179 @@ Convertirnos en la plataforma de referencia para la gestión de condominios, sie
 
 ## 1.2. Solution Profile
 
-El nombre elegido para nuestro producto es Edifika. Este nombre surge de la fusión de dos conceptos clave: "edificio", que representa el entorno físico y la comunidad residencial a la que va dirigida la solución, y el sufijo "ka", que le otorga una identidad al producto en sí. Edifika es una aplicación digital que centraliza y simplifica la gestión integral de condominios y edificios residenciales en un solo lugar. Permite registrar y hacer un seguimiento de deudas y pagos de manera transparente, coordinar la reserva de áreas comunes sin complicaciones y mantener a toda la comunidad informada mediante comunicados fáciles de acceder. Su diseño está pensado para ser intuitivo y accesible, eliminando los procesos manuales y la información dispersa que suelen generar conflictos y desorganización dentro de las comunidades. Edifika no es solo una herramienta operativa, sino un canal que fortalece la comunicación y facilita la toma de decisiones dentro de cada edificio, con el objetivo de construir comunidades más ordenadas, transparentes y eficientes.
+Edifika es una plataforma tecnológica orientada a centralizar y simplificar la gestión de condominios y edificios residenciales, ofreciendo a administradores y residentes un entorno digital accesible e intuitivo para organizar sus actividades cotidianas.La plataforma contempla funcionalidades para la gestión y seguimiento de pagos y deudas, la reserva de áreas comunes, la publicación de comunicados oficiales y la consulta de información administrativa. De esta manera, busca reducir la dependencia de procesos manuales y herramientas dispersas, facilitando la comunicación, la transparencia y la coordinación entre los miembros de la comunidad residencial.
+
+Como propuesta de innovación, Edifika incorpora tecnologías de Internet de las Cosas (IoT) para conectar determinados procesos digitales con operaciones físicas del edificio. Esta integración contempla el control inteligente de acceso a áreas comunes, la automatización de iluminación y la recopilación de información de dispositivos conectados para su monitoreo. Mediante una arquitectura que combina dispositivos IoT, Edge Computing y Cloud Computing, se busca facilitar la supervisión de espacios compartidos y mejorar la coordinación de las operaciones residenciales. La propuesta de valor de Edifika consiste en integrar la administración digital y la automatización inteligente dentro de un mismo ecosistema tecnológico, proporcionando herramientas que contribuyan a una gestión residencial más organizada, transparente y eficiente.
 
 ### 1.2.1. Antecedentes y problemática
 
- **What:** <br><br>
-El crecimiento sostenido del mercado inmobiliario en Lima ha generado una mayor demanda de servicios de gestión y mantenimiento de propiedades. Durante el tercer trimestre del 2024, se registró la venta de 5,716 unidades en Lima Metropolitana y Callao, lo que evidencia una necesidad creciente de administración eficiente en edificios multifamiliares (Sociedad Peruana de Bienes Raíces, 2024). Sin embargo, las empresas y juntas encargadas de esta gestión enfrentan desafíos significativos relacionados con la transparencia, la eficiencia operativa y la comunicación con los residentes (Verastegui Leon et al., 2025). <br><br>
-En este contexto, la digitalización emerge como una respuesta necesaria. Según la Sociedad Peruana de Bienes Raíces (2024), la gestión digital de edificios y condominios permite automatizar procesos como el registro de pagos y cobranzas, mejorar la comunicación entre administradores, propietarios e inquilinos, y garantizar mayor transparencia en la toma de decisiones. A pesar de ello, esta transformación digital aún representa una tendencia emergente en el Perú, lo que deja a gran parte de las comunidades residenciales sin herramientas adecuadas para una gestión ordenada y eficiente. <br><br>
+**What — ¿Qué ocurre?**
 
-**When:** <br><br>
+La administración de edificios multifamiliares enfrenta dificultades relacionadas con la gestión de sus instalaciones, el consumo energético y el control de las áreas compartidas. En Lima, Fabian Malvaceda (2021) identificó que un edificio residencial de Barranco registraba un consumo eléctrico mensual aproximado de 6 195 kWh en sus servicios generales, debido, entre otros factores, al funcionamiento prolongado de luminarias y equipos eléctricos sin mecanismos adecuados de control. De manera similar, Cueva-Villanueva et al. (2025), al evaluar tres edificios multifamiliares en Lima, encontraron diferencias entre los niveles de ahorro energético proyectados y los resultados reales, mostrando que la eficiencia de una edificación también depende de cómo se utilizan y mantienen sus instalaciones.
 
-El problema de la gestión ineficiente en condominios y edificios residenciales no es reciente, sin embargo se ha intensificado en los últimos años como consecuencia del crecimiento acelerado de edificaciones verticales en Latinoamérica. Aguilar (2026) señala que los conflictos en torno al pago de cuotas de mantenimiento, el uso de áreas comunes y la administración interna se presentan de forma recurrente y cotidiana dentro de las comunidades residenciales, agravándose en situaciones donde la normativa vigente data de décadas atrás y no responde a la necesidades actuales. En el caso de Perú, este escenario se hace más urgente considerando que solo en el tercer trimestre del 2024 se registró la venta de 5,716 unidades residenciales en Lima Metropolitana y Callao, lo que evidencia un crecimiento sostenido del mercado inmobiliario que amplía la demanda de soluciones de gestión eficientes (Verastegui Leon et al., 2025). <br><br>
+Estas dificultades no se limitan al consumo eléctrico, sino que también involucran la seguridad y la integración de tecnologías para gestionar los edificios. Affonso et al. (2024) identificaron que los problemas de interoperabilidad, los costos de implementación y la protección de datos representan barreras importantes para el desarrollo de edificios inteligentes. Asimismo, Trabelsi et al. (2023) señalan que los sistemas IoT requieren mecanismos de autorización adecuados para evitar accesos no permitidos a dispositivos y recursos conectados. En conjunto, estas investigaciones muestran problemas de eficiencia operativa, integración tecnológica y seguridad que deben considerarse en la gestión de edificios residenciales.
 
-**Where:** <br><br>
+**When — ¿Cuándo ocurre?**
 
-El problema de la gestión ineficiente en condominios y edificios residenciales se presenta principalmente en las zonas urbanas con mayor densidad de vivienda vertical. En el caso de Lima, distritos como Miraflores, Santiago de Surco y Jesús María concentran cerca del 70% de la búsqueda de viviendas nuevas, siendo las zonas clasificadas como Lima Moderna y Lima Top las de mayor demanda residencial (Verastegui Leon et al., 2025). Es precisamente en estas áreas donde la convivencia en espacios reducidos y la alta densidad poblacional intensifica los conflictos de gobernanza, administración y uso de bienes comunes. A nivel regional, Aguilar (2026) señala que esta problemática se vuelve a evidenciar en distintos países de Latinoamérica, manifestándose con mayor intensidad en las modalidades verticales, donde la convivencia de múltiples propietarios en un mismo espacio genera mayor volumen de requisitos que los sistemas de gestión tradicionales no logran atender de forma eficiente. <br><br>
+Las dificultades en la gestión de condominios se presentan durante sus actividades cotidianas, especialmente en los periodos de cobranza de cuotas de mantenimiento, la comunicación de avisos y la coordinación de reservas de áreas comunes. Nieto-Cárdenas et al. (2025), en una investigación realizada en Lima, identificaron que los procesos manuales y los canales de comunicación dispersos ocasionaban retrasos en las tareas administrativas, inconsistencias en los registros financieros y dificultades para realizar el seguimiento de pagos. Por su parte, Asto-Aguilar et al. (2021) analizaron los procesos de reservas e incidencias en el condominio Nuevavista, donde el registro manual de una reserva requería aproximadamente 12 minutos y 38 segundos, lo que refleja las demoras que pueden producirse durante la atención de solicitudes de los residentes.
 
-**Why:** <br><br>
+En el ámbito operativo, los problemas se presentan durante el funcionamiento diario de las instalaciones compartidas, particularmente cuando la iluminación permanece activa sin que exista tránsito de personas o cuando se requiere gestionar autorizaciones de acceso a espacios comunes. Fabian Malvaceda (2021) identificó en un edificio multifamiliar de Barranco que determinadas luminarias permanecían encendidas durante periodos de inactividad debido a la ausencia de mecanismos automáticos de control. Asimismo, Trabelsi et al. (2023) explican que los sistemas IoT requieren mecanismos de autorización capaces de adaptarse a diferentes condiciones de acceso y proteger los recursos conectados. Estas investigaciones permiten reconocer que tanto las actividades administrativas como la operación de las instalaciones presentan necesidades de control y seguimiento durante el funcionamiento habitual de los edificios.
 
-La problemática en la gestión de condominios y edificios residenciales responde a vacíos estructurales tanto normativos como operativos. Desde el ámbito legal, Aguilar (2026) señala que la Ley de Propiedad en Condominio no establece procedimientos claros para la supervisión estatal, ni asigna mecanismos de rendición de cuentas o auditoría sobre las juntas administradoras, lo que genera un vacío normativo que favorece la persistencia de conflictos recurrentes en los condominios verticales. Esta ausencia de regulación efectiva permite la proliferación de prácticas arbitrarias por parte de administradores o juntas directivas, dejando desprotegidos a los copropietarios frente a actos ilegítimos.
-Desde el ámbito operativo, el mismo autor indica que el 80% de los encuestados considera prioritaria la fiscalización estatal obligatoria y la capacitación obligatoria para administradores y juntas directivas, mientras que el 60% demanda procedimientos más ágiles para el registro y gestión de condominios (Aguilar, 2026). Esto refleja que los propios actores del sistema reconocen la falta de herramientas y mecanismos claros para gestionar sus comunidades de manera eficiente y transparente. <br><br>
-Con todo esto, la ausencia de canales formales de comunicación, la falta de transparencia en la administración financiera y la carencia de herramientas digitales accesibles forman un escenario donde los conflictos entre residentes y administradores se vuelven recurrentes y difíciles de resolver, evidenciando la necesidad urgente de soluciones tecnológicas que cubran estos vacíos. <br><br>
+**Where — ¿Dónde ocurre?**
 
-**Who:** <br><br>
+Estas dificultades se presentan en condominios y edificios multifamiliares donde los administradores deben coordinar los servicios residenciales y los residentes comparten instalaciones y espacios comunes. En Lima Metropolitana, Nieto-Cárdenas et al. (2025) estudiaron la gestión administrativa de condominios e identificaron problemas relacionados con los registros manuales, la comunicación y el seguimiento de pagos. Asimismo, Asto-Aguilar et al. (2021) analizaron el condominio Nuevavista, en Perú, donde los procedimientos tradicionales dificultaban la gestión de reservas e incidencias. Estos casos muestran cómo la problemática administrativa puede manifestarse en comunidades residenciales que dependen de herramientas y procesos poco integrados.
 
-Los principales afectados por la problemática de gestión ineficiente en condominios y edificios residenciales son dos grupos claramente diferenciados. Por un lado, los propietarios e inquilinos, quienes enfrentan una limitada transparencia en el manejo de los fondos, conflictos recurrentes por el uso de áreas comunes y dificultades para acceder a información clara sobre el estado financiero de su comunidad, lo que genera desconfianza y baja participación en las asambleas (Aguilar, 2026). Por otro lado, los administradores y juntas directivas, quienes deben gestionar comunidades cada vez más extensas y complejas sin contar con herramientas adecuadas, enfrentando dificultades en la aplicación de sanciones, mecanismos de resolución de conflictos poco efectivos y problemas recurrentes en la gestión financiera (Aguilar, 2026). <br><br>
-Este escenario se agrava en el contexto peruano, donde el crecimiento sostenido del mercado inmobiliario, especialmente en zonas como Lima Moderna y Lima Top, ha incrementado significativamente el número de comunidades residenciales que requieren una gestión ordenada y eficiente (Verastegui Leon et al., 2025). Ambos grupos comparten la necesidad de contar con soluciones digitales que centralicen la gestión, mejoren la comunicación y garanticen la transparencia dentro de sus comunidades. <br><br>
+En cuanto a la gestión operativa, las dificultades se encuentran principalmente en las instalaciones compartidas, como pasillos, escaleras, estacionamientos y otras áreas comunes que requieren iluminación y supervisión. Fabian Malvaceda (2021) identificó problemas de consumo eléctrico y ausencia de controles automáticos en estos espacios dentro de un edificio multifamiliar de Barranco, Lima. Por su parte, Cueva-Villanueva et al. (2025) estudiaron tres edificios multifamiliares en Santiago de Surco, encontrando diferencias entre la eficiencia energética proyectada y el desempeño real de sus instalaciones. Estos antecedentes permiten situar ambas problemáticas en el contexto residencial limeño, aunque los casos analizados no representan necesariamente a todos los condominios del país.
 
-**How:** <br><br>
+**Why — ¿Por qué ocurre?**
 
-La gestión ineficiente en condominios y edificios residenciales ocurre principalmente porque las comunidades dependen de herramientas informales y no especializadas para una correcta administración. El caso más extendido es el uso de grupos de WhatsApp como canal principal de gestión, donde se comparten comprobantes de pago, vouchers, boletas y comunicados oficiales mezclados con conversaciones cotidianas (ProTool, 2026). Si bien esta parece una opción práctica en un inicio, genera consecuencias graves: los comprobantes se pierden entre conversaciones, no existe un orden claro de documentos, los archivos quedan almacenados en teléfonos personales y la comunidad pierde su historial administrativo completo, especialmente cuando cambian los integrantes del comité o el administrador (ProTool, 2026). <br><br>
-A esto se suma que los chats de vecinos, al carecer de moderación y reglas claras, se convierten en fuente de conflictos entre residentes, mensajes irrelevantes y malentendidos que dificultan la comunicación efectiva dentro de la comunidad (Condominos, 2024). La ausencia de trazabilidad administrativa impide que la comunidad pueda reconstruir con claridad su historial financiero, identificar qué pagos se realizaron, qué documentos los respaldan y quién autorizó cada gasto (ProTool, 2026). En conjunto, esta dependencia de herramientas no diseñadas para la gestión residencial perpetúa la desorganización, la falta de transparencia y los conflictos recurrentes que afectan la convivencia dentro de los edificios. <br><br>
+Las dificultades administrativas en los condominios se deben principalmente al uso de procedimientos manuales y herramientas que no comparten información entre sí. Nieto-Cárdenas et al. (2025) identificaron que la dependencia de hojas de cálculo, documentos físicos y aplicaciones de mensajería dificulta el seguimiento de pagos, la organización de comunicados y la coordinación de actividades comunes. De manera similar, Asto-Aguilar et al. (2021) encontraron que los procesos tradicionales de reservas e incidencias requerían la intervención de varias personas, generando demoras en la atención de solicitudes. Esta dependencia de registros dispersos limita la disponibilidad de información actualizada y aumenta el esfuerzo necesario para administrar las actividades del edificio. En el ámbito operativo, estas dificultades se relacionan con la ausencia de mecanismos automáticos de control y las barreras para incorporar tecnologías inteligentes. Fabian Malvaceda (2021) identificó que el funcionamiento innecesario de luminarias en áreas comunes se debía, entre otros factores, a la falta de sensores de movimiento y dispositivos de programación. Por su parte, Affonso et al. (2024) señalan que los elevados costos iniciales, la incompatibilidad entre dispositivos, la complejidad tecnológica y las preocupaciones sobre seguridad dificultan la adopción de sistemas inteligentes. A ello se suman los desafíos de autorización y protección de recursos conectados descritos por Trabelsi et al. (2023), lo que muestra que la automatización de edificios requiere considerar tanto su funcionamiento como la seguridad de los dispositivos IoT.
 
-**How much:** <br><br>
+**Who — ¿A quién afecta?**
 
-El impacto de una gestión ineficiente en condominios y edificios residenciales se refleja tanto en pérdidas económicas concretas como en consecuencias legales y financieras para los residentes. Según Birimisa, gerente de Operaciones de Cushman & Wakefield Perú, la falta de control y planificación en la gestión de edificios puede generar sobrecostos de hasta el 30% del presupuesto anual de operación, considerando que los servicios de seguridad, limpieza y administración representan más del 50% de los costos operativos (El Comercio, 2026). Asimismo, los altos niveles de morosidad y desbalances presupuestales afectan directamente el flujo de caja y la operación del edificio, generando riesgos acumulados que se vuelven difíciles de revertir sin intervención especializada. <br><br>
-A nivel de los residentes, la morosidad en el pago de gastos comunes es una problemática recurrente que no solo afecta la salud financiera de la comunidad, sino que puede derivar en consecuencias legales para los deudores, incluyendo el registro en Infocorp y el deterioro de su historial crediticio (Gestión, 2023). La junta directiva, respaldada por el Decreto Legislativo N° 1568, tiene incluso la facultad de iniciar procesos judiciales que pueden llegar hasta el embargo de bienes, lo que evidencia la gravedad que puede alcanzar la falta de una gestión ordenada y transparente (Gestión, 2023). Estos datos confirman que la ausencia de herramientas digitales adecuadas no es solo un problema de organización, sino que tiene un impacto económico y legal directo sobre todos los actores involucrados en la comunidad residencial. <br><br>
+Los principales afectados son los administradores, propietarios e inquilinos de condominios y edificios multifamiliares. Los administradores deben encargarse de la cobranza de cuotas, la organización de reservas, la difusión de comunicados y la atención de solicitudes, tareas que demandan mayor tiempo cuando dependen de procedimientos manuales. Nieto-Cárdenas et al. (2025) identificaron que estas dificultades incrementan la carga administrativa y afectan la satisfacción de los propietarios. Asimismo, Asto-Aguilar et al. (2021) encontraron que los procesos tradicionales de reservas e incidencias requerían la participación de varias personas, dificultando la atención oportuna de los residentes.
+
+Los propietarios e inquilinos también se ven afectados por las condiciones de funcionamiento de las instalaciones compartidas, ya que participan en su uso y, según las obligaciones que les correspondan, asumen parte de los gastos de mantenimiento. Fabian Malvaceda (2021) documentó cómo el consumo eléctrico elevado en las áreas comunes de un edificio de Barranco repercutía en los pagos de sus propietarios. Por otro lado, Affonso et al. (2024) señalan que la adopción de tecnologías inteligentes involucra a gestores y usuarios de edificios, quienes deben afrontar desafíos relacionados con los costos, la seguridad y el manejo de estos sistemas. Por ello, las dificultades de gestión residencial afectan tanto a quienes administran los espacios como a las personas que los utilizan diariamente.
+
+**How — ¿Cómo ocurre?**
+
+La problemática se manifiesta en la forma en que se ejecutan las actividades administrativas de los condominios, donde la información suele distribuirse entre documentos físicos, hojas de cálculo y aplicaciones de mensajería. Esto obliga a los administradores a revisar distintas fuentes para verificar pagos, comunicar decisiones o atender solicitudes de los residentes. Nieto-Cárdenas et al. (2025) documentaron que esta fragmentación genera inconsistencias en los registros financieros y dificultades para dar seguimiento a las actividades. Asto-Aguilar et al. (2021) también observaron que la gestión manual de reservas e incidencias requería la participación de varias personas, prolongando los tiempos de atención y dificultando la coordinación de los espacios compartidos.
+
+Una situación similar se presenta en el funcionamiento de las instalaciones comunes, donde los sistemas eléctricos pueden operar sin considerar la presencia de personas o las necesidades reales de uso. Fabian Malvaceda (2021) identificó luminarias que permanecían encendidas durante periodos sin tránsito peatonal o vehicular, debido a la ausencia de controles automáticos. La incorporación de dispositivos conectados también introduce desafíos, pues estos necesitan intercambiar información y ejecutar acciones de manera segura. Trabelsi et al. (2023) explican que los sistemas IoT deben gestionar permisos y autorizaciones para proteger sus recursos, mientras que Affonso et al. (2024) identifican problemas de interoperabilidad entre equipos y plataformas. Estas condiciones dificultan coordinar las actividades administrativas con el funcionamiento y la supervisión de las instalaciones del edificio.
+
+**How much — ¿Cuánto impacta?**
+
+Las dificultades administrativas pueden afectar la recaudación de cuotas de mantenimiento, incrementar el trabajo de los administradores y generar demoras en la atención de los residentes. Nieto-Cárdenas et al. (2025), en un estudio realizado en un condominio de 416 viviendas ubicado en el Rímac, Lima, identificaron que aproximadamente entre el 25 % y el 30 % de los residentes no cumplía oportunamente con sus pagos de mantenimiento, situación que comprometía la disponibilidad de recursos para cubrir los gastos comunes. La investigación también reportó que, tras incorporar una plataforma digital, las cuotas impagas disminuyeron de aproximadamente un 30 % a un 10 %, mientras que la carga administrativa declarada por los responsables se redujo en un 25 %. En cuanto a las reservas, Asto-Aguilar et al. (2021) encontraron que, en el condominio Nuevavista, el registro de una solicitud tomaba inicialmente 12 minutos y 38 segundos, tiempo que disminuyó a 3 minutos y 40 segundos después de automatizar el proceso. Aunque estos resultados corresponden a experiencias específicas, permiten dimensionar el tiempo y los recursos que puede demandar una administración poco digitalizada.
+
+El impacto económico también se refleja en el funcionamiento de las instalaciones compartidas. Fabian Malvaceda (2021) documentó que el edificio multifamiliar El Sol, ubicado en Barranco, registraba un consumo mensual de aproximadamente 6 195 kWh en sus áreas comunes, equivalente a pagos de entre S/ 4 310 y S/ 5 200 por electricidad. Parte del problema estaba relacionada con luminarias y equipos eléctricos que funcionaban sin controles adecuados, incluso cuando no era necesario mantenerlos encendidos. A su vez, Cueva-Villanueva et al. (2025) encontraron que uno de los edificios multifamiliares evaluados en Lima alcanzó un ahorro energético real del 10,64 %, pese a que sus estimaciones iniciales eran mayores. Esto demuestra que la eficiencia proyectada no siempre coincide con el desempeño durante la operación. Si bien los estudios muestran el costo de mantener procesos manuales y sistemas con control limitado, los beneficios económicos de integrar gestión administrativa e IoT dependerán de las características de cada edificio, sus patrones de uso y los costos de implementación y mantenimiento.
 
 ### 1.2.2. Lean UX Process
 #### 1.2.2.1. Lean UX Problem Statements
 
-En la actualidad, la gestión de condominios y edificios residenciales se realiza, en muchos casos, mediante procesos manuales o herramientas no integradas, como grupos de mensajería, hojas de cálculo o comunicaciones informales. Esta situación genera desorganización, falta de control sobre pagos y deudas, conflictos en la reserva de áreas comunes y una comunicación poco clara entre los miembros de la comunidad, lo que se traduce en ineficiencias operativas, errores en la gestión de la información y dificultades en la coordinación entre los distintos actores involucrados (Deloitte, 2022).
+Actualmente, la gestión de condominios y edificios multifamiliares se centra en actividades como el seguimiento de pagos, la reserva de áreas comunes y la comunicación entre administradores y residentes. Sin embargo, estas tareas suelen apoyarse en procedimientos manuales y herramientas poco integradas, lo que puede generar retrasos y dificultades para organizar la información (Asto-Aguilar et al., 2021; Nieto-Cárdenas et al., 2025). A ello se suman las limitaciones en el control de las instalaciones compartidas, como el funcionamiento innecesario de luminarias y la necesidad de gestionar de manera segura los accesos y dispositivos conectados (Fabian Malvaceda, 2021; Trabelsi et al., 2023).
 
-Este problema afecta principalmente a administradores y propietarios e inquilinos, quienes enfrentan dificultades para mantener una gestión eficiente, transparente y ordenada dentro de sus comunidades, lo que impacta negativamente en la convivencia y en la toma de decisiones colectivas.
+Aunque existen herramientas digitales para administrar condominios y tecnologías IoT para automatizar instalaciones, estas capacidades no siempre se gestionan de manera conjunta. Esto plantea una oportunidad para conectar los procesos administrativos con el control de las áreas comunes, facilitando el seguimiento de las actividades y reduciendo la dependencia de procedimientos separados.
 
-Hemos identificado que esta problemática limita la capacidad de los condominios para operar de manera organizada y confiable. Esta situación se vuelve aún más crítica en contextos como el peruano, donde el crecimiento de viviendas en edificios multifamiliares ha ido en aumento en zonas urbanas, especialmente en Lima Metropolitana, incrementando la necesidad de mecanismos de gestión más eficientes (Instituto Nacional de Estadística e Informática [INEI], 2023).
+Para atender esta necesidad, Condomia propone Edifika, una plataforma que centralizará la gestión de pagos y deudas, reservas de áreas comunes y comunicados. Además, incorporará tecnologías IoT para gestionar accesos autorizados, automatizar la iluminación y supervisar eventos de los dispositivos conectados, buscando que administradores y residentes puedan realizar sus actividades desde un entorno integrado.
 
-A partir de ello surge la siguiente pregunta:  
-**¿Cómo podríamos brindar a las comunidades residenciales una solución digital centralizada, accesible y confiable que mejore la gestión administrativa, reduzca conflictos y fortalezca la comunicación interna?**
+La propuesta se dirigirá inicialmente a administradores, propietarios e inquilinos de condominios y edificios multifamiliares de Lima Metropolitana que actualmente utilizan procedimientos manuales o herramientas dispersas para gestionar sus actividades y servicios compartidos.
 
-Para abordar esta problemática, se ha definido el contexto del problema y los elementos clave del modelo de negocio, los cuales se detallan a continuación:
-- **Domain:** Gestión de condominios y soluciones digitales para comunidades residenciales.  
-- **Customer Segments:** Administradores de edificios y condominios, propietarios e inquilinos de edificios residenciales.  
-- **Pain Points:** Falta de centralización de información, poca transparencia en pagos y deudas, conflictos por reservas de áreas comunes, comunicación desorganizada.  
-- **Gap:** Ausencia de plataformas digitales integrales, accesibles e intuitivas enfocadas en la gestión completa de comunidades residenciales.  
-- **Vision/Strategy:** Desarrollar una aplicación digital que centralice la gestión del condominio, mejore la comunicación interna y facilite procesos administrativos mediante una experiencia simple, transparente y eficiente.  
-- **Initial Segment:** Edificios residenciales urbanos con gestión tradicional que buscan digitalizar sus procesos administrativos.
+Sabremos que la propuesta está cumpliendo sus objetivos cuando los administradores reduzcan el tiempo dedicado al seguimiento de pagos y reservas, los residentes puedan consultar información y gestionar solicitudes con mayor facilidad, los accesos autorizados queden registrados y disminuya el tiempo de funcionamiento innecesario de las luminarias en áreas comunes. Estos resultados se evaluarán mediante indicadores de tiempo, uso del sistema y registros operativos de los dispositivos IoT.
 
 #### 1.2.2.2. Lean UX Assumptions
 
-1. **Creemos que** nuestros usuarios tienen la necesidad de optimizar la gestión del condominio mediante herramientas digitales que centralicen pagos, reservas y comunicación.  
+A partir del problema identificado, se plantean los siguientes supuestos sobre la viabilidad de Edifika, las necesidades de sus usuarios y las funcionalidades que podrían aportar valor a la gestión de condominios. Estas afirmaciones representan creencias iniciales del equipo y deberán contrastarse durante las actividades de investigación y validación del producto.
 
-2. **Estas necesidades se pueden satisfacer con** una aplicación digital que integre en un solo entorno la gestión administrativa, la comunicación interna y la organización de actividades del condominio.  
+##### Business Assumptions
 
-3. **Nuestros clientes iniciales serán** administradores de edificios y condominios, y comunidades residenciales urbanas que buscan digitalizar sus procesos.  
+- **BA01:** Creemos que los condominios de Lima Metropolitana representan un mercado potencial para una plataforma que combine gestión administrativa y automatización de áreas comunes mediante IoT.
+- **BA02:** Creemos que los administradores estarán dispuestos a contratar Edifika mediante una suscripción mensual si perciben mejoras en la organización de sus actividades y el control de las instalaciones.
+- **BA03:** Creemos que integrar funcionalidades administrativas e IoT en una misma plataforma permitirá diferenciar a Edifika de las alternativas utilizadas actualmente por las comunidades residenciales.
+- **BA04:** Creemos que el costo de instalación y mantenimiento de los dispositivos IoT influirá en la decisión de contratación, por lo que será importante ofrecer una implementación acorde con las características de cada edificio.
 
-4. **El valor más importante que un cliente quiere de nuestros servicios es** la transparencia, el control de la información y la eficiencia en la gestión del condominio.  
+##### Business Outcome Assumptions
 
-5. **El cliente también va a obtener beneficios adicionales como** la reducción de conflictos, mejor comunicación entre residentes, ahorro de tiempo en tareas administrativas y mayor organización en la comunidad.  
+- **BO01:** Creemos que una experiencia de uso sencilla y beneficios percibidos por los administradores favorecerán la contratación y permanencia de los condominios en la plataforma.
+- **BO02:** Creemos que la incorporación progresiva de funcionalidades IoT aumentará el valor percibido del servicio y permitirá ofrecer alternativas de suscripción según las necesidades de cada comunidad.
+- **BO03:** Creemos que una mayor frecuencia de uso de los módulos administrativos y de supervisión contribuirá a la continuidad del servicio y a la retención de clientes.
 
-6. **Vamos a obtener la mayoría de los clientes mediante** recomendaciones, marketing digital y alianzas con administradores de condominios.  
+##### User Assumptions
 
-7. **Vamos a obtener ingresos mediante** suscripciones mensuales por el uso de la plataforma por parte de cada condominio o administración.  
+- **UA01:** Creemos que los administradores necesitan consultar información actualizada sobre pagos, deudas, reservas y comunicados sin depender de varios registros o canales.
+- **UA02:** Creemos que los propietarios e inquilinos prefieren realizar sus consultas y reservas desde una plataforma accesible, en lugar de coordinar cada solicitud directamente con la administración.
+- **UA03:** Creemos que los administradores valorarán la posibilidad de consultar registros de acceso y conocer el estado de los dispositivos instalados en las áreas comunes.
+- **UA04:** Creemos que tanto administradores como residentes podrían mostrar resistencia a utilizar nuevas herramientas si estas resultan complicadas o requieren demasiados pasos para realizar tareas habituales.
 
-8. **Nuestra competencia en el mercado serán** herramientas tradicionales como Excel, grupos de mensajería como WhatsApp y algunas plataformas digitales no integradas o poco intuitivas.  
+##### User Outcome and Benefit Assumptions
 
-9. **Vamos a tener ventaja frente a nuestra competencia debido a** la centralización de funcionalidades en una sola plataforma, su facilidad de uso y su enfoque específico en comunidades residenciales.  
+- **UOB01:** Creemos que los administradores buscan reducir el tiempo dedicado al seguimiento de pagos y a la elaboración de reportes, manteniendo un mayor control de la información financiera.
+- **UOB02:** Creemos que los residentes desean reservar áreas comunes sin duplicidades y conocer oportunamente la confirmación de sus solicitudes.
+- **UOB03:** Creemos que una comunicación organizada permitirá que propietarios e inquilinos reciban avisos importantes y consulten información sin depender de mensajes dispersos.
+- **UOB04:** Creemos que contar con registros de accesos autorizados facilitará la supervisión de las áreas compartidas y brindará mayor confianza a los usuarios.
+- **UOB05:** Creemos que automatizar la iluminación según la presencia de personas permitirá disminuir el funcionamiento innecesario de luminarias y contribuirá a un uso más eficiente de la energía.
 
-10. **El mayor riesgo del servicio es** la resistencia al cambio hacia herramientas digitales por parte de administradores o residentes, así como una baja adopción inicial.  
+##### Feature Assumptions
 
-11. **Lo resolveremos realizando** un diseño intuitivo, procesos de onboarding simples y mostrando beneficios claros desde el primer uso de la plataforma.  
-
-12. **Otro riesgo que debemos considerar y que, si resulta falso, haría fracasar el proyecto es** que los usuarios realmente perciban valor en digitalizar la gestión del condominio y estén dispuestos a cambiar sus métodos actuales.  
-
-### User Assumptions
-
-**¿Quién es el usuario?**  
-Nuestro usuario principal son administradores de edificios y condominios y los residentes que buscan mejorar la organización y convivencia dentro de su comunidad.
-
-**¿Dónde encaja nuestro producto en su vida?**  
-Encaja en la gestión diaria del condominio, facilitando tareas administrativas, comunicación y organización de espacios comunes.
-
-**¿Qué problemas resuelve nuestro producto?**  
-Resuelve la desorganización en la gestión, la falta de control en pagos y deudas, los conflictos en reservas de áreas comunes y la comunicación dispersa.
-
-**¿Cuándo y cómo se usa nuestro producto?**  
-Se utiliza de manera frecuente cuando los usuarios necesitan revisar pagos, reservar áreas comunes, recibir comunicados o gestionar información del condominio, principalmente a través de dispositivos móviles.
-
-**¿Qué características son importantes?**
-- Gestión de pagos y deudas  
-- Reserva de áreas comunes  
-- Comunicación centralizada  
-- Notificaciones automáticas  
-- Interfaz simple e intuitiva  
-
-**¿Cómo debería lucir y comportarse el producto?**  
-El producto debe lucir moderno, accesible y amigable, con un diseño centrado en el usuario. Debe comportarse de forma intuitiva, rápida y confiable, priorizando la facilidad de uso y la claridad de la información.
-
-
-### Feature Assumptions
-
-- **Creemos que** los usuarios necesitan visualizar de forma clara y en tiempo real sus pagos y deudas.  
-- **Creemos que** un sistema digital de reservas reducirá conflictos por el uso de áreas comunes.  
-- **Creemos que** una comunicación centralizada mejorará la organización dentro del condominio.  
-- **Creemos que** las notificaciones automáticas aumentarán el compromiso de los usuarios con la plataforma.  
-- **Creemos que** una interfaz intuitiva facilitará la adopción del sistema sin necesidad de capacitación.  
+- **FA01 — Gestión de pagos y deudas:** Creemos que un módulo que permita registrar pagos, consultar deudas y revisar estados de cuenta facilitará el seguimiento de las obligaciones de cada unidad residencial.
+- **FA02 — Reservas de áreas comunes:** Creemos que un sistema de reservas con disponibilidad y confirmaciones permitirá organizar el uso de los espacios compartidos y evitar solicitudes superpuestas.
+- **FA03 — Comunicados y notificaciones:** Creemos que disponer de comunicados oficiales y notificaciones dentro de una misma plataforma mejorará el acceso de los residentes a la información del condominio.
+- **FA04 — Control de accesos IoT:** Creemos que la gestión de autorizaciones mediante dispositivos IoT permitirá controlar el ingreso a determinadas áreas comunes y conservar un registro de los eventos de acceso.
+- **FA05 — Iluminación inteligente:** Creemos que utilizar sensores de presencia para controlar automáticamente las luminarias de áreas comunes reducirá los periodos de iluminación innecesaria.
+- **FA06 — Monitoreo de dispositivos IoT:** Creemos que un módulo de supervisión que muestre el estado de los dispositivos y sus eventos permitirá a los administradores identificar situaciones que requieran atención sin realizar verificaciones presenciales constantes.
 
 #### 1.2.2.3. Lean UX Hypothesis Statements
 
-#### Hypothesis Statement 01
-Creemos que los administradores y residentes utilizarán Edifika como su principal herramienta para gestionar pagos, reservas y comunicación dentro del condominio.  
+A partir de las Feature Assumptions identificadas, se plantean seis hipótesis orientadas a comprobar si las funcionalidades propuestas para Edifika generan beneficios para los administradores y residentes, y contribuyen a los resultados de negocio esperados por Condomia.
 
-**Sabremos que hemos tenido éxito** cuando al menos un 70% de los usuarios registrados utilicen la plataforma semanalmente durante el primer mes.
+**HS01 — Gestión de pagos y deudas (FA01)**
 
+Creemos que lograremos incrementar el uso recurrente de Edifika y favorecer la permanencia de los condominios en la plataforma, si los administradores consiguen reducir el tiempo dedicado al seguimiento de pagos y los propietarios pueden consultar sus obligaciones con mayor facilidad, mediante un módulo centralizado de pagos, deudas y estados de cuenta.
 
-#### Hypothesis Statement 02
-Creemos que la centralización de la información reducirá los conflictos relacionados con pagos y reservas dentro de la comunidad.  
+**HS02 — Reservas de áreas comunes (FA02)**
 
-**Sabremos que hemos tenido éxito** cuando se reduzcan en al menos un 40% los reclamos o incidencias relacionadas con la gestión administrativa en un periodo de tres meses.
+Creemos que lograremos incrementar el uso de Edifika en las actividades cotidianas de los condominios, si los propietarios e inquilinos consiguen reservar espacios compartidos sin duplicidades y recibir confirmaciones oportunas, mediante un sistema que permita consultar la disponibilidad y gestionar reservas de áreas comunes.
 
+**HS03 — Comunicados y notificaciones (FA03)**
 
-#### Hypothesis Statement 03
-Creemos que una interfaz intuitiva y accesible permitirá que los usuarios adopten la plataforma sin dificultad.  
+Creemos que lograremos fomentar el uso frecuente de Edifika y mejorar el valor percibido del servicio, si los administradores pueden difundir información de manera organizada y los residentes reciben oportunamente los avisos de su comunidad, mediante un módulo centralizado de comunicados y notificaciones.
 
-**Sabremos que hemos tenido éxito** cuando al menos un 80% de los nuevos usuarios completen su registro y primeras acciones sin asistencia.
+**HS04 — Control de accesos IoT (FA04)**
 
+Creemos que lograremos aumentar el valor percibido de Edifika y favorecer la contratación de sus funcionalidades IoT, si los administradores consiguen supervisar los accesos autorizados y los residentes pueden utilizar las áreas comunes con mayor confianza, mediante dispositivos IoT vinculados a un sistema de autorizaciones y registro de eventos de acceso.
 
-#### Hypothesis Statement 04
-Creemos que una comunicación estructurada dentro de la plataforma aumentará la participación de los residentes en actividades y decisiones del condominio.  
+**HS05 — Iluminación inteligente (FA05)**
 
-**Sabremos que hemos tenido éxito** cuando al menos un 60% de los usuarios interactúen con comunicados o notificaciones dentro de la aplicación.
+Creemos que lograremos aumentar el interés de los condominios por incorporar las funcionalidades IoT de Edifika, si los administradores consiguen reducir el tiempo de funcionamiento innecesario de las luminarias en áreas comunes, mediante sensores de presencia y mecanismos de encendido y apagado automático.
+
+**HS06 — Monitoreo de dispositivos IoT (FA06)**
+
+Creemos que lograremos fortalecer el uso recurrente de las funcionalidades IoT de Edifika y favorecer la continuidad del servicio, si los administradores consiguen consultar el estado de los dispositivos conectados e identificar eventos que requieran atención, mediante un módulo centralizado de supervisión y monitoreo IoT.
+
+La validación de estas hipótesis permitirá identificar qué funcionalidades aportan valor a los administradores y residentes, así como su contribución a los resultados de negocio esperados. Para ello, se evaluarán indicadores relacionados con el tiempo dedicado a las tareas administrativas, el uso de la plataforma, la gestión de accesos autorizados y el funcionamiento de la iluminación en áreas comunes. Los resultados obtenidos permitirán determinar qué supuestos se respaldan con evidencia y cuáles requieren ajustes.
 
 #### 1.2.2.4. Lean UX Canvas
 
-![Lean Ux Canvas](assets/img/lean_ux_canvas.png)
+![Lean Ux Canvas](assets/img/lean_ux_canvas1.png)
 
- *Figura. Lean Ux Canvas. Elaborado por el equipo utilizando Miro (Miro, s.f.).*
+ *Figura. Lean Ux Canvas. Elaborado por el equipo utilizando Figma (Figma, s.f.).*
 
 ## 1.3. Segmentos objetivo
 
-**Administradores de edificios y condominios:**
+### Administradores de edificios y condominios
 
-Una gran parte de las administraciones aún utiliza herramientas informales como Excel, WhatsApp o registros manuales, lo que genera desorden en la gestión y dificulta la toma de decisiones.
+Este segmento comprende a las personas responsables de coordinar la administración, las finanzas y el funcionamiento de los edificios residenciales. En condominios estudiados en Lima se han identificado dificultades relacionadas con el uso de registros manuales, la cobranza de cuotas y la comunicación con los residentes (Nieto-Cárdenas et al., 2025). Para este grupo, Edifika plantea integrar las actividades administrativas con la supervisión de las instalaciones comunes.
 
-- Edad estimada: 25 a 60 años
-- Ubicación: Zonas urbanas con alta concentración de edificios residenciales como Lima Metropolitana, Arequipa o Callao
-- Características demográficas y de comportamiento:
-   - Son responsables de la gestión operativa, administrativa y financiera del condominio.
-   - Utilizan herramientas básicas y poco integradas para el control de pagos y comunicación.
-   - Enfrentan problemas frecuentes de morosidad y desorganización.
-   - Buscan optimizar procesos y reducir conflictos entre residentes.
-- Necesidades principales:
-   - Gestionar de manera clara y automatizada las deudas y pagos.
-   - Enviar comunicados organizados y verificables.
-   - Contar con reportes que faciliten la toma de decisiones.
-   - Reducir la carga operativa manual y mejorar la eficiencia.
+- **Edad:** Personas adultas responsables de la administración del condominio, sin un rango etario excluyente.
+- **Ubicación inicial:** Lima Metropolitana y Callao.
+- **Características demográficas y de comportamiento:**
+  - Administran pagos, deudas, reservas, comunicados y reportes.
+  - Coordinan el mantenimiento y funcionamiento de las áreas comunes.
+  - Pueden utilizar hojas de cálculo, mensajería y registros físicos para sus actividades.
+  - Necesitan consultar información financiera y operativa para tomar decisiones.
+- **Necesidades principales:**
+  - Centralizar la información de pagos, deudas y estados de cuenta.
+  - Organizar reservas y comunicados desde una misma plataforma.
+  - Consultar reportes administrativos y financieros.
+  - Supervisar los accesos autorizados y sus registros mediante dispositivos IoT.
+  - Monitorear el estado de los dispositivos conectados y el funcionamiento de la iluminación en áreas comunes.
 
-**Propietarios e inquilinos de condominios:**
+### Propietarios e inquilinos de condominios
 
-El crecimiento de la vivienda vertical en ciudades ha incrementado la cantidad de personas que viven en condominios, generando la necesidad de herramientas digitales que faciliten la convivencia, el acceso a información y la participación en la gestión del edificio.
+Este segmento comprende a las personas que poseen o habitan unidades residenciales y utilizan los servicios compartidos del edificio. Sus necesidades se relacionan con la consulta de información, la coordinación de reservas y el acceso a las áreas comunes. Asto-Aguilar et al. (2021) documentaron dificultades en los procesos manuales de reservas en un condominio peruano, mientras que Nieto-Cárdenas et al. (2025) identificaron problemas vinculados con la comunicación y la información sobre pagos.
 
-- Edad estimada: 18 a 55 años
-- Ubicación: Zonas urbanas residenciales en ciudades como Lima y Callao
-- Características demográficas y de comportamiento:
-   - Incluye tanto propietarios como inquilinos que residen en el condominio.
-   - Utilizan smartphones y aplicaciones móviles de manera frecuente.
-   - Buscan soluciones rápidas, claras y accesibles.
-   - Valoran la transparencia en la gestión y la buena comunicación.
-- Necesidades principales:
-   - Consultar sus deudas y estado de pagos en cualquier momento.
-   - Recibir notificaciones y comunicados importantes.
-   - Reservar áreas comunes de forma sencilla.
-   - Mantenerse informados y participar en la vida del condominio.
+- **Edad:** Personas adultas propietarias o residentes, sin un rango etario excluyente.
+- **Ubicación inicial:** Lima Metropolitana y Callao.
+- **Características demográficas y de comportamiento:**
+  - Incluye propietarios residentes, propietarios no residentes e inquilinos.
+  - Consultan información sobre pagos, normas y actividades del condominio.
+  - Utilizan espacios compartidos sujetos a horarios, reservas y autorizaciones.
+  - Pueden acceder a los servicios digitales desde dispositivos móviles o computadoras.
+- **Necesidades principales:**
+  - Consultar sus pagos, deudas y estados de cuenta según los permisos asignados.
+  - Recibir comunicados y notificaciones oportunamente.
+  - Reservar áreas comunes y verificar su disponibilidad.
+  - Utilizar accesos autorizados a espacios compartidos mediante mecanismos seguros.
+  - Contar con instalaciones comunes cuyo funcionamiento responda a las necesidades de uso.
 
 # Capítulo II: Requirements Elicitation & Analysis
 
@@ -581,328 +564,211 @@ El crecimiento de la vivienda vertical en ciudades ha incrementado la cantidad d
 ### 2.1.1. Análisis competitivo
 
 
- <table border="2" style="text-align: center; border-collapse: collapse; width: 100%;">
-  <tbody>
-    <tr>
-      <td colspan="6" style="padding: 8px; font-weight: bold;">Competitive Analysis Landscape</td>
-    </tr>
-    <tr>
-      <td colspan="2" style="padding: 8px; font-weight: bold;">¿Por qué llevar a cabo este análisis?</td>
-      <td colspan="4" style="padding: 8px;">
-        Este análisis permite comprender cómo distintas plataformas gestionan la administración de condominios, qué funcionalidades ofrecen y qué valor brindan a los usuarios. De esta manera, se identifican oportunidades de mejora, diferenciación y posicionamiento para Edifika dentro del mercado, especialmente frente a soluciones tradicionales y plataformas digitales existentes.
-      </td>
-    </tr>
-    <tr>
-      <td colspan="2" style="padding: 8px;"></td>
-      <td style="padding: 8px; font-weight: bold;">Edifika</td>
-      <td style="padding: 8px; font-weight: bold;">Condo Control</td>
-      <td style="padding: 8px; font-weight: bold;">Buildium</td>
-      <td style="padding: 8px; font-weight: bold;">AppFolio</td>
-    </tr>
-    <tr>
-      <td rowspan="2" style="padding: 8px; font-weight: bold; vertical-align: middle;">Perfil</td>
-      <td style="padding: 8px; font-weight: bold;">Overview</td>
-      <td style="padding: 8px; vertical-align: top;">Aplicación enfocada en la gestión de condominios en el contexto peruano, que centraliza pagos, reservas y comunicación en una sola plataforma accesible e intuitiva.</td>
-      <td style="padding: 8px; vertical-align: top;">Software de gestión de condominios que permite la comunicación entre residentes, gestión de documentos y administración de reservas.</td>
-      <td style="padding: 8px; vertical-align: top;">Plataforma de gestión inmobiliaria en la nube orientada a administradores profesionales, con herramientas financieras, operativas y de comunicación.</td>
-      <td style="padding: 8px; vertical-align: top;">Software integral de gestión de propiedades que permite administrar pagos, mantenimiento y comunicación desde una sola plataforma.</td>
-    </tr>
-    <tr>
-      <td style="padding: 8px; font-weight: bold;">Ventaja competitiva ¿Qué valor ofrece?</td>
-      <td style="padding: 8px; vertical-align: top;">Centraliza funciones clave en una interfaz simple, enfocada en la adopción real de usuarios que actualmente usan WhatsApp y Excel.</td>
-      <td style="padding: 8px; vertical-align: top;">Ofrece una plataforma estructurada para la comunicación y organización dentro del condominio.</td>
-      <td style="padding: 8px; vertical-align: top;">Proporciona herramientas avanzadas de gestión financiera y automatización para empresas administradoras.</td>
-      <td style="padding: 8px; vertical-align: top;">Integra múltiples funcionalidades con automatización y escalabilidad para grandes volúmenes de propiedades.</td>
-    </tr>
-    <tr>
-      <td rowspan="2" style="padding: 8px; font-weight: bold; vertical-align: middle;">Perfil de Marketing</td>
-      <td style="padding: 8px; font-weight: bold;">Mercado objetivo</td>
-      <td style="padding: 8px; vertical-align: top;">Condominios urbanos en Perú, administradores y residentes que buscan digitalizar su gestión.</td>
-      <td style="padding: 8px; vertical-align: top;">Condominios y asociaciones de propietarios, principalmente en mercados internacionales.</td>
-      <td style="padding: 8px; vertical-align: top;">Empresas administradoras de propiedades y profesionales inmobiliarios.</td>
-      <td style="padding: 8px; vertical-align: top;">Empresas de gestión inmobiliaria y administradores de múltiples propiedades.</td>
-    </tr>
-    <tr>
-      <td style="padding: 8px; font-weight: bold;">Estrategias de marketing</td>
-      <td style="padding: 8px; vertical-align: top;">Enfoque en simplicidad, adopción digital y solución de problemas reales en comunidades locales.</td>
-      <td style="padding: 8px; vertical-align: top;">Marketing digital enfocado en comunidades y administradores de condominios.</td>
-      <td style="padding: 8px; vertical-align: top;">Marketing B2B dirigido a empresas inmobiliarias con enfoque en eficiencia y automatización.</td>
-      <td style="padding: 8px; vertical-align: top;">Estrategias digitales enfocadas en empresas grandes y escalabilidad del servicio.</td>
-    </tr>
-    <tr>
-      <td rowspan="3" style="padding: 8px; font-weight: bold; vertical-align: middle;">Perfil de Producto</td>
-      <td style="padding: 8px; font-weight: bold;">Productos & Servicios</td>
-      <td style="padding: 8px; vertical-align: top; text-align: left;">
-        <ul>
-          <li>Gestión de pagos y deudas</li>
-          <li>Reserva de áreas comunes</li>
-          <li>Comunicados centralizados</li>
-        </ul>
-      </td>
-      <td style="padding: 8px; vertical-align: top; text-align: left;">
-        <ul>
-          <li>Gestión de documentos</li>
-          <li>Comunicación con residentes</li>
-          <li>Reservas de espacios</li>
-        </ul>
-      </td>
-      <td style="padding: 8px; vertical-align: top; text-align: left;">
-        <ul>
-          <li>Gestión financiera</li>
-          <li>Pagos en línea</li>
-          <li>Reportes y contabilidad</li>
-        </ul>
-      </td>
-      <td style="padding: 8px; vertical-align: top; text-align: left;">
-        <ul>
-          <li>Gestión de pagos</li>
-          <li>Mantenimiento</li>
-          <li>Automatización de procesos</li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td style="padding: 8px; font-weight: bold;">Precios & Costos</td>
-      <td style="padding: 8px; vertical-align: top; text-align: left;">
-        <ul>
-          <li>Modelo de suscripción mensual por condominio</li>
-          <li>Posible versión freemium</li>
-        </ul>
-      </td>
-      <td style="padding: 8px; vertical-align: top; text-align: left;">
-        <ul>
-          <li>Suscripción mensual según tamaño del condominio</li>
-        </ul>
-      </td>
-      <td style="padding: 8px; vertical-align: top; text-align: left;">
-        <ul>
-          <li>Suscripción mensual para empresas administradoras</li>
-        </ul>
-      </td>
-      <td style="padding: 8px; vertical-align: top; text-align: left;">
-        <ul>
-          <li>Modelo SaaS con precios escalables</li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td style="padding: 8px; font-weight: bold;">Canales de distribución</td>
-      <td style="padding: 8px; vertical-align: top; text-align: left;">
-        <ul>
-          <li>Aplicación móvil (iOS y Android)</li>
-          <li>Posible versión web</li>
-        </ul>
-      </td>
-      <td style="padding: 8px; vertical-align: top; text-align: left;">
-        <ul>
-          <li>Web y aplicación móvil</li>
-        </ul>
-      </td>
-      <td style="padding: 8px; vertical-align: top; text-align: left;">
-        <ul>
-          <li>Web (plataforma en la nube)</li>
-        </ul>
-      </td>
-      <td style="padding: 8px; vertical-align: top; text-align: left;">
-        <ul>
-          <li>Web y aplicación móvil</li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td rowspan="4" style="padding: 8px; font-weight: bold; vertical-align: middle;">Análisis SWOT</td>
-      <td style="padding: 8px; font-weight: bold;">Fortalezas</td>
-      <td style="padding: 8px; vertical-align: top;">Enfoque local, simplicidad y alta adaptabilidad al contexto peruano.</td>
-      <td style="padding: 8px; vertical-align: top;">Experiencia en gestión de condominios y comunicación estructurada.</td>
-      <td style="padding: 8px; vertical-align: top;">Plataforma robusta con herramientas financieras avanzadas.</td>
-      <td style="padding: 8px; vertical-align: top;">Alta escalabilidad y automatización.</td>
-    </tr>
-    <tr>
-      <td style="padding: 8px; font-weight: bold;">Debilidades</td>
-      <td style="padding: 8px; vertical-align: top;">Aplicación nueva con baja adopción inicial.</td>
-      <td style="padding: 8px; vertical-align: top;">Puede ser compleja para usuarios no tecnológicos.</td>
-      <td style="padding: 8px; vertical-align: top;">No está enfocada en usuarios pequeños o individuales.</td>
-      <td style="padding: 8px; vertical-align: top;">Curva de aprendizaje más alta.</td>
-    </tr>
-    <tr>
-      <td style="padding: 8px; font-weight: bold;">Oportunidades</td>
-      <td style="padding: 8px; vertical-align: top;">Alta demanda de digitalización en condominios en Perú.</td>
-      <td style="padding: 8px; vertical-align: top;">Expansión en mercados internacionales.</td>
-      <td style="padding: 8px; vertical-align: top;">Expansión en mercados emergentes.</td>
-      <td style="padding: 8px; vertical-align: top;">Innovación en automatización y servicios.</td>
-    </tr>
-    <tr>
-      <td style="padding: 8px; font-weight: bold;">Amenazas</td>
-      <td style="padding: 8px; vertical-align: top;">Resistencia al cambio y uso de herramientas informales.</td>
-      <td style="padding: 8px; vertical-align: top;">Competencia de nuevas apps más simples.</td>
-      <td style="padding: 8px; vertical-align: top;">Competencia de software especializado más accesible.</td>
-      <td style="padding: 8px; vertical-align: top;">Competencia creciente en el sector proptech.</td>
-    </tr>
-  </tbody>
-</table>
+| Categoría | Criterio | Edifika | Condo Control | Buildium | AppFolio |
+|---|---|---|---|---|---|
+| **Propósito** | **¿Por qué llevar a cabo este análisis?** | Identificar oportunidades de diferenciación para Edifika al comparar la gestión administrativa de condominios y la integración de tecnologías IoT, considerando pagos, reservas, comunicaciones, control de accesos e iluminación inteligente. | — | — | — |
+| **Perfil** | **Overview** | Plataforma propuesta por Condomia para condominios peruanos. Busca centralizar pagos, deudas, reservas y comunicados, incorporando control de accesos, iluminación automática y monitoreo IoT. | Software especializado en la administración de condominios y asociaciones residenciales, con funciones administrativas, comunicación y seguridad mediante integraciones. | Plataforma en la nube para gestionar propiedades y asociaciones residenciales, con herramientas financieras, operativas y de atención a residentes. | Plataforma de administración inmobiliaria con funciones financieras, operativas y conexiones con sistemas inteligentes mediante proveedores asociados. |
+| **Perfil** | **Ventaja competitiva: ¿Qué valor ofrece?** | Propone reunir la gestión administrativa y la supervisión IoT en una experiencia adaptada inicialmente a condominios de Lima Metropolitana. Su diferenciación deberá validarse. | Combina funciones para comunidades residenciales con integraciones especializadas de pagos y control de accesos, como ButterflyMX. | Ofrece herramientas financieras, gestión de residentes, automatización administrativa y reservas según el plan contratado. | Destaca por la amplitud de sus herramientas inmobiliarias y la posibilidad de integrar control de acceso y tecnología residencial inteligente. |
+| **Perfil de Marketing** | **Mercado objetivo** | Administradores, propietarios e inquilinos de condominios y edificios multifamiliares de Lima Metropolitana. | Condominios, asociaciones de propietarios y empresas administradoras de comunidades residenciales. | Administradores profesionales de propiedades, asociaciones residenciales y carteras inmobiliarias. | Empresas administradoras, operadores inmobiliarios y propietarios de carteras de inmuebles. |
+| **Perfil de Marketing** | **Estrategias de marketing** | Estrategia propuesta basada en demostraciones del producto, facilidad de uso, atención al mercado peruano y beneficios de integrar administración e IoT. | Promoción de soluciones para comunidades residenciales mediante demostraciones, recursos informativos y planes adaptados al tamaño de la comunidad. | Captación de administradores mediante contenidos especializados, demostraciones y presentación de beneficios de eficiencia operativa. | Promoción de una plataforma integral mediante demostraciones, contenido para profesionales inmobiliarios y un ecosistema de integraciones. |
+| **Perfil de Producto** | **Productos y servicios** | Gestión de pagos y deudas; reservas de áreas comunes; comunicados y notificaciones; control de accesos IoT; iluminación automática mediante sensores; monitoreo de dispositivos conectados. **Funcionalidades propuestas.** | Pagos en línea, reservas de espacios, comunicados, documentos, gestión de visitantes y acceso inteligente mediante integraciones como ButterflyMX. | Contabilidad, pagos, reportes, comunicación con residentes, mantenimiento y reservas de áreas comunes según el plan. | Gestión financiera, cobros, mantenimiento, comunicación, control de accesos inteligente e integración con tecnología residencial mediante socios como Homebase y PointCentral. |
+| **Perfil de Producto** | **Precios y costos** | Modelo propuesto de suscripción mensual por condominio, con costos de instalación y mantenimiento IoT por definir. No existe una tarifa comercial validada. | Planes y cotizaciones según las características de la comunidad. Algunas funciones e integraciones pueden representar costos adicionales. | Suscripción mediante planes escalonados según necesidades y unidades administradas. Algunas transacciones y funcionalidades tienen cargos adicionales. | Modelo comercial de suscripción con cotización según características de la cartera y funcionalidades requeridas. Las integraciones pueden implicar costos de terceros. |
+| **Perfil de Producto** | **Canales de distribución** | Plataforma web propuesta para administradores y residentes, con interfaz adaptable a dispositivos móviles. La disponibilidad de aplicaciones nativas dependerá del alcance de desarrollo. | Plataforma web, portal de residentes y aplicación móvil. | Plataforma web y aplicaciones móviles para administradores y residentes. | Plataforma web, aplicaciones móviles e integraciones con proveedores tecnológicos. |
+| **Análisis SWOT** | **Fortalezas** | Propuesta enfocada inicialmente en el contexto peruano; integración prevista entre gestión administrativa, accesos IoT e iluminación inteligente. | Especialización en condominios, herramientas de comunicación y ecosistema de integraciones de seguridad. | Funcionalidades financieras consolidadas, gestión de asociaciones y herramientas de automatización. | Amplia cobertura de procesos inmobiliarios, automatización y alianzas con proveedores de tecnología inteligente. |
+| **Análisis SWOT** | **Debilidades** | Producto nuevo sin adopción comercial demostrada; costos y mantenimiento del hardware IoT pendientes de validar; necesidad de probar la integración física y digital. | El uso de determinadas capacidades de seguridad depende de proveedores externos y de sus integraciones. | Su orientación principal es la administración inmobiliaria; no se verificó una solución nativa equivalente al control de iluminación común planteado para Edifika. | Algunas capacidades inteligentes dependen de integraciones externas; su amplitud funcional puede exceder las necesidades de condominios pequeños. |
+| **Análisis SWOT** | **Oportunidades** | Explorar la demanda local de digitalización residencial, automatización de iluminación y supervisión de accesos en áreas comunes. | Ampliar las integraciones y servicios disponibles para comunidades residenciales. | Extender sus servicios mediante integraciones y herramientas de automatización de propiedades. | Ampliar sus capacidades de edificios conectados mediante alianzas e integraciones tecnológicas. |
+| **Análisis SWOT** | **Amenazas** | Competidores establecidos con servicios similares; costos de dispositivos e instalación; riesgos de ciberseguridad, interoperabilidad y resistencia a la adopción. | Nuevas plataformas especializadas, cambios tecnológicos y dependencia de integraciones de terceros. | Competidores con mayor especialización residencial e incorporación de soluciones inteligentes. | Competencia de plataformas especializadas y riesgos vinculados a la integración de distintas tecnologías y proveedores. |
 
-Fuente: Elaboración propia del grupo de trabajo.
+**Fuente:** Elaboración propia a partir de la revisión de los sitios oficiales de Condo Control, Buildium y AppFolio (2026).
+
 
 ### 2.1.2. Estrategias y tácticas frente a competidores
 
-**Enfoque en la digitalización total del condominio**
+**Gestión administrativa e IoT en una misma plataforma**
 
-Estrategia: Diferenciarse de soluciones tradicionales (WhatsApp, Excel, papel) ofreciendo una plataforma centralizada y estructurada
+**Estrategia:** Diferenciar a Edifika mediante una propuesta que combine la administración de condominios con el control y monitoreo de sus instalaciones compartidas, evitando que ambas actividades dependan de sistemas separados.
 
-Táctica: Integrar en una sola app funcionalidades como pagos, comunicados, reservas y gestión de usuarios, evitando el uso de múltiples herramientas dispersas
+**Táctica:** Integrar la gestión de pagos, deudas, reservas y comunicados con funcionalidades IoT de control de accesos, iluminación automática y supervisión de dispositivos conectados.
 
 **Transparencia en la gestión administrativa**
 
-Estrategia: Generar confianza entre residentes y administradores mediante acceso claro a la información
+**Estrategia:** Fortalecer la confianza entre administradores y residentes facilitando el acceso a información organizada sobre las actividades y obligaciones del condominio.
 
-Táctica: Mostrar historiales de pagos, deudas (morosidad), reportes financieros y registros de decisiones accesibles en tiempo real para todos los usuarios autorizados
+**Táctica:** Incorporar consultas de pagos pendientes, estados de cuenta y reportes financieros, respetando los permisos asignados a cada usuario y la confidencialidad de la información.
 
-**Comunicación centralizada y efectiva**
+**Comunicación centralizada y accesible**
 
-Estrategia: Reemplazar la comunicación desordenada de múltiples canales por un sistema único y eficiente
+**Estrategia:** Reducir la dependencia de canales informales y facilitar la difusión de información relevante para la comunidad residencial.
 
-Táctica: Crear un sistema de notificaciones dentro de la app con confirmación de lectura, segmentación por tipo de usuario (residente/administrador) y categorización de anuncios
+**Táctica:** Implementar un módulo de comunicados y notificaciones que permita a los administradores publicar avisos y a los residentes consultarlos desde la plataforma.
 
-**Experiencia de usuario simple y accesible**
+**Experiencia de usuario simple y adaptable**
 
-Estrategia: Facilitar la adopción tecnológica incluso para usuarios no familiarizados con apps complejas
+**Estrategia:** Facilitar la adopción de Edifika mediante una experiencia sencilla para administradores, propietarios e inquilinos, considerando que sus necesidades y niveles de familiaridad tecnológica pueden variar.
 
-Táctica: Diseñar una interfaz intuitiva, con accesos rápidos (ej: “Pagar”, “Reservar”, “Ver avisos”) y procesos simplificados en pocos pasos
+**Táctica:** Diseñar interfaces diferenciadas por rol, con navegación clara y acceso directo a las funciones más utilizadas, como consultar pagos, reservar espacios, revisar comunicados y supervisar instalaciones.
 
-**Adaptación al contexto local (Perú / LATAM)**
+**Adaptación al contexto residencial peruano**
 
-Estrategia: Diferenciarse de competidores internacionales adaptándose a la realidad local
+**Estrategia:** Orientar inicialmente la propuesta a condominios de Lima Metropolitana, considerando sus procesos de administración, necesidades operativas y condiciones de implementación tecnológica.
 
-Táctica: Incluir métodos de pago locales (Yape, Plin), lenguaje adaptado, y funcionalidades específicas como control de morosos o juntas vecinales
+**Táctica:** Utilizar terminología y flujos administrativos acordes con el contexto local, contemplando mecanismos de registro y seguimiento de pagos utilizados en Perú. Evaluar posteriormente la integración con servicios como Yape y Plin, según su viabilidad técnica y comercial.
 
-**Gestión inteligente de áreas comunes**
+**Gestión coordinada de reservas y accesos IoT**
 
-Estrategia: Optimizar el uso de recursos compartidos dentro del condominio
+**Estrategia:** Mejorar la organización y supervisión del uso de áreas comunes mediante la relación entre las reservas realizadas por residentes y las autorizaciones de acceso correspondientes.
 
-Táctica: Implementar un calendario interactivo con disponibilidad en tiempo real, reglas automáticas de uso y confirmaciones instantáneas de reservas
+**Táctica:** Implementar un calendario de disponibilidad y confirmación de reservas, vinculado a mecanismos IoT de autorización y registro de accesos para los espacios que dispongan de dispositivos compatibles.
+
+**Automatización de iluminación en áreas comunes**
+
+**Estrategia:** Proponer un uso más eficiente de la energía mediante el control automático de la iluminación en espacios compartidos, como complemento a las funciones administrativas de Edifika.
+
+**Táctica:** Incorporar sensores de presencia conectados a dispositivos de control que permitan encender o apagar luminarias según la ocupación del espacio, considerando las condiciones de seguridad y funcionamiento de cada instalación.
+
+**Monitoreo y seguridad de dispositivos IoT**
+
+**Estrategia:** Favorecer la supervisión de los dispositivos conectados y proteger las operaciones vinculadas al control de accesos y a la automatización de instalaciones comunes.
+
+**Táctica:** Desarrollar un panel para consultar el estado de los dispositivos y sus eventos, establecer permisos de acceso según los roles autorizados e incorporar mecanismos de comunicación segura entre los componentes IoT y la plataforma.
 
 ## 2.2. Entrevistas
+
 ### 2.2.1. Diseño de entrevistas
 
-Para el diseño de las entrevistas se utilizó el método de entrevistas semiestructuradas, el cual combina un conjunto de preguntas predefinidas con la flexibilidad de profundizar en las respuestas del entrevistado según el contexto de la conversación. Este enfoque fue seleccionado porque permite recopilar información cualitativa sobre las experiencias, frustraciones y expectativas de los usuarios sin limitar sus respuestas a opciones cerradas. Las preguntas fueron formuladas de manera abierta para incentivar respuestas detalladas y se organizaron en dos guiones diferenciados, uno por cada segmento objetivo del proyecto, asegurando que cada entrevista aborde las problemáticas específicas del perfil entrevistado.
+Para el diseño de las entrevistas se utilizó el método de entrevistas semiestructuradas, el cual combina un conjunto de preguntas guía con la flexibilidad de profundizar en las respuestas del entrevistado según la dinámica de la conversación. Este enfoque permite recopilar información cualitativa sobre experiencias, hábitos, ineficiencias operativas y expectativas de los usuarios, sin condicionar sus respuestas mediante opciones cerradas o sesgadas. 
 
-1. Segmento: Administradores de edificios y condominios
+Las preguntas fueron redactadas de manera abierta e inductiva para incentivar respuestas narrativas y reflexivas. El instrumento se estructuró en dos guiones diferenciados según los segmentos objetivo del proyecto, abordando tanto la gestión administrativa y financiera tradicional como la supervisión y vivencia en torno a la infraestructura e innovaciones tecnológicas aplicadas a control de accesos inteligentes, sensores de iluminación y sistemas de riego automatizado.
 
-- ¿Cuántos edificios administran actualmente y cómo llevan hoy la gestión del día a día?
+#### 1. Segmento: Administradores de edificios y condominios
 
-- ¿Qué herramientas o sistemas utilizan para gestionar los pagos y deudas de todos sus edificios?
+- ¿Cuántos inmuebles administran actualmente y cómo coordinan las tareas operativas cotidianas?
+- ¿Qué procedimientos y herramientas emplean actualmente para la cobranza, registro contable y conciliación de cuotas de mantenimiento?
+- ¿Cómo se realiza la gestión y control de las reservas de áreas comunes entre los edificios a su cargo?
+- ¿De qué manera emiten los comunicados oficiales y cómo comprueban que todos los residentes han tomado conocimiento?
+- ¿Cuál es la tarea que más tiempo y recursos consume en la rutina de su equipo de trabajo?
+- ¿Cuáles son los motivos más comunes por los que surgen quejas o desconfianza por parte de las juntas de propietarios?
+- ¿Qué experiencia han tenido al evaluar o implementar software especializado para condominios y cuáles fueron los principales obstáculos encontrados?
+- ¿Qué criterios y requerimientos funcionales son determinantes al momento de decidir la adopción de una solución tecnológica unificada?
+- ¿Bajo qué modelos de tarifación o rangos de inversión operan habitualmente para la contratación de herramientas digitales?
+- ¿Cómo supervisan actualmente la seguridad en portería, el ingreso de visitantes externos y las autorizaciones para mudanzas o proveedores?
+- ¿Cómo gestionan el consumo eléctrico en zonas comunes (pasadizos, estacionamientos, escaleras) y cómo evalúan la integración de sensores de iluminación inteligentes?
+- ¿De qué manera monitorean el mantenimiento y riego de las áreas verdes y jardines, y qué impacto tendría supervisar un sistema de riego automático desde un panel centralizado?
+- ¿Qué tan relevante resulta para su administración contar con un registro y monitoreo centralizado de cerraduras inteligentes, sensores de luz y riego automático sin sobrecargar al residente con tareas técnicas?
 
-- ¿Cómo coordinan las reservas de áreas comunes en los distintos edificios que administran?
+---
 
-- ¿De qué manera envían avisos oficiales a los residentes y cómo verifican que la información llegó a todos?
+#### 2. Segmento: Propietarios e Inquilinos
 
-- ¿Cuál es el proceso más tedioso que quisieran eliminar de su operación diaria?
+- ¿Cómo se le notifica usualmente el desglose de su cuota de mantenimiento y las novedades del edificio?
+- ¿Cómo describe su experiencia al momento de abonar la cuota mensual y hacer llegar el sustento de pago a la administración?
+- ¿Dónde o de qué manera puede revisar su histórico de pagos cuando necesita contrastar cobros pasados?
+- ¿Qué inconvenientes ha experimentado al querer solicitar o usar un área común del edificio?
+- ¿Cómo percibe la claridad y rendición de cuentas sobre los gastos, compras y fondos de reserva del condominio?
+- ¿A través de qué canales prefiere recibir la información formal del edificio y qué situaciones le generan saturación en canales informales (como chats grupales)?
+- ¿Cuál es el trámite o gestión con la administración que considera más demorado o poco práctico?
+- ¿Qué aspectos considera indispensables en un canal digital para gestionar los temas de su vivienda?
+- ¿Cómo califica la agilidad y seguridad al momento de autorizar visitas, delivery o mudanzas en el acceso principal de su edificio?
+- ¿Qué fallas o molestias identifica en la iluminación de pasadizos, cocheras o escaleras comunes, y cómo valora el funcionamiento de luces automáticas por detección de movimiento?
+- ¿Cuál es su percepción sobre el cuidado de las áreas verdes del condominio y el impacto del riego en el uso eficiente del agua del edificio?
+- Si el edificio contara con cerraduras digitales seguras, iluminación automática y riego optimizado, ¿cómo prefiere que la administración gestione estos sistemas sin que usted deba preocuparse por labores técnicas o configuraciones complejas?
 
-- ¿Qué tan seguido reciben quejas de residentes por falta de información o transparencia?
-
-- ¿Han evaluado antes algún software de administración? Si es así, ¿qué fue lo que no les convenció?
-
-- ¿Qué tan probable sería para su empresa migrar toda la gestión a una sola plataforma digital?
-
-- ¿Qué tendría que tener una plataforma para que su empresa la adopte sin dudarlo?
-  
-- ¿Cuánto estarían dispuestos a pagar mensualmente por una herramienta que centralice toda su gestión?
-
-2. Segmento: Propietarios e Inquilinos
-
-- ¿Cómo se entera hoy de sus saldos pendientes de mantenimiento y de las noticias de su edificio?
-
-- ¿Qué tan fácil o difícil le resulta realizar el pago y enviar el comprobante de mantenimiento?
-
-- ¿Dónde puede consultar su historial de pagos si necesita verificar un cobro antiguo?
-
-- ¿Ha tenido problemas para reservar áreas comunes por falta de claridad en los horarios?
-
-- ¿Siente que la administración es transparente con el uso del dinero y los gastos del edificio?
-
-- ¿Qué tan rápido recibe respuesta cuando tiene una duda o necesita un comunicado importante?
-
-- ¿Cuál es el canal de comunicación que más le molesta o le satura (ej. grupos de WhatsApp)?
-
-- ¿Qué trámite del edificio le parece el más anticuado o el que más le quita tiempo?
-
-- ¿Estaría dispuesto a gestionar sus pagos y cuotas en una sola aplicación móvil?
-
-- Si pudiera cambiar una sola cosa de la gestión de su condominio, ¿qué sería?
-
+---
 
 ### 2.2.2. Registro de entrevistas
 
-
-**Segmento objetivo: Administradores de edificios y condominios:**
+#### Segmento objetivo: Administradores de edificios y condominios
 
 | **ENTREVISTA 1** | |
-|------------------|----------------------------|
-| **Nombre entrevistado** |  Cesar Villalobos  |
-| **Edad** | 51 |
-| **Departamento** | Cercado de Lima  |
-| **Link del video** | [Link del video de la entrevista](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202310358_upc_edu_pe/IQDEXx-uGk1tS71xXaDeSeDeAf3fEODmStVZKztx7vcr0i8?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=5V6W7o) |
-| **Foto entrevista** |   <img src="assets/img/interviews/admin1.png" alt="logo" />|
-| **Resumen** | César es administrador de edificios en GWM EIRL y actualmente gestiona 15 edificios usando Excel con macros como herramienta principal, apoyándose en WhatsApp para coordinar reservas y comunicaciones, y en las páginas de los bancos para pagos. El proceso más tedioso es la emisión de recibos, que aún se hace de forma física en varios edificios y que desea digitalizar al 100%. Ha evaluado entre 3 y 4 sistemas sin éxito, ya que todos presentaban exceso de información que generaba confusión en los propietarios y una percepción de desorden o falta de transparencia. Como empresa tiene el objetivo claro de migrar a una plataforma digital, y considera que una app o sistema web mejoraría significativamente la comunicación y la gestión, siempre que sea ágil, ordenada, fácil de entender y con información siempre actualizada. En cuanto al precio, conoce el mercado y sabe que el rango habitual oscila entre 2 y 5 dólares por unidad al mes. |
+|---|---|
+| **Nombre entrevistado** | César Villalobos |
+| **Edad** | 51 años |
+| **Distrito** | Cercado de Lima |
+| **Fecha y hora** | 12 de septiembre de 2026 – 10:30 p. m. |
+| **Duración** | 00:06:48 |
+| **Link del video** | [Ver video de la entrevista](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202310358_upc_edu_pe/IQDEXx-uGk1tS71xXaDeSeDeAf3fEODmStVZKztx7vcr0i8?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=5V6W7o) |
+| **Foto entrevista** | <img src="assets/img/interviews/admin1.png" alt="César Villalobos" /> |
+| **Resumen** | César administra 15 edificios en GWM EIRL apoyándose en hojas de cálculo con macros, WhatsApp y banca online. Explica que la impresión y distribución física de avisos de cobranza es el proceso más engorroso de su rutina. Ha descartado software previo por su interfaz sobrecargada, la cual creaba confusión en las juntas vecinales. En el aspecto de infraestructura e IoT, resalta la necesidad de supervisar el control de accesos en portería mediante cerraduras inteligentes que generen bitácoras digitales, ya que los libros de visitas en papel suelen perderse o ser adulterados. Respecto a la eficiencia energética y áreas comunes, considera muy ventajoso auditar centralmente el estado de sensores de iluminación y programaciones de riego automático, dado que muchas quejas vecinales derivan del alto gasto eléctrico por luces encendidas innecesariamente o del mal aspecto de jardines por descuido del personal. Afirma que el administrador debe retener el control exclusivo de los registros y configuraciones de estos dispositivos, ofreciendo a los propietarios solo el beneficio directo sin saturarlos con aspectos técnicos. Considera aceptable una tarifa de entre 2 y 5 USD mensuales por departamento. |
 
 | **ENTREVISTA 2** | |
 |---|---|
 | **Nombre entrevistado** | Alejandro Galindo |
-| **Edad** | 26 |
-| **Departamento** | San Miguel |
-| **Link del video** |[Link del video de la entrevista](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202321281_upc_edu_pe/IQAW5DBOyn8xS6ZiZVZwufEIAU9yh_7P6mIIpJ_RzxJp6is?e=kLEW30&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D)|
-| **Foto entrevista** |<img src="assets/img/alejandro.jpeg" alt="logo" /> |
-| **Resumen** | El administrador Alejandro Galindo gestiona 4 edificios utilizando principalmente Excel, WhatsApp y registros manuales. Su principal problema es el seguimiento de pagos y la falta de confirmación sobre la recepción de comunicados. Considera viable adoptar una plataforma digital siempre que centralice pagos, comunicaciones y reservas, y tenga un costo accesible. |
+| **Edad** | 26 años |
+| **Distrito** | San Miguel |
+| **Fecha y hora** | 13 de septiembre de 2026 – 04:00 p. m. |
+| **Duración** | 00:02:26 |
+| **Link del video** | [Ver video de la entrevista](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202321281_upc_edu_pe/IQAW5DBOyn8xS6ZiZVZwufEIAU9yh_7P6mIIpJ_RzxJp6is?e=kLEW30&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D) |
+| **Foto entrevista** | <img src="assets/img/alejandro.jpeg" alt="Alejandro Galindo" /> |
+| **Resumen** | Alejandro tiene a su cargo 4 edificios y opera bajo métodos mayormente manuales: hojas de cálculo para cobros y chats de mensajería instantánea para notificaciones y reservas. Manifiesta que el seguimiento manual de depósitos bancarios genera retrasos y constantes reclamos por recibos no conciliados a tiempo. En relación con las instalaciones de los inmuebles, resalta que la gestión de portería es un punto crítico: validar accesos con llaves tradicionales o registros físicos genera cuellos de botella en horas punta; por ello, ve de alto valor un sistema con cerraduras inteligentes donde el administrador supervise accesos y permisos. Asimismo, destaca que la automatización de iluminación mediante sensores de presencia y el riego inteligente de áreas verdes reducirían los costos variables del edificio, uno de los rubros que más observan los propietarios. Valora que la plataforma centralice los reportes de estos dispositivos para monitorear anomalías técnicas sin que los inquilinos deban intervenir en la administración del equipamiento. |
 
-
-| **ENTREVISTA 2** | |
+| **ENTREVISTA 3** | |
 |---|---|
 | **Nombre entrevistado** | Kattya Valentina |
-| **Edad** | 25 |
-| **Departamento** | San Miguel |
-| **Link del video** |[Link del video de la entrevista]([https://upcedupe-my.sharepoint.com/:v:/g/personal/u202321281_upc_edu_pe/IQAW5DBOyn8xS6ZiZVZwufEIAU9yh_7P6mIIpJ_RzxJp6is?e=kLEW30&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202321281_upc_edu_pe/IQBytTOuLENRRpzS9nYLELHKAVVSvtdyP9hPyITLZN-VWLU?e=nGaihv&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D))|
-| **Foto entrevista** |<img src="assets/img/kattya.jpeg" alt="logo" /> |
-| **Resumen** | La entrevistada administra 15 edificios utilizando principalmente Excel con macros, WhatsApp y plataformas bancarias para gestionar pagos y comunicaciones. Identifica como principal problema la emisión física de recibos y la falta de una solución centralizada para coordinar pagos, reservas y avisos a los residentes. Aunque ha evaluado varios sistemas de administración, considera que muchos son excesivamente complejos y generan confusión. Se muestra interesada en adoptar una plataforma digital que sea intuitiva, organizada, transparente y mantenga la información actualizada, considerando aceptable un costo alineado con los precios habituales del mercado. |
+| **Edad** | 25 años |
+| **Distrito** | San Miguel |
+| **Fecha y hora** | 14 de septiembre de 2026 – 11:15 a. m. |
+| **Duración** | 00:02:39 |
+| **Link del video** | [Ver video de la entrevista](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202321281_upc_edu_pe/IQBytTOuLENRRpzS9nYLELHKAVVSvtdyP9hPyITLZN-VWLU?e=nGaihv&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D) |
+| **Foto entrevista** | <img src="assets/img/kattya.jpeg" alt="Kattya Valentina" /> |
+| **Resumen** | Kattya gestiona 15 condominios apoyada en macros de Excel, mensajería de WhatsApp y portales bancarios. Señala que el desglose y cobranza física genera fricciones constantes por falta de inmediatez. Al revisar soluciones existentes en el mercado, notó que resultaban poco intuitivas y recargadas de módulos innecesarios. Al abordar el ámbito de infraestructura e IoT, subraya que la coordinación del mantenimiento físico representa un reto: frecuentemente hay quejas por áreas verdes secas o mal regadas por olvidos de conserjería, así como luminarias de pasadizos encendidas permanentemente que elevan los recibos de luz comunes. Apoya firmemente contar con un panel donde el administrador pueda auditar y configurar parámetros de riego automatizado, monitorear sensores lumínicos y revisar el historial de aperturas de cerraduras inteligentes en áreas sociales y accesos principales, manteniendo estos registros en el ámbito exclusivo de la administración para asegurar la privacidad y el orden del condominio. |
 
 **Segmento objetivo: Propietarios e Inquilinos:**
 
 | **ENTREVISTA 1** | |
-|------------------|----------------------------|
-| **Nombre entrevistado** | Melina Lopez  |
-| **Edad** | 51 |
-| **Departamento** | San Miguel  |
-| **Link del video** | [Link del video de la entrevista](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202321281_upc_edu_pe/IQAW5DBOyn8xS6ZiZVZwufEIAU9yh_7P6mIIpJ_RzxJp6is?e=kLEW30&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D)  |
-| **Foto entrevista** |<img src="assets/img/interviews/prop2.png" alt="logo"/>  |
-| **Resumen** |Se entrevistó a Melina López, propietaria de un departamento, ella indica que no suele estar al tanto de las reuniones del edificio debido a la falta de tiempo. En cuanto a los pagos, envía los comprobantes por correo al administrador y mantiene un archivo físico como respaldo, ya que de lo contrario no tendría un historial accesible, asumiendo que la administración podría brindárselo si lo solicita. Señala que el proceso de reserva de espacios es el más tedioso, pues implica consultar disponibilidad, dejar garantía, realizar pagos y luego hacer seguimiento para su devolución, lo que la obliga a estar constantemente detrás de la administración. Además, le incomoda la gran cantidad de mensajes en el grupo de WhatsApp, donde se pierde información relevante. Finalmente, se muestra abierta al uso de una aplicación que centralice la información, considerando que actualmente los eventos y reuniones ya se comunican mediante un tablero. |
+|---|---|
+| **Nombre entrevistado** | Melina López |
+| **Edad** | 51 años |
+| **Distrito** | San Miguel |
+| **Fecha y hora** | 18 de septiembre de 2026 – 03:00 p. m. |
+| **Duración** | 00:02:26 |
+| **Link del video** | [Ver video de la entrevista](https://upcedupe-my.sharepoint.com/personal/u202310358_upc_edu_pe/_layouts/15/stream.aspx?id=%2Fpersonal%2Fu202310358%5Fupc%5Fedu%5Fpe%2FDocuments%2Fentrevista%5Fsegmento%5Fobjetivo%5Fpropietarios%2Emp4&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&ga=1&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview%2E90d21b78%2D17c7%2D47e6%2D9d8c%2D754be308c3c6) |
+| **Foto entrevista** | <img src="assets/img/interviews/prop2.png" alt="Melina López" /> |
+| **Resumen** | Melina es propietaria y señala que sus obligaciones laborales le impiden asistir a las reuniones presenciales. Realiza sus pagos bancarios y envía el comprobante por correo electrónico, guardando copias físicas en casa ante la falta de una plataforma que conserve su historial contable. Indica que la reserva de áreas comunes es un proceso engorroso por la gestión manual de garantías y la falta de un calendario en tiempo real. En el ámbito de la convivencia y el entorno físico, resalta que a menudo las luces de los pasillos permanecen encendidas de día o apagadas cuando se necesitan de noche; por ello, ve de gran utilidad que existan sensores de movimiento que funcionen solos. Asimismo, valora positivamente que el riego de jardines sea programado y automático para no depender de la voluntad del personal de turno, y considera prudente que el uso de cerraduras inteligentes agilice el acceso a las áreas del edificio sin que los residentes tengan que lidiar con configuraciones técnicas complejas ni acceso a historiales ajenos. |
 
 | **ENTREVISTA 2** | |
 |---|---|
 | **Nombre entrevistado** | Jarol Panduro |
-| **Edad** | 30 |
-| **Departamento** | San Miguel |
-| **Link del video** | [Link del video de la entrevista](https://youtu.be/NHYPQzPL36M) |
-| **Foto entrevista** | <img src="assets/img/ser1.jpeg" alt="logo" /> |
-| **Resumen** | En este video, Jarol Panduro, un abogado de 30 años, detalla las principales deficiencias en la administración de su edificio. Explica que el proceso de pago del mantenimiento es tedioso porque requiere enviar capturas de pantalla por WhatsApp, y señala que no existe un sistema oficial para consultar su historial de pagos. Además, menciona problemas como la desorganización al reservar áreas comunes mediante cuadernos físicos, la falta de transparencia en los gastos administrativos, la lentitud en la comunicación oficial y lo anticuado que resulta el registro manual de visitas en la portería. Como solución, propone la implementación de una plataforma digital centralizada que permita registrar pagos automáticamente, reservar espacios y auditar los gastos de forma rápida y transparente.|
+| **Edad** | 30 años |
+| **Distrito** | San Miguel |
+| **Fecha y hora** | 19 de septiembre de 2026 – 07:15 p. m. |
+| **Duración** | 00:03:48 |
+| **Link del video** | [Ver video de la entrevista](https://youtu.be/NHYPQzPL36M) |
+| **Foto entrevista** | <img src="assets/img/ser1.jpeg" alt="Jarol Panduro" /> |
+| **Resumen** | Jarol, abogado de profesión, cuestiona la falta de modernización en la gestión de su edificio. Remitir capturas de pantalla por mensajería instantánea para certificar el pago de mantenimiento le resulta ineficiente y propenso a extravío de información. Manifiesta su disconformidad con el registro manual de visitas y paquetería en libretas físicas en la portería, el cual considera inseguro y lento. Sugiere la incorporación de cerraduras inteligentes y control de accesos centralizado gestionado por la administración para optimizar el ingreso de personas autorizadas. También menciona el gasto recurrente e injustificado en consumos comunes de agua y energía eléctrica, manifestando que un sistema de iluminación inteligente activado por sensores y un riego tecnificado resolverían el desperdicio en las áreas comunes. Subraya que la administración debe ser quien configure y supervise estos equipos, garantizando que el residente solo perciba una experiencia ágil, segura y libre de trámites manuales. |
 
 | **ENTREVISTA 3** | |
 |---|---|
 | **Nombre entrevistado** | Marcelo Candia |
-| **Edad** | 25 |
-| **Departamento** | San Miguel |
-| **Link del video** | [Link del video de la entrevista](https://youtu.be/E5k60PHyvYI) |
-| **Foto entrevista** | <img src="assets/img/ser2.jpeg" alt="logo" /> |
-| **Resumen** | En la entrevista, Marcelo expone su frustración con la administración obsoleta y caótica de su edificio. Señala que los pagos de mantenimiento son tediosos porque exigen depósitos en cuentas específicas y la entrega de comprobantes físicos, sin aceptar billeteras digitales como Yape. Además, menciona problemas recurrentes como la falta de transparencia en los gastos anuales, la mala gestión en la reserva de áreas comunes que genera conflictos por cruces de horarios, y la lentitud de la administración para responder correos formales. También critica el uso de correos masivos que terminan llenándose de quejas irrelevantes de los vecinos y el engorroso proceso manual que se requiere para autorizar el ingreso de muebles grandes o mudanzas. Como solución ideal, sugiere la implementación de una aplicación o portal vecinal 100% automatizado que permita realizar pagos, reservas y reportes de fallas de manera digital las 24 horas del día, eliminando así el uso de papel|
+| **Edad** | 25 años |
+| **Distrito** | San Miguel |
+| **Fecha y hora** | 19 de septiembre de 2026 – 08:30 p. m. |
+| **Duración** | 00:05:26 minutos |
+| **Link del video** | [Ver video de la entrevista](https://youtu.be/E5k60PHyvYI) |
+| **Foto entrevista** | <img src="assets/img/ser2.jpeg" alt="Marcelo Candia" /> |
+| **Resumen** | Marcelo expresa su insatisfacción por el uso obligatorio de recibos físicos y canales de pago tradicionales, reclamando la integración de pagos digitales instantáneos. Señala recurrentes empalmes de horarios y discusiones en la reserva de áreas sociales debido a la falta de un sistema digital transparente. En cuanto a las instalaciones físicas del edificio, critica que el proceso para autorizar mudanzas o visitas dependa enteramente de autorizaciones en papel en la entrada, sugiriendo cerraduras inteligentes con códigos o validación digital controladas por la administración. Igualmente, opina que la automatización de la iluminación en escaleras y cocheras mediante sensores evitaría el desperdicio eléctrico, y que el riego automático mantendría las áreas verdes sin elevar los costos de mantenimiento. Afirma que el inquilino o propietario debe disfrutar de estos servicios sin acceso a las consolas o registros técnicos internos, los cuales corresponden a la esfera de control del administrador. |
+
+---
 
 ### 2.2.3. Análisis de entrevistas
 
-## **Segmento objetivo de administradores de edificios y condominios**
+##### 1. Segmento: Administradores de edificios y condominios
+Las entrevistas sostenidas con **César Villalobos (15 edificios)**, **Alejandro Galindo (4 edificios)** y **Kattya Valentina (15 edificios)** demuestran que el modelo de administración actual presenta una alta dependencia de herramientas genéricas (hojas de cálculo con macros complejas, mensajería instantánea de WhatsApp y cuadernos físicos en portería). Esta fragmentación operativa da lugar a tres problemas centrales: la lentitud en la conciliación de cuotas de mantenimiento, la falta de confirmación de lectura de los comunicados institucionales y la sobrecarga que implica tramitar solicitudes de reserva y cobros en papel.
 
-Las entrevistas realizadas a César, administrador de GWM EIRL, y a Alejandro Galindo evidencian que ambos gestionan sus edificios principalmente mediante Excel, WhatsApp y procesos manuales, lo que genera dificultades en el control de pagos, la comunicación con los propietarios y la administración de reservas. César, quien administra 15 edificios, identifica como principal problema la emisión física de recibos y busca una digitalización completa de sus procesos, mientras que Alejandro, encargado de 4 edificios, destaca la falta de seguimiento eficiente de pagos y la incertidumbre sobre la recepción de comunicados. Ambos consideran que una plataforma digital podría mejorar significativamente la gestión siempre que centralice funciones clave como pagos, comunicaciones y reservas, sea fácil de usar, mantenga la información actualizada y tenga un costo accesible acorde a los precios habituales del mercado.
+En lo relativo a la modernización de infraestructura e integración de **tecnología IoT**, los tres administradores concuerdan en que la supervisión de los condominios debe evolucionar hacia la automatización:
+- **Control de accesos inteligentes:** Coinciden en la vulnerabilidad de las libretas de visitas tradicionales y la pérdida de llaves físicas; respaldan la implementación de cerraduras inteligentes y registro de visitas cuya auditoría y asignación de permisos recaiga en la administración.
+- **Sensores de iluminación:** Identifican que las luminarias encendidas de forma continua representan uno de los costos comunes más cuestionados por las juntas; valoran monitorear sensores de presencia que enciendan las luces solo ante movimiento para reducir el consumo general.
+- **Riego automatizado:** Reconocen que las quejas por deterioro de áreas verdes o exceso de gasto de agua se originan por el descuido en el riego manual. Consideran fundamental monitorear los ciclos y cronogramas de riego desde su panel administrativo.
 
+Los administradores enfatizan un requerimiento arquitectónico clave: **la administración debe retener el acceso exclusivo a los registros, alertas y configuraciones de estos dispositivos**, de modo que los residentes experimenten los beneficios (seguridad, espacios iluminados y áreas verdes en buen estado) sin tener acceso a configuraciones técnicas ni a las bitácoras privadas de acceso de todo el inmueble. Asimismo, exigen que la plataforma unificada sea limpia, intuitiva y mantenga costos acordes al mercado inmobiliario (entre 2 y 5 USD mensuales por departamento).
 
-## **Segmento objetivo de propietarios e inquilinos**
+##### 2. Segmento: Propietarios e inquilinos
+Las entrevistas efectuadas a **Melina López**, **Jarol Panduro** y **Marcelo Candia** confirman un malestar extendido con los procedimientos tradicionales de gestión de edificios. En el aspecto financiero, los residentes resienten la obligación de enviar capturas de transferencias por correo o WhatsApp y la ausencia de un historial digital accesible donde puedan verificar saldos históricos, lo que los obliga a archivar recibos impresos por precaución. En cuanto a la convivencia, señalan que los grupos vecinales de mensajería están saturados de reclamos informales que diluyen los avisos importantes, mientras que la reserva de áreas comunes genera fricción por la falta de calendarios en tiempo real y la engorrosa devolución de garantías.
 
-Las entrevistas realizadas a Melina López, Jarol Panduro y Marcelo muestran una insatisfacción común con los procesos tradicionales de administración de edificios. Los principales problemas identificados son la falta de un historial digital de pagos, la necesidad de enviar comprobantes manualmente, la escasa transparencia en los gastos administrativos, la desorganización en la reserva de áreas comunes y la saturación de información en canales de comunicación como WhatsApp y correos masivos. Además, destacan procesos poco eficientes para la gestión de visitas, mudanzas y solicitudes a la administración, así como la lentitud en la atención de consultas. Los tres entrevistados coinciden en que una plataforma digital centralizada mejoraría significativamente la experiencia de los propietarios al permitir gestionar pagos, reservas, comunicaciones y consultas de manera rápida, organizada, transparente y accesible desde cualquier momento, reduciendo la dependencia de procesos manuales y documentos físicos.
+En lo concerniente a los **servicios e infraestructura tecnológica (IoT)**:
+- **Accesos y seguridad:** Critican la lentitud e informalidad del registro manual en portería para visitas, servicios de entrega y mudanzas; valoran la presencia de cerraduras y accesos inteligentes que agilicen la validación de ingreso.
+- **Iluminación automatizada:** Consideran indispensable el empleo de sensores de presencia en áreas de tránsito común (pasadizos, estacionamientos y escaleras), reduciendo costos innecesarios en la factura común y garantizando iluminación inmediata al transitar.
+- **Riego inteligente:** Perciben el cuidado de las áreas verdes como un factor clave para el valor de su vivienda; apoyan sistemas tecnificados que eviten el desperdicio de agua y mantengan los jardines saludables.
+- **Rol y experiencia de usuario:** Los entrevistados señalan que no desean encargarse de la configuración, mantenimiento ni revisión de bitácoras de los equipos IoT; esperan que sea la administración quien garantice su correcto funcionamiento, mientras que ellos disfrutan de las instalaciones mediante una aplicación móvil ágil, transparente y operativa las 24 horas del día.
 
 
 ## 2.3. Needfinding
@@ -974,143 +840,68 @@ Segundo Segmento:
 
 ## 2.4. Big Picture EventStorming
 
-En esta seccción se presenta el trabajo realizado durante la sesion de Big Picture event storming enfocada en comprender el dominio general del negocio. Para ello se utilizaran post-its para mapear los eventos significativos que ocurre en el flujo operativo actual.Esta actividad permite agrupar las interacciones en bloques funcionales lógicos, asegurando que la solución tecnológica satisfaga los requisitos reales del flujo operativo
+En esta sección se presenta el resultado de la sesión de Big Picture EventStorming, técnica de modelado colaborativo que reconstruye el funcionamiento de un negocio a partir de los hechos relevantes que ocurren en él. La sesión se enfocó en comprender el dominio general de la administración de condominios: el equipo registró en post-its naranjas los eventos de dominio significativos del flujo operativo, redactados en tiempo pasado, como Deuda generada, Reserva aceptada, Tarjeta reconocida o Luces encendidas automáticamente. Este mapeo permitió identificar los hechos clave de la operación diaria del edificio y agruparlos luego en bloques funcionales lógicos, asegurando que la solución tecnológica responda a los requisitos reales del flujo operativo.
 
+![Big Picture EventStorming](assets/img/big-picture-eventstorming.png)
 
-<img src="assets/img/big.jpeg" alt="logo" /> 
+*Figura. Big Picture EventStorming de Edifika. Elaborado por el equipo utilizando Miro (Miro, s.f.).*
 
 ## 2.5 Ubiquitous Language
 
-El Ubiquitous Language define un lenguaje común entre los actores del sistema, permitiendo una comunicación clara y consistente durante el desarrollo de la solución. En este proyecto, se integran conceptos relacionados con la administración de edificios inteligentes (Smart Buildings), automatización mediante IoT, monitoreo de recursos y seguridad residencial.
+El Ubiquitous Language define un lenguaje común entre el equipo y los actores del negocio, de modo que los mismos términos se usen en las conversaciones, la documentación y el código. En este proyecto integra conceptos de administración de condominios y de automatización mediante IoT.
 
----
+### Usuarios
 
-## Usuarios y Segmentos
+- **Visitante:** persona anónima que consulta el Landing Page para conocer el modelo de negocio y los precios antes de registrarse.
+- **Administrador:** persona responsable de la operación de uno o varios edificios. Gestiona residentes, unidades, deudas, pagos, reservas, comunicados, reportes y reglas IoT desde la aplicación web.
+- **Residente (Propietario o Inquilino):** persona vinculada a una unidad que, desde la aplicación móvil, consulta y paga deudas, reserva áreas comunes, lee comunicados, participa del foro y accede a las áreas comunes con su tarjeta RFID.
 
-### Administrador de Edificios
-Persona responsable de supervisar la operación de uno o varios edificios o condominios. Gestiona residentes, pagos, incidencias, reservas de áreas comunes y monitorea los dispositivos IoT instalados.
+### Gestión del condominio
 
-### Propietario e Inquilino
-Residente que utiliza la plataforma para consultar información de su unidad, realizar pagos, reservar áreas comunes, recibir notificaciones y acceder a servicios inteligentes del edificio.
+- **Edificio:** conjunto de unidades residenciales administradas en la plataforma.
+- **Unidad:** departamento asignado a uno o varios residentes dentro de un edificio.
+- **Área común:** espacio compartido por los residentes, como salón de eventos, gimnasio o zona de parrillas.
+- **Regla de área común:** condición que define el uso de un área común, como su aforo máximo o el tipo de reserva permitido.
+- **Reserva:** solicitud de un residente para usar un área común en una fecha y horario determinados. Puede estar solicitada, aceptada, rechazada o cancelada.
+- **Deuda:** monto que una unidad debe pagar por un periodo de mantenimiento, con fecha de vencimiento.
+- **Deuda vencida:** deuda que no se pagó antes de su fecha de vencimiento.
+- **Residente moroso:** residente con al menos una deuda vencida. Su acceso a las áreas comunes queda restringido.
+- **Pago:** abono que realiza un residente para cancelar una deuda.
+- **Pago en línea:** pago con tarjeta, Yape o billetera móvil procesado a través de la pasarela de pagos.
+- **Pasarela de pagos:** servicio externo que procesa los cobros en línea (Culqi).
+- **Comprobante de pago:** imagen del voucher que el residente adjunta cuando paga fuera de línea, y que el administrador revisa.
+- **Constancia de pago:** documento que el sistema emite cuando un pago es aprobado.
+- **Estado de cuenta:** resumen de las deudas pendientes y los pagos realizados de una unidad.
+- **Historial de pagos:** registro de todos los pagos efectuados por el residente.
+- **Comunicado:** anuncio oficial emitido por la administración para informar novedades o disposiciones.
+- **Foro:** espacio privado de cada edificio donde los residentes publican y comentan.
+- **Publicación:** mensaje que un residente comparte en el foro, con texto e imagen opcional.
+- **Notificación:** mensaje push enviado a un residente o administrador para informar un evento relevante.
+- **Reporte financiero:** documento que resume ingresos, deudas pendientes y morosidad del edificio.
 
-### Personal de Mantenimiento
-Usuario encargado de atender incidencias técnicas relacionadas con infraestructura, dispositivos IoT, sistemas de iluminación, agua y seguridad.
+### IoT
 
----
-
-## Funcionalidades Core para Administradores
-
-### Edificio
-Conjunto de unidades residenciales administradas dentro de la plataforma.
-
-### Unidad Residencial
-Departamento o espacio asignado a uno o varios residentes dentro de un edificio.
-
-### Residente
-Persona vinculada a una unidad residencial con acceso a funcionalidades específicas del sistema.
-
-### Área Común
-Espacio compartido por los residentes, como salón de eventos, gimnasio, zona de parrillas o áreas recreativas.
-
-### Reserva
-Solicitud realizada por un residente para utilizar un área común en una fecha y horario determinados.
-
-### Incidencia
-Problema o evento reportado relacionado con infraestructura, servicios o dispositivos del edificio.
-
-### Notificación
-Mensaje enviado automáticamente a administradores o residentes para informar eventos importantes.
-
-### Reporte Financiero
-Documento generado por el sistema que resume ingresos, pagos pendientes y movimientos económicos del edificio.
-
----
-
-## Funcionalidades IoT (NÚCLEO DEL PROYECTO)
-
-### Sensor IoT
-Dispositivo conectado capaz de recopilar datos del entorno y transmitirlos al sistema en tiempo real.
-
-### Iluminación Inteligente
-Sistema que controla automáticamente las luces de áreas comunes mediante sensores de movimiento o reglas configuradas.
-
-### Control de Acceso Inteligente
-Mecanismo que permite autorizar o restringir el ingreso a determinadas áreas mediante credenciales digitales.
-
-### Sensor de Movimiento
-Dispositivo encargado de detectar presencia de personas en áreas comunes para activar automatizaciones.
-
-### Monitoreo de Tanque de Agua
-Proceso que supervisa continuamente el nivel de agua almacenada para prevenir desabastecimientos.
-
-### Detección de Fugas
-Funcionalidad que identifica posibles pérdidas de agua y genera alertas automáticas.
-
-### Riego Automático
-Sistema que activa el riego de áreas verdes según horarios programados o condiciones ambientales detectadas.
-
-### Calidad del Aire
-Indicador obtenido mediante sensores que monitorean variables como CO₂, temperatura, humedad y ventilación.
-
-### Alerta Inteligente
-Notificación generada automáticamente cuando se detecta una condición fuera de los parámetros establecidos.
-
-### Consumo de Recursos
-Registro y monitoreo del uso de agua y energía dentro del edificio.
-
-### Dashboard IoT
-Panel centralizado que permite visualizar en tiempo real el estado de los sensores, dispositivos y recursos monitoreados.
-
----
-
-## Funcionalidades Core para Residentes
-
-### Estado de Cuenta
-Resumen de pagos realizados, deudas pendientes y movimientos asociados a una unidad residencial.
-
-### Pago de Mantenimiento
-Proceso mediante el cual el residente realiza el abono de las cuotas correspondientes al edificio.
-
-### Historial de Pagos
-Registro histórico de todos los pagos efectuados por el residente.
-
-### Comunicado
-Anuncio emitido por la administración para informar novedades, eventos o disposiciones importantes.
-
-### Encuesta
-Mecanismo que permite recopilar opiniones y votaciones de los residentes sobre decisiones comunitarias.
-
-### Votación
-Proceso mediante el cual los residentes participan en decisiones relacionadas con la gestión del edificio.
-
-### Seguimiento de Incidencias
-Funcionalidad que permite conocer el estado actual de un problema reportado.
-
----
-
-## Gestión de Dispositivos IoT
-
-### Dispositivo IoT
-Equipo físico conectado al sistema capaz de recopilar información o ejecutar acciones automáticas.
-
-### Estado del Dispositivo
-Condición actual del dispositivo (activo, inactivo, desconectado o en mantenimiento).
-
-### Regla de Automatización
-Condición configurada para ejecutar acciones automáticas basadas en eventos detectados por sensores.
-
-### Evento IoT
-Acción o situación detectada por un dispositivo, como movimiento, fuga de agua o variación en la calidad del aire.
-
-### Historial de Eventos
-Registro cronológico de todas las actividades generadas por sensores y dispositivos IoT.
-
-### Monitoreo en Tiempo Real
-Visualización instantánea de datos generados por sensores y dispositivos conectados.
-
----
-
-
+- **Dispositivo IoT:** equipo físico instalado en el edificio que mide variables del entorno o ejecuta acciones. Puede estar activo, inactivo, desconectado o en mantenimiento.
+- **Edge Gateway:** equipo instalado en el condominio que coordina los dispositivos y sigue operando aunque se caiga el internet.
+- **Control de accesos:** mecanismo que autoriza o deniega el ingreso a un área común.
+- **Tarjeta RFID:** credencial física que el residente presenta en el lector para acceder a un área común.
+- **Credencial activa:** tarjeta RFID habilitada para un residente y un área común en un horario determinado.
+- **Acceso concedido / denegado:** resultado de validar una tarjeta RFID contra los permisos, la reserva vigente y la morosidad del residente.
+- **Iluminación inteligente:** encendido y apagado automático de las luces de áreas comunes según presencia, luz ambiental y horarios de reserva.
+- **Sensor de presencia:** sensor PIR que detecta movimiento de personas en un área común.
+- **Nivel de lux:** cantidad de luz ambiental medida por el sensor LDR.
+- **Temporizador de inactividad:** tiempo sin movimiento tras el cual las luces se apagan.
+- **Riego automático:** activación del riego de áreas verdes según horarios programados o la humedad del suelo.
+- **Humedad del suelo:** porcentaje de agua en la tierra medido por el sensor capacitivo.
+- **Umbral de humedad:** valor de humedad por debajo del cual se activa el riego.
+- **Override manual:** acción del administrador que anula temporalmente una regla automática de iluminación o riego.
+- **Regla de automatización:** condición configurada que dispara una acción automática a partir de lo que detecta un sensor.
+- **Telemetría:** datos que los dispositivos envían periódicamente, como presencia, lux, corriente, humedad y flujo de agua.
+- **Consumo de recursos:** energía (kWh) y agua consumidas en las áreas comunes, calculadas a partir de la telemetría.
+- **Anomalía:** consumo o lectura fuera de los parámetros esperados.
+- **Falla de dispositivo:** pérdida de conexión o mal funcionamiento detectado en un dispositivo IoT.
+- **Log de dispositivo:** registro cronológico de los eventos generados por un dispositivo.
+- **Dashboard IoT:** panel de la aplicación web donde el administrador ve el estado de los dispositivos y el consumo de recursos.
 
 
 # Capítulo III: Requirements Specification
@@ -1123,9 +914,13 @@ Visualización instantánea de datos generados por sensores y dispositivos conec
 | EP02 | Comunicación centralizada | Esta épica aborda la gestión de notificaciones y comunicados dentro del edificio, permitiendo mantener informados a los residentes sobre incidencias, pagos, reservas y anuncios importantes. Incluye la personalización de notificaciones y el seguimiento de visualización de comunicados. | US08, US10, US12, US13, US14, US15, US29, US31, US32, US36, US37 |
 | EP03 | Gestión de áreas comunes | Esta épica se centra en la administración y uso eficiente de las áreas comunes del edificio. Permite a los residentes consultar disponibilidad, realizar y cancelar reservas, mientras que los administradores pueden aprobar solicitudes y evitar conflictos de horario. | US11, US16, US17, US18, US19, US20, US33, US35, US38, US39, US40 |
 | EP04 | Gestión financiera y reportes | Esta épica se enfoca en la administración económica del edificio, permitiendo a los residentes consultar su deuda, registrar pagos y revisar su historial financiero. Los administradores pueden identificar morosos, generar y exportar reportes financieros. | US09, US21, US22, US23, US24, US25, US26, US27, US28, US30 |
-| EP05 | Infraestructura, seguridad y arquitectura técnica | Esta épica abarca todos los aspectos técnicos necesarios para el correcto funcionamiento del sistema Edifika, incluyendo la configuración de microservicios, autenticación JWT, API Gateway, bases de datos independientes, documentación de APIs, comunicación entre servicios y despliegue en la nube. Su objetivo es garantizar que la plataforma sea segura, escalable y mantenible. | TS01, TS02, TS03, TS04, TS05, TS06, TS07, TS08, TS09, TS10, TS11, TS12, TS13, TS14, TS15 |
+| EP05 | Infraestructura, seguridad y arquitectura técnica | Esta épica abarca todos los aspectos técnicos necesarios para el correcto funcionamiento del sistema Edifika, incluyendo la configuración de microservicios, autenticación JWT, API Gateway, bases de datos independientes, documentación de APIs, comunicación entre servicios y despliegue en la nube. Su objetivo es garantizar que la plataforma sea segura, escalable y mantenible. | TS01, TS02, TS03, TS04, TS05, TS06, TS07, TS08, TS09, TS10, TS11, TS12, TS13, TS14, TS15, TS16, TS17, TS18, TS19, TS20, TS21, TS22, TS23, TS24, TS25, TS26, TS27, TS28, TS29, TS30, TS31, TS32, TS33, TS34 |
 | EP06 | Landing Page e Interfaz Web | Esta épica cubre todas las funcionalidades visibles en la landing page pública de Edifika y la interfaz web de la aplicación. Incluye navegación, presentación de contenido y acceso a la plataforma, con el objetivo de atraer y convertir nuevos usuarios. | US41, US42, US43, US44, US45, US46, US47 |
-| EP07 | Smart Building e Internet de las Cosas (IoT) | Esta épica abarca la integración de dispositivos IoT dentro del edificio para automatizar y controlar el acceso a áreas comunes y unidades mediante sensores, cerraduras inteligentes. Permite a los residentes gestionar el acceso a sus reservas de forma remota, mientras que los administradores pueden monitorear en tiempo real el estado de los dispositivos, registrar eventos de apertura/cierre y detectar accesos no autorizados, fortaleciendo la seguridad y la eficiencia operativa del edificio. | US48, US49, US50, US51, US52, US53 |
+| EP07 | Smart Building e Internet de las Cosas (IoT) | Esta épica abarca la integración de dispositivos IoT dentro del edificio para automatizar y controlar el acceso a áreas comunes y unidades mediante sensores, cerraduras inteligentes. Permite a los residentes gestionar el acceso a sus reservas de forma remota, mientras que los administradores pueden monitorear en tiempo real el estado de los dispositivos, registrar eventos de apertura/cierre y detectar accesos no autorizados, fortaleciendo la seguridad y la eficiencia operativa del edificio. | US48, US49, US50, US51, US52, US53, US54, US55, US56 |
+| EP08 | Iluminación inteligente y automatización | Esta épica abarca la automatización de la iluminación de áreas comunes mediante reglas configurables (presencia, lux, horario y prioridad), el control manual temporal (override) y la gestión del inventario de luminarias, buscando mejorar la seguridad y reducir el consumo energético. | US57, US58, US59, US60 |
+| EP09 | Telemetría y analítica IoT | Esta épica cubre la ingesta, almacenamiento y análisis de las lecturas de los sensores. Permite al administrador visualizar consumo energético, recibir alertas de consumo anómalo y fallas de luminarias, y monitorear el estado de conexión de los dispositivos. | US61, US62, US63, US64, US65 |
+| EP10 | Detección de fugas en bombas de agua | Esta épica se enfoca en prevenir pérdidas de agua mediante la detección automática de fugas a partir de caudal y presión, el corte de bombas, la gestión de alertas y la detección de fallas de equipos hidráulicos. | US66, US67, US68, US69, US70 |
+| EP11 | Edge Gateway e integración con dispositivos ESP32 | Esta épica abarca el servicio Edge Gateway (Python, Flask, Peewee ORM y SQLite) que se ejecuta en el edificio y se comunica por MQTT local con los nodos ESP32 (lector RFID, cerradura eléctrica, buzzer, pantalla OLED, sensor de humedad y sensor ultrasónico). Resuelve accesos con una caché local, opera sin conexión a internet y se sincroniza con la nube. | US71, US72, US73, US74, US75, US76, US77, US78, US79, US80, US81, US82, US83, US84, US85, US86, US87, US88, US89, US90, US91, US92, US93 |
 
 **User Stories:**
 
@@ -2573,8 +2368,1240 @@ Visualización instantánea de datos generados por sensores y dispositivos conec
   </td>
   <td>EP05</td>
 </tr>
+
+<tr>
+  <td><strong>US54</strong></td>
+  <td>Otorgar acceso temporal por reserva aprobada</td>
+  <td>Como residente, quiero que mi reserva aprobada me habilite automáticamente el ingreso al área común solo durante mi horario, para no depender del administrador para entrar.</td>
+  <td>
+    <strong>Escenario 1: Acceso habilitado dentro de la ventana de reserva.</strong><br>
+    Dado que el administrador aprueba la reserva de la piscina de un residente de 18:00 a 20:00 y este tiene una tarjeta ACTIVA,<br>
+    cuando el residente presenta su tarjeta en el lector de la piscina a las 18:30,<br>
+    entonces el sistema concede el acceso, registra el intento como GRANTED y el lector libera la puerta en menos de 1 segundo.<br><br>
+    <strong>Escenario 2: Acceso denegado fuera de la ventana.</strong><br>
+    Dado que el residente tiene un permiso vigente de 18:00 a 20:00,<br>
+    cuando presenta su tarjeta a las 20:15,<br>
+    entonces el sistema deniega el acceso, registra el intento como DENIED y el lector muestra la señal de denegación.<br><br>
+    <strong>Escenario 3: Reserva cancelada.</strong><br>
+    Dado que el residente tenía un permiso de acceso generado por una reserva aprobada,<br>
+    cuando la reserva es cancelada,<br>
+    entonces el sistema revoca el permiso, lo sincroniza con el Edge API y cualquier intento posterior con esa reserva es denegado.
+  </td>
+  <td>EP07</td>
+</tr>
+
+<tr>
+  <td><strong>US55</strong></td>
+  <td>Consultar bitácora de accesos</td>
+  <td>Como administrador, quiero consultar la bitácora de intentos de acceso a las áreas comunes para auditar quién ingresó y detectar accesos no autorizados.</td>
+  <td>
+    <strong>Escenario 1: Consulta con filtros.</strong><br>
+    Dado que el administrador selecciona un área común, un rango de fechas y el resultado GRANTED o DENIED,<br>
+    cuando solicita la bitácora,<br>
+    entonces el sistema retorna los intentos ordenados por fecha descendente con dispositivo, credencial enmascarada, resultado y marca de tiempo en menos de 500 ms.<br><br>
+    <strong>Escenario 2: Sin resultados.</strong><br>
+    Dado que no existen intentos de acceso para los filtros seleccionados,<br>
+    cuando el administrador ejecuta la consulta,<br>
+    entonces el sistema muestra "No se encontraron intentos de acceso para los filtros seleccionados" sin generar un error.<br><br>
+    <strong>Escenario 3: Intentos denegados repetidos.</strong><br>
+    Dado que una misma credencial acumula 3 intentos DENIED consecutivos en el mismo lector en menos de 5 minutos,<br>
+    cuando el sistema registra el tercer intento,<br>
+    entonces marca el evento como "Posible acceso no autorizado" y notifica al administrador con la ubicación del lector.
+  </td>
+  <td>EP07</td>
+</tr>
+
+<tr>
+  <td><strong>US56</strong></td>
+  <td>Apertura remota de acceso</td>
+  <td>Como administrador, quiero abrir remotamente un acceso desde la aplicación para atender situaciones excepcionales sin desplazarme al lector.</td>
+  <td>
+    <strong>Escenario 1: Apertura exitosa.</strong><br>
+    Dado que el administrador selecciona un lector en estado ACTIVO,<br>
+    cuando solicita la apertura remota,<br>
+    entonces el sistema publica el comando al dispositivo, recibe el ACK en menos de 2 segundos y registra el evento con el identificador del administrador.<br><br>
+    <strong>Escenario 2: Lector desconectado.</strong><br>
+    Dado que el lector seleccionado se encuentra en estado OFFLINE,<br>
+    cuando el administrador solicita la apertura remota,<br>
+    entonces el sistema muestra "El lector no está disponible" y no encola el comando para evitar aperturas diferidas inesperadas.<br><br>
+    <strong>Escenario 3: Sin confirmación del dispositivo.</strong><br>
+    Dado que el sistema publicó el comando de apertura,<br>
+    cuando transcurren 5 segundos sin recibir el ACK,<br>
+    entonces el sistema muestra "No se confirmó la apertura" y registra el intento como fallido.
+  </td>
+  <td>EP07</td>
+</tr>
+
+<tr>
+  <td><strong>US57</strong></td>
+  <td>Configurar reglas de automatización de iluminación</td>
+  <td>Como administrador, quiero configurar reglas de iluminación por área común (presencia, umbral de lux, franja horaria, tiempo de apagado y prioridad) para automatizar el uso eficiente de la energía.</td>
+  <td>
+    <strong>Escenario 1: Configuración exitosa.</strong><br>
+    Dado que el administrador define para el pasillo de la Torre A presencia requerida, umbral de 50 lux, franja de 18:00 a 06:00, apagado a los 120 segundos y prioridad 1,<br>
+    cuando guarda la regla,<br>
+    entonces el sistema la persiste y la envía al Edge API para su ejecución local, retornando 201 en menos de 300 ms.<br><br>
+    <strong>Escenario 2: Conflicto de prioridad.</strong><br>
+    Dado que ya existe una regla activa con la misma prioridad y franja solapada en el área,<br>
+    cuando el administrador intenta guardar una nueva regla,<br>
+    entonces el sistema retorna 409 con "Ya existe una regla con la misma prioridad para esta franja" sin crear el registro.<br><br>
+    <strong>Escenario 3: Valores inválidos.</strong><br>
+    Dado que el administrador ingresa un umbral de lux negativo o una franja con hora de inicio igual a la de fin,<br>
+    cuando envía la configuración,<br>
+    entonces el sistema retorna 400 indicando el campo inválido y no guarda la regla.
+  </td>
+  <td>EP08</td>
+</tr>
+
+<tr>
+  <td><strong>US58</strong></td>
+  <td>Encender o apagar luces manualmente (override)</td>
+  <td>Como residente con una reserva vigente o como administrador, quiero encender o apagar manualmente las luces de un área por un tiempo determinado, para cubrir situaciones que la automatización no contempla.</td>
+  <td>
+    <strong>Escenario 1: Override aplicado.</strong><br>
+    Dado que el residente tiene una reserva vigente del salón de eventos,<br>
+    cuando solicita encender las luces por 2 horas,<br>
+    entonces el sistema aplica el override ON, suspende la automatización de esa zona durante ese tiempo y publica OverrideTriggered.<br><br>
+    <strong>Escenario 2: Expiración del override.</strong><br>
+    Dado que un override tiene una duración configurada,<br>
+    cuando se cumple el tiempo del override,<br>
+    entonces el sistema lo da por finalizado y la zona retoma la automatización según la regla vigente.<br><br>
+    <strong>Escenario 3: Usuario sin autorización.</strong><br>
+    Dado que un residente sin reserva vigente intenta controlar las luces de un área,<br>
+    cuando envía la solicitud,<br>
+    entonces el sistema retorna 403 con "No tienes permiso para controlar esta zona" sin enviar ningún comando.
+  </td>
+  <td>EP08</td>
+</tr>
+
+<tr>
+  <td><strong>US59</strong></td>
+  <td>Encender área al iniciar una reserva</td>
+  <td>Como sistema, quiero encender automáticamente las luces del área reservada al iniciar la reserva, para que el residente encuentre el espacio listo para su uso.</td>
+  <td>
+    <strong>Escenario 1: Encendido programado.</strong><br>
+    Dado que una reserva aprobada inicia a las 18:00 y el área no tiene presencia detectada,<br>
+    cuando el sistema recibe el evento ReservationStarted,<br>
+    entonces enciende las luminarias del área y publica LuminaireTurnedOn.<br><br>
+    <strong>Escenario 2: Override vigente con precedencia.</strong><br>
+    Dado que existe un override OFF vigente solicitado por el administrador en esa área,<br>
+    cuando inicia la reserva,<br>
+    entonces el sistema respeta el override y no enciende las luces, aplicando la precedencia definida en AutomationDecisionService.<br><br>
+    <strong>Escenario 3: Edge API sin respuesta.</strong><br>
+    Dado que el sistema envía el comando de encendido al Edge API,<br>
+    cuando este no confirma la ejecución,<br>
+    entonces el sistema reintenta hasta 3 veces y, si persiste el fallo, notifica al administrador con la ubicación afectada.
+  </td>
+  <td>EP08</td>
+</tr>
+
+<tr>
+  <td><strong>US60</strong></td>
+  <td>Registrar y consultar luminarias</td>
+  <td>Como administrador, quiero registrar las luminarias de cada área común y consultar su estado, para mantener un inventario actualizado del sistema de iluminación.</td>
+  <td>
+    <strong>Escenario 1: Registro exitoso.</strong><br>
+    Dado que el administrador ingresa ubicación, área común y potencia nominal de una luminaria,<br>
+    cuando confirma el registro,<br>
+    entonces el sistema la guarda con estado OFF y retorna 201 en menos de 300 ms.<br><br>
+    <strong>Escenario 2: Luminaria duplicada.</strong><br>
+    Dado que ya existe una luminaria registrada en la misma ubicación y área,<br>
+    cuando el administrador intenta registrarla nuevamente,<br>
+    entonces el sistema retorna 409 con "La luminaria ya se encuentra registrada" sin crear el registro.<br><br>
+    <strong>Escenario 3: Consulta de estado por área.</strong><br>
+    Dado que el administrador selecciona un área común,<br>
+    cuando consulta sus luminarias,<br>
+    entonces el sistema lista cada luminaria con su estado ON/OFF y su última conexión.
+  </td>
+  <td>EP08</td>
+</tr>
+
+<tr>
+  <td><strong>US61</strong></td>
+  <td>Visualizar consumo energético por área y periodo</td>
+  <td>Como administrador, quiero visualizar el consumo energético (kWh) por área común y periodo, para identificar dónde se puede reducir el gasto eléctrico.</td>
+  <td>
+    <strong>Escenario 1: Consulta exitosa.</strong><br>
+    Dado que el administrador selecciona un área y un rango de fechas válido,<br>
+    cuando solicita el reporte de consumo,<br>
+    entonces el sistema retorna el consumo en kWh agregado por periodo en menos de 1 segundo.<br><br>
+    <strong>Escenario 2: Periodo sin datos.</strong><br>
+    Dado que no existen lecturas para el área en el rango seleccionado,<br>
+    cuando el administrador consulta el consumo,<br>
+    entonces el sistema responde 200 con consumo 0 y el mensaje "Sin datos de consumo para el periodo".<br><br>
+    <strong>Escenario 3: Rango de fechas inválido.</strong><br>
+    Dado que la fecha de inicio es posterior a la fecha de fin,<br>
+    cuando el administrador envía la consulta,<br>
+    entonces el sistema retorna 400 con "El rango de fechas no es válido" sin consultar la base de series temporales.
+  </td>
+  <td>EP09</td>
+</tr>
+
+<tr>
+  <td><strong>US62</strong></td>
+  <td>Alertar consumo anómalo</td>
+  <td>Como administrador, quiero recibir una alerta cuando el consumo de un área se desvíe de su comportamiento habitual, para investigar posibles fallas o usos indebidos.</td>
+  <td>
+    <strong>Escenario 1: Anomalía detectada.</strong><br>
+    Dado que el consumo de un área supera su media móvil en más de 3 desviaciones estándar (|z| > 3),<br>
+    cuando el sistema evalúa la nueva agregación,<br>
+    entonces registra un AnomalyFlag con severidad y evidencia, publica AbnormalConsumptionDetected y notifica al administrador.<br><br>
+    <strong>Escenario 2: Consumo dentro de la línea base.</strong><br>
+    Dado que el consumo del área se mantiene dentro del rango esperado,<br>
+    cuando el sistema evalúa la agregación,<br>
+    entonces no genera alerta y actualiza la línea base.<br><br>
+    <strong>Escenario 3: Línea base insuficiente.</strong><br>
+    Dado que el área tiene menos de 7 días de datos,<br>
+    cuando el sistema intenta evaluar anomalías,<br>
+    entonces omite la evaluación y registra "Línea base en construcción" sin generar falsas alertas.
+  </td>
+  <td>EP09</td>
+</tr>
+
+<tr>
+  <td><strong>US63</strong></td>
+  <td>Detectar falla de luminaria</td>
+  <td>Como administrador, quiero ser notificado cuando una luminaria no funcione pese a estar encendida, para repararla oportunamente.</td>
+  <td>
+    <strong>Escenario 1: Falla detectada.</strong><br>
+    Dado que una luminaria fue comandada en ON y su corriente medida es 0 durante más de 30 segundos,<br>
+    cuando el sistema evalúa la lectura,<br>
+    entonces publica LuminaireFailureDetected y notifica al administrador con la ubicación exacta de la luminaria.<br><br>
+    <strong>Escenario 2: Luminaria apagada.</strong><br>
+    Dado que una luminaria en estado OFF reporta corriente nula,<br>
+    cuando el sistema evalúa la lectura,<br>
+    entonces lo considera comportamiento normal y no genera alerta.<br><br>
+    <strong>Escenario 3: Sensor sin lectura.</strong><br>
+    Dado que el sensor de corriente deja de enviar datos,<br>
+    cuando el sistema no recibe lecturas dentro del tiempo límite,<br>
+    entonces no declara falla de luminaria y lo trata como dispositivo sin comunicación (US64).
+  </td>
+  <td>EP09</td>
+</tr>
+
+<tr>
+  <td><strong>US64</strong></td>
+  <td>Monitorear estado de conexión de dispositivos</td>
+  <td>Como administrador, quiero ver el estado de conexión de todos los dispositivos IoT del edificio, para saber cuáles requieren atención.</td>
+  <td>
+    <strong>Escenario 1: Visualización del estado.</strong><br>
+    Dado que el administrador abre el panel de dispositivos,<br>
+    cuando el sistema carga la información,<br>
+    entonces muestra cada dispositivo con estado ACTIVO u OFFLINE y su última conexión.<br><br>
+    <strong>Escenario 2: Dispositivo sin heartbeat.</strong><br>
+    Dado que un dispositivo no emite heartbeat durante el tiempo límite configurado,<br>
+    cuando se ejecuta la validación periódica,<br>
+    entonces el sistema lo marca OFFLINE, descarta los comandos pendientes hacia él, publica DeviceWentOffline y notifica al administrador sin afectar a los demás dispositivos.<br><br>
+    <strong>Escenario 3: Reconexión.</strong><br>
+    Dado que un dispositivo OFFLINE reanuda su heartbeat,<br>
+    cuando el sistema recibe la señal,<br>
+    entonces lo marca ACTIVO, registra la recuperación y no ejecuta los comandos que fueron descartados.
+  </td>
+  <td>EP09</td>
+</tr>
+
+<tr>
+  <td><strong>US65</strong></td>
+  <td>Consultar lecturas de sensores en tiempo real e históricas</td>
+  <td>Como administrador, quiero consultar las lecturas de los sensores en tiempo real y su histórico, para analizar el comportamiento de las áreas del edificio.</td>
+  <td>
+    <strong>Escenario 1: Consulta de serie temporal.</strong><br>
+    Dado que el administrador selecciona un sensor y un rango de tiempo,<br>
+    cuando solicita la serie,<br>
+    entonces el sistema retorna las lecturas agregadas con su unidad de medida en menos de 1 segundo.<br><br>
+    <strong>Escenario 2: Lectura fuera de rango.</strong><br>
+    Dado que un sensor envía un valor inválido o fuera del rango físico posible,<br>
+    cuando el sistema recibe la lectura,<br>
+    entonces la descarta, la registra como inválida y no la incluye en las series ni en los cálculos.<br><br>
+    <strong>Escenario 3: Lectura duplicada.</strong><br>
+    Dado que llega una lectura con el mismo dispositivo y marca de tiempo ya registrados,<br>
+    cuando el sistema procesa el mensaje,<br>
+    entonces lo ignora de forma idempotente sin duplicar el registro.
+  </td>
+  <td>EP09</td>
+</tr>
+
+<tr>
+  <td><strong>US66</strong></td>
+  <td>Configurar reglas de detección de fugas</td>
+  <td>Como administrador, quiero configurar las reglas de detección de fugas por zona hidráulica (umbral de caudal, caída de presión, franja de consumo esperado y duración mínima), para adaptar la detección al uso real del edificio.</td>
+  <td>
+    <strong>Escenario 1: Configuración exitosa.</strong><br>
+    Dado que el administrador define para una zona un caudal máximo de 5 L/min fuera de la franja 06:00-22:00 y una duración mínima de 10 minutos,<br>
+    cuando guarda la regla,<br>
+    entonces el sistema la persiste como activa y retorna 201 en menos de 300 ms.<br><br>
+    <strong>Escenario 2: Zona con regla activa.</strong><br>
+    Dado que la zona ya tiene una regla activa,<br>
+    cuando el administrador intenta registrar otra,<br>
+    entonces el sistema retorna 409 con "La zona ya tiene una regla activa" sin crear el registro.<br><br>
+    <strong>Escenario 3: Valores inválidos.</strong><br>
+    Dado que el administrador ingresa un umbral de caudal menor o igual a cero,<br>
+    cuando envía la configuración,<br>
+    entonces el sistema retorna 400 indicando el campo inválido sin guardar la regla.
+  </td>
+  <td>EP10</td>
+</tr>
+
+<tr>
+  <td><strong>US67</strong></td>
+  <td>Cortar automáticamente la bomba ante una fuga</td>
+  <td>Como sistema, quiero detectar una fuga a partir de las lecturas de caudal y presión y apagar la bomba, para minimizar la pérdida de agua.</td>
+  <td>
+    <strong>Escenario 1: Fuga detectada.</strong><br>
+    Dado que el caudal supera el umbral fuera de la franja esperada y se mantiene más allá de la duración mínima configurada,<br>
+    cuando el sistema evalúa la lectura,<br>
+    entonces crea una LeakAlert en estado OPEN, ordena el corte de la bomba, publica LeakDetected y PumpShutOff, y notifica al administrador en menos de 5 segundos.<br><br>
+    <strong>Escenario 2: Consumo legítimo.</strong><br>
+    Dado que el caudal elevado ocurre dentro de la franja de consumo esperado,<br>
+    cuando el sistema evalúa la lectura,<br>
+    entonces no declara fuga ni corta la bomba.<br><br>
+    <strong>Escenario 3: Corte no confirmado.</strong><br>
+    Dado que el sistema ordenó apagar la bomba,<br>
+    cuando esta no confirma la ejecución mediante ACK,<br>
+    entonces eleva la severidad de la alerta a HIGH y notifica "No se pudo cortar la bomba" al administrador.
+  </td>
+  <td>EP10</td>
+</tr>
+
+<tr>
+  <td><strong>US68</strong></td>
+  <td>Gestionar alertas de fuga</td>
+  <td>Como administrador, quiero reconocer y resolver las alertas de fuga, para llevar el control del seguimiento de cada incidente.</td>
+  <td>
+    <strong>Escenario 1: Reconocimiento de alerta.</strong><br>
+    Dado que existe una alerta en estado OPEN,<br>
+    cuando el administrador la reconoce,<br>
+    entonces el sistema cambia su estado a ACKNOWLEDGED y registra el usuario y la hora.<br><br>
+    <strong>Escenario 2: Resolución de alerta.</strong><br>
+    Dado que existe una alerta en estado ACKNOWLEDGED,<br>
+    cuando el administrador la marca como resuelta,<br>
+    entonces el sistema cambia su estado a RESOLVED, registra resolvedAt y publica LeakResolved.<br><br>
+    <strong>Escenario 3: Alerta ya resuelta.</strong><br>
+    Dado que la alerta ya se encuentra en estado RESOLVED,<br>
+    cuando el administrador intenta resolverla nuevamente,<br>
+    entonces el sistema retorna 409 sin modificar el registro.
+  </td>
+  <td>EP10</td>
+</tr>
+
+<tr>
+  <td><strong>US69</strong></td>
+  <td>Apagar manualmente una bomba de agua</td>
+  <td>Como administrador, quiero apagar remotamente una bomba de agua desde la aplicación, para actuar de inmediato ante una emergencia.</td>
+  <td>
+    <strong>Escenario 1: Apagado exitoso.</strong><br>
+    Dado que la bomba está en estado ON y conectada,<br>
+    cuando el administrador solicita su apagado,<br>
+    entonces el sistema envía el comando, recibe el ACK, actualiza el estado a OFF y registra el evento con el administrador responsable.<br><br>
+    <strong>Escenario 2: Bomba ya apagada.</strong><br>
+    Dado que la bomba se encuentra en estado OFF,<br>
+    cuando el administrador solicita apagarla,<br>
+    entonces el sistema responde "La bomba ya se encuentra apagada" sin enviar un nuevo comando.<br><br>
+    <strong>Escenario 3: Dispositivo desconectado.</strong><br>
+    Dado que el nodo hidráulico está OFFLINE,<br>
+    cuando el administrador solicita el apagado,<br>
+    entonces el sistema informa "No se pudo contactar la bomba" y registra el intento fallido.
+  </td>
+  <td>EP10</td>
+</tr>
+
+<tr>
+  <td><strong>US70</strong></td>
+  <td>Detectar falla de bomba por caída de presión</td>
+  <td>Como administrador, quiero que el sistema identifique cuando una bomba presenta caída de presión sin caudal correspondiente, para atender una posible falla del equipo.</td>
+  <td>
+    <strong>Escenario 1: Bomba en falla.</strong><br>
+    Dado que la presión cae por debajo del umbral sin un caudal correspondiente,<br>
+    cuando el sistema evalúa la lectura,<br>
+    entonces marca la bomba como FAULT y notifica al administrador.<br><br>
+    <strong>Escenario 2: Caída de presión con caudal.</strong><br>
+    Dado que la presión baja y existe caudal acorde al consumo,<br>
+    cuando el sistema evalúa la lectura,<br>
+    entonces no marca la bomba como FAULT y continúa evaluando posibles fugas.<br><br>
+    <strong>Escenario 3: Lectura de presión ausente.</strong><br>
+    Dado que el sensor no envía la lectura de presión,<br>
+    cuando el sistema no puede completar la evaluación,<br>
+    entonces no cambia el estado de la bomba y registra el dispositivo como sin comunicación.
+  </td>
+  <td>EP10</td>
+</tr>
+
+<tr>
+  <td>TS18</td>
+  <td>Configuración base del microservicio Smart Lighting & Automation</td>
+  <td>Como desarrollador, quiero crear el microservicio Smart Lighting & Automation para gestionar luminarias, reglas de automatización y comandos de override de forma independiente de los demás microservicios de Edifika.</td>
+  <td>
+    <strong>Escenario 1: Persistencia de regla y luminaria</strong><br>
+    Dado que el administrador envía una regla de automatización válida con token JWT,<br>
+    cuando el microservicio procesa la solicitud,<br>
+    entonces persiste la regla en su propia base PostgreSQL y retorna 201 en menos de 300 ms.<br><br>
+    <strong>Escenario 2: Resolución por precedencia</strong><br>
+    Dado que coexisten una regla programada y un override vigente sobre la misma luminaria,<br>
+    cuando AutomationDecisionService evalúa el estado objetivo,<br>
+    entonces aplica el override por encima de la regla y publica el evento correspondiente.<br><br>
+    <strong>Escenario 3: Aislamiento de fallos</strong><br>
+    Dado que la base de datos del servicio deja de responder,<br>
+    cuando ocurre el error de conexión,<br>
+    entonces únicamente este microservicio retorna errores 500 mientras los demás continúan operando con normalidad.
+  </td>
+  <td>EP05</td>
+</tr>
+
+<tr>
+  <td>TS19</td>
+  <td>Configuración base del microservicio IoT Telemetry & Analytics con TimescaleDB</td>
+  <td>Como desarrollador, quiero crear el microservicio de telemetría con almacenamiento en TimescaleDB para ingerir lecturas de sensores y resolver consultas analíticas con baja latencia.</td>
+  <td>
+    <strong>Escenario 1: Ingesta de lectura válida</strong><br>
+    Dado que el Edge API reenvía una lectura de sensor por MQTT,<br>
+    cuando el servicio la valida y normaliza,<br>
+    entonces la persiste en la hypertable sensor_readings en menos de 500 ms.<br><br>
+    <strong>Escenario 2: Consulta sobre agregados continuos</strong><br>
+    Dado que el administrador consulta el consumo de un mes,<br>
+    cuando el servicio resuelve la consulta,<br>
+    entonces responde usando agregados continuos sin recorrer la serie cruda, en menos de 1 segundo.<br><br>
+    <strong>Escenario 3: Mensaje malformado</strong><br>
+    Dado que llega un mensaje MQTT con formato inválido,<br>
+    cuando el servicio intenta procesarlo,<br>
+    entonces lo descarta, registra el error y continúa procesando los siguientes mensajes sin interrumpir la ingesta.
+  </td>
+  <td>EP05</td>
+</tr>
+
+<tr>
+  <td>TS20</td>
+  <td>Configuración base del microservicio Water Pump Leak Detection</td>
+  <td>Como desarrollador, quiero crear el microservicio de detección de fugas para gestionar bombas, reglas y alertas, ejecutando el corte de forma confiable ante una fuga.</td>
+  <td>
+    <strong>Escenario 1: Registro de bomba y regla</strong><br>
+    Dado que el administrador registra una bomba y su regla de detección con token JWT,<br>
+    cuando el microservicio procesa la solicitud,<br>
+    entonces persiste los datos en su base PostgreSQL y retorna 201 en menos de 300 ms.<br><br>
+    <strong>Escenario 2: Evaluación de lectura de caudal</strong><br>
+    Dado que el servicio recibe el evento FlowReadingReceived,<br>
+    cuando LeakDetectionService evalúa la lectura contra la regla activa,<br>
+    entonces crea la alerta y ordena el corte únicamente cuando se cumplen umbral, franja y duración mínima.<br><br>
+    <strong>Escenario 3: Evento duplicado</strong><br>
+    Dado que el mismo FlowReadingReceived llega dos veces,<br>
+    cuando el servicio lo procesa,<br>
+    entonces no genera una segunda alerta ni un segundo comando de corte.
+  </td>
+  <td>EP05</td>
+</tr>
+
+<tr>
+  <td>TS21</td>
+  <td>Implementación del Edge API con operación sin conexión y sincronización</td>
+  <td>Como desarrollador, quiero implementar el Edge API que se comunica por MQTT local con los nodos ESP32 y se sincroniza con la nube, para que el condominio siga operando aun sin conexión a internet.</td>
+  <td>
+    <strong>Escenario 1: Operación sin conexión</strong><br>
+    Dado que se pierde la conexión a internet del edificio,<br>
+    cuando un residente presenta una tarjeta con permiso vigente,<br>
+    entonces el Edge API resuelve el acceso con las credenciales, reservas y blacklist sincronizadas previamente y mantiene el acceso funcionando.<br><br>
+    <strong>Escenario 2: Sincronización al reconectar</strong><br>
+    Dado que el Edge API acumuló eventos y lecturas durante la desconexión,<br>
+    cuando se restablece la conexión,<br>
+    entonces los envía en orden cronológico a la nube sin duplicarlos.<br><br>
+    <strong>Escenario 3: Reenvío de eventos de baja latencia</strong><br>
+    Dado que el Edge API recibe una lectura de presencia o de caudal por MQTT local,<br>
+    cuando la reenvía como evento,<br>
+    entonces lo publica en menos de 200 ms priorizando la latencia sobre su interpretación de dominio.
+  </td>
+  <td>EP05</td>
+</tr>
+
+<tr>
+  <td>TS22</td>
+  <td>Publicación y consumo de eventos de dominio entre contextos IoT</td>
+  <td>Como desarrollador, quiero implementar la mensajería de eventos de dominio mediante el broker AMQP/MQTT con consumo idempotente, para integrar los contextos IoT con Reservation, Payment y Notification sin acoplarlos.</td>
+  <td>
+    <strong>Escenario 1: Consumo de evento de otro contexto</strong><br>
+    Dado que Reservation publica ReservationApproved,<br>
+    cuando IoT Access Management consume el evento,<br>
+    entonces crea el permiso temporal correspondiente en menos de 500 ms.<br><br>
+    <strong>Escenario 2: Consumo idempotente</strong><br>
+    Dado que el broker entrega el mismo evento más de una vez,<br>
+    cuando el consumidor lo procesa,<br>
+    entonces aplica el efecto una sola vez, registrando el identificador del evento procesado.<br><br>
+    <strong>Escenario 3: Broker no disponible</strong><br>
+    Dado que el broker no responde al publicar un evento,<br>
+    cuando el contexto intenta enviarlo,<br>
+    entonces lo conserva en una cola de salida y lo reintenta hasta confirmar su entrega sin perder el evento.
+  </td>
+  <td>EP05</td>
+</tr>
+
+
+<tr>
+  <td><strong>US71</strong></td>
+  <td>Leer tarjeta RFID y resolver el acceso</td>
+  <td>Como residente, quiero acercar mi tarjeta RFID al lector de la puerta para ingresar a un área común sin depender de otra persona.</td>
+  <td>
+    <strong>Escenario 1: Acceso concedido</strong><br>
+    Dado que el lector RFID del ESP32 lee la tarjeta de un residente con credencial ACTIVA y permiso vigente en la caché local del Edge Gateway,<br>
+    cuando el ESP32 publica el UID leído por MQTT local,<br>
+    entonces el Edge Gateway resuelve el acceso como GRANTED y responde al nodo en menos de 500 ms, sin consultar a la nube.<br><br>
+    <strong>Escenario 2: Tarjeta desconocida o revocada</strong><br>
+    Dado que el UID leído no existe en la caché o figura en la blacklist,<br>
+    cuando el Edge Gateway evalúa el intento,<br>
+    entonces responde DENIED al nodo y registra el intento con el UID, el dispositivo y la marca de tiempo.<br><br>
+    <strong>Escenario 3: Lecturas repetidas</strong><br>
+    Dado que la misma tarjeta permanece frente al lector,<br>
+    cuando el ESP32 detecta el mismo UID varias veces en menos de 2 segundos,<br>
+    entonces el sistema procesa una sola lectura y descarta las repetidas para no generar intentos duplicados.
+  </td>
+  <td>EP11</td>
+</tr>
+
+<tr>
+  <td><strong>US72</strong></td>
+  <td>Abrir la cerradura eléctrica y re-bloquearla automáticamente</td>
+  <td>Como sistema, quiero energizar la cerradura eléctrica solo el tiempo necesario cuando se concede un acceso, para que la puerta no quede abierta.</td>
+  <td>
+    <strong>Escenario 1: Apertura temporal</strong><br>
+    Dado que el Edge Gateway resolvió un acceso como GRANTED,<br>
+    cuando envía el comando de apertura al ESP32,<br>
+    entonces el nodo activa la cerradura durante el tiempo configurado (por ejemplo 5 segundos), vuelve a bloquearla y confirma con un ACK.<br><br>
+    <strong>Escenario 2: Cerradura sin confirmación</strong><br>
+    Dado que el Edge Gateway envió el comando de apertura,<br>
+    cuando no recibe el ACK del nodo en 3 segundos,<br>
+    entonces registra el evento como fallido y notifica al administrador "La cerradura no respondió".<br><br>
+    <strong>Escenario 3: Reinicio del nodo con la cerradura activa</strong><br>
+    Dado que el ESP32 se reinicia mientras la cerradura está energizada,<br>
+    cuando el nodo arranca,<br>
+    entonces la cerradura inicia en estado bloqueado y no se reactiva hasta recibir un nuevo comando.
+  </td>
+  <td>EP11</td>
+</tr>
+
+<tr>
+  <td><strong>US73</strong></td>
+  <td>Emitir señales sonoras con el buzzer</td>
+  <td>Como residente, quiero escuchar una señal sonora distinta según el resultado de mi acceso, para saber si puedo pasar sin mirar la pantalla.</td>
+  <td>
+    <strong>Escenario 1: Acceso concedido</strong><br>
+    Dado que el Edge Gateway responde GRANTED,<br>
+    cuando el ESP32 recibe el resultado,<br>
+    entonces el buzzer emite un pitido corto.<br><br>
+    <strong>Escenario 2: Acceso denegado</strong><br>
+    Dado que el Edge Gateway responde DENIED,<br>
+    cuando el ESP32 recibe el resultado,<br>
+    entonces el buzzer emite dos pitidos largos.<br><br>
+    <strong>Escenario 3: Alerta crítica</strong><br>
+    Dado que el Edge Gateway envía un comando de alerta al nodo,<br>
+    cuando el ESP32 lo recibe,<br>
+    entonces el buzzer emite un patrón intermitente hasta que el comando de silencio llegue o venza el tiempo máximo configurado.
+  </td>
+  <td>EP11</td>
+</tr>
+
+<tr>
+  <td><strong>US74</strong></td>
+  <td>Mostrar mensajes de estado en la pantalla OLED</td>
+  <td>Como residente, quiero ver en la pantalla OLED el resultado de mi acceso y el estado del sistema, para entender por qué se me permite o niega el ingreso.</td>
+  <td>
+    <strong>Escenario 1: Mensaje de acceso concedido</strong><br>
+    Dado que el Edge Gateway responde GRANTED con el nombre del residente,<br>
+    cuando el ESP32 recibe el resultado,<br>
+    entonces la OLED muestra "Acceso concedido" y el nombre del residente durante 3 segundos y luego regresa a la pantalla de reposo.<br><br>
+    <strong>Escenario 2: Mensaje de acceso denegado con motivo</strong><br>
+    Dado que el Edge Gateway responde DENIED con un motivo (tarjeta no registrada, fuera de horario o moroso),<br>
+    cuando el ESP32 recibe el resultado,<br>
+    entonces la OLED muestra "Acceso denegado" y el motivo en un texto de máximo 2 líneas.<br><br>
+    <strong>Escenario 3: Edge Gateway inalcanzable</strong><br>
+    Dado que el ESP32 no logra comunicarse con el Edge Gateway,<br>
+    cuando transcurren 5 segundos sin respuesta,<br>
+    entonces la OLED muestra "Sin conexión" y el nodo no concede el acceso hasta restablecer la comunicación.
+  </td>
+  <td>EP11</td>
+</tr>
+
+<tr>
+  <td><strong>US75</strong></td>
+  <td>Registrar y sincronizar accesos generados sin conexión</td>
+  <td>Como administrador, quiero que los accesos ocurridos sin internet queden registrados y se sincronicen luego, para no perder la auditoría.</td>
+  <td>
+    <strong>Escenario 1: Registro local sin internet</strong><br>
+    Dado que el edificio perdió la conexión a internet,<br>
+    cuando un residente accede con su tarjeta,<br>
+    entonces el Edge Gateway resuelve el acceso con su caché y guarda el intento en la cola local de salida (outbox).<br><br>
+    <strong>Escenario 2: Sincronización al reconectar</strong><br>
+    Dado que existen intentos pendientes en la cola local,<br>
+    cuando se restablece la conexión con la nube,<br>
+    entonces los envía en orden cronológico con su marca de tiempo original y marca cada uno como sincronizado solo tras recibir la confirmación.<br><br>
+    <strong>Escenario 3: Fallo parcial de sincronización</strong><br>
+    Dado que la nube rechaza o no responde a un lote de intentos,<br>
+    cuando el Edge Gateway recibe el error,<br>
+    entonces conserva los registros no confirmados y reintenta con espera creciente sin eliminar ni duplicar ninguno.
+  </td>
+  <td>EP11</td>
+</tr>
+
+<tr>
+  <td><strong>US76</strong></td>
+  <td>Medir la humedad con el sensor de humedad</td>
+  <td>Como sistema, quiero leer periódicamente el sensor de humedad del ESP32, para disponer de datos confiables del área verde.</td>
+  <td>
+    <strong>Escenario 1: Lectura periódica</strong><br>
+    Dado que el sensor de humedad está conectado y calibrado con sus valores en seco y en húmedo,<br>
+    cuando se cumple el intervalo de muestreo configurado (por ejemplo 30 segundos),<br>
+    entonces el ESP32 publica la lectura en porcentaje con el identificador del dispositivo y la marca de tiempo, y el Edge Gateway la almacena.<br><br>
+    <strong>Escenario 2: Lectura fuera de rango</strong><br>
+    Dado que el sensor entrega un valor fuera del rango 0 % a 100 % tras la calibración,<br>
+    cuando el Edge Gateway recibe la lectura,<br>
+    entonces la descarta, la registra como inválida y notifica "Posible falla del sensor" si ocurren 3 lecturas inválidas consecutivas.<br><br>
+    <strong>Escenario 3: Humedad bajo el umbral</strong><br>
+    Dado que la humedad medida es menor al umbral configurado,<br>
+    cuando el Edge Gateway evalúa la lectura,<br>
+    entonces genera el evento "Humedad baja" con la zona y el valor, y lo reenvía a la nube.
+  </td>
+  <td>EP11</td>
+</tr>
+
+<tr>
+  <td><strong>US77</strong></td>
+  <td>Medir el nivel de agua con el sensor ultrasónico</td>
+  <td>Como administrador, quiero que el sensor ultrasónico mida el nivel del tanque de agua, para conocer su nivel sin revisarlo físicamente.</td>
+  <td>
+    <strong>Escenario 1: Cálculo del nivel</strong><br>
+    Dado que el sensor ultrasónico mide una distancia hasta la superficie del agua y la altura del tanque está calibrada,<br>
+    cuando el ESP32 publica la medición,<br>
+    entonces el Edge Gateway calcula el nivel como porcentaje de llenado y lo almacena con su marca de tiempo.<br><br>
+    <strong>Escenario 2: Medición fuera del rango del sensor</strong><br>
+    Dado que el sensor entrega una distancia menor a 2 cm o mayor a 400 cm, o no recibe eco,<br>
+    cuando el Edge Gateway recibe la medición,<br>
+    entonces la descarta y registra "Medición inválida" sin modificar el último nivel válido.<br><br>
+    <strong>Escenario 3: Suavizado de ruido</strong><br>
+    Dado que el sensor entrega una medición aislada con una variación brusca respecto a las anteriores,<br>
+    cuando el Edge Gateway la evalúa,<br>
+    entonces la promedia con las últimas muestras (por ejemplo mediana de 5) para evitar falsas alertas.
+  </td>
+  <td>EP11</td>
+</tr>
+
+<tr>
+  <td><strong>US78</strong></td>
+  <td>Alertar localmente un nivel crítico</td>
+  <td>Como administrador, quiero que el sistema alerte con buzzer, pantalla y notificación cuando el nivel del tanque sea crítico, para actuar a tiempo.</td>
+  <td>
+    <strong>Escenario 1: Nivel bajo crítico</strong><br>
+    Dado que el nivel del tanque cae por debajo del umbral crítico configurado (por ejemplo 15 %),<br>
+    cuando el Edge Gateway evalúa la medición,<br>
+    entonces ordena al nodo mostrar "Nivel crítico" en la OLED, activar el buzzer y envía una notificación al administrador.<br><br>
+    <strong>Escenario 2: Recuperación del nivel</strong><br>
+    Dado que existe una alerta activa de nivel crítico,<br>
+    cuando el nivel supera el umbral más una histéresis (por ejemplo 20 %),<br>
+    entonces el Edge Gateway cierra la alerta, silencia el buzzer y restablece la pantalla de reposo.<br><br>
+    <strong>Escenario 3: Alerta sin conexión a la nube</strong><br>
+    Dado que ocurre un nivel crítico sin conexión a internet,<br>
+    cuando el Edge Gateway lo detecta,<br>
+    entonces activa la alerta local en el nodo y encola la notificación para enviarla al recuperar la conexión.
+  </td>
+  <td>EP11</td>
+</tr>
+
+<tr>
+  <td><strong>US79</strong></td>
+  <td>Registrar y autenticar nodos ESP32</td>
+  <td>Como administrador, quiero registrar cada ESP32 en el Edge Gateway con sus sensores y actuadores, para que solo los dispositivos autorizados puedan operar.</td>
+  <td>
+    <strong>Escenario 1: Registro exitoso</strong><br>
+    Dado que el administrador ingresa el identificador, la ubicación y las capacidades del nodo (RFID, cerradura, buzzer, OLED, humedad, ultrasonido),<br>
+    cuando confirma el registro,<br>
+    entonces el Edge Gateway guarda el dispositivo y genera sus credenciales de conexión.<br><br>
+    <strong>Escenario 2: Dispositivo no registrado</strong><br>
+    Dado que un ESP32 desconocido intenta publicar o suscribirse en el broker local,<br>
+    cuando el Edge Gateway lo detecta,<br>
+    entonces rechaza sus mensajes, los registra como intento no autorizado y no los procesa.<br><br>
+    <strong>Escenario 3: Identificador duplicado</strong><br>
+    Dado que ya existe un nodo con el mismo identificador,<br>
+    cuando el administrador intenta registrarlo de nuevo,<br>
+    entonces el sistema retorna 409 con "El dispositivo ya está registrado" sin crear el registro.
+  </td>
+  <td>EP11</td>
+</tr>
+
+<tr>
+  <td><strong>US80</strong></td>
+  <td>Monitorear el estado de los nodos desde el Edge Gateway</td>
+  <td>Como administrador, quiero que el Edge Gateway detecte cuándo un nodo deja de responder, para atender fallas de hardware o de red.</td>
+  <td>
+    <strong>Escenario 1: Heartbeat normal</strong><br>
+    Dado que un nodo envía su heartbeat dentro del intervalo esperado,<br>
+    cuando el Edge Gateway lo recibe,<br>
+    entonces marca el nodo como ACTIVO y actualiza su última conexión.<br><br>
+    <strong>Escenario 2: Nodo sin respuesta</strong><br>
+    Dado que un nodo no envía heartbeat durante el tiempo límite configurado,<br>
+    cuando se ejecuta la validación periódica,<br>
+    entonces el Edge Gateway lo marca OFFLINE, descarta los comandos pendientes hacia él y reporta el cambio a la nube sin afectar a los otros nodos.<br><br>
+    <strong>Escenario 3: Reconexión del nodo</strong><br>
+    Dado que un nodo OFFLINE vuelve a enviar su heartbeat,<br>
+    cuando el Edge Gateway lo recibe,<br>
+    entonces lo marca ACTIVO, registra la recuperación y lo reporta a la nube.
+  </td>
+  <td>EP11</td>
+</tr>
+
+<tr>
+  <td><strong>US81</strong></td>
+  <td>Sincronizar credenciales, reservas y blacklist desde la nube</td>
+  <td>Como sistema, quiero que el Edge Gateway reciba y mantenga actualizada una copia local de credenciales, reservas vigentes y blacklist, para decidir accesos sin depender de internet.</td>
+  <td>
+    <strong>Escenario 1: Sincronización inicial</strong><br>
+    Dado que el Edge Gateway inicia y tiene conexión con la nube,<br>
+    cuando solicita el estado vigente,<br>
+    entonces almacena en su base local las credenciales activas, las reservas vigentes y la blacklist, y registra la versión sincronizada.<br><br>
+    <strong>Escenario 2: Actualización incremental</strong><br>
+    Dado que la nube publica el cambio de una credencial (emisión, suspensión o revocación),<br>
+    cuando el Edge Gateway recibe la actualización,<br>
+    entonces aplica el cambio en su caché en menos de 5 segundos y los siguientes accesos usan el dato actualizado.<br><br>
+    <strong>Escenario 3: Caché desactualizada</strong><br>
+    Dado que el Edge Gateway no se sincroniza durante más del tiempo máximo permitido (por ejemplo 24 horas),<br>
+    cuando se cumple dicho plazo,<br>
+    entonces sigue operando con la última caché disponible, registra una advertencia y notifica al administrador al recuperar la conexión.
+  </td>
+  <td>EP11</td>
+</tr>
+
+<tr>
+  <td><strong>US82</strong></td>
+  <td>Reenviar telemetría y eventos a la nube</td>
+  <td>Como sistema, quiero que el Edge Gateway reenvíe las lecturas de los sensores y los eventos hacia la nube, para alimentar la analítica y las alertas.</td>
+  <td>
+    <strong>Escenario 1: Reenvío en línea</strong><br>
+    Dado que el Edge Gateway recibió una lectura válida y tiene conexión con la nube,<br>
+    cuando la procesa,<br>
+    entonces la reenvía a la nube en menos de 2 segundos con el identificador del dispositivo y la marca de tiempo original.<br><br>
+    <strong>Escenario 2: Reenvío tras desconexión</strong><br>
+    Dado que la nube estuvo inalcanzable y existen lecturas almacenadas,<br>
+    cuando se restablece la conexión,<br>
+    entonces las envía en lotes por orden cronológico sin duplicados.<br><br>
+    <strong>Escenario 3: Límite de almacenamiento local</strong><br>
+    Dado que la cola local alcanza el tamaño máximo configurado,<br>
+    cuando ingresan nuevas lecturas,<br>
+    entonces el Edge Gateway descarta primero las lecturas de telemetría más antiguas, conserva los eventos de acceso y alertas, y registra la pérdida.
+  </td>
+  <td>EP11</td>
+</tr>
+
+<tr>
+  <td><strong>US83</strong></td>
+  <td>Ejecutar comandos remotos sobre los dispositivos</td>
+  <td>Como administrador, quiero enviar comandos desde la nube (abrir cerradura, activar alerta sonora o mensaje en pantalla) y que el Edge Gateway los ejecute en el dispositivo, para atender situaciones a distancia.</td>
+  <td>
+    <strong>Escenario 1: Comando ejecutado</strong><br>
+    Dado que la nube envía el comando de apertura de una cerradura cuyo nodo está ACTIVO,<br>
+    cuando el Edge Gateway lo recibe,<br>
+    entonces lo publica al ESP32, espera el ACK y reporta el resultado a la nube en menos de 2 segundos.<br><br>
+    <strong>Escenario 2: Nodo OFFLINE o en mantenimiento</strong><br>
+    Dado que el nodo destino está OFFLINE o en modo mantenimiento (desactivado),<br>
+    cuando el Edge Gateway recibe el comando,<br>
+    entonces lo rechaza de inmediato con el motivo "Dispositivo no disponible" o "Dispositivo en mantenimiento" y no lo encola.<br><br>
+    <strong>Escenario 3: Comando no autorizado</strong><br>
+    Dado que el comando llega sin un token válido de la nube,<br>
+    cuando el Edge Gateway lo procesa,<br>
+    entonces responde 401, no lo envía al dispositivo y lo registra como intento no autorizado.
+  </td>
+  <td>EP11</td>
+</tr>
+
+<tr>
+  <td>TS23</td>
+  <td>Configuración base del Edge Gateway con Python, Flask, Peewee ORM y SQLite</td>
+  <td>Como desarrollador, quiero crear el servicio Edge Gateway con Python, Flask, Peewee ORM y SQLite con configuración por variables de entorno y endpoint de salud, para tener una base ejecutable y desplegable en el equipo del edificio.</td>
+  <td>
+    <strong>Escenario 1: Arranque del servicio</strong><br>
+    Dado que el servicio se inicia con la configuración requerida,<br>
+    cuando Flask termina de levantar,<br>
+    entonces el endpoint GET /health responde 200 en menos de 200 ms con el estado del servicio, de la base local y del broker.<br><br>
+    <strong>Escenario 2: Documentación de la API</strong><br>
+    Dado que el desarrollador accede a la interfaz Swagger (OpenAPI) del servicio,<br>
+    cuando la interfaz carga,<br>
+    entonces muestra todos los endpoints con sus esquemas de solicitud y respuesta definidos en los esquemas de validación.<br><br>
+    <strong>Escenario 3: Configuración faltante</strong><br>
+    Dado que falta una variable de entorno obligatoria,<br>
+    cuando el servicio intenta iniciar,<br>
+    entonces falla al arrancar con un mensaje que indica la variable ausente, sin quedar en un estado parcial.
+  </td>
+  <td>EP05</td>
+</tr>
+
+<tr>
+  <td>TS24</td>
+  <td>Contrato de mensajes MQTT entre el Edge Gateway y los ESP32</td>
+  <td>Como desarrollador, quiero definir y validar el contrato de tópicos y mensajes JSON entre el Edge Gateway y los nodos ESP32, para que firmware y servicio evolucionen sin romperse.</td>
+  <td>
+    <strong>Escenario 1: Mensaje válido</strong><br>
+    Dado que un ESP32 publica una lectura que cumple el esquema (deviceId, tipo, valor, unidad y marca de tiempo),<br>
+    cuando el Edge Gateway la recibe en su tópico,<br>
+    entonces la valida con su esquema de validación y la procesa en menos de 100 ms.<br><br>
+    <strong>Escenario 2: Mensaje inválido</strong><br>
+    Dado que llega un mensaje con campos faltantes o tipos incorrectos,<br>
+    cuando el Edge Gateway lo valida,<br>
+    entonces lo descarta, registra el error con el tópico de origen y continúa procesando los siguientes.<br><br>
+    <strong>Escenario 3: Versión de contrato</strong><br>
+    Dado que un nodo publica con una versión de esquema no soportada,<br>
+    cuando el Edge Gateway la evalúa,<br>
+    entonces rechaza el mensaje y reporta "Versión de firmware incompatible" para ese dispositivo.
+  </td>
+  <td>EP05</td>
+</tr>
+
+<tr>
+  <td>TS25</td>
+  <td>Persistencia local con SQLite y cola de salida</td>
+  <td>Como desarrollador, quiero almacenar localmente credenciales, lecturas y eventos pendientes en SQLite, para garantizar la operación offline y la entrega confiable a la nube.</td>
+  <td>
+    <strong>Escenario 1: Persistencia tras reinicio</strong><br>
+    Dado que el Edge Gateway tiene datos en su base local,<br>
+    cuando el servicio se reinicia,<br>
+    entonces recupera credenciales, reservas y eventos pendientes sin pérdida de información.<br><br>
+    <strong>Escenario 2: Escritura atómica del evento</strong><br>
+    Dado que se procesa un intento de acceso,<br>
+    cuando el sistema lo registra,<br>
+    entonces guarda el resultado y el evento de salida en una única transacción para que no exista uno sin el otro.<br><br>
+    <strong>Escenario 3: Base local corrupta o llena</strong><br>
+    Dado que la base local no puede escribirse,<br>
+    cuando el servicio detecta el error,<br>
+    entonces lo registra, notifica a la nube cuando es posible y continúa respondiendo accesos de solo lectura con la caché en memoria.
+  </td>
+  <td>EP05</td>
+</tr>
+
+<tr>
+  <td>TS26</td>
+  <td>Firmware base del ESP32 con lectura de sensores y reconexión</td>
+  <td>Como desarrollador, quiero implementar el firmware base del ESP32 que lea los sensores, controle los actuadores y mantenga la conexión Wi-Fi y MQTT, para que el nodo opere de forma autónoma y recuperable.</td>
+  <td>
+    <strong>Escenario 1: Publicación de lecturas</strong><br>
+    Dado que el nodo está conectado a Wi-Fi y al broker local,<br>
+    cuando se cumple el intervalo de muestreo,<br>
+    entonces publica las lecturas de humedad y ultrasonido y el heartbeat en sus tópicos.<br><br>
+    <strong>Escenario 2: Reconexión automática</strong><br>
+    Dado que se pierde la conexión Wi-Fi o MQTT,<br>
+    cuando el nodo detecta la desconexión,<br>
+    entonces reintenta con espera creciente sin reiniciarse, y los actuadores permanecen en estado seguro (cerradura bloqueada, buzzer apagado).<br><br>
+    <strong>Escenario 3: Watchdog</strong><br>
+    Dado que el programa principal se bloquea,<br>
+    cuando vence el temporizador watchdog,<br>
+    entonces el nodo se reinicia y retoma su operación normal.
+  </td>
+  <td>EP05</td>
+</tr>
+
+<tr>
+  <td>TS27</td>
+  <td>Seguridad de la comunicación del Edge Gateway</td>
+  <td>Como desarrollador, quiero asegurar la comunicación entre los ESP32, el Edge Gateway y la nube, para evitar accesos o comandos no autorizados.</td>
+  <td>
+    <strong>Escenario 1: Conexión de nodo autenticada</strong><br>
+    Dado que un ESP32 se conecta al broker local con sus credenciales,<br>
+    cuando el broker valida usuario y contraseña,<br>
+    entonces permite publicar y suscribirse únicamente a los tópicos asignados a ese dispositivo.<br><br>
+    <strong>Escenario 2: Comunicación con la nube</strong><br>
+    Dado que el Edge Gateway invoca a la nube,<br>
+    cuando envía la solicitud,<br>
+    entonces usa HTTPS y un token de servicio, y no registra secretos en los logs.<br><br>
+    <strong>Escenario 3: Credencial comprometida</strong><br>
+    Dado que el administrador revoca las credenciales de un nodo,<br>
+    cuando el nodo intenta reconectarse,<br>
+    entonces el broker rechaza la conexión y el Edge Gateway registra el intento.
+  </td>
+  <td>EP05</td>
+</tr>
+
+
+<tr>
+  <td><strong>US84</strong></td>
+  <td>Mostrar fecha y hora en la pantalla OLED</td>
+  <td>Como residente, quiero ver la fecha y la hora actual en la pantalla OLED del punto de acceso, para saber la hora sin usar mi celular y verificar mi horario de reserva.</td>
+  <td>
+    <strong>Escenario 1: Pantalla de reposo</strong><br>
+    Dado que el nodo no está procesando ningún acceso,<br>
+    cuando la OLED está en reposo,<br>
+    entonces muestra la fecha y la hora en formato 24 horas (HH:MM) en la zona horaria America/Lima, actualizada cada minuto con una desviación máxima de 1 segundo.<br><br>
+    <strong>Escenario 2: Regreso al reloj tras un acceso</strong><br>
+    Dado que la OLED muestra el resultado de un acceso,<br>
+    cuando transcurren 3 segundos,<br>
+    entonces vuelve a mostrar la fecha y la hora sin perder el estado de la hora actual.<br><br>
+    <strong>Escenario 3: Hora no válida</strong><br>
+    Dado que el reloj del nodo no tiene una hora válida (por ejemplo, tras perder la batería del RTC),<br>
+    cuando la OLED intenta mostrar la hora,<br>
+    entonces muestra "Hora no sincronizada" en lugar de una hora incorrecta y el nodo solicita la hora al Edge Gateway.
+  </td>
+  <td>EP11</td>
+</tr>
+
+<tr>
+  <td><strong>US85</strong></td>
+  <td>Mantener y sincronizar el reloj del nodo</td>
+  <td>Como sistema, quiero que el nodo mantenga una hora precisa incluso sin internet y la sincronice con el Edge Gateway, para que los permisos por horario y las marcas de tiempo de los eventos sean confiables.</td>
+  <td>
+    <strong>Escenario 1: Sincronización con el Edge Gateway</strong><br>
+    Dado que el Edge Gateway tiene la hora sincronizada con una fuente NTP,<br>
+    cuando el nodo detecta una diferencia mayor a 2 segundos respecto a la hora del Edge Gateway,<br>
+    entonces ajusta su reloj y registra el ajuste con la diferencia corregida.<br><br>
+    <strong>Escenario 2: Operación sin internet</strong><br>
+    Dado que el edificio perdió la conexión a internet,<br>
+    cuando pasan varias horas sin sincronización NTP,<br>
+    entonces el Edge Gateway y el reloj del nodo continúan funcionando con su última hora válida y el sistema registra la desviación estimada.<br><br>
+    <strong>Escenario 3: Arranque con hora inválida</strong><br>
+    Dado que el nodo se inicia y su reloj no tiene una hora válida,<br>
+    cuando se conecta al Edge Gateway,<br>
+    entonces solicita la hora, la aplica antes de procesar accesos con ventana horaria y no concede accesos que dependan del horario hasta tenerla.
+  </td>
+  <td>EP11</td>
+</tr>
+
+<tr>
+  <td>TS28</td>
+  <td>Estandarización de marcas de tiempo y zona horaria</td>
+  <td>Como desarrollador, quiero que todos los componentes registren las marcas de tiempo en UTC con formato ISO 8601 y las muestren en la zona America/Lima, para evitar inconsistencias entre el ESP32, el Edge Gateway y la nube.</td>
+  <td>
+    <strong>Escenario 1: Registro en UTC</strong><br>
+    Dado que un nodo publica una lectura o evento,<br>
+    cuando el Edge Gateway lo recibe,<br>
+    entonces lo almacena con la marca de tiempo en UTC (ISO 8601) y el offset original no se pierde.<br><br>
+    <strong>Escenario 2: Visualización en hora local</strong><br>
+    Dado que el administrador consulta la bitácora de accesos,<br>
+    cuando el sistema muestra las fechas,<br>
+    entonces las presenta en America/Lima sin alterar el valor almacenado.<br><br>
+    <strong>Escenario 3: Marca de tiempo inválida</strong><br>
+    Dado que llega un evento con una marca de tiempo muy distinta a la hora actual (por ejemplo, más de 5 minutos en el futuro),<br>
+    cuando el Edge Gateway lo valida,<br>
+    entonces conserva el evento, lo marca como "Hora sospechosa" y usa la hora de recepción del Edge Gateway como referencia.
+  </td>
+  <td>EP05</td>
+</tr>
+
+
+<tr>
+  <td><strong>US86</strong></td>
+  <td>Enrolar una tarjeta RFID desde el lector del nodo</td>
+  <td>Como administrador, quiero registrar una tarjeta nueva acercándola al lector del nodo, para asignarla a un residente sin digitar manualmente su número de serie.</td>
+  <td>
+    <strong>Escenario 1: Registro exitoso</strong><br>
+    Dado que el administrador activa el modo registro para un residente en un nodo y el Edge Gateway tiene conexión con la nube,<br>
+    cuando acerca una tarjeta no registrada al lector durante la ventana de registro (60 segundos),<br>
+    entonces el Edge Gateway captura el UID, lo envía a la nube para vincularlo al residente y la OLED muestra "Tarjeta registrada" con un pitido corto.<br><br>
+    <strong>Escenario 2: Tarjeta ya asignada</strong><br>
+    Dado que el modo registro está activo,<br>
+    cuando se acerca una tarjeta cuyo UID ya pertenece a otro residente,<br>
+    entonces el sistema no modifica ninguna asignación, la OLED muestra "Tarjeta en uso" y el buzzer emite dos pitidos largos.<br><br>
+    <strong>Escenario 3: Ventana de registro vencida</strong><br>
+    Dado que el modo registro está activo y no se acerca ninguna tarjeta,<br>
+    cuando transcurren los 60 segundos,<br>
+    entonces el Edge Gateway desactiva el modo registro, el nodo vuelve a su pantalla de reposo y registra el evento como "Registro cancelado por tiempo".<br><br>
+    <strong>Escenario 4: Registro sin conexión a internet</strong><br>
+    Dado que el Edge Gateway no tiene conexión con la nube,<br>
+    cuando el administrador necesita registrar una tarjeta,<br>
+    entonces el registro por lector no se habilita y el administrador la registra manualmente (UID y residente) desde el sistema local del condominio, que sigue funcionando sin internet a través del Edge Gateway; la tarjeta queda activa de inmediato en los lectores y se sincroniza con la nube al restablecerse la conexión.
+  </td>
+  <td>EP11</td>
+</tr>
+
+<tr>
+  <td><strong>US87</strong></td>
+  <td>Restringir el acceso a un área por horario</td>
+  <td>Como administrador, quiero definir el horario permitido de cada área común, para que no se pueda ingresar fuera de las horas habilitadas aunque se tenga una credencial activa.</td>
+  <td>
+    <strong>Escenario 1: Configuración exitosa</strong><br>
+    Dado que el administrador define que la piscina solo permite ingreso entre las 06:00 y las 22:00,<br>
+    cuando guarda el horario,<br>
+    entonces el sistema lo almacena, lo sincroniza con el Edge Gateway y los nodos del área lo aplican en menos de 5 segundos.<br><br>
+    <strong>Escenario 2: Intento fuera de horario</strong><br>
+    Dado que el horario de un área es de 06:00 a 22:00,<br>
+    cuando un residente con credencial ACTIVA presenta su tarjeta a las 23:10,<br>
+    entonces el Edge Gateway responde DENIED con el motivo "Fuera de horario", la OLED lo muestra y el intento queda registrado.<br><br>
+    <strong>Escenario 3: Horario inválido</strong><br>
+    Dado que el administrador ingresa una hora de inicio igual o posterior a la de fin,<br>
+    cuando intenta guardar el horario,<br>
+    entonces el sistema retorna 400 con "El horario no es válido" sin modificar el horario vigente.
+  </td>
+  <td>EP11</td>
+</tr>
+
+<tr>
+  <td><strong>US88</strong></td>
+  <td>Avisar el fin de una reserva en el punto de acceso</td>
+  <td>Como residente, quiero que el nodo del área reservada me avise cuando mi reserva esté por terminar, para desocupar el espacio a tiempo.</td>
+  <td>
+    <strong>Escenario 1: Aviso previo al fin</strong><br>
+    Dado que hay una reserva vigente que termina a las 20:00 y el aviso está configurado a 10 minutos,<br>
+    cuando el reloj llega a las 19:50,<br>
+    entonces la OLED del nodo del área muestra "Reserva termina en 10 min" y el buzzer emite dos pitidos cortos.<br><br>
+    <strong>Escenario 2: Reserva cancelada o modificada</strong><br>
+    Dado que se programó un aviso de fin de reserva,<br>
+    cuando la reserva se cancela o su horario cambia antes del aviso,<br>
+    entonces el Edge Gateway elimina el aviso original y programa uno nuevo solo si la reserva sigue vigente.<br><br>
+    <strong>Escenario 3: Operación sin conexión</strong><br>
+    Dado que el Edge Gateway no tiene conexión con la nube,<br>
+    cuando llega la hora del aviso,<br>
+    entonces usa la caché local de reservas y su reloj para mostrar el aviso igualmente.
+  </td>
+  <td>EP11</td>
+</tr>
+
+<tr>
+  <td><strong>US89</strong></td>
+  <td>Activar el modo mantenimiento en un dispositivo</td>
+  <td>Como administrador, quiero poner un nodo en modo mantenimiento, para repararlo o calibrarlo sin generar falsas alertas ni accesos inesperados.</td>
+  <td>
+    <strong>Escenario 1: Activación del modo</strong><br>
+    Dado que el administrador selecciona un nodo ACTIVO y define una duración máxima (por ejemplo, 2 horas),<br>
+    cuando activa el modo mantenimiento,<br>
+    entonces el Edge Gateway cambia su estado a MANTENIMIENTO y desactiva el nodo: deja de procesar sus lecturas, accesos y comandos, suspende sus alertas de desconexión y de lecturas inválidas, la OLED muestra "En mantenimiento" y registra al administrador que lo activó.<br><br>
+    <strong>Escenario 2: Nodo desactivado durante el mantenimiento</strong><br>
+    Dado que un nodo está en mantenimiento,<br>
+    cuando un residente presenta su tarjeta o llega un comando automático o remoto (incluido el de un administrador),<br>
+    entonces el sistema no concede el acceso ni ejecuta el comando, la OLED indica que el nodo está en mantenimiento, la cerradura permanece bloqueada y el intento queda registrado; para operar el nodo se debe finalizar primero el mantenimiento.<br><br>
+    <strong>Escenario 3: Finalización del modo</strong><br>
+    Dado que un nodo está en mantenimiento,<br>
+    cuando el administrador lo finaliza o vence la duración máxima,<br>
+    entonces el nodo vuelve a ACTIVO, se reanudan sus alertas y se registra la duración total del mantenimiento.
+  </td>
+  <td>EP11</td>
+</tr>
+
+<tr>
+  <td>TS29</td>
+  <td>Actualización remota (OTA) del firmware de los nodos ESP32</td>
+  <td>Como desarrollador, quiero actualizar el firmware de los ESP32 de forma remota desde el Edge Gateway con verificación y reversión, para corregir errores y agregar funciones sin acceder físicamente a cada nodo.</td>
+  <td>
+    <strong>Escenario 1: Actualización exitosa</strong><br>
+    Dado que el administrador carga una nueva versión de firmware y selecciona un nodo ACTIVO sin un acceso en curso,<br>
+    cuando el Edge Gateway inicia la actualización,<br>
+    entonces el nodo descarga el firmware, verifica su integridad, se reinicia y reporta la nueva versión, y el Edge Gateway la registra.<br><br>
+    <strong>Escenario 2: Firmware corrupto o no autorizado</strong><br>
+    Dado que el nodo descarga un firmware cuyo hash o firma no coincide con el esperado,<br>
+    cuando valida la integridad,<br>
+    entonces rechaza la actualización, mantiene la versión actual y reporta el fallo al Edge Gateway.<br><br>
+    <strong>Escenario 3: Arranque fallido tras actualizar</strong><br>
+    Dado que el nodo se reinicia con la nueva versión,<br>
+    cuando el firmware no completa el arranque o no reporta su heartbeat en 60 segundos,<br>
+    entonces el nodo vuelve automáticamente a la versión anterior y reporta "Actualización revertida".<br><br>
+    <strong>Escenario 4: Acceso en curso</strong><br>
+    Dado que el nodo está procesando un acceso o tiene la cerradura energizada,<br>
+    cuando se solicita la actualización,<br>
+    entonces el Edge Gateway la posterga hasta que el nodo esté en reposo y no interrumpe la operación.
+  </td>
+  <td>EP05</td>
+</tr>
+
+
+<tr>
+  <td><strong>US90</strong></td>
+  <td>Acceder a un área con el teléfono móvil</td>
+  <td>Como residente, quiero acercar mi teléfono con la app de Edifika al nodo de acceso para ingresar a un área común, igual que con mi tarjeta RFID.</td>
+  <td>
+    <strong>Escenario 1: Acceso concedido con el teléfono</strong><br>
+    Dado que el residente tiene una credencial móvil ACTIVA en la app y un permiso vigente para el área,<br>
+    cuando acerca su teléfono al nodo de acceso,<br>
+    entonces el nodo lee la credencial, el Edge Gateway la valida y responde GRANTED en menos de 1 segundo, con la misma señal de la OLED, el buzzer y la cerradura que en un acceso con tarjeta.<br><br>
+    <strong>Escenario 2: Credencial vencida</strong><br>
+    Dado que la credencial móvil presentada tiene una vigencia corta (por ejemplo, 30 segundos) y ya expiró,<br>
+    cuando el Edge Gateway la evalúa,<br>
+    entonces responde DENIED con el motivo "Credencial vencida", la OLED indica que se debe abrir de nuevo la app y el intento queda registrado.<br><br>
+    <strong>Escenario 3: Credencial reutilizada</strong><br>
+    Dado que el Edge Gateway ya aceptó una credencial móvil con el mismo identificador único (nonce),<br>
+    cuando se presenta de nuevo,<br>
+    entonces responde DENIED con el motivo "Credencial ya utilizada" y registra el intento como posible reutilización.<br><br>
+    <strong>Escenario 4: Acceso sin internet</strong><br>
+    Dado que el Edge Gateway no tiene conexión con la nube,<br>
+    cuando un residente acerca su teléfono,<br>
+    entonces valida la credencial con las claves y permisos sincronizados previamente y la hora de su reloj, y resuelve el acceso con normalidad.
+  </td>
+  <td>EP11</td>
+</tr>
+
+<tr>
+  <td><strong>US91</strong></td>
+  <td>Revocar la credencial móvil de un teléfono</td>
+  <td>Como residente o administrador, quiero revocar la credencial móvil de un teléfono perdido o reemplazado, para que nadie pueda usarlo para ingresar.</td>
+  <td>
+    <strong>Escenario 1: Revocación con conexión</strong><br>
+    Dado que una credencial móvil ACTIVA es revocada desde la aplicación o por el administrador,<br>
+    cuando la nube publica la revocación,<br>
+    entonces el Edge Gateway la agrega a su lista de bloqueo en menos de 5 segundos y los intentos posteriores son DENIED con el motivo "Credencial revocada".<br><br>
+    <strong>Escenario 2: Cambio de teléfono</strong><br>
+    Dado que un residente registra un teléfono nuevo y ya tiene una credencial móvil ACTIVA,<br>
+    cuando se emite la nueva credencial,<br>
+    entonces la credencial anterior queda revocada y solo la nueva concede acceso.<br><br>
+    <strong>Escenario 3: Edge Gateway sin sincronizar</strong><br>
+    Dado que el Edge Gateway no tiene conexión con la nube y existe una revocación pendiente,<br>
+    cuando el administrador la requiere de inmediato,<br>
+    entonces puede bloquear manualmente la credencial desde el sistema local del condominio, se aplica en los nodos al instante y se concilia con la nube al reconectar.
+  </td>
+  <td>EP11</td>
+</tr>
+
+<tr>
+  <td>TS30</td>
+  <td>Verificación de credenciales móviles firmadas en el Edge Gateway</td>
+  <td>Como desarrollador, quiero que el Edge Gateway verifique credenciales móviles firmadas criptográficamente sin consultar la nube, para aceptar teléfonos de forma segura incluso sin internet.</td>
+  <td>
+    <strong>Escenario 1: Firma válida</strong><br>
+    Dado que la credencial móvil está firmada con la clave del emisor sincronizada en el Edge Gateway,<br>
+    cuando el Edge Gateway verifica la firma, la vigencia y el permiso,<br>
+    entonces acepta la credencial y resuelve el acceso en menos de 300 ms sin consultar la nube.<br><br>
+    <strong>Escenario 2: Firma inválida o alterada</strong><br>
+    Dado que la credencial presentada fue modificada o fue firmada con otra clave,<br>
+    cuando el Edge Gateway verifica la firma,<br>
+    entonces la rechaza, responde DENIED y registra el intento como "Credencial alterada" sin revelar el motivo detallado al nodo.<br><br>
+    <strong>Escenario 3: Rotación de claves</strong><br>
+    Dado que la nube emite una nueva clave de firma,<br>
+    cuando el Edge Gateway la sincroniza,<br>
+    entonces acepta credenciales firmadas con la clave nueva y con la anterior durante el periodo de transición, y luego descarta la anterior.<br><br>
+    <strong>Escenario 4: Lectura incompleta</strong><br>
+    Dado que el teléfono se aleja antes de transmitir toda la credencial,<br>
+    cuando el nodo detecta una lectura incompleta,<br>
+    entonces la OLED muestra "Reintente", no se consume el identificador único y no se registra como intento denegado.
+  </td>
+  <td>EP05</td>
+</tr>
+
+
+<tr>
+  <td><strong>US92</strong></td>
+  <td>Calibrar los sensores de un nodo</td>
+  <td>Como administrador, quiero calibrar los sensores de un nodo (altura del tanque, umbral de humedad baja y umbral de nivel crítico), para que las lecturas y las alertas reflejen las condiciones reales del edificio.</td>
+  <td>
+    <strong>Escenario 1: Calibración exitosa</strong><br>
+    Dado que el administrador define una altura de tanque de 150 cm, un umbral de humedad baja de 30 % y un nivel crítico de 15 %,<br>
+    cuando guarda la calibración,<br>
+    entonces el Edge Gateway aplica los valores a las lecturas siguientes y reporta el cambio a la nube.<br><br>
+    <strong>Escenario 2: Valores fuera de rango</strong><br>
+    Dado que el administrador ingresa una altura de tanque menor a 10 cm o un umbral mayor a 100 %,<br>
+    cuando intenta guardar la calibración,<br>
+    entonces el sistema retorna 422 indicando el valor inválido y mantiene la calibración vigente.<br><br>
+    <strong>Escenario 3: Nodo no registrado</strong><br>
+    Dado que el identificador del nodo no existe en el Edge Gateway,<br>
+    cuando el administrador intenta calibrarlo,<br>
+    entonces el sistema retorna 404 sin crear ni modificar ningún registro.
+  </td>
+  <td>EP11</td>
+</tr>
+
+<tr>
+  <td><strong>US93</strong></td>
+  <td>Consultar el estado del Edge Gateway sin internet</td>
+  <td>Como administrador, quiero consultar desde el sistema local el estado del Edge Gateway, sus nodos y los eventos pendientes de enviar, para operar y diagnosticar el edificio aunque no haya internet.</td>
+  <td>
+    <strong>Escenario 1: Estado general</strong><br>
+    Dado que el edificio no tiene conexión a internet,<br>
+    cuando el administrador consulta el estado del Edge Gateway,<br>
+    entonces el sistema muestra la cantidad de nodos por estado, los eventos pendientes de envío, la última sincronización con la nube y si la caché está desactualizada.<br><br>
+    <strong>Escenario 2: Eventos pendientes</strong><br>
+    Dado que existen eventos que aún no fueron entregados a la nube,<br>
+    cuando el administrador consulta la cola de eventos,<br>
+    entonces el sistema los lista en orden cronológico con su tipo, la cantidad de intentos y el último error.<br><br>
+    <strong>Escenario 3: Consulta sin autorización</strong><br>
+    Dado que la solicitud no incluye un token válido,<br>
+    cuando se consulta el estado o la cola de eventos,<br>
+    entonces el sistema retorna 401 y no revela información del edificio.
+  </td>
+  <td>EP11</td>
+</tr>
+
+<tr>
+  <td>TS31</td>
+  <td>Despliegue del Edge Gateway con Docker Compose</td>
+  <td>Como desarrollador, quiero desplegar el Edge Gateway, el broker MQTT y un backend simulado con Docker Compose, para ejecutar y demostrar toda la solución con un solo comando.</td>
+  <td>
+    <strong>Escenario 1: Arranque completo</strong><br>
+    Dado que el desarrollador ejecuta docker compose up,<br>
+    cuando los servicios superan sus verificaciones de salud,<br>
+    entonces el Edge Gateway responde 200 en /health, conectado al broker MQTT y al backend.<br><br>
+    <strong>Escenario 2: Persistencia tras reinicio</strong><br>
+    Dado que el Edge Gateway tiene credenciales y eventos pendientes almacenados,<br>
+    cuando se reinicia su contenedor,<br>
+    entonces recupera la información desde el volumen sin pérdida de datos.<br><br>
+    <strong>Escenario 3: Broker aún no disponible</strong><br>
+    Dado que el broker MQTT todavía no está listo o se cae,<br>
+    cuando el Edge Gateway intenta conectarse,<br>
+    entonces reintenta con espera creciente sin terminar el proceso y se suscribe de nuevo al reconectar.
+  </td>
+  <td>EP05</td>
+</tr>
+
+<tr>
+  <td>TS32</td>
+  <td>Simulador de nodos ESP32 para pruebas sin hardware</td>
+  <td>Como desarrollador, quiero un simulador de nodos ESP32 que respete el contrato MQTT, para probar el Edge Gateway sin depender del hardware físico.</td>
+  <td>
+    <strong>Escenario 1: Nodo virtual en operación</strong><br>
+    Dado que el simulador se ejecuta con el identificador de un nodo registrado,<br>
+    cuando transcurre el intervalo de muestreo,<br>
+    entonces publica el heartbeat y las lecturas de humedad y ultrasonido conforme al contrato y confirma los comandos recibidos.<br><br>
+    <strong>Escenario 2: Lectura de una tarjeta</strong><br>
+    Dado que el desarrollador indica un UID de tarjeta,<br>
+    cuando el simulador lo publica como lectura de acceso,<br>
+    entonces muestra el resultado recibido del Edge Gateway y termina con código 0 si el acceso fue concedido y 1 si fue denegado.<br><br>
+    <strong>Escenario 3: Cerradura que no responde</strong><br>
+    Dado que el simulador se ejecuta sin confirmar comandos,<br>
+    cuando el Edge Gateway envía una orden de apertura,<br>
+    entonces la orden expira y el Edge Gateway reporta una alerta de cerradura sin respuesta.
+  </td>
+  <td>EP05</td>
+</tr>
+
+<tr>
+  <td>TS33</td>
+  <td>Contrato de integración entre el Edge Gateway y el backend</td>
+  <td>Como desarrollador, quiero un contrato de integración entre el Edge Gateway y el backend con entrega por lotes e idempotencia, para transportar la información de los nodos sin pérdidas ni duplicados.</td>
+  <td>
+    <strong>Escenario 1: Entrega idempotente por lotes</strong><br>
+    Dado que el Edge Gateway envía un lote de eventos, cada uno con un identificador único,<br>
+    cuando el backend los acepta,<br>
+    entonces responde con los identificadores aceptados y un reenvío del mismo lote no duplica ningún evento.<br><br>
+    <strong>Escenario 2: Error transitorio</strong><br>
+    Dado que el backend responde 5xx, 429 o no está disponible,<br>
+    cuando el Edge Gateway intenta entregar los eventos,<br>
+    entonces los conserva en su cola y reintenta con espera creciente (máximo 60 segundos) sin perder el orden cronológico.<br><br>
+    <strong>Escenario 3: Rechazo permanente</strong><br>
+    Dado que el backend rechaza un evento con un error 4xx distinto de 401, 403, 408 y 429,<br>
+    cuando se agotan 5 intentos,<br>
+    entonces el Edge Gateway descarta ese evento, lo registra y continúa con los siguientes sin bloquear la cola.
+  </td>
+  <td>EP05</td>
+</tr>
+
+<tr>
+  <td>TS34</td>
+  <td>Pruebas automatizadas del Edge Gateway</td>
+  <td>Como desarrollador, quiero una suite de pruebas automatizadas del Edge Gateway que no dependa del broker ni de la red, para detectar regresiones antes de cada integración.</td>
+  <td>
+    <strong>Escenario 1: Ejecución aislada</strong><br>
+    Dado que el desarrollador ejecuta la suite en un equipo sin broker MQTT ni internet,<br>
+    cuando las pruebas se ejecutan,<br>
+    entonces todas usan dobles de prueba para el broker y el backend, cada una con su propia base de datos, y terminan en menos de 30 segundos.<br><br>
+    <strong>Escenario 2: Cobertura de escenarios</strong><br>
+    Dado que cada historia del Edge Gateway define sus escenarios de aceptación,<br>
+    cuando se revisa la suite,<br>
+    entonces existe al menos una prueba por escenario, incluidos los casos de error.<br><br>
+    <strong>Escenario 3: Detección de regresiones</strong><br>
+    Dado que un cambio altera una regla de negocio, como el orden de entrega de eventos o la decisión de acceso,<br>
+    cuando se ejecuta la suite,<br>
+    entonces al menos una prueba falla e indica el comportamiento que cambió.
+  </td>
+  <td>EP05</td>
+</tr>
+
   </tbody>
 </table>
+
+**Criterios transversales de aceptación para historias IoT**
+
+Las siguientes condiciones aplican a todas las historias de las épicas EP07 a EP11 y a las historias técnicas TS16 a TS34, además de los escenarios específicos de cada historia:
+
+- **Confirmación de actuación:** todo comando enviado a un dispositivo (abrir, encender, apagar, cortar) debe ser confirmado mediante un mensaje ACK; si no se recibe dentro del tiempo límite, la acción se registra como fallida y se notifica.
+- **Trazabilidad:** toda acción de actuación o cambio de configuración registra quién lo realizó (usuario o sistema), cuándo y sobre qué dispositivo.
+- **Dispositivos desconectados:** un dispositivo en estado OFFLINE no recibe comandos diferidos; su indisponibilidad no afecta al resto de dispositivos.
+- **Idempotencia:** un evento o lectura repetido (mismo identificador o misma marca de tiempo) no produce efectos duplicados.
+- **Seguridad:** los endpoints exigen token JWT válido y rol autorizado; en caso contrario retornan 401 o 403.
+- **Continuidad operativa:** las funciones críticas de acceso, iluminación y corte de bombas se ejecutan en el Edge API sin depender de la conexión a internet.
+- **Marcas de tiempo:** todos los eventos y lecturas se registran en UTC (ISO 8601) con la hora del reloj del nodo sincronizado con el Edge Gateway, y se muestran en la zona America/Lima.
+- **Rendimiento:** los tiempos indicados en cada escenario se miden desde la recepción del evento o solicitud hasta la respuesta o confirmación del dispositivo.
 
 
 ## Justificación y Trazabilidad de las Historias de Usuario
@@ -2608,6 +3635,46 @@ Visualización instantánea de datos generados por sensores y dispositivos conec
 | **US51 – Riego automático según humedad del suelo**        | Sistema                   | Automatización del mantenimiento de áreas verdes.                            | **No existe evidencia directa en las entrevistas** que sustente esta necesidad.                                                                                                                                             |
 | **US52 – Detección de fugas en tanque de agua**            | Administrador             | Prevención de pérdidas relacionadas con infraestructura.                     | **No existe evidencia directa en las entrevistas** que sustente esta necesidad.                                                                                                                                             |
 | **US53 – Encendido automático de luces por movimiento**    | Sistema                   | Automatización y control de áreas comunes.                                   | **No existe evidencia directa en las entrevistas** que sustente esta necesidad.                                                                                                                                             |
+| **US54 – Otorgar acceso temporal por reserva aprobada** | Residente / Administrador | Control de ingreso a áreas comunes sin intervención manual. | Se deriva del problema de gestión manual de reservas (US18, US19) y de la regla de AccessDecisionService (4.2.9). Las entrevistas no mencionan control físico de ingreso. **No existe evidencia directa en las entrevistas** que sustente esta necesidad. Corresponde a una funcionalidad propuesta dentro del alcance IoT del sistema. |
+| **US55 – Consultar bitácora de accesos** | Administrador | Falta de trazabilidad sobre el uso de áreas comunes. | Se relaciona con la falta de control y trazabilidad en áreas comunes (US40). **No existe evidencia directa en las entrevistas** que sustente esta necesidad. Corresponde a una funcionalidad propuesta dentro del alcance IoT del sistema. |
+| **US56 – Apertura remota de acceso** | Administrador | Atención de emergencias o fallas del lector. | **No existe evidencia directa en las entrevistas** que sustente esta necesidad. Corresponde a una funcionalidad propuesta dentro del alcance IoT del sistema. |
+| **US57 – Configurar reglas de automatización de iluminación** | Administrador | Consumo energético innecesario en áreas comunes. | Amplía US53 incorporando condiciones de lux, horario y prioridad (4.2.10). **No existe evidencia directa en las entrevistas** que sustente esta necesidad. Corresponde a una funcionalidad propuesta dentro del alcance IoT del sistema. |
+| **US58 – Encender o apagar luces manualmente (override)** | Residente / Administrador | Falta de control manual sobre la iluminación de áreas comunes. | **No existe evidencia directa en las entrevistas** que sustente esta necesidad. Corresponde a una funcionalidad propuesta dentro del alcance IoT del sistema. |
+| **US59 – Encender área al iniciar una reserva** | Sistema | Automatización y preparación de áreas comunes. | Integra Reservation Service con Smart Lighting (4.2.10.3). **No existe evidencia directa en las entrevistas** que sustente esta necesidad. Corresponde a una funcionalidad propuesta dentro del alcance IoT del sistema. |
+| **US60 – Registrar y consultar luminarias** | Administrador | Falta de inventario centralizado de dispositivos. | **No existe evidencia directa en las entrevistas** que sustente esta necesidad. Corresponde a una funcionalidad propuesta dentro del alcance IoT del sistema. |
+| **US61 – Visualizar consumo energético por área y periodo** | Administrador | Falta de transparencia y control de gastos del edificio. | Se relaciona con la preocupación por la transparencia de los gastos (US25). **No existe evidencia directa en las entrevistas** que sustente esta necesidad. Corresponde a una funcionalidad propuesta dentro del alcance IoT del sistema. |
+| **US62 – Alertar consumo anómalo** | Administrador | Detección tardía de consumos irregulares. | **No existe evidencia directa en las entrevistas** que sustente esta necesidad. Corresponde a una funcionalidad propuesta dentro del alcance IoT del sistema. |
+| **US63 – Detectar falla de luminaria** | Administrador | Mantenimiento correctivo tardío de la iluminación. | **No existe evidencia directa en las entrevistas** que sustente esta necesidad. Corresponde a una funcionalidad propuesta dentro del alcance IoT del sistema. |
+| **US64 – Monitorear estado de conexión de dispositivos** | Administrador | Falta de visibilidad sobre el estado de la infraestructura IoT. | Complementa TS16 y TS17 desde la perspectiva del administrador. **No existe evidencia directa en las entrevistas** que sustente esta necesidad. Corresponde a una funcionalidad propuesta dentro del alcance IoT del sistema. |
+| **US65 – Consultar lecturas de sensores en tiempo real e históricas** | Administrador | Falta de visibilidad en tiempo real de los dispositivos. | Responde a la funcionalidad de Monitoreo en Tiempo Real e Historial de Eventos definida en el alcance IoT. **No existe evidencia directa en las entrevistas** que sustente esta necesidad. Corresponde a una funcionalidad propuesta dentro del alcance IoT del sistema. |
+| **US66 – Configurar reglas de detección de fugas** | Administrador | Pérdidas de agua por infraestructura hidráulica. | Se relaciona con US52 (monitoreo de tanque), ampliando el alcance hacia bombas de agua (4.2.12). **No existe evidencia directa en las entrevistas** que sustente esta necesidad. Corresponde a una funcionalidad propuesta dentro del alcance IoT del sistema. |
+| **US67 – Cortar automáticamente la bomba ante una fuga** | Sistema | Pérdidas mayores de agua por fugas no detectadas. | **No existe evidencia directa en las entrevistas** que sustente esta necesidad. Corresponde a una funcionalidad propuesta dentro del alcance IoT del sistema. |
+| **US68 – Gestionar alertas de fuga** | Administrador | Falta de seguimiento de incidentes de infraestructura. | **No existe evidencia directa en las entrevistas** que sustente esta necesidad. Corresponde a una funcionalidad propuesta dentro del alcance IoT del sistema. |
+| **US69 – Apagar manualmente una bomba de agua** | Administrador | Respuesta lenta ante emergencias hidráulicas. | **No existe evidencia directa en las entrevistas** que sustente esta necesidad. Corresponde a una funcionalidad propuesta dentro del alcance IoT del sistema. |
+| **US70 – Detectar falla de bomba por caída de presión** | Administrador | Fallas de equipos hidráulicos detectadas tarde. | **No existe evidencia directa en las entrevistas** que sustente esta necesidad. Corresponde a una funcionalidad propuesta dentro del alcance IoT del sistema. |
+| **US71 – Leer tarjeta RFID y resolver el acceso** | Residente | Control de ingreso a áreas comunes sin intervención manual. | Se relaciona con la gestión de acceso a áreas comunes (US48 y US54). **No existe evidencia directa en las entrevistas** que sustente esta necesidad. Corresponde a una funcionalidad propuesta dentro del alcance IoT del sistema. |
+| **US72 – Abrir la cerradura eléctrica y re-bloquearla automáticamente** | Sistema | Seguridad física de las áreas comunes. | **No existe evidencia directa en las entrevistas** que sustente esta necesidad. Corresponde a una funcionalidad propuesta dentro del alcance IoT del sistema. |
+| **US73 – Emitir señales sonoras con el buzzer** | Residente | Falta de retroalimentación inmediata en el punto de acceso. | **No existe evidencia directa en las entrevistas** que sustente esta necesidad. Corresponde a una funcionalidad propuesta dentro del alcance IoT del sistema. |
+| **US74 – Mostrar mensajes de estado en la pantalla OLED** | Residente | Falta de información clara en el punto de acceso. | **No existe evidencia directa en las entrevistas** que sustente esta necesidad. Corresponde a una funcionalidad propuesta dentro del alcance IoT del sistema. |
+| **US75 – Registrar y sincronizar accesos generados sin conexión** | Administrador | Pérdida de trazabilidad ante caídas de internet. | Responde al requisito de resiliencia offline del Edge definido en el Cap. IV. **No existe evidencia directa en las entrevistas** que sustente esta necesidad. Corresponde a una funcionalidad propuesta dentro del alcance IoT del sistema. |
+| **US76 – Medir la humedad con el sensor de humedad** | Sistema | Monitoreo del estado de las áreas verdes. | Es la base de US51 (riego según humedad). **No existe evidencia directa en las entrevistas** que sustente esta necesidad. Corresponde a una funcionalidad propuesta dentro del alcance IoT del sistema. |
+| **US77 – Medir el nivel de agua con el sensor ultrasónico** | Administrador | Control del nivel del tanque de agua. | Alimenta la historia US52. **No existe evidencia directa en las entrevistas** que sustente esta necesidad. Corresponde a una funcionalidad propuesta dentro del alcance IoT del sistema. |
+| **US78 – Alertar localmente un nivel crítico** | Administrador | Detección tardía de problemas en el suministro de agua. | Se relaciona con la prevención de pérdidas del tanque (US52). **No existe evidencia directa en las entrevistas** que sustente esta necesidad. Corresponde a una funcionalidad propuesta dentro del alcance IoT del sistema. |
+| **US79 – Registrar y autenticar nodos ESP32** | Administrador | Control sobre qué dispositivos forman parte de la red del edificio. | **No existe evidencia directa en las entrevistas** que sustente esta necesidad. Corresponde a una funcionalidad propuesta dentro del alcance IoT del sistema. |
+| **US80 – Monitorear el estado de los nodos desde el Edge Gateway** | Administrador | Falta de visibilidad sobre la salud de los dispositivos. | Es el origen de los datos de US64. **No existe evidencia directa en las entrevistas** que sustente esta necesidad. Corresponde a una funcionalidad propuesta dentro del alcance IoT del sistema. |
+| **US81 – Sincronizar credenciales, reservas y blacklist desde la nube** | Sistema | Continuidad del acceso ante caídas de internet. | Responde al requisito de resiliencia offline del Edge (Cap. IV). **No existe evidencia directa en las entrevistas** que sustente esta necesidad. Corresponde a una funcionalidad propuesta dentro del alcance IoT del sistema. |
+| **US82 – Reenviar telemetría y eventos a la nube** | Sistema | Pérdida de datos de sensores ante fallas de conectividad. | **No existe evidencia directa en las entrevistas** que sustente esta necesidad. Corresponde a una funcionalidad propuesta dentro del alcance IoT del sistema. |
+| **US83 – Ejecutar comandos remotos sobre los dispositivos** | Administrador | Atención remota de situaciones excepcionales. | Es la contraparte en el Edge de US56. **No existe evidencia directa en las entrevistas** que sustente esta necesidad. Corresponde a una funcionalidad propuesta dentro del alcance IoT del sistema. |
+| **US84 – Mostrar fecha y hora en la pantalla OLED** | Residente | Falta de referencia horaria en el punto de acceso. | Complementa US74 y es necesaria para los permisos con ventana horaria de US54. **No existe evidencia directa en las entrevistas** que sustente esta necesidad. Corresponde a una funcionalidad propuesta dentro del alcance IoT del sistema. |
+| **US85 – Mantener y sincronizar el reloj del nodo** | Sistema | Permisos por horario y auditoría dependen de una hora confiable. | Requisito técnico de US54, US55 y US75, que usan marcas de tiempo y ventanas horarias. **No existe evidencia directa en las entrevistas** que sustente esta necesidad. Corresponde a una funcionalidad propuesta dentro del alcance IoT del sistema. |
+| **US86 – Enrolar una tarjeta RFID desde el lector del nodo** | Administrador | Registro manual de tarjetas propenso a errores de digitación. | Simplifica el flujo de US48 (registrar tarjeta de acceso). **No existe evidencia directa en las entrevistas** que sustente esta necesidad. Corresponde a una funcionalidad propuesta dentro del alcance IoT del sistema. |
+| **US87 – Restringir el acceso a un área por horario** | Administrador | Uso de áreas comunes fuera de las horas permitidas. | Complementa US39 (configurar reglas de área común) en el control físico del acceso. **No existe evidencia directa en las entrevistas** que sustente esta necesidad. Corresponde a una funcionalidad propuesta dentro del alcance IoT del sistema. |
+| **US88 – Avisar el fin de una reserva en el punto de acceso** | Residente | Conflictos por superposición de horarios en áreas comunes. | Responde al problema de cruces de horarios señalado en las entrevistas (US19). El aviso físico es una funcionalidad propuesta. |
+| **US89 – Activar el modo mantenimiento en un dispositivo** | Administrador | Falsas alertas y riesgos al intervenir dispositivos. | **No existe evidencia directa en las entrevistas** que sustente esta necesidad. Corresponde a una funcionalidad propuesta dentro del alcance IoT del sistema. |
+| **US90 – Acceder a un área con el teléfono móvil** | Residente | Dependencia de llevar una tarjeta física para ingresar. | Extiende US71 (tarjeta RFID) a un segundo medio de credencial. **No existe evidencia directa en las entrevistas** que sustente esta necesidad. Corresponde a una funcionalidad propuesta dentro del alcance IoT del sistema. |
+| **US91 – Revocar la credencial móvil de un teléfono** | Residente / Administrador | Riesgo de acceso indebido por pérdida de un teléfono. | Equivale para el teléfono al reporte de tarjeta extraviada de US48. **No existe evidencia directa en las entrevistas** que sustente esta necesidad. Corresponde a una funcionalidad propuesta dentro del alcance IoT del sistema. |
+| **US92 – Calibrar los sensores de un nodo** | Administrador | Lecturas que no representan el tanque ni el área verde reales. | Complementa US76, US77 y US78, que dependen de valores calibrados. **No existe evidencia directa en las entrevistas** que sustente esta necesidad. Corresponde a una funcionalidad propuesta dentro del alcance IoT del sistema. |
+| **US93 – Consultar el estado del Edge Gateway sin internet** | Administrador | Falta de visibilidad del sistema cuando se cae internet. | Responde al requisito de operación sin conexión del Edge (Cap. IV) y respalda el registro manual de US86. **No existe evidencia directa en las entrevistas** que sustente esta necesidad. Corresponde a una funcionalidad propuesta dentro del alcance IoT del sistema. |
 
 
 
@@ -2621,52 +3688,184 @@ El Impact Map muestra la relación entre el objetivo de negocio de Edifika y los
 
 En esta sección, se presenta el Product Backlog como una recopilación organizada de historias de usuario priorizadas, la estimación de estas se realizó mediante story points basados en la escala Fibonacci, con el fin de tener una planificación más clara y una gestión eficiente para desarrollo de Edifika.
 
+El backlog contiene la totalidad del alcance vigente: **86 historias de usuario y 33 historias técnicas (119 ítems)**, es decir, todas las historias especificadas en 3.1 salvo las retiradas por la decisión de alcance (US52, US66–US70, US77 y TS20). Las historias técnicas se agrupan en la épica **EP05 (Infraestructura, seguridad y arquitectura técnica)** y las capacidades IoT se distribuyen en cinco épicas: EP07 (control de acceso), EP08 (iluminación inteligente), EP09 (telemetría y analítica), EP10 (riego automático) y EP11 (Edge Gateway y dispositivos ESP32). El orden sigue dos criterios: primero la prioridad MoSCoW (*Must Have*, *Should Have*, *Could Have*) y, dentro de cada prioridad, las dependencias técnicas —la historia técnica de configuración base de cada microservicio precede a las historias de usuario que se implementan sobre él—. Las capacidades de monitoreo de tanque de agua, detección de fugas y calidad del aire quedaron **fuera del alcance del producto** y, por ello, no forman parte del backlog.
+
 | Orden | User Story ID | Título | Descripción | Epic ID | Story Points | MoSCoW |
 |-------|--------------|--------|-------------|---------|--------------|--------|
-| 1 | US04 | Verificar información de usuarios | Como administrador, quiero verificar la información de los usuarios para asegurar que sea correcta. | EP01 | 3 | Must Have |
-| 2 | US05 | Actualizar información de usuarios | Como administrador, quiero actualizar información de usuarios para mantener datos correctos. | EP01 | 2 | Must Have |
-| 3 | US07 | Registrar edificio y unidades | Como administrador, quiero registrar el edificio con sus unidades residenciales para gestionar la comunidad. | EP01 | 8 | Must Have |
-| 4 | US13 | Publicar comunicados oficiales | Como administrador, quiero publicar comunicados oficiales para informar a los residentes. | EP02 | 3 | Must Have |
-| 5 | US15 | Seguimiento de visualización | Como administrador, quiero saber quién ha visto los comunicados para asegurar su alcance. | EP02 | 5 | Should Have |
-| 6 | US18 | Aprobar o rechazar reservas | Como administrador, quiero aprobar o rechazar reservas para mantener el control. | EP03 | 3 | Should Have |
-| 7 | US19 | Evitar reservas duplicadas | Como administrador, quiero evitar reservas duplicadas para prevenir conflictos. | EP03 | 5 | Must Have |
-| 8 | US23 | Registrar pagos en el sistema | Como administrador, quiero registrar pagos para mantener actualizado el sistema. | EP04 | 3 | Must Have |
-| 9 | US24 | Visualizar residentes morosos | Como administrador, quiero visualizar residentes morosos para tomar acciones. | EP04 | 5 | Must Have |
-| 10 | US25 | Generar reportes financieros | Como administrador, quiero generar reportes financieros para evaluar el estado del condominio. | EP04 | 8 | Should Have |
-| 11 | US26 | Exportar reportes financieros | Como administrador, quiero exportar reportes para compartirlos con la comunidad. | EP04 | 3 | Should Have |
-| 12 | US31 | Notificación por reserva (Admin) | Como administrador, quiero saber cuándo alguien reserva un área común. | EP03 | 3 | Should Have |
-| 13 | US32 | Consultar Leyes y Manuales | Como administrador, quiero ver la normativa legal y del edificio. | EP05 | 3 | Could Have |
-| 14 | US33 | Ver disponibilidad global (Admin) | Como administrador, quiero ver el mapa de ocupación de todo el edificio. | EP03 | 5 | Should Have |
+| 1 | TS01 | Configuración de autenticación y autorización con JWT | Como desarrollador, quiero implementar autenticación y autorización basada en JWT en el microservicio IAM, para que solo los administradores autorizados puedan acceder a los endpoints protegidos del sistema. | EP05 | 5 | Must Have |
+| 2 | TS02 | Implementación de endpoints de registro e inicio de sesión con validaciones | Como desarrollador, quiero implementar los endpoints de registro e inicio de sesión del microservicio IAM con validaciones estrictas de datos. | EP05 | 5 | Must Have |
+| 3 | TS03 | Implementación de endpoints de gestión de usuarios | Como desarrollador, quiero implementar los endpoints CRUD de gestión de usuarios y consulta de roles en el microservicio IAM. | EP05 | 8 | Must Have |
+| 4 | TS04 | Configuración del API Gateway como punto de entrada centralizado | Como desarrollador, quiero configurar un API Gateway que centralice todas las solicitudes de la aplicación móvil hacia los microservicios de Edifika. | EP05 | 5 | Must Have |
+| 5 | TS05 | Configuración de base de datos PostgreSQL independiente por microservicio | Como desarrollador, quiero configurar una base de datos PostgreSQL independiente para cada microservicio de Edifika. | EP05 | 8 | Must Have |
+| 6 | TS15 | Configuración de CORS en el API Gateway | Como desarrollador, quiero configurar las políticas de CORS en el API Gateway para permitir que la aplicación móvil y el frontend se comuniquen correctamente con el backend. | EP05 | 3 | Must Have |
+| 7 | TS13 | Implementación de comunicación entre microservicios mediante REST | Como desarrollador, quiero implementar la comunicación entre microservicios de Edifika mediante llamadas REST con manejo controlado de errores. | EP05 | 5 | Must Have |
+| 8 | TS06 | Configuración base del microservicio Residential Management | Como desarrollador, quiero crear el microservicio de gestión residencial para administrar edificios, unidades y la vinculación de residentes con sus unidades. | EP05 | 5 | Must Have |
+| 9 | US02 | Registro con correo | Como usuario, quiero registrarme con mi correo para acceder a la plataforma. | EP01 | 3 | Must Have |
+| 10 | US03 | Inicio de sesión | Como usuario, quiero iniciar sesión para acceder a mi información. | EP01 | 2 | Must Have |
+| 11 | US07 | Registrar edificio y unidades | Como administrador, quiero registrar el edificio con sus unidades residenciales para gestionar la comunidad. | EP01 | 8 | Must Have |
+| 12 | US01 | Crear cuenta vinculada a unidad | Como residente, quiero crear una cuenta vinculada a mi unidad para acceder a la gestión de mi edificio. | EP01 | 5 | Must Have |
+| 13 | US04 | Verificar información de usuarios | Como administrador, quiero verificar la información de los usuarios para asegurar que sea correcta. | EP01 | 3 | Must Have |
+| 14 | US05 | Actualizar información de usuarios | Como administrador, quiero actualizar información de usuarios para mantener datos correctos. | EP01 | 2 | Must Have |
 | 15 | US34 | Activar/Desactivar cuentas | Como administrador, quiero controlar quién tiene acceso a la app. | EP01 | 3 | Must Have |
-| 16 | US35 | Cancelar reserva (Admin) | Como administrador, quiero anular una reserva de un residente. | EP03 | 3 | Should Have |
-| 17 | US36 | Crear encuestas o votaciones para la comunidad | Como administrador, quiero crear encuestas o votaciones para conocer la opinión de los residentes sobre temas del condominio. | EP05 | 5 | Could Have |
-| 18 | US37 | Moderar mensajes del muro comunitario | Como administrador, quiero revisar y eliminar mensajes inapropiados del muro para mantener un ambiente respetuoso. | EP05 | 3 | Could Have |
-| 19 | US38 | Habilitar o deshabilitar área común | Como administrador, quiero activar o desactivar áreas comunes para reflejar su disponibilidad real según mantenimiento o restricciones. | EP03 | 3 | Must Have |
-| 20 | US39 | Configurar reglas de área común | Como administrador, quiero definir las reglas, horarios y límites de cada área común para regular su uso correctamente. | EP03 | 5 | Should Have |
-| 21 | US40 | Ver historial de uso de áreas comunes | Como administrador, quiero consultar el historial completo de uso de las áreas comunes con estadísticas para tomar mejores decisiones de gestión. | EP03 | 5 | Could Have |
-| 22 | TS01 | Configuración de autenticación y autorización con JWT | Como desarrollador, quiero implementar autenticación y autorización basada en JWT en el microservicio IAM, para que solo los administradores autorizados puedan acceder a los endpoints protegidos del sistema. | EP-TS | 5 | Must Have |
-| 23 | TS02 | Implementación de endpoints de registro e inicio de sesión con validaciones | Como desarrollador, quiero implementar los endpoints de registro e inicio de sesión del microservicio IAM con validaciones estrictas de datos. | EP-TS | 5 | Must Have |
-| 24 | TS03 | Implementación de endpoints de gestión de usuarios | Como desarrollador, quiero implementar los endpoints CRUD de gestión de usuarios y consulta de roles en el microservicio IAM. | EP-TS | 8 | Must Have |
-| 25 | TS04 | Configuración del API Gateway como punto de entrada centralizado | Como desarrollador, quiero configurar un API Gateway que centralice todas las solicitudes de la aplicación móvil hacia los microservicios de Edifika. | EP-TS | 5 | Must Have |
-| 26 | TS05 | Configuración de base de datos PostgreSQL independiente por microservicio | Como desarrollador, quiero configurar una base de datos PostgreSQL independiente para cada microservicio de Edifika. | EP-TS | 8 | Must Have |
-| 27 | TS06 | Configuración base del microservicio Residential Management | Como desarrollador, quiero crear el microservicio de gestión residencial para administrar edificios, unidades y la vinculación de residentes con sus unidades. | EP-TS | 5 | Must Have |
-| 28 | TS07 | Configuración base del microservicio Payment Service con integración Culqi | Como desarrollador, quiero crear el microservicio de pagos para gestionar deudas, cuotas y transacciones del condominio integrándose con Culqi. | EP-TS | 5 | Must Have |
-| 29 | TS08 | Configuración base del microservicio Reservation Service | Como desarrollador, quiero crear el microservicio de reservas para gestionar la disponibilidad y uso de áreas comunes del condominio. | EP-TS | 5 | Must Have |
-| 30 | TS09 | Configuración base del microservicio Communication Service | Como desarrollador, quiero crear el microservicio de comunicados para que los administradores puedan publicar avisos oficiales. | EP-TS | 5 | Must Have |
-| 31 | TS10 | Configuración base del microservicio Notification Service con Firebase | Como desarrollador, quiero crear el microservicio de notificaciones integrado con Firebase Cloud Messaging. | EP-TS | 5 | Must Have |
-| 32 | TS11 | Configuración base del microservicio Report Service | Como desarrollador, quiero crear el microservicio de reportes para que los administradores puedan generar y exportar reportes financieros y de actividad del condominio. | EP-TS | 8 | Should Have |
-| 33 | TS12 | Configuración base del microservicio Messaging Forum Service | Como desarrollador, quiero crear el microservicio de foro comunitario para que los residentes puedan publicar mensajes en el canal de su edificio. | EP-TS | 5 | Could Have |
-| 34 | TS13 | Implementación de comunicación entre microservicios mediante REST | Como desarrollador, quiero implementar la comunicación entre microservicios de Edifika mediante llamadas REST con manejo controlado de errores. | EP-TS | 5 | Must Have |
-| 35 | TS14 | Documentación de API con Swagger y autenticación JWT | Como desarrollador, quiero integrar Swagger con soporte de autenticación JWT en cada microservicio de Edifika. | EP-TS | 3 | Should Have |
-| 36 | TS15 | Configuración de CORS en el API Gateway | Como desarrollador, quiero configurar las políticas de CORS en el API Gateway para permitir que la aplicación móvil y el frontend se comuniquen correctamente con el backend. | EP-TS | 3 | Must Have |
-| 37 | US48 | Registrar tarjeta de acceso a áreas comunes | Como administrador, quiero asignar una tarjeta de acceso a cada residente para controlar el ingreso a las áreas comunes del edificio. | EP07 | 5 | Should Have |
-| 38 | US49 | Desactivar acceso a áreas comunes por morosidad | Como sistema, quiero desactivar automáticamente el acceso de un residente moroso a las áreas comunes, permitiendo que el administrador pueda revertirlo en casos de emergencia. | EP07 | 5 | Should Have |
-| 39 | US50 | Configurar horarios de riego automático | Como administrador, quiero configurar los horarios y la duración del riego automático de las áreas verdes para optimizar el mantenimiento del edificio. | EP07 | 3 | Could Have |
-| 40 | US51 | Riego automático según humedad del suelo | Como sistema, quiero activar el riego automáticamente según el nivel de humedad del suelo para evitar el desperdicio de agua en las áreas verdes. | EP07 | 5 | Could Have |
-| 41 | US52 | Detección de fugas en tanque de agua | Como administrador, quiero monitorear el nivel del tanque de agua para detectar posibles fugas y actuar antes de que generen pérdidas mayores. | EP07 | 5 | Could Have |
-| 42 | US53 | Encendido automático de luces por movimiento | Como sistema, quiero encender automáticamente las luces de áreas comunes al detectar movimiento para mejorar la seguridad y el ahorro energético del edificio. | EP07 | 3 | Could Have |
-| 43 | TS16 | Configuración base del microservicio IoT Access Management | Como desarrollador, quiero crear el microservicio de IoT Access Management para gestionar el registro, estado y eventos de los dispositivos inteligentes del edificio. | EP-TS | 5 | Should Have |
-| 44 | TS17 | Comunicación con dispositivos ESP32 mediante protocolo MQTT | Como desarrollador, quiero implementar la comunicación entre el microservicio IoT Access Management y las placas ESP32 mediante MQTT, para recibir lecturas de sensores y enviar comandos de actuación en tiempo real. | EP-TS | 8 | Should Have |
+| 16 | TS07 | Configuración base del microservicio Payment Service con integración Culqi | Como desarrollador, quiero crear el microservicio de pagos para gestionar deudas, cuotas y transacciones del condominio integrándose con Culqi. | EP05 | 5 | Must Have |
+| 17 | US21 | Ver deuda actual | Como residente, quiero saber cuánto debo de mantenimiento para planificar mi pago. | EP04 | 3 | Must Have |
+| 18 | US22 | Registrar pago con comprobante | Como residente, quiero subir la foto de mi voucher para que el administrador valide mi pago sin enviarlo por WhatsApp. | EP04 | 5 | Must Have |
+| 19 | US23 | Registrar pagos en el sistema | Como administrador, quiero registrar pagos para mantener actualizado el sistema. | EP04 | 3 | Must Have |
+| 20 | US30 | Pagar deuda en línea | Como residente, quiero pagar mi deuda con tarjeta de crédito o débito para cancelarla en línea sin trasladarme al banco. | EP04 | 8 | Must Have |
+| 21 | US24 | Visualizar residentes morosos | Como administrador, quiero visualizar residentes morosos para tomar acciones. | EP04 | 5 | Must Have |
+| 22 | TS08 | Configuración base del microservicio Reservation Service | Como desarrollador, quiero crear el microservicio de reservas para gestionar la disponibilidad y uso de áreas comunes del condominio. | EP05 | 5 | Must Have |
+| 23 | US16 | Ver disponibilidad de áreas comunes | Como residente o administrador, quiero ver qué áreas comunes están libres para planificar su uso sin cruces de horario. | EP03 | 3 | Must Have |
+| 24 | US17 | Reservar área común | Como residente, quiero reservar un área común para asegurar su uso en el horario que necesito. | EP03 | 5 | Must Have |
+| 25 | US19 | Evitar reservas duplicadas | Como administrador, quiero evitar reservas duplicadas para prevenir conflictos. | EP03 | 5 | Must Have |
+| 26 | US38 | Habilitar o deshabilitar área común | Como administrador, quiero activar o desactivar áreas comunes para reflejar su disponibilidad real según mantenimiento o restricciones. | EP03 | 3 | Must Have |
+| 27 | TS09 | Configuración base del microservicio Communication Service | Como desarrollador, quiero crear el microservicio de comunicados para que los administradores puedan publicar avisos oficiales. | EP05 | 5 | Must Have |
+| 28 | TS10 | Configuración base del microservicio Notification Service con Firebase | Como desarrollador, quiero crear el microservicio de notificaciones integrado con Firebase Cloud Messaging. | EP05 | 5 | Must Have |
+| 29 | US13 | Publicar comunicados oficiales | Como administrador, quiero publicar comunicados oficiales para informar a los residentes. | EP02 | 3 | Must Have |
+| 30 | US10 | Recepción de comunicados | Como residente, quiero recibir los comunicados oficiales del condominio para estar informado de los avisos del edificio. | EP02 | 3 | Must Have |
+| 31 | US08 | Notificaciones de emergencias | Como residente o administrador, quiero emitir y recibir avisos inmediatos de emergencias para actuar a tiempo ante situaciones de riesgo en el edificio. | EP02 | 8 | Must Have |
+| 32 | US41 | Visualizar sección Hero de la Landing Page | Como visitante, quiero ver una sección principal con el mensaje de valor de Edifika para entender rápidamente de qué trata el producto. | EP06 | 1 | Must Have |
+| 33 | US42 | Navegar entre secciones de la Landing Page | Como visitante, quiero usar la barra de navegación para desplazarme entre las secciones de la landing page de forma rápida. | EP06 | 1 | Must Have |
+| 34 | US47 | Acceder a la app web desde la Landing Page | Como usuario registrado, quiero acceder a la aplicación web directamente desde la landing page para iniciar sesión sin pasos adicionales. | EP06 | 1 | Must Have |
+| 35 | TS23 | Configuración base del Edge Gateway con Python, Flask, Peewee ORM y SQLite | Como desarrollador, quiero crear el servicio Edge Gateway con Python, Flask, Peewee ORM y SQLite con configuración por variables de entorno y endpoint de salud, para tener una base ejecutable y desplegable en el equipo del edificio. | EP05 | 5 | Must Have |
+| 36 | TS24 | Contrato de mensajes MQTT entre el Edge Gateway y los ESP32 | Como desarrollador, quiero definir y validar el contrato de tópicos y mensajes JSON entre el Edge Gateway y los nodos ESP32, para que firmware y servicio evolucionen sin romperse. | EP05 | 5 | Must Have |
+| 37 | TS25 | Persistencia local con SQLite y cola de salida | Como desarrollador, quiero almacenar localmente credenciales, lecturas y eventos pendientes en SQLite, para garantizar la operación offline y la entrega confiable a la nube. | EP05 | 5 | Must Have |
+| 38 | TS26 | Firmware base del ESP32 con lectura de sensores y reconexión | Como desarrollador, quiero implementar el firmware base del ESP32 que lea los sensores, controle los actuadores y mantenga la conexión Wi-Fi y MQTT, para que el nodo opere de forma autónoma y recuperable. | EP05 | 8 | Must Have |
+| 39 | TS33 | Contrato de integración entre el Edge Gateway y el backend | Como desarrollador, quiero un contrato de integración entre el Edge Gateway y el backend con entrega por lotes e idempotencia, para transportar la información de los nodos sin pérdidas ni duplicados. | EP05 | 5 | Must Have |
+| 40 | US79 | Registrar y autenticar nodos ESP32 | Como administrador, quiero registrar cada ESP32 en el Edge Gateway con sus sensores y actuadores, para que solo los dispositivos autorizados puedan operar. | EP11 | 5 | Must Have |
+| 41 | US71 | Leer tarjeta RFID y resolver el acceso | Como residente, quiero acercar mi tarjeta RFID al lector de la puerta para ingresar a un área común sin depender de otra persona. | EP11 | 5 | Must Have |
+| 42 | US72 | Abrir la cerradura eléctrica y re-bloquearla automáticamente | Como sistema, quiero energizar la cerradura eléctrica solo el tiempo necesario cuando se concede un acceso, para que la puerta no quede abierta. | EP11 | 5 | Must Have |
+| 43 | US75 | Registrar y sincronizar accesos generados sin conexión | Como administrador, quiero que los accesos ocurridos sin internet queden registrados y se sincronicen luego, para no perder la auditoría. | EP11 | 5 | Must Have |
+| 44 | US81 | Sincronizar credenciales, reservas y blacklist desde la nube | Como sistema, quiero que el Edge Gateway reciba y mantenga actualizada una copia local de credenciales, reservas vigentes y blacklist, para decidir accesos sin depender de internet. | EP11 | 5 | Must Have |
+| 45 | US85 | Mantener y sincronizar el reloj del nodo | Como sistema, quiero que el nodo mantenga una hora precisa incluso sin internet y la sincronice con el Edge Gateway, para que los permisos por horario y las marcas de tiempo de los eventos sean confiables. | EP11 | 5 | Must Have |
+| 46 | US06 | Editar perfil | Como residente, quiero editar mi perfil para mantener mi contacto actualizado. | EP01 | 2 | Should Have |
+| 47 | US28 | Consultar pagos pasados | Como residente, quiero ver mi historial de pagos para comprobar qué periodos tengo cancelados. | EP04 | 2 | Should Have |
+| 48 | US09 | Recordatorios de pago | Como residente, quiero recibir alertas de mis deudas próximas a vencer para pagar a tiempo y evitar la mora. | EP04 | 3 | Should Have |
+| 49 | US20 | Cancelar reserva | Como residente, quiero cancelar una reserva que ya no usaré para liberar el espacio a otros residentes. | EP03 | 2 | Should Have |
+| 50 | US18 | Aprobar o rechazar reservas | Como administrador, quiero aprobar o rechazar reservas para mantener el control. | EP03 | 3 | Should Have |
+| 51 | US11 | Notificaciones de reservas | Como residente, quiero recibir avisos sobre mis reservas de áreas comunes para no olvidar mis turnos ni sus cambios de estado. | EP03 | 2 | Should Have |
+| 52 | US31 | Notificación por reserva (Admin) | Como administrador, quiero saber cuándo alguien reserva un área común. | EP03 | 3 | Should Have |
+| 53 | US39 | Configurar reglas de área común | Como administrador, quiero definir las reglas, horarios y límites de cada área común para regular su uso correctamente. | EP03 | 5 | Should Have |
+| 54 | US33 | Ver disponibilidad global (Admin) | Como administrador, quiero ver el mapa de ocupación de todo el edificio. | EP03 | 5 | Should Have |
+| 55 | US35 | Cancelar reserva (Admin) | Como administrador, quiero anular una reserva de un residente. | EP03 | 3 | Should Have |
+| 56 | US14 | Visualizar comunicados anteriores | Como residente, quiero ver el historial de comunicados para consultar información anterior cuando la necesite. | EP02 | 2 | Should Have |
+| 57 | US15 | Seguimiento de visualización | Como administrador, quiero saber quién ha visto los comunicados para asegurar su alcance. | EP02 | 5 | Should Have |
+| 58 | TS11 | Configuración base del microservicio Report Service | Como desarrollador, quiero crear el microservicio de reportes para que los administradores puedan generar y exportar reportes financieros y de actividad del condominio. | EP05 | 8 | Should Have |
+| 59 | US25 | Generar reportes financieros | Como administrador, quiero generar reportes financieros para evaluar el estado del condominio. | EP04 | 8 | Should Have |
+| 60 | US26 | Exportar reportes financieros | Como administrador, quiero exportar reportes para compartirlos con la comunidad. | EP04 | 3 | Should Have |
+| 61 | US27 | Ver resumen de gastos | Como residente, quiero ver en qué se gasta el dinero del edificio para tener transparencia sobre la administración. | EP04 | 5 | Should Have |
+| 62 | US45 | Visualizar sección de funcionalidades | Como visitante, quiero ver las funcionalidades principales de Edifika para evaluar si la plataforma se adapta a mis necesidades. | EP06 | 2 | Should Have |
+| 63 | TS14 | Documentación de API con Swagger y autenticación JWT | Como desarrollador, quiero integrar Swagger con soporte de autenticación JWT en cada microservicio de Edifika. | EP05 | 3 | Should Have |
+| 64 | TS16 | Configuración base del microservicio IoT Access Management | Como desarrollador, quiero crear el microservicio de IoT Access Management para gestionar el registro, estado y eventos de los dispositivos inteligentes del edificio. | EP05 | 5 | Should Have |
+| 65 | TS17 | Comunicación con dispositivos ESP32 mediante protocolo MQTT | Como desarrollador, quiero implementar la comunicación entre el microservicio IoT Access Management y las placas ESP32 mediante MQTT, para recibir lecturas de sensores y enviar comandos de actuación en tiempo real. | EP05 | 8 | Should Have |
+| 66 | TS21 | Implementación del Edge API con operación sin conexión y sincronización | Como desarrollador, quiero implementar el Edge API que se comunica por MQTT local con los nodos ESP32 y se sincroniza con la nube, para que el condominio siga operando aun sin conexión a internet. | EP05 | 8 | Should Have |
+| 67 | TS22 | Publicación y consumo de eventos de dominio entre contextos IoT | Como desarrollador, quiero implementar la mensajería de eventos de dominio mediante el broker AMQP/MQTT con consumo idempotente, para integrar los contextos IoT con Reservation, Payment y Notification sin acoplarlos. | EP05 | 5 | Should Have |
+| 68 | TS27 | Seguridad de la comunicación del Edge Gateway | Como desarrollador, quiero asegurar la comunicación entre los ESP32, el Edge Gateway y la nube, para evitar accesos o comandos no autorizados. | EP05 | 5 | Should Have |
+| 69 | TS28 | Estandarización de marcas de tiempo y zona horaria | Como desarrollador, quiero que todos los componentes registren las marcas de tiempo en UTC con formato ISO 8601 y las muestren en la zona America/Lima, para evitar inconsistencias entre el ESP32, el Edge Gateway y la nube. | EP05 | 3 | Should Have |
+| 70 | US48 | Registrar tarjeta de acceso a áreas comunes | Como administrador, quiero asignar una tarjeta de acceso a cada residente para controlar el ingreso a las áreas comunes del edificio. | EP07 | 5 | Should Have |
+| 71 | US49 | Desactivar acceso a áreas comunes por morosidad | Como sistema, quiero desactivar automáticamente el acceso de un residente moroso a las áreas comunes, permitiendo que el administrador pueda revertirlo en casos de emergencia. | EP07 | 5 | Should Have |
+| 72 | US54 | Otorgar acceso temporal por reserva aprobada | Como residente, quiero que mi reserva aprobada me habilite automáticamente el ingreso al área común solo durante mi horario, para no depender del administrador para entrar. | EP07 | 5 | Should Have |
+| 73 | US55 | Consultar bitácora de accesos | Como administrador, quiero consultar la bitácora de intentos de acceso a las áreas comunes para auditar quién ingresó y detectar accesos no autorizados. | EP07 | 3 | Should Have |
+| 74 | US73 | Emitir señales sonoras con el buzzer | Como residente, quiero escuchar una señal sonora distinta según el resultado de mi acceso, para saber si puedo pasar sin mirar la pantalla. | EP11 | 2 | Should Have |
+| 75 | US74 | Mostrar mensajes de estado en la pantalla OLED | Como residente, quiero ver en la pantalla OLED el resultado de mi acceso y el estado del sistema, para entender por qué se me permite o niega el ingreso. | EP11 | 3 | Should Have |
+| 76 | US84 | Mostrar fecha y hora en la pantalla OLED | Como residente, quiero ver la fecha y la hora actual en la pantalla OLED del punto de acceso, para saber la hora sin usar mi celular y verificar mi horario de reserva. | EP11 | 3 | Should Have |
+| 77 | US86 | Enrolar una tarjeta RFID desde el lector del nodo | Como administrador, quiero registrar una tarjeta nueva acercándola al lector del nodo, para asignarla a un residente sin digitar manualmente su número de serie. | EP11 | 5 | Should Have |
+| 78 | US87 | Restringir el acceso a un área por horario | Como administrador, quiero definir el horario permitido de cada área común, para que no se pueda ingresar fuera de las horas habilitadas aunque se tenga una credencial activa. | EP11 | 3 | Should Have |
+| 79 | US80 | Monitorear el estado de los nodos desde el Edge Gateway | Como administrador, quiero que el Edge Gateway detecte cuándo un nodo deja de responder, para atender fallas de hardware o de red. | EP11 | 3 | Should Have |
+| 80 | US82 | Reenviar telemetría y eventos a la nube | Como sistema, quiero que el Edge Gateway reenvíe las lecturas de los sensores y los eventos hacia la nube, para alimentar la analítica y las alertas. | EP11 | 5 | Should Have |
+| 81 | US83 | Ejecutar comandos remotos sobre los dispositivos | Como administrador, quiero enviar comandos desde la nube (abrir cerradura, activar alerta sonora o mensaje en pantalla) y que el Edge Gateway los ejecute en el dispositivo, para atender situaciones a distancia. | EP11 | 3 | Should Have |
+| 82 | US89 | Activar el modo mantenimiento en un dispositivo | Como administrador, quiero poner un nodo en modo mantenimiento, para repararlo o calibrarlo sin generar falsas alertas ni accesos inesperados. | EP11 | 3 | Should Have |
+| 83 | US93 | Consultar el estado del Edge Gateway sin internet | Como administrador, quiero consultar desde el sistema local el estado del Edge Gateway, sus nodos y los eventos pendientes de enviar, para operar y diagnosticar el edificio aunque no haya internet. | EP11 | 3 | Should Have |
+| 84 | US90 | Acceder a un área con el teléfono móvil | Como residente, quiero acercar mi teléfono con la app de Edifika al nodo de acceso para ingresar a un área común, igual que con mi tarjeta RFID. | EP11 | 8 | Should Have |
+| 85 | US91 | Revocar la credencial móvil de un teléfono | Como residente o administrador, quiero revocar la credencial móvil de un teléfono perdido o reemplazado, para que nadie pueda usarlo para ingresar. | EP11 | 5 | Should Have |
+| 86 | TS30 | Verificación de credenciales móviles firmadas en el Edge Gateway | Como desarrollador, quiero que el Edge Gateway verifique credenciales móviles firmadas criptográficamente sin consultar la nube, para aceptar teléfonos de forma segura incluso sin internet. | EP05 | 8 | Should Have |
+| 87 | TS29 | Actualización remota (OTA) del firmware de los nodos ESP32 | Como desarrollador, quiero actualizar el firmware de los ESP32 de forma remota desde el Edge Gateway con verificación y reversión, para corregir errores y agregar funciones sin acceder físicamente a cada nodo. | EP05 | 8 | Should Have |
+| 88 | TS31 | Despliegue del Edge Gateway con Docker Compose | Como desarrollador, quiero desplegar el Edge Gateway, el broker MQTT y un backend simulado con Docker Compose, para ejecutar y demostrar toda la solución con un solo comando. | EP05 | 5 | Should Have |
+| 89 | TS32 | Simulador de nodos ESP32 para pruebas sin hardware | Como desarrollador, quiero un simulador de nodos ESP32 que respete el contrato MQTT, para probar el Edge Gateway sin depender del hardware físico. | EP05 | 3 | Should Have |
+| 90 | TS34 | Pruebas automatizadas del Edge Gateway | Como desarrollador, quiero una suite de pruebas automatizadas del Edge Gateway que no dependa del broker ni de la red, para detectar regresiones antes de cada integración. | EP05 | 5 | Should Have |
+| 91 | TS18 | Configuración base del microservicio Smart Lighting & Automation | Como desarrollador, quiero crear el microservicio Smart Lighting & Automation para gestionar luminarias, reglas de automatización y comandos de override de forma independiente de los demás microservicios de Edifika. | EP05 | 5 | Should Have |
+| 92 | US57 | Configurar reglas de automatización de iluminación | Como administrador, quiero configurar reglas de iluminación por área común (presencia, umbral de lux, franja horaria, tiempo de apagado y prioridad) para automatizar el uso eficiente de la energía. | EP08 | 5 | Should Have |
+| 93 | US58 | Encender o apagar luces manualmente (override) | Como residente con una reserva vigente o como administrador, quiero encender o apagar manualmente las luces de un área por un tiempo determinado, para cubrir situaciones que la automatización no contempla. | EP08 | 5 | Should Have |
+| 94 | US59 | Encender área al iniciar una reserva | Como sistema, quiero encender automáticamente las luces del área reservada al iniciar la reserva, para que el residente encuentre el espacio listo para su uso. | EP08 | 3 | Should Have |
+| 95 | US60 | Registrar y consultar luminarias | Como administrador, quiero registrar las luminarias de cada área común y consultar su estado, para mantener un inventario actualizado del sistema de iluminación. | EP08 | 3 | Should Have |
+| 96 | TS19 | Configuración base del microservicio IoT Telemetry & Analytics con TimescaleDB | Como desarrollador, quiero crear el microservicio de telemetría con almacenamiento en TimescaleDB para ingerir lecturas de sensores y resolver consultas analíticas con baja latencia. | EP05 | 8 | Should Have |
+| 97 | US64 | Monitorear estado de conexión de dispositivos | Como administrador, quiero ver el estado de conexión de todos los dispositivos IoT del edificio, para saber cuáles requieren atención. | EP09 | 3 | Should Have |
+| 98 | US65 | Consultar lecturas de sensores en tiempo real e históricas | Como administrador, quiero consultar las lecturas de los sensores en tiempo real y su histórico, para analizar el comportamiento de las áreas del edificio. | EP09 | 5 | Should Have |
+| 99 | US61 | Visualizar consumo energético por área y periodo | Como administrador, quiero visualizar el consumo energético (kWh) por área común y periodo, para identificar dónde se puede reducir el gasto eléctrico. | EP09 | 5 | Should Have |
+| 100 | US76 | Medir la humedad con el sensor de humedad | Como sistema, quiero leer periódicamente el sensor de humedad del ESP32, para disponer de datos confiables del área verde. | EP11 | 3 | Should Have |
+| 101 | US92 | Calibrar los sensores de un nodo | Como administrador, quiero calibrar el sensor de humedad de un nodo (valores en seco y en húmedo, umbral de humedad baja y umbral crítico), para que las lecturas y las alertas reflejen las condiciones reales del área verde. | EP11 | 3 | Should Have |
+| 102 | US50 | Configurar horarios de riego automático | Como administrador, quiero configurar los horarios y la duración del riego automático de las áreas verdes para optimizar el mantenimiento del edificio. | EP10 | 3 | Should Have |
+| 103 | US51 | Riego automático según humedad del suelo | Como sistema, quiero activar el riego automáticamente según el nivel de humedad del suelo para evitar el desperdicio de agua en las áreas verdes. | EP10 | 5 | Should Have |
+| 104 | US78 | Alertar localmente una humedad crítica del suelo | Como administrador, quiero que el sistema alerte con buzzer, pantalla y notificación cuando la humedad del suelo de un área verde sea crítica, para actuar a tiempo si el riego automático no la corrige. | EP11 | 3 | Should Have |
+| 105 | US40 | Ver historial de uso de áreas comunes | Como administrador, quiero consultar el historial completo de uso de las áreas comunes con estadísticas para tomar mejores decisiones de gestión. | EP03 | 5 | Could Have |
+| 106 | US12 | Configuración de notificaciones | Como residente, quiero elegir qué tipos de avisos recibir para no saturarme con notificaciones irrelevantes. | EP02 | 3 | Could Have |
+| 107 | US46 | Visualizar sección del equipo | Como visitante, quiero conocer al equipo detrás de Edifika para generar confianza antes de contratar el servicio. | EP06 | 1 | Could Have |
+| 108 | US43 | Cambiar idioma de la Landing Page | Como visitante internacional, quiero cambiar el idioma entre español e inglés para entender el contenido en mi idioma preferido. | EP06 | 3 | Could Have |
+| 109 | US44 | Cambiar tema visual (claro/oscuro) | Como visitante, quiero alternar entre el modo claro y oscuro de la landing page para mejorar mi experiencia visual. | EP06 | 2 | Could Have |
+| 110 | TS12 | Configuración base del microservicio Messaging Forum Service | Como desarrollador, quiero crear el microservicio de foro comunitario para que los residentes puedan publicar mensajes en el canal de su edificio. | EP05 | 5 | Could Have |
+| 111 | US29 | Publicar mensaje en la comunidad | Como residente, quiero publicar mensajes en el muro comunitario para comunicarme con mis vecinos en un canal ordenado. | EP02 | 3 | Could Have |
+| 112 | US37 | Moderar mensajes del muro comunitario | Como administrador, quiero revisar y eliminar mensajes inapropiados del muro para mantener un ambiente respetuoso. | EP05 | 3 | Could Have |
+| 113 | US36 | Crear encuestas o votaciones para la comunidad | Como administrador, quiero crear encuestas o votaciones para conocer la opinión de los residentes sobre temas del condominio. | EP05 | 5 | Could Have |
+| 114 | US32 | Consultar Leyes y Manuales | Como administrador, quiero ver la normativa legal y del edificio. | EP05 | 3 | Could Have |
+| 115 | US56 | Apertura remota de acceso | Como administrador, quiero abrir remotamente un acceso desde la aplicación para atender situaciones excepcionales sin desplazarme al lector. | EP07 | 3 | Could Have |
+| 116 | US88 | Avisar el fin de una reserva en el punto de acceso | Como residente, quiero que el nodo del área reservada me avise cuando mi reserva esté por terminar, para desocupar el espacio a tiempo. | EP11 | 3 | Could Have |
+| 117 | US53 | Encendido automático de luces por movimiento | Como sistema, quiero encender automáticamente las luces de áreas comunes al detectar movimiento para mejorar la seguridad y el ahorro energético del edificio. | EP08 | 3 | Could Have |
+| 118 | US62 | Alertar consumo anómalo | Como administrador, quiero recibir una alerta cuando el consumo de un área se desvíe de su comportamiento habitual, para investigar posibles fallas o usos indebidos. | EP09 | 8 | Could Have |
+| 119 | US63 | Detectar falla de luminaria | Como administrador, quiero ser notificado cuando una luminaria no funcione pese a estar encendida, para repararla oportunamente. | EP09 | 5 | Could Have |
+
+**Análisis de costos y viabilidad económica del despliegue Edge por edificio**
+
+La propuesta IoT de Edifika exige instalar hardware en cada edificio: un Edge Gateway y los nodos ESP32 de acceso, iluminación y riego. Para comprobar que ese despliegue es viable, se estimó la inversión inicial (CAPEX) de un **edificio de referencia de 40 departamentos** con 3 áreas comunes con control de acceso (por ejemplo piscina, gimnasio y salón de usos múltiples), 4 zonas de iluminación inteligente y 1 zona de riego. Los precios corresponden a la tienda peruana Naylamp Mechatronics (consulta de octubre de 2026); los ítems marcados con (*) son estimaciones del equipo.
+
+| Componente | Nodo de acceso (S/) | Nodo de iluminación (S/) | Nodo de riego (S/) |
+|---|---|---|---|
+| ESP32 DevKit V1 | 35.00 | 35.00 | 35.00 |
+| Lector RFID RC522 | 20.00 | — | — |
+| Cerradura eléctrica 12 VDC | 35.00 | — | — |
+| Sensor magnético de puerta MC-38 | 5.00 | — | — |
+| Pantalla OLED 0.96" SSD1306 | 25.00 | — | 25.00 |
+| Buzzer activo 5 VDC | 2.00 | — | 2.00 |
+| Módulo RTC DS3231 | 16.00 | — | — |
+| Sensor PIR HC-SR501 | — | 8.00 | — |
+| Módulo sensor LDR | — | 5.00 | — |
+| Sensor de corriente ACS712 20 A | — | 15.00 | — |
+| Sensor de humedad de suelo capacitivo v1.2 | — | — | 15.00 |
+| Válvula solenoide 1/2" 12 VDC (NC) | — | — | 25.00 |
+| Módulo relé 1 canal 5 VDC | 5.00 | 5.00 | 5.00 |
+| Fuente de alimentación | 25.00 (12 V 2 A) | 15.00 (5 V)* | 25.00 (12 V 2 A) |
+| Caja, borneras y cableado* | 30.00 | 30.00 | 35.00 |
+| **Costo por nodo** | **198.00** | **113.00** | **167.00** |
+
+| Edge Gateway (uno por edificio) | Costo (S/) |
+|---|---|
+| Raspberry Pi 4 Model B 4 GB | 520.00 |
+| Case para Raspberry Pi 4 | 40.00 |
+| Fuente USB-C 5 V 3 A* | 45.00 |
+| Tarjeta microSD 32 GB* | 35.00 |
+| **Total Edge Gateway** | **640.00** |
+
+| Inversión inicial del edificio de referencia | Cantidad | Subtotal (S/) |
+|---|---|---|
+| Edge Gateway | 1 | 640.00 |
+| Nodos de acceso | 3 | 594.00 |
+| Nodos de iluminación | 4 | 452.00 |
+| Nodo de riego | 1 | 167.00 |
+| Tarjetas RFID Mifare 1K (S/ 3.00 c/u) | 40 | 120.00 |
+| Instalación y configuración (2 técnicos, 1 día)* | 1 | 400.00 |
+| **CAPEX total** | | **2,373.00 (≈ USD 641)** |
+
+El costo de operación del Edge en el edificio es marginal: el Raspberry Pi consume alrededor de 5 W (≈ 3.6 kWh al mes, menos de S/ 3 mensuales) y utiliza la conexión a internet que el edificio ya tiene. Se reserva además un 10 % anual del CAPEX (≈ S/ 20 al mes) para reponer componentes dañados.
+
+**Recuperación de la inversión.** En las entrevistas, el administrador César indicó que las soluciones de gestión se pagan entre **2 y 5 USD por departamento al mes**. Se supone que el 30 % de ese ingreso cubre la infraestructura cloud compartida, el soporte y la operación, y que el 70 % restante recupera el hardware del edificio (tipo de cambio referencial: S/ 3.70 por USD).
+
+| Tarifa por departamento | Ingreso mensual (40 dptos.) | Margen para el hardware (70 %) | Meses para recuperar el CAPEX | Tamaño mínimo para recuperar en 12 meses |
+|---|---|---|---|---|
+| USD 2.00 | S/ 296.00 | S/ 207.20 | 11.5 | 39 departamentos |
+| USD 3.50 | S/ 518.00 | S/ 362.60 | 6.5 | 22 departamentos |
+| USD 5.00 | S/ 740.00 | S/ 518.00 | 4.6 | 15 departamentos |
+
+El tamaño mínimo se calcula con la parte fija del CAPEX (S/ 2,253, que no depende del número de departamentos) más S/ 3 por tarjeta RFID de cada departamento.
+
+**Conclusión de viabilidad.** Incluso con la tarifa mínima mencionada en las entrevistas, el hardware de un edificio de 40 departamentos se recupera en menos de un año, y con una tarifa intermedia basta con edificios de 22 departamentos. El componente más caro es el Edge Gateway (27 % del CAPEX). Un Raspberry Pi 4 de 2 GB (S/ 300) es suficiente para el servicio Flask, SQLite y el broker MQTT local, y reduce el CAPEX a S/ 2,153. Para edificios pequeños se recomienda cobrar una tarifa de instalación única o un plan IoT con permanencia mínima de 12 meses, de modo que la inversión en hardware no dependa solo de la suscripción mensual.
 
 # Capítulo IV: Solution Software Design
 
@@ -2688,10 +3887,12 @@ El equipo realizó la sesión de Design-Level EventStorming en **Miro**, siguien
 El equipo aplicó las tres técnicas de Candidate Context Discovery en conjunto, no de forma excluyente, sobre el tablero ya organizado en commands, policies y read models:
 
 - **Look-for-pivotal-events:** se buscaron los eventos que marcan un cambio de estado entre procesos de negocio distintos, es decir, los puntos donde un flujo termina y dispara (vía policy) el inicio de otro. `Reserva aceptada` es pivotal porque dispara la habilitación de acceso físico; `Pago fue registrado` / `Deuda marcada como pagada` es pivotal porque libera al residente de una suspensión de acceso; `Residente moroso fue detectado` es pivotal porque cruza de Payment hacia el control de acceso. Estos pivotes son los que terminaron materializándose como los eventos de integración entre contextos documentados en 4.1.1.2 y 4.1.2.
-- **Start-with-value:** se identificaron las partes del dominio con mayor valor diferencial para el negocio, usando como referencia directa las estrategias frente a competidores de 2.1.2, en particular la **Estrategia 6, "Gestión inteligente de áreas comunes"** (optimizar el uso de los recursos compartidos del condominio) y la **Estrategia 5, "Adaptación al contexto local"**,, que son las dos que el nivel IoT lleva más allá de lo que ofrecen Condo Control, Buildium y AppFolio. De las capacidades IoT exploradas en el storm, iluminación inteligente, control de acceso, monitoreo de tanque de agua, detección de fugas, riego automático, el equipo priorizó **acceso físico** y **iluminación/energía** por ser las de mayor valor demostrable dentro del alcance de un proyecto académico con hardware real (ESP32), y difirió riego y monitoreo de agua por requerir sensores/actuadores adicionales (electroválvulas, sensores de humedad de suelo, sensores de nivel) fuera del alcance de hardware de esta entrega.
+- **Start-with-value:** se identificaron las partes del dominio con mayor valor diferencial para el negocio, usando como referencia directa las estrategias frente a competidores de 2.1.2, en particular la **Estrategia 6, "Gestión inteligente de áreas comunes"** (optimizar el uso de los recursos compartidos del condominio) y la **Estrategia 5, "Adaptación al contexto local"**,, que son las dos que el nivel IoT lleva más allá de lo que ofrecen Condo Control, Buildium y AppFolio. De las capacidades IoT exploradas en el storm —iluminación inteligente, control de acceso, riego automático, monitoreo de tanque de agua, detección de fugas y calidad del aire— el equipo priorizó **acceso físico**, **iluminación/energía** y **riego automático**. Las dos primeras son las de mayor valor demostrable dentro del alcance de un proyecto académico con hardware real (ESP32); el riego se incorporó porque reutiliza el mismo nodo ESP32 con solo un sensor de humedad de suelo capacitivo y una electroválvula de bajo costo (ver el análisis de costos de 3.3). Se **descartaron** el monitoreo del tanque de agua, la detección de fugas y la calidad del aire: requieren sensores de nivel, caudal, presión y gases que exceden el presupuesto de hardware por edificio, y ninguna de las entrevistas de 2.2 las planteó como necesidad.
 
-  Esta decisión tiene un efecto directo sobre el Product Backlog de 3.3 que conviene explicitar: las historias **US50** (configurar horarios de riego), **US51** (riego según humedad del suelo) y **US52** (detección de fugas en tanque de agua) quedan **fuera del alcance de esta entrega** y no se les asigna bounded context en 4.2. Las tres estaban priorizadas como *Could Have* en el backlog, de modo que diferirlas no altera el alcance comprometido como *Must* o *Should*. Las restantes historias de la épica EP07 sí tienen contexto asignado: **US48** y **US49** en IoT Access Management, y **US53** en Smart Lighting & Automation. Del mismo modo, los términos *Monitoreo de Tanque de Agua*, *Detección de Fugas*, *Riego Automático* y *Calidad del Aire* definidos en el Ubiquitous Language de 2.5 permanecen como vocabulario del dominio, pero sin contexto implementador en esta entrega.
-- **Start-with-simple:** el timeline ya organizado en el paso 2 de EventStorming se descompuso en sub-timelines secuenciales por proceso (autenticación → gestión residencial → reservas → pagos → comunicación/foro → reportes, y luego los tres sub-timelines IoT), cada uno lo bastante simple como para sostener un propósito de negocio propio, ese es, en esencia, el criterio de corte que produjo los 11 candidatos de la tabla siguiente.
+  Esta decisión tiene un efecto directo sobre el Product Backlog de 3.3: las historias **US50** (configurar horarios de riego) y **US51** (riego según humedad del suelo) forman la épica **EP10** y se implementan en el bounded context **Smart Irrigation** (4.2.12), mientras que las historias de tanque y fugas (US52, US66–US70 y US77) y sus términos del Ubiquitous Language se retiraron del alcance. Las demás capacidades IoT quedan asignadas así: EP07 (US48, US49, US54–US56) en IoT Access Management, EP08 (US53, US57–US60) en Smart Lighting & Automation y EP09 (US61–US65) en IoT Telemetry & Analytics.
+
+  En la misma iteración se retiró **Incident Management**, que en una primera versión del corte se había identificado como contexto candidato. Su única historia en el Capítulo III es **US08**, que solo exige difundir una alerta de emergencia a todo el edificio y avisar al administrador con la ubicación de quien la reporta. No requiere el ciclo de vida de un ticket (asignación, estados de atención, cierre), que es lo que habría justificado un contexto propio, y el Capítulo III no define el rol de *Personal de Mantenimiento* que lo atendería. Por eso la capacidad se absorbió en **Communication**, que ya publica contenido uno-a-muchos hacia los residentes, y en **Notification**, que entrega el push y el SMS.
+- **Start-with-simple:** el timeline ya organizado en el paso 2 de EventStorming se descompuso en sub-timelines secuenciales por proceso (autenticación → gestión residencial → reservas → pagos → comunicación/foro → reportes, y luego los cuatro sub-timelines IoT: acceso, iluminación, telemetría y riego), cada uno lo bastante simple como para sostener un propósito de negocio propio. Ese es, en esencia, el criterio de corte que produjo los 12 bounded contexts de la tabla siguiente.
 
 La tabla resume, por cada proceso de negocio que sí se mantuvo en el alcance, el *Command* y *Actor* que lo origina, los *Domain Events* producidos, y las *Policies* / *Read Models* agregados en el paso 4, es decir, el nivel de detalle sobre el que se hizo el corte de bounded contexts:
 
@@ -2702,34 +3903,35 @@ La tabla resume, por cada proceso de negocio que sí se mantuvo en el alcance, e
 | Reservas | Registrar área común (Administrador) · Solicitar/Cancelar reserva (Residente) | Área común registrada, Reglas de área común registradas, Reserva solicitada, Reserva aceptada/rechazada, Reserva cancelada | — | Calendario de reservas |
 | Pagos y deudas | Registrar pago (Residente) | Deuda generada, Pago fue registrado, Pago rechazado, Deuda marcada como pagada, Recordatorio de deuda enviado | Si el pago es rechazado, la deuda permanece pendiente | Estado de cuenta del residente |
 | Comunicados y foro | Publicar anuncio (Administrador) · Agregar comentario / Crear encuesta / Votar (Residente) | Anuncio publicado, Comentario agregado, Encuesta creada, Voto registrado, Encuesta finalizada | — | Muro de anuncios, Resultados de la encuesta |
-| Incidencias y emergencias | Reportar incidencia (Residente) · Declarar emergencia (Administrador) | Incidencia reportada, Incidencia atendida, Incidencia resuelta, Emergencia declarada | Si la severidad es crítica, difundir a todo el edificio | Bandeja de incidencias del administrador |
+| Alertas de emergencia (dentro de Communication) | Declarar emergencia (Administrador) · Reportar emergencia (Residente) | Emergencia declarada, Emergencia reportada | Si la declara el administrador, difundir a todo el edificio por push y SMS · Si la reporta un residente, avisar al administrador con torre y departamento | — |
 | Reportes | Generar reporte financiero (Administrador) | Reporte financiero generado, Reporte financiero exportado | — | Dashboard financiero |
 | Notificaciones (transversal) | *(Sistema, automático)* | Notificación enviada, Notificación leída, Notificación de deuda fue enviada, Notificación enviada a usuario/administrador | — | — |
 | Acceso físico (IoT) | Escanear tarjeta (Residente) | Tarjeta RFID/NFC fue escaneada, Residente fue validado, Acceso fue concedido/rechazado/denegado, Puerta fue abierta, Tarjeta no reconocida, Residente moroso fue detectado | Si el residente es moroso, denegar el acceso | — |
 | Iluminación inteligente (IoT) | Activar interruptor manual (Residente/Administrador) | Movimiento detectado/no detectado en área común, Luces encendidas/apagadas automáticamente, Temporizador de inactividad iniciado, Fallo de conexión en sensor detectado, Luces permanecieron en modo seguro | Si no hay movimiento por 3 minutos, apagar luces | — |
-| *Riego y monitoreo de agua (descartado — ver start-with-value)* | *Activar riego manual* | *Riego activado/detenido automáticamente, Humedad del suelo medida, Fuga detectada, Nivel de agua medido, Fallo en válvula detectado* | *Si la humedad es suficiente, omitir el riego · Si el nivel es crítico o hay fuga, enviar alerta inmediata* | *Historial de riego, Panel de nivel de tanque de agua* |
+| Riego automático (IoT) | Configurar programación de riego (Administrador) | Programación de riego registrada, Humedad del suelo medida, Riego activado/detenido automáticamente, Riego omitido por humedad suficiente, Fallo en válvula detectado | Si la humedad es suficiente, omitir el riego · Si la válvula no responde, notificar al administrador | Historial de riego |
+| *Tanque de agua, fugas y calidad del aire (descartado — ver start-with-value)* | *—* | *Nivel de agua medido, Fuga detectada, Calidad del aire medida* | *Si el nivel es crítico o hay fuga, enviar alerta inmediata* | *Panel de nivel de tanque de agua* |
 
-A partir de este corte por proceso de negocio, y de la incorporación del nivel IoT priorizado, se identificaron **12 bounded contexts candidatos**, cada uno implementado como un microservicio independiente (más el API Gateway y el Edge API como componentes de infraestructura transversal, no bounded contexts de dominio). Los nueve primeros cubren la gestión administrativa del condominio; los tres últimos son los que sobrevivieron el filtro start-with-value dentro del nivel IoT:
+A partir de este corte por proceso de negocio, y de la incorporación del nivel IoT priorizado, se identificaron **12 bounded contexts**, cada uno implementado como un microservicio independiente (más el API Gateway y el Edge API como componentes de infraestructura transversal, no bounded contexts de dominio). Los ocho primeros cubren la gestión administrativa del condominio; los cuatro últimos son los que sobrevivieron el filtro start-with-value dentro del nivel IoT. Este es el **catálogo único** de contextos de la solución: el resto del informe (context map, arquitectura C4 y diseño táctico) se refiere exactamente a estos 12.
 
-| Sección | Bounded Context candidato | Responsabilidad principal |
+| Sección | Bounded Context | Responsabilidad principal |
 |---|---|---|
 | 4.2.1 | IAM / Auth | Registro, autenticación (JWT) y gestión de usuarios y roles (administradores/residentes). |
 | 4.2.2 | Residential Management | Registro de edificios, unidades y vinculación de residentes a sus unidades. |
 | 4.2.3 | Reservation | Disponibilidad, reserva y aprobación de uso de áreas comunes. |
 | 4.2.4 | Payment | Registro de deudas, pagos, comprobantes e integración con la pasarela Culqi. |
-| 4.2.5 | Notification | Envío de notificaciones push (Firebase Cloud Messaging) originadas por eventos de otros contextos. |
-| 4.2.6 | Communication | Publicación de comunicados oficiales y encuestas a la comunidad. |
+| 4.2.5 | Notification | Envío de notificaciones push (Firebase Cloud Messaging) y SMS originadas por eventos de otros contextos. |
+| 4.2.6 | Communication | Publicación de comunicados oficiales y encuestas a la comunidad, y difusión de alertas de emergencia. |
 | 4.2.7 | Forum | Muro comunitario de mensajes entre residentes. |
 | 4.2.8 | Report | Generación y exportación de reportes financieros y de morosidad. |
-| 4.2.9 | Incident Management | Reporte, seguimiento y escalacion de incidencias del edificio, y difusion de alertas de emergencia a la comunidad. |
-| 4.2.10 | IoT Access Management | Permisos de acceso a áreas comunes, credenciales RFID, y control de cerraduras según reservas activas. |
-| 4.2.11 | Smart Lighting & Automation | Reglas de automatización y control de luminarias de áreas comunes según presencia, lux ambiental, horarios de reserva y override manual. |
-| 4.2.12 | IoT Telemetry & Analytics | Ingesta de telemetría de sensores, cálculo cuantitativo de consumo energético (kWh), estadísticas y detección de anomalías de hardware. |
+| 4.2.9 | IoT Access Management | Permisos de acceso a áreas comunes, credenciales RFID, y control de cerraduras según reservas activas. |
+| 4.2.10 | Smart Lighting & Automation | Reglas de automatización y control de luminarias de áreas comunes según presencia, lux ambiental, horarios de reserva y override manual. |
+| 4.2.11 | IoT Telemetry & Analytics | Ingesta de telemetría de sensores (corriente, presencia y humedad del suelo), cálculo cuantitativo de consumo energético (kWh), estadísticas y detección de anomalías de hardware. |
+| 4.2.12 | Smart Irrigation | Programación y ejecución del riego de áreas verdes según horarios y humedad del suelo, con registro de los riegos ejecutados, omitidos y fallidos. |
 
 La columna **Sección** fija la numeración con la que cada contexto se desarrolla en 4.2 y se mantiene en todo el capítulo. La única sección que presenta los contextos en otro orden es 4.1.1.3, donde los canvases se elaboran por importancia estratégica según lo pide el enunciado; allí cada canvas indica entre paréntesis la sección que le corresponde.
 
 
-En cuanto a la persistencia, se mantiene el principio de **database-per-service** comprometido en la historia técnica **TS05** del Capítulo III: cada microservicio es dueño exclusivo de sus tablas y ningún contexto lee directamente las de otro. Lo que el modelo de despliegue de 4.1.3.4 hace es *alojar* esos esquemas lógicamente independientes sobre dos instancias gestionadas en vez de sobre once servidores separados, una instancia PostgreSQL para los esquemas de los contextos de gestión e IoT transaccionales, y una instancia TimescaleDB dedicada a las series de telemetría de alta frecuencia, cuyo perfil de escritura y consulta es incompatible con el transaccional. Es una decisión de infraestructura y de costo para el alcance académico del proyecto, no una relajación del aislamiento de datos entre contextos: la independencia lógica que exige TS05 se conserva íntegra.
+En cuanto a la persistencia, se mantiene el principio de **database-per-service** comprometido en la historia técnica **TS05** del Capítulo III: cada microservicio es dueño exclusivo de sus tablas y ningún contexto lee directamente las de otro. Lo que el modelo de despliegue de 4.1.3.4 hace es *alojar* esos esquemas lógicamente independientes sobre dos instancias gestionadas en vez de sobre doce servidores separados, una instancia PostgreSQL para los esquemas de los contextos de gestión e IoT transaccionales, y una instancia TimescaleDB dedicada a las series de telemetría de alta frecuencia, cuyo perfil de escritura y consulta es incompatible con el transaccional. Es una decisión de infraestructura y de costo para el alcance académico del proyecto, no una relajación del aislamiento de datos entre contextos: la independencia lógica que exige TS05 se conserva íntegra.
 
 #### 4.1.1.2. Domain Message Flows Modeling
 
@@ -2796,7 +3998,8 @@ En cuanto a la persistencia, se mantiene el principio de **database-per-service*
 
 #### 4.1.1.3. Bounded Context Canvases
 
-Siguiendo a Nick Tune (*Bounded Context Canvas* V4, DDD Crew), cada contexto candidato de 4.1.1.1 se elaboró con el proceso iterativo de seis pasos: **(1) Context Overview Definition**, **(2) Business Rules Distillation & Ubiquitous Language Capture**, **(3) Capability Analysis**, **(4) Capability Layering**, **(5) Dependencies Capture** y **(6) Design Critique**. Los canvases se presentan por importancia estratégica: primero los contextos de los que depende toda la plataforma (IAM, Payment, Residential Management, Reservation), luego los contextos IoT que sostienen la propuesta de diferenciación (junto con el Edge API, que se documenta como componente de infraestructura), y por último los contextos de soporte y genéricos. Entre paréntesis se indica la sección de 4.2 que corresponde a cada contexto.
+
+El orden de elaboración siguió el criterio de importancia pedido por el enunciado: primero los contextos de los que depende toda la plataforma (IAM/Auth, Payment, Residential Management, Reservation), luego los cuatro contextos IoT que sostienen la propuesta de diferenciación, y por último los contextos de soporte/genéricos (Communication, Notification, Report, Forum).
 
 **1. IAM / Auth (4.2.1)**
 
@@ -2822,21 +4025,124 @@ Siguiendo a Nick Tune (*Bounded Context Canvas* V4, DDD Crew), cada contexto can
 
 *Figura. Bounded Context Canvas de Reservation. Elaborado por el equipo utilizando Miro (Miro, s.f.).*
 
-**5. IoT Access Management (4.2.10)**
+**5. IoT Access Management (4.2.9)**
+
 
 ![Bounded Context Canvas IoT Access Management](assets/img/bc-canvas-iot-access-management.png)
 
 *Figura. Bounded Context Canvas de IoT Access Management. Elaborado por el equipo utilizando Miro (Miro, s.f.).*
+=======
+| Campo | Detalle |
+|---|---|
+| Purpose | Decidir y auditar quién puede abrir físicamente un área común, combinando credenciales, reservas vigentes y estado de morosidad. |
+| Strategic Classification | Domain Role: **Core** (pilar de la propuesta de diferenciación IoT del Capítulo II) · Business Model: Revenue Protector / Compliance Enforcer · Evolution: **Custom Built** (la combinación RFID + reservas + morosidad no es un producto de catálogo). |
+| Ubiquitous Language | Access Credential (Credencial de Acceso), Access Permission (Permiso de Acceso), Access Attempt (Intento de Acceso), Delinquent Resident. |
+| Business Decisions | Una credencial concede acceso solo si está activa, el residente no está moroso y existe un permiso vigente para esa área en ese instante (`AccessDecisionService`, ver 4.2.9.1) · un residente moroso se suspende automáticamente. |
+| Inbound Communication | **Reservation** (Customer/Supplier, evento `ReservationApproved`) · **Payment** (Customer/Supplier, evento `ResidentMarkedDelinquent`). |
+| Outbound Communication | **Notification** (Customer/Supplier, eventos `PhysicalAccessGranted` / `PhysicalAccessDenied`) · **Edge API** (**Conformist** — sincroniza credenciales activas, reservas vigentes y blacklist hacia el gateway on-premise). |
+| Model (Aggregates) | `AccessCredential` (Aggregate Root), `AccessPermission` (Entity), `AccessAttempt` (Entity). |
+| Design Critique | Se evaluó que el Edge API tomara la decisión de acceso de forma autónoma consultando el cloud en cada intento, pero se descartó por latencia y por el requisito de resiliencia offline: la decisión final se cachea en el Edge y solo se sincroniza cuando hay conectividad, de ahí la relación Conformist hacia el Edge en vez de Customer/Supplier síncrona en tiempo real. |
 
-**6. Smart Lighting & Automation (4.2.11)**
+
+**6. Smart Lighting & Automation (4.2.10)**
+
 
 ![Bounded Context Canvas Smart Lighting & Automation](assets/img/bc-canvas-smart-lighting.png)
 
 *Figura. Bounded Context Canvas de Smart Lighting & Automation. Elaborado por el equipo utilizando Miro (Miro, s.f.).*
+=======
+| Campo | Detalle |
+|---|---|
+| Purpose | Encender/apagar luminarias de áreas comunes combinando presencia, lux ambiental, horario de reserva y override manual, priorizando el ahorro energético. |
+| Strategic Classification | Domain Role: **Core** (diferenciador IoT) · Business Model: Cost Reducer (ahorro energético) · Evolution: **Custom Built** (la precedencia entre presencia/lux/reserva/override es una regla propia del negocio, no un producto de catálogo). |
+| Ubiquitous Language | Automation Rule (Regla de Automatización), Luminaire (Luminaria), Override Command (Comando de Override), Lux Threshold (Umbral de Lux). |
+| Business Decisions | Si no hay movimiento por 3 minutos, apagar luces (política capturada en el EventStorm, ver 4.1.1.1) · un override manual suspende temporalmente la automatización con precedencia sobre las reglas programadas. |
+| Inbound Communication | **Reservation** (Customer/Supplier, evento `ReservationStarted`) — el inicio de una reserva dispara el encendido programado del área · **Edge API** (Customer/Supplier, evento `AreaPresenceDetected` relayado desde el sensor PIR del nodo de iluminación, ver 4.2.10.3). |
+| Outbound Communication | **Edge API** (**Conformist** — envía reglas de programación y comandos de override para ejecución local). |
+| Model (Aggregates) | `AutomationRule` (Aggregate Root), `Luminaire` (Entity), `OverrideCommand` (Entity). |
+| Design Critique | Se evaluó ejecutar la lógica de decisión (`AutomationDecisionService`) directamente en el Edge para no depender de la conectividad WAN, pero se optó por mantener la autoría de reglas en el cloud (más fácil de versionar y auditar desde la Web Application) y solo *empujar* las reglas ya resueltas al Edge — el mismo patrón Conformist que IoT Access Management. |
 
-**7. IoT Telemetry & Analytics (4.2.12)**
+
+**7. IoT Telemetry & Analytics (4.2.11)**
+
 
 ![Bounded Context Canvas IoT Telemetry & Analytics](assets/img/bc-canvas-iot-telemetry.png)
+=======
+| Campo | Detalle |
+|---|---|
+| Purpose | Ingerir telemetría de sensores (corriente, presencia y humedad del suelo), calcular consumo energético cuantitativo (kWh) y detectar anomalías de hardware, sosteniendo el requisito de analítica cuantitativa IoT del curso. |
+| Strategic Classification | Domain Role: **Core** (el más diferenciador de los contextos IoT: es el único que produce analítica cuantitativa) · Business Model: Decision Support / Cost Reducer · Evolution: **Genesis → Custom Built** (el cálculo de integración temporal de potencia y la detección de anomalías por baseline estadística se diseñaron a medida para este dominio). |
+| Ubiquitous Language | Sensor Reading (Lectura de Sensor), Energy Consumption (Consumo Energético), Consumption Baseline (Línea Base de Consumo), Anomaly Flag (Marca de Anomalía). |
+| Business Decisions | El consumo se calcula por integración temporal de la potencia instantánea (`kWh = Σ(V × I × Δt) / 1000`) · una anomalía se distingue de una falla de luminaria por el patrón de corriente nula con la luminaria comandada en ON (`AnomalyDetectionService`, ver 4.2.11.1). |
+| Inbound Communication | **Edge API** (Customer/Supplier, el Edge es *upstream* de datos) — reenvía la telemetría bufferizada y los registros de auditoría generados offline. |
+| Outbound Communication | **Notification** (eventos `AbnormalConsumptionDetected`, `LuminaireFailureDetected`) · **Report** (Customer/Supplier — aporta las métricas de consumo que Report consolida) · **Smart Irrigation** (Customer/Supplier, evento `SoilMoistureMeasured` con la lectura de humedad ya validada). |
+| Model (Aggregates) | `EnergyConsumption` (Aggregate Root), `ConsumptionBaseline` (Entity), `AnomalyFlag` (Entity), `SensorReading` (Value Object). |
+| Design Critique | Se consideró persistir la telemetría en la misma instancia PostgreSQL que el resto del dominio, pero se descartó por el perfil de escritura (alta frecuencia) y de consulta (series temporales) incompatible con el transaccional — de ahí la instancia TimescaleDB dedicada (ver 4.1.3.4), la única decisión de persistencia que rompe el patrón "un PostgreSQL para todos" del resto de contextos. |
+
+**8. Smart Irrigation (4.2.12)**
+
+| Campo | Detalle |
+|---|---|
+| Purpose | Regar las áreas verdes del edificio solo cuando es necesario, combinando las programaciones definidas por el administrador con la humedad del suelo medida por los nodos ESP32. |
+| Strategic Classification | Domain Role: **Supporting** (complementa la diferenciación IoT, pero no es el motivo principal de contratación) · Business Model: Cost Reducer (ahorro de agua y de mantenimiento de áreas verdes) · Evolution: **Custom Built** (la combinación de calendario y umbral de humedad por zona es una regla propia del negocio). |
+| Ubiquitous Language | Irrigation Zone (Zona de Riego), Irrigation Schedule (Programación de Riego), Moisture Threshold (Umbral de Humedad), Irrigation Run (Ejecución de Riego), Skipped Irrigation (Riego Omitido). |
+| Business Decisions | Dos programaciones de una misma zona no pueden superponerse (US50 esc. 2) · el riego programado se omite si la humedad del suelo está sobre el umbral (US51 esc. 2) · una lectura inválida se descarta y se aplica la programación por defecto (US51 esc. 3) · si la electroválvula no confirma la orden, el riego se registra como fallido y se notifica al administrador (US50 esc. 3). |
+| Inbound Communication | **IoT Telemetry & Analytics** (Customer/Supplier, evento `SoilMoistureMeasured`) — Telemetry es upstream de las lecturas que ingiere desde el Edge · **Edge API** (Customer/Supplier, evento `IrrigationRunReported`) — confirma la apertura y el cierre de la válvula. |
+| Outbound Communication | **Edge API** (**Conformist** — sincroniza programaciones y umbrales, y envía los comandos de apertura/cierre de válvula para su ejecución local) · **Notification** (Customer/Supplier, eventos `IrrigationFailed` y `MoistureSensorFaulty`). |
+| Model (Aggregates) | `IrrigationZone` (Aggregate Root), `IrrigationSchedule` (Entity), `IrrigationRun` (Entity). Value Objects: `MoistureThreshold`, `WateringWindow`. |
+| Design Critique | Se evaluó incorporar el riego a Smart Lighting & Automation, que también ejecuta reglas programadas sobre actuadores, pero se descartó: las reglas de iluminación dependen de presencia, lux y reservas, mientras que el riego depende de la humedad del suelo y de su propio calendario; un modelo común de "regla genérica" mezclaría dos lenguajes ubicuos y obligaría a compartir tipos entre contextos. También se evaluó que el Edge decidiera el riego de forma autónoma; se optó por mantener la autoría de programaciones y umbrales en el cloud y empujarlas al Edge, que ejecuta el riego aun sin conexión con la última programación sincronizada —el mismo patrón Conformist de IoT Access Management y Smart Lighting & Automation—. |
+
+**9. Communication (4.2.6)**
+
+| Campo | Detalle |
+|---|---|
+| Purpose | Publicar comunicados oficiales y encuestas de la comunidad hacia los residentes, y difundir alertas de emergencia. |
+| Strategic Classification | Domain Role: **Supporting** · Business Model: Engagement Creator · Evolution: **Product** (publicación de anuncios/encuestas es un patrón conocido). |
+| Ubiquitous Language | Announcement (Comunicado), Poll (Encuesta), Reach (Alcance), Emergency Alert (Alerta de Emergencia). |
+| Business Decisions | Límite de un mensaje diario por residente (HTTP 429 si se excede) · voto único por encuesta (HTTP 409 si se duplica) · una alerta de emergencia declarada por el administrador se difunde a todo el edificio por push y SMS en menos de 5 s (US08 esc. 1) · una emergencia reportada por un residente llega al administrador con su torre y departamento (US08 esc. 2). |
+| Inbound Communication | Ninguna. |
+| Outbound Communication | **Notification** (Customer/Supplier, eventos `AnnouncementPublished`, `EmergencyDeclared` y `EmergencyReported`) · **Residential Management** (Customer/Supplier, REST síncrono — resuelve la torre y el departamento de quien reporta una emergencia) · **Cloudinary** (Anti-Corruption Layer — imágenes de comunicados). |
+| Model (Aggregates) | `Announcement` (Entity), `Poll` (Entity), `EmergencyAlert` (Entity). |
+| Design Critique | Se evaluó fusionar Communication con Forum (ambos son "muros" de contenido), pero se mantuvieron separados porque su ubiquitous language y su ciclo de vida difieren: un comunicado es unidireccional y oficial (admin → todos), mientras un post de Forum es conversacional entre pares. Las alertas de emergencia se ubicaron aquí y no en un contexto propio (ver la retirada de Incident Management en 4.1.1.1) porque también son mensajes uno-a-muchos sin ciclo de vida de atención. |
+
+**10. Notification (4.2.5)**
+
+| Campo | Detalle |
+|---|---|
+| Purpose | Traducir eventos de dominio de todo el sistema en notificaciones push entregadas al residente o administrador correcto. |
+| Strategic Classification | Domain Role: **Generic** (envío de notificaciones es una capability resuelta por FCM) · Business Model: Engagement Creator · Evolution: **Commodity** (delegada casi por completo a Firebase Cloud Messaging). |
+| Ubiquitous Language | Notification (Notificación), Device Token (Token de Dispositivo). |
+| Business Decisions | Si el envío a FCM falla, la notificación se marca pendiente de reintento sin afectar el estado del contexto que originó el evento (compensación, ver 4.1.1.2). |
+| Inbound Communication | **Communication** (`AnnouncementPublished`, `EmergencyDeclared`, `EmergencyReported`) · **Payment** (`PaymentApproved`) · **Reservation** (`ReservationApproved`) · **IoT Access Management** (`PhysicalAccessGranted`/`Denied`) · **IoT Telemetry & Analytics** (`AbnormalConsumptionDetected`, `LuminaireFailureDetected`) · **Smart Irrigation** (`IrrigationFailed`, `MoistureSensorFaulty`) — todos Customer/Supplier, Notification es downstream puro. |
+| Outbound Communication | **Firebase Cloud Messaging** (Anti-Corruption Layer). |
+| Model (Aggregates) | `Notification` (Entity), `DeviceToken` (Entity). |
+| Design Critique | Al ser el único punto de consumo de eventos de los seis contextos que publican alertas (Communication, Payment, Reservation, IoT Access Management, IoT Telemetry & Analytics y Smart Irrigation), se evaluó el riesgo de que un fallo en Notification bloqueara el broker para todos; se mitigó con el **Factory Pattern** para desacoplar la creación del tipo de notificación (Push/Email/SMS) de su envío, y con colas de reintento independientes por evento. |
+
+**11. Report (4.2.8)**
+
+| Campo | Detalle |
+|---|---|
+| Purpose | Consolidar y exportar reportes financieros, de morosidad y de analítica de consumo energético de la comunidad. |
+| Strategic Classification | Domain Role: **Supporting** · Business Model: Decision Support · Evolution: **Product** (generación de reportes PDF/Excel es un patrón conocido). |
+| Ubiquitous Language | Financial Report (Reporte Financiero), Delinquency (Morosidad). |
+| Business Decisions | Contexto mayormente de solo lectura (CQRS): no posee agregados transaccionales propios, solo modelos de lectura. |
+| Inbound Communication | Ninguna. |
+| Outbound Communication | **Payment** (Customer/Supplier, REST síncrono) · **IoT Telemetry & Analytics** (Customer/Supplier — métricas de consumo). |
+| Model (Aggregates) | `FinancialReport` (modelo de lectura, sin Aggregate Root transaccional). |
+| Design Critique | Se evaluó que Report consumiera eventos de Payment de forma asíncrona (event sourcing de proyecciones) en vez de consultarlo vía REST síncrono, lo que reduciría el acoplamiento temporal; se descartó por ahora dado el volumen de datos y el timebox del proyecto, dejándolo como una mejora futura explícita. |
+
+**12. Forum (4.2.7)**
+
+| Campo | Detalle |
+|---|---|
+| Purpose | Sostener el muro comunitario de mensajes entre residentes de un mismo edificio. |
+| Strategic Classification | Domain Role: **Generic** · Business Model: Engagement Creator · Evolution: **Commodity** (patrón de muro/foro ampliamente disponible). |
+| Ubiquitous Language | Post (Publicación), Wall (Muro). |
+| Business Decisions | Límite de publicaciones diarias por residente (HTTP 429 si se excede). |
+| Inbound Communication | Ninguna. |
+| Outbound Communication | **Cloudinary** (Anti-Corruption Layer — imágenes de publicaciones del foro). |
+| Model (Aggregates) | `Post` (Entity). |
+| Design Critique | Es el contexto de menor prioridad estratégica de los 12 (Domain Role Generic, Evolution Commodity); se evaluó no construirlo como microservicio independiente y anexarlo a Communication, pero se mantuvo separado porque su Ubiquitous Language y su patrón de acceso (conversacional, muchos-a-muchos) son distintos a los de un comunicado oficial (uno-a-muchos), y porque así puede escalar o degradarse independientemente sin afectar la publicación de comunicados oficiales. |
 
 *Figura. Bounded Context Canvas de IoT Telemetry & Analytics. Elaborado por el equipo utilizando Miro (Miro, s.f.).*
 
@@ -2844,7 +4150,50 @@ Siguiendo a Nick Tune (*Bounded Context Canvas* V4, DDD Crew), cada contexto can
 
 ![Bounded Context Canvas Edge API](assets/img/bc-canvas-edge-api.png)
 
+
 *Figura. Canvas del Edge API, gateway on-premise que actúa como Conformist del modelo cloud; no es un bounded context de dominio, pero se documenta por ser el puente entre los dispositivos ESP32 y los contextos IoT. Elaborado por el equipo utilizando Miro (Miro, s.f.).*
+
+=======
+| Contexto origen | Contexto destino | Relación observada | Patrón DDD más cercano (a validar) |
+|---|---|---|---|
+| Communication | Notification | Emite `AnnouncementPublished` al publicar un comunicado, y `EmergencyDeclared` / `EmergencyReported` ante una emergencia (US08), para que se notifique a los residentes o al administrador. | Customer/Supplier (Communication es upstream) |
+| Communication | Residential Management | Consulta síncrona para resolver la torre y el departamento del residente que reporta una emergencia (US08 esc. 2). | Customer/Supplier (Communication es downstream) |
+| Payment | Notification | Emite evento al aprobar un pago. | Customer/Supplier |
+| Reservation | Notification | Emite evento al aprobar una reserva. | Customer/Supplier |
+| Payment | Culqi (sistema externo) | Integración vía Adapter/ACL (pasarela de pagos). | Anti-corruption Layer |
+| Report | Payment | Consulta síncrona vía REST para consolidar reportes financieros. | Customer/Supplier (Report es downstream, solo lectura) |
+| Residential Management | IAM | Provee el vínculo residente–unidad que IAM usa para autorizar el acceso. | Customer/Supplier |
+| Reservation | IoT Access Management | `ReservationApproved` habilita el permiso temporal de acceso al área común reservada. | Customer/Supplier (Reservation es upstream) |
+| Reservation | Smart Lighting & Automation | El inicio de la reserva dispara el encendido programado del área común. | Customer/Supplier |
+| Payment | IoT Access Management | `ResidentMarkedDelinquent` suspende los permisos de acceso del residente moroso. | Customer/Supplier |
+| IoT Access Management | Notification | Emite `PhysicalAccessGranted` / `PhysicalAccessDenied` para notificar accesos y rechazos. | Customer/Supplier |
+| IoT Telemetry & Analytics | Notification | Emite `AbnormalConsumptionDetected` y `LuminaireFailureDetected` para alertar al administrador. | Customer/Supplier |
+| IoT Telemetry & Analytics | Smart Irrigation | Publica `SoilMoistureMeasured` con la lectura de humedad del suelo ya validada, que alimenta la decisión de riego (US51). | Customer/Supplier (Telemetry es upstream) |
+| Smart Irrigation | Notification | Emite `IrrigationFailed` y `MoistureSensorFaulty` para avisar al administrador de un riego no ejecutado o de un sensor con falla. | Customer/Supplier |
+| IoT Telemetry & Analytics | Report | Aporta las métricas de consumo energético que Report consolida en la analítica de la comunidad. | Customer/Supplier (Report es downstream) |
+| IoT Access Management | Edge API | Sincroniza credenciales activas, reservas vigentes y blacklist hacia el gateway on-premise. | Conformist (el Edge conforma el modelo definido en el cloud) |
+| Smart Lighting & Automation | Edge API | Envía las reglas de automatización y los comandos de override manual. | Conformist |
+| Smart Irrigation | Edge API | Sincroniza programaciones y umbrales de humedad, y envía los comandos de apertura y cierre de la electroválvula. | Conformist |
+| Edge API | IoT Telemetry & Analytics | Reenvía la telemetría bufferizada y los registros de auditoría generados durante la operación offline. | Customer/Supplier (el Edge es upstream de datos) |
+| Edge API | Smart Lighting & Automation | Relaya el evento `AreaPresenceDetected` apenas recibe la lectura del sensor PIR, priorizando latencia de encendido sobre interpretación de dominio. | Customer/Supplier (el Edge es upstream de datos, ver 4.2.10.3) |
+| Edge API | Smart Irrigation | Confirma la ejecución de cada riego (`IrrigationRunReported`), incluidos los ejecutados sin conexión. | Customer/Supplier (el Edge es upstream de datos) |
+| Dispositivos embebidos (ESP32) | Edge API | Intercambio local MQTT de lecturas y comandos; el firmware se adapta al contrato del Edge API. | Conformist (infraestructura física, no bounded context de dominio) |
+| API Gateway | Todos los contextos | Enrutamiento y validación de JWT (infraestructura transversal, no bounded context de dominio). | — |
+
+**Discusión de alternativas de context mapping**
+
+Sobre el mapa anterior, el equipo evaluó explícitamente las preguntas de diseño sugeridas por el enunciado. La tabla siguiente resume los casos donde la respuesta no era obvia, la alternativa considerada y la decisión final:
+
+| Pregunta de diseño | Alternativa evaluada | Decisión final y razón |
+|---|---|---|
+| ¿Qué pasaría si **movemos** este capability a otro contexto? | Mover la decisión de acceso (`AccessDecisionService`) del cloud (IoT Access Management) al Edge API, para que abra la puerta sin ida y vuelta al cloud. | **Se descarta mover el contexto completo**, pero sí se replica su *resultado* (credenciales/permisos ya resueltos) en el Edge vía sincronización — el Edge cachea la decisión, no la recalcula. Mantiene a IoT Access Management como única fuente de verdad y evita que la regla de negocio (moroso → sin acceso) viva en dos lugares. |
+| ¿Qué pasaría si **descomponemos** el capability y movemos un sub-capability a otro contexto? | Separar la emisión/gestión de credenciales RFID de la decisión de acceso en tiempo real, creando un contexto "Credential Management" aparte de "Access Decision". | **Se descarta**: ambos sub-capabilities comparten el mismo Aggregate (`AccessCredential`) y el mismo invariante (una credencial suspendida no debe poder decidir un acceso), partirlos forzaría una transacción distribuida para algo que hoy es una operación local. |
+| ¿Qué pasaría si **partimos** el bounded context en varios? | Partir Payment en "Billing" (deudas/cuotas) y "Payment Processing" (cobro/Culqi) como dos contextos independientes. | **Se descarta para el alcance actual**: el volumen de reglas de negocio no justifica el costo de coordinación entre dos contextos: la Saga de aprobación (4.1.1.2) necesita ambas responsabilidades en la misma transacción local. Queda anotado como refactor natural si el dominio de facturación creciera (ej. múltiples pasarelas de pago). |
+| ¿Qué pasaría si **tomamos capabilities de 3 contexts** para formar uno nuevo? | Extraer la lógica de "generar alerta" que hoy vive de forma repetida en IoT Access Management, IoT Telemetry y Smart Irrigation, y consolidarla en un contexto nuevo. | **Ya resuelto por diseño**: ese contexto nuevo es exactamente **Notification** — los contextos IoT solo publican el evento de dominio (`PhysicalAccessDenied`, `AbnormalConsumptionDetected`, `IrrigationFailed`, etc.) y es Notification quien concentra el *Factory Pattern* de creación de la alerta (push/email/SMS), evitando triplicar esa lógica. |
+| ¿Qué pasaría si **duplicamos** una funcionalidad para romper una dependencia? | Que Report mantenga su propia copia denormalizada de pagos/deudas (vía eventos) en lugar de consultar a Payment por REST síncrono. | **Se descarta por ahora** (queda como Design Critique de Report en 4.1.1.3): el volumen de datos y el timebox del proyecto no justifican construir un pipeline de proyecciones; se acepta el acoplamiento síncrono Report → Payment sabiendo que es la única lectura cross-context sin desacoplar del informe. |
+| ¿Qué pasaría si creamos un **shared service** para reducir duplicación? | Un servicio compartido de "estado de morosidad" consultado tanto por IoT Access Management como por futuras integraciones (ej. bloqueo de reservas a morosos). | **Se descarta un servicio nuevo**: Payment ya es la fuente de verdad y publica `ResidentMarkedDelinquent`; crear un shared service solo agregaría un salto de red adicional sin nueva capability. Se prefiere que cada contexto interesado se suscriba al evento (Customer/Supplier) en vez de introducir un Shared Kernel. |
+| ¿Qué pasaría si **aislamos los core capabilities** y movemos el resto a un contexto aparte? | Separar `EnergyCalculationService`/`AnomalyDetectionService` (core, diferenciador) de la ingesta cruda de telemetría (`TelemetryIngestionService`, más genérica) en dos contextos. | **Se descarta dividir en dos microservicios** por el timebox del curso, pero sí se aisló en capas dentro del mismo contexto (Domain Service vs. Application Service, ver 4.2.11): si el volumen de sensores creciera, la ingesta cruda es la primera candidata a externalizarse hacia una plataforma IoT genérica (ej. AWS IoT Core), dejando el cálculo de energía y la detección de anomalías —el verdadero valor de negocio— en el contexto propio. |
+
 
 **9. Incident Management (4.2.9)**
 
@@ -3150,10 +4499,27 @@ Observaciones que se desprenden de esta trazabilidad:
 7. TS16 queda limitada a IoT Access Management (TS18, TS19 y TS20 cubren Smart Lighting, Telemetry y Water Pump Leak Detection), y TS17 comunica el contexto de acceso con los ESP32 a través del Edge API por MQTT local, sin comandos de riego.
 8. El Edge API / Edge Gateway (TS21–TS29, TS31–TS34) es un componente transversal a los contextos IoT, no un bounded context propio.
 
+=======
+| 4.2.5 | Notification | EP02, EP03, EP04 | US09, US10, US11, US12, US31 | TS10 |
+| 4.2.6 | Communication | EP02 | US08, US13, US14, US15, US32, US36 | TS09 |
+| 4.2.7 | Forum | EP02 | US29, US37 | TS12 |
+| 4.2.8 | Report | EP04 | US25, US26 | TS11 |
+| 4.2.9 | IoT Access Management | EP07 | US48, US49, US54, US55, US56 | TS16, TS17 |
+| 4.2.10 | Smart Lighting & Automation | EP08 | US53, US57, US58, US59, US60 | TS18 |
+| 4.2.11 | IoT Telemetry & Analytics | EP09 | US61, US62, US63, US64, US65 | TS19 |
+| 4.2.12 | Smart Irrigation | EP10 | US50, US51 | *(por definir en 3.1)* |
+
+Observaciones que se desprenden de esta trazabilidad:
+
+- **EP05 (Infraestructura, seguridad y arquitectura técnica)** no se mapea a un bounded context propio porque es transversal: TS04, TS13, TS14 y TS15 se materializan en el API Gateway, TS05 en la estrategia de persistencia descrita en 4.1.1.1, y TS21–TS34 en el Edge API; las historias técnicas de configuración base de cada microservicio figuran en la columna correspondiente.
+- **EP06 (Landing Page e Interfaz Web)**, con US41–US47, tampoco corresponde a un bounded context: se implementa en los containers *Landing Page* y *Web Application* de 4.1.3.3, que consumen los contextos existentes sin aportar dominio propio.
+- **EP11 (Edge Gateway e integración con dispositivos ESP32)**, con US71–US93, se implementa en el container *Edge API & Gateway Controller* y en el firmware de los nodos: es infraestructura on-premise que ejecuta localmente lo que deciden los contextos cloud (relación Conformist de 4.1.2), no un bounded context de dominio.
+- **US08 (alertas de emergencia)** se implementa en Communication, que publica `EmergencyDeclared` y `EmergencyReported`, y la entrega por push y SMS la realiza Notification. El contexto Incident Management, identificado en una primera iteración, se retiró del catálogo (ver 4.1.1.1).
+
 
 **Nivel de detalle de cada capa**
 
-Cada bounded context se documenta a continuación separando Domain, Interface, Application e Infrastructure Layer. La subsección 4.2.X.1–4.2.X.4 da el diccionario en prosa (nombre, propósito e intención de cada clase, con sus atributos y relaciones principales); el detalle exacto de atributos tipados, métodos, *scope* y multiplicidad que pide el statement para el nivel de código vive en el Class Diagram UML de 4.2.X.6.1 de cada contexto (los 11 contextos ya cuentan con el suyo, ver 4.2.1–4.2.12) — evitando así transcribir en texto plano el mismo detalle que el diagrama ya expresa formalmente.
+Cada bounded context se documenta a continuación separando Domain, Interface, Application e Infrastructure Layer. La subsección 4.2.X.1–4.2.X.4 da el diccionario en prosa (nombre, propósito e intención de cada clase, con sus atributos y relaciones principales); el detalle exacto de atributos tipados, métodos, *scope* y multiplicidad que pide el statement para el nivel de código vive en el Class Diagram UML de 4.2.X.6.1 de cada contexto (los contextos 4.2.1–4.2.11 ya cuentan con el suyo; el de Smart Irrigation se incorpora junto con su diseño táctico en 4.2.12) — evitando así transcribir en texto plano el mismo detalle que el diagrama ya expresa formalmente.
 
 ### 4.2.1. Bounded Context: IAM / Auth
 
@@ -4667,6 +6033,342 @@ Implementación JPA de los repositorios sobre PostgreSQL; `EdgeCommandPublisher`
 
 *Figura. Diagrama Entidad-Relación — extensión Water Pump Leak Detection. Elaborado con PlantUML.*
 
+
+# Capítulo V: Solution UI/UX Design
+
+## 5.1. Style Guidelines
+
+### 5.1.1. General Style Guidelines
+
+### 5.1.2. Web, Mobile and IoT Style Guidelines
+
+## 5.2. Information Architecture
+
+### 5.2.1. Organization Systems
+
+### 5.2.2. Labeling Systems
+
+### 5.2.3. SEO Tags and Meta Tags
+
+### 5.2.4. Searching Systems
+
+### 5.2.5. Navigation Systems
+
+## 5.3. Landing Page UI Design
+
+### 5.3.1. Landing Page Wireframe
+
+### 5.3.2. Landing Page Mock-up
+
+## 5.4. Applications UX/UI Design
+
+### 5.4.1. Applications Wireframes
+
+### 5.4.2. Applications Wireflow Diagrams
+
+#### 5.4.2.1. Applications Mock-ups
+
+### 5.4.3. Applications User Flow Diagrams
+
+## 5.5. Applications Prototyping
+
+## 5.6. IoT Device Design
+
+# Capítulo VI: Product Implementation, Validation & Deployment
+
+## 6.1. Software Configuration Management
+
+### 6.1.1. Software Development Environment Configuration
+
+Esta subsección registra las herramientas utilizadas para desarrollar el **Edge Gateway** (servicio Edge del proyecto). Las herramientas de los demás productos digitales (Landing Page, Web Services, Web Applications y Mobile Applications) se agregan en este mismo cuadro conforme se incorporan.
+
+| Producto de software | Versión | Propósito en el proyecto | Referencia |
+|---|---|---|---|
+| Python | 3.12 (imagen Docker) | Lenguaje del Edge Gateway, según el enunciado para Edge Services | https://www.python.org/downloads/ |
+| Flask | 3.1.3 | Framework web del Edge Gateway (API REST local) | https://flask.palletsprojects.com/ |
+| flask-smorest | 0.47.0 | Definición de endpoints y documentación OpenAPI/Swagger | https://flask-smorest.readthedocs.io/ |
+| marshmallow | 4.3.1 | Validación de solicitudes REST y de mensajes MQTT | https://marshmallow.readthedocs.io/ |
+| Peewee ORM | 4.5.2 | Acceso a datos del Edge Gateway, según el enunciado | https://docs.peewee-orm.com/ |
+| SQLite | incluido en Python | Base de datos local del Edge Gateway (modo WAL) | https://www.sqlite.org/ |
+| paho-mqtt | 2.1.0 | Cliente MQTT para comunicarse con los nodos ESP32 | https://eclipse.dev/paho/ |
+| Eclipse Mosquitto | 2 | Broker MQTT local entre los nodos ESP32 y el Edge Gateway | https://mosquitto.org/ |
+| gunicorn | 26.2.0 | Servidor de aplicación del contenedor del Edge Gateway | https://gunicorn.org/ |
+| pytest | 9.1.1 | Pruebas unitarias y de integración del Edge Gateway | https://docs.pytest.org/ |
+| Docker y Docker Compose | 29.8 / 5.5 | Empaquetado y despliegue local de todo el servicio | https://www.docker.com/products/docker-desktop/ |
+| GitHub | — | Control de versiones y repositorio del Edge Gateway | https://github.com/ |
+
+### 6.1.2. Source Code Management
+
+El código fuente se gestiona en GitHub, dentro de la organización pública del equipo. Cada producto digital tiene su propio repositorio, que incluye el proyecto y sus archivos de pruebas.
+
+| Producto | Repositorio |
+|---|---|
+| Edge Gateway (Python, Flask, Peewee, SQLite) | https://github.com/IoT-UPC-202620/Edifika-Microservice-IoT-Gateway |
+
+**GitFlow.** El Edge Gateway aplica GitFlow con las siguientes ramas:
+
+| Rama | Origen | Destino | Convención de nombre | Ejemplo |
+|---|---|---|---|---|
+| `main` | — | — | Contiene solo versiones publicadas, cada una con su tag | `v0.1.0` |
+| `develop` | `main` | — | Rama de integración | `develop` |
+| Feature | `develop` | `develop` (merge `--no-ff`) | `feature/<ID de historia>-<nombre corto>` | `feature/US71-access-control` |
+| Release | `develop` | `main` y `develop` | `release/<versión>` | `release/0.1.0` |
+| Hotfix | `main` | `main` y `develop` | `hotfix/<nombre>` | `hotfix/lock-timeout` |
+
+Cada historia o grupo de historias relacionadas se desarrolla en su propia rama feature y se integra a `develop` mediante un merge sin avance rápido (`--no-ff`), de modo que el historial conserve qué cambios pertenecen a cada historia.
+
+**Semantic Versioning.** Las versiones siguen el formato `MAJOR.MINOR.PATCH`. La primera versión funcional es la **0.1.0**: se preparó en `release/0.1.0` (con su `CHANGELOG.md`), se integró a `main` y se etiquetó como `v0.1.0`.
+
+**Conventional Commits.** Los mensajes de commit usan el formato `<tipo>(<ámbito>): <descripción>`, con los tipos `feat`, `fix`, `docs`, `test`, `chore` y `refactor`, y mencionan entre paréntesis los identificadores de las historias implementadas. Por ejemplo: `feat(access): resolve RFID access locally with lock, buzzer and OLED feedback (US71-US75, US87)`.
+
+### 6.1.3. Source Code Style Guide & Coding Conventions
+
+Convenciones adoptadas para el código Python del Edge Gateway:
+
+| Aspecto | Convención |
+|---|---|
+| Estilo general | PEP 8 (https://peps.python.org/pep-0008/) |
+| Documentación | Docstrings según PEP 257 (https://peps.python.org/pep-0257/) en módulos y clases públicas |
+| Nomenclatura | En inglés. `snake_case` para funciones, variables y módulos; `PascalCase` para clases; `MAYUSCULAS_CON_GUION_BAJO` para constantes |
+| Tipado | Anotaciones de tipo en las firmas públicas de los servicios |
+| Organización | Capas separadas: `api` (interfaz REST), `services` (reglas de negocio), `mqtt` (contrato y mensajería), `models` y `db` (persistencia) |
+| Mensajes al usuario | Inglés como idioma por defecto (mensajes de la API, de la pantalla OLED y de la documentación Swagger), según el enunciado |
+| Configuración | Solo mediante variables de entorno con el prefijo `EDGE_`; ningún secreto en el código |
+| Pruebas | Un archivo por componente; el nombre de cada prueba describe el comportamiento esperado, y los escenarios Dado/Cuando/Entonces de las historias se traducen en pruebas `pytest` |
+| Commits y ramas | Conventional Commits y GitFlow (ver 6.1.2) |
+
+### 6.1.4. Software Deployment Configuration
+
+El Edge Gateway se despliega con **Docker Compose**, junto con el broker MQTT y un backend simulado. La solución completa se levanta con un solo comando:
+
+```bash
+docker compose up --build                  # broker + Edge Gateway + backend simulado
+docker compose --profile sim up --build    # además, dos nodos ESP32 virtuales
+```
+
+**Servicios del `docker-compose.yml`**
+
+| Servicio | Imagen | Puerto | Función |
+|---|---|---|---|
+| `mosquitto` | `eclipse-mosquitto:2` | 1883 | Broker MQTT local. Verificación de salud con `mosquitto_sub` |
+| `edge-gateway` | Construida desde el `Dockerfile` (`python:3.12-slim`) | 8000 | API REST, Swagger (`/docs`) y `/health` |
+| `mock-cloud` | Misma imagen | 9000 | Backend simulado que recibe los eventos y entrega las credenciales |
+| `seed`, `sim-door`, `sim-garden` | Misma imagen (perfil `sim`) | — | Registro de los nodos de demostración y dos ESP32 virtuales |
+
+**Decisiones de despliegue**
+
+- El Edge Gateway se ejecuta con **un solo worker** de gunicorn (y varios hilos), porque el cliente MQTT y los planificadores de tareas deben existir una única vez.
+- La base de datos SQLite se guarda en el volumen `edge-data`, de modo que sobrevive a los reinicios del contenedor. El broker conserva su estado en el volumen `mosquitto-data`.
+- El Edge Gateway espera a que el broker y el backend superen sus verificaciones de salud antes de iniciar (`depends_on` con `service_healthy`). Si el broker se cae después, el cliente reintenta la conexión con espera creciente.
+- El contenedor se ejecuta con un usuario sin privilegios y define su propio `HEALTHCHECK` sobre `/health`.
+
+**Variables de entorno principales**
+
+| Variable | Valor por defecto en Compose | Descripción |
+|---|---|---|
+| `EDGE_SERVICE_TOKEN` | `dev-service-token` | Token Bearer de la API REST local (obligatorio) |
+| `EDGE_MQTT_HOST` | `mosquitto` | Broker MQTT |
+| `EDGE_CLOUD_BASE_URL` | `http://mock-cloud:9000` | Backend al que se envían los eventos |
+| `EDGE_CLOUD_TOKEN` | `dev-cloud-token` | Credencial del Edge Gateway ante el backend |
+| `EDGE_DATABASE_PATH` | `/data/edge-gateway.db` | Archivo SQLite |
+| `EDGE_TIMEZONE` | `America/Lima` | Zona horaria de los horarios de las áreas |
+
+Los valores se pueden sobrescribir con un archivo `.env` (ver `.env.example`). La topología desplegada se representa en el Deployment Diagram de la sección 4.1.3.4.
+
+## 6.2. Landing Page, Services & Applications Implementation
+
+### 6.2.1. Sprint 1
+
+#### 6.2.1.1. Sprint Planning 1
+
+#### 6.2.1.2. Aspect Leaders and Collaborators
+
+#### 6.2.1.3. Sprint Backlog 1
+
+#### 6.2.1.4. Development Evidence for Sprint Review
+
+El Edge Gateway se desarrolló en ramas feature de GitFlow. Cada rama se integró a `develop` con su commit convencional, y el release `0.1.0` se integró a `main`. Repositorio: https://github.com/IoT-UPC-202620/Edifika-Microservice-IoT-Gateway
+
+| Rama | Commit | Historias | Qué se desarrolló |
+|---|---|---|---|
+| `feature/TS23-flask-base` | `b846d26` | TS23 | Aplicación Flask, configuración por variables de entorno, `/health`, Swagger y token Bearer |
+| `feature/TS25-local-persistence` | `d962edc` | TS25 | Modelos Peewee sobre SQLite (modo WAL) y cola de salida de eventos (outbox) |
+| `feature/TS24-mqtt-contract` | `6daef9c` | TS24 | Contrato MQTT versionado, router de mensajes, puente paho-mqtt y comandos con confirmación (ACK) |
+| `feature/US79-US80-device-registry` | `90a80df` | US79, US80, US85 | Registro de nodos, heartbeat, detección de nodos sin conexión y sincronización de reloj |
+| `feature/US71-access-control` | `ab2d202` | US71–US75, US87 | Decisión local de acceso RFID, cerradura, buzzer y OLED, horarios por área y registro manual de tarjetas |
+| `feature/US76-sensor-telemetry` | `6a80218` | US76–US78, US92 | Lecturas de humedad y ultrasonido, nivel de agua, alertas locales y calibración |
+| `feature/TS33-cloud-integration` | `9ca706a` | TS33, US75, US81, US82, US93 | Envío por lotes al backend, sincronización de la caché y endpoints de estado local |
+| `feature/US83-remote-commands-maintenance` | `da711b3` | US83, US89 | Comandos remotos y modo mantenimiento |
+| `feature/TS31-docker-compose` | `fb0a2db` | TS31, TS32, TS33 | Docker Compose, simulador de nodos y backend simulado |
+| `feature/docs-readme` | `4e7bd48` | — | Documentación del repositorio |
+| `release/0.1.0` | `171a6f9` | — | Preparación de la versión 0.1.0 y `CHANGELOG.md` |
+
+**Estructura del código**
+
+```
+main.py                    punto de entrada (gunicorn main:app)
+edge_gateway/
+  config.py  gateway.py    configuración · raíz de composición y tareas en segundo plano
+  mqtt/                    contrato (esquemas), router y puente paho-mqtt
+  services/                access, devices, telemetry, commands, remote, outbox, sync, alerts, credentials
+  api/                     blueprints REST y esquemas
+  models.py  db.py         modelos Peewee · configuración de SQLite
+mock_cloud/                backend simulado para pruebas locales
+simulator/                 nodos ESP32 virtuales
+tests/                     suite de pruebas pytest
+```
+
+El código de la aplicación tiene cerca de 2 700 líneas y las pruebas cerca de 1 900.
+
+**Decisiones de diseño relevantes**
+
+- **Offline first:** las decisiones de acceso nunca consultan la nube; todo lo que debe llegar al backend pasa por la cola de salida en SQLite. Un registro y su evento se escriben en una misma transacción.
+- **Alertas con estado:** cada condición (humedad baja, nivel crítico de agua, nodo sin conexión) se anuncia una vez al producirse y una vez al resolverse, no por cada lectura.
+- **Mantenimiento significa desactivado:** un nodo en mantenimiento no procesa tarjetas, lecturas, comandos ni genera alertas hasta que el mantenimiento termina, de forma manual o por vencimiento.
+- **Cola con prioridad:** si la cola de salida se llena, se descartan primero las lecturas de telemetría más antiguas; los accesos y las alertas nunca se descartan.
+
+#### 6.2.1.5. Testing Suite Evidence for Sprint Review
+
+Las pruebas se encuentran en la carpeta `tests/` del repositorio y se ejecutan con `pytest`. La suite tiene **188 pruebas** que **no necesitan broker MQTT ni internet**: el broker, el backend y el reloj se reemplazan con dobles de prueba (`FakePublisher`, `FakeCloud`, `FakeClock`), y cada prueba usa su propia base de datos SQLite temporal. La suite completa se ejecuta en unos 12 segundos.
+
+```bash
+pip install -r requirements-dev.txt
+pytest
+# 188 passed
+```
+
+| Archivo de pruebas | Pruebas | Qué verifica | Historias |
+|---|---|---|---|
+| `test_base.py` | 6 | Arranque, `/health`, Swagger/OpenAPI y configuración obligatoria | TS23 |
+| `test_persistence.py` | 7 | Modo WAL, persistencia tras reinicio, escritura atómica y límite de la cola | TS25 |
+| `test_mqtt_contract.py` | 21 | Esquemas, versión de contrato, router resistente a mensajes inválidos y puente MQTT | TS24 |
+| `test_commands.py` | 9 | Comandos, ACK, tiempos de espera y alerta de cerradura sin respuesta | TS24, US72 |
+| `test_devices.py` | 19 | Registro de nodos, heartbeat, desconexión, recuperación, sincronización de reloj, planificador y API | US79, US80, US85 |
+| `test_access.py` | 29 | Decisiones de acceso (tarjeta válida, desconocida, bloqueada, vencida, sin reserva, fuera de horario), lecturas repetidas, intentos denegados y API | US71–US75, US87 |
+| `test_telemetry.py` | 28 | Validación de lecturas, nivel de agua, filtro de picos, alertas con histéresis y calibración | US76–US78, US92 |
+| `test_cloud_integration.py` | 38 | Entrega por lotes, reintentos, caída y recuperación de la nube, cliente HTTP, sincronización y estado local | TS33, US75, US81, US82, US93 |
+| `test_remote_and_maintenance.py` | 26 | Comandos remotos, errores HTTP y modo mantenimiento | US83, US89 |
+| `test_mock_cloud.py` | 5 | Backend simulado: autenticación, idempotencia y sincronización | TS33 |
+| **Total** | **188** | | |
+
+**Escenarios de aceptación.** Los escenarios Dado/Cuando/Entonces de cada historia (Capítulo III) se tradujeron en pruebas con nombres descriptivos. Por ejemplo, el escenario de US75 "Registro local sin internet" se verifica en `test_access_attempts_made_while_offline_reach_the_cloud_afterwards`, y el de US89 "Nodo desactivado durante el mantenimiento" en `test_node_in_maintenance_rejects_every_remote_command_even_from_an_admin`.
+
+**Verificación de la suite.** Se comprobó que las pruebas detectan errores reales introduciendo fallos a propósito: invertir el orden de entrega de eventos, eliminar la espera entre reintentos y quitar la protección de las tarjetas registradas sin conexión. En los tres casos al menos una prueba falló y señaló el comportamiento alterado.
+
+#### 6.2.1.6. Execution Evidence for Sprint Review
+
+Se ejecutó el servicio completo de extremo a extremo: broker MQTT real, backend simulado, Edge Gateway y nodos ESP32 virtuales, que se comunican con el contrato MQTT descrito en 6.2.1.7. Para esta verificación el broker fue un broker MQTT de código abierto ejecutado en el mismo equipo.
+
+**1. Arranque y salud.** El Edge Gateway se conectó al broker, sincronizó la caché con el backend y reportó todas sus dependencias en estado correcto:
+
+```
+INFO edge_gateway.mqtt.bridge: Connected to MQTT broker localhost:1883
+INFO edge_gateway.services.sync: Cache synchronised to version 1: {'credentials': 1, 'permissions': 1, 'areaSchedules': 1, 'removed': 0}
+GET /health -> {"status":"ok", "checks":{"database":{"ok":true}, "outbox":{...,"pending":0}, "cache":{"version":1,"stale":false}, "mqtt":{"ok":true}}}
+```
+
+**2. Registro de nodos y primer heartbeat.** Se registraron dos nodos mediante la API; a los pocos segundos de iniciar los nodos virtuales ambos pasaron de `INACTIVE` a `ACTIVE`:
+
+```
+esp32-door-01   ACTIVE
+esp32-garden-01 ACTIVE
+```
+
+**3. Lectura de tarjetas en la puerta.** Una tarjeta con reserva vigente abre la puerta y una tarjeta desconocida es rechazada; en ambos casos el nodo recibe qué mostrar en la pantalla OLED y qué sonido emitir:
+
+```
+[esp32-door-01] -> card 04A1B2C3
+[esp32-door-01] <- access_result {"result": "GRANTED", "reason": "ok", "message": "Access granted", "buzzer": "granted", "name": "Ana Perez", "lockMs": 5000}
+
+[esp32-door-01] -> card DEADBEEF
+[esp32-door-01] <- access_result {"result": "DENIED", "reason": "unknown_credential", "message": "Card not registered", "buzzer": "denied"}
+```
+
+**4. Operación sin internet.** Se simuló la caída del backend. Con el backend caído, la tarjeta válida igualmente abrió la puerta y los eventos quedaron en la cola local; al restablecerse el servicio llegaron todos, en orden y sin duplicados:
+
+```
+(backend caído)   [esp32-door-01] GRANTED: Access granted
+                  status -> outbox: {'pending': 17, 'consecutiveFailures': 2, 'lastError': 'HTTP 503'}
+(backend restaurado)
+                  backend recibió los 3 accesos (GRANTED, DENIED, GRANTED) y 100 lecturas; pendientes en cola: 4 (lecturas nuevas)
+```
+
+**5. Comandos remotos y mantenimiento.** El Edge Gateway ejecuta comandos solo en nodos activos y espera su confirmación:
+
+```
+POST /devices/esp32-door-01/commands  {"type":"unlock","params":{"durationMs":3000}}  -> 200 {"status":"ACKED"}
+PUT  /devices/esp32-door-01/maintenance {"enabled":true,"durationMinutes":30}          -> 200 status MAINTENANCE
+POST /devices/esp32-door-01/commands  {"type":"unlock"}                                -> 409 "Device under maintenance"
+tarjeta presentada en mantenimiento                                                    -> DENIED: Under maintenance
+```
+
+Además, el backend recibió el resultado de cada comando remoto con el administrador que lo solicitó (`requestedBy`).
+
+**6. Seguridad básica.** Una solicitud sin token Bearer a la API responde `401`.
+
+#### 6.2.1.7. Services Documentation Evidence for Sprint Review
+
+El Edge Gateway documenta su API REST con **OpenAPI/Swagger**: la interfaz está disponible en `/docs` y la especificación en `/openapi.json`. Todos los endpoints, excepto `/health`, requieren el token Bearer configurado en `EDGE_SERVICE_TOKEN`. Los textos de la documentación y de las respuestas están en inglés, idioma por defecto del proyecto.
+
+**Endpoints de la API REST local**
+
+| Método | Ruta | Descripción | Historias |
+|---|---|---|---|
+| GET | `/health` | Estado del servicio y de sus dependencias (base de datos, broker, cola de eventos y caché) | TS23 |
+| POST | `/api/v1/devices` | Registrar un nodo; queda `INACTIVE` hasta su primer heartbeat | US79 |
+| GET | `/api/v1/devices` | Listar los nodos | US80, US93 |
+| GET | `/api/v1/devices/{device_id}` | Consultar un nodo | US80 |
+| PATCH | `/api/v1/devices/{device_id}/settings` | Calibrar altura del tanque y umbrales | US92 |
+| PUT | `/api/v1/devices/{device_id}/maintenance` | Activar o finalizar el modo mantenimiento | US89 |
+| POST | `/api/v1/devices/{device_id}/commands` | Ejecutar un comando (abrir cerradura, mostrar mensaje, sonar buzzer) y esperar su confirmación | US83 |
+| POST | `/api/v1/credentials` | Registrar una tarjeta manualmente, también sin internet | US86 (registro manual) |
+| GET | `/api/v1/credentials` | Listar las credenciales en caché | US93 |
+| PATCH | `/api/v1/credentials/{uid}/status` | Activar, suspender o revocar una credencial | US91 (bloqueo manual) |
+| GET | `/api/v1/access-attempts` | Bitácora de accesos, con la credencial enmascarada | US55, US93 |
+| GET | `/api/v1/readings` | Lecturas de sensores | US65 |
+| POST | `/api/v1/sync` | Recibir credenciales, reservas y horarios enviados por la nube | US81 |
+| GET | `/api/v1/status` | Estado del Edge Gateway: nodos, cola de eventos y caché | US93 |
+| GET | `/api/v1/outbox` | Eventos pendientes de enviar a la nube | US93 |
+
+Los errores tienen una forma común: `{"code": 409, "status": "Conflict", "message": "..."}`. Los errores de validación (`422`) incluyen un objeto `errors` con el detalle de cada campo.
+
+**Contrato MQTT entre los nodos y el Edge Gateway** (prefijo `edifika/v1`, versión de esquema 1). Todos los mensajes son JSON con la versión `v` y la marca de tiempo `ts` del reloj del nodo.
+
+| Sentido | Tópico | Contenido |
+|---|---|---|
+| Nodo → Edge | `edifika/v1/nodes/{deviceId}/heartbeat` | `deviceId`, `ts`, `fw` (versión de firmware, opcional) |
+| Nodo → Edge | `edifika/v1/nodes/{deviceId}/access` | `credentialType` (`RFID`), `credential` (UID de la tarjeta) |
+| Nodo → Edge | `edifika/v1/nodes/{deviceId}/readings` | `sensor` (`humidity` o `ultrasonic`), `value` (puede ser nulo si el sensor no midió), `unit` |
+| Nodo → Edge | `edifika/v1/nodes/{deviceId}/ack` | `commandId`, `status` (`OK` o `FAILED`), `detail` |
+| Edge → Nodo | `edifika/v1/nodes/{deviceId}/commands` | `commandId`, `type`, `params` |
+
+Tipos de comando que debe atender el firmware: `access_result` (resultado de una lectura de tarjeta: abrir `lockMs`, mensaje para la OLED y patrón del buzzer), `unlock`, `display`, `buzzer`, `alert` (alerta local, por ejemplo nivel crítico de agua), `maintenance` y `time_sync`. El nodo debe confirmar con un `ack` cada comando que incluya `commandId`. Un mensaje con una versión de esquema distinta o con un formato inválido se descarta y se reporta a la nube una sola vez por dispositivo.
+
+**Contrato entre el Edge Gateway y el backend.** Las llamadas incluyen `Authorization: Bearer <token>` y el encabezado `X-Gateway-Id`.
+
+| Operación | Descripción |
+|---|---|
+| `POST /api/v1/edge/events` | Entrega por lotes de eventos `{eventId, kind, occurredAt, payload}`. El backend responde con los `eventId` aceptados y **debe deduplicar por `eventId`**, porque la entrega es al menos una vez. Tipos de evento: `access_attempt`, `reading`, `alert`, `device_status`, `command_result` y `credential_changed` |
+| `GET /api/v1/edge/sync?since={versión}` | Credenciales, ventanas de reserva y horarios de áreas. Entrega una copia completa (`full: true`) o solo los cambios desde la versión indicada |
+
+Ante un error `5xx`, `401`, `403`, `408`, `429` o una falla de red, el Edge Gateway conserva los eventos y reintenta con espera creciente (máximo 60 segundos). Ante cualquier otro error `4xx`, descarta el evento tras 5 intentos para que no bloquee la cola.
+
+#### 6.2.1.8. Software Deployment Evidence for Sprint Review
+
+El despliegue del Edge Gateway se define de forma reproducible en el repositorio (https://github.com/IoT-UPC-202620/Edifika-Microservice-IoT-Gateway):
+
+| Archivo | Contenido |
+|---|---|
+| `Dockerfile` | Imagen del Edge Gateway (`python:3.12-slim`, usuario sin privilegios, `HEALTHCHECK` y gunicorn con un worker) |
+| `docker-compose.yml` | Servicios `mosquitto`, `edge-gateway`, `mock-cloud` y, con el perfil `sim`, `seed`, `sim-door` y `sim-garden`; volúmenes `edge-data` y `mosquitto-data` |
+| `mosquitto/mosquitto.conf` | Configuración del broker MQTT local |
+| `.env.example` | Variables de entorno que se pueden sobrescribir |
+
+El archivo `docker-compose.yml` se validó con `docker compose config`, que confirma la sintaxis y la resolución de sus variables, y los seis servicios (`mosquitto`, `edge-gateway`, `mock-cloud`, `seed`, `sim-door` y `sim-garden`) quedan definidos. Los pasos de despliegue están en la sección 6.1.4.
+
+> **Pendiente de evidencia:** capturas de la ejecución de `docker compose up --build` con los contenedores en estado `healthy` y de la interfaz Swagger en `http://localhost:8000/docs`.
+
+#### 6.2.1.9. Team Collaboration Insights during Sprint
 
 # Conclusiones
 # Conclusiones y Recomendaciones
