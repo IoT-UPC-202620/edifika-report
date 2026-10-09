@@ -4839,7 +4839,7 @@ Implementación JPA de los repositorios sobre PostgreSQL; `EdgeGatewaySyncClient
 
 El agregado principal identificado es:
 
-**AutomationRule**: regla que gobierna una o varias luminarias de un área común, con condición de presencia, umbral de lux, franja horaria, duración de apagado por inactividad y prioridad frente a otras reglas. La regla se resuelve mediante el Domain Service **AutomationDecisionService**, que combina presencia, lux ambiental, horario de reserva y override vigente, aplicando la precedencia entre reglas.
+**AutomationRule**: regla que gobierna una o varias luminarias de un área común, con condición de presencia, umbral de lux, franja horaria, duración de apagado por inactividad y prioridad frente a otras reglas. La regla se resuelve mediante el Domain Service **AutomationDecisionService**, que combina presencia, lux ambiental, horario de reserva y anulación vigente, aplicando la precedencia entre reglas.
 
 ## Aggregate: AutomationRuleAggregate
 
@@ -4912,7 +4912,7 @@ El agregado principal identificado es:
 
 | Nombre | Responsabilidad | Reglas aplicadas |
 |---|---|---|
-| AutomationDecisionService | Resolver el estado objetivo de cada luminaria. | Combina presencia, lux ambiental, horario de reserva y override vigente, aplicando la precedencia entre reglas. |
+| AutomationDecisionService | Resolver el estado objetivo de cada luminaria. | Combina presencia, lux ambiental, horario de reserva y anulación vigente, aplicando la precedencia entre reglas. |
 
 #### 4.2.10.2. Interface Layer
 
@@ -5217,6 +5217,1115 @@ Implementación JPA de los repositorios sobre PostgreSQL; `EdgeCommandPublisher`
 
 *Figura. Diagrama Entidad-Relación — extensión Water Pump Leak Detection. Elaborado con PlantUML.*
 
+# Capítulo V: Solution UI/UX Design
+
+## 5.1. Style Guidelines
+
+### 5.1.1. General Style Guidelines
+
+En esta sección hemos establecido las directrices de estilo que rigen todas las pantallas de Edifika (aplicación web, aplicación móvil y dispositivos IoT). Su propósito es garantizar coherencia visual y de comunicación: que un mismo color, un mismo tamaño de texto y un mismo tono de redacción signifiquen siempre lo mismo en todo el producto.
+
+Para que estas directrices no quedaran como recomendaciones subjetivas, se realizó un **levantamiento de las decisiones observables** en los mock-ups de la plataforma (secciones 5.4.1 y 5.4.3): a partir de las siete pantallas de referencia —acceso, registro, unidades y residentes, áreas comunes, muro comunitario, finanzas y formulario de reserva— se identificaron el color de marca, la familia tipográfica, la escala de espaciados y el registro del texto, y con esos hallazgos se definieron los **tokens** de diseño (variables de estilo) que se replican en todas las vistas. Estos tokens funcionan como un mini design system propio, tomando como referencia los sistemas **Material Design 3** y **Tailwind CSS** (para la nomenclatura de la escala de espaciado y de los breakpoints), y fueron adaptados a las necesidades del producto: una interfaz administrativa densa en información, con alto volumen de tablas, estados y alertas, que debe seguir siendo legible por adultos mayores y por usuarios con baja familiaridad tecnológica.
+
+**Sustento: principios de diseño considerados**
+
+Las decisiones no son arbitrarias; cada una se sustenta en principios de diseño establecidos y en las restricciones del contexto de uso:
+
+- **Principio de consistencia y reconocimiento (Nielsen, 2020):** el usuario debe reconocer los controles y su comportamiento a partir de vistas anteriores. Esto exige un único color de marca para toda acción primaria y un único patrón de badges de estado, de modo que un botón morado siempre signifique lo mismo.
+- **Principio de jerarquía visual:** la pantalla debe comunicar qué es lo importante primero. Se resuelve con una escala tipográfica, con el uso del color solo para elementos de acción o estado, y con densidad de información controlada (tarjetas KPI superiores, tabla como bloque dominante).
+- **Ley de Hick-Hyman:** al cubrir información crítica (deuda vencida, comentarios denunciados, espacios deshabilitados) se reduce el tiempo de decisión. Por eso los estados críticos usan color rojo/verde y no solo texto, y los elementos que requieren acción inmediata se aíslan en bloques separados (tarjetas "Outstanding Balances", "Mod Queue").
+- **Principio de correspondencia (Einstellung):** la lectura de una interfaz es más rápida cuando su estructura sigue el orden de lectura. De aquí que la composición se base en un layout de 12 columnas con cabecera de página (título + subtítulo + acciones), contenido principal y panel lateral contextual.
+- **Principio de espacio en blanco (Larkin, 2015):** el espacio en blanco agrupa elementos relacionados y reduce la carga cognitiva. Se materializa en el espaciado interno de tarjetas y en los márgenes generosos de los formularios.
+- **Principio de la buena forma (Norman, 1986):** los componentes de la interfaz deben parecer presionables: bordes redondeados consistentes, sombras discretas y estados de hover/focus visibles.
+- **Accesibilidad y diseño universal:** contraste mínimo 4.5:1 en texto y 3:1 en elementos gráficos, tamaño mínimo de 14 px para texto de formulario, y nunca dependencia única del color para transmitir estado (siempre se acompaña de etiqueta textual, por ejemplo "PAID", "LATE (12D)", "OCCUPIED").
+- **Principio de "content first" y revelado progresivo:** la información se presenta en bloques cerrados (cards) en lugar de listas interminables, con revelado progresivo mediante paginación y filtros.
+
+#### Branding
+
+El branding de Edifika se sustenta en el **nombre, el símbolo y el color de marca** como trío indivisible:
+
+- **Nombre:** "Edifika", fusión de "edificio" y el sufijo "-ka" que le da identidad de producto. Se escribe siempre capitalizado ("Edifika") y en ningún caso en mayúsculas sostenidas ni con variantes ("EdifikaApp", "edifika").
+- **Símbolo (isotipo):** icono de edificio en línea con ventanas, acompañado del nombre en una misma línea. Aparece en el encabezado del panel lateral izquierdo ("Edifika / Residential Platform"), en las pantallas de acceso y registro, y como favicon.
+- **Color de marca:** violeta profundo, que es el único color con permiso de uso como fondo sólido de elementos de marca y de acciones primarias.
+- **Descriptor de marca (tagline):** "Residential Platform" como línea de apoyo bajo el logotipo, en tono claro. Resume el posicionamiento (plataforma de gestión residencial) y evita ambigüedad sobre el tipo de producto. En el pie de las pantallas de acceso y registro se añade el aviso legal en versalitas: "© 2024 EDIFIKA RESIDENTIAL PLATFORM".
+- **Área de respeto (clear space):** el espacio libre alrededor del logotipo equivale a la altura de la "E" del nombre. El logotipo no se deforma, no se recolorea fuera de la paleta y no se acompaña de sombras ni efectos.
+- **Aplicación en marketing vs. en producto:** en piezas de comunicación (login, registro, landing) el logotipo se apoya en un panel fotográfico con duotono de marca y el titular de posicionamiento; dentro de la aplicación el logotipo se mantiene fijo en la cabecera del sidebar y no se repite en cada tarjeta para no competir con el contenido.
+
+#### Lenguaje Aplicado
+
+El tono de comunicación se definió como **serio, semi-formal, respetuoso y sereno con episodios de entusiasmo controlado**, coherente con un producto de gestión administrativa donde el usuario puede estar tratando con deudas y conflictos vecinales. El detalle de las dimensiones adoptadas es el siguiente:
+
+| Dimensión | Posición adoptada | Decisión y sustento |
+| :--- | :--- | :--- |
+| Divertido / Serio | Serio | El producto comunica estados financieros (deuda, morosidad, arrears) y conflictos entre residentes. El humor restaría credibilidad y puede minimizar un problema serio. Se mantiene un tono profesional y directo, sin juegos de palabras ni emojis en la interfaz. |
+| Formal / Casual | Semi-formal | Se usa lenguaje corporativo natural ("Manage your property ecosystem with ease", "Real-time overview of the residential financial health"), evitando tecnicismos y jerga de ingeniería, pero sin tratar al usuario de forma coloquial ni usar slang. |
+| Respetuoso / Irreverente | Respetuoso | Se citan los nombres de las personas y de las unidades ("Unit 1204 · Julian Thorne", "Sarah Mitchell · Unit 402") y se evita cualquier carga valorativa sobre los residentes morosos. Los mensajes de estado son descriptivos del hecho, no juicios: "OVERDUE 15 DAYS" en lugar de "You failed to pay". |
+| Entusiasta / Sereno | Sereno con entusiasmo controlado | El copy evita la exageración y los signos de exclamación múltiples. El optimismo se transmite con verbos de acción y de logro ("Elevating Residential Living", "Vote Now", "RSVP Now"), con iconografía positiva y con la claridad de las métricas, no con adjetivos enfáticos. |
+
+Además de las dimensiones anteriores, se establecen las siguientes **reglas de redacción de la interfaz (microcopy)**:
+
+- **Voz del producto:** el sistema se expresa con voz activa en primera persona del plural implícita ("Elevating Residential Living", "Seamless building management for the modern homeowner and administrator"), transmitiendo que la plataforma trabaja para el usuario.
+- **Títulos y etiquetas:** los títulos de vista y de tarjeta se escriben en **Title Case** ("Finance & Reports", "Units & Residents", "Reservations Calendar", "Manage Areas"); los encabezados de columna, etiquetas de formulario y títulos de bloque lateral van en **MAYÚSCAS** ("TOTAL REVENUE", "UNIT / RESIDENT", "ACTIVE POLLS"); los párrafos de contenido, en oración ("Join us this Saturday for our annual summer celebration!").
+- **Botones:** se escribe la acción con verbo en infinitivo o imperativo corto ("Post", "Vote Now", "Send Notice", "Export CSV", "Add New Unit", "Save Changes"), nunca etiquetas vagas ("Aceptar", "OK"). El botón principal de cada pantalla lleva la acción de mayor frecuencia de uso, y las secundarias se degradan a variantes outline o ghost.
+- **Mensajes de error y vacíos:** se indica qué pasó y qué hacer a continuación, sin culpar al usuario. El caso de la tarjeta "Flagged Comment" del Mod Queue ilustra el patrón: se muestra la cita del conflicto y se ofrecen las acciones "Dismiss" y "Review" para que el administrador resuelva sin salir del contexto.
+- **Textos auxiliares:** los toggles y campos complejos se acompañan de una línea de ayuda que explica la consecuencia de la acción ("Toggle to set as Active or Under Maintenance"), evitando que el usuario descubra el comportamiento a posteriori.
+- **Consistencia de mayúsculas en estados:** los badges de estado se escriben en MAYÚSCAS para ser escaneables de un vistazo ("OCCUPIED", "PAID", "LATE (12D)", "VACANT", "CANCELED", "MAINTENANCE"); los títulos de sección, en Title Case.
+- **Sin emojis en la interfaz:** los íconos pertenecen a un set vectorial consistente; los emojis se reservan para la comunicación externa (redes, correos).
+
+Esta directriz se complementa con las dimensiones concretas por plataforma (web, móvil e IoT) descritas en la sección 5.1.2.
+
+#### Paleta de Colores
+
+La paleta se construyó sobre una base de **violeta de marca**, neutros fríos para la estructura general (superficies, bordes, tipografía) y una paleta semántica acotada para estados. La regla estructural es: **el color no se usa para decorar, solo para comunicar** (marca, acción primaria, estado); el resto de la superficie se resuelve con blanco, grises muy claros y bordes.
+
+Los tokens definidos, tomados de las variables de estilo de Figma, son:
+
+| Token | Color | Uso |
+| :--- | :--- | :--- |
+| **Primary / Brand** | `#8C088F` | Botón de acción principal, FAB, item activo del sidebar, toggle en estado "on", chip de reserva confirmada, encabezado de tarjeta destacada ("Manage Areas"), texto de enlace activo. |
+| **Primary Dark** | `#6F1D71` | Estado hover/pressed de la acción primaria, relleno de barras de progreso, texto de enlace ("CLEAR", "Forgot password?", "View Full Queue"). |
+| **Primary Light / Tint** | `#F9F2F9` | Fondo del ítem activo del menú, fondo de chips y de píldoras de estado informativo, fondo de barras de encuesta. |
+| **Primary Icon Tint** | `#F3E7F3` | Contenedor cuadrado de íconos de área común y de anuncio oficial. |
+| **Surface** | `#FFFFFF` | Tarjetas, tablas, paneles laterales, campos de formulario y superficie del diálogo modal. |
+| **Background** | `#F9FAFC` | Lienzo de la aplicación: separa visualmente las tarjetas blancas del fondo. |
+| **Surface Muted** | `#FAFAFA` | Zona de escritura de publicaciones, tarjetas de contenido secundario y encabezados de tabla. |
+| **Border** | `#E5E5E5` | Bordes de tarjetas, separadores de tabla, contorno de campos e inputs. |
+| **Border Strong** | `#D1D1D1` | Bordes de botones outline ("Export PDF", "Excel", "Remind") y de tarjetas de KPI. |
+| **Text Primary** | `#1A1A1A` | Títulos de página, cifras KPI, nombres de personas, celdas de tabla. |
+| **Text Secondary** | `#7D787E` | Etiquetas en mayúsculas, encabezados de columna, texto de ayuda y metadatos ("Unit 402 · 5 hours ago", "142 votes · 2 days left"). |
+| **Text Tertiary** | `#9A9599` | Subtítulos de KPI ("Across 4 Towers", "Active requests"), pies de tabla y mensajes de baja prioridad. |
+| **Success** | `#2C6E4A` sobre `#F0FDF3` | "PAID", tendencias positivas ("+12% vs last month"), metas superadas en barras de progreso. |
+| **Danger** | `#B91C1C` sobre `#FDF2F2` | "ARREARS", "LATE (12D)", "OVERDUE 15 DAYS", "CANCELED", "3 NEW", alertas de incidencia y barra lateral del comentario denunciado. |
+| **Neutral** | `#6B6B6B` sobre `#F1F1F1` | "VACANT", "PENDING APPROVAL", "GRACE PERIOD", "EVENT", switches en estado off, elementos deshabilitados. |
+| **Slate** | `#4E525C` | Categorías de reserva sin acción pendiente ("Gym Center · Tennis") y su entrada en la leyenda del calendario. |
+| **Scrim / Overlay** | `#808080` (negro al 50%) | Velo del diálogo modal: atenúa el fondo sin ocultar el contexto de la acción en curso. |
+| **Overlay photographic** | `#0F1231` | Duotono índigo del panel fotográfico de acceso y registro, sobre el que se apoya el titular de marca en blanco. |
+
+**Reglas de aplicación de color:**
+
+- **Regla 60-30-10:** aproximadamente 60% superficie (blanco y gris de lienzo), 30% componentes neutros y texto, 10% color de marca y semántico. Así el violeta se percibe como acento y no como fondo dominante.
+- **Una sola acción primaria por pantalla:** si hay varios botones sólidos, solo el de mayor frecuencia lleva `Primary`; los demás son `Outline` (borde `Border Strong`, texto `Primary`) o `Ghost` (ícono). Se observa en "Generate Report" (solid) frente a "Export PDF" y "Excel" (outline), y en "Send Notice" (solid) frente a "Remind" (outline).
+- **Contraste verificado:** `Primary #8C088F` sobre `#FFFFFF` cumple relación de contraste superior a 4.5:1, por lo que puede usarse también como color de texto de enlace y de badge sobre fondo blanco; los badges semánticos usan texto saturado sobre fondo muy claro del mismo tono para mantener legibilidad sin bloques sólidos que compitan con la acción primaria.
+- **Tintes de badge:** cada estado tiene un fondo de baja saturación derivado de su color (`#F0FDF3`, `#FDF2F2`, `#F1F1F1`, `#F9F2F9`), lo que permite tener muchos estados sin aumentar la carga cromática de la pantalla. El estado nunca se transmite solo con color: siempre lleva su etiqueta textual.
+- **Color como código de categoría:** en el calendario de reservas, el color del chip identifica el área y su estado, y se acompaña de una leyenda textual ("BBQ AREA", "PARTY ROOM", "CANCELED", "GYM CENTER") para usuarios que no distinguen los tonos.
+- **Los dispositivos IoT** (sección 5.1.2) reutilizan los mismos tokens: el LED de estado y la carcasa del dispositivo emplean `Primary` y `Neutral` para mantener coherencia entre el objeto físico y la app. El único token que la plataforma IoT añade a esta paleta es `Warning` (`#B45309` sobre `#FFFBEB`), por la necesidad de representar estados intermedios del dispositivo que las tablas de la web no tienen.
+
+#### Tipografía
+
+La familia tipográfica elegida es una **sans-serif geométrica y humanista de alta legibilidad en tamaños pequeños**, con un juego de pesos completo (Regular a Bold) que permite construir jerarquía sin recurrir a familias adicionales ni a negritas sintéticas. Se definieron los siguientes estilos:
+
+| Rol | Uso | Tamaño / Peso | Interlineado |
+| :--- | :--- | :--- | :---: |
+| **Display / Hero** | Titular de posicionamiento sobre el panel fotográfico ("Elevating Residential Living"). | 48–56 px / Bold (700), mayúscula inicial, tracking cerrado | 1.1 |
+| **Page Title** | Título de la vista actual ("Finance & Reports", "Units & Residents", "Create Account"). | 24–28 px / Bold (700), Title Case | 1.2 |
+| **Section / Card Title** | Encabezado de tarjeta o panel ("Revenue vs Projections", "Manage Areas", "Reservations Calendar"). | 18–20 px / Semibold (600) | 1.3 |
+| **Subtitle / Description** | Bajada que explica el propósito de la pantalla ("Manage property inventory and resident information across all towers"). | 15–16 px / Regular (400), `Text Tertiary` | 1.4 |
+| **Body** | Párrafos de publicaciones, comunicados y descripciones de reglas de uso de un área. | 14–15 px / Regular (400) | 1.5 |
+| **Label / Column Header** | Encabezados de tabla, etiquetas de formulario y títulos de bloque ("TOTAL REVENUE", "EMAIL ADDRESS", "ACTIVE POLLS"). | 11–12 px / Semibold (600), MAYÚSCULAS, tracking amplio (+0.05 em) | 1.2 |
+| **Metric / KPI** | Cifras destacadas ("$428.5k", "428", "94.2%"). | 28–32 px / Bold (700), `Text Primary` | 1.1 |
+| **Button** | Texto de acciones ("Post", "Send Notice", "Save Changes", "Add New Unit"). | 14 px / Semibold (600) | 1.0 |
+| **Badge / Status** | Píldoras de estado y chips de calendario ("PAID", "LATE", "BBQ Area · Unit 1205"). | 11–12 px / Semibold (600), MAYÚSCULAS | 1.0 |
+| **Caption / Meta** | Información secundaria ("Owner since 2018", "142 votes · 2 days left", "Showing 1–10 of 428 units"). | 12–13 px / Regular (400), `Text Tertiary` | 1.4 |
+
+**Reglas de aplicación tipográfica:**
+
+- **Jerarquía por peso y tamaño, no por color:** los niveles se distinguen por tamaño y peso; el color se reserva para el significado (marca o estado). Así, un título nunca compite cromáticamente con un badge.
+- **Máximo dos niveles de jerarquía por bloque:** un `Section Title` y su contenido; nunca tres títulos seguidos sin separación visual.
+- **Números con formato tabular:** cifras financieras y de KPI (`$428.5k`, `$1,240.00`, `94.2%`) usan cifras de ancho fijo para que las columnas de la tabla alineen y sean comparables de un vistazo.
+- **Límite de longitud de línea:** 60–75 caracteres en párrafos (publicaciones y comunicados); se parte el texto en bloques cortos con espaciado entre párrafos.
+- **Legibilidad mínima:** 14 px para texto de formulario y 12 px para metadatos; nunca por debajo de 11 px, para preservar legibilidad en el segmento de adultos mayores.
+
+#### Espaciado
+
+El espaciado sigue una **escala base de 4 px (múltiplos: 4, 8, 12, 16, 20, 24, 32, 40, 48, 64)**, tomado de la convención de Tailwind CSS para que los valores sean consistentes entre diseño y código. Esta escala hace predecibles los ritmos verticales y permite que cualquier componente nuevo encaje sin cálculos ad hoc.
+
+| Token | Valor | Aplicación típica |
+| :--- | :---: | :--- |
+| space-1 | 4 px | Separación entre ícono y texto dentro de un botón o de una etiqueta. |
+| space-2 | 8 px | Gap entre badges e inputs apilados; padding interno de píldoras. |
+| space-3 | 12 px | Gap entre elementos de una misma tarjeta; padding de celdas compactas. |
+| space-4 | 16 px | Padding interno estándar de tarjetas; separación entre tarjeta KPI y tarjeta principal. |
+| space-5 | 20 px | Padding de celdas de tabla (densidad cómoda por defecto). |
+| space-6 | 24 px | Separación entre tarjetas de contenido y entre el contenido y el borde del panel. |
+| space-8 | 32 px | Separación entre secciones mayores y padding del panel lateral respecto al contenido. |
+| space-10 / 12 | 40 / 48 px | Aire de las vistas de acceso y registro, que emplean un diseño más respirado por ser pantallas de bajo número de elementos. |
+
+**Reglas de composición derivadas del espaciado:**
+
+- **Layout de 12 columnas** con gutter de 24 px y márgenes laterales de 48 px en escritorio; el sidebar ocupa una columna fija de 280 px (delimitada por una línea de 1 px en `Border`) y el área de contenido se divide en bloque principal (aproximadamente 8 columnas) más panel lateral contextual (aproximadamente 4 columnas), como se observa en Community Wall, Common Areas y Finance.
+- **Ritmo vertical constante:** cabecera de página (título + subtítulo + acciones) → fila de tarjetas KPI → contenido principal, con 24 px de separación entre bloques y 16 px dentro de un mismo bloque.
+- **Densidad de tabla:** padding vertical de 20 px por fila y altura mínima de fila de 56 px, suficientes para el objetivo táctil y para separar visualmente los registros en tablas con mucha información. La fila de unidades incluye avatar de 40 px, lo que eleva la altura a 96 px sin romper la alineación de las columnas.
+- **Formulario en dos columnas:** los campos del diálogo de reserva se alinean en una retícula de dos columnas con gap de 16 px; los campos de ancho completo (descripción de reglas) ocupan las 12 columnas del diálogo, que tiene un ancho máximo de 512 px y padding interno de 24 px.
+- **Radios y bordes:** radios de 8 px para botones y badges, 12 px para tarjetas, campos e inputs, y radio completo para píldoras (badges, buscador, elementos de la barra superior); borde de 1 px en `Border` o `Border Strong` para delimitar superficies claras.
+- **Sombras:** muy sutiles (elevación baja en hover de tarjetas); en el panel fotográfico de acceso y registro la profundidad se logra con overlay de color y no con sombras duras.
+- **Objetivos táctiles:** ningún control interactivo por debajo de 44 × 44 px en móvil; en escritorio, altura mínima de 40 px para botones y 56 px para filas de tabla, lo que además mejora la precisión del clic.
+
+### 5.1.2. Web, Mobile and IoT Style Guidelines
+
+La sección 5.1.1 definió los tokens del producto: una paleta, una escala tipográfica, una escala de espaciado y un registro de texto. Esos tokens **no se duplican por plataforma**. Lo que cambia de una superficie a otra es la densidad de información, el modelo de navegación y la forma física de la interacción, y eso es precisamente lo que hay que fijar aquí, porque de lo contrario cada frente (web, móvil, firmware) interpretaría los mismos tokens por su cuenta y el producto se leería como tres aplicaciones distintas.
+
+Edifika tiene tres clientes que consumen los mismos datos: la **Web Application** en navegador, la **Mobile Application** en Flutter/Dart para iOS y Android, y los **nodos ESP32** gobernados por el Edge API on-premise (sección 4.1.3). Un mismo hecho de dominio, como una reserva confirmada, una credencial suspendida o una lectura de 340 lux, debe verse y leerse igual en los tres. Por eso el trabajo no consistió en inventar una guía nueva para cada plataforma, sino en bajar de la pantalla a los centímetros.
+
+Las siete pantallas de referencia se diseñaron primero para escritorio, porque el segmento administrador trabaja con tablas densas: 428 unidades, 45 saldos pendientes y reservas de cuatro áreas comunes. A partir de ellas se derivaron las reglas siguientes. Cada decisión se justifica con lo que esas pantallas ya hacen, y cuando una regla no se observa en ninguna de ellas, se declara como regla nueva y no como observación.
+
+| Elemento | Web | Mobile | Dispositivo IoT |
+| --- | --- | --- | --- |
+| Densidad | Alta: 3 o 4 tarjetas KPI, tabla y panel lateral en la misma vista. | Media: 2 o 3 KPI y una tarjeta por fila; la tabla no viaja. | Nula: un LED, un tono y una etiqueta. |
+| Navegación | Sidebar fijo de 280 px con seis destinos. | Barra inferior con cuatro destinos y un FAB. | Ninguna. El pulsador y el contactless son el acceso. |
+| Color de acción | `Primary #8C088F` | `Primary #8C088F`, idéntico | `Primary #8C088F` en el LED y en el acento de la carcasa. |
+| Tipografía | Escala de 11 a 56 px. | Misma escala, cuerpo a 16 px y tamaño dinámico del sistema. | Altura de letra mínima de 2.5 mm en etiqueta impresa, siempre en mayúsculas. |
+| Estado | Píldora con texto ("PAID", "LATE (12D)", "VACANT"). | La misma píldora. | LED más código de parpadeo; el color solo nunca basta. |
+| Objetivo táctil | 40 px de alto en botones, 56 px en filas. | 44 × 44 px como mínimo. | Superficie de contactless de 25 mm o más. |
+| Diálogo | Modal centrado de 512 px con scrim del 50 %. | Bottom sheet con la acción principal anclada abajo. | Pulsación mantenida de 1.5 s para acciones irreversibles. |
+| Movimiento y retardo | Elevación baja en hover, sin animaciones de más de 200 ms. | Gesto con alternativa visible siempre disponible. | Retardo máximo de 500 ms entre la pulsación y el relé. |
+| Accesibilidad | Contraste 4.5:1, foco visible, sin dependencia del color. | Tamaño dinámico del sistema, contraste alto del sistema operativo. | Código de parpadeo redundante y silencio programable en horario nocturno. |
+
+#### Web Style Guidelines
+
+La Web Application es la superficie de trabajo del segmento administrador y la única capaz de sostener la densidad de información que ese rol exige. Todas las reglas de este bloque se leen sobre pantallas ya construidas, y la vista de **Units & Residents** es la línea base: sidebar fijo, barra superior, fila de cuatro tarjetas KPI, barra de filtros y tabla como bloque dominante.
+
+| Breakpoint | Ancho | Composición |
+| --- | --- | --- |
+| xs | Menos de 640 px | Una columna. El sidebar pasa a cajón deslizante con scrim. Las tablas se convierten en tarjetas apiladas y la fila de KPIs se desplaza horizontalmente. |
+| sm | 640 px | Dos columnas para los KPIs. El buscador ocupa el ancho completo de la barra superior. |
+| md | 768 px | Sidebar reducido a iconos de 72 px con etiqueta al pasar el cursor. El panel lateral contextual pasa debajo del contenido principal. |
+| lg | 1024 px | Sidebar de 280 px restaurado. El contenido principal ocupa 8 columnas y el panel lateral 4, con gutter de 24 px. |
+| xl | 1280 px | Composición de referencia completa: sidebar fijo, barra superior, fila de KPIs, bloque principal de 8 columnas y panel lateral de 4. |
+| 2xl | 1536 px o más | El contenido se limita a 1440 px y se centra. Estirar más solo alarga las líneas por encima de los 75 caracteres fijados en 5.1.1. |
+
+**Sidebar.** Ocupa una columna fija de 280 px delimitada por una línea de 1 px en `Border`, y sostiene seis destinos sin desplazamiento: Dashboard, Units & Residents, Common Areas, Finance, Community Wall y Documentation. El destino activo se marca con fondo `Primary Light`, texto `Primary` y una barra de 4 px en el borde izquierdo. La combinación se repite en las cuatro pantallas de aplicación para que el usuario sepa dónde está sin leer el título. La acción "New Alert" se mantiene por encima de los destinos secundarios (Settings, Support) porque es la de mayor frecuencia del administrador, y no se mezcla con la navegación: mezclar la acción más frecuente con el menú hace que ninguna de las dos se pueda recorrer de un vistazo.
+
+**Barra superior.** El buscador en píldora solo aparece donde hay algo que buscar, con su placeholder "Search community posts..." en el muro comunitario, y se omite en las vistas sin búsqueda, como Common Areas, porque un campo de búsqueda vacío es una promesa que la pantalla no cumple. A la derecha van las notificaciones con punto rojo solo si hay elementos no leídos, la ayuda y el avatar con la etiqueta de rol ("Admin Portal"), que recuerda qué rol está operando la pantalla.
+
+**Composición del contenido.** El ritmo vertical es fijo: cabecera de página con título, bajada y acciones a la derecha; fila de tarjetas KPI; bloque principal. La cantidad de tarjetas KPI varía según la información disponible y la fila no se estira para llenar el ancho: Finance muestra tres porque tiene tres métricas, mientras Units & Residents muestra cuatro. La tarjeta en `Danger` (ARREARS) se sostiene sola por su tinte y su etiqueta roja, sin competir con la acción primaria.
+
+**De la tabla a la tarjeta.** Por debajo de 768 px, las tablas de Units & Residents y de Residents with Outstanding Balances se rehacen como tarjetas apiladas en lugar de comprimirse con desplazamiento horizontal. Cada tarjeta conserva el avatar de 40 px, el nombre de la persona, la unidad, la píldora de estado y las acciones, con los mismos rótulos en `MAYÚSCAS` que antes servían de encabezado de columna. Los filtros y la paginación pasan a una barra fija al pie para que el alcance de los datos siga visible.
+
+**Interacción.** El hover eleva la tarjeta de forma apenas perceptible y el foco de teclado se dibuja como un anillo `Primary` de 2 px con desfase de 2 px, de modo que recorrer la interfaz con el teclado sea tan visible como con el mouse. Cada pantalla conserva una sola acción primaria sólida: "Generate Report" es sólida y "Export PDF" y "Excel" quedan en outline. El diálogo de reglas de reserva es el patrón de referencia para cualquier confirmación en la web.
+
+El modal mide 512 px de ancho máximo, se centra, usa radio de 12 px y un scrim al 50 % que **atenúa pero no oculta** el calendario de fondo: el administrador tiene que seguir viendo sobre qué fecha y sobre qué área estaba trabajando cuando aparece "Reservation of Loreley". El foco queda atrapado dentro del diálogo, se cierra con la X, con la tecla Escape o con un clic en el scrim, y al cerrarse devuelve el foco al elemento que lo abrió. Las acciones irreversibles, como revocar una credencial o suspender un área, exigen un segundo paso de confirmación con el nombre del objeto en la frase.
+
+**Estados de carga, vacío y error.** Los skeletons respetan las dimensiones del contenido final para que la página no salte mientras llegan los datos. El pie de tabla siempre declara el alcance ("Showing 1–10 of 428 units", "Showing 4 of 45"), porque en tablas largas el usuario necesita saber dónde está antes de decidir si pagina. Los estados vacíos explican la causa y ofrecen la acción siguiente, del tipo "No hay reservas para este mes" con el botón para crearla. Nunca se deja un bloque blanco sin explicación, porque el usuario lo lee como una falla del sistema.
+
+**Muro comunitario.** La vista reparte el feed a la izquierda y tres tarjetas de moderación a la derecha, con la misma proporción 8/4 del resto del producto. Esa fila de KPIs y el panel lateral cumplen una función de jerarquía, no de adorno. En el Mod Queue, el comentario denunciado se separa con una barra roja a la izquierda y ofrece "Dismiss" y "Review" dentro del mismo bloque, de modo que la resolución no obliga a navegar. En ACTIVE POLLS, las opciones se leen como barras horizontales con su porcentaje en `Primary` y el conteo debajo ("142 votes · 2 days left"): es una lectura de decisión, no una lectura de datos crudos.
+
+**Áreas comunes.** El calendario es la vista más densa del producto y por eso concentra más reglas. El chip de color identifica área y estado, la leyenda textual de cuatro entradas está siempre visible al pie, y los días deshabilitados quedan en gris, nunca en blanco.
+
+**Acceso y registro.** Las dos vistas de entrada comparten una retícula de dos mitades que resuelve la responsividad sin código adicional: a partir de 1024 px el panel fotográfico ocupa la mitad y el formulario la otra; por debajo de 768 px el panel se oculta y el formulario toma el ancho completo con márgenes de 24 px. El formulario se escribe en columna única, con etiquetas en `MAYÚSCAS`, campos con ícono a la izquierda y separador inferior en lugar de caja completa, y un botón sólido seguido de su variante outline. Ambas vistas comparten el mismo esqueleto y solo cambian los campos, lo que hace que el paso entre una y otra se perciba como continuo.
+
+#### Mobile Style Guidelines
+
+La Mobile Application cubre al propietario y al inquilino en sus tareas de uso frecuente: pagos, reservas, comunicados y foro desde iOS y Android. Los datos y los tokens de color, tipografía y microcopy son los mismos que en la web, porque el residente no debería tener que aprender un segundo idioma visual. Lo que se rediseña es el modelo de navegación: una tabla de 428 unidades no cabe en 360 px, y el error fácil sería comprimirla hasta que quepa en lugar de cambiarla.
+
+**Densidad.** Se conserva la escala tipográfica, pero el cuerpo sube a 16 px, que es el tamaño base que las plataformas móviles esperan y el que evita el auto-zoom al enfocar un campo. El mínimo de 12 px de las tablas web desaparece: en móvil ningún texto baja de 14 px, y los metadatos como "Unit 402 · 5 hours ago" se mantienen en 13 px porque el nombre de la unidad es parte del dato, no decorado.
+
+**Navegación.** La barra inferior admite un máximo de cuatro destinos visibles, el número que un pulgar alcanza sin reposicionar la mano; un quinto destino abre una pantalla secundaria. La regla que gobierna la decisión es "un destino, una tarea". La web organiza por módulo (Finance, Common Areas) porque el administrador trabaja en sesiones largas frente al monitor, mientras la app móvil organiza por intención del momento: pagar, reservar, avisarme.
+
+**Objetivos táctiles.** Ningún control interactivo baja de 44 × 44 px, y los que ejecutan acciones destructivas suben a 48 px de lado. Las celdas de una tarjeta son un objetivo de 56 px de alto, la misma medida ya usada para las filas de tabla en escritorio, lo que preserva el ritmo visual entre las dos plataformas.
+
+**FAB.** El botón flotante violeta que aparece abajo a la derecha en Units & Residents, Finance y Community Wall se conserva como patrón de creación. En móvil se ancla encima de la barra inferior respetando el *safe area* del dispositivo, y no se muestra en las pantallas que no admiten creación, como Finance o la consulta de una reserva existente.
+
+**Diálogos.** El modal centrado de la web se convierte en *bottom sheet*, porque en móvil el teclado ocupa la mitad superior de la pantalla y la acción principal quedaría fuera de vista. Los campos se apilan en una columna con separaciones de 16 px, la acción primaria queda anclada en el borde inferior dentro del alcance del pulgar, y el cierre por arrastre hacia abajo tiene su equivalente accesible en un botón de cerrar explícito.
+
+**Listas y tarjetas.** Cada fila de lista mantiene la composición de la tabla web, con avatar de 40 px, nombre primario, subunitario y píldora de estado, para que el residente reconozca una pantalla que ya conoce en el escritorio. Los filtros se aplican con un botón en la barra superior que muestra la cantidad activa como contador, en lugar de los tres desplegables en línea de la vista web.
+
+**Gestos.** Deslizar para revelar acciones secundarias, tirar hacia abajo para refrescar telemetría y pulsación larga para el menú contextual. Cada gesto tiene una alternativa visible en un botón de tres puntos, porque no todo usuario descubre los gestos por sí solo, y esconder una acción tras un deslizamiento la deja inaccesible para quien no lo conoce. Por el mismo motivo se descarta el gesto de "deslizar para borrar": la confirmación en dos pasos es más segura y produce menos errores de precisión.
+
+**Notificaciones.** Las alertas push usan el mismo `Danger` de la aplicación y el badge se limita visualmente a tres dígitos. Los eventos críticos de IoT, como una fuga o un corte automático de bomba, ignoran el modo silencioso del sistema, porque el costo de no avisar supera al de interrumpir. El toque sobre la notificación lleva directo a la incidencia, sin pasar por el dashboard.
+
+**Sin conexión.** La app muestra los datos en caché con su marca de tiempo ("actualizado hace 4 min") y un banner en `Neutral` cuando el Edge API o la nube no responden. Nunca se muestra un vacío como si fuera un resultado. Esta es la traducción en pantalla de la decisión de arquitectura del capítulo IV: el condominio sigue operando con la última lista de credenciales sincronizadas.
+
+**Estado de madurez.** Las decisiones anteriores se derivan de los mismos tokens de las siete pantallas de referencia aplicados sobre las convenciones de Material Design 3. El juego de pantallas específico de la app móvil todavía no está formalizado, así que estas reglas quedan fijadas aquí como contrato de diseño para esa etapa y no como descripción de pantallas ya construidas.
+
+
+#### IoT Style Guidelines
+
+La interfaz IoT de Edifika es software: es el dashboard donde el administrador y el residente ven el estado de los dispositivos del edificio, y hereda la paleta sin excepciones. Lo que cambia es la naturaleza del dato. Las lecturas llegan por MQTT desde el Edge API con latencia variable, y un dispositivo puede simplemente no estar conectado. De ahí la regla que gobierna todo este bloque: **cuando no se sabe el estado de un dispositivo, la interfaz dice que no lo sabe**. Un vacío ambiguo es peor que un mensaje explícito de "sin conexión", porque se toman decisiones sobre puertas, luz y bombas de agua sobre la base de ese vacío.
+
+**Anatomía de la tarjeta de dispositivo.** Replica la tarjeta KPI ya usada en Finance: contenedor de ícono en `Primary Icon Tint`, nombre del dispositivo en Semibold de 18 a 20 px, rótulo de zona en `MAYÚSCAS` y fila de lectura con el valor en cifras tabulares. A eso se suman tres elementos que las pantallas web no necesitan: la píldora de conexión (ONLINE, OFFLINE, SYNCING), la hora de la última lectura y la antigüedad de esa lectura.
+
+**Color de estado.** Se reutilizan `Success`, `Danger` y `Neutral` con la semántica de 5.1.1. La única adición de todo el sistema es el token `Warning` (`#B45309` sobre `#FFFBEB`), y la razón es concreta: un dispositivo tiene estados intermedios que una tabla web no tiene. La batería baja del nodo de iluminación, un sensor intermitente o una calibración pendiente no son "todo bien" ni son "falla", y sin ese nivel intermedio el administrador se enfrenta a elegir entre mentir en verde o declarar una alarma donde no la hay.
+
+**Tiempo real.** Las actualizaciones llegan por suscripción y no por sondeo, y la marca de tiempo nunca desaparece de la tarjeta. Si dejan de llegar lecturas durante más de 60 segundos, la tarjeta pasa a estado SYNCING en `Neutral` y deja de presentar el último valor como si fuera actual. Un número congelado mostrado en vivo es la forma más rápida de perder la confianza del usuario en todo el panel.
+
+**Umbrales y alertas.** Los umbrales se definen en el editor de reglas, con el mismo formulario en dos columnas que se ve en las reglas de reserva. Cuando un umbral se cruza, la alerta se presenta con el patrón ya usado en el comentario denunciado: barra de color `Danger` a la izquierda, ícono, título, valor con cifras tabulares, hora y las dos acciones de resolución. Nunca se limita a una franja roja en el calendario.
+
+**Series de tiempo.** Los gráficos de telemetría reutilizan la composición de "Revenue vs Projections", con área de datos, eje temporal y selector de periodo a la derecha, y cifras tabulares. Cuando falta un tramo, la línea se dibuja discontinua y el hueco se rotula como "sin datos": rellenar por interpolación haría ver que el sensor midió cuando en realidad no informó, y esa diferencia importa cuando la lectura es una alarma de nivel de agua.
+
+**Acciones sobre dispositivos.** La tarjeta de dispositivo sirve para leer y para llevar al detalle, no para mandar. El control manual de una luminaria o de una bomba se hace desde el editor de reglas y desde la vista de detalle, con confirmación, para respetar la regla de "una sola acción primaria por pantalla" y para que ninguna acción irreversible quede a un toque de distancia de una lectura rutinaria. La apertura remota de un acceso sí es una acción inmediata y conserva su propio botón sólido, porque es una emergencia con ventana de segundos.
+
+**Modo degradado.** Cuando el Edge API pierde el broker, la aplicación muestra un banner en `Neutral` con el texto "operando con datos locales" y la hora de la última sincronización, siguiendo el patrón de la tarjeta "Maintenance Schedule" de la vista de áreas comunes. Las lecturas que sí llegan se distinguen con una marca de "local", para que nadie confunda lo acumulado en el edificio con lo validado en la nube.
+
+#### IoT Physical Interface Style Guidelines
+
+Los nodos que se despliegan en el edificio (el nodo de iluminación con sensor de presencia y de lux, el nodo hidráulico con sensor de caudal y presión, el lector de credenciales y el medidor de consumo, coordinados por el Edge API) tienen una interfaz física mínima: un LED RGB, un pulsador, una superficie de contactless, un orificio de restablecimiento y una etiqueta. No hay pantalla, y no siempre hay un teléfono en la mano, así que cada señal física tiene que sostenerse por sí sola. La decisión de fondo es mantener el mismo vocabulario de color y de etiquetas que la aplicación, y añadir redundancia donde el color no alcanza.
+
+**Código del LED de estado.** El LED es la única señal siempre disponible: funciona en la oscuridad, a distancia y sin que nadie toque el dispositivo. Cada estado tiene un color tomado de la paleta y además un patrón de parpadeo, para que el significado sobreviva a la daltonía, al sol directo de un estacionamiento o a un LED quemado por un pico de tensión.
+
+| Estado | Color | Patrón | Lectura |
+| --- | --- | --- | --- |
+| Normal | `Success` `#2C6E4A` | Fijo | Conectado y dentro de parámetros. |
+| Atención | `Warning` `#B45309` | Dos parpadeos lentos | Batería baja, sensor intermitente o calibración pendiente. |
+| Alarma | `Danger` `#B91C1C` | Tres parpadeos rápidos y continuos | Fuga, nivel de agua crítico o apertura forzada. |
+| Acción en curso | `Primary` `#8C088F` | Intermitente rápido | Aceptando una credencial o ejecutando un comando. |
+| Sin conexión | `Neutral` `#6B6B6B` | Un parpadeo cada 5 s | Sin broker. El dispositivo conserva el último estado y sigue operando localmente. |
+| Apagado | Sin emisión | Ninguno | Sin alimentación. Es el único estado sin señal, y por eso se reserva para un hecho inequívoco. |
+
+**Pulsador.** La pulsación corta ejecuta el control manual local, por ejemplo encender o apagar la luminaria del nodo, porque es la acción de emergencia cuando el teléfono no tiene cobertura o la nube está caída, y es coherente con la decisión de operar en el borde descrita en 4.1.3. La pulsación mantenida de 1.5 s empareja o restablece el dispositivo, y el LED violeta intermitente confirma que el modo está activo. La distinción evita que un residente apoye el pie o una herramienta contra el pulsador en un pasillo y desactive la luz, o corte un equipo sin querer.
+
+**Contactless.** Tocar la credencial es el camino más corto y el único que sigue funcionando sin enlace WAN, así que hereda el mismo criterio del Edge API. Un parpadeo verde y la apertura del relé confirman el acceso aceptado; un parpadeo rojo y un tono corto rechazan la credencial, sin dejar ambigüedad entre "tarjeta no leída" y "credencial suspendida", dos situaciones que exigen respuestas opuestas del residente. La superficie de lectura se dimensiona a 25 mm o más para que no dependa de la precisión del dedo.
+
+**Tono audible.** El buzzer suena solo en tres casos: fuga detectada, corte automático de la bomba y apertura forzada. En un condominio, un tono que se repite por cualquier otra condición entrena a los vecinos a ignorarlo, que es el peor resultado posible para una alarma real. Por eso se limita a tres segundos por evento y admite silenciamiento por horario, de 23:00 a 06:00 por defecto, momento en el que solo queda el LED.
+
+**Retardo de respuesta.** El LED confirma la intención en un máximo de 200 ms, el relé completa la acción física en 500 ms y el tono llega antes de un segundo. Más allá de ese margen el usuario asume que el dispositivo no respondió y repite la acción, y una repetición sobre un actuador es un incidente. Estos tres números son también el criterio con el que se evalúa el firmware en la sección de prototipado.
+
+**Apariencia del objeto.** La carcasa es de plástico claro mate en `Neutral`, con una franja o un aro en `Primary` en el frente, de modo que el dispositivo se lea como parte del producto y no como un aparato ajeno. El acabado mate evita reflejos que confunden tanto al sensor infrarrojo de presencia como a quien intenta ver el LED a contraluz. El radio de las esquinas de la carcasa replica los 12 px de las tarjetas de la aplicación.
+
+**Etiqueta del dispositivo.** Cada nodo lleva una etiqueta con su identificador, un código QR o NFC y el tópico MQTT corto al que publica. La escala tipográfica de 5.1.1 se traduce aquí a milímetros: el `Label` de 11 a 12 px se imprime con una altura de letra mínima de 2.5 mm, siempre en mayúsculas, sobre fondo con contraste superior a 4.5:1, porque una etiqueta se lee a distancia y con la linterna del teléfono, no a la distancia de un monitor.
+
+**Terminología.** Los textos impresos y los mensajes del dispositivo usan el Lenguaje Ubicuo de la sección 2.5: "Credencial suspendida", "Fuga detectada", "Corte automático", "Acceso concedido". Nunca un código interno ni un número de error que el residente tenga que traducir, y nunca el nombre del microservicio que produjo el evento.
+
+**Instalación y accesibilidad.** El lector de credenciales se coloca entre 1.2 y 1.6 m de altura, con iluminación suficiente y sin reflejos en la superficie del sensor. El orificio de restablecimiento exige una aguja y queda sellado para que solo mantenimiento lo alcance. Entre las 23:00 y las 06:00 el LED baja al 10 % de brillo pero **nunca se apaga del todo**: un LED apagado no codifica ningún estado, y el residente terminaría tocando el dispositivo para comprobar si funciona.
+
+**A prueba de fallo.** Si el nodo pierde el broker, mantiene el último estado conocido, su LED pasa a `Neutral` con un parpadeo lento y el Edge lo reporta como desconectado en la aplicación. El sistema no aparenta estar bien cuando no lo está. En el nodo hidráulico eso significa que la bomba se corta por la lectura local aunque el cloud no responda, porque una inundación no espera a la red.
+
+## 5.2. Information Architecture
+
+La arquitectura de información (AI) de Edifika define **cómo se estructura, se nombra, se encuentra y se recorre el contenido** del producto digital. En esta sección no se resuelve el problema del condominio, sino que se toman las decisiones que permiten que ese contenido —que crece con cada torre, cada unidad, cada reserva y cada publicación— siga siendo localizable y comprensible tanto para un administrador con años de responsabilidad administrativa como para un residente que usa la plataforma desde el celular.
+
+El alcance abarca dos superficies digitales que comparten contenido pero no audiencia ni permisos:
+
+- **Landing Page (sitio web estático):** primera fase de la experiencia, dirigida a visitantes que aún no tienen cuenta. Su función es explicar el problema, demostrar el producto y convertir al visitante en usuario registrado.
+- **Web Application (aplicación web):** segunda fase, restringida a usuarios autenticados. Atiende a dos audiencias con permisos distintos: **ADMIN** (administrador de la torre o condominio) y **RESIDENT** (propietario o inquilino vinculado a una unidad), los dos roles definidos en el microservicio IAM/Auth (sección 4.2.1).
+
+La estructura de contenido resultante es la siguiente:
+
+| Nivel | Landing Page | Web Application |
+| :--- | :--- | :--- |
+| **0 — Acceso** | Home pública, sin autenticación | Login · Create Account · recuperación de contraseña |
+| **1 — Global** | Hero con propuesta de valor y llamada a la acción | Dashboard (resumen operativo del condominio) |
+| **2 — Módulos** | Cómo funciona · Módulos · Planes · Recursos | Units & Residents · Common Areas · Finance · Community Wall · Documentation |
+| **3 — Detalle** | Solicitar demo · Contacto | Unidad y residente · Reglas y calendario de un área común · Saldo de un residente · Hilo de una publicación · Documento del reglamento |
+| **Transversal** | Barra superior fija y pie con enlaces agrupados | Barra superior (búsqueda, notificaciones, ayuda, perfil) + sidebar + New Alert + Settings + Support |
+
+Cuatro decisiones estructurales rigen esta arquitectura y se explican a lo largo de la sección:
+
+1. **Cinco módulos, no más.** El sidebar del mock-up expone exactamente cinco destinos de gestión (Dashboard, Units & Residents, Common Areas, Finance, Community Wall) más Documentation como fuente de consulta. No existe un sexto módulo: cuando una necesidad no cabe en ninguno, se resuelve como estado, filtro o acción dentro del módulo correspondiente, en lugar de crear un destino nuevo.
+2. **Un criterio de nombrado único.** Cada módulo tiene un nombre en inglés fijo ("Finance", "Common Areas") y ese mismo nombre se repite en el título de la vista, en el encabezado del correo de notificación y en el nombre de la columna en el archivo exportado. El detalle se desarrolla en 5.2.2.
+3. **Profundidad máxima de tres niveles.** La información definitiva —una regla de uso, un saldo, un comprobante— nunca exige más de tres niveles. Cuando una excepción lo requiere, se resuelve con un enlace directo en la fila de la tabla o con un modal, no con un cuarto nivel de árbol. Esta regla se apoya en la ley de Hick-Hyman ya aplicada en 5.1.1: cada decisión que se elimina del usuario es un clic que se le ahorra.
+4. **Acciones a dos clics o menos.** El presupuesto de profundidad se traduce en una regla operativa para la navegación: una acción frecuente debe estar a dos clics o menos desde la pantalla donde el usuario ya se encuentra.
+
+### 5.2.1. Organization Systems
+
+**Jerárquica (Visual Hierarchy):** <br>
+
+La organización jerárquica es el sistema principal de Edifika y se aplica en tres escalas distintas:
+
+- **Escala de producto:** el sidebar establece el orden de prioridad de los módulos, de la tarea más frecuente a la menos frecuente. El orden publicado es *Dashboard → Units & Residents → Common Areas → Finance → Community Wall → Documentation*: primero lo que se consulta a diario (padrón y estado del condominio), luego lo que se opera por evento (reservas), después lo que se revisa mensualmente (finanzas), luego lo que es social (muro comunitario) y al final lo que es referencial y estático (documentación). Documentation se ubica última de forma deliberada: es contenido de consulta, no de acción, y no debe competir con los destinos de trabajo.
+- **Escala de vista:** dentro de cada pantalla, la jerarquía se construye con cuatro niveles, siempre en el mismo orden. (1) Cabecera de vista con título y bajada —"Finance & Reports" / "Real-time overview of the residential financial health"—, que enuncia qué es la pantalla y para qué sirve. (2) Fila de tarjetas KPI, que responde primero a "¿cómo va el condominio?" con un máximo de cuatro cifras. (3) Bloque principal, que responde "¿qué detalle debo revisar?" y ocupa el mayor ancho. (4) Panel lateral contextual, que responde "¿qué requiere mi atención ahora?" y contiene las tareas pendientes del módulo: "Manage Areas", "Residents with Outstanding Balances", "ACTIVE POLLS" y "MOD QUEUE". El criterio es que la información accionable nunca compite en el bloque principal con la información consultable.
+- **Escala de registro:** dentro de una tabla, la jerarquía se resuelve por peso tipográfico y no por color. El nombre de la unidad y el del residente forman la celda dominante ("Unit 1204 · Julian Thorne"); el estado y la deuda se muestran como badges ("OCCUPIED", "LATE (12D)") porque requieren lectura rápida; y el metadato de contexto ("TOWER A", "Owner since 2018") se degrada a texto terciario porque sirve de apoyo y no de respuesta.
+
+La jerarquía se refuerza con una regla de **escaneo descendente en tres pasos**: título → KPI → bloque principal. Si un usuario solo lee esos tres elementos, ya debe entender en qué módulo está, cómo está la situación general y dónde está el detalle que le compete.
+
+El Dashboard aplica la jerarquía al revés de lo habitual: el contenido de menor prioridad (comunicados del muro, invitaciones a eventos) se presenta en la parte inferior, porque el administrador que abre la aplicación por la mañana solo necesita saber qué cambió desde ayer.
+
+**Secuencial (Step-by-step):** <br>
+
+La organización secuencial se aplica a las tareas que tienen un orden obligatorio, donde saltar un paso produce un error o una tarea incompleta. Se materializa en dos formatos.
+
+- **Paso a paso explícito (flujo guiado):** el alta de un nuevo residente o la configuración de un área común no puede completarse en un solo paso. El administrador configura primero el área (capacidad, tarifa, horario de apertura y cierre, reglas de uso y estado) y recién después la asocia a las unidades que la usan. Los campos del diálogo de reserva del mock-up siguen exactamente ese orden: "Area Name" → "Capacity" y "Fee/Cost ($)" → "Opening Hours" y "Closing Hours" → "Rules & Description" → "Status" → "Save Changes". Los campos derivados se completan solos al elegir el área (elegir "BBQ Area" carga su tarifa de $25.00, su capacidad de 12 y su horario de 08:00 AM a 10:00 PM), de modo que el usuario nunca pierde el contexto ni tiene que recordar lo que escribió.
+- **Secuencia de estados dentro de la vista:** en lugar de esconder información, cada entidad muestra su etapa actual en la propia fila. La reserva tiene cuatro estados visibles en la leyenda del calendario (Confirmed, Pending, Blocked, Maintenance); el pago de una unidad tiene cuatro (Paid, Pending Approval, Late, Overdue); y la unidad tiene cuatro estados de ocupación (Occupied, Vacant, In transition y su deuda asociada), mientras que el saldo global del condominio se resume en un quinto estado, ARREARS. La secuencia se comunica con posición en el espacio —de izquierda a derecha en el calendario, de arriba abajo en el flujo— y con color de badge, nunca con numeración de pasos, porque el usuario no necesita saber que va "por el paso 3": necesita saber en qué estado está lo que está viendo.
+
+La secuencia se refuerza con mensajes de transición que explican el siguiente paso. Cuando una reserva entra en mantenimiento, el sistema muestra "System maintenance scheduled for Oct 25" en el panel *Manage Areas*, de modo que el administrador y el residente mencionen el mismo motivo y la misma fecha. Cuando un residente debe, el botón "Send Notice" ofrece el paso siguiente ("Remind") como acción secundaria en la misma fila, sin obligar al administrador a abandonar la tabla.
+
+El principio general es **terminar antes de empezar otra cosa**: cada flujo secuencial cierra con una confirmación que devuelve al usuario al punto de partida con el resultado visible. Una reserva confirmada reaparece en el calendario, un cobro enviado cambia el estado de la fila y una publicación creada aparece en el muro. El usuario nunca queda en un limbo del tipo "¿se guardó?".
+
+**Matricial (matriz de datos):** <br>
+
+Cuando un registro debe leerse en dos dimensiones simultáneas —"¿qué pasa en cada día?" y "¿qué pasa en cada área?"— la organización jerárquica o secuencial resulta insuficiente y se recurre a una matriz. Edifika aplica la matriz en un único y crítico lugar: el **calendario de reservas de áreas comunes**, que es simultáneamente un registro temporal y un inventario de recursos.
+
+La matriz tiene **un eje fijo y un eje cambiante**:
+
+- **Eje X (columnas):** los días de la semana, con el mes y año como contexto de cabecera ("Reservations Calendar · October 2023"). Este eje es cronológico y siempre ocupa la misma posición, de modo que leer en horizontal equivale a recorrer la línea de tiempo del mes.
+- **Eje Y (filas):** las semanas del mes. La intersección entre celda y día es la unidad de información: en cada celda caben uno o varios chips de reserva, cada uno rotulado con el área y, cuando corresponde, la unidad o el motivo ("BBQ Area · Unit 402", "Canceled · Renovation", "Gym Center · Tennis"). Hay un chip por celda cuando no existe conflicto, y varios cuando el área admite reservas simultáneas.
+
+La matriz se vuelve navegable gracias a tres convenciones:
+
+- **Leyenda como filtro, no como adorno:** cada entrada de la leyenda ("BBQ AREA", "PARTY ROOM", "CANCELED", "GYM CENTER") funciona como un selector que atenúa las celdas que no corresponden al área o estado elegido, y que funciona además como leyenda para quien no distingue los tonos.
+- **Color con redundancia textual:** el chip combina color (violeta = confirmada, ámbar = pendiente, rojo = cancelada) con etiqueta escrita, de modo que el estado nunca dependa de la percepción cromática.
+- **Navegación temporal explícita:** los controles `<` `Today` `>` permiten pasar de mes en mes y volver al mes en curso sin recorrer el calendario día por día.
+
+La tabla de saldos pendientes de Finance aplica el mismo principio matricial en forma tabular: las filas son residentes, las columnas son atributos de la deuda (Status, Last Payment, Amount Due) y las acciones ("Send Notice", "Remind") viven en la última columna, de modo que cada fila es una unidad de decisión y no solo un dato. Los indicadores "Collection Rate" y "Expense Efficiency" cierran ese bloque con la versión unidimensional de la misma matriz: el valor real, su barra de progreso y su "TARGET" (95.0% y 85.0%), que permiten comparar de inmediato lo logrado contra lo esperado.
+
+**Por tópicos:** <br>
+
+La categorización por tópicos agrupa el contenido que responde a la misma pregunta, aunque provenga de módulos distintos. Edifika la aplica en tres escalas.
+
+**a) El sidebar es la categoría de primer nivel.** Los cinco módulos son los tópicos maestros del producto: *padrón del condominio* (Units & Residents), *espacios y reservas* (Common Areas), *economía* (Finance), *comunicación entre vecinos* (Community Wall) y *referencia normativa* (Documentation). Un usuario que busca "¿cuánto debo?" no necesita saber en qué módulo vive el dato: sabe que es una cuestión financiera y va directo a Finance.
+
+**b) Los paneles laterales son el segundo nivel temático.** Cada módulo agrupa sus tareas pendientes en un panel con título en mayúsculas, que funciona como categoría contextual: "ACTIVE POLLS" agrupa las encuestas abiertas, "MOD QUEUE" agrupa la moderación pendiente y "MANAGE AREAS" agrupa la configuración de espacios. De este modo, el contenido lateral nunca se mezcla con el contenido principal y el usuario sabe de antemano que está viendo un subconjunto temático.
+
+**c) Las etiquetas de contenido son el tercer nivel.** Dentro de una publicación o de un documento se aplica el mismo criterio con etiquetas de una sola palabra, en mayúsculas y dentro de una píldora: "EVENT" distingue una invitación de un aviso, y "ADMIN" marca un mensaje oficial frente a uno publicado por un vecino. En Documentation, las categorías son los tipos de documento (Reglamento interno, Acta de asamblea, Política de acceso vehicular, Normas de convivencia) y no el orden alfabético, porque el usuario busca el tipo de documento que necesita, no un título que recuerda a medias.
+
+**Cronológico:** la organización cronológica es el eje natural de todo lo que tiene fecha de vencimiento o de ocurrencia. Se aplica en tres escalas, cada una con su granularidad correcta:
+
+- **Día:** el calendario de Common Areas es la vista cronológica por defecto, porque la pregunta del administrador es "¿qué pasa hoy y esta semana?".
+- **Mes:** Finance agrega los datos en ventanas de "Last 6 Months" (JAN–JUN en el mock-up), porque la pregunta del administrador es "¿cómo viene el año?", no "¿qué pasó el martes?". La unidad temporal se elige según la decisión que se debe tomar: se cobra por día, se proyecta por mes.
+- **Antigüedad relativa:** el muro comunitario usa tiempo relativo ("2 hours ago", "5 hours ago", "2 days left") en lugar de fechas absolutas, porque el valor para el lector está en saber qué es nuevo. Las fechas absolutas se reservan para los datos que citan un hecho ("Owner since 2018", "Last Payment: Oct 12, 2023") o para las vistas de detalle, donde sí se requiere precisión.
+
+La regla que ordena estas tres escalas es: **el reloj más grueso va arriba y el más fino abajo**. Así, la vista anual de ingresos no compite visualmente con la fecha de vencimiento de una cuota, y el usuario baja en la escala solo cuando necesita detalle.
+
+**Alfabético:** se aplica únicamente donde la búsqueda alfabética es un recurso de decisión y no un descuido de diseño, es decir, cuando el usuario recuerda el nombre del elemento y solo necesita alcanzarlo rápido:
+
+- **Documentación:** los reglamentos, actas y políticas se ordenan alfabéticamente por título dentro de cada categoría, de modo que quien recuerda el nombre exacto de un documento ("Reglamento de convivencia", "Política de acceso vehicular") lo alcance con una lectura vertical corta. Los títulos se ordenan por la palabra significativa, ignorando artículos y preposiciones, para que "Política de acceso" ordene bajo P y no bajo una palabra descartable.
+- **Directorio de residentes:** el criterio alfabético aparece como opción de orden dentro de la tabla de Units & Residents, junto al criterio por torre. No es el orden por defecto, porque el administrador busca el código de la unidad ("Unit 1204"), no el nombre del propietario; el criterio alfabético cubre el caso inverso —cuando la consulta llega por el nombre de una persona— y ambos criterios conviven en el mismo control, etiquetados con la misma jerarquía.
+- **Índice de la landing page:** los enlaces del pie se ordenan alfabéticamente dentro de su grupo, lo que hace predecible encontrarlos sin recorrer la columna.
+
+En todas las pantallas que ofrecen orden alfabético, la alternativa por relevancia está siempre disponible y es la que se aplica por defecto cuando el usuario escribe en el buscador: **el orden alfabético sirve al recuerdo; el orden por relevancia sirve a la búsqueda**.
+
+**Según audiencia (Personalización):** <br>
+
+La organización por audiencia es el eje transversal más importante de Edifika, porque el mismo conjunto de datos —un saldo, una regla de uso, una publicación— se presenta, se ordena y se etiqueta de forma distinta según quién lo mire. La personalización no se limita a ocultar módulos: cambia el orden, la granularidad y la etiqueta.
+
+**a) Dos versiones del sidebar a partir del mismo conjunto de módulos.** El menú del ADMIN es el de los mock-ups: *Dashboard, Units & Residents, Common Areas, Finance, Community Wall, Documentation*. El menú del RESIDENT es un subconjunto del anterior —*Dashboard, Common Areas, Community Wall, Documentation*—, porque un residente no administra el padrón ni tiene legitimidad sobre la economía de la junta. La regla de construcción del menú por audiencia es explícita: **cada rol ve solo los destinos que le corresponden según IAM/Auth (sección 4.2.1), y la estructura de niveles se mantiene idéntica**, de modo que quien aprende a moverse como residente no tiene que reaprender la navegación si más adelante asume la administración.
+
+**b) Reordenamiento por frecuencia, no por completitud.** Dentro de los módulos compartidos, el orden interno cambia según la audiencia. En Common Areas, el ADMIN ve primero "Manage Areas" —su trabajo es configurar reglas, tarifas y horarios— y el RESIDENT ve primero el calendario de disponibilidad —su trabajo es reservar—. Misma pantalla, misma estructura, distinta prioridad.
+
+**c) Etiqueta de contexto del rol.** La barra superior muestra el rol de forma explícita —"Admin Portal" junto al avatar—, de modo que la identidad de la sesión sea visible en todo momento y nunca haya que deducirla. Esto reduce el riesgo de error por sesión compartida, un caso frecuente en condominios donde el administrador atiende desde el mismo equipo que un vecino.
+
+**d) En el muro comunitario, la audiencia define el derecho a actuar, no el derecho a leer.** Todos los residentes leen el mismo feed en el mismo orden (cronológico descendente). Lo que cambia es qué puede hacer cada quien: el ADMIN publica comunicados oficiales ("Official Announcement", firmados "Edifika Management"), modera ("MOD QUEUE" con "Dismiss" y "Review") y crea encuestas; el RESIDENT publica en su perfil ("Sarah Mitchell · Unit 402"), vota ("Vote Now") y confirma asistencia ("RSVP Now"). Las acciones disponibles sobre una publicación dependen del rol del lector, no de un menú distinto: el mismo post muestra "RSVP Now" al residente y "Dismiss"/"Review" al moderador.
+
+**e) El condominio como unidad de aislamiento.** Cuando una administración opera varios condominios, la audiencia se refina por condominio: el sidebar añade un selector que reordina el contenido completo (unidades, saldos, comunicados, reservas) sin duplicar la aplicación. La etiqueta del selector es el nombre del condominio y todo el contenido ajeno se retira de la vista en lugar de mostrarse atenuado, para que un administrador que trabaja entre dos edificios nunca arrastre datos de uno al contexto del otro.
+
+### 5.2.2. Labelling Systems
+
+El sistema de etiquetado de Edifika persigue un objetivo único: que **cada conjunto de información tenga una sola etiqueta y que esa etiqueta baste para encontrarlo**. La regla que gobierna todo el sistema es una restricción de longitud: **ninguna etiqueta de interfaz supera las tres palabras**, porque por debajo de dos palabras la etiqueta es ambigua y por encima de tres ya no cabe en la barra lateral ni en una píldora de estado. Toda decisión de este apartado se evalúa contra ese criterio y contra la pregunta de si el usuario novato entiende la palabra sin ayuda.
+
+**Acciones con verbos descriptivos:** <br>
+
+Un botón debe decir qué hace, no ofrecer una posibilidad. La regla es **verbo + objeto**, con el verbo en infinitivo o imperativo corto y el objeto en el término que el usuario usa en su vida diaria:
+
+| Patrón | Etiquetas de Edifika | Contexto de uso |
+| :--- | :--- | :--- |
+| Verbo + objeto | **Save Changes**, **Cancel**, **Dismiss**, **Review** | Acciones de un diálogo o de una cola. La confirmación nombra el contenido de la edición ("Save Changes") en lugar de un "OK" genérico. |
+| Verbo + recurso | **Add New Unit**, **New Alert** | Creación de entidades. El recurso se nombra como el usuario lo llama ("Unit", "Alert"), nunca con el nombre técnico del modelo de datos. |
+| Verbo + formato | **Export CSV**, **Export PDF**, **Excel** | Generación de archivos. El formato se declara en la propia etiqueta, de modo que el usuario sepa qué va a obtener antes de hacer clic. |
+| Verbo + destinatario | **Send Notice**, **Remind** | Comunicación con un resident. "Send Notice" es el aviso formal y "Remind" el recordatorio; se distinguen porque producen efectos distintos en la relación con la comunidad. |
+| Verbo + intención | **Vote Now**, **RSVP Now**, **Post** | Interacción en el muro. El verbo es la acción concreta que el lector quiere realizar: votar, confirmar asistencia, publicar. |
+| Verbo + estado | **Edit Rules** | Modificación de una configuración. Se usa "Edit" y no "Manage" porque la acción es acotada y su resultado es un formulario. |
+| Verbo + periodicidad | **Export**, **Generate Report** | Acciones de la barra de Finance. El verbo señala que se produce un archivo nuevo, no que se navega a otra pantalla. |
+
+Dos reglas derivan de esta tabla completan el criterio:
+
+- **El botón principal lleva el verbo de la acción más frecuente de esa pantalla, y solo hay uno.** En Finance el sólido es "Generate Report" (la tarea dominante del administrador) y "Export PDF" y "Excel" degradan a variante secundaria; en Units & Residents el sólido es "Add New Unit" y "Export CSV" es secundario. Nunca hay dos botones sólidos compitiendo en la misma vista, porque el usuario no puede jerarquizar por color lo que la pantalla no jerarquizó por orden.
+- **"Cancel" siempre devuelve, nunca borra.** En los diálogos, "Cancel" cierra sin aplicar cambios y el estado previo se conserva; la alternativa a "Save Changes" nunca se presenta como "Discard", porque el usuario no está destruyendo nada, solo está optando por no guardar todavía.
+
+**Categorías uniformes:** <br>
+
+Cada conjunto de información tiene una única etiqueta, y esa etiqueta es la que aparece en **todos** los lugares donde el conjunto aparece: navegación, título de vista, encabezado de tabla, chip del calendario, asunto del correo de notificación y nombre de la columna en el archivo exportado. La uniformidad es total: si el sidebar dice "Finance", el archivo descargado dice "Finance" y el correo de aviso dice "Finance".
+
+| Conjunto de información | Etiqueta en la interfaz | Asociación que debe crear en el usuario |
+| :--- | :--- | :--- |
+| Inventario de unidades y de las personas que viven en ellas | **Units & Residents** | Une en un solo lugar la unidad física y la persona que la ocupa; quien busca "mi departamento" entiende que ahí también encontrará "quién vive en ella". |
+| Espacios de uso compartido y su disponibilidad | **Common Areas** | Anticipa que el contenido incluye tanto las reglas del espacio como el calendario de sus reservas. |
+| Salud económica del condominio | **Finance** | Concentración de saldos, pagos, morosidad y reportes; una sola palabra cubre pagos y deudas sin necesidad de dos menús. |
+| Comunicación entre los miembros de la comunidad | **Community Wall** | Superficie de publicación con moderación; el nombre en inglés se conserva por consistencia con la etiqueta visible del producto y del sidebar. |
+| Reglamento, actas y políticas vigentes | **Documentation** | Fuente de consulta formal y normativa, sin capacidad de escritura. |
+| Configuración de las reglas de un espacio | **Manage Areas** | Configura reglas, disponibilidad y estado de cada área; el gerundio indica que es un panel de administración, no una lista. |
+| Consultas abiertas a la comunidad | **ACTIVE POLLS** | Rótulo constante aunque cambie la pregunta que se somete a votación. |
+| Contenido que requiere intervención del administrador | **MOD QUEUE** | Cola de trabajo; la palabra "Queue" comunica que hay un orden de atención y que las tareas se acumulan. |
+| Redacción de un comunicado para los residentes | **Share an update with residents…** | Invita a publicar sin absorbir el formato; el destinatario queda explícito dentro de la propia etiqueta. |
+| Autenticación | **Welcome back** / **Create Account** | Entiende la sesión: "Welcome back" reconoce a quien ya tiene cuenta y "Create Account" marca el inicio de una relación nueva. |
+
+La uniformidad se extiende a los subconjuntos: un área común siempre se nombra por su nombre propio ("BBQ Area", "Swimming Pool", "Gym Center", "Party Room") y una unidad siempre por su código ("Unit 1204", "Unit 402"). El nombre de la persona nunca sustituye al código de unidad en un contexto administrativo, porque el código es el dato estable y el nombre puede repetirse o cambiar.
+
+**Mensajes y estados comprensibles:** <br>
+
+Los estados son los rótulos más delicados del sistema, porque describen la situación del usuario y no la del sistema. Se aplican dos reglas: **describir el hecho, sin juzgar**, y **nunca dejar que el color sea el único mensaje**.
+
+Los estados se nombran en **MAYÚSCULAS**, dentro de una píldora de baja saturación, y siempre con una etiqueta textual completa:
+
+| Estado | Etiqueta exacta | Asociación que crea | Cómo se representa |
+| :--- | :--- | :--- | :--- |
+| Cuota pagada | **PAID** | La unidad está al día y no requiere acción. | Verde sobre fondo verde muy claro. |
+| Cuota vencida con retraso | **LATE (12D)** | Hay deuda y la cifra entre paréntesis cuantifica el retraso: el usuario sabe si es urgente o no. | Rojo; el número de días es lo que hace la etiqueta accionable. |
+| Deuda acumulada | **ARREARS**, **Action required** | Es la salud financiera del condominio, no la de una persona; el rótulo va en la tarjeta KPI, no junto al nombre de un resident. | Rojo intenso con icono de advertencia. |
+| Deuda en manos de la administración | **OVERDUE 15 DAYS** | La administración debe actuar; describe el hecho ("vencida hace 15 días") sin calificar al resident. | Rojo claro en la columna Debt de la tabla. |
+| Pago registrado y pendiente de validación | **PENDING APPROVAL** | El pago ya existe pero falta confirmarlo, por eso dice "approval" y no "processing". | Neutro, con texto en dos líneas para no perder legibilidad. |
+| Unidad habitada o vacía | **OCCUPIED** / **VACANT** | Hay o no hay alguien residiendo; la diferencia entre propietario e inquilino vive en otra columna ("Owner", "Tenant (Corporate)"), no dentro del estado. | Violeta suave para el dato de ocupación, neutro para la vacancia. |
+| Sin resident asignado | **No Resident** + "In transition" | Explica que la vacancia es un proceso en curso y no un abandono; evita la lectura de "unidad abandonada". | Neutro, con avatar vacío. |
+| Reserva confirmada | **CONFIRMED** | La reserva podrá usarse en la fecha indicada; no requiere ninguna acción del usuario, por eso comparte color con la acción primaria. | Violeta sólido, el mismo de los botones. |
+| Reserva anulada | **CANCELED** + "Renovation" | La reserva ya no existe y el motivo acompaña a la etiqueta, de modo que nadie interpreta la baja como un rechazo. | Rojo claro con barra lateral. |
+| Espacio en mantenimiento | **MAINTENANCE** | El espacio no está disponible y hay fecha de retorno, expresada en el panel: "System maintenance scheduled for Oct 25". | Tinte neutro con icono de mantenimiento. |
+| Reglas de acceso de un área | **OPEN ACCESS**, **FEE APPLIES**, **CAPACITY: 15**, **PREMIUM AMENITY** | Cada línea del panel "Manage Areas" declara **una sola regla** y se lee como una frase corta, no como un parámetro del sistema. | Mayúsculas, texto secundario, una línea por regla. |
+| Encuesta con plazo | **142 votes · 2 days left** | Da el dato y el plazo juntos, porque "142 votes" sin tiempo no permite decidir. | Texto terciario bajo la barra de resultados. |
+| Contenido oficial frente a contenido de vecino | **Official Announcement** + "Edifika Management" / nombre propio + "Unit 402" | Distingue la voz institucional de la voz de un resident, y hace visible la unidad desde la que se escribe. | Avatar e ícono distintos: megafono oficial frente al ícono personal. |
+
+Los mensajes de sistema siguen la misma lógica. Los errores y los estados vacíos **dicen qué pasó y qué hacer a continuación, sin culpar al usuario**: en lugar de "No hay datos" se muestra "Unit not found. Check the code and try again."; en lugar de una tabla vacía, se muestra el motivo y la acción ("No outstanding balances in this period. All units are up to date." con el enlace a Finance); y el caso del comentario denunciado se resuelve dentro del contexto, mostrando el texto citado junto a las acciones "Dismiss" y "Review", para que el administrador decida sin salir de la pantalla.
+
+**Contenido de la landing orientado al usuario:** <br>
+
+La landing page comunica en español lo que la aplicación nombra en inglés, porque sus visitantes son administradores y propietarios que todavía no conocen el vocabulario del producto. Cada bloque responde a una pregunta, en el orden en que se pregunta:
+
+| Orden | Bloque | Copy de referencia | Asociación que debe crear |
+| :--- | :--- | :--- | :--- |
+| 1 | Propuesta de valor | **Elevating Residential Living** | Edifika trabaja por la convivencia del edificio, no por una función técnica. |
+| 2 | Promesa concreta | **Seamless building management for the modern homeowner and administrator.** | El producto sirve a las dos audiencias a la vez; quien se identifique con alguna de las dos se reconoce en la frase. |
+| 3 | Módulos | Áreas comunes, finanzas, muro comunitario, unidades y residentes | Traduce cada nombre en inglés a su equivalente en el mundo del visitante, para que sepa qué va a encontrar dentro. |
+| 4 | Cómo funciona | Tres pasos: crear cuenta, invitar al equipo, operar | Convierte el producto en algo completable: el visitante ve el recorrido completo antes de registrarse. |
+| 5 | Planes | Comparativa por tamaño de condominio | La etiqueta del plan describe **a quién corresponde** ("Edificio", "Condominio", "Junta directiva") y no una cifra de usuarios. |
+| 6 | Llamado a la acción | **Get Started** / **Solicitar Demo** | Dos intenciones distintas y separables: empezar ahora o conocer antes de decidir. |
+| 7 | Pie de página | Logotipo, enlaces agrupados, aviso legal | Cierra con la referencia normativa y repite el nombre del producto. |
+
+Esta tabla se mantiene sincronizada con 5.2.1: los mismos tres pasos del bloque "Cómo funciona" son los del flujo de wireframe de 5.4.2, y el vocabulario de los módulos del bloque 3 es el mismo que usan las etiquetas del sidebar. **La promesa de la landing y el primer minuto del producto dicen exactamente lo mismo.**
+
+### 5.2.3. SEO Tags and Meta Tags
+
+El sitio de Edifika tiene dos superficies con estrategias opuestas: la **landing page**, pública, que debe ser encontrada por administradores y propietarios que buscan una solución; y la **web application**, privada y dependiente de autenticación, que **no debe indexarse** porque su contenido es específico de cada condominio.
+
+Los valores respetan los límites de cada campo: `Title` de hasta 60 caracteres, `Description` de hasta 155 caracteres y un máximo de cinco conceptos en `Keywords`, sin repetir términos ya presentes en el `Title`.
+
+#### Landing:
+
+| Página | Title | Meta Description | Keywords | Author |
+| :--- | :--- | :--- | :--- | :--- |
+| Home | Edifika \| Gestión de Condominios y Edificios Residenciales | Centraliza pagos, deudas, reservas de áreas comunes y comunicados de tu condominio en una sola plataforma. Menos hojas de cálculo, más orden. | gestión de condominios, software para edificios, plataforma para administradores, reservas de áreas comunes, control de pagos de condominio | Condomia |
+| Módulos | Módulos \| Áreas comunes, finanzas y muro comunitario | Conoce cómo Edifika organiza el padrón de residentes, el calendario de reservas, la cobranza y la comunicación interna del edificio. | áreas comunes de condominio, cobranza de condominios, muro comunitario para edificios, padrón de residentes | Condomia |
+| Cómo funciona | Cómo Funciona \| De la planilla al condominio en orden | Del registro de pagos a los comunicados oficiales: conoce el recorrido completo de Edifika en tres pasos. | cómo digitalizar un condominio, de gestión residencial, pasos para implementar una plataforma | Condomia |
+| Planes | Planes y Precios \| Edifika | Elige el plan según el tamaño de tu edificio: desde un solo edificio hasta varios condominios administrados a la vez. | precio de software para condominios, planes de gestión de edificios, suscripción por condominio | Condomia |
+| Solicitar demo | Solicita una Demo \| Edifika | Agenda una demostración guiada con datos de ejemplo y conoce cómo Edifika se adapta a la forma en que hoy administras tu edificio. | demo de gestión de condominios, prueba de software residencial, demostración de plataforma | Condomia |
+| Recursos | Recursos y Guías \| Edifika | Guías prácticas sobre reglamento interno, cobranza, uso de áreas comunes y convivencia en edificios verticales. | reglamento de condominio, manual de convivencia en edificios, guías de gestión de edificios | Condomia |
+| Contacto | Contacto \| Edifika | Escríbenos o agenda una llamada con nuestro equipo. Respondemos en menos de un día hábil. | contacto Edifika, soporte de software de condominios, correo de contacto plataforma | Condomia |
+
+Etiquetas técnicas comunes a todas las páginas públicas:
+
+| Etiqueta | Valor asignado |
+| :--- | :--- |
+| `lang` | `es-PE` |
+| `viewport` | `width=device-width, initial-scale=1` |
+| `canonical` | URL absoluta con barra final y una sola versión por página (con o sin `www`, con o sin parámetros de campaña). |
+| `robots` | `index, follow, max-image-preview:large` |
+| `theme-color` | `#8C088F`, el violeta de marca definido en 5.1.1 |
+| Open Graph | `og:type` `website`, `og:title`, `og:description` (mismo texto que `Description`), `og:image`, `og:locale` `es_PE`, `og:site_name` `Edifika` |
+| Twitter Card | `summary_large_image` con la misma imagen de Open Graph |
+| `robots.txt` | Permite `/` y bloquea `/app/`, `/login`, `/register` y cualquier ruta con identificador de condominio |
+| `sitemap.xml` | Las siete páginas públicas con su `lastmod`, enviada a Search Console |
+
+#### App:
+
+La aplicación web se protege con `noindex, nofollow` en todas sus rutas y declara `canonical` hacia `/app`, de modo que ninguna variante con parámetros de sesión resulte indexable. Aun así se declaran las etiquetas por página porque se usan en el título de la pestaña del navegador, en los enlaces que el usuario comparte por mensajería y en las previsualizaciones de las notificaciones.
+
+| Ruta | Title | Meta Description | Keywords | Author |
+| :--- | :--- | :--- | :--- | :--- |
+| /app/login | Iniciar sesión \| Edifika | Accede al panel de gestión de tu condominio: unidades, reservas, finanzas y comunicados en un solo lugar. | acceso a panel de condominio, iniciar sesión en Edifika, gestión de edificio online | Condomia |
+| /app/register | Crear cuenta \| Edifika | Registra tu condominio en Edifika e invita a tus residentes a gestionar juntos sus unidades y espacios comunes. | registro de plataforma residencial, crear cuenta de administrador de edificio | Condomia |
+| /app/dashboard | Dashboard \| Edifika | Resumen del estado de tu condominio: saldos pendientes, reservas activas y comunicados recientes. | panel de control de condominio, resumen de gestión residencial | Condomia |
+| /app/units | Unidades y Residentes \| Edifika | Consulta el padrón de unidades, sus residentes, el estado de ocupación y la deuda asociada de cada una. | padrón de residentes, inventario de unidades, control de ocupación residencial | Condomia |
+| /app/common-areas | Áreas Comunes \| Edifika | Consulta la disponibilidad de las áreas comunes, reserva espacios y revisa las reglas de uso de cada uno. | reserva de áreas comunes, calendario de espacios comunes, reglas de uso de salones | Condomia |
+| /app/finance | Finanzas \| Edifika | Revisa ingresos, cuotas pendientes y morosidad por unidad; exporta reportes y envía avisos de cobro. | estado de cuenta de condominio, morosidad de residentes, reportes financieros de edificios | Condomia |
+| /app/community-wall | Muro Comunitario \| Edifika | Publica comunicados, comparte novedades, vota en encuestas y participa en la moderación de tu comunidad. | comunicados de condominio, encuestas para residentes, muro de comunidad | Condomia |
+| /app/documentation | Documentación \| Edifika | Consulta el reglamento interno, las actas de asamblea y las políticas vigentes de tu condominio. | reglamento interno de condominio, actas de asamblea, políticas de edificio | Condomia |
+
+**Elementos ASO (App Store Optimization) de la aplicación móvil:**
+
+La versión móvil se distribuye en Google Play y App Store, donde no existe un motor de búsqueda sino un criterio de instalación: la persona instala la aplicación después de leer el título y el subtítulo. Los elementos ASO se definen respetando los límites de cada tienda.
+
+| Elemento | Límite | Valor asignado |
+| :--- | :--- | :--- |
+| **App Title** | 30 caracteres | Edifika: Gestión de Condominios |
+| **App Subtitle** (solo iOS) | 30 caracteres | Áreas comunes, pagos y avisos |
+| **App Keywords** (solo iOS) | 100 caracteres, separados por coma y sin espacios | condominio,edificio,residencial,cuotas,morosidad,reservas,areas comunes,comunicados,vecinos,edifika |
+| **Descripción corta** | 80 caracteres | Administra tu condominio: pagos, reservas y comunicados en un solo lugar. |
+| **Descripción larga** | hasta 4 000 caracteres | Edifika es la plataforma con la que administradores, propietarios e inquilinos gestionan su edificio sin hojas de cálculo ni chats perdidos. Desde una sola cuenta puedes consultar el padrón de unidades y ver quién vive en cada una, revisar el estado de cada cuota y enviar avisos de cobro a tiempo, reservar las áreas comunes del edificio en el calendario disponible y consultar las reglas de uso de cada espacio, y mantener a toda la comunidad informada con comunicados oficiales, encuestas y conversaciones moderadas. Todo se actualiza en tiempo real y cada usuario ve solo la información que le corresponde según su rol: el administrador gestiona el padrón y las finanzas, el residente reserva, paga y participa. Edifika funciona con modo oscuro, avisa cada cambio importante por notificación y permite exportar los reportes de gestión en PDF o Excel cuando los necesitas para la asamblea. Edifika está disponible en español y funciona en Android e iOS. Tu condominio, en orden. |
+| **Categoría** | — | Negocios, con Productividad como categoría secundaria |
+| **Icono** | 512 × 512 px | El isotipo de edificio de marca sobre fondo violeta `#8C088F`; es el mismo símbolo del favicon y del encabezado del sidebar. |
+| **Capturas de pantalla** | mínimo 6 | Login, Dashboard, Calendario de áreas comunes, Muro comunitario, Tabla de unidades y Finanzas, en el mismo orden del sidebar, para que quien navega la tienda imagine el recorrido real de la aplicación. |
+| **URL de política de privacidad** | obligatoria en ambas tiendas | https://edifika.com/legal/privacy |
+| **Clasificación de contenido** | obligatoria | Sin contenido sensible, apto para todas las edades |
+
+### 5.2.4. Searching Systems
+
+El sistema de búsqueda persigue un objetivo único: **que ninguna tarea termine en "¿dónde estaba eso?"**. Se apoya en tres herramientas complementarias —búsqueda de texto global con alcance contextual, filtros por facetas en cada módulo y contadores de resultados que siempre dicen cuántos elementos quedan fuera de la vista actual—, de modo que el usuario nunca tenga que recordar dónde vio un dato para recuperarlo.
+
+**Búsqueda global con alcance contextual.** La barra superior de la aplicación es un único campo, presente en todas las vistas autenticadas, cuyo alcance cambia según el módulo desde el que se escribe:
+
+| Módulo desde el que se escribe | Placeholder del campo | Qué encuentra |
+| :--- | :--- | :--- |
+| Community Wall | **Search community posts…** | Título y cuerpo de las publicaciones, nombre del autor, unidad desde la que se escribió y etiquetas del evento o comunicado. |
+| Common Areas | **Search reservations or units…** | Nombre del área común, código de unidad ("402", "Unit 1205") y motivo de la reserva o de la cancelación. |
+| Unidades y finanzas | **Search residents, units or invoices…** | Nombre del resident, código de unidad, número de comprobante y referencia del pago. |
+
+El uso del mismo campo con alcances distintos evita que el usuario aprenda un buscador diferente en cada pantalla, y el placeholder le dice en todo momento **qué tipo de contenido va a encontrar** antes de escribir. La búsqueda no distingue mayúsculas y tolera errores de tecleo, porque quien busca "julian" no debe fallar si escribió "Julian" o "julián"; los términos coincididos se resaltan dentro del resultado para que el usuario entienda por qué apareció.
+
+**Filtros por facetas.** Cada módulo declara sus propios filtros, elegidos según el atributo que realmente segmenta la información de ese módulo:
+
+| Módulo | Filtros disponibles | Qué resuelve cada filtro |
+| :--- | :--- | :--- |
+| **Units & Residents** | All Towers · All Occupancy · All Debt Status · CLEAR | **Tower** segmenta por ubicación física; **Occupancy** (Occupied, Vacant, In transition) por situación de la unidad; **Debt Status** (Paid, Late, Overdue) por situación de pago. Son las tres dimensiones con las que el administrador razona sobre el padrón. |
+| **Common Areas** | Leyenda del calendario (BBQ AREA, PARTY ROOM, GYM CENTER, CANCELED) y navegación `<` `Today` `>` | La leyenda filtra el calendario por área y por estado de reserva; la navegación de mes cambia la ventana temporal, no el conjunto de datos. |
+| **Finance** | Last 6 Months · Export PDF · Excel · paginación de saldos | El selector de período acota la serie de ingresos y proyecciones; la paginación recorre los residentes con saldo pendiente. |
+| **Community Wall** | Búsqueda de publicaciones y filtro por tipo (post, encuesta, evento) | El tipo separa publicaciones de comunicados, encuestas y respuestas a encuestas, que requieren lecturas distintas. |
+| **Documentation** | Categoría de documento y orden alfabético | La categoría agrupa por tipo (reglamento, acta, política); el orden alfabético organiza dentro de la categoría. |
+
+Tres reglas gobiernan el comportamiento de los filtros:
+
+1. **El filtro aplicado es visible y reversible.** El botón "CLEAR" aparece siempre que hay al menos un filtro activo y elimina todos en un solo paso. Un filtro que no se puede quitar es un error de navegación, porque el usuario queda atrapado en un subconjunto que no recuerda haber elegido.
+2. **Los filtros sobreviven a la paginación.** Cambiar de página no reinicia la selección: el administrador que filtró por Tower B y estado Overdue sigue viendo ese subconjunto al avanzar. El filtrado se aplica al conjunto de datos antes de paginar, nunca después.
+3. **Cada filtro tiene una etiqueta, no un valor crudo.** El desplegable muestra "All Towers", "All Occupancy" y "All Debt Status" en reposo, y el valor elegido ("Tower B", "Vacant") al aplicarse. El usuario nunca ve un identificador técnico del modelo de datos.
+
+**Cómo se ven los resultados después de buscar.** La presentación responde a la misma estructura del módulo, de modo que el usuario reconoce la pantalla aunque el contenido haya cambiado:
+
+- **Contador de resultados con contexto.** Siempre se indica el rango y el total: "Showing 1–10 of 428 units", "Showing 4 of 45", "142 votes · 2 days left". El usuario sabe de inmediato si está viendo el conjunto completo o una fracción.
+- **Paginación predecible.** Botones de página numerada con elipsis ("1 2 3 … 43") y flechas de anterior y siguiente, con acceso a la última página en un solo clic, porque quien busca el final de la lista no debería recorrer 43 páginas.
+- **Mismas etiquetas de estado, en cualquier resultado.** Un saldo aparece con el mismo badge "OVERDUE 15 DAYS" que en el listado general y una reserva con el mismo chip que en el calendario. El vocabulario de los resultados es idéntico al del módulo, para que aprenderlo una vez sirva siempre.
+- **Criterio de orden explícito.** Por omisión los resultados se ordenan por relevancia y, en empate, por fecha descendente; el usuario puede cambiar a orden alfabético o por unidad, y el criterio activo se muestra en el control de orden.
+- **Estado vacío accionable.** Cuando la búsqueda no arroja resultados, la pantalla explica por qué y ofrece la salida: "No posts match 'piscina'. Try a different term or clear filters", acompañado del botón "CLEAR". Nunca se muestra una pantalla vacía sin explicación.
+- **Resultados accionables, no solo informativos.** Cada fila ofrece la acción propia de su módulo —"Send Notice" en un saldo vencido, "Edit Rules" en un área, "Review" en un comentario denunciado—, de modo que el usuario no tenga que volver a la pantalla de origen para actuar sobre lo que encontró.
+- **La exportación conserva los filtros.** "Export CSV" y "Export PDF" descargan exactamente el conjunto que se está viendo, con los filtros aplicados, y el nombre del archivo incluye el período y el filtro para que sea identificable después.
+
+### 5.2.5. Navigation Systems
+
+La navegación de Edifika tiene cuatro capas que trabajan juntas: la **navegación global** (dónde estoy y a dónde puedo ir), la **navegación por contenido** (cómo recorro los datos), la **navegación de retorno** (cómo vuelvo) y la **navegación por audiencia** (qué veo según mi rol). El objetivo medible es que cualquier acción frecuente se alcance en dos clics o menos desde la pantalla de mayor frecuencia.
+
+**De la landing a la aplicación.** El recorrido de conversión tiene dos finales y ninguno obliga a buscar un enlace oculto:
+
+- **Anfitrión de un condominio (caso principal).** Home → **Get Started** (llamado a la acción del hero) → *Create Account* → *Register New Account* → Dashboard. Cuatro pasos visibles, cada uno con un único botón principal, y el formulario de registro se resuelve en una sola columna vertical (Email address, User, Cellphone, Password), de modo que la cantidad de lo que se pide resulta evidente antes de empezar.
+- **Residente invitado (caso secundario).** Home → **Iniciar sesión** → *Login to Dashboard*. El visitante que ya tiene cuenta nunca ve el registro como acción principal; "Register New Account" permanece disponible, pero como botón secundario.
+- **Ambos recorridos se entrelazan sin trampas.** Desde *Login to Dashboard* hay un enlace explícito a *Register New Account* y desde *Register New Account* a *Login to Dashboard*. Un usuario que tomó el camino equivocado lo corrige en un clic, sin volver a la home ni abrir el menú.
+
+La navegación del sitio público se apoya en una barra superior fija con enlaces ancla a las secciones de la página (#modulos, #planes, #contacto), de modo que el visitante salte al bloque que le interesa sin recorrerla completa, y en un pie con enlaces agrupados por sección y ordenados alfabéticamente dentro de cada grupo.
+
+**Navegación global dentro de la aplicación.** La posición del usuario es siempre legible porque cuatro elementos cooperan:
+
+| Elemento | Ubicación | Función en la navegación |
+| :--- | :--- | :--- |
+| **Sidebar** | Izquierda, 280 px, fijo | Es el mapa del producto: cinco destinos de gestión (Dashboard, Units & Residents, Common Areas, Finance, Community Wall) más Documentation como fuente de consulta. Es la única navegación de alcance completo. |
+| **Barra superior** | Superior, fija | Herramientas transversales: búsqueda con alcance contextual, notificaciones (campana con indicador de no leídos), ayuda y perfil (avatar con la etiqueta de rol, "Admin Portal"). |
+| **New Alert** | Pie del sidebar, destacado | Acción primaria persistente que lleva a la tarea de mayor consecuencia en el producto: emitir un comunicado. Se separa visualmente de los destinos porque es una acción, no un lugar. |
+| **Settings / Support** | Pie del sidebar, bajo la línea divisoria | Utilidades de cuenta y de ayuda, fuera del flujo de trabajo principal. |
+
+**Indicación de ubicación.** El ítem activo del sidebar se marca con tres señales redundantes —fondo violeta claro, texto violeta y una barra vertical de 2 px en el borde izquierdo—, de modo que la posición actual se reconozca incluso si el usuario no distingue los tonos. La barra lateral no se colapsa ni se oculta: la visibilidad completa del mapa del producto es parte del principio de reconocimiento. Además, cada vista repite su nombre en el título y la bajada ("Units & Residents" / "Manage property inventory and resident information across all towers"), lo que funciona como una segunda confirmación de ubicación.
+
+**Navegación por contenido.** Dentro de una vista con muchos elementos, la navegación se resuelve con el control que corresponde a la naturaleza del contenido:
+
+- **Registros en tabla → paginación.** Numeración con elipsis, flechas de anterior y siguiente y última página a un clic ("Showing 1–10 of 428 units" con páginas 1, 2, 3 … 43). La paginación vive en el pie de la tabla, porque pertenece a la tabla y no a la navegación del módulo.
+- **Series en el tiempo → navegación temporal.** El calendario de reservas y el gráfico de ingresos se recorren con `<` `Today` `>`, de modo que el usuario pase de mes en mes sin perder su posición de lectura.
+- **Espacios multidimensionales → filtros persistentes.** Los filtros descritos en 5.2.4 no sustituyen la navegación: acotan el conjunto y dejan visible la posición del usuario mediante el botón "CLEAR" y el contador de resultados.
+- **Tareas pendientes → paneles laterales.** "MOD QUEUE" y "MANAGE AREAS" son colas de trabajo con acción directa ("Review", "Edit Rules"), no páginas de navegación: el usuario no "va" a la cola, la cola lo espera en el lateral de la pantalla en la que ya está trabajando.
+
+**Revelado progresivo y retorno.** Las tareas que requieren datos adicionales —configurar las reglas de un área, revisar un comentario denunciado, confirmar una reserva— se revelan en un **diálogo modal** superpuesto al contexto, nunca en una pantalla nueva que pierda el contexto. El modal se cierra por tres vías equivalentes (el botón "Cancel", la "X" de la esquina y la tecla Escape) y las tres devuelven al usuario **al mismo lugar con el mismo contexto**: el calendario, el muro o la tabla quedan exactamente como estaban, con el desplazamiento conservado. El par "Cancel / Save Changes" garantiza además que el modal nunca se cierre por error con cambios a medias.
+
+**Navegación por audiencia.** El menú del RESIDENT es un subconjunto del menú del ADMIN (sección 5.2.1), pero conserva la misma estructura de niveles y la misma posición de cada elemento restante, de modo que quien aprende a moverse como residente no tiene que reaprender la navegación el día que asume la administración. La etiqueta de rol junto al avatar refuerza esta separación sin necesidad de dos productos distintos.
+
+**Reglas de navegación y de error.** Cuatro reglas cierran el sistema:
+
+1. **Ningún elemento del menú es un callejón sin salida.** Todo destino del sidebar tiene al menos una acción principal visible en su propia vista ("Add New Unit", "New Alert", "Generate Report"), de modo que el usuario nunca llega a una pantalla que solo puede observar.
+2. **Todo estado vacío contiene una salida.** Si un módulo no tiene datos, muestra el motivo y la acción que los creará ("No outstanding balances in this period. All units are up to date." con el enlace a Finance), en lugar de una pantalla vacía.
+3. **La búsqueda es una puerta de entrada, no un destino.** El resultado lleva a la vista de origen con el registro ya posicionado, de modo que el usuario nunca edita un dato desde un contexto que no corresponde a su naturaleza.
+4. **El soporte está siempre a un clic.** El enlace "Support" permanece visible en el pie del sidebar en todas las vistas, incluidos los estados vacíos, porque el usuario que se equivoca debe poder preguntar sin abandonar lo que estaba haciendo.
+
+## 5.3. Landing Page UI Design
+
+### 5.3.1. Landing Page Wireframe
+
+### 5.3.2. Landing Page Mock-Up
+
+### 5.4. Applications UX/UI Design
+
+### 5.4.1. Applications Wireframes
+
+**Login**
+
+<p align="center">
+  <img src="assets/img/login.jpeg" alt="Login" width="800" />
+</p>
+
+**Register**
+
+<p align="center">
+  <img src="assets/img/register.jpeg" alt="Register" width="800" />
+</p>
+
+**Dashboard**
+
+<p align="center">
+  <img src="assets/img/dashboard.jpeg" alt="Dashboard" width="800" />
+</p>
+
+**Units & Residents**
+<p align="center">
+  <img src="assets/img/units.jpeg" alt="Units" width="800" />
+</p>
+
+**Common Areas**
+
+<p align="center">
+  <img src="assets/img/common.jpeg" alt="Common" width="800" />
+</p>
+
+**Finance**
+<p align="center">
+  <img src="assets/img/finance.jpeg" alt="Finance" width="800" />
+</p>
+
+**Community Wall**
+
+<p align="center">
+  <img src="assets/img/community.jpeg" alt="Community" width="800" />
+</p>
+
+Link del Figma: https://www.figma.com/design/ty6TOS7jOtA6f0111hRNGo/Edifika---Login-Mockup?node-id=19-339&t=GfR39Vruiix1XYFB-0
+
+### 5.4.2. Applications Wireflow Diagrams
+
+**1. Wireflow 1: Registro e inicio de sesión del administrador**
+
+User Persona: Administrador
+User goal: El administrador quiere registrarse o iniciar sesión para acceder a Edifika y gestionar su edificio.
+
+<p align="center">
+  <img src="assets/img/xd1.jpeg" alt="Community" width="800" />
+</p>
+
+Este flujo representa el acceso inicial del administrador a la aplicación web. Puede crear una cuenta aceptando el reglamento interno, volver al inicio de sesión e ingresar al dashboard, desde donde accede a unidades, áreas comunes, finanzas y muro comunitario.
+
+
+
+**2. Wireflow 2: Reserva de un área común **
+
+User Persona: Usuario  
+User goal: El usuario quiere reservar un área común en una fecha y horario disponibles, y ver su reserva en el calendario.
+
+<p align="center">
+  <img src="assets/img/xd2.1.jpeg" alt="Community" width="800" />
+</p>
+<p align="center">
+  <img src="assets/img/xd2.2.jpeg" alt="Community" width="800" />
+</p>
+<p align="center">
+  <img src="assets/img/xd2.3.jpeg" alt="Community" width="800" />
+</p>
+
+Este flujo muestra cómo se registra una reserva desde el calendario de áreas comunes. Si el horario elegido ya está ocupado, el sistema avisa y permite elegir otro; si está libre, la reserva queda confirmada y aparece en el calendario.
+
+**3. Wireflow 3: Seguimiento financiero y morosidad**
+
+User Persona: Administrador 
+User goal: El administrador quiere revisar los ingresos y las deudas del edificio e identificar a los residentes morosos para enviarles un aviso.
+
+<p align="center">
+  <img src="assets/img/xd3.jpeg" alt="Community" width="800" />
+</p>
+
+Este flujo parte del dashboard hacia la sección Finance, donde se revisan los indicadores y la lista de residentes con saldos pendientes. Desde ahí el administrador envía un aviso de cobro.
+
+### 5.4.3. Applications Mock-Ups
+
+**Login:**
+
+<p align="center">
+  <img src="assets/img/mockups/login.jpg" alt="Login" width="800" />
+</p>
+
+**Register:**
+
+<p align="center">
+  <img src="assets/img/mockups/register.jpg" alt="Register" width="800" />
+</p>
+
+**Units & Residents:**
+
+<p align="center">
+  <img src="assets/img/mockups/units-residents.jpg" alt="Units" width="800" />
+</p>
+
+**Common Areas:**
+
+<p align="center">
+  <img src="assets/img/mockups/common-areas.jpg" alt="Common" width="800" />
+</p>
+
+**Finance:**
+<p align="center">
+  <img src="assets/img/mockups/finance.jpg" alt="Finance" width="800" />
+</p>
+
+**Community Wall:**
+
+<p align="center">
+  <img src="assets/img/mockups/community-wall.jpg" alt="Community" width="800" />
+</p>
+
+Link del Figma: https://www.figma.com/design/ty6TOS7jOtA6f0111hRNGo/Edifika---Login-Mockup?node-id=0-1&p=f&t=GfR39Vruiix1XYFB-0
+
+### 5.4.4. Applications User Flow Diagrams
+
+**User Flow 1: **
+
+**User Persona:**   
+**User goal:** 
+
+**Pantallas base:**
+
+- Register
+- Login
+- Dashboard
+
+**Happy path:**
+
+
+
+**Unhappy paths:**
+
+
+
+
+
+---
+
+**User Flow 2: **
+
+**User Persona:**   
+**User goal:** 
+
+**Pantallas base:**
+
+
+
+**Happy path:**
+
+
+
+**Unhappy paths:**
+
+
+
+
+
+---
+
+**User Flow 3: **
+
+**User Persona:**   
+**User goal:** 
+
+**Pantallas base:**
+
+
+
+**Happy path:**
+
+
+
+**Unhappy paths:**
+
+
+
+
+
+## 5.5. Application Prototyping
+
+## 5.6. IoT Device Design
+
+### 5.6.1. Introducción y criterios de diseño
+
+Edifika se ejecuta en el teléfono y en el navegador del administrador, pero la parte de la solución que decide sobre el mundo físico no es software: son cuatro tipos de nodo que se instalan dentro del condominio y que el usuario nunca configura, nunca ve y de los que depende para que un área tenga luz, una puerta se abra a la hora correcta y una fuga no se convierta en una inundación. El diseño de esos dispositivos es, por lo tanto, la decisión de diseño con las consecuencias más físicas del proyecto, y es donde los errores no se manifiestan como una excepción en la consola ni como un estado vacío en una tarjeta: se salen como una puerta que no abre con la visita dentro, o como un área común encendida a las tres de la mañana.
+
+La propuesta de diseño físico y de circuito de estos dispositivos se apoya en **ocho criterios**, que no son una lista de deseos sino el orden en que se resuelven las decisiones cuando dos criterios entran en conflicto.
+
+| Código | Criterio | Fundamento y consecuencia de diseño | Dónde se hace visible |
+| :--- | :--- | :--- | :--- |
+| **C1** | **A prueba de fallo por defecto** | El fallo más grave de un nodo no es que se apague, sino que se quede en un estado que perjudique a quien lo usa. Por eso cada actuador elige su posición en reposo según la consecuencia de quedarse sin alimentación: la cerradura abre y la luminaria se apaga. Un corte de energía no puede encerrar a un resident ni encender un área vacía. | Posición de reposo de los relés, sección 5.6.4 y 5.6.5 |
+| **C2** | **Decisión física sin ida y vuelta a la nube** | La arquitectura ya decidió que el cloud concentra reglas de negocio y el edge la autonomía operativa (4.1.3.3). Traducido al dispositivo, el criterio significa que un umbral de lux, una comparación de caudal o una validación de UID se resuelven en el nodo o en el Edge API: esperar al cloud para abrir una puerta agrega latencia a una acción que el resident mide en el tiempo que tarda en apoyar la tarjeta. | Caché local de credenciales, corte local de bomba, sección 5.6.4 a 5.6.7 |
+| **C3** | **Presupuesto de respuesta física** | La guía de estilos fija tres máximos medibles: LED en 200 ms, relé completo en 500 ms y tono antes de un segundo (5.1.2). Más allá de ese margen el usuario asume que el dispositivo no respondió y repite la acción, y una repetición sobre un actuador es un incidente. El firmware se evalúa contra esos tres números, no contra una impresión de rapidez. | Sección 5.6.8 |
+| **C4** | **Un solo vocabulario de estado** | El LED, la etiqueta, el serial del Edge y la tarjeta del dashboard describen el mismo hecho con el mismo nombre. No existe un estado que el dispositivo llame de una forma y la aplicación de otra, porque el resident solo conoce una versión de la plataforma. | Sección 5.6.2 |
+| **C5** | **Consumo, calor y mantenimiento** | Los nodos quedan conectados a la red eléctrica del edificio, pero se instalan en sitio y no se mantienen: la autonomía, el modo de bajo consumo y la posibilidad de diagnosticarlos importan tanto como el costo de la placa. Un nodo que hay que abrir para reconfigurar es un nodo que nadie reconfigura. | Suspensión profunda, ausencia de pantalla, reset sellado, sección 5.6.3 |
+| **C6** | **Aislamiento eléctrico** | Ningún conductor de 220 V debe entrar en la placa de control. La conmutación de cargas se delega a un relé o contactor y la medición de corriente se hace con una pinza sobre el conductor, de modo que el aislamiento entre la red y la lógica sea físico y no una convención del software. | Sección 5.6.5 y 5.6.7 |
+| **C7** | **Identidad y trazabilidad del objeto** | Un dispositivo instalado en un edificio real es un objeto físico que se pierde, se daña o se reemplaza. Cada nodo declara su identificador, su código QR y el tópico MQTT al que publica, porque el inventario de la aplicación y el objeto del pasillo tienen que poder reconocerse mutuamente. | Sección 5.6.2 |
+| **C8** | **Instalación y accesibilidad** | Las decisiones dimensionales no son detalles de carpintería: determinan si un resident puede usar el dispositivo. La altura de instalación, el tamaño de la superficie de lectura y la separación entre un pulso corto y uno sostenido salen de la experiencia de uso, no del datasheet. | Sección 5.6.2 |
+
+El criterio C4 merece una aclaración, porque es el que más restringe el diseño. Los tres contextos IoT del cloud —IoT Access Management, Smart Lighting & Automation e IoT Telemetry & Analytics— modelan el estado del dispositivo en su propio vocabulario (`ACTIVE`, `SUSPENDED`, `REVOKED`, `ON`, `OFF`, `OPEN`, `RESOLVED`, `LOW`, `MEDIUM`, `HIGH`), y el Edge API lo traduce al contrato MQTT. Ese vocabulario es correcto en el dominio, pero el resident frente a una puerta no conoce esos términos. La decisión de diseño que se adopta es que **el vocabulario físico es un subconjunto del vocabulario de la interfaz, nunca un tercero**: los términos que el usuario puede ver en la tarjeta de un dispositivo del dashboard son exactamente los que el LED codifica y los que el texto del Serial Monitor imprime. Un estado que solo existe en el firmware se considera un defecto de diseño, no una decisión de implementación.
+
+### 5.6.2. Relación con la arquitectura de información y con la guía de estilos de interfaz física
+
+La sección 5.1.2 (IoT Physical Interface Style Guidelines) define la interfaz física de los nodos y la sección 5.2 define cómo se nombra, se encuentra y se recorre el contenido del producto. Ambas condicionan el diseño de los dispositivos, y la relación no es de estilo sino estructural: sin ella existirían cuatro dispositivos técnicamente correctos que el usuario no podría distinguir de un producto ajeno.
+
+| Decisión de arquitectura de información (5.2) | Regla de interfaz física (5.1.2) | Consecuencia en el diseño del dispositivo |
+| :--- | :--- | :--- |
+| **Criterio de nombrado único** (5.2.2): cada conjunto tiene una sola etiqueta, repetida en navegación, título, tabla y exportación. | Los textos impresos usan el Lenguaje Ubicuo (2.5), nunca un código interno ni un número de error. | La etiqueta del nodo repite el nombre del módulo del que cuelga —`Lighting & Sensing Node`, `Access Controller`, `Leak Detection Node`, `Energy Meter`— y no el nombre del microservicio que consume sus datos. La suscripción MQTT vive en la etiqueta como dato técnico, separada del nombre, para que instalar no exija entender la arquitectura. |
+| **Organización por tópicos** en tres escalas (5.2.1). | La etiqueta declara "el tópico MQTT corto al que publica". | El espacio de nombres replica la taxonomía del producto en el orden `edifika/{edificio}/{módulo}/{dispositivo}`: el módulo es el mismo sidebar, el dispositivo es el mismo registro de inventario. Un técnico que lea la etiqueta entiende a qué parte del producto pertenece el nodo. |
+| **Estados en mayúsculas con etiqueta textual, nunca solo color** (5.2.2). | Código del LED: cada estado tiene color **y** patrón de parpadeo, para sobrevivir a la daltonía, al sol directo y a un LED quemado. | El WS2812B de cada nodo implementa la tabla completa de 5.1.2 (fijo, dos parpadeos lentos, tres rápidos, intermitente, un parpadeo cada 5 s, apagado). La redundancia no es decorativa: es la traducción literal de la regla "el estado nunca se transmite solo con color" al medio físico. |
+| **Cuando no se sabe el estado, la interfaz dice que no lo sabe** (5.1.2, IoT Style Guidelines). | Modo degradado: sin broker, el LED pasa a `Neutral` con parpadeo lento y el dispositivo conserva el último estado. | El firmware nunca re-publica un valor viejo con marca de tiempo reciente ni rellena un hueco por interpolación. La ausencia de lectura se publica como ausencia: `{ts, value: null, stale: true}`. Es la razón por la que el mensaje MQTT lleva el campo `stale` y no solo un número. |
+| **Acciones a dos clics o menos** y **una sola acción primaria por pantalla** (5.2). | La pulsación corta ejecuta el control manual local; la mantenida de 1.5 s empareja o restablece. | El pulsador del nodo es la excepción controlada a esa regla de interfaz, y por eso se distinguen las dos duraciones: el control manual es una emergencia cuando el teléfono no tiene cobertura, y el emparejamiento no puede ocurrir por accidente porque un resident apoye el pie en el pulsador de un pasillo. |
+| **Términos del Lenguaje Ubicuo** (2.5): "Acceso concedido", "Fuga detectada", "Corte automático", "Credencial suspendida". | El tono audible suena solo en tres casos: fuga detectada, corte automático de la bomba y apertura forzada. | El `Serial Monitor` del prototipo y el texto que el Edge reenvía a la notificación usan esas frases exactas. El firmware no emite "DENY", "TRIP" ni "ERR_07": esos nombres viven en el log técnico del Edge, no en el mensaje que ve el resident. |
+| **Anatomía de la tarjeta de dispositivo**: píldora de conexión, hora de la última lectura y antigüedad de esa lectura. | El LED baja al 10 % de brillo entre 23:00 y 06:00 pero nunca se apaga del todo. | El heartbeat de 60 s que publica el nodo es el mismo dato que permite a la tarjeta calcular la antigüedad de la lectura; el brillo nocturno existe para que la señal siga presente sin molestar, que es el compromiso equivalente a "no mostrar un vacío como si fuera un resultado". |
+| **Modo degradado**: banner "operando con datos locales" con la hora de la última sincronización. | A prueba de fallo: si el nodo pierde el broker, mantiene el último estado conocido y opera localmente. | La caché en SPIFFS del ESP32 es la contraparte física de ese banner. Sin él, el indicador "datos locales" de la aplicación sería una afirmación sin respaldo. |
+
+De esta tabla se sigue una conclusión de diseño que conviene enunciar antes de entrar en los dispositivos: **el objeto físico y la tarjeta del dispositivo son dos vistas del mismo dato, no dos fuentes de verdad**. Por eso el nodo publica exactamente los campos que la tarjeta necesita mostrar —estado, valor, marca de tiempo, señal, batería— y nada que la tarjeta no sepa presentar. Un campo que solo existe en el firmware es un campo que nadie puede leer.
+
+### 5.6.3. Stack común y cadena de herramientas
+
+Los cuatro nodos comparten la misma base de hardware y de software. Esa decisión reduce el costo por unidad, simplifica el reemplazo de una placa y, sobre todo, hace posible que un solo manual de instalación sirva para todo el condominio.
+
+| Capa | Elección | Justificación |
+| :--- | :--- | :--- |
+| **Microcontrolador** | ESP32 DevKit V1 | Wi-Fi integrado, suficientes GPIO analógicos y digitales, ecosistema Arduino con cliente MQTT nativo. Es el microcontrolador que ya aparece en el Container Diagram (4.1.3.3) y en TS17. |
+| **Transporte** | MQTT 3.1.1 sobre Wi-Fi, QoS 1, mensajes `retained` para estado y credenciales | Es el protocolo que fija TS17 y el que usa el Edge API on-premise. QoS 1 evita perder la orden de cierre de una llave o la lista de credenciales; `retained` permite que un nodo que se enciende después del Edge reciba el estado vigente sin pedirlo. |
+| **Broker** | EMQX local en el Edge Server (Raspberry Pi 4), reenvío al broker cloud gestionado | El broker no está en la nube: la arquitectura de 4.1.3.4 despliega el Edge Server on-premise precisamente para que el condominio siga operando sin enlace WAN. Un broker alojado únicamente en la nube convertiría cada corte de internet en una puerta que no abre. |
+| **Firmware** | C++ sobre el framework Arduino, con `DeepSleep` por niveles | Común a los cuatro nodos; permite un modo de suspensión automático entre lecturas y reduce el consumo a un presupuesto medible. |
+| **Diseño de circuito** | Fritzing (vista esquemática) | Permite documentar el circuito con la red de alimentación y los buses explícitos, condición para que un instalador pueda verificar el cableado sin interpretar un esquema de conexiones en silueta. |
+| **Simulación y prototipado** | Wokwi, con ESP32 DevKit V1, MFRC522, sensor PIR, fotorresistencia, relé y buzzer | Es el entorno donde se ejercitan los flujos de interacción antes de tocar el hardware: presentación de credencial, disparo de movimiento, corte de bomba y pérdida de broker. |
+| **Identificación** | QR/NFC en la etiqueta con `edificio`, `dispositivo`, `tópico` y `firmware` | Responde al criterio C7 y permite que el inventario de la aplicación y el objeto del pasillo se reconozcan mutuamente. |
+
+Una decisión de diseño que atraviesa a los cuatro nodos y que conviene explicitar porque es contraintuitiva: **no hay pantalla en ningún dispositivo**. Una pantalla obligaría a cada nodo a resolver por su cuenta la composición de texto, los estados y la accesibilidad —es decir, a reimplementar dentro del firmware lo que 5.2 ya resolvió para el conjunto del producto—, y además habría que mantenerla encendida, lo que contradice el criterio de consumo. Toda la información que el resident necesita del objeto cabe en un LED codificado, un tono acotado y una etiqueta impresa.
+
+### 5.6.4. Dispositivo 01 — Controlador de acceso de áreas comunes (ACC-01)
+
+#### Descripción y criterios de diseño
+
+El ACC-01 es el nodo instalado junto a cada puerta de área común que admite reservas. Su función es materializar una decisión que ya está tomada antes de que el resident llegue: la reserva aprobada genera un `AccessPermission` acotado a su ventana horaria, `EdgeGatewaySyncClient` lo empuja al Edge API, y el Edge lo deja disponible para el nodo en un tópico `retained`. El ACC-01 **no consulta al cloud en cada intento**: resuelve la UID contra la caché local y publica el resultado.
+
+Los criterios que gobiernan su diseño son **C1** (la puerta no puede quedar cerrada a alguien dentro), **C2** (la decisión es local), **C4** (verde y rojo significan lo mismo que en la tarjeta) y **C8** (la lectura tiene que funcionar sin mirar el teléfono).
+
+#### Diseño físico
+
+La carcasa es de plástico ABS mate en `Neutral` con una franja frontal en `Primary`, con radios de 12 mm que replican las esquinas de las tarjetas de la aplicación, montada entre **1.2 y 1.6 m de altura** con iluminación suficiente y sin reflejos sobre la superficie del sensor. La superficie de lectura contactless se dimensiona a **25 mm o más**, de manera que el resident no dependa de la precisión de la alineación del dedo o de la tarjeta. No hay pantalla; hay LED, contactless, pulsador y orificio de reset.
+
+El orden de los elementos en el frente responde a la frecuencia de uso, el mismo criterio que 5.2.1 aplica a las pantallas: el LED en la zona más visible del marco, el contactless a la altura natural de la mano, el pulsador debajo y el orificio de reset en la base, sellado con epoxy y alcanzable solo con una aguja por mantenimiento.
+
+| Elemento | Cota / material | Razón de la decisión |
+| :--- | :--- | :--- |
+| Superficie contactless | ≥ 25 × 25 mm | Un área menor obliga a apuntar la tarjeta; el usuario interpreta el fallo como tarjeta no leída y repite el gesto, que en un lector bloqueado por anti-passback cuenta como intento adicional. |
+| LED WS2812B | Ø 8 mm, visible a 3 m | Único indicador que funciona en la oscuridad, a distancia y sin contacto físico. |
+| Pulsador tactil | Ø 12 mm, con recorrido distinguible | Permite el control manual local de emergencia y el emparejamiento, separados por duración. |
+| Orificio de reset | Ø 2 mm, sellado | Su presencia sin acceso evita que un resident reinicie el dispositivo y borre la caché de credenciales. |
+| Etiqueta | Altura de letra ≥ 2.5 mm, mayúsculas, contraste > 4.5:1 | Se lee a distancia y con la linterna del teléfono, no a la distancia de un monitor. |
+| Altura de instalación | 1.2 – 1.6 m | Altura de uso de la mano adulta, y accesible para el resident mayor sin agacharse. |
+
+#### Diseño de circuito
+
+| Componente | Función | Nota de diseño |
+| :--- | :--- | :--- |
+| **ESP32 DevKit V1** | MCU, Wi-Fi, cliente MQTT, decisión local de acceso | Concentra la lógica de `AccessDecisionService` en su versión local: activa, no está en la blacklist y tiene permiso vigente para esa área en ese instante. |
+| **MFRC522 (RC522)** | Lector RFID 13.56 MHz por SPI | Se alimenta desde el regulador de **3.3 V**, no del riel de 5 V: es la causa más común de lecturas de UID intermitentes en la implementación de referencia. |
+| **Reed magnético** | Estado de la puerta y detección de apertura forzada | Normalmente cerrado dentro del circuito de alarma, de modo que también detecte el sabotaje del cable. |
+| **WS2812B** | Código de estado | Un solo pin de datos, con protocolo one-wire de 800 ns; no requiere resistencias limitadoras por canal. |
+| **Driver MOSFET IRLZ44N** | Excitación de la bobina | Un GPIO no puede conmutar una bobina de 12 V: la corriente de conmutación lo degrada. |
+| **1N4007** | Diodo de volante en paralelo a la bobina | Sin él, el pico inductivo de la bobina al cortar vuelve al GPIO y produce reinicios esporádicos, que en un lector se manifiestan como "puertas que a veces no abren". |
+| **Relé fail-safe 12 V** | Cerradura eléctrica | Contacto **NA**: sin alimentación, la puerta queda abierta (C1). |
+| **Buzzer piezo 3 V** | Apertura forzada únicamente | Silenciado entre 23:00 y 06:00; máximo 3 s por evento. |
+
+La decisión eléctrica más importante del ACC-01 es la **posición de reposo del relé**. El criterio C1 se resuelve aquí de forma explícita: la cerradura se alimenta en reposo, de modo que un corte de energía, un reinicio del nodo o una falla del Edge dejan la puerta abierta. El peor escenario en un recinto común no es una puerta que se abre de más —que se audita y se registra— sino una persona encerrada en un área común sin cobertura. El control de acceso sigue existiendo en el sentido contrario, que es el que protege a la comunidad, y esa asunción está documentada porque es la que un instalador va a cuestionar.
+
+La segunda decisión es la **resolución por omisión**. Si la UID presentada no está en la caché local —porque el nodo acaba de encenderse, porque la caché está corrupta o porque el resident fue dado de baja hace minutos y la sincronización no ha llegado—, el resultado es `DENEGADO`, no "permitido por no saber". Un sistema de control de acceso que falla hacia la apertura no es un sistema con una tasa de error: es un sistema sin control de acceso.
+
+#### Flujos de interacción que cubre el prototipo
+
+El prototipo en Wokwi ejercita el recorrido completo de una credencial sobre el nodo, con el MFRC522, la puerta, el relé y el buzzer conectados y el ESP32 publicando por MQTT contra el broker del Edge.
+
+| Paso | Actor / componente | Acción | Respuesta del sistema | Verificación observable |
+| :--- | :--- | :--- | :--- | :--- |
+| 1 | Resident | Acerca la credencial a la superficie | El MFRC522 lee el UID y el nodo lo busca en la caché local | LED violeta intermitente = acción en curso |
+| 2 | ACC-01 | Compara contra credenciales, blacklist y permiso vigente | Decide `GRANTED` y acciona el relé | Parpadeo verde antes de 200 ms; relé completo antes de 500 ms |
+| 3 | ACC-01 | Publica el intento | `acc-01/attempts {uid, result, rssi, ts}` en menos de 200 ms | El `Serial Monitor` imprime "Acceso concedido" |
+| 4 | Edge API | Reenvía el intento | IoT Access Management persiste `AccessAttempt` y publica `PhysicalAccessGranted` | La tarjeta del dispositivo en el dashboard pasa a ONLINE con la hora de la lectura |
+| 5 | Resident | Retira la credencial | El relé vuelve a reposo y la puerta se cierra sola | El lector vuelve a LED verde fijo = normal |
+
+Los **caminos infelices** son los que justifican el diseño del hardware, y son cinco:
+
+| Situación | Comportamiento diseñado | Por qué esa respuesta |
+| :--- | :--- | :--- |
+| Credencial **suspendida o revocada** (por morosidad, `ResidentMarkedDelinquent`) | LED rojo con tono corto; el relé no acciona; se publica `PhysicalAccessDenied` | Son dos situaciones distintas para el resident —“tarjeta no leída” y “me la suspendieron”— y exigen respuestas opuestas: repetir el gesto en el primer caso, llamar al administrador en el segundo. Un único tono genérico obligaría al resident a adivinar siempre. |
+| **Sin broker** (WAN caído) | El nodo sigue resolviendo contra la caché, publica en cuanto vuelve el enlace y el LED pasa a `Neutral` con un parpadeo cada 5 s | Es el criterio C2: la operación del condominio no depende del cloud. Lo que se pierde es la inmediatez de la auditoría, no el acceso ya autorizado. |
+| **Puerta forzada o cable saboteado** | El reed dispara; LED rojo con tres parpadeos rápidos y tono, y se publica el estado de puerta | Es uno de los tres únicos casos que justifican el tono audible, porque exige una respuesta del resident en el momento y no puede resolverse en el dashboard de mañana. |
+| **Sin permiso vigente** (la reserva ya terminó) | LED ámbar, dos parpadeos lentos, sin tono | Es el estado `Atención` de 5.1.2: no es una falla ni una alarma, es una explicación. El resident está en la puerta correcta pero fuera de horario, y el ámbar le dice que la respuesta está en la aplicación. |
+| **Reinicio del dispositivo** | Contacto NA: la puerta queda abierta y el LED vuelve a normal al reconectarse | El peor resultado posible de un corte de energía en un espacio común es dejar gente encerrada; el criterio C1 manda sobre la conveniencia de la puerta cerrada. |
+
+### 5.6.5. Dispositivo 02 — Nodo de iluminación inteligente y sensado (LGT-01)
+
+#### Descripción y criterios de diseño
+
+El LGT-01 se instala embebido en cada luminaria de las áreas comunes. Mide presencia, nivel de lux y corriente, decide localmente el encendido y el apagado, y reporta telemetría al Edge. Es el nodo donde el criterio C2 es más estricto, porque la latencia de encendido es lo que el resident percibe como "la luz tarda": si el nodo consultara la nube antes de conmutar, cada vez que una persona cruza la puerta de la sala de fiestas esperaría en la oscuridad el tiempo de un viaje de ida y vuelta a los servidores.
+
+Los criterios que gobiernan su diseño son **C2** (decisión local del umbral de luz), **C3** (presupuesto de respuesta física), **C6** (aislamiento de la red) y **C5** (el nodo queda encima de la luminaria, sin mantenimiento).
+
+#### Diseño físico
+
+El LGT-01 se monta en el techo o en el marco de la luminaria, con el sensor PIR orientado hacia el acceso y con el campo de detección ajustado para que no alcance el fondo de la sala, de modo que un resident que cruza la puerta active la luz sin que alguien sentado al fondo la apague desde el borde opuesto. El acabado mate del frente evita reflejos que confundan tanto al sensor infrarrojo como a quien intenta ver el LED a contraluz; el LED queda en el borde inferior de la carcasa, que es la única posición visible desde el suelo.
+
+| Elemento | Cota / material | Razón de la decisión |
+| :--- | :--- | :--- |
+| Frontal del sensor PIR | Orientado hacia el acceso, sin detectar el fondo de la sala | Detecta el cruce de una persona y no el movimiento de alguien ya sentado. |
+| Ventana del LDR | Opuesta al PIR, nunca tras la propia fuente de luz | Si el LDR midiera la luz emitida por la luminaria, la lectura dependería del estado del actuador y el umbral de lux nunca se estabilizaría. |
+| LED de estado | En el borde inferior de la carcasa, visible desde el suelo | Es la única forma de que el resident sepa si el nodo está vivo sin abrir el tablero del condominio. |
+| Etiqueta | Con el ID de nodo, QR y tópico | El inventario de la aplicación lista luminarias por ubicación; la etiqueta dice cuál de ellas es. |
+| Alimentación | Vía derivación de la propia luminaria | Evita un cable de red por punto de luz y por lo tanto una obra mayor por nodo instalado. |
+
+#### Diseño de circuito
+
+| Componente | Función | Nota de diseño |
+| :--- | :--- | :--- |
+| **ESP32 DevKit V1** | Sensado, decisión local y publicación | Aplica la regla de `AutomationDecisionService` en su versión local: presencia, lux, franja horaria de reserva y anulación vigente. |
+| **PIR HC-SR501** | Presencia, salida digital | Sensor digital: no consume un canal ADC y su señal no requiere filtrado analógico. |
+| **LDR GL5528 con divisor 10 kΩ / 10 kΩ** | Nivel de lux | Va al **ADC1**; la salida digital DO del módulo se omite porque el umbral se define en el editor de reglas de la aplicación, no con un potenciómetro en el techo. |
+| **ACS712 5 A** | Corriente real de la luminaria, en mA | Pinza sobre la fase: es la forma de medir sin poner un conductor de 220 V en la placa (C6). |
+| **WS2812B** | Código de estado completo | Traducción literal de la tabla de 5.1.2. |
+| **BC547 + 1N4007** | Driver del relé con diodo de volante | La bobina del relé nunca conecta directamente al GPIO. |
+| **Relé SRD-05VDC-SL-C (SPDT 10 A)** | Conmutación de la luminaria | Contacto **NA**: ante reinicio del nodo, la luminaria queda apagada (C1 aplicado a una carga, con el criterio inverso al de la cerradura: el riesgo del error es el consumo de energía, no la seguridad de una persona). |
+
+La decisión de canal analógico es la que más restricciones impone al resto del circuito y conviene explicitarla: **todos los sensores analógicos se conectan al ADC1 (GPIO 32–39)**. El ADC2 del ESP32 deja de estar disponible mientras el driver Wi-Fi está activo, de modo que un LDR o un ACS712 en GPIO 4, 13, 14, 15, 25 o 27 devolvería lecturas corruptas justamente cuando el nodo está conectado, que es cuando más importa medir. Además, el LDR y el ACS712 comparten masa con la bobina del relé, de modo que un cable de potencia colocado mal puede derivar ruido de conmutación sobre la lectura de corriente. Por eso la fuente, la bobina y el plano de sensado se cablean con trayectorias separadas dentro de la caja, y el ACS712 se instala a 10 cm del borne, no sobre él.
+
+#### Flujos de interacción que cubre el prototipo
+
+| Paso | Disparador | Decisión | Respuesta física | Verificación observable |
+| :--- | :--- | :--- | :--- | :--- |
+| 1 | El PIR detecta presencia | El nodo lee el LDR | LED violeta intermitente durante el sensado | En Wokwi, "Simulate Motion" en el PIR |
+| 2 | Lux por debajo del umbral y franja dentro de `LightingSchedule` | Enciende localmente y publica `AreaPresenceDetected` | Relé en menos de 500 ms | El relé de Wokwi cambia de estado; el `Serial Monitor` imprime el valor de lux |
+| 3 | La reserva empieza (`ReservationStarted`) | Enciende de forma programada el área | Relé en menos de 500 ms | Simulación de la franja horaria de la regla |
+| 4 | Presencia detectada y luz alta | No enciende | LED verde fijo = normal, sin tono | El evento se publica igualmente: "hubo alguien y no encendimos" es un dato de analítica |
+| 5 | Inactividad por más de `PresenceTimeout` | Apaga | LED verde fijo | La curva de consumo en el dashboard refleja el ciclo |
+
+**Caminos infelices:**
+
+| Situación | Comportamiento diseñado | Razón |
+| :--- | :--- | :--- |
+| **Anulación manual desde la aplicación** | El nodo ejecuta la anulación con su duración y expiración, y lo registra como `OverrideTriggered` | Un resident que enciende la luz manualmente y se olvida de apagarla es un caso normal; la anulación tiene fecha de expiración justamente para que no quede una luminaria encendida hasta que alguien se fije. |
+| **Sin broker** | El nodo sigue encendiendo y apagando por su regla local, el LED pasa a `Neutral` con parpadeo de 5 s y acumula la telemetría en memoria | Un corte de internet en la noche no puede dejar el área común a oscuras. La telemetría pendiente se publica al restablecerse el enlace, marcada como local. |
+| **Reinicio del nodo** | La luminaria queda apagada y el nodo vuelve a su regla en menos de un minuto | Con contacto NA, un reinicio accidental no enciende un área vacía a las tres de la mañana. |
+| **Batería de respaldo degradada** (en las instalaciones con respaldo) | LED ámbar, dos parpadeos lentos; la automatización sigue operando | `Atención` es el estado intermedio entre "todo bien" y "falla": el administrador necesita verlo antes de que sea una falla, y el resident no debe presenciarla como una alarma sobre una luz que sí funciona. |
+| **Lectura de lux inválida** (LDR desconectado) | No se enciende por presencia en ese punto; publica `stale: true` y el LED pasa a ámbar | El firmware no rellena con el último valor ni interpola: un umbral de lux aplicado sobre una lectura muerta enciende la luz de día, que es el peor modo de falla visible para la comunidad. |
+
+### 5.6.6. Dispositivo 03 — Nodo hidráulico de detección de fugas (HYD-01)
+
+#### Descripción y criterios de diseño
+
+El HYD-01 se instala en la bomba y la cámara de agua de una zona hidráulica. Mide caudal y presión, distingue una fuga real de un consumo legítimo fuera de horario, corta la bomba y emite la alerta. Es el nodo con la consecuencia más grave de los cuatro, y por eso es también el que concentra las decisiones de **C1** (cortar antes que inundar), **C2** (el corte no espera al cloud) y **C5** (está en un cuarto de máquinas, sin nadie que lo mire).
+
+Los criterios que lo gobiernan se refuerzan: un corte de bomba es una molestia discutible; una inundación en un departamento es un daño irreversible. Ante la duda, el diseño corta.
+
+#### Diseño físico
+
+La carcasa se monta en la pared de la cámara de agua, a la altura de la vista del operador de mantenimiento, con prensaestopa y entrada de cable con prensaestopa PG7 para que el agua no entre por el conector. A diferencia de los otros nodos, este puede tener un tono audible porque está en un espacio técnico y no en un pasillo: el criterio de 5.1.2 que limita el tono a tres casos se cumple íntegro, pero el tono de corte automático se emite sin silenciamiento nocturno, porque un corte de bomba a las 3 a. m. sí requiere que alguien lo sepa.
+
+| Elemento | Cota / material | Razón de la decisión |
+| :--- | :--- | :--- |
+| Carcasa | IP54, con prensaestopa PG7 y junta | El cuarto de máquinas tiene humedad y goteo occasional; un nodo sin protección falla por entrada de agua y arrastra a la bomba. |
+| Sensor de caudal | En la línea de impulsión, aguas arriba de la bomba | Medir el caudal que llega a la bomba es lo que permite distinguir una demanda real de una fuga en la línea. |
+| Sensor de presión | En la toma de aspiración | Una caída de presión sin caudal correspondiente es lo que marca la bomba como `FAULT`, según `LeakDetectionService`. |
+| LED y buzzer | En el frente, visibles desde el acceso | El operador de mantenimiento debe ver el estado sin entrar al cuarto. |
+| Etiqueta | Con la zona hidráulica y el ID de la bomba | `LeakAlert` se crea sobre una bomba concreta; la alerta sin ubicación no es accionable. |
+
+#### Diseño de circuito
+
+| Componente | Función | Nota de diseño |
+| :--- | :--- | :--- |
+| **ESP32 DevKit V1** | Lectura, comparación contra umbrales, corte y publicación | Aplica localmente `LeakDetectionService`: caudal sobre umbral fuera de la franja esperada, sostenido más de `minDeviationMinutes`, se declara fuga. |
+| **Sensor de caudal con salida de pulsos** | Caudal instantáneo | Se conecta por interrupción: el firmware cuenta pulsos por intervalo en lugar de leer un ADC, porque el sensor no tiene salida analógica y porque contar pulsos en el flanco es la forma de no perder los eventos que la bomba genera. |
+| **Sensor de presión analógico** | Presión de la línea | Al **ADC1**, con la misma restricción de canal que el LGT-01. |
+| **Relé de corte de la bomba** | Interrumpe la alimentación de la bomba | Se acciona por **pulsos**, no por nivel mantenido: el corte tiene que funcionar también con la alimentación de la bomba en el mismo circuito que el nodo. |
+| **Buzzer piezo** | Fuga detectada y corte automático | Uno de los tres casos que 5.1.2 autoriza a hacer sonar. |
+| **WS2812B** | Estado de la bomba y de la línea | Código completo de 5.1.2. |
+| **Alimentación con respaldo** | Batería de respaldo del nodo | El corte de bomba por lectura local tiene que funcionar aunque se caiga la red eléctrica, no solo si se cae el internet. |
+
+La decisión de circuito que distingue a este nodo es el **corte por lectura local, no por comando remoto**. La arquitectura ya resolvió que `FlowReadingReceived` lo publica el Edge API y no Telemetry, priorizando la latencia de corte sobre la interpretación de dominio. Traducido al hardware, eso significa que el nodo no espera el comando `shutoff` del cloud: si su propia lectura supera el umbral durante el tiempo mínimo configurado, corta y publica el evento. El corte remoto sigue existiendo como redundancia —el administrador puede cortar desde la aplicación y el nodo obedece—, pero no es el mecanismo primario. Una inundación no espera el tiempo de un viaje de ida y vuelta a los servidores, y un nodo que solo cortara por comando remoto habría convertido la arquitectura offline-first en decorativa.
+
+#### Flujos de interacción que cubre el prototipo
+
+| Paso | Disparador | Decisión | Respuesta física | Verificación observable |
+| :--- | :--- | :--- | :--- | :--- |
+| 1 | Consumo legítimo dentro de la franja esperada | Caudal bajo el umbral | LED verde fijo = normal | La curva de caudal en el dashboard sigue el perfil de uso |
+| 2 | Caudal sobre el umbral fuera de la franja | Comienza el conteo de `minDeviationMinutes` | LED violeta intermitente = evaluando | El `Serial Monitor` imprime el tiempo de desviación acumulado |
+| 3 | La desviación se sostiene más de `minDeviationMinutes` | Declara fuga, corta la bomba | LED rojo con tres parpadeos rápidos + tono; relé de corte en menos de 500 ms | El relé de Wokwi se abre; se publica `LeakDetected` y `PumpShutOff` |
+| 4 | El administrador revisa y cierra la alerta | Registra la resolución | LED verde fijo = normal | `LeakResolved` publica; la alerta sale de la lista abierta |
+| 5 | Presión cae sin caudal correspondiente | Marca la bomba `FAULT` | LED rojo + tono | La bomba aparece como `FAULT` en el inventario |
+
+**Caminos infelices:**
+
+| Situación | Comportamiento diseñado | Razón |
+| :--- | :--- | :--- |
+| **Consumo legítimo nocturno** (una familia se ducha tarde) | La franja esperada y el umbral por zona evitan la falsa alarma; si aun así llegara a dispararse, la `LeakAlert` queda `OPEN` y el administrador puede resolverla sin que la bomba se haya detenido por un segundo | Una falsa alarma que apaga la bomba entrena al administrador a ignorar las alertas, que es el peor resultado posible para una fuga real. La separación entre `LOW`, `MEDIUM` y `HIGH` existe para que solo `HIGH` corte de inmediato. |
+| **Corte de la alimentación eléctrica** | El respaldo del nodo mantiene la lectura y el corte local; al restablecerse, publica el evento acumulado | El corte de bomba por lectura local tiene que ser independiente de la red, no solo del internet. |
+| **El sensor de caudal falla (no emite pulsos)** | No se declara ni fuga ni normalidad: publica `stale: true` y el LED pasa a ámbar | La ausencia de lectura se declara como ausencia. Un firmware que asumiera "sin pulsos = sin caudal" apagaría la bomba en cada falla del sensor. |
+| **Fuga lenta, por debajo del umbral durante minutos** | `minDeviationMinutes` y la línea base por zona evitan el disparo por ruido; el resto se cubre con analítica, no con corte | El corte es para la fuga evidente; la fuga lenta se detecta en el dashboard por tendencia, que es donde el costo de equivocarse es menor. |
+| **Apertura forzada de la caja del nodo** | Reed antimanipulación en la misma caja, publicado como parte del estado del dispositivo | Un nodo del cuarto de máquinas que puede ser abierto sin dejar rastro no es confiable para una función de seguridad hydraulic. |
+
+### 5.6.7. Dispositivo 04 — Medidor de consumo energético (PWR-01)
+
+#### Descripción y criterios de diseño
+
+El PWR-01 mide el consumo de las luminarias y de los equipos comunes de las áreas que las consumen, y es el dispositivo que alimenta el cálculo de kWh, las estadísticas y la detección de anomalías del contexto IoT Telemetry & Analytics. A diferencia de los otros tres nodos, **no actuá**: no enciende ni apaga nada. Su única salida es la lectura.
+
+Los criterios que lo gobiernan son **C5** (consumo y ausencia total de mantenimiento en el punto de medición), **C6** (la pinza de corriente es el único punto de contacto con el conductor energizado) y **C4** (el valor que publica es el mismo que muestra la tarjeta, con su marca de tiempo).
+
+#### Diseño físico
+
+El PWR-01 se monta en el tablero del cuadro eléctrico del área, o en el tablero de la bomba cuando corresponde. La carcasa es más cerrada que la de los otros nodos, porque no hay ninguna superficie de interacción que proteger: no hay LED de estado para el resident ni contactless que esperar. Aun así conserva el LED en estado `Warning` de batería baja cuando la instalación usa respaldo, y la etiqueta con el ID del medidor, porque el inventario de telemetría lista medidores por ubicación igual que lista luminarias.
+
+| Elemento | Cota / material | Razón de la decisión |
+| :--- | :--- | :--- |
+| Ventana de la pinza | Ø 12 mm, para conductores de hasta 12 mm | La pinza se cierra alrededor del conductor sin cortar ni pelar el cableado del edificio. |
+| Posición de la pinza | En la fase, a 10 cm del borne | Evita medir la caída de tensión del propio cable de conexión y mantiene la lectura estable. |
+| LED | `Warning` de batería baja, cuando hay respaldo | Único estado que el PWR-01 necesita poder mostrar: el resto se lee en el dashboard. |
+| Etiqueta | Con el ID del medidor y la zona | La anomalía se reporta por zona, no por nodo. |
+
+#### Diseño de circuito
+
+| Componente | Función | Nota de diseño |
+| :--- | :--- | :--- |
+| **ESP32 DevKit V1** | Muestreo, integración y publicación | Publica por evento y con un heartbeat de 60 s, igual que los otros nodos, para que la tarjeta del dispositivo pueda calcular la antigüedad de la lectura. |
+| **ACS712 5 A** | Corriente RMS de la zona | Salida analógica al **ADC1**; el cálculo de kWh lo hace el microservicio de telemetría, no el nodo. |
+| **WS2812B** | Estado de batería del respaldo | Solo para instalaciones con respaldo. |
+| **Pulsador** | Reinicio de fábrica del contador acumulado | Sellado igual que en los otros nodos; reinicia la energía acumulada, no la configuración. |
+| **Alimentación** | Derivación del propio cuadro | El medidor no necesita alimentación propia: se alimenta de la línea que mide. |
+
+La decisión que define a este nodo es **dónde se calcula el kWh**. El nodo mide corriente y la publica; el servidor la agrega en ventanas de tiempo. Concentrar el cálculo en el nodo obligaría a cada dispositivo a mantener la línea base y el modelo de consumo, y a sincronizar ese modelo con el servidor en cada cambio de regla, con el riesgo de que dos copias del cálculo diverjan. El cálculo en el servidor mantiene una sola verdad del consumo y deja al nodo con la única tarea que no puede fallar sin que se note, que es medir bien.
+
+#### Flujos de interacción que cubre el prototipo
+
+| Paso | Disparador | Decisión | Respuesta | Verificación observable |
+| :--- | :--- | :--- | :--- | :--- |
+| 1 | Corriente estable en la zona | Muestreo periódico | Publica `{ma, ts}` | La serie de consumo crece en el dashboard |
+| 2 | Consumo por encima de la línea base del área | Se evalúa la desviación | LED violeta intermitente = evaluando | Se publica el evento; el `Serial Monitor` imprime la desviación |
+| 3 | Anomalía confirmada | IoT Telemetry crea `AnomalyFlag` | LED `Danger` | `AbnormalConsumptionDetected` aparece en el panel de anomalías |
+| 4 | Normalización del consumo | La anomalía se cierra | LED verde fijo = normal | La serie vuelve a la línea base |
+
+**Caminos infelices:**
+
+| Situación | Comportamiento diseñado | Razón |
+| :--- | :--- | :--- |
+| **Conductor sin corriente** | Publica 0 mA con marca de tiempo válida; no es una lectura ausente | Un cero es un dato. La distinción entre "no hay consumo" y "no sé el consumo" es la misma que la tarjeta de la interfaz necesita para no presentar un vacío como si fuera un resultado. |
+| **Pinza abierta o mal cerrada** | Publica `stale: true` y LED ámbar | Es el modo de falla más común de una pinza de corriente, y el más silencioso: sin la marca de `stale`, el dashboard mostraría un cero perfecto durante horas. |
+| **Pico de corriente por arranque de la bomba** | Se integra como lectura normal; el filtro no descarta picos | Descartar picos "para limpiar la serie" produce un consumo subestimado justo cuando hay una anomalía real; la limpieza se hace en el análisis, no en la medida. |
+| **Sin broker** | El nodo acumula en memoria y publica al restablecerse, con marca de "local" | Criterio C2 aplicado a la lectura: la pérdida del enlace no interrumpe la medición, solo su visibilidad inmediata. |
+| **Alimentación interrumpida** | Con respaldo, el nodo sigue midiendo y avisa con LED ámbar cuando la batería baja | Sin respaldo, la lectura se declara ausente en lugar de congelarse en el último valor, porque un valor congelado en vivo es la forma más rápida de perder la confianza del usuario en todo el panel. |
+
+### 5.6.8. Verificación de los prototipos y presupuestos de respuesta
+
+Los cuatro prototipos se construyeron en Wokwi sobre ESP32 DevKit V1, con los sensores y actuadores reales del diseño, y se ejercitaron contra los flujos descritos en cada dispositivo. La verificación no se limita a "funciona": se contrasta contra los presupuestos de respuesta fijados en 5.1.2, porque esos tres números son la diferencia entre una alarma creíble y una alarma que el usuario aprende a ignorar.
+
+| Presupuesto de 5.1.2 | Valor | Verificación en el prototipo | Dispositivo donde es crítico |
+| :--- | :--- | :--- | :--- |
+| **El LED confirma la intención** | ≤ 200 ms | Con el MFRC522 leyendo la UID, el WS2812B cambia a violeta intermitente antes de los 200 ms | ACC-01, LGT-01 |
+| **El relé completa la acción física** | ≤ 500 ms | El relé de Wokwi conmuta dentro de la ventana, medido entre la decisión del firmware y el cambio de estado del contacto | ACC-01, HYD-01, LGT-01 |
+| **El tono llega antes de un segundo** | < 1 s | El buzzer suena dentro del segundo en el caso de apertura forzada, corte de bomba y fuga | ACC-01, HYD-01 |
+| **El LED baja al 10 % sin apagarse entre 23:00 y 06:00** | Verificado por inspección de firmware | La atenuación se aplica al brillo, nunca al estado: el LED apagado no codifica ningún estado | Todos |
+| **Sin broker, el nodo conserva el último estado y sigue operando** | Verificado desconectando el broker en la simulación | La caché en NVS y SPIFFS permite operar y encolar la telemetría | Todos |
+| **El mensaje distingue valor ausente de valor cero** | Verificado en el `Serial Monitor` | El campo `stale` acompaña a cualquier lectura que no provenga del sensor | PWR-01, HYD-01, LGT-01 |
+
+Estos presupuestos son, además, el criterio con el que se evalúa el firmware antes de cada despliegue. Un cambio que agregue un retardo perceptible al LED o al relé no es una regresión de rendimiento sino un cambio de comportamiento de la interfaz física, y se trata como tal: se mide contra la tabla, no contra una sensación.
+
+### 5.6.9. Trazabilidad con las historias de usuario
+
+El diseño de los dispositivos no introduce funcionalidades nuevas: materializa las que ya están especificadas. La correspondencia completa está en TS16 y TS17, que fijan el registro y la comunicación de los dispositivos ESP32 por MQTT.
+
+| Historia | Requisito que fija el dispositivo | Dispositivo y decisión de diseño que lo satisface |
+| :--- | :--- | :--- |
+| **TS16**, escenario 1 | Registrar el dispositivo con tipo, ubicación y edificio; queda `INACTIVO` hasta su primera conexión | Los cuatro nodos declaran su ID, tipo y ubicación en la etiqueta (C7) y no publican estado hasta conectar con el broker, de modo que el inventario de la aplicación y el objeto físico coincidan. |
+| **TS16**, escenario 2 | Heartbeat periódico actualiza el estado a `ACTIVO` y la marca de última conexión | Heartbeat de 60 s en los cuatro nodos, que es el mismo dato con el que la tarjeta de la interfaz calcula la antigüedad de la lectura. |
+| **TS16**, escenario 3 | Ausencia de heartbeat marca `OFFLINE` y notifica al administrador | El LED pasa a `Neutral` con un parpadeo cada 5 s y el sistema no finge normalidad: la ausencia se declara como ausencia, en el objeto y en la pantalla. |
+| **TS17**, escenario 1 | Recibir lecturas por MQTT y evaluar el umbral en menos de 500 ms | El umbral se evalúa localmente (C2) y el corte de la bomba ocurre dentro de la ventana de 500 ms, sin esperar la ida y vuelta al cloud. |
+| **TS17**, escenario 2 | Recibir comandos de actuación y confirmar con un ACK | Los nodos suscribidos a `cmd` ejecutan el comando y publican el estado resultante; el comando manual desde la aplicación es la excepción controlada a la regla de "una sola acción primaria por pantalla", con confirmación en la vista de detalle. |
+| **TS17**, escenario 3 | Pérdida del broker marca `OFFLINE`, descarta comandos pendientes y notifica sin afectar a los demás dispositivos | La caché local por nodo permite que cada dispositivo siga operando de forma independiente; un nodo sin enlace no arrastra a los demás, y los comandos pendientes hacia él se descartan en lugar de acumularse. |
 
 # Capítulo V: Solution UI/UX Design
 
