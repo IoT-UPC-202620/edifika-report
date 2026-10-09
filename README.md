@@ -6373,6 +6373,220 @@ El diseño de los dispositivos no introduce funcionalidades nuevas: materializa 
 
 ### 6.1.1. Software Development Environment Configuration
 
+Antes de comenzar, es importante definir claramente los requisitos de la plataforma EDIFIKA. Esto incluye las funcionalidades relacionadas con la gestión de usuarios, autenticación, acceso al sistema, presentación del producto mediante la Landing Page y futura integración con los demás módulos de la solución.
+
+#### Project Management
+
+##### Trello
+
+**Propósito de Uso:**  
+Gestión de tareas del equipo, seguimiento de actividades, organización del flujo de trabajo del proyecto y control del avance de las funcionalidades desarrolladas para EDIFIKA.
+
+**Ruta de Referencia/Descarga:**  
+Trello (SaaS)
+
+<img src="assets/img/trello.png" alt="context" width="200"/>
+
+*Figura 52. Plataforma Trello utilizada para la gestión y organización de tareas del proyecto EDIFIKA (Trello, s.f.).*
+
+
+#### Team Communication
+
+##### Discord
+
+**Propósito de Uso:**  
+Comunicación interna del equipo, coordinación de reuniones, resolución de dudas, revisión de avances y organización de acuerdos relacionados con el desarrollo de EDIFIKA.
+
+**Ruta de Referencia/Descarga:**  
+Discord (SaaS / Aplicación de escritorio)
+
+<img src="assets/img/discord.png" alt="context" width="200"/>
+
+*Figura 53. Plataforma Discord utilizada para la comunicación y coordinación interna del equipo de desarrollo de EDIFIKA (Discord, s.f.).*
+
+
+### Product UX/UI Design
+
+#### Figma
+
+**Propósito de Uso:**  
+Diseño de interfaces, wireframes, prototipos navegables y flujos visuales de la solución EDIFIKA. Se utiliza para definir la experiencia de usuario de la Landing Page y de las futuras interfaces del sistema.
+
+**Ruta de Referencia/Descarga:**  
+Figma (SaaS)
+
+<img src="assets/img/figma.png" alt="context" width="200"/>
+
+*Figura 54. Plataforma Figma utilizada para el diseño de interfaces, wireframes y prototipos visuales de la solución EDIFIKA (Figma, s.f.).*
+
+
+
+## Software Development
+
+### GitHub con GitFlow
+
+**Propósito de Uso:**  
+Control de versiones, colaboración entre desarrolladores, organización mediante ramas y almacenamiento del código fuente de los productos digitales de EDIFIKA, incluyendo la Landing Page, el Frontend Web Application y los Web Services.
+
+**Ruta de Referencia/Descarga:**  
+GitHub (SaaS)
+
+<img src="assets/img/github.png" alt="context" width="200"/>
+
+*Figura 55. Plataforma GitHub utilizada para el control de versiones y colaboración en el desarrollo de los productos digitales de EDIFIKA (GitHub, s.f.).*
+
+
+
+### IntelliJ IDEA
+
+**Propósito de Uso:**  
+Entorno de desarrollo utilizado para implementar el microservicio IAM de EDIFIKA, desarrollado con Java, Spring Boot y Maven. Permite gestionar la estructura del backend, ejecutar el proyecto, revisar dependencias y trabajar con archivos del proyecto Spring Boot.
+
+**Ruta de Referencia/Descarga:**  
+IntelliJ IDEA (Aplicación de escritorio)
+
+<img src="assets/img/intellidea.png" alt="context" width="200"/>
+
+*Figura 56. Entorno de desarrollo IntelliJ IDEA utilizado para la implementación del microservicio IAM basado en Spring Boot y Java (JetBrains, s.f.).*
+
+
+
+### Visual Studio Code
+
+**Propósito de Uso:**  
+Editor utilizado para trabajar con la Landing Page, documentación técnica, archivos Markdown, configuración del proyecto y apoyo en tareas de desarrollo frontend.
+
+**Ruta de Referencia/Descarga:**  
+Visual Studio Code (Aplicación de escritorio)
+
+
+<img src="assets/img/visualstudiocode.png" alt="context" width="200"/>
+
+*Figura 57. Editor Visual Studio Code utilizado para el desarrollo frontend, edición de archivos Markdown y documentación técnica del proyecto EDIFIKA (Microsoft, s.f.).*
+
+
+
+### Angular
+
+**Propósito de Uso:**  
+Framework utilizado para el desarrollo de la aplicación web frontend de EDIFIKA. Permite construir vistas, componentes, rutas, servicios y la comunicación con los microservicios backend.
+
+**Ruta de Referencia/Descarga:**  
+Angular Framework
+
+<img src="assets/img/angular.png" alt="context" width="200"/>
+
+*Figura 58. Framework Angular utilizado para el desarrollo de la aplicación web frontend de EDIFIKA (Angular, s.f.).*
+
+
+
+#### Spring Boot
+
+**Propósito de Uso:**  
+Framework utilizado para construir el microservicio IAM como Web Service backend, exponiendo endpoints REST para funcionalidades de autenticación, identidad y acceso.
+
+**Ruta de Referencia/Descarga:**  
+Spring Boot Framework
+
+<img src="assets/img/springboot.png" alt="context" width="200"/>
+
+*Figura 59. Framework Spring Boot utilizado para la construcción y despliegue del microservicio IAM de EDIFIKA (Spring, s.f.).*
+
+
+
+### Software Testing
+
+#### Postman
+
+**Propósito de Uso:**  
+Pruebas de APIs para verificar peticiones, respuestas y funcionamiento de los endpoints del microservicio IAM. Se utiliza para validar rutas de autenticación, registro, inicio de sesión y otros servicios relacionados con identidad y acceso.
+
+**Ruta de Referencia/Descarga:**  
+Postman (SaaS / Aplicación de escritorio)
+
+
+<img src="assets/img/postman.png" alt="context" width="200"/>
+
+*Figura 60. Plataforma Postman utilizada para realizar pruebas y validaciones de los endpoints REST del microservicio IAM (Postman, s.f.).*
+
+
+
+#### Swagger UI
+
+**Propósito de Uso:**  
+Documentación y prueba visual de los endpoints expuestos por el microservicio IAM. Permite observar las rutas disponibles del servicio backend desplegado en Render.
+
+**Ruta de Referencia/Descarga:**  
+Swagger UI integrado en el microservicio IAM
+
+<img src="assets/img/swagger.png" alt="context" width="200"/>
+
+*Figura 61. Herramienta Swagger UI utilizada para la documentación y prueba visual de los endpoints expuestos por el backend de EDIFIKA (Swagger, s.f.).*
+
+
+
+### Software Deployment
+
+#### GitHub Pages
+
+**Propósito de Uso:**  
+Despliegue de la Landing Page de EDIFIKA, permitiendo su visualización pública desde el repositorio del proyecto.
+
+**Ruta de Referencia/Descarga:**  
+GitHub Pages (SaaS)
+
+
+<img src="assets/img/githubpages.png" alt="context" width="200"/>
+
+*Figura 62. Plataforma GitHub Pages utilizada para el despliegue y visualización pública de la Landing Page de EDIFIKA (GitHub, s.f.).*
+
+
+
+#### Render
+
+**Propósito de Uso:**  
+Plataforma en la nube utilizada para desplegar el microservicio IAM de EDIFIKA. Permite ejecutar el backend desarrollado con Spring Boot, realizar despliegues desde GitHub y exponer públicamente los endpoints del servicio.
+
+**Ruta de Referencia/Descarga:**  
+Render (PaaS - Plataforma como Servicio)
+
+<img src="assets/img/render.png" alt="context" width="200"/>
+
+*Figura 63. Plataforma Render utilizada para el despliegue en la nube del microservicio IAM desarrollado para EDIFIKA (Render, s.f.).*
+
+
+
+### Software Documentation
+
+#### GitHub
+
+**Propósito de Uso:**  
+Almacenamiento, versionado y colaboración en la documentación técnica del proyecto. También permite organizar el código fuente, los README, guías de despliegue y archivos relacionados al desarrollo de EDIFIKA.
+
+**Ruta de Referencia/Descarga:**  
+GitHub (SaaS)
+
+
+<img src="assets/img/github.png" alt="context" width="200"/>
+
+*Figura 64. Plataforma GitHub utilizada para el almacenamiento y versionado de la documentación técnica y código fuente del proyecto EDIFIKA (GitHub, s.f.).*
+
+
+
+#### Visual Studio Code
+
+**Propósito de Uso:**  
+Edición de archivos Markdown y documentación técnica relacionada al proyecto. Se utiliza para estructurar y organizar información del producto, guías de instalación, despliegue y configuración.
+
+**Ruta de Referencia/Descarga:**  
+Visual Studio Code (Aplicación de escritorio)
+
+<img src="assets/img/visualstudiocode.png" alt="context" width="200"/>
+
+*Figura 65. Editor Visual Studio Code utilizado para la edición y organización de la documentación técnica y archivos Markdown del proyecto EDIFIKA (Microsoft, s.f.).*
+
+Con esta configuración, nuestro equipo puede colaborar de manera eficiente y gestionar el ciclo de vida completo del desarrollo de EDIFIKA, desde la planificación y diseño hasta el desarrollo, pruebas, documentación, despliegue y mantenimiento.
+
 Esta subsección registra las herramientas utilizadas para desarrollar el **Edge Gateway** (servicio Edge del proyecto). Las herramientas de los demás productos digitales (Landing Page, Web Services, Web Applications y Mobile Applications) se agregan en este mismo cuadro conforme se incorporan.
 
 | Producto de software | Versión | Propósito en el proyecto | Referencia |
@@ -6391,6 +6605,180 @@ Esta subsección registra las herramientas utilizadas para desarrollar el **Edge
 | GitHub | — | Control de versiones y repositorio del Edge Gateway | https://github.com/ |
 
 ### 6.1.2. Source Code Management
+
+En esta sección, nuestro equipo establece los medios y el esquema de organización que aplicará para el seguimiento de modificaciones, utilizando **GitHub** como plataforma y sistema de control de versiones. De esta manera, configuramos repositorios remotos para almacenar el código fuente de EDIFIKA y colaborar entre los miembros del equipo.
+
+### Plataforma de control de versiones
+
+El equipo utiliza GitHub para almacenar los productos digitales de EDIFIKA. Los repositorios se organizan según el tipo de producto desarrollado:
+
+- **Landing Page:** contiene el sitio web informativo de EDIFIKA desplegado mediante GitHub Pages.
+- **Frontend Web Application:** contiene la aplicación web desarrollada con Angular.
+- **Backend Web Services:** contiene los microservicios backend, incluyendo el microservicio IAM desarrollado con Java, Spring Boot y Maven.
+
+Los URLs de los repositorios son los siguientes:
+
+- **Landing Page:**  
+  `https://github.com/Condomia/Edifika-LandingPage`
+
+
+- **Backend Web Services - IAM Microservice:**  
+  `https://github.com/Condomia/Edifika-Microservice-IAM`
+
+URLs de despliegue actualmente disponibles:
+
+- **Landing Page:**  
+  `https://condomia.github.io/Edifika-LandingPage/#cta`
+
+- **IAM Microservice - Swagger UI:**  
+  `https://edifika-microservice-iam.onrender.com/swagger-ui/index.html#/`
+
+En el caso de **Web Services**, el repositorio incluye el proyecto backend del microservicio IAM, su configuración Maven mediante el archivo `pom.xml`, el código fuente en la carpeta `src`, los archivos de pruebas y, cuando corresponda, los archivos `.feature` para escenarios definidos con Gherkin.
+
+
+
+### Implementación de GitFlow
+
+Organizamos el repositorio en ramas para diferentes entornos de trabajo. Para ello, el equipo aplica GitFlow como flujo de control de versiones, separando el código estable, el código en desarrollo, las nuevas funcionalidades, las versiones de lanzamiento y las correcciones urgentes.
+
+## Ramas base
+
+### Main branch
+
+Contiene la versión estable del producto. Esta rama representa el código listo para producción o despliegue. En el caso de EDIFIKA, puede contener la versión desplegada de la Landing Page o del microservicio IAM.
+
+##### Develop branch
+
+Contiene el código en desarrollo, que eventualmente será fusionado en la rama principal. En esta rama se integran las funcionalidades terminadas antes de preparar una nueva versión estable.
+
+
+
+#### Feature branches
+
+##### Feature branch
+
+Para cada funcionalidad nueva se crea una rama desde `develop`.
+
+**Convención para el nombre:**
+
+```text
+feature/nombre-corto-descriptivo
+```
+
+Ejemplos:
+
+```text
+feature/landing-page
+feature/iam-authentication
+feature/user-registration
+feature/swagger-documentation
+feature/angular-login
+feature/postman-tests
+```
+
+
+
+## Release branches
+
+### Release branch
+
+Se crean cuando el proyecto está listo para pasar a producción desde `develop`.
+
+**Convención:**
+
+```text
+release/x.y.z
+```
+
+Ejemplos:
+
+```text
+release/1.0.0
+release/1.1.0
+```
+
+Estas ramas se utilizan para preparar una versión estable, realizar ajustes finales, corregir errores menores y validar que el producto pueda desplegarse correctamente.
+
+
+
+## Hotfix branches
+
+### Hotfix branch
+
+Se crean desde `main` para corregir errores críticos detectados en producción.
+
+**Convención:**
+
+```text
+hotfix/x.y.z
+```
+
+Ejemplos:
+
+```text
+hotfix/1.0.1
+hotfix/1.1.1
+```
+
+Estas ramas permiten solucionar fallos urgentes en la Landing Page o en el microservicio IAM sin afectar el desarrollo activo de nuevas funcionalidades.
+
+---
+
+### Versionado semántico - Semantic Versioning
+
+Aplicamos Semantic Versioning para nombrar nuestras releases siguiendo el esquema:
+
+```text
+MAJOR.MINOR.PATCH
+```
+
+| Parte | Significado |
+|---|---|
+| MAJOR | Cambios importantes que rompen compatibilidad con versiones anteriores, por ejemplo cambios en endpoints del microservicio IAM que afecten a otros módulos. |
+| MINOR | Nuevas funcionalidades agregadas de forma compatible, por ejemplo agregar un nuevo endpoint de autenticación sin romper los anteriores. |
+| PATCH | Correcciones de errores o bugs, sin agregar nuevas funciones ni romper lo que ya funciona. |
+
+Ejemplos:
+
+```text
+1.0.0
+1.1.0
+1.1.1
+```
+
+
+
+### Mensajes de commit con Conventional Commits
+
+Utilizamos Conventional Commits para los mensajes en nuestros commits.
+
+**Template:**
+
+```text
+<tipo>(<opcional-alcance>): <mensaje>
+```
+
+#### Tipos
+
+- `feat`: nueva funcionalidad.
+- `fix`: corrección de errores.
+- `docs`: cambios en la documentación.
+- `style`: cambios de estilo o formato sin afectar funcionalidad.
+- `refactor`: reestructuración del código sin cambios funcionales.
+- `test`: añadir o modificar pruebas.
+- `chore`: tareas de mantenimiento o configuración.
+
+Ejemplos:
+
+```text
+feat(iam): add sign in endpoint
+feat(iam): add user registration
+fix(iam): fix token validation
+docs(readme): update deployment instructions
+style(landing): fix landing header spacing
+test(auth): add login feature scenario
+chore(maven): update project dependencies
+```
 
 El código fuente se gestiona en GitHub, dentro de la organización pública del equipo. Cada producto digital tiene su propio repositorio, que incluye el proyecto y sus archivos de pruebas.
 
@@ -6416,6 +6804,348 @@ Cada historia o grupo de historias relacionadas se desarrolla en su propia rama 
 
 ### 6.1.3. Source Code Style Guide & Coding Conventions
 
+El equipo ha definido las siguientes convenciones de nombres y estilos de codificación, aplicadas en los lenguajes y tecnologías utilizados en la solución EDIFIKA. Todas las nomenclaturas están en inglés, buscando claridad, estandarización y buenas prácticas de desarrollo.
+
+### HTML
+
+**Guía adoptada:**  
+W3C HTML Style Guide
+
+**Nomenclatura y convenciones:**
+
+- Minúsculas para etiquetas y atributos.
+
+```html
+<div class="container">
+```
+
+- Indentación de 2 espacios.
+- Atributos entre comillas dobles.
+
+```html
+<img src="logo.png" alt="Edifika Logo">
+```
+
+- Uso semántico de etiquetas.
+
+```html
+<header>
+<section>
+<footer>
+```
+
+- Comentarios HTML.
+
+```html
+<!-- Main landing section -->
+```
+
+
+
+### CSS
+
+**Guía adoptada:**  
+Google HTML/CSS Style Guide
+
+**Nomenclatura y convenciones:**
+
+- `kebab-case` para clases e IDs.
+
+```css
+.main-header
+.footer-section
+.call-to-action
+```
+
+- Agrupación de estilos por componente o sección.
+- Evitar `!important` a menos que sea necesario.
+- Indentación de 2 espacios.
+- Nombres en inglés.
+
+Ejemplo:
+
+```css
+.call-to-action {
+  padding: 3rem 2rem;
+  text-align: center;
+}
+```
+
+
+
+### JavaScript
+
+**Guía adoptada:**  
+Google JavaScript Style Guide
+
+**Nomenclatura y convenciones:**
+
+- `camelCase` para variables y funciones.
+
+```javascript
+let userName = 'Admin';
+
+function validateForm() {}
+```
+
+- `PascalCase` para clases.
+
+```javascript
+class LandingAnimation {}
+```
+
+- Evitar `snake_case`.
+- Usar `const` y `let` en lugar de `var`.
+- Comentarios:
+
+```javascript
+// Validate landing form
+```
+
+```javascript
+/**
+ * Sends contact form data.
+ */
+function sendContactForm() {}
+```
+
+
+
+### TypeScript
+
+**Guía adoptada:**  
+Google TypeScript Style Guide
+
+**Nomenclatura y convenciones:**
+
+- `camelCase` para variables, funciones y propiedades.
+
+```ts
+let isActive: boolean = true;
+
+function getUserData() {}
+```
+
+- `PascalCase` para clases, interfaces, enums y tipos.
+
+```ts
+class LoginComponent {}
+
+interface UserDto {}
+
+enum UserRole {
+  Admin,
+  Resident
+}
+```
+
+- Tipado estricto habilitado cuando corresponda.
+- Interfaces nombradas con sufijo `Dto`, `Request`, `Response` o `Props`, según el caso.
+- Uso de modificadores `readonly`, `private` y `public` cuando sea necesario.
+- Nombres en inglés.
+
+
+
+### Java
+
+**Guía adoptada:**  
+Google Java Style Guide
+
+**Nomenclatura y convenciones:**
+
+- `PascalCase` para clases.
+
+```java
+public class AuthenticationService {}
+```
+
+- `camelCase` para variables, métodos y atributos.
+
+```java
+int totalUsers;
+
+calculateTotalUsers();
+```
+
+- Constantes en mayúsculas con `snake_case`.
+
+```java
+public static final int MAX_LOGIN_ATTEMPTS = 5;
+```
+
+- Comentarios tipo Javadoc.
+
+```java
+/**
+ * Gets the authenticated user information.
+ * @return authenticated user data
+ */
+public UserDto getAuthenticatedUser() {}
+```
+
+- Paquetes en minúsculas separados por punto.
+
+```java
+com.edifika.iam.authentication
+com.edifika.iam.users
+com.edifika.iam.security
+```
+
+
+
+### Gherkin Conventions for Readable Specifications
+
+**Guía adoptada:**  
+Gherkin Syntax and Conventions
+
+**Nomenclatura y convenciones:**
+
+- Estructura:
+
+#### Given
+
+Define el contexto o el estado inicial.
+
+#### When
+
+Define la acción o evento que ocurre.
+
+#### Then
+
+Define el resultado o la expectativa después de la acción.
+
+Ejemplo:
+
+```gherkin
+Feature: User login
+
+Scenario: Successful login with valid credentials
+  Given the user is registered in EDIFIKA
+  When the user enters valid credentials
+  Then the system should return an authentication token
+```
+
+- Uso de tablas para datos:
+
+```gherkin
+Given the following users exist:
+  | email              | password  | role          |
+  | admin@edifika.com  | pass123   | administrator |
+  | user@edifika.com   | pass456   | resident      |
+```
+
+
+### Angular Coding Style Guide
+
+**Guía adoptada:**  
+Angular Style Guide
+
+**Nomenclatura y convenciones:**
+
+- Estructura de carpetas:
+
+```text
+app/
+assets/
+environments/
+```
+
+- Organización por componentes, servicios, modelos y rutas.
+
+```text
+authentication/
+shared/
+core/
+```
+
+- Nombres de clases en `PascalCase`.
+
+```ts
+export class LoginComponent {}
+export class AuthenticationService {}
+```
+
+- Componentes Standalone cuando corresponda.
+
+```ts
+@Component({
+  selector: 'app-login',
+  standalone: true,
+  templateUrl: './login.component.html'
+})
+export class LoginComponent {}
+```
+
+- Indentación de 2 espacios.
+- Uso de `trackBy` en listas grandes cuando sea necesario.
+- Servicios con métodos en `camelCase`.
+
+```ts
+signIn()
+signUp()
+getCurrentUser()
+```
+
+
+
+### Spring Boot Features
+
+**Guía adoptada:**  
+Spring Boot Features
+
+**Nomenclatura y convenciones:**
+
+- Paquetes: el paquete raíz debe representar el proyecto y el bounded context o módulo.
+
+Ejemplo:
+
+```text
+com.edifika.iam
+```
+
+- Subpaquetes organizados por responsabilidad.
+
+```text
+com.edifika.iam.interfaces.rest
+com.edifika.iam.application.internal.commandservices
+com.edifika.iam.application.internal.queryservices
+com.edifika.iam.domain.model.aggregates
+com.edifika.iam.infrastructure.persistence.jpa.repositories
+```
+
+- Clases y métodos:
+
+```java
+public class UserController {}
+
+public ResponseEntity<?> signIn() {}
+```
+
+- Configuración mediante `application.properties` o variables de entorno.
+
+```properties
+server.port=${PORT}
+jwt.secret=${JWT_SECRET}
+```
+
+- Controladores REST:
+
+```java
+@RestController
+@RequestMapping("/api/v1/authentication")
+public class AuthenticationController {
+
+    @PostMapping("/sign-in")
+    public ResponseEntity<?> signIn(@RequestBody SignInRequest request) {
+        return ResponseEntity.ok().build();
+    }
+}
+```
+
+- Seguridad:
+
+Se utiliza JWT como mecanismo de seguridad para proteger endpoints y validar el acceso de los usuarios autenticados.
+
 Convenciones adoptadas para el código Python del Edge Gateway:
 
 | Aspecto | Convención |
@@ -6431,6 +7161,226 @@ Convenciones adoptadas para el código Python del Edge Gateway:
 | Commits y ramas | Conventional Commits y GitFlow (ver 6.1.2) |
 
 ### 6.1.4. Software Deployment Configuration
+
+Esta sección describe la configuración y los pasos necesarios para realizar el despliegue exitoso de los productos digitales desarrollados en EDIFIKA. Actualmente, la solución cuenta con la **Landing Page desplegada en GitHub Pages** y el **microservicio IAM desplegado en Render**.
+
+A continuación, se especifican los pasos para desplegar la Landing Page en GitHub Pages y los Web Services Backend en Render.
+
+
+
+## Despliegue de la Landing Page en GitHub Pages
+
+### Consideraciones previas al despliegue
+
+- Asegurarse de que todos los archivos de la Landing Page estén implementados correctamente en HTML, CSS y JavaScript.
+- Se permite el uso de distintos formatos de imagen como `.jpg`, `.png`, `.webp`, entre otros.
+- Contar con un repositorio público o privado en GitHub con los permisos adecuados para la edición y despliegue del sitio.
+- El repositorio debe pertenecer a una organización compartida entre los miembros del equipo para permitir la colaboración y control de versiones.
+- Verificar que la rama de despliegue contenga la versión estable de la Landing Page.
+
+## URL desplegada
+
+```text
+https://condomia.github.io/Edifika-LandingPage/#cta
+```
+
+## Pasos de despliegue
+
+### 1. Preparar el repositorio
+
+a. Asegurarse de que el código de la Landing Page esté en el repositorio correcto de GitHub.
+
+b. El repositorio debe contener todos los archivos estáticos necesarios:
+
+```text
+HTML
+CSS
+JavaScript
+Images
+Assets
+```
+
+### 2. Configurar GitHub Pages
+
+a. En el repositorio de GitHub, ir a la pestaña **Settings**.
+
+b. En la sección **Pages**, seleccionar la rama que se desea usar para desplegar el sitio. Generalmente, se usa la rama `main` o `gh-pages`.
+
+c. En la opción **Source**, seleccionar la carpeta del proyecto, usualmente `root` o `docs`, según la configuración del repositorio.
+
+d. Confirmar la configuración.
+
+### 3. Desplegar
+
+a. Una vez configurado, GitHub generará una URL en la sección GitHub Pages.
+
+b. El despliegue se realizará automáticamente con cada cambio realizado en la rama seleccionada, siempre que se realicen commits que actualicen el repositorio.
+
+### 4. Verificación
+
+a. Acceder a la URL proporcionada por GitHub Pages.
+
+b. Verificar que la Landing Page cargue correctamente.
+
+c. Validar que las imágenes, estilos, botones y secciones principales se muestren de forma adecuada.
+
+---
+
+### Despliegue de los Web Services Backend en Render
+
+El microservicio IAM de EDIFIKA se encuentra desplegado en Render. Este backend fue desarrollado con **Java, Spring Boot y Maven**, y expone documentación mediante Swagger UI.
+
+#### URL desplegada
+
+```text
+https://edifika-microservice-iam.onrender.com/swagger-ui/index.html#/
+```
+
+#### Consideraciones previas
+
+- Tener el proyecto Spring Boot correctamente estructurado.
+- Tener el archivo `pom.xml` configurado con las dependencias necesarias.
+- Verificar que el proyecto pueda ejecutarse localmente.
+- Tener el repositorio de GitHub con el código del proyecto.
+- No subir archivos sensibles al repositorio.
+- Configurar variables de entorno en Render, como claves JWT, credenciales de base de datos o configuración de puerto.
+- No subir el archivo `.jar` generado manualmente, ya que Render puede construirlo automáticamente desde el proyecto.
+
+Estructura recomendada:
+
+```text
+edifika-microservice-iam/
+├── pom.xml
+├── src/
+│   ├── main/
+│   │   ├── java/
+│   │   └── resources/
+│   └── test/
+├── README.md
+└── .gitignore
+```
+
+#### Pasos de despliegue
+
+### 1. Preparar el repositorio de GitHub
+
+Asegurarse de que el repositorio tenga:
+
+- `pom.xml`, configuración de Maven.
+- `src/`, código fuente.
+- `README.md`, instrucciones del proyecto.
+- `.gitignore`, para evitar subir archivos innecesarios.
+- Archivos `.feature`, si se usan pruebas de comportamiento con Gherkin.
+
+No subir el archivo `.jar` ni la carpeta `/target`, porque Render puede construir el proyecto automáticamente.
+
+### 2. Crear cuenta en Render
+
+a. Ir a Render.
+
+b. Registrarse o iniciar sesión con la cuenta de GitHub para facilitar la integración con el repositorio.
+
+### 3. Crear un Web Service
+
+a. En el dashboard de Render, hacer clic en **New +**.
+
+b. Seleccionar **Web Service**.
+
+c. Conectar la cuenta de GitHub si aún no está conectada.
+
+### 4. Vincular el repositorio
+
+a. Seleccionar el repositorio del microservicio IAM.
+
+b. Verificar que el repositorio corresponda al backend correcto de EDIFIKA.
+
+### 5. Configurar el servicio
+
+a. **Name:** colocar un nombre representativo, por ejemplo:
+
+```text
+edifika-microservice-iam
+```
+
+b. **Environment:** seleccionar Java.
+
+c. **Branch:** seleccionar la rama a desplegar, por ejemplo:
+
+```text
+main
+```
+
+d. **Root Directory:** dejar vacío si el proyecto está en la raíz del repositorio. Si está dentro de una carpeta específica, indicar la ruta correspondiente.
+
+e. **Build Command:**
+
+```bash
+mvn clean install
+```
+
+f. **Start Command:**
+
+```bash
+java -jar target/*.jar
+```
+
+### 6. Configurar variables de entorno
+
+Agregar las variables que la aplicación necesita para ejecutarse correctamente.
+
+Ejemplos:
+
+```text
+PORT
+DATABASE_URL
+JWT_SECRET
+SPRING_PROFILES_ACTIVE
+```
+
+Importante: nunca subir valores sensibles dentro de `application.properties` o `application.yml` si contienen credenciales, claves secretas o datos privados.
+
+### 7. Desplegar
+
+a. Hacer clic en **Create Web Service**.
+
+b. Render construirá el proyecto con Maven.
+
+c. Luego ejecutará el archivo `.jar` generado.
+
+d. Revisar los logs en tiempo real para verificar que el microservicio se haya iniciado correctamente.
+
+### 8. Verificar el despliegue
+
+a. Al finalizar, Render asignará una URL pública al servicio.
+
+b. Acceder al Swagger UI del microservicio IAM:
+
+```text
+https://edifika-microservice-iam.onrender.com/swagger-ui/index.html#/
+```
+
+c. Probar los endpoints desde Swagger UI o Postman.
+
+d. Si hay errores, revisar los logs en la pestaña **Logs** de Render.
+
+---
+
+### Deployment Diagram del C4 Model
+
+Como parte de la configuración de despliegue, el equipo incluye el **Deployment Diagram del C4 Model**, donde se representa la distribución física de los productos digitales de EDIFIKA.
+
+<img src="assets/img/edifika-deployment-c4.png" alt="context"/>
+
+*Figura 66. Deployment Diagram del C4 Model. Elaborado por el equipo utilizando Structurizr (Structurizr, s.f.).*
+
+Este diagrama considera:
+
+- La **Landing Page** desplegada en **GitHub Pages**.
+- El **microservicio IAM** desplegado en **Render**.
+- El uso de **GitHub** como repositorio de código fuente.
+- El acceso de los usuarios mediante navegador web.
+- La comunicación entre el frontend y el microservicio IAM mediante HTTP/HTTPS.
+
 
 El Edge Gateway se despliega con **Docker Compose**, junto con el broker MQTT y un backend simulado. La solución completa se levanta con un solo comando:
 
