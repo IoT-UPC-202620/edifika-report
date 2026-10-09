@@ -575,118 +575,144 @@ El crecimiento de la vivienda vertical en ciudades ha incrementado la cantidad d
 **Táctica:** Desarrollar un panel para consultar el estado de los dispositivos y sus eventos, establecer permisos de acceso según los roles autorizados e incorporar mecanismos de comunicación segura entre los componentes IoT y la plataforma.
 
 ## 2.2. Entrevistas
+
 ### 2.2.1. Diseño de entrevistas
 
-Para el diseño de las entrevistas se utilizó el método de entrevistas semiestructuradas, el cual combina un conjunto de preguntas predefinidas con la flexibilidad de profundizar en las respuestas del entrevistado según el contexto de la conversación. Este enfoque fue seleccionado porque permite recopilar información cualitativa sobre las experiencias, frustraciones y expectativas de los usuarios sin limitar sus respuestas a opciones cerradas. Las preguntas fueron formuladas de manera abierta para incentivar respuestas detalladas y se organizaron en dos guiones diferenciados, uno por cada segmento objetivo del proyecto, asegurando que cada entrevista aborde las problemáticas específicas del perfil entrevistado.
+Para el diseño de las entrevistas se utilizó el método de entrevistas semiestructuradas, el cual combina un conjunto de preguntas guía con la flexibilidad de profundizar en las respuestas del entrevistado según la dinámica de la conversación. Este enfoque permite recopilar información cualitativa sobre experiencias, hábitos, ineficiencias operativas y expectativas de los usuarios, sin condicionar sus respuestas mediante opciones cerradas o sesgadas. 
 
-1. Segmento: Administradores de edificios y condominios
+Las preguntas fueron redactadas de manera abierta e inductiva para incentivar respuestas narrativas y reflexivas. El instrumento se estructuró en dos guiones diferenciados según los segmentos objetivo del proyecto, abordando tanto la gestión administrativa y financiera tradicional como la supervisión y vivencia en torno a la infraestructura e innovaciones tecnológicas aplicadas a control de accesos inteligentes, sensores de iluminación y sistemas de riego automatizado.
 
-- ¿Cuántos edificios administran actualmente y cómo llevan hoy la gestión del día a día?
+#### 1. Segmento: Administradores de edificios y condominios
 
-- ¿Qué herramientas o sistemas utilizan para gestionar los pagos y deudas de todos sus edificios?
+- ¿Cuántos inmuebles administran actualmente y cómo coordinan las tareas operativas cotidianas?
+- ¿Qué procedimientos y herramientas emplean actualmente para la cobranza, registro contable y conciliación de cuotas de mantenimiento?
+- ¿Cómo se realiza la gestión y control de las reservas de áreas comunes entre los edificios a su cargo?
+- ¿De qué manera emiten los comunicados oficiales y cómo comprueban que todos los residentes han tomado conocimiento?
+- ¿Cuál es la tarea que más tiempo y recursos consume en la rutina de su equipo de trabajo?
+- ¿Cuáles son los motivos más comunes por los que surgen quejas o desconfianza por parte de las juntas de propietarios?
+- ¿Qué experiencia han tenido al evaluar o implementar software especializado para condominios y cuáles fueron los principales obstáculos encontrados?
+- ¿Qué criterios y requerimientos funcionales son determinantes al momento de decidir la adopción de una solución tecnológica unificada?
+- ¿Bajo qué modelos de tarifación o rangos de inversión operan habitualmente para la contratación de herramientas digitales?
+- ¿Cómo supervisan actualmente la seguridad en portería, el ingreso de visitantes externos y las autorizaciones para mudanzas o proveedores?
+- ¿Cómo gestionan el consumo eléctrico en zonas comunes (pasadizos, estacionamientos, escaleras) y cómo evalúan la integración de sensores de iluminación inteligentes?
+- ¿De qué manera monitorean el mantenimiento y riego de las áreas verdes y jardines, y qué impacto tendría supervisar un sistema de riego automático desde un panel centralizado?
+- ¿Qué tan relevante resulta para su administración contar con un registro y monitoreo centralizado de cerraduras inteligentes, sensores de luz y riego automático sin sobrecargar al residente con tareas técnicas?
 
-- ¿Cómo coordinan las reservas de áreas comunes en los distintos edificios que administran?
+---
 
-- ¿De qué manera envían avisos oficiales a los residentes y cómo verifican que la información llegó a todos?
+#### 2. Segmento: Propietarios e Inquilinos
 
-- ¿Cuál es el proceso más tedioso que quisieran eliminar de su operación diaria?
+- ¿Cómo se le notifica usualmente el desglose de su cuota de mantenimiento y las novedades del edificio?
+- ¿Cómo describe su experiencia al momento de abonar la cuota mensual y hacer llegar el sustento de pago a la administración?
+- ¿Dónde o de qué manera puede revisar su histórico de pagos cuando necesita contrastar cobros pasados?
+- ¿Qué inconvenientes ha experimentado al querer solicitar o usar un área común del edificio?
+- ¿Cómo percibe la claridad y rendición de cuentas sobre los gastos, compras y fondos de reserva del condominio?
+- ¿A través de qué canales prefiere recibir la información formal del edificio y qué situaciones le generan saturación en canales informales (como chats grupales)?
+- ¿Cuál es el trámite o gestión con la administración que considera más demorado o poco práctico?
+- ¿Qué aspectos considera indispensables en un canal digital para gestionar los temas de su vivienda?
+- ¿Cómo califica la agilidad y seguridad al momento de autorizar visitas, delivery o mudanzas en el acceso principal de su edificio?
+- ¿Qué fallas o molestias identifica en la iluminación de pasadizos, cocheras o escaleras comunes, y cómo valora el funcionamiento de luces automáticas por detección de movimiento?
+- ¿Cuál es su percepción sobre el cuidado de las áreas verdes del condominio y el impacto del riego en el uso eficiente del agua del edificio?
+- Si el edificio contara con cerraduras digitales seguras, iluminación automática y riego optimizado, ¿cómo prefiere que la administración gestione estos sistemas sin que usted deba preocuparse por labores técnicas o configuraciones complejas?
 
-- ¿Qué tan seguido reciben quejas de residentes por falta de información o transparencia?
-
-- ¿Han evaluado antes algún software de administración? Si es así, ¿qué fue lo que no les convenció?
-
-- ¿Qué tan probable sería para su empresa migrar toda la gestión a una sola plataforma digital?
-
-- ¿Qué tendría que tener una plataforma para que su empresa la adopte sin dudarlo?
-  
-- ¿Cuánto estarían dispuestos a pagar mensualmente por una herramienta que centralice toda su gestión?
-
-2. Segmento: Propietarios e Inquilinos
-
-- ¿Cómo se entera hoy de sus saldos pendientes de mantenimiento y de las noticias de su edificio?
-
-- ¿Qué tan fácil o difícil le resulta realizar el pago y enviar el comprobante de mantenimiento?
-
-- ¿Dónde puede consultar su historial de pagos si necesita verificar un cobro antiguo?
-
-- ¿Ha tenido problemas para reservar áreas comunes por falta de claridad en los horarios?
-
-- ¿Siente que la administración es transparente con el uso del dinero y los gastos del edificio?
-
-- ¿Qué tan rápido recibe respuesta cuando tiene una duda o necesita un comunicado importante?
-
-- ¿Cuál es el canal de comunicación que más le molesta o le satura (ej. grupos de WhatsApp)?
-
-- ¿Qué trámite del edificio le parece el más anticuado o el que más le quita tiempo?
-
-- ¿Estaría dispuesto a gestionar sus pagos y cuotas en una sola aplicación móvil?
-
-- Si pudiera cambiar una sola cosa de la gestión de su condominio, ¿qué sería?
-
+---
 
 ### 2.2.2. Registro de entrevistas
 
-
-**Segmento objetivo: Administradores de edificios y condominios:**
+#### Segmento objetivo: Administradores de edificios y condominios
 
 | **ENTREVISTA 1** | |
-|------------------|----------------------------|
-| **Nombre entrevistado** |  Cesar Villalobos  |
-| **Edad** | 51 |
-| **Departamento** | Cercado de Lima  |
-| **Link del video** | [Link del video de la entrevista](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202310358_upc_edu_pe/IQDEXx-uGk1tS71xXaDeSeDeAf3fEODmStVZKztx7vcr0i8?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=5V6W7o) |
-| **Foto entrevista** |   <img src="assets/img/interviews/admin1.png" alt="logo" />|
-| **Resumen** | César es administrador de edificios en GWM EIRL y actualmente gestiona 15 edificios usando Excel con macros como herramienta principal, apoyándose en WhatsApp para coordinar reservas y comunicaciones, y en las páginas de los bancos para pagos. El proceso más tedioso es la emisión de recibos, que aún se hace de forma física en varios edificios y que desea digitalizar al 100%. Ha evaluado entre 3 y 4 sistemas sin éxito, ya que todos presentaban exceso de información que generaba confusión en los propietarios y una percepción de desorden o falta de transparencia. Como empresa tiene el objetivo claro de migrar a una plataforma digital, y considera que una app o sistema web mejoraría significativamente la comunicación y la gestión, siempre que sea ágil, ordenada, fácil de entender y con información siempre actualizada. En cuanto al precio, conoce el mercado y sabe que el rango habitual oscila entre 2 y 5 dólares por unidad al mes. |
+|---|---|
+| **Nombre entrevistado** | César Villalobos |
+| **Edad** | 51 años |
+| **Distrito** | Cercado de Lima |
+| **Fecha y hora** | 12 de septiembre de 2026 – 10:30 p. m. |
+| **Duración** | 00:06:48 |
+| **Link del video** | [Ver video de la entrevista](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202310358_upc_edu_pe/IQDEXx-uGk1tS71xXaDeSeDeAf3fEODmStVZKztx7vcr0i8?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=5V6W7o) |
+| **Foto entrevista** | <img src="assets/img/interviews/admin1.png" alt="César Villalobos" /> |
+| **Resumen** | César administra 15 edificios en GWM EIRL apoyándose en hojas de cálculo con macros, WhatsApp y banca online. Explica que la impresión y distribución física de avisos de cobranza es el proceso más engorroso de su rutina. Ha descartado software previo por su interfaz sobrecargada, la cual creaba confusión en las juntas vecinales. En el aspecto de infraestructura e IoT, resalta la necesidad de supervisar el control de accesos en portería mediante cerraduras inteligentes que generen bitácoras digitales, ya que los libros de visitas en papel suelen perderse o ser adulterados. Respecto a la eficiencia energética y áreas comunes, considera muy ventajoso auditar centralmente el estado de sensores de iluminación y programaciones de riego automático, dado que muchas quejas vecinales derivan del alto gasto eléctrico por luces encendidas innecesariamente o del mal aspecto de jardines por descuido del personal. Afirma que el administrador debe retener el control exclusivo de los registros y configuraciones de estos dispositivos, ofreciendo a los propietarios solo el beneficio directo sin saturarlos con aspectos técnicos. Considera aceptable una tarifa de entre 2 y 5 USD mensuales por departamento. |
 
 | **ENTREVISTA 2** | |
 |---|---|
 | **Nombre entrevistado** | Alejandro Galindo |
-| **Edad** | 26 |
-| **Departamento** | San Miguel |
-| **Link del video** |[Link del video de la entrevista](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202321281_upc_edu_pe/IQAW5DBOyn8xS6ZiZVZwufEIAU9yh_7P6mIIpJ_RzxJp6is?e=kLEW30&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D)|
-| **Foto entrevista** |<img src="assets/img/alejandro.jpeg" alt="logo" /> |
-| **Resumen** | El administrador Alejandro Galindo gestiona 4 edificios utilizando principalmente Excel, WhatsApp y registros manuales. Su principal problema es el seguimiento de pagos y la falta de confirmación sobre la recepción de comunicados. Considera viable adoptar una plataforma digital siempre que centralice pagos, comunicaciones y reservas, y tenga un costo accesible. |
+| **Edad** | 26 años |
+| **Distrito** | San Miguel |
+| **Fecha y hora** | 13 de septiembre de 2026 – 04:00 p. m. |
+| **Duración** | 00:02:26 |
+| **Link del video** | [Ver video de la entrevista](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202321281_upc_edu_pe/IQAW5DBOyn8xS6ZiZVZwufEIAU9yh_7P6mIIpJ_RzxJp6is?e=kLEW30&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D) |
+| **Foto entrevista** | <img src="assets/img/alejandro.jpeg" alt="Alejandro Galindo" /> |
+| **Resumen** | Alejandro tiene a su cargo 4 edificios y opera bajo métodos mayormente manuales: hojas de cálculo para cobros y chats de mensajería instantánea para notificaciones y reservas. Manifiesta que el seguimiento manual de depósitos bancarios genera retrasos y constantes reclamos por recibos no conciliados a tiempo. En relación con las instalaciones de los inmuebles, resalta que la gestión de portería es un punto crítico: validar accesos con llaves tradicionales o registros físicos genera cuellos de botella en horas punta; por ello, ve de alto valor un sistema con cerraduras inteligentes donde el administrador supervise accesos y permisos. Asimismo, destaca que la automatización de iluminación mediante sensores de presencia y el riego inteligente de áreas verdes reducirían los costos variables del edificio, uno de los rubros que más observan los propietarios. Valora que la plataforma centralice los reportes de estos dispositivos para monitorear anomalías técnicas sin que los inquilinos deban intervenir en la administración del equipamiento. |
 
+| **ENTREVISTA 3** | |
+|---|---|
+| **Nombre entrevistado** | Kattya Valentina |
+| **Edad** | 25 años |
+| **Distrito** | San Miguel |
+| **Fecha y hora** | 14 de septiembre de 2026 – 11:15 a. m. |
+| **Duración** | 00:02:39 |
+| **Link del video** | [Ver video de la entrevista](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202321281_upc_edu_pe/IQBytTOuLENRRpzS9nYLELHKAVVSvtdyP9hPyITLZN-VWLU?e=nGaihv&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D) |
+| **Foto entrevista** | <img src="assets/img/kattya.jpeg" alt="Kattya Valentina" /> |
+| **Resumen** | Kattya gestiona 15 condominios apoyada en macros de Excel, mensajería de WhatsApp y portales bancarios. Señala que el desglose y cobranza física genera fricciones constantes por falta de inmediatez. Al revisar soluciones existentes en el mercado, notó que resultaban poco intuitivas y recargadas de módulos innecesarios. Al abordar el ámbito de infraestructura e IoT, subraya que la coordinación del mantenimiento físico representa un reto: frecuentemente hay quejas por áreas verdes secas o mal regadas por olvidos de conserjería, así como luminarias de pasadizos encendidas permanentemente que elevan los recibos de luz comunes. Apoya firmemente contar con un panel donde el administrador pueda auditar y configurar parámetros de riego automatizado, monitorear sensores lumínicos y revisar el historial de aperturas de cerraduras inteligentes en áreas sociales y accesos principales, manteniendo estos registros en el ámbito exclusivo de la administración para asegurar la privacidad y el orden del condominio. |
 
-**Segmento objetivo: Propietarios e Inquilinos:**
+---
+
+#### Segmento objetivo: Propietarios e Inquilinos
 
 | **ENTREVISTA 1** | |
-|------------------|----------------------------|
-| **Nombre entrevistado** | Melina Lopez  |
-| **Edad** | 51 |
-| **Departamento** | San Miguel  |
-| **Link del video** | [Link del video de la entrevista](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202321281_upc_edu_pe/IQAW5DBOyn8xS6ZiZVZwufEIAU9yh_7P6mIIpJ_RzxJp6is?e=kLEW30&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D)  |
-| **Foto entrevista** |<img src="assets/img/interviews/prop2.png" alt="logo"/>  |
-| **Resumen** |Se entrevistó a Melina López, propietaria de un departamento, ella indica que no suele estar al tanto de las reuniones del edificio debido a la falta de tiempo. En cuanto a los pagos, envía los comprobantes por correo al administrador y mantiene un archivo físico como respaldo, ya que de lo contrario no tendría un historial accesible, asumiendo que la administración podría brindárselo si lo solicita. Señala que el proceso de reserva de espacios es el más tedioso, pues implica consultar disponibilidad, dejar garantía, realizar pagos y luego hacer seguimiento para su devolución, lo que la obliga a estar constantemente detrás de la administración. Además, le incomoda la gran cantidad de mensajes en el grupo de WhatsApp, donde se pierde información relevante. Finalmente, se muestra abierta al uso de una aplicación que centralice la información, considerando que actualmente los eventos y reuniones ya se comunican mediante un tablero. |
+|---|---|
+| **Nombre entrevistado** | Melina López |
+| **Edad** | 51 años |
+| **Distrito** | San Miguel |
+| **Fecha y hora** | 18 de septiembre de 2026 – 03:00 p. m. |
+| **Duración** | 00:02:26 |
+| **Link del video** | [Ver video de la entrevista](https://upcedupe-my.sharepoint.com/personal/u202310358_upc_edu_pe/_layouts/15/stream.aspx?id=%2Fpersonal%2Fu202310358%5Fupc%5Fedu%5Fpe%2FDocuments%2Fentrevista%5Fsegmento%5Fobjetivo%5Fpropietarios%2Emp4&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&ga=1&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview%2E90d21b78%2D17c7%2D47e6%2D9d8c%2D754be308c3c6) |
+| **Foto entrevista** | <img src="assets/img/interviews/prop2.png" alt="Melina López" /> |
+| **Resumen** | Melina es propietaria y señala que sus obligaciones laborales le impiden asistir a las reuniones presenciales. Realiza sus pagos bancarios y envía el comprobante por correo electrónico, guardando copias físicas en casa ante la falta de una plataforma que conserve su historial contable. Indica que la reserva de áreas comunes es un proceso engorroso por la gestión manual de garantías y la falta de un calendario en tiempo real. En el ámbito de la convivencia y el entorno físico, resalta que a menudo las luces de los pasillos permanecen encendidas de día o apagadas cuando se necesitan de noche; por ello, ve de gran utilidad que existan sensores de movimiento que funcionen solos. Asimismo, valora positivamente que el riego de jardines sea programado y automático para no depender de la voluntad del personal de turno, y considera prudente que el uso de cerraduras inteligentes agilice el acceso a las áreas del edificio sin que los residentes tengan que lidiar con configuraciones técnicas complejas ni acceso a historiales ajenos. |
 
 | **ENTREVISTA 2** | |
 |---|---|
 | **Nombre entrevistado** | Jarol Panduro |
-| **Edad** | 30 |
-| **Departamento** | San Miguel |
-| **Link del video** | [Link del video de la entrevista](https://youtu.be/NHYPQzPL36M) |
-| **Foto entrevista** | <img src="assets/img/ser1.jpeg" alt="logo" /> |
-| **Resumen** | En este video, Jarol Panduro, un abogado de 30 años, detalla las principales deficiencias en la administración de su edificio. Explica que el proceso de pago del mantenimiento es tedioso porque requiere enviar capturas de pantalla por WhatsApp, y señala que no existe un sistema oficial para consultar su historial de pagos. Además, menciona problemas como la desorganización al reservar áreas comunes mediante cuadernos físicos, la falta de transparencia en los gastos administrativos, la lentitud en la comunicación oficial y lo anticuado que resulta el registro manual de visitas en la portería. Como solución, propone la implementación de una plataforma digital centralizada que permita registrar pagos automáticamente, reservar espacios y auditar los gastos de forma rápida y transparente.|
+| **Edad** | 30 años |
+| **Distrito** | San Miguel |
+| **Fecha y hora** | 19 de septiembre de 2026 – 07:15 p. m. |
+| **Duración** | 00:03:48 |
+| **Link del video** | [Ver video de la entrevista](https://youtu.be/NHYPQzPL36M) |
+| **Foto entrevista** | <img src="assets/img/ser1.jpeg" alt="Jarol Panduro" /> |
+| **Resumen** | Jarol, abogado de profesión, cuestiona la falta de modernización en la gestión de su edificio. Remitir capturas de pantalla por mensajería instantánea para certificar el pago de mantenimiento le resulta ineficiente y propenso a extravío de información. Manifiesta su disconformidad con el registro manual de visitas y paquetería en libretas físicas en la portería, el cual considera inseguro y lento. Sugiere la incorporación de cerraduras inteligentes y control de accesos centralizado gestionado por la administración para optimizar el ingreso de personas autorizadas. También menciona el gasto recurrente e injustificado en consumos comunes de agua y energía eléctrica, manifestando que un sistema de iluminación inteligente activado por sensores y un riego tecnificado resolverían el desperdicio en las áreas comunes. Subraya que la administración debe ser quien configure y supervise estos equipos, garantizando que el residente solo perciba una experiencia ágil, segura y libre de trámites manuales. |
 
 | **ENTREVISTA 3** | |
 |---|---|
 | **Nombre entrevistado** | Marcelo Candia |
-| **Edad** | 25 |
-| **Departamento** | San Miguel |
-| **Link del video** | [Link del video de la entrevista](https://youtu.be/E5k60PHyvYI) |
-| **Foto entrevista** | <img src="assets/img/ser2.jpeg" alt="logo" /> |
-| **Resumen** | En la entrevista, Marcelo expone su frustración con la administración obsoleta y caótica de su edificio. Señala que los pagos de mantenimiento son tediosos porque exigen depósitos en cuentas específicas y la entrega de comprobantes físicos, sin aceptar billeteras digitales como Yape. Además, menciona problemas recurrentes como la falta de transparencia en los gastos anuales, la mala gestión en la reserva de áreas comunes que genera conflictos por cruces de horarios, y la lentitud de la administración para responder correos formales. También critica el uso de correos masivos que terminan llenándose de quejas irrelevantes de los vecinos y el engorroso proceso manual que se requiere para autorizar el ingreso de muebles grandes o mudanzas. Como solución ideal, sugiere la implementación de una aplicación o portal vecinal 100% automatizado que permita realizar pagos, reservas y reportes de fallas de manera digital las 24 horas del día, eliminando así el uso de papel|
+| **Edad** | 25 años |
+| **Distrito** | San Miguel |
+| **Fecha y hora** | 19 de septiembre de 2026 – 08:30 p. m. |
+| **Duración** | 00:05:26 minutos |
+| **Link del video** | [Ver video de la entrevista](https://youtu.be/E5k60PHyvYI) |
+| **Foto entrevista** | <img src="assets/img/ser2.jpeg" alt="Marcelo Candia" /> |
+| **Resumen** | Marcelo expresa su insatisfacción por el uso obligatorio de recibos físicos y canales de pago tradicionales, reclamando la integración de pagos digitales instantáneos. Señala recurrentes empalmes de horarios y discusiones en la reserva de áreas sociales debido a la falta de un sistema digital transparente. En cuanto a las instalaciones físicas del edificio, critica que el proceso para autorizar mudanzas o visitas dependa enteramente de autorizaciones en papel en la entrada, sugiriendo cerraduras inteligentes con códigos o validación digital controladas por la administración. Igualmente, opina que la automatización de la iluminación en escaleras y cocheras mediante sensores evitaría el desperdicio eléctrico, y que el riego automático mantendría las áreas verdes sin elevar los costos de mantenimiento. Afirma que el inquilino o propietario debe disfrutar de estos servicios sin acceso a las consolas o registros técnicos internos, los cuales corresponden a la esfera de control del administrador. |
+
+---
 
 ### 2.2.3. Análisis de entrevistas
 
-## **Segmento objetivo de administradores de edificios y condominios**
+##### 1. Segmento: Administradores de edificios y condominios
+Las entrevistas sostenidas con **César Villalobos (15 edificios)**, **Alejandro Galindo (4 edificios)** y **Kattya Valentina (15 edificios)** demuestran que el modelo de administración actual presenta una alta dependencia de herramientas genéricas (hojas de cálculo con macros complejas, mensajería instantánea de WhatsApp y cuadernos físicos en portería). Esta fragmentación operativa da lugar a tres problemas centrales: la lentitud en la conciliación de cuotas de mantenimiento, la falta de confirmación de lectura de los comunicados institucionales y la sobrecarga que implica tramitar solicitudes de reserva y cobros en papel.
 
-Las entrevistas realizadas a César, administrador de GWM EIRL, y a Alejandro Galindo evidencian que ambos gestionan sus edificios principalmente mediante Excel, WhatsApp y procesos manuales, lo que genera dificultades en el control de pagos, la comunicación con los propietarios y la administración de reservas. César, quien administra 15 edificios, identifica como principal problema la emisión física de recibos y busca una digitalización completa de sus procesos, mientras que Alejandro, encargado de 4 edificios, destaca la falta de seguimiento eficiente de pagos y la incertidumbre sobre la recepción de comunicados. Ambos consideran que una plataforma digital podría mejorar significativamente la gestión siempre que centralice funciones clave como pagos, comunicaciones y reservas, sea fácil de usar, mantenga la información actualizada y tenga un costo accesible acorde a los precios habituales del mercado.
+En lo relativo a la modernización de infraestructura e integración de **tecnología IoT**, los tres administradores concuerdan en que la supervisión de los condominios debe evolucionar hacia la automatización:
+- **Control de accesos inteligentes:** Coinciden en la vulnerabilidad de las libretas de visitas tradicionales y la pérdida de llaves físicas; respaldan la implementación de cerraduras inteligentes y registro de visitas cuya auditoría y asignación de permisos recaiga en la administración.
+- **Sensores de iluminación:** Identifican que las luminarias encendidas de forma continua representan uno de los costos comunes más cuestionados por las juntas; valoran monitorear sensores de presencia que enciendan las luces solo ante movimiento para reducir el consumo general.
+- **Riego automatizado:** Reconocen que las quejas por deterioro de áreas verdes o exceso de gasto de agua se originan por el descuido en el riego manual. Consideran fundamental monitorear los ciclos y cronogramas de riego desde su panel administrativo.
 
+Los administradores enfatizan un requerimiento arquitectónico clave: **la administración debe retener el acceso exclusivo a los registros, alertas y configuraciones de estos dispositivos**, de modo que los residentes experimenten los beneficios (seguridad, espacios iluminados y áreas verdes en buen estado) sin tener acceso a configuraciones técnicas ni a las bitácoras privadas de acceso de todo el inmueble. Asimismo, exigen que la plataforma unificada sea limpia, intuitiva y mantenga costos acordes al mercado inmobiliario (entre 2 y 5 USD mensuales por departamento).
 
-## **Segmento objetivo de propietarios e inquilinos**
+##### 2. Segmento: Propietarios e inquilinos
+Las entrevistas efectuadas a **Melina López**, **Jarol Panduro** y **Marcelo Candia** confirman un malestar extendido con los procedimientos tradicionales de gestión de edificios. En el aspecto financiero, los residentes resienten la obligación de enviar capturas de transferencias por correo o WhatsApp y la ausencia de un historial digital accesible donde puedan verificar saldos históricos, lo que los obliga a archivar recibos impresos por precaución. En cuanto a la convivencia, señalan que los grupos vecinales de mensajería están saturados de reclamos informales que diluyen los avisos importantes, mientras que la reserva de áreas comunes genera fricción por la falta de calendarios en tiempo real y la engorrosa devolución de garantías.
 
-Las entrevistas realizadas a Melina López, Jarol Panduro y Marcelo muestran una insatisfacción común con los procesos tradicionales de administración de edificios. Los principales problemas identificados son la falta de un historial digital de pagos, la necesidad de enviar comprobantes manualmente, la escasa transparencia en los gastos administrativos, la desorganización en la reserva de áreas comunes y la saturación de información en canales de comunicación como WhatsApp y correos masivos. Además, destacan procesos poco eficientes para la gestión de visitas, mudanzas y solicitudes a la administración, así como la lentitud en la atención de consultas. Los tres entrevistados coinciden en que una plataforma digital centralizada mejoraría significativamente la experiencia de los propietarios al permitir gestionar pagos, reservas, comunicaciones y consultas de manera rápida, organizada, transparente y accesible desde cualquier momento, reduciendo la dependencia de procesos manuales y documentos físicos.
+En lo concerniente a los **servicios e infraestructura tecnológica (IoT)**:
+- **Accesos y seguridad:** Critican la lentitud e informalidad del registro manual en portería para visitas, servicios de entrega y mudanzas; valoran la presencia de cerraduras y accesos inteligentes que agilicen la validación de ingreso.
+- **Iluminación automatizada:** Consideran indispensable el empleo de sensores de presencia en áreas de tránsito común (pasadizos, estacionamientos y escaleras), reduciendo costos innecesarios en la factura común y garantizando iluminación inmediata al transitar.
+- **Riego inteligente:** Perciben el cuidado de las áreas verdes como un factor clave para el valor de su vivienda; apoyan sistemas tecnificados que eviten el desperdicio de agua y mantengan los jardines saludables.
+- **Rol y experiencia de usuario:** Los entrevistados señalan que no desean encargarse de la configuración, mantenimiento ni revisión de bitácoras de los equipos IoT; esperan que sea la administración quien garantice su correcto funcionamiento, mientras que ellos disfrutan de las instalaciones mediante una aplicación móvil ágil, transparente y operativa las 24 horas del día.
 
 
 ## 2.3. Needfinding
