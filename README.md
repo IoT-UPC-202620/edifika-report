@@ -3995,289 +3995,470 @@ En la etapa de arquitectura, Smart Building se refina en cuatro bounded contexts
 
 #### 4.1.1.2. Domain Message Flows Modeling
 
+En esta sección se presenta el Domain Message Flows Modeling, técnica que modela cómo los bounded contexts colaboran entre sí para resolver un escenario del negocio, mostrando los mensajes que intercambian. Se apoya en la notación de Domain Storytelling: los actores y bounded contexts se conectan mediante mensajes numerados que indican el orden del flujo. Cada mensaje se clasifica según su tipo: los commands solicitan una acción que cambia el estado de un contexto, los events  informan algo que ya ocurrió y pueden ser consumidos por otros contextos, y las queries  solo leen información sin modificarla. Estos flujos permiten validar las relaciones definidas en el Context Mapping y confirmar qué integraciones son síncronas y cuáles se resuelven por eventos.
 
 **Autenticación de administrador** (Command: `RegisterAdministrator` / `SignIn` → Event: `SessionStarted`)
+
+Este escenario describe cómo un administrador obtiene acceso a la plataforma. El administrador completa el formulario de registro en la Web Application, que envía la solicitud a través del API Gateway hasta IAM/Auth. IAM/Auth registra al usuario con el rol ADMIN y emite el evento de administrador registrado. Luego, el administrador inicia sesión: IAM/Auth valida sus credenciales, genera el token JWT y emite el evento de sesión iniciada, con el que queda habilitado para operar desde la web.
 
 ![Domain Story autenticación administrador](assets/img/domain-story-auth-admin.png)
 
 *Figura. Domain Story — el Administrador completa el formulario, que atraviesa el API Gateway hasta IAM/Auth, quien crea el Usuario con rol ADMIN y emite el Token JWT que habilita la sesión.*
 
-![Diagrama de secuencia autenticación administrador](assets/img/secuencia1.png)
-
-*Figura. IAM recibe el Command de registro/login vía API Gateway, valida contra su agregado de Usuario y responde con el token JWT (Event: `SessionStarted`).*
-
 **Autenticación de residente** (Command: `LinkResidentToUnit` / `SignIn` → Event: `SessionStarted`)
+
+Este escenario muestra que el residente no puede registrarse por sí mismo. Primero, el administrador registra al residente y lo vincula a su unidad en Residential Management, que emite el evento de residente vinculado. IAM/Auth consume ese evento y crea el usuario con el rol RESIDENT. Recién entonces el residente puede iniciar sesión desde la Mobile Application: la solicitud pasa por el API Gateway, IAM/Auth valida las credenciales, emite el token JWT y registra la sesión iniciada.
 
 ![Domain Story autenticación residente](assets/img/domain-story-auth-resident.png)
 
 *Figura. Domain Story — a diferencia del administrador, el residente no se autorregistra: el Administrador registra el vínculo residente–unidad en Residential Management, que lo provee a IAM/Auth; recién entonces el Residente puede autenticarse.*
 
-![Diagrama de secuencia autenticación residente](assets/img/secuencia2.png)
-
-*Figura. A diferencia del administrador, el residente no se autorregistra: es Residential Management quien crea el vínculo residente–unidad; IAM solo valida credenciales y emite el token.*
-
 **Publicación de comunicados** (Command: `PublishAnnouncement` → Event: `AnnouncementPublished` → Policy: notificar residentes)
+
+Este escenario describe cómo un comunicado oficial llega a los residentes. El administrador publica el comunicado en Communication, que lo registra y emite el evento de comunicado publicado. Notification consume ese evento y, siguiendo la política de notificar a los residentes del edificio, crea la notificación y la envía como push al residente. Si el envío falla, Notification registra el fallo y deja la notificación pendiente de reintento, sin afectar la publicación del comunicado.
 
 ![Domain Story comunicados](assets/img/domain-story-comunicados.png)
 
 *Figura. Domain Story — el Administrador publica el Comunicado en Communication, que dispara a Notification la creación y entrega de la Notificación Push al Residente; si el envío falla, queda pendiente de reintento.*
 
-![Diagrama de secuencia comunicados](assets/img/secuencia_comunicados.png)
+**Registro y aprobación de pagos** (Command: `RegisterPayment` → Event: `PaymentConfirmed` / `PaymentRejected`)
 
-*Figura. Communication guarda el comunicado y emite el evento `AnnouncementPublished`; una policy reacciona enviando las notificaciones push a través de Notification (vía Firebase). Si el envío falla, una acción compensatoria marca la notificación como pendiente de reintento sin afectar el comunicado ya guardado.*
-
-**Registro y aprobación de pagos** (Command: `RegisterPayment` / `ApprovePayment` → Event: `PaymentApproved`)
+Este escenario describe el pago en línea de una deuda. El residente registra el pago en Payment, que toma el monto de la deuda y envía el cargo a Culqi. Culqi responde con el resultado de la transacción. Si la confirma, Payment marca el pago como confirmado, la deuda como pagada, emite la constancia y publica el evento de pago confirmado. Si Culqi la rechaza, Payment marca el pago como rechazado con el motivo, la deuda permanece pendiente y el residente puede reintentar. En ambos casos, Notification consume el evento y avisa al residente del resultado.
 
 ![Domain Story pagos](assets/img/domain-story-pagos.png)
 
-*Figura. Domain Story — el Residente registra el Pago en Payment, que lo envía a Culqi; si la transacción se confirma, Payment aprueba el Pago, genera el Comprobante y emite `PaymentApproved` para que Notification avise al Residente; si Culqi la rechaza, el Pago se revierte a PENDIENTE como compensación.*
-
-![Diagrama de secuencia gestión de pagos](assets/img/secuencia_pagos.png)
-
-*Figura. Payment registra el pago en estado `PENDING`; al aprobarlo, emite el evento `PaymentApproved` que dispara la policy de notificación al residente. Si la pasarela Culqi falla, la compensación revierte la deuda a `PENDING`.*
+*Figura. Domain Story — el Residente registra el Pago en Payment, que lo envía a Culqi; si la transacción se confirma, Payment confirma el Pago, emite la Constancia y publica `PaymentConfirmed` para que Notification avise al Residente; si Culqi la rechaza, el Pago queda rechazado y la Deuda sigue pendiente como compensación.*
 
 **Reserva y aprobación de áreas comunes** (Command: `CreateReservation` / `ApproveReservation` → Event: `ReservationApproved`)
+
+Este escenario describe cómo un residente obtiene acceso a un área común. El residente solicita la reserva en Reservation, que la registra como solicitada. El administrador revisa la solicitud y la aprueba, y Reservation emite el evento de reserva aprobada. A partir de ese evento ocurren dos acciones en paralelo: IoT Access Management habilita el permiso de acceso de la tarjeta RFID del residente para el horario reservado, y Notification le envía la confirmación de la reserva.
 
 ![Domain Story reservas](assets/img/domain-story-reservas.png)
 
 *Figura. Domain Story — el Residente solicita la Reserva, el Administrador la aprueba, y Reservation dispara en paralelo la habilitación del Permiso de Acceso (IoT Access Management) y la notificación al Residente.*
 
-![Diagrama de secuencia reserva de áreas comunes](assets/img/secuencia_reservas.png)
-
-*Figura. Reservation valida disponibilidad antes de crear la reserva; al aprobarla, emite `ReservationApproved`, que dispara la notificación al residente vía Notification.*
-
 **Generación de reportes financieros** (Query: `GetFinancialReport` — solo lectura, sin Command ni Event)
+
+Este escenario describe la obtención de un reporte financiero del edificio. El administrador solicita el reporte a Report, que consulta a Payment los pagos y deudas del periodo. Report consolida la información, genera el reporte y lo devuelve al administrador para su exportación. Como el escenario solo lee información, no modifica el estado de ningún contexto ni requiere políticas ni compensaciones.
 
 ![Domain Story reportes](assets/img/domain-story-reportes.png)
 
 *Figura. Domain Story — el Administrador solicita el Reporte Financiero, Report consulta a Payment vía REST, consolida y exporta el reporte de vuelta al Administrador; al ser de solo lectura, no hay Policy ni compensación involucradas.*
 
-![Diagrama de secuencia reportes](assets/img/secuencia_reportes.png)
-
-*Figura. Report consulta datos de Payment vía REST para consolidar y exportar reportes; al ser de solo lectura, no participa del flujo de eventos/compensaciones de los demás contextos.*
-
 #### 4.1.1.3. Bounded Context Canvases
 
+El Bounded Context Canvas es un recurso gráfico dentro del enfoque Domain-Driven Design (DDD) que facilita la definición, comprensión y comunicación precisa de los límites, funciones y componentes esenciales de un Bounded Context. Su uso permite al equipo mantener una visión común del dominio, reconociendo entidades, eventos, comandos y conexiones con otros contextos. Asimismo, gracias a las convenciones que establece, posibilita construir un diseño modular y coherente del sistema.
 
-El orden de elaboración siguió el criterio de importancia pedido por el enunciado: primero los contextos de los que depende toda la plataforma (IAM/Auth, Payment, Residential Management, Reservation), luego los cuatro contextos IoT que sostienen la propuesta de diferenciación, y por último los contextos de soporte/genéricos (Communication, Notification, Report, Forum).
+Los canvas se elaboraron en orden de importancia: primero los contextos de los que depende toda la plataforma (IAM, Residential Management, Payment y Reservation), luego los contextos IoT que sostienen la propuesta de diferenciación (IoT Access Management, Smart Lighting & Automation, Smart Irrigation e IoT Telemetry & Analytics) y por último los contextos de soporte (Communication, Messaging / Forum, Notification y Report). Al final se documenta el Edge API, que no es un bounded context de dominio, pero conecta los dispositivos con los contextos IoT.
 
-**1. IAM / Auth (4.2.1)**
+### Bounded Context – IAM (Identity & Access Management)
 
 ![Bounded Context Canvas IAM](assets/img/bc-canvas-iam.png)
 
-*Figura. Bounded Context Canvas de IAM (Identity & Access Management). Elaborado por el equipo utilizando Miro (Miro, s.f.).*
+*Figura. Bounded Context Canvas de IAM. Elaborado por el equipo utilizando Miro (Miro, s.f.).*
 
-**2. Payment (4.2.4)**
+**Description**
+En este bounded context se gestionan el registro de administradores, la creación de usuarios residentes a partir de su vínculo con una unidad, la asignación de roles, el inicio y cierre de sesión, y la emisión del token JWT con el que se accede a los demás contextos.
 
-![Bounded Context Canvas Payment](assets/img/bc-canvas-payment.png)
+**Strategic Classification**
+- **Generic:** la autenticación y autorización son capacidades comunes a cualquier plataforma; no diferencian a Edifika, pero son la base de acceso a todos los demás contextos.
+- **Compliance Enforcer:** su modelo de negocio garantiza que cada usuario acceda solo a las funciones que su rol le permite.
+- **Commodity:** se basa en un patrón conocido (usuarios, roles y JWT).
 
-*Figura. Bounded Context Canvas de Payment. Elaborado por el equipo utilizando Miro (Miro, s.f.).*
+**Domain Role**
+Asume el rol de **gateway context**, porque controla la entrada al ecosistema, y de **execution context**, porque valida credenciales y emite tokens.
 
-**3. Residential Management (4.2.2)**
+**Inbound Communication**
+- El administrador completa su registro e inicia o cierra sesión desde la Web Application.
+- El residente inicia o cierra sesión desde la Mobile Application.
+- Residential Management informa el vínculo residente–unidad para que IAM cree el usuario con rol RESIDENT.
+
+**Outbound Communication**
+- El token JWT emitido habilita el acceso a todos los bounded contexts a través del API Gateway.
+- Un usuario desactivado deja de poder iniciar sesión.
+
+**Capability Analysis**
+- **Registro de administrador:** crea el usuario con rol ADMIN.
+- **Creación de usuario residente:** crea el usuario con rol RESIDENT solo después de que el administrador lo vincula a una unidad.
+- **Autenticación:** valida credenciales y emite el token JWT.
+- **Gestión de roles:** asegura que cada operación la ejecute el rol correcto.
+
+### Bounded Context – Residential Management
 
 ![Bounded Context Canvas Residential Management](assets/img/bc-canvas-residential-management.png)
 
 *Figura. Bounded Context Canvas de Residential Management. Elaborado por el equipo utilizando Miro (Miro, s.f.).*
 
-**4. Reservation (4.2.3)**
+**Description**
+En este bounded context se registran los edificios y sus unidades, y se vincula a cada residente, propietario o inquilino, con la unidad que ocupa. Es la fuente de verdad de la estructura física y de la población del condominio.
+
+**Strategic Classification**
+- **Supporting:** no es el diferenciador del producto, pero todos los procesos del condominio dependen de él.
+- **Engagement Creator:** permite que cada residente quede asociado a su edificio y acceda a los servicios que le corresponden.
+- **Product:** la gestión de edificios, unidades y residentes es un patrón conocido en administración de condominios.
+
+**Domain Role**
+Asume el rol de **specification context**, porque define qué edificios, unidades y residentes existen y cómo se relacionan, y otros contextos dependen de esa definición.
+
+**Inbound Communication**
+- El administrador registra edificios y unidades, vincula residentes a unidades y actualiza sus datos desde la Web Application.
+
+**Outbound Communication**
+- Un residente vinculado a una unidad habilita su usuario en IAM.
+- Los eventos de residente vinculado o retirado permiten a IoT Access Management habilitar o revocar su tarjeta RFID.
+- Payment consulta la existencia de la unidad antes de generar una deuda.
+
+**Capability Analysis**
+- **Registro de edificios y unidades:** define la estructura física del condominio.
+- **Vinculación residente–unidad:** asocia a cada residente con su departamento.
+- **Directorio de unidades y residentes:** permite al administrador consultar la población del edificio.
+
+### Bounded Context – Payment
+
+![Bounded Context Canvas Payment](assets/img/bc-canvas-payment.png)
+
+*Figura. Bounded Context Canvas de Payment. Elaborado por el equipo utilizando Miro (Miro, s.f.).*
+
+**Description**
+En este bounded context se generan las deudas de mantenimiento de cada unidad, se procesan los pagos en línea a través de Culqi, se emiten las constancias de pago y se determina la morosidad de los residentes.
+
+**Strategic Classification**
+- **Core:** el cobro de cuotas y el control de la morosidad son el motivo principal por el que un administrador contrata Edifika.
+- **Revenue Generator:** su modelo de negocio asegura la recaudación del condominio y habilita pagos con tarjeta y Yape.
+- **Custom Built:** la combinación de deudas, cobro con Culqi, idempotencia y restricción de acceso por morosidad es propia del negocio.
+
+**Domain Role**
+Asume el rol de **execution context**, porque ejecuta el cobro y cambia el estado de deudas y pagos.
+
+**Inbound Communication**
+- El administrador genera las deudas desde la Web Application.
+- El residente consulta su estado de cuenta y registra el pago desde la Mobile Application.
+- Report consulta los pagos y deudas para consolidar los reportes financieros.
+
+**Outbound Communication**
+- Payment envía el cargo a Culqi a través de un Anticorruption Layer.
+- `PaymentConfirmed` y `PaymentRejected` permiten a Notification informar al residente el resultado.
+- `ResidentMarkedDelinquent` permite a IoT Access Management restringir el acceso del residente moroso.
+- Payment consulta a Residential Management la existencia de la unidad antes de generar una deuda.
+
+**Capability Analysis**
+- **Generación de deudas:** registra el monto y la fecha de vencimiento de cada periodo.
+- **Pago en línea:** cobra el monto de la deuda a través de Culqi, evitando cobros duplicados con una clave de idempotencia.
+- **Compensación:** si Culqi rechaza el cargo, la deuda sigue pendiente; si no responde a tiempo, el pago queda en verificación hasta que el administrador lo resuelva.
+- **Morosidad:** detecta deudas vencidas y marca al residente como moroso.
+
+### Bounded Context – Reservation
 
 ![Bounded Context Canvas Reservation](assets/img/bc-canvas-reservation.png)
 
 *Figura. Bounded Context Canvas de Reservation. Elaborado por el equipo utilizando Miro (Miro, s.f.).*
 
-**5. IoT Access Management (4.2.9)**
+**Description**
+En este bounded context se registran las áreas comunes y sus reglas de uso, y se gestiona el ciclo de vida de las reservas: solicitud, aprobación, rechazo, cancelación e inicio.
 
+**Strategic Classification**
+- **Supporting:** organiza el uso de los espacios compartidos y alimenta a los contextos IoT.
+- **Engagement Creator:** mejora la convivencia al ordenar el uso de las áreas comunes.
+- **Product:** la reserva de espacios por horario es un patrón conocido.
+
+**Domain Role**
+Asume el rol de **execution context**, porque aplica las reglas de aforo y horario, y de **upstream** de los contextos IoT, porque sus eventos habilitan accesos y encienden luces.
+
+**Inbound Communication**
+- El residente consulta el calendario de reservas y solicita o cancela una reserva desde la Mobile Application.
+- El administrador registra áreas comunes y sus reglas, y aprueba o rechaza reservas desde la Web Application.
+
+**Outbound Communication**
+- `ReservationApproved` y `ReservationCancelled` permiten a IoT Access Management habilitar o retirar el permiso de acceso al área.
+- `ReservationStarted` permite a Smart Lighting & Automation encender las luces del área reservada.
+- Los eventos de reserva permiten a Notification informar al residente y al administrador.
+
+**Capability Analysis**
+- **Gestión de áreas comunes:** registra espacios, aforo y tipo de reserva.
+- **Ciclo de vida de la reserva:** controla la solicitud, aprobación, rechazo y cancelación.
+- **Calendario de reservas:** muestra la disponibilidad en tiempo real.
+
+### Bounded Context – IoT Access Management
 
 ![Bounded Context Canvas IoT Access Management](assets/img/bc-canvas-iot-access-management.png)
 
 *Figura. Bounded Context Canvas de IoT Access Management. Elaborado por el equipo utilizando Miro (Miro, s.f.).*
-=======
-| Campo | Detalle |
-|---|---|
-| Purpose | Decidir y auditar quién puede abrir físicamente un área común, combinando credenciales, reservas vigentes y estado de morosidad. |
-| Strategic Classification | Domain Role: **Core** (pilar de la propuesta de diferenciación IoT del Capítulo II) · Business Model: Revenue Protector / Compliance Enforcer · Evolution: **Custom Built** (la combinación RFID + reservas + morosidad no es un producto de catálogo). |
-| Ubiquitous Language | Access Credential (Credencial de Acceso), Access Permission (Permiso de Acceso), Access Attempt (Intento de Acceso), Delinquent Resident. |
-| Business Decisions | Una credencial concede acceso solo si está activa, el residente no está moroso y existe un permiso vigente para esa área en ese instante (`AccessDecisionService`, ver 4.2.9.1) · un residente moroso se suspende automáticamente. |
-| Inbound Communication | **Reservation** (Customer/Supplier, evento `ReservationApproved`) · **Payment** (Customer/Supplier, evento `ResidentMarkedDelinquent`). |
-| Outbound Communication | **Notification** (Customer/Supplier, eventos `PhysicalAccessGranted` / `PhysicalAccessDenied`) · **Edge API** (**Conformist** — sincroniza credenciales activas, reservas vigentes y blacklist hacia el gateway on-premise). |
-| Model (Aggregates) | `AccessCredential` (Aggregate Root), `AccessPermission` (Entity), `AccessAttempt` (Entity). |
-| Design Critique | Se evaluó que el Edge API tomara la decisión de acceso de forma autónoma consultando el cloud en cada intento, pero se descartó por latencia y por el requisito de resiliencia offline: la decisión final se cachea en el Edge y solo se sincroniza cuando hay conectividad, de ahí la relación Conformist hacia el Edge en vez de Customer/Supplier síncrona en tiempo real. |
 
+**Description**
+En este bounded context se decide y audita quién puede abrir físicamente la puerta de un área común, combinando la tarjeta RFID del residente, sus reservas vigentes y su estado de morosidad.
 
-**6. Smart Lighting & Automation (4.2.10)**
+**Strategic Classification**
+- **Core:** el control de accesos con RFID es un pilar de la propuesta de diferenciación IoT.
+- **Compliance Enforcer:** asegura que solo los residentes habilitados y al día ingresen a las áreas comunes.
+- **Custom Built:** la combinación de RFID, reservas y morosidad no es un producto de catálogo.
 
+**Domain Role**
+Asume el rol de **execution context**, porque toma la decisión de acceso, y de **analysis context**, porque registra la auditoría de cada intento.
+
+**Inbound Communication**
+- El administrador emite, asigna o revoca tarjetas RFID desde la Web Application.
+- Residential Management informa los residentes vinculados o retirados de una unidad.
+- Reservation informa las reservas aprobadas y canceladas.
+- Payment informa los residentes marcados como morosos.
+
+**Outbound Communication**
+- Sincroniza con el Edge API las credenciales activas, las ventanas de reserva y la blacklist.
+- `PhysicalAccessGranted` y `PhysicalAccessDenied` permiten a Notification y Report registrar e informar los accesos.
+
+**Capability Analysis**
+- **Gestión de credenciales RFID:** emite, activa y revoca tarjetas.
+- **Decisión de acceso:** concede el acceso solo si la credencial está activa, el residente no es moroso y existe un permiso vigente para esa área.
+- **Auditoría de accesos:** registra cada intento concedido o denegado.
+
+### Bounded Context – Smart Lighting & Automation
 
 ![Bounded Context Canvas Smart Lighting & Automation](assets/img/bc-canvas-smart-lighting.png)
 
 *Figura. Bounded Context Canvas de Smart Lighting & Automation. Elaborado por el equipo utilizando Miro (Miro, s.f.).*
-=======
-| Campo | Detalle |
-|---|---|
-| Purpose | Encender/apagar luminarias de áreas comunes combinando presencia, lux ambiental, horario de reserva y override manual, priorizando el ahorro energético. |
-| Strategic Classification | Domain Role: **Core** (diferenciador IoT) · Business Model: Cost Reducer (ahorro energético) · Evolution: **Custom Built** (la precedencia entre presencia/lux/reserva/override es una regla propia del negocio, no un producto de catálogo). |
-| Ubiquitous Language | Automation Rule (Regla de Automatización), Luminaire (Luminaria), Override Command (Comando de Override), Lux Threshold (Umbral de Lux). |
-| Business Decisions | Si no hay movimiento por 3 minutos, apagar luces (política capturada en el EventStorm, ver 4.1.1.1) · un override manual suspende temporalmente la automatización con precedencia sobre las reglas programadas. |
-| Inbound Communication | **Reservation** (Customer/Supplier, evento `ReservationStarted`) — el inicio de una reserva dispara el encendido programado del área · **Edge API** (Customer/Supplier, evento `AreaPresenceDetected` relayado desde el sensor PIR del nodo de iluminación, ver 4.2.10.3). |
-| Outbound Communication | **Edge API** (**Conformist** — envía reglas de programación y comandos de override para ejecución local). |
-| Model (Aggregates) | `AutomationRule` (Aggregate Root), `Luminaire` (Entity), `OverrideCommand` (Entity). |
-| Design Critique | Se evaluó ejecutar la lógica de decisión (`AutomationDecisionService`) directamente en el Edge para no depender de la conectividad WAN, pero se optó por mantener la autoría de reglas en el cloud (más fácil de versionar y auditar desde la Web Application) y solo *empujar* las reglas ya resueltas al Edge — el mismo patrón Conformist que IoT Access Management. |
 
+**Description**
+En este bounded context se controla el encendido y apagado de las luminarias de las áreas comunes combinando presencia, luz ambiental, horarios de reserva y override manual, priorizando el ahorro energético.
 
-**7. IoT Telemetry & Analytics (4.2.11)**
+**Strategic Classification**
+- **Core:** la iluminación automática es parte de la diferenciación IoT.
+- **Cost Reducer:** su modelo de negocio reduce el consumo de energía de las áreas comunes.
+- **Custom Built:** la precedencia entre presencia, lux, reserva y override es una regla propia del negocio.
 
+**Domain Role**
+Asume el rol de **execution context**, porque decide cuándo encender o apagar cada luminaria.
+
+**Inbound Communication**
+- El administrador configura reglas de automatización y activa el override manual desde la Web Application.
+- Reservation informa el inicio de una reserva.
+- IoT Telemetry & Analytics informa la presencia detectada en un área.
+
+**Outbound Communication**
+- Envía al Edge API las reglas de automatización y los comandos de override para su ejecución local.
+- Publica los eventos de luminaria encendida, apagada y override activado.
+
+**Capability Analysis**
+- **Encendido por presencia:** enciende las luces al detectar movimiento si el nivel de lux es bajo.
+- **Apagado por inactividad:** apaga las luces tras 3 minutos sin movimiento.
+- **Override manual:** suspende temporalmente la automatización.
+- **Modo seguro:** mantiene las luces encendidas si falla el sensor.
+
+### Bounded Context – Smart Irrigation
+
+![Bounded Context Canvas Smart Irrigation](assets/img/bc-canvas-smart-irrigation.png)
+
+*Figura. Bounded Context Canvas de Smart Irrigation. Elaborado por el equipo utilizando Miro (Miro, s.f.).*
+
+**Description**
+En este bounded context se riegan las áreas verdes del edificio solo cuando es necesario, combinando las programaciones definidas por el administrador con la humedad del suelo medida por los nodos de riego.
+
+**Strategic Classification**
+- **Supporting:** complementa la diferenciación IoT, pero no es el motivo principal de contratación.
+- **Cost Reducer:** su modelo de negocio ahorra agua y costos de mantenimiento de áreas verdes.
+- **Custom Built:** la combinación de calendario y umbral de humedad por zona es una regla propia del negocio.
+
+**Domain Role**
+Asume el rol de **execution context**, porque decide cuándo abrir y cerrar la válvula de cada zona.
+
+**Inbound Communication**
+- El administrador define zonas, programaciones, umbrales de humedad y override manual desde la Web Application.
+- IoT Telemetry & Analytics informa la humedad del suelo medida.
+- El Edge API confirma la apertura y el cierre de la válvula.
+
+**Outbound Communication**
+- Envía al Edge API las programaciones, los umbrales y los comandos de apertura y cierre de la válvula.
+- Los eventos de riego fallido o sensor con falla permiten a Notification alertar al administrador.
+
+**Capability Analysis**
+- **Programación de riego:** define horarios por zona sin superposición.
+- **Riego por humedad:** omite el riego si la humedad del suelo supera el umbral.
+- **Override manual:** permite al administrador activar o detener el riego.
+- **Detección de fallas:** registra el riego como fallido si la válvula no confirma la orden.
+
+### Bounded Context – IoT Telemetry & Analytics
 
 ![Bounded Context Canvas IoT Telemetry & Analytics](assets/img/bc-canvas-iot-telemetry.png)
-=======
-| Campo | Detalle |
-|---|---|
-| Purpose | Ingerir telemetría de sensores (corriente, presencia y humedad del suelo), calcular consumo energético cuantitativo (kWh) y detectar anomalías de hardware, sosteniendo el requisito de analítica cuantitativa IoT del curso. |
-| Strategic Classification | Domain Role: **Core** (el más diferenciador de los contextos IoT: es el único que produce analítica cuantitativa) · Business Model: Decision Support / Cost Reducer · Evolution: **Genesis → Custom Built** (el cálculo de integración temporal de potencia y la detección de anomalías por baseline estadística se diseñaron a medida para este dominio). |
-| Ubiquitous Language | Sensor Reading (Lectura de Sensor), Energy Consumption (Consumo Energético), Consumption Baseline (Línea Base de Consumo), Anomaly Flag (Marca de Anomalía). |
-| Business Decisions | El consumo se calcula por integración temporal de la potencia instantánea (`kWh = Σ(V × I × Δt) / 1000`) · una anomalía se distingue de una falla de luminaria por el patrón de corriente nula con la luminaria comandada en ON (`AnomalyDetectionService`, ver 4.2.11.1). |
-| Inbound Communication | **Edge API** (Customer/Supplier, el Edge es *upstream* de datos) — reenvía la telemetría bufferizada y los registros de auditoría generados offline. |
-| Outbound Communication | **Notification** (eventos `AbnormalConsumptionDetected`, `LuminaireFailureDetected`) · **Report** (Customer/Supplier — aporta las métricas de consumo que Report consolida) · **Smart Irrigation** (Customer/Supplier, evento `SoilMoistureMeasured` con la lectura de humedad ya validada). |
-| Model (Aggregates) | `EnergyConsumption` (Aggregate Root), `ConsumptionBaseline` (Entity), `AnomalyFlag` (Entity), `SensorReading` (Value Object). |
-| Design Critique | Se consideró persistir la telemetría en la misma instancia PostgreSQL que el resto del dominio, pero se descartó por el perfil de escritura (alta frecuencia) y de consulta (series temporales) incompatible con el transaccional — de ahí la instancia TimescaleDB dedicada (ver 4.1.3.4), la única decisión de persistencia que rompe el patrón "un PostgreSQL para todos" del resto de contextos. |
-
-**8. Smart Irrigation (4.2.12)**
-
-| Campo | Detalle |
-|---|---|
-| Purpose | Regar las áreas verdes del edificio solo cuando es necesario, combinando las programaciones definidas por el administrador con la humedad del suelo medida por los nodos ESP32. |
-| Strategic Classification | Domain Role: **Supporting** (complementa la diferenciación IoT, pero no es el motivo principal de contratación) · Business Model: Cost Reducer (ahorro de agua y de mantenimiento de áreas verdes) · Evolution: **Custom Built** (la combinación de calendario y umbral de humedad por zona es una regla propia del negocio). |
-| Ubiquitous Language | Irrigation Zone (Zona de Riego), Irrigation Schedule (Programación de Riego), Moisture Threshold (Umbral de Humedad), Irrigation Run (Ejecución de Riego), Skipped Irrigation (Riego Omitido). |
-| Business Decisions | Dos programaciones de una misma zona no pueden superponerse (US50 esc. 2) · el riego programado se omite si la humedad del suelo está sobre el umbral (US51 esc. 2) · una lectura inválida se descarta y se aplica la programación por defecto (US51 esc. 3) · si la electroválvula no confirma la orden, el riego se registra como fallido y se notifica al administrador (US50 esc. 3). |
-| Inbound Communication | **IoT Telemetry & Analytics** (Customer/Supplier, evento `SoilMoistureMeasured`) — Telemetry es upstream de las lecturas que ingiere desde el Edge · **Edge API** (Customer/Supplier, evento `IrrigationRunReported`) — confirma la apertura y el cierre de la válvula. |
-| Outbound Communication | **Edge API** (**Conformist** — sincroniza programaciones y umbrales, y envía los comandos de apertura/cierre de válvula para su ejecución local) · **Notification** (Customer/Supplier, eventos `IrrigationFailed` y `MoistureSensorFaulty`). |
-| Model (Aggregates) | `IrrigationZone` (Aggregate Root), `IrrigationSchedule` (Entity), `IrrigationRun` (Entity). Value Objects: `MoistureThreshold`, `WateringWindow`. |
-| Design Critique | Se evaluó incorporar el riego a Smart Lighting & Automation, que también ejecuta reglas programadas sobre actuadores, pero se descartó: las reglas de iluminación dependen de presencia, lux y reservas, mientras que el riego depende de la humedad del suelo y de su propio calendario; un modelo común de "regla genérica" mezclaría dos lenguajes ubicuos y obligaría a compartir tipos entre contextos. También se evaluó que el Edge decidiera el riego de forma autónoma; se optó por mantener la autoría de programaciones y umbrales en el cloud y empujarlas al Edge, que ejecuta el riego aun sin conexión con la última programación sincronizada —el mismo patrón Conformist de IoT Access Management y Smart Lighting & Automation—. |
-
-**9. Communication (4.2.6)**
-
-| Campo | Detalle |
-|---|---|
-| Purpose | Publicar comunicados oficiales y encuestas de la comunidad hacia los residentes, y difundir alertas de emergencia. |
-| Strategic Classification | Domain Role: **Supporting** · Business Model: Engagement Creator · Evolution: **Product** (publicación de anuncios/encuestas es un patrón conocido). |
-| Ubiquitous Language | Announcement (Comunicado), Poll (Encuesta), Reach (Alcance), Emergency Alert (Alerta de Emergencia). |
-| Business Decisions | Límite de un mensaje diario por residente (HTTP 429 si se excede) · voto único por encuesta (HTTP 409 si se duplica) · una alerta de emergencia declarada por el administrador se difunde a todo el edificio por push y SMS en menos de 5 s (US08 esc. 1) · una emergencia reportada por un residente llega al administrador con su torre y departamento (US08 esc. 2). |
-| Inbound Communication | Ninguna. |
-| Outbound Communication | **Notification** (Customer/Supplier, eventos `AnnouncementPublished`, `EmergencyDeclared` y `EmergencyReported`) · **Residential Management** (Customer/Supplier, REST síncrono — resuelve la torre y el departamento de quien reporta una emergencia) · **Cloudinary** (Anti-Corruption Layer — imágenes de comunicados). |
-| Model (Aggregates) | `Announcement` (Entity), `Poll` (Entity), `EmergencyAlert` (Entity). |
-| Design Critique | Se evaluó fusionar Communication con Forum (ambos son "muros" de contenido), pero se mantuvieron separados porque su ubiquitous language y su ciclo de vida difieren: un comunicado es unidireccional y oficial (admin → todos), mientras un post de Forum es conversacional entre pares. Las alertas de emergencia se ubicaron aquí y no en un contexto propio (ver la retirada de Incident Management en 4.1.1.1) porque también son mensajes uno-a-muchos sin ciclo de vida de atención. |
-
-**10. Notification (4.2.5)**
-
-| Campo | Detalle |
-|---|---|
-| Purpose | Traducir eventos de dominio de todo el sistema en notificaciones push entregadas al residente o administrador correcto. |
-| Strategic Classification | Domain Role: **Generic** (envío de notificaciones es una capability resuelta por FCM) · Business Model: Engagement Creator · Evolution: **Commodity** (delegada casi por completo a Firebase Cloud Messaging). |
-| Ubiquitous Language | Notification (Notificación), Device Token (Token de Dispositivo). |
-| Business Decisions | Si el envío a FCM falla, la notificación se marca pendiente de reintento sin afectar el estado del contexto que originó el evento (compensación, ver 4.1.1.2). |
-| Inbound Communication | **Communication** (`AnnouncementPublished`, `EmergencyDeclared`, `EmergencyReported`) · **Payment** (`PaymentApproved`) · **Reservation** (`ReservationApproved`) · **IoT Access Management** (`PhysicalAccessGranted`/`Denied`) · **IoT Telemetry & Analytics** (`AbnormalConsumptionDetected`, `LuminaireFailureDetected`) · **Smart Irrigation** (`IrrigationFailed`, `MoistureSensorFaulty`) — todos Customer/Supplier, Notification es downstream puro. |
-| Outbound Communication | **Firebase Cloud Messaging** (Anti-Corruption Layer). |
-| Model (Aggregates) | `Notification` (Entity), `DeviceToken` (Entity). |
-| Design Critique | Al ser el único punto de consumo de eventos de los seis contextos que publican alertas (Communication, Payment, Reservation, IoT Access Management, IoT Telemetry & Analytics y Smart Irrigation), se evaluó el riesgo de que un fallo en Notification bloqueara el broker para todos; se mitigó con el **Factory Pattern** para desacoplar la creación del tipo de notificación (Push/Email/SMS) de su envío, y con colas de reintento independientes por evento. |
-
-**11. Report (4.2.8)**
-
-| Campo | Detalle |
-|---|---|
-| Purpose | Consolidar y exportar reportes financieros, de morosidad y de analítica de consumo energético de la comunidad. |
-| Strategic Classification | Domain Role: **Supporting** · Business Model: Decision Support · Evolution: **Product** (generación de reportes PDF/Excel es un patrón conocido). |
-| Ubiquitous Language | Financial Report (Reporte Financiero), Delinquency (Morosidad). |
-| Business Decisions | Contexto mayormente de solo lectura (CQRS): no posee agregados transaccionales propios, solo modelos de lectura. |
-| Inbound Communication | Ninguna. |
-| Outbound Communication | **Payment** (Customer/Supplier, REST síncrono) · **IoT Telemetry & Analytics** (Customer/Supplier — métricas de consumo). |
-| Model (Aggregates) | `FinancialReport` (modelo de lectura, sin Aggregate Root transaccional). |
-| Design Critique | Se evaluó que Report consumiera eventos de Payment de forma asíncrona (event sourcing de proyecciones) en vez de consultarlo vía REST síncrono, lo que reduciría el acoplamiento temporal; se descartó por ahora dado el volumen de datos y el timebox del proyecto, dejándolo como una mejora futura explícita. |
-
-**12. Forum (4.2.7)**
-
-| Campo | Detalle |
-|---|---|
-| Purpose | Sostener el muro comunitario de mensajes entre residentes de un mismo edificio. |
-| Strategic Classification | Domain Role: **Generic** · Business Model: Engagement Creator · Evolution: **Commodity** (patrón de muro/foro ampliamente disponible). |
-| Ubiquitous Language | Post (Publicación), Wall (Muro). |
-| Business Decisions | Límite de publicaciones diarias por residente (HTTP 429 si se excede). |
-| Inbound Communication | Ninguna. |
-| Outbound Communication | **Cloudinary** (Anti-Corruption Layer — imágenes de publicaciones del foro). |
-| Model (Aggregates) | `Post` (Entity). |
-| Design Critique | Es el contexto de menor prioridad estratégica de los 12 (Domain Role Generic, Evolution Commodity); se evaluó no construirlo como microservicio independiente y anexarlo a Communication, pero se mantuvo separado porque su Ubiquitous Language y su patrón de acceso (conversacional, muchos-a-muchos) son distintos a los de un comunicado oficial (uno-a-muchos), y porque así puede escalar o degradarse independientemente sin afectar la publicación de comunicados oficiales. |
 
 *Figura. Bounded Context Canvas de IoT Telemetry & Analytics. Elaborado por el equipo utilizando Miro (Miro, s.f.).*
 
-**8. Edge API (infraestructura transversal)**
+**Description**
+En este bounded context se ingieren las lecturas y logs de todos los dispositivos IoT, se calcula el consumo de energía y agua de las áreas comunes y se detectan anomalías y fallas de dispositivos.
 
-![Bounded Context Canvas Edge API](assets/img/bc-canvas-edge-api.png)
+**Strategic Classification**
+- **Core:** es el único contexto que produce analítica cuantitativa del edificio.
+- **Decision Support:** su modelo de negocio entrega al administrador datos para reducir costos y anticipar fallas.
+- **Custom Built:** el cálculo de consumo y la detección de anomalías se diseñaron a medida para este dominio.
 
+**Domain Role**
+Asume el rol de **analysis context**, porque transforma lecturas crudas en métricas y alertas.
 
-*Figura. Canvas del Edge API, gateway on-premise que actúa como Conformist del modelo cloud; no es un bounded context de dominio, pero se documenta por ser el puente entre los dispositivos ESP32 y los contextos IoT. Elaborado por el equipo utilizando Miro (Miro, s.f.).*
+**Inbound Communication**
+- El Edge API reenvía la telemetría y los logs acumulados de los nodos de acceso, iluminación y riego.
+- El administrador consulta el dashboard de consumo y el estado de los dispositivos desde la Web Application.
 
-=======
-| Contexto origen | Contexto destino | Relación observada | Patrón DDD más cercano (a validar) |
-|---|---|---|---|
-| Communication | Notification | Emite `AnnouncementPublished` al publicar un comunicado, y `EmergencyDeclared` / `EmergencyReported` ante una emergencia (US08), para que se notifique a los residentes o al administrador. | Customer/Supplier (Communication es upstream) |
-| Communication | Residential Management | Consulta síncrona para resolver la torre y el departamento del residente que reporta una emergencia (US08 esc. 2). | Customer/Supplier (Communication es downstream) |
-| Payment | Notification | Emite evento al aprobar un pago. | Customer/Supplier |
-| Reservation | Notification | Emite evento al aprobar una reserva. | Customer/Supplier |
-| Payment | Culqi (sistema externo) | Integración vía Adapter/ACL (pasarela de pagos). | Anti-corruption Layer |
-| Report | Payment | Consulta síncrona vía REST para consolidar reportes financieros. | Customer/Supplier (Report es downstream, solo lectura) |
-| Residential Management | IAM | Provee el vínculo residente–unidad que IAM usa para autorizar el acceso. | Customer/Supplier |
-| Reservation | IoT Access Management | `ReservationApproved` habilita el permiso temporal de acceso al área común reservada. | Customer/Supplier (Reservation es upstream) |
-| Reservation | Smart Lighting & Automation | El inicio de la reserva dispara el encendido programado del área común. | Customer/Supplier |
-| Payment | IoT Access Management | `ResidentMarkedDelinquent` suspende los permisos de acceso del residente moroso. | Customer/Supplier |
-| IoT Access Management | Notification | Emite `PhysicalAccessGranted` / `PhysicalAccessDenied` para notificar accesos y rechazos. | Customer/Supplier |
-| IoT Telemetry & Analytics | Notification | Emite `AbnormalConsumptionDetected` y `LuminaireFailureDetected` para alertar al administrador. | Customer/Supplier |
-| IoT Telemetry & Analytics | Smart Irrigation | Publica `SoilMoistureMeasured` con la lectura de humedad del suelo ya validada, que alimenta la decisión de riego (US51). | Customer/Supplier (Telemetry es upstream) |
-| Smart Irrigation | Notification | Emite `IrrigationFailed` y `MoistureSensorFaulty` para avisar al administrador de un riego no ejecutado o de un sensor con falla. | Customer/Supplier |
-| IoT Telemetry & Analytics | Report | Aporta las métricas de consumo energético que Report consolida en la analítica de la comunidad. | Customer/Supplier (Report es downstream) |
-| IoT Access Management | Edge API | Sincroniza credenciales activas, reservas vigentes y blacklist hacia el gateway on-premise. | Conformist (el Edge conforma el modelo definido en el cloud) |
-| Smart Lighting & Automation | Edge API | Envía las reglas de automatización y los comandos de override manual. | Conformist |
-| Smart Irrigation | Edge API | Sincroniza programaciones y umbrales de humedad, y envía los comandos de apertura y cierre de la electroválvula. | Conformist |
-| Edge API | IoT Telemetry & Analytics | Reenvía la telemetría bufferizada y los registros de auditoría generados durante la operación offline. | Customer/Supplier (el Edge es upstream de datos) |
-| Edge API | Smart Lighting & Automation | Relaya el evento `AreaPresenceDetected` apenas recibe la lectura del sensor PIR, priorizando latencia de encendido sobre interpretación de dominio. | Customer/Supplier (el Edge es upstream de datos, ver 4.2.10.3) |
-| Edge API | Smart Irrigation | Confirma la ejecución de cada riego (`IrrigationRunReported`), incluidos los ejecutados sin conexión. | Customer/Supplier (el Edge es upstream de datos) |
-| Dispositivos embebidos (ESP32) | Edge API | Intercambio local MQTT de lecturas y comandos; el firmware se adapta al contrato del Edge API. | Conformist (infraestructura física, no bounded context de dominio) |
-| API Gateway | Todos los contextos | Enrutamiento y validación de JWT (infraestructura transversal, no bounded context de dominio). | — |
+**Outbound Communication**
+- Informa a Smart Lighting & Automation la presencia detectada.
+- Informa a Smart Irrigation la humedad del suelo medida.
+- `AbnormalConsumptionDetected` y `DeviceFailureDetected` permiten a Notification alertar al administrador.
+- Aporta a Report las métricas de consumo de energía y agua.
 
-**Discusión de alternativas de context mapping**
+**Capability Analysis**
+- **Ingesta de telemetría:** almacena lecturas de alta frecuencia en TimescaleDB.
+- **Cálculo de consumo:** obtiene los kWh por integración de la potencia en el tiempo.
+- **Detección de anomalías:** compara el consumo contra una línea base.
+- **Detección de fallas:** identifica dispositivos desconectados o con lecturas inválidas.
 
-Sobre el mapa anterior, el equipo evaluó explícitamente las preguntas de diseño sugeridas por el enunciado. La tabla siguiente resume los casos donde la respuesta no era obvia, la alternativa considerada y la decisión final:
-
-| Pregunta de diseño | Alternativa evaluada | Decisión final y razón |
-|---|---|---|
-| ¿Qué pasaría si **movemos** este capability a otro contexto? | Mover la decisión de acceso (`AccessDecisionService`) del cloud (IoT Access Management) al Edge API, para que abra la puerta sin ida y vuelta al cloud. | **Se descarta mover el contexto completo**, pero sí se replica su *resultado* (credenciales/permisos ya resueltos) en el Edge vía sincronización — el Edge cachea la decisión, no la recalcula. Mantiene a IoT Access Management como única fuente de verdad y evita que la regla de negocio (moroso → sin acceso) viva en dos lugares. |
-| ¿Qué pasaría si **descomponemos** el capability y movemos un sub-capability a otro contexto? | Separar la emisión/gestión de credenciales RFID de la decisión de acceso en tiempo real, creando un contexto "Credential Management" aparte de "Access Decision". | **Se descarta**: ambos sub-capabilities comparten el mismo Aggregate (`AccessCredential`) y el mismo invariante (una credencial suspendida no debe poder decidir un acceso), partirlos forzaría una transacción distribuida para algo que hoy es una operación local. |
-| ¿Qué pasaría si **partimos** el bounded context en varios? | Partir Payment en "Billing" (deudas/cuotas) y "Payment Processing" (cobro/Culqi) como dos contextos independientes. | **Se descarta para el alcance actual**: el volumen de reglas de negocio no justifica el costo de coordinación entre dos contextos: la Saga de aprobación (4.1.1.2) necesita ambas responsabilidades en la misma transacción local. Queda anotado como refactor natural si el dominio de facturación creciera (ej. múltiples pasarelas de pago). |
-| ¿Qué pasaría si **tomamos capabilities de 3 contexts** para formar uno nuevo? | Extraer la lógica de "generar alerta" que hoy vive de forma repetida en IoT Access Management, IoT Telemetry y Smart Irrigation, y consolidarla en un contexto nuevo. | **Ya resuelto por diseño**: ese contexto nuevo es exactamente **Notification** — los contextos IoT solo publican el evento de dominio (`PhysicalAccessDenied`, `AbnormalConsumptionDetected`, `IrrigationFailed`, etc.) y es Notification quien concentra el *Factory Pattern* de creación de la alerta (push/email/SMS), evitando triplicar esa lógica. |
-| ¿Qué pasaría si **duplicamos** una funcionalidad para romper una dependencia? | Que Report mantenga su propia copia denormalizada de pagos/deudas (vía eventos) en lugar de consultar a Payment por REST síncrono. | **Se descarta por ahora** (queda como Design Critique de Report en 4.1.1.3): el volumen de datos y el timebox del proyecto no justifican construir un pipeline de proyecciones; se acepta el acoplamiento síncrono Report → Payment sabiendo que es la única lectura cross-context sin desacoplar del informe. |
-| ¿Qué pasaría si creamos un **shared service** para reducir duplicación? | Un servicio compartido de "estado de morosidad" consultado tanto por IoT Access Management como por futuras integraciones (ej. bloqueo de reservas a morosos). | **Se descarta un servicio nuevo**: Payment ya es la fuente de verdad y publica `ResidentMarkedDelinquent`; crear un shared service solo agregaría un salto de red adicional sin nueva capability. Se prefiere que cada contexto interesado se suscriba al evento (Customer/Supplier) en vez de introducir un Shared Kernel. |
-| ¿Qué pasaría si **aislamos los core capabilities** y movemos el resto a un contexto aparte? | Separar `EnergyCalculationService`/`AnomalyDetectionService` (core, diferenciador) de la ingesta cruda de telemetría (`TelemetryIngestionService`, más genérica) en dos contextos. | **Se descarta dividir en dos microservicios** por el timebox del curso, pero sí se aisló en capas dentro del mismo contexto (Domain Service vs. Application Service, ver 4.2.11): si el volumen de sensores creciera, la ingesta cruda es la primera candidata a externalizarse hacia una plataforma IoT genérica (ej. AWS IoT Core), dejando el cálculo de energía y la detección de anomalías —el verdadero valor de negocio— en el contexto propio. |
-
-
-**9. Incident Management (4.2.9)**
-
-![Bounded Context Canvas Incident Management](assets/img/bc-canvas-incident-management.png)
-
-*Figura. Bounded Context Canvas de Incident Management. Elaborado por el equipo utilizando Miro (Miro, s.f.).*
-
-**10. Communication (4.2.6)**
+### Bounded Context – Communication
 
 ![Bounded Context Canvas Communication](assets/img/bc-canvas-communication.png)
 
 *Figura. Bounded Context Canvas de Communication. Elaborado por el equipo utilizando Miro (Miro, s.f.).*
 
-**11. Notification (4.2.5)**
+**Description**
+En este bounded context el administrador redacta y publica comunicados oficiales dirigidos a los residentes del edificio, y se registra su estado de lectura.
+
+**Strategic Classification**
+- **Supporting:** facilita la comunicación oficial, pero no es el diferenciador del producto.
+- **Engagement Creator:** mantiene informados a los residentes sobre novedades y disposiciones.
+- **Product:** la publicación de anuncios es un patrón conocido.
+
+**Domain Role**
+Asume el rol de **execution context**, porque publica el comunicado y registra su lectura.
+
+**Inbound Communication**
+- El administrador redacta y publica comunicados desde la Web Application.
+- El residente lee los comunicados desde la Mobile Application.
+
+**Outbound Communication**
+- `AnnouncementPublished` permite a Notification enviar la notificación push a los residentes.
+- Las imágenes de los comunicados se almacenan en Cloudinary a través de un Anticorruption Layer.
+
+**Capability Analysis**
+- **Publicación de comunicados:** difunde un mensaje oficial a todo el edificio.
+- **Confirmación de lectura:** registra qué residentes leyeron cada comunicado.
+
+### Bounded Context – Messaging / Forum
+
+![Bounded Context Canvas Messaging Forum](assets/img/bc-canvas-forum.png)
+
+*Figura. Bounded Context Canvas de Messaging / Forum. Elaborado por el equipo utilizando Miro (Miro, s.f.).*
+
+**Description**
+En este bounded context se gestiona el foro privado de cada edificio, donde los residentes publican, comentan e interactúan entre ellos.
+
+**Strategic Classification**
+- **Generic:** el foro comunitario es una capacidad ampliamente disponible.
+- **Engagement Creator:** fortalece la comunidad del edificio.
+- **Commodity:** se basa en un patrón estándar de muro con publicaciones y comentarios.
+
+**Domain Role**
+Asume el rol de **execution context**, porque registra publicaciones y comentarios.
+
+**Inbound Communication**
+- El residente crea publicaciones y comentarios desde la Mobile Application.
+
+**Outbound Communication**
+- Los eventos de publicación y comentario creados permiten a Notification avisar a los residentes.
+- Las imágenes de las publicaciones se almacenan en Cloudinary a través de un Anticorruption Layer.
+
+**Capability Analysis**
+- **Publicaciones:** permite compartir mensajes con texto e imagen.
+- **Comentarios:** permite la conversación entre residentes.
+
+### Bounded Context – Notification
 
 ![Bounded Context Canvas Notification](assets/img/bc-canvas-notification.png)
 
 *Figura. Bounded Context Canvas de Notification. Elaborado por el equipo utilizando Miro (Miro, s.f.).*
 
-**12. Report (4.2.8)**
+**Description**
+En este bounded context se traducen los eventos de dominio de toda la plataforma en notificaciones push entregadas al residente o administrador correspondiente.
+
+**Strategic Classification**
+- **Generic:** el envío de notificaciones es una capacidad resuelta en gran parte por Firebase Cloud Messaging.
+- **Engagement Creator:** mantiene al usuario informado en tiempo real.
+- **Commodity:** delega el envío a un servicio externo.
+
+**Domain Role**
+Asume el rol de **downstream context**, porque solo consume eventos de otros contextos y no influye en su estado.
+
+**Inbound Communication**
+- Payment informa pagos confirmados y rechazados.
+- Reservation informa los eventos de reserva.
+- Communication informa los comunicados publicados.
+- Messaging / Forum informa las publicaciones y comentarios creados.
+- IoT Access Management informa los accesos concedidos y denegados.
+- IoT Telemetry & Analytics informa anomalías de consumo y fallas de dispositivos.
+- Smart Irrigation informa riegos fallidos y sensores con falla.
+
+**Outbound Communication**
+- Envía las notificaciones push a la Mobile Application a través de Firebase Cloud Messaging, mediante un Anticorruption Layer.
+
+**Capability Analysis**
+- **Creación de notificaciones:** traduce cada evento a un mensaje comprensible para el usuario.
+- **Envío push:** entrega la notificación al dispositivo registrado.
+- **Reintento:** si el envío falla, deja la notificación pendiente sin afectar al contexto que originó el evento.
+- **Historial:** registra las notificaciones enviadas y leídas.
+
+### Bounded Context – Report
 
 ![Bounded Context Canvas Report](assets/img/bc-canvas-report.png)
 
 *Figura. Bounded Context Canvas de Report. Elaborado por el equipo utilizando Miro (Miro, s.f.).*
+
+**Description**
+En este bounded context se consolidan y exportan los reportes financieros, de morosidad y de consumo de recursos del edificio.
+
+**Strategic Classification**
+- **Supporting:** apoya la toma de decisiones del administrador.
+- **Decision Support:** su modelo de negocio convierte los datos operativos en información para gestionar el edificio.
+- **Product:** la generación de reportes es un patrón conocido.
+
+**Domain Role**
+Asume el rol de **analysis context**, porque solo lee y consolida información de otros contextos, sin modificar su estado.
+
+**Inbound Communication**
+- El administrador solicita y exporta reportes desde la Web Application.
+- IoT Telemetry & Analytics aporta las métricas de consumo de energía y agua.
+- IoT Access Management aporta los accesos concedidos y denegados.
+
+**Outbound Communication**
+- Consulta a Payment los pagos y deudas del periodo.
+
+**Capability Analysis**
+- **Reporte financiero:** resume ingresos, deudas pendientes y morosidad.
+- **Reporte de consumo:** muestra el uso de energía y agua de las áreas comunes.
+- **Exportación:** permite descargar los reportes para compartirlos.
+
+### Edge API
+
+![Canvas Edge API](assets/img/bc-canvas-edge-api.png)
+
+*Figura. Canvas del Edge API. Elaborado por el equipo utilizando Miro (Miro, s.f.).*
+
+**Description**
+El Edge API es el gateway instalado en cada condominio que coordina los dispositivos ESP32, cachea las credenciales RFID y las reglas de iluminación y riego, y mantiene la operación aunque se caiga el internet. No es un bounded context de dominio, pero se documenta porque conecta los dispositivos con los contextos IoT.
+
+**Strategic Classification**
+- **Supporting:** sostiene la resiliencia offline de los contextos IoT.
+- **Compliance Enforcer:** garantiza que los accesos sigan validándose sin conexión.
+- **Custom Built:** se diseñó a medida para la operación local del condominio.
+
+**Domain Role**
+Asume el rol de **gateway context**, porque traduce entre los dispositivos físicos y el cloud, y actúa como **conformist** del modelo definido por los contextos IoT.
+
+**Inbound Communication**
+- IoT Access Management sincroniza credenciales activas, ventanas de reserva y blacklist.
+- Smart Lighting & Automation y Smart Irrigation envían reglas, programaciones y comandos de override.
+- Los dispositivos ESP32 envían intentos de acceso RFID, presencia, lux, corriente, humedad del suelo y estado de la válvula.
+
+**Outbound Communication**
+- Envía a los dispositivos los comandos de apertura de puerta, encendido de luces y apertura o cierre de válvula.
+- Reenvía al broker los registros de acceso generados offline y la telemetría acumulada.
+
+**Capability Analysis**
+- **Validación offline:** decide accesos con su caché local de credenciales.
+- **Ejecución local:** acciona luces y válvulas sin depender del cloud.
+- **Sincronización:** reenvía los datos acumulados cuando se restablece la conexión.
 
 
 ### 4.1.2. Context Mapping
