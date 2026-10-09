@@ -245,6 +245,25 @@ AV1 (20/09/2026):
         - [4.2.12.6.1. Bounded Context Domain Layer Class Diagrams](#421261-bounded-context-domain-layer-class-diagrams)
         - [4.2.12.6.2. Bounded Context Database Design Diagram](#421262-bounded-context-database-design-diagram)
     - [Conclusiones](#conclusiones)
+- [CAPÍTULO V: Solution UI/UX Design](#capítulo-v-solution-uiux-design)
+  - [5.1. Style Guidelines](#51-style-guidelines)
+    - [5.1.1. General Style Guidelines](#511-general-style-guidelines)
+    - [5.1.2. Web, Mobile and IoT Style Guidelines](#512-web-mobile-and-iot-style-guidelines)
+      - [IoT Physical Interface Style Guidelines](#iot-physical-interface-style-guidelines)
+  - [5.2. Information Architecture](#52-information-architecture)
+  - [5.3. Landing Page UI Design](#53-landing-page-ui-design)
+  - [5.4. Applications UX/UI Design](#54-applications-uxui-design)
+  - [5.5. Application Prototyping](#55-application-prototyping)
+  - [5.6. IoT Device Design](#56-iot-device-design)
+    - [5.6.1. Introducción y criterios de diseño](#561-introducción-y-criterios-de-diseño)
+    - [5.6.2. Relación con la arquitectura de información y con la guía de estilos de interfaz física](#562-relación-con-la-arquitectura-de-información-y-con-la-guía-de-estilos-de-interfaz-física)
+    - [5.6.3. Stack común y cadena de herramientas](#563-stack-común-y-cadena-de-herramientas)
+    - [5.6.4. Dispositivo 01 — Controlador de acceso de áreas comunes (ACC-01)](#564-dispositivo-01--controlador-de-acceso-de-áreas-comunes-acc-01)
+    - [5.6.5. Dispositivo 02 — Nodo de iluminación inteligente y sensado (LGT-01)](#565-dispositivo-02--nodo-de-iluminación-inteligente-y-sensado-lgt-01)
+    - [5.6.6. Dispositivo 03 — Nodo hidráulico de detección de fugas (HYD-01)](#566-dispositivo-03--nodo-hidráulico-de-detección-de-fugas-hyd-01)
+    - [5.6.7. Dispositivo 04 — Medidor de consumo energético (PWR-01)](#567-dispositivo-04--medidor-de-consumo-energético-pwr-01)
+    - [5.6.8. Verificación de los prototipos y presupuestos de respuesta](#568-verificación-de-los-prototipos-y-presupuestos-de-respuesta)
+    - [5.6.9. Trazabilidad con las historias de usuario](#569-trazabilidad-con-las-historias-de-usuario)
 - [Conclusiones y Recomendaciones](#conclusiones-y-recomendaciones)
 - [Referencias Bibliográficas](#referencias-bibliográficas)
 - [Anexos](#anexos)
@@ -4351,7 +4370,7 @@ Implementación JPA de los repositorios sobre PostgreSQL; `EdgeGatewaySyncClient
 
 El agregado principal identificado es:
 
-**AutomationRule**: regla que gobierna una o varias luminarias de un área común, con condición de presencia, umbral de lux, franja horaria, duración de apagado por inactividad y prioridad frente a otras reglas. La regla se resuelve mediante el Domain Service **AutomationDecisionService**, que combina presencia, lux ambiental, horario de reserva y override vigente, aplicando la precedencia entre reglas.
+**AutomationRule**: regla que gobierna una o varias luminarias de un área común, con condición de presencia, umbral de lux, franja horaria, duración de apagado por inactividad y prioridad frente a otras reglas. La regla se resuelve mediante el Domain Service **AutomationDecisionService**, que combina presencia, lux ambiental, horario de reserva y anulación vigente, aplicando la precedencia entre reglas.
 
 ## Aggregate: AutomationRuleAggregate
 
@@ -4424,7 +4443,7 @@ El agregado principal identificado es:
 
 | Nombre | Responsabilidad | Reglas aplicadas |
 |---|---|---|
-| AutomationDecisionService | Resolver el estado objetivo de cada luminaria. | Combina presencia, lux ambiental, horario de reserva y override vigente, aplicando la precedencia entre reglas. |
+| AutomationDecisionService | Resolver el estado objetivo de cada luminaria. | Combina presencia, lux ambiental, horario de reserva y anulación vigente, aplicando la precedencia entre reglas. |
 
 #### 4.2.10.2. Interface Layer
 
@@ -4729,11 +4748,11 @@ Implementación JPA de los repositorios sobre PostgreSQL; `EdgeCommandPublisher`
 
 *Figura. Diagrama Entidad-Relación — extensión Water Pump Leak Detection. Elaborado con PlantUML.*
 
-## Capítulo V: Solution UI/UX Design
+# Capítulo V: Solution UI/UX Design
 
-### 5.1. Style Guidelines
+## 5.1. Style Guidelines
 
-#### 5.1.1. General Style Guidelines
+### 5.1.1. General Style Guidelines
 
 En esta sección hemos establecido las directrices de estilo que rigen todas las pantallas de Edifika (aplicación web, aplicación móvil y dispositivos IoT). Su propósito es garantizar coherencia visual y de comunicación: que un mismo color, un mismo tamaño de texto y un mismo tono de redacción signifiquen siempre lo mismo en todo el producto.
 
@@ -4752,7 +4771,7 @@ Las decisiones no son arbitrarias; cada una se sustenta en principios de diseño
 - **Accesibilidad y diseño universal:** contraste mínimo 4.5:1 en texto y 3:1 en elementos gráficos, tamaño mínimo de 14 px para texto de formulario, y nunca dependencia única del color para transmitir estado (siempre se acompaña de etiqueta textual, por ejemplo "PAID", "LATE (12D)", "OCCUPIED").
 - **Principio de "content first" y revelado progresivo:** la información se presenta en bloques cerrados (cards) en lugar de listas interminables, con revelado progresivo mediante paginación y filtros.
 
-##### Branding
+#### Branding
 
 El branding de Edifika se sustenta en el **nombre, el símbolo y el color de marca** como trío indivisible:
 
@@ -4763,7 +4782,7 @@ El branding de Edifika se sustenta en el **nombre, el símbolo y el color de mar
 - **Área de respeto (clear space):** el espacio libre alrededor del logotipo equivale a la altura de la "E" del nombre. El logotipo no se deforma, no se recolorea fuera de la paleta y no se acompaña de sombras ni efectos.
 - **Aplicación en marketing vs. en producto:** en piezas de comunicación (login, registro, landing) el logotipo se apoya en un panel fotográfico con duotono de marca y el titular de posicionamiento; dentro de la aplicación el logotipo se mantiene fijo en la cabecera del sidebar y no se repite en cada tarjeta para no competir con el contenido.
 
-##### Lenguaje Aplicado
+#### Lenguaje Aplicado
 
 El tono de comunicación se definió como **serio, semi-formal, respetuoso y sereno con episodios de entusiasmo controlado**, coherente con un producto de gestión administrativa donde el usuario puede estar tratando con deudas y conflictos vecinales. El detalle de las dimensiones adoptadas es el siguiente:
 
@@ -4786,7 +4805,7 @@ Además de las dimensiones anteriores, se establecen las siguientes **reglas de 
 
 Esta directriz se complementa con las dimensiones concretas por plataforma (web, móvil e IoT) descritas en la sección 5.1.2.
 
-##### Paleta de Colores
+#### Paleta de Colores
 
 La paleta se construyó sobre una base de **violeta de marca**, neutros fríos para la estructura general (superficies, bordes, tipografía) y una paleta semántica acotada para estados. La regla estructural es: **el color no se usa para decorar, solo para comunicar** (marca, acción primaria, estado); el resto de la superficie se resuelve con blanco, grises muy claros y bordes.
 
@@ -4822,7 +4841,7 @@ Los tokens definidos, tomados de las variables de estilo de Figma, son:
 - **Color como código de categoría:** en el calendario de reservas, el color del chip identifica el área y su estado, y se acompaña de una leyenda textual ("BBQ AREA", "PARTY ROOM", "CANCELED", "GYM CENTER") para usuarios que no distinguen los tonos.
 - **Los dispositivos IoT** (sección 5.1.2) reutilizan los mismos tokens: el LED de estado y la carcasa del dispositivo emplean `Primary` y `Neutral` para mantener coherencia entre el objeto físico y la app. El único token que la plataforma IoT añade a esta paleta es `Warning` (`#B45309` sobre `#FFFBEB`), por la necesidad de representar estados intermedios del dispositivo que las tablas de la web no tienen.
 
-##### Tipografía
+#### Tipografía
 
 La familia tipográfica elegida es una **sans-serif geométrica y humanista de alta legibilidad en tamaños pequeños**, con un juego de pesos completo (Regular a Bold) que permite construir jerarquía sin recurrir a familias adicionales ni a negritas sintéticas. Se definieron los siguientes estilos:
 
@@ -4847,7 +4866,7 @@ La familia tipográfica elegida es una **sans-serif geométrica y humanista de a
 - **Límite de longitud de línea:** 60–75 caracteres en párrafos (publicaciones y comunicados); se parte el texto en bloques cortos con espaciado entre párrafos.
 - **Legibilidad mínima:** 14 px para texto de formulario y 12 px para metadatos; nunca por debajo de 11 px, para preservar legibilidad en el segmento de adultos mayores.
 
-##### Espaciado
+#### Espaciado
 
 El espaciado sigue una **escala base de 4 px (múltiplos: 4, 8, 12, 16, 20, 24, 32, 40, 48, 64)**, tomado de la convención de Tailwind CSS para que los valores sean consistentes entre diseño y código. Esta escala hace predecibles los ritmos verticales y permite que cualquier componente nuevo encaje sin cálculos ad hoc.
 
@@ -4872,7 +4891,7 @@ El espaciado sigue una **escala base de 4 px (múltiplos: 4, 8, 12, 16, 20, 24, 
 - **Sombras:** muy sutiles (elevación baja en hover de tarjetas); en el panel fotográfico de acceso y registro la profundidad se logra con overlay de color y no con sombras duras.
 - **Objetivos táctiles:** ningún control interactivo por debajo de 44 × 44 px en móvil; en escritorio, altura mínima de 40 px para botones y 56 px para filas de tabla, lo que además mejora la precisión del clic.
 
-#### 5.1.2. Web, Mobile and IoT Style Guidelines
+### 5.1.2. Web, Mobile and IoT Style Guidelines
 
 La sección 5.1.1 definió los tokens del producto: una paleta, una escala tipográfica, una escala de espaciado y un registro de texto. Esos tokens **no se duplican por plataforma**. Lo que cambia de una superficie a otra es la densidad de información, el modelo de navegación y la forma física de la interacción, y eso es precisamente lo que hay que fijar aquí, porque de lo contrario cada frente (web, móvil, firmware) interpretaría los mismos tokens por su cuenta y el producto se leería como tres aplicaciones distintas.
 
@@ -4892,7 +4911,7 @@ Las siete pantallas de referencia se diseñaron primero para escritorio, porque 
 | Movimiento y retardo | Elevación baja en hover, sin animaciones de más de 200 ms. | Gesto con alternativa visible siempre disponible. | Retardo máximo de 500 ms entre la pulsación y el relé. |
 | Accesibilidad | Contraste 4.5:1, foco visible, sin dependencia del color. | Tamaño dinámico del sistema, contraste alto del sistema operativo. | Código de parpadeo redundante y silencio programable en horario nocturno. |
 
-##### Web Style Guidelines
+#### Web Style Guidelines
 
 La Web Application es la superficie de trabajo del segmento administrador y la única capaz de sostener la densidad de información que ese rol exige. Todas las reglas de este bloque se leen sobre pantallas ya construidas, y la vista de **Units & Residents** es la línea base: sidebar fijo, barra superior, fila de cuatro tarjetas KPI, barra de filtros y tabla como bloque dominante.
 
@@ -4925,7 +4944,7 @@ El modal mide 512 px de ancho máximo, se centra, usa radio de 12 px y un scrim 
 
 **Acceso y registro.** Las dos vistas de entrada comparten una retícula de dos mitades que resuelve la responsividad sin código adicional: a partir de 1024 px el panel fotográfico ocupa la mitad y el formulario la otra; por debajo de 768 px el panel se oculta y el formulario toma el ancho completo con márgenes de 24 px. El formulario se escribe en columna única, con etiquetas en `MAYÚSCAS`, campos con ícono a la izquierda y separador inferior en lugar de caja completa, y un botón sólido seguido de su variante outline. Ambas vistas comparten el mismo esqueleto y solo cambian los campos, lo que hace que el paso entre una y otra se perciba como continuo.
 
-##### Mobile Style Guidelines
+#### Mobile Style Guidelines
 
 La Mobile Application cubre al propietario y al inquilino en sus tareas de uso frecuente: pagos, reservas, comunicados y foro desde iOS y Android. Los datos y los tokens de color, tipografía y microcopy son los mismos que en la web, porque el residente no debería tener que aprender un segundo idioma visual. Lo que se rediseña es el modelo de navegación: una tabla de 428 unidades no cabe en 360 px, y el error fácil sería comprimirla hasta que quepa en lugar de cambiarla.
 
@@ -4950,7 +4969,7 @@ La Mobile Application cubre al propietario y al inquilino en sus tareas de uso f
 **Estado de madurez.** Las decisiones anteriores se derivan de los mismos tokens de las siete pantallas de referencia aplicados sobre las convenciones de Material Design 3. El juego de pantallas específico de la app móvil todavía no está formalizado, así que estas reglas quedan fijadas aquí como contrato de diseño para esa etapa y no como descripción de pantallas ya construidas.
 
 
-##### IoT Style Guidelines
+#### IoT Style Guidelines
 
 La interfaz IoT de Edifika es software: es el dashboard donde el administrador y el residente ven el estado de los dispositivos del edificio, y hereda la paleta sin excepciones. Lo que cambia es la naturaleza del dato. Las lecturas llegan por MQTT desde el Edge API con latencia variable, y un dispositivo puede simplemente no estar conectado. De ahí la regla que gobierna todo este bloque: **cuando no se sabe el estado de un dispositivo, la interfaz dice que no lo sabe**. Un vacío ambiguo es peor que un mensaje explícito de "sin conexión", porque se toman decisiones sobre puertas, luz y bombas de agua sobre la base de ese vacío.
 
@@ -4968,7 +4987,7 @@ La interfaz IoT de Edifika es software: es el dashboard donde el administrador y
 
 **Modo degradado.** Cuando el Edge API pierde el broker, la aplicación muestra un banner en `Neutral` con el texto "operando con datos locales" y la hora de la última sincronización, siguiendo el patrón de la tarjeta "Maintenance Schedule" de la vista de áreas comunes. Las lecturas que sí llegan se distinguen con una marca de "local", para que nadie confunda lo acumulado en el edificio con lo validado en la nube.
 
-##### IoT Physical Interface Style Guidelines
+#### IoT Physical Interface Style Guidelines
 
 Los nodos que se despliegan en el edificio (el nodo de iluminación con sensor de presencia y de lux, el nodo hidráulico con sensor de caudal y presión, el lector de credenciales y el medidor de consumo, coordinados por el Edge API) tienen una interfaz física mínima: un LED RGB, un pulsador, una superficie de contactless, un orificio de restablecimiento y una etiqueta. No hay pantalla, y no siempre hay un teléfono en la mano, así que cada señal física tiene que sostenerse por sí sola. La decisión de fondo es mantener el mismo vocabulario de color y de etiquetas que la aplicación, y añadir redundancia donde el color no alcanza.
 
@@ -5001,7 +5020,7 @@ Los nodos que se despliegan en el edificio (el nodo de iluminación con sensor d
 
 **A prueba de fallo.** Si el nodo pierde el broker, mantiene el último estado conocido, su LED pasa a `Neutral` con un parpadeo lento y el Edge lo reporta como desconectado en la aplicación. El sistema no aparenta estar bien cuando no lo está. En el nodo hidráulico eso significa que la bomba se corta por la lectura local aunque el cloud no responda, porque una inundación no espera a la red.
 
-### 5.2. Information Architecture
+## 5.2. Information Architecture
 
 La arquitectura de información (AI) de Edifika define **cómo se estructura, se nombra, se encuentra y se recorre el contenido** del producto digital. En esta sección no se resuelve el problema del condominio, sino que se toman las decisiones que permiten que ese contenido —que crece con cada torre, cada unidad, cada reserva y cada publicación— siga siendo localizable y comprensible tanto para un administrador con años de responsabilidad administrativa como para un residente que usa la plataforma desde el celular.
 
@@ -5027,7 +5046,7 @@ Cuatro decisiones estructurales rigen esta arquitectura y se explican a lo largo
 3. **Profundidad máxima de tres niveles.** La información definitiva —una regla de uso, un saldo, un comprobante— nunca exige más de tres niveles. Cuando una excepción lo requiere, se resuelve con un enlace directo en la fila de la tabla o con un modal, no con un cuarto nivel de árbol. Esta regla se apoya en la ley de Hick-Hyman ya aplicada en 5.1.1: cada decisión que se elimina del usuario es un clic que se le ahorra.
 4. **Acciones a dos clics o menos.** El presupuesto de profundidad se traduce en una regla operativa para la navegación: una acción frecuente debe estar a dos clics o menos desde la pantalla donde el usuario ya se encuentra.
 
-#### 5.2.1. Organization Systems
+### 5.2.1. Organization Systems
 
 **Jerárquica (Visual Hierarchy):** <br>
 
@@ -5109,7 +5128,7 @@ La organización por audiencia es el eje transversal más importante de Edifika,
 
 **e) El condominio como unidad de aislamiento.** Cuando una administración opera varios condominios, la audiencia se refina por condominio: el sidebar añade un selector que reordina el contenido completo (unidades, saldos, comunicados, reservas) sin duplicar la aplicación. La etiqueta del selector es el nombre del condominio y todo el contenido ajeno se retira de la vista en lugar de mostrarse atenuado, para que un administrador que trabaja entre dos edificios nunca arrastre datos de uno al contexto del otro.
 
-#### 5.2.2. Labelling Systems
+### 5.2.2. Labelling Systems
 
 El sistema de etiquetado de Edifika persigue un objetivo único: que **cada conjunto de información tenga una sola etiqueta y que esa etiqueta baste para encontrarlo**. La regla que gobierna todo el sistema es una restricción de longitud: **ninguna etiqueta de interfaz supera las tres palabras**, porque por debajo de dos palabras la etiqueta es ambigua y por encima de tres ya no cabe en la barra lateral ni en una píldora de estado. Toda decisión de este apartado se evalúa contra ese criterio y contra la pregunta de si el usuario novato entiende la palabra sin ayuda.
 
@@ -5191,13 +5210,13 @@ La landing page comunica en español lo que la aplicación nombra en inglés, po
 
 Esta tabla se mantiene sincronizada con 5.2.1: los mismos tres pasos del bloque "Cómo funciona" son los del flujo de wireframe de 5.4.2, y el vocabulario de los módulos del bloque 3 es el mismo que usan las etiquetas del sidebar. **La promesa de la landing y el primer minuto del producto dicen exactamente lo mismo.**
 
-#### 5.2.3. SEO Tags and Meta Tags
+### 5.2.3. SEO Tags and Meta Tags
 
 El sitio de Edifika tiene dos superficies con estrategias opuestas: la **landing page**, pública, que debe ser encontrada por administradores y propietarios que buscan una solución; y la **web application**, privada y dependiente de autenticación, que **no debe indexarse** porque su contenido es específico de cada condominio.
 
 Los valores respetan los límites de cada campo: `Title` de hasta 60 caracteres, `Description` de hasta 155 caracteres y un máximo de cinco conceptos en `Keywords`, sin repetir términos ya presentes en el `Title`.
 
-### **Landing:**
+#### Landing:
 
 | Página | Title | Meta Description | Keywords | Author |
 | :--- | :--- | :--- | :--- | :--- |
@@ -5223,7 +5242,7 @@ Etiquetas técnicas comunes a todas las páginas públicas:
 | `robots.txt` | Permite `/` y bloquea `/app/`, `/login`, `/register` y cualquier ruta con identificador de condominio |
 | `sitemap.xml` | Las siete páginas públicas con su `lastmod`, enviada a Search Console |
 
-### **App:**
+#### App:
 
 La aplicación web se protege con `noindex, nofollow` en todas sus rutas y declara `canonical` hacia `/app`, de modo que ninguna variante con parámetros de sesión resulte indexable. Aun así se declaran las etiquetas por página porque se usan en el título de la pestaña del navegador, en los enlaces que el usuario comparte por mensajería y en las previsualizaciones de las notificaciones.
 
@@ -5255,7 +5274,7 @@ La versión móvil se distribuye en Google Play y App Store, donde no existe un 
 | **URL de política de privacidad** | obligatoria en ambas tiendas | https://edifika.com/legal/privacy |
 | **Clasificación de contenido** | obligatoria | Sin contenido sensible, apto para todas las edades |
 
-#### 5.2.4. Searching Systems
+### 5.2.4. Searching Systems
 
 El sistema de búsqueda persigue un objetivo único: **que ninguna tarea termine en "¿dónde estaba eso?"**. Se apoya en tres herramientas complementarias —búsqueda de texto global con alcance contextual, filtros por facetas en cada módulo y contadores de resultados que siempre dicen cuántos elementos quedan fuera de la vista actual—, de modo que el usuario nunca tenga que recordar dónde vio un dato para recuperarlo.
 
@@ -5295,7 +5314,7 @@ Tres reglas gobiernan el comportamiento de los filtros:
 - **Resultados accionables, no solo informativos.** Cada fila ofrece la acción propia de su módulo —"Send Notice" en un saldo vencido, "Edit Rules" en un área, "Review" en un comentario denunciado—, de modo que el usuario no tenga que volver a la pantalla de origen para actuar sobre lo que encontró.
 - **La exportación conserva los filtros.** "Export CSV" y "Export PDF" descargan exactamente el conjunto que se está viendo, con los filtros aplicados, y el nombre del archivo incluye el período y el filtro para que sea identificable después.
 
-#### 5.2.5. Navigation Systems
+### 5.2.5. Navigation Systems
 
 La navegación de Edifika tiene cuatro capas que trabajan juntas: la **navegación global** (dónde estoy y a dónde puedo ir), la **navegación por contenido** (cómo recorro los datos), la **navegación de retorno** (cómo vuelvo) y la **navegación por audiencia** (qué veo según mi rol). El objetivo medible es que cualquier acción frecuente se alcance en dos clics o menos desde la pantalla de mayor frecuencia.
 
@@ -5336,34 +5355,15 @@ La navegación del sitio público se apoya en una barra superior fija con enlace
 3. **La búsqueda es una puerta de entrada, no un destino.** El resultado lleva a la vista de origen con el registro ya posicionado, de modo que el usuario nunca edita un dato desde un contexto que no corresponde a su naturaleza.
 4. **El soporte está siempre a un clic.** El enlace "Support" permanece visible en el pie del sidebar en todas las vistas, incluidos los estados vacíos, porque el usuario que se equivoca debe poder preguntar sin abandonar lo que estaba haciendo.
 
-### 5.3. Landing Page UI Design
+## 5.3. Landing Page UI Design
 
-#### 5.3.1. Landing Page Wireframe
+### 5.3.1. Landing Page Wireframe
 
-
-
-
-### **Landing Page Wireframe Web**
-
-
-
-<br>
-
-#### 5.3.2. Landing Page Mock-Up
-
-### **Landing Page Mock-Up Mobile**
-
-
-
-### **Landing Page Mock-Up Web**
-
-
-
-
+### 5.3.2. Landing Page Mock-Up
 
 ### 5.4. Applications UX/UI Design
 
-#### 5.4.1. Applications Wireframes
+### 5.4.1. Applications Wireframes
 
 **Login**
 
@@ -5407,7 +5407,7 @@ La navegación del sitio público se apoya en una barra superior fija con enlace
 
 Link del Figma: https://www.figma.com/design/ty6TOS7jOtA6f0111hRNGo/Edifika---Login-Mockup?node-id=19-339&t=GfR39Vruiix1XYFB-0
 
-#### 5.4.2. Applications Wireflow Diagrams
+### 5.4.2. Applications Wireflow Diagrams
 
 **1. Wireflow 1: Registro e inicio de sesión del administrador**
 
@@ -5450,52 +5450,46 @@ User goal: El administrador quiere revisar los ingresos y las deudas del edifici
 
 Este flujo parte del dashboard hacia la sección Finance, donde se revisan los indicadores y la lista de residentes con saldos pendientes. Desde ahí el administrador envía un aviso de cobro.
 
+### 5.4.3. Applications Mock-Ups
 
-#### 5.4.3. Applications Mock-Ups
-
-**Login**
+**Login:**
 
 <p align="center">
-  <img src="assets/img/login1.jpeg" alt="Login" width="800" />
+  <img src="assets/img/mockups/login.jpg" alt="Login" width="800" />
 </p>
 
-**Register**
+**Register:**
 
 <p align="center">
-  <img src="assets/img/register1.jpeg" alt="Register" width="800" />
+  <img src="assets/img/mockups/register.jpg" alt="Register" width="800" />
 </p>
 
-**Dashboard**
+**Units & Residents:**
 
 <p align="center">
-  <img src="assets/img/dashboard1.jpeg" alt="Dashboard" width="800" />
+  <img src="assets/img/mockups/units-residents.jpg" alt="Units" width="800" />
 </p>
 
-**Units & Residents**
+**Common Areas:**
+
 <p align="center">
-  <img src="assets/img/unit1.jpeg" alt="Units" width="800" />
+  <img src="assets/img/mockups/common-areas.jpg" alt="Common" width="800" />
 </p>
 
-**Common Areas**
-
+**Finance:**
 <p align="center">
-  <img src="assets/img/common1.jpeg" alt="Common" width="800" />
+  <img src="assets/img/mockups/finance.jpg" alt="Finance" width="800" />
 </p>
 
-**Finance**
-<p align="center">
-  <img src="assets/img/finance1.jpeg" alt="Finance" width="800" />
-</p>
-
-**Community Wall**
+**Community Wall:**
 
 <p align="center">
-  <img src="assets/img/community1.jpeg" alt="Community" width="800" />
+  <img src="assets/img/mockups/community-wall.jpg" alt="Community" width="800" />
 </p>
 
 Link del Figma: https://www.figma.com/design/ty6TOS7jOtA6f0111hRNGo/Edifika---Login-Mockup?node-id=0-1&p=f&t=GfR39Vruiix1XYFB-0
 
-#### 5.4.4. Applications User Flow Diagrams
+### 5.4.4. Applications User Flow Diagrams
 
 **User Flow 1: **
 
@@ -5560,50 +5554,309 @@ Link del Figma: https://www.figma.com/design/ty6TOS7jOtA6f0111hRNGo/Edifika---Lo
 
 
 
-### 5.5. Application Prototyping
+## 5.5. Application Prototyping
 
+## 5.6. IoT Device Design
 
+### 5.6.1. Introducción y criterios de diseño
 
-### 5.6. Iot Device Desing
+Edifika se ejecuta en el teléfono y en el navegador del administrador, pero la parte de la solución que decide sobre el mundo físico no es software: son cuatro tipos de nodo que se instalan dentro del condominio y que el usuario nunca configura, nunca ve y de los que depende para que un área tenga luz, una puerta se abra a la hora correcta y una fuga no se convierta en una inundación. El diseño de esos dispositivos es, por lo tanto, la decisión de diseño con las consecuencias más físicas del proyecto, y es donde los errores no se manifiestan como una excepción en la consola ni como un estado vacío en una tarjeta: se salen como una puerta que no abre con la visita dentro, o como un área común encendida a las tres de la mañana.
 
-La propuesta de diseño de los dispositivos IoT de Condominia se fundamenta en tres criterios principales: integración directa con el protocolo MQTT para transmisión de datos en tiempo real, bajo consumo energético para uso cotidiano sin interrupciones, y coherencia estética con la guía de estilos de la plataforma. Los dispositivos actúan como la primera capa de captura de datos objetivos, complementando la experiencia digital con información biométrica sin intervención manual del usuario.
- 
+La propuesta de diseño físico y de circuito de estos dispositivos se apoya en **ocho criterios**, que no son una lista de deseos sino el orden en que se resuelven las decisiones cuando dos criterios entran en conflicto.
 
-* **Microcontrolador:** ESP32 DevKit V1
-* **Protocolo:** MQTT sobre Wi-Fi
-* **Broker:** AWS IoT Core
-* **Firmware:** C++ (Arduino framework)
-* **Simulator:** Wokwi
+| Código | Criterio | Fundamento y consecuencia de diseño | Dónde se hace visible |
+| :--- | :--- | :--- | :--- |
+| **C1** | **A prueba de fallo por defecto** | El fallo más grave de un nodo no es que se apague, sino que se quede en un estado que perjudique a quien lo usa. Por eso cada actuador elige su posición en reposo según la consecuencia de quedarse sin alimentación: la cerradura abre y la luminaria se apaga. Un corte de energía no puede encerrar a un resident ni encender un área vacía. | Posición de reposo de los relés, sección 5.6.4 y 5.6.5 |
+| **C2** | **Decisión física sin ida y vuelta a la nube** | La arquitectura ya decidió que el cloud concentra reglas de negocio y el edge la autonomía operativa (4.1.3.3). Traducido al dispositivo, el criterio significa que un umbral de lux, una comparación de caudal o una validación de UID se resuelven en el nodo o en el Edge API: esperar al cloud para abrir una puerta agrega latencia a una acción que el resident mide en el tiempo que tarda en apoyar la tarjeta. | Caché local de credenciales, corte local de bomba, sección 5.6.4 a 5.6.7 |
+| **C3** | **Presupuesto de respuesta física** | La guía de estilos fija tres máximos medibles: LED en 200 ms, relé completo en 500 ms y tono antes de un segundo (5.1.2). Más allá de ese margen el usuario asume que el dispositivo no respondió y repite la acción, y una repetición sobre un actuador es un incidente. El firmware se evalúa contra esos tres números, no contra una impresión de rapidez. | Sección 5.6.8 |
+| **C4** | **Un solo vocabulario de estado** | El LED, la etiqueta, el serial del Edge y la tarjeta del dashboard describen el mismo hecho con el mismo nombre. No existe un estado que el dispositivo llame de una forma y la aplicación de otra, porque el resident solo conoce una versión de la plataforma. | Sección 5.6.2 |
+| **C5** | **Consumo, calor y mantenimiento** | Los nodos quedan conectados a la red eléctrica del edificio, pero se instalan en sitio y no se mantienen: la autonomía, el modo de bajo consumo y la posibilidad de diagnosticarlos importan tanto como el costo de la placa. Un nodo que hay que abrir para reconfigurar es un nodo que nadie reconfigura. | Suspensión profunda, ausencia de pantalla, reset sellado, sección 5.6.3 |
+| **C6** | **Aislamiento eléctrico** | Ningún conductor de 220 V debe entrar en la placa de control. La conmutación de cargas se delega a un relé o contactor y la medición de corriente se hace con una pinza sobre el conductor, de modo que el aislamiento entre la red y la lógica sea físico y no una convención del software. | Sección 5.6.5 y 5.6.7 |
+| **C7** | **Identidad y trazabilidad del objeto** | Un dispositivo instalado en un edificio real es un objeto físico que se pierde, se daña o se reemplaza. Cada nodo declara su identificador, su código QR y el tópico MQTT al que publica, porque el inventario de la aplicación y el objeto del pasillo tienen que poder reconocerse mutuamente. | Sección 5.6.2 |
+| **C8** | **Instalación y accesibilidad** | Las decisiones dimensionales no son detalles de carpintería: determinan si un resident puede usar el dispositivo. La altura de instalación, el tamaño de la superficie de lectura y la separación entre un pulso corto y uno sostenido salen de la experiencia de uso, no del datasheet. | Sección 5.6.2 |
 
- **Dispositivo 01: Botella Inteligente (Smart Bottle)**
- 
+El criterio C4 merece una aclaración, porque es el que más restringe el diseño. Los tres contextos IoT del cloud —IoT Access Management, Smart Lighting & Automation e IoT Telemetry & Analytics— modelan el estado del dispositivo en su propio vocabulario (`ACTIVE`, `SUSPENDED`, `REVOKED`, `ON`, `OFF`, `OPEN`, `RESOLVED`, `LOW`, `MEDIUM`, `HIGH`), y el Edge API lo traduce al contrato MQTT. Ese vocabulario es correcto en el dominio, pero el resident frente a una puerta no conoce esos términos. La decisión de diseño que se adopta es que **el vocabulario físico es un subconjunto del vocabulario de la interfaz, nunca un tercero**: los términos que el usuario puede ver en la tarjeta de un dispositivo del dashboard son exactamente los que el LED codifica y los que el texto del Serial Monitor imprime. Un estado que solo existe en el firmware se considera un defecto de diseño, no una decisión de implementación.
+
+### 5.6.2. Relación con la arquitectura de información y con la guía de estilos de interfaz física
+
+La sección 5.1.2 (IoT Physical Interface Style Guidelines) define la interfaz física de los nodos y la sección 5.2 define cómo se nombra, se encuentra y se recorre el contenido del producto. Ambas condicionan el diseño de los dispositivos, y la relación no es de estilo sino estructural: sin ella existirían cuatro dispositivos técnicamente correctos que el usuario no podría distinguir de un producto ajeno.
+
+| Decisión de arquitectura de información (5.2) | Regla de interfaz física (5.1.2) | Consecuencia en el diseño del dispositivo |
+| :--- | :--- | :--- |
+| **Criterio de nombrado único** (5.2.2): cada conjunto tiene una sola etiqueta, repetida en navegación, título, tabla y exportación. | Los textos impresos usan el Lenguaje Ubicuo (2.5), nunca un código interno ni un número de error. | La etiqueta del nodo repite el nombre del módulo del que cuelga —`Lighting & Sensing Node`, `Access Controller`, `Leak Detection Node`, `Energy Meter`— y no el nombre del microservicio que consume sus datos. La suscripción MQTT vive en la etiqueta como dato técnico, separada del nombre, para que instalar no exija entender la arquitectura. |
+| **Organización por tópicos** en tres escalas (5.2.1). | La etiqueta declara "el tópico MQTT corto al que publica". | El espacio de nombres replica la taxonomía del producto en el orden `edifika/{edificio}/{módulo}/{dispositivo}`: el módulo es el mismo sidebar, el dispositivo es el mismo registro de inventario. Un técnico que lea la etiqueta entiende a qué parte del producto pertenece el nodo. |
+| **Estados en mayúsculas con etiqueta textual, nunca solo color** (5.2.2). | Código del LED: cada estado tiene color **y** patrón de parpadeo, para sobrevivir a la daltonía, al sol directo y a un LED quemado. | El WS2812B de cada nodo implementa la tabla completa de 5.1.2 (fijo, dos parpadeos lentos, tres rápidos, intermitente, un parpadeo cada 5 s, apagado). La redundancia no es decorativa: es la traducción literal de la regla "el estado nunca se transmite solo con color" al medio físico. |
+| **Cuando no se sabe el estado, la interfaz dice que no lo sabe** (5.1.2, IoT Style Guidelines). | Modo degradado: sin broker, el LED pasa a `Neutral` con parpadeo lento y el dispositivo conserva el último estado. | El firmware nunca re-publica un valor viejo con marca de tiempo reciente ni rellena un hueco por interpolación. La ausencia de lectura se publica como ausencia: `{ts, value: null, stale: true}`. Es la razón por la que el mensaje MQTT lleva el campo `stale` y no solo un número. |
+| **Acciones a dos clics o menos** y **una sola acción primaria por pantalla** (5.2). | La pulsación corta ejecuta el control manual local; la mantenida de 1.5 s empareja o restablece. | El pulsador del nodo es la excepción controlada a esa regla de interfaz, y por eso se distinguen las dos duraciones: el control manual es una emergencia cuando el teléfono no tiene cobertura, y el emparejamiento no puede ocurrir por accidente porque un resident apoye el pie en el pulsador de un pasillo. |
+| **Términos del Lenguaje Ubicuo** (2.5): "Acceso concedido", "Fuga detectada", "Corte automático", "Credencial suspendida". | El tono audible suena solo en tres casos: fuga detectada, corte automático de la bomba y apertura forzada. | El `Serial Monitor` del prototipo y el texto que el Edge reenvía a la notificación usan esas frases exactas. El firmware no emite "DENY", "TRIP" ni "ERR_07": esos nombres viven en el log técnico del Edge, no en el mensaje que ve el resident. |
+| **Anatomía de la tarjeta de dispositivo**: píldora de conexión, hora de la última lectura y antigüedad de esa lectura. | El LED baja al 10 % de brillo entre 23:00 y 06:00 pero nunca se apaga del todo. | El heartbeat de 60 s que publica el nodo es el mismo dato que permite a la tarjeta calcular la antigüedad de la lectura; el brillo nocturno existe para que la señal siga presente sin molestar, que es el compromiso equivalente a "no mostrar un vacío como si fuera un resultado". |
+| **Modo degradado**: banner "operando con datos locales" con la hora de la última sincronización. | A prueba de fallo: si el nodo pierde el broker, mantiene el último estado conocido y opera localmente. | La caché en SPIFFS del ESP32 es la contraparte física de ese banner. Sin él, el indicador "datos locales" de la aplicación sería una afirmación sin respaldo. |
+
+De esta tabla se sigue una conclusión de diseño que conviene enunciar antes de entrar en los dispositivos: **el objeto físico y la tarjeta del dispositivo son dos vistas del mismo dato, no dos fuentes de verdad**. Por eso el nodo publica exactamente los campos que la tarjeta necesita mostrar —estado, valor, marca de tiempo, señal, batería— y nada que la tarjeta no sepa presentar. Un campo que solo existe en el firmware es un campo que nadie puede leer.
+
+### 5.6.3. Stack común y cadena de herramientas
+
+Los cuatro nodos comparten la misma base de hardware y de software. Esa decisión reduce el costo por unidad, simplifica el reemplazo de una placa y, sobre todo, hace posible que un solo manual de instalación sirva para todo el condominio.
+
+| Capa | Elección | Justificación |
+| :--- | :--- | :--- |
+| **Microcontrolador** | ESP32 DevKit V1 | Wi-Fi integrado, suficientes GPIO analógicos y digitales, ecosistema Arduino con cliente MQTT nativo. Es el microcontrolador que ya aparece en el Container Diagram (4.1.3.3) y en TS17. |
+| **Transporte** | MQTT 3.1.1 sobre Wi-Fi, QoS 1, mensajes `retained` para estado y credenciales | Es el protocolo que fija TS17 y el que usa el Edge API on-premise. QoS 1 evita perder la orden de cierre de una llave o la lista de credenciales; `retained` permite que un nodo que se enciende después del Edge reciba el estado vigente sin pedirlo. |
+| **Broker** | EMQX local en el Edge Server (Raspberry Pi 4), reenvío al broker cloud gestionado | El broker no está en la nube: la arquitectura de 4.1.3.4 despliega el Edge Server on-premise precisamente para que el condominio siga operando sin enlace WAN. Un broker alojado únicamente en la nube convertiría cada corte de internet en una puerta que no abre. |
+| **Firmware** | C++ sobre el framework Arduino, con `DeepSleep` por niveles | Común a los cuatro nodos; permite un modo de suspensión automático entre lecturas y reduce el consumo a un presupuesto medible. |
+| **Diseño de circuito** | Fritzing (vista esquemática) | Permite documentar el circuito con la red de alimentación y los buses explícitos, condición para que un instalador pueda verificar el cableado sin interpretar un esquema de conexiones en silueta. |
+| **Simulación y prototipado** | Wokwi, con ESP32 DevKit V1, MFRC522, sensor PIR, fotorresistencia, relé y buzzer | Es el entorno donde se ejercitan los flujos de interacción antes de tocar el hardware: presentación de credencial, disparo de movimiento, corte de bomba y pérdida de broker. |
+| **Identificación** | QR/NFC en la etiqueta con `edificio`, `dispositivo`, `tópico` y `firmware` | Responde al criterio C7 y permite que el inventario de la aplicación y el objeto del pasillo se reconozcan mutuamente. |
+
+Una decisión de diseño que atraviesa a los cuatro nodos y que conviene explicitar porque es contraintuitiva: **no hay pantalla en ningún dispositivo**. Una pantalla obligaría a cada nodo a resolver por su cuenta la composición de texto, los estados y la accesibilidad —es decir, a reimplementar dentro del firmware lo que 5.2 ya resolvió para el conjunto del producto—, y además habría que mantenerla encendida, lo que contradice el criterio de consumo. Toda la información que el resident necesita del objeto cabe en un LED codificado, un tono acotado y una etiqueta impresa.
+
+### 5.6.4. Dispositivo 01 — Controlador de acceso de áreas comunes (ACC-01)
+
 #### Descripción y criterios de diseño
- 
-La Botella Inteligente monitorea el consumo de agua del usuario en tiempo real mediante un sensor de flujo de efecto Hall **YF-S201**. Cuando el usuario bebe, el flujo de agua hace girar la turbina interna del sensor, generando pulsos digitales que el ESP32 cuenta y convierte en mililitros usando la fórmula de calibración `mL = pulsos / 7.5`. Los datos se publican vía MQTT al tópico `jameofit/hydration/{userId}` cada vez que se detecta ingesta, actualizando el dashboard de Gestión de Objetivos instantáneamente.
- 
 
-El diseño físico sigue la guía de estilos IoT de JameoFit: carcasa compacta de plástico ABS mate, con el LED RGB visible en la tapa superior y la pantalla OLED en la franja lateral. La carga se realiza mediante USB-C a través del módulo TP4056 integrado en la base.
+El ACC-01 es el nodo instalado junto a cada puerta de área común que admite reservas. Su función es materializar una decisión que ya está tomada antes de que el resident llegue: la reserva aprobada genera un `AccessPermission` acotado a su ventana horaria, `EdgeGatewaySyncClient` lo empuja al Edge API, y el Edge lo deja disponible para el nodo en un tópico `retained`. El ACC-01 **no consulta al cloud en cada intento**: resuelve la UID contra la caché local y publica el resultado.
 
-**Componentes**
+Los criterios que gobiernan su diseño son **C1** (la puerta no puede quedar cerrada a alguien dentro), **C2** (la decisión es local), **C4** (verde y rojo significan lo mismo que en la tarjeta) y **C8** (la lectura tiene que funcionar sin mirar el teléfono).
 
-| Componente | Función |
-| :--- | :--- |
-| **ESP32 DevKit V1** | MCU principal — Wi-Fi, MQTT, lógica de negocio. |
-| **YF-S201** | Sensor de flujo Hall Effect — 1–30 L/min. |
-| **OLED SSD1306 (128×64)** | Display I2C 0.96" — retroalimentación visual. |
-| **WS2812B RGB LED** | Indicador de estado de hidratación. |
-| **LiPo 3.7V 2000mAh** | Fuente de energía recargable portátil. |
-| **TP4056 (USB-C)** | Módulo de carga y protección de LiPo. |
+#### Diseño físico
 
-<p align="center">
-  <img src="assets/TP/botella_iot.png" alt=" Botella Inteligente" width="700"/>
-</p>
+La carcasa es de plástico ABS mate en `Neutral` con una franja frontal en `Primary`, con radios de 12 mm que replican las esquinas de las tarjetas de la aplicación, montada entre **1.2 y 1.6 m de altura** con iluminación suficiente y sin reflejos sobre la superficie del sensor. La superficie de lectura contactless se dimensiona a **25 mm o más**, de manera que el resident no dependa de la precisión de la alineación del dedo o de la tarjeta. No hay pantalla; hay LED, contactless, pulsador y orificio de reset.
 
-**Simulación en Wokwi**
+El orden de los elementos en el frente responde a la frecuencia de uso, el mismo criterio que 5.2.1 aplica a las pantallas: el LED en la zona más visible del marco, el contactless a la altura natural de la mano, el pulsador debajo y el orificio de reset en la base, sellado con epoxy y alcanzable solo con una aguja por mantenimiento.
 
+| Elemento | Cota / material | Razón de la decisión |
+| :--- | :--- | :--- |
+| Superficie contactless | ≥ 25 × 25 mm | Un área menor obliga a apuntar la tarjeta; el usuario interpreta el fallo como tarjeta no leída y repite el gesto, que en un lector bloqueado por anti-passback cuenta como intento adicional. |
+| LED WS2812B | Ø 8 mm, visible a 3 m | Único indicador que funciona en la oscuridad, a distancia y sin contacto físico. |
+| Pulsador tactil | Ø 12 mm, con recorrido distinguible | Permite el control manual local de emergencia y el emparejamiento, separados por duración. |
+| Orificio de reset | Ø 2 mm, sellado | Su presencia sin acceso evita que un resident reinicie el dispositivo y borre la caché de credenciales. |
+| Etiqueta | Altura de letra ≥ 2.5 mm, mayúsculas, contraste > 4.5:1 | Se lee a distancia y con la linterna del teléfono, no a la distancia de un monitor. |
+| Altura de instalación | 1.2 – 1.6 m | Altura de uso de la mano adulta, y accesible para el resident mayor sin agacharse. |
 
+#### Diseño de circuito
 
+| Componente | Función | Nota de diseño |
+| :--- | :--- | :--- |
+| **ESP32 DevKit V1** | MCU, Wi-Fi, cliente MQTT, decisión local de acceso | Concentra la lógica de `AccessDecisionService` en su versión local: activa, no está en la blacklist y tiene permiso vigente para esa área en ese instante. |
+| **MFRC522 (RC522)** | Lector RFID 13.56 MHz por SPI | Se alimenta desde el regulador de **3.3 V**, no del riel de 5 V: es la causa más común de lecturas de UID intermitentes en la implementación de referencia. |
+| **Reed magnético** | Estado de la puerta y detección de apertura forzada | Normalmente cerrado dentro del circuito de alarma, de modo que también detecte el sabotaje del cable. |
+| **WS2812B** | Código de estado | Un solo pin de datos, con protocolo one-wire de 800 ns; no requiere resistencias limitadoras por canal. |
+| **Driver MOSFET IRLZ44N** | Excitación de la bobina | Un GPIO no puede conmutar una bobina de 12 V: la corriente de conmutación lo degrada. |
+| **1N4007** | Diodo de volante en paralelo a la bobina | Sin él, el pico inductivo de la bobina al cortar vuelve al GPIO y produce reinicios esporádicos, que en un lector se manifiestan como "puertas que a veces no abren". |
+| **Relé fail-safe 12 V** | Cerradura eléctrica | Contacto **NA**: sin alimentación, la puerta queda abierta (C1). |
+| **Buzzer piezo 3 V** | Apertura forzada únicamente | Silenciado entre 23:00 y 06:00; máximo 3 s por evento. |
 
+La decisión eléctrica más importante del ACC-01 es la **posición de reposo del relé**. El criterio C1 se resuelve aquí de forma explícita: la cerradura se alimenta en reposo, de modo que un corte de energía, un reinicio del nodo o una falla del Edge dejan la puerta abierta. El peor escenario en un recinto común no es una puerta que se abre de más —que se audita y se registra— sino una persona encerrada en un área común sin cobertura. El control de acceso sigue existiendo en el sentido contrario, que es el que protege a la comunidad, y esa asunción está documentada porque es la que un instalador va a cuestionar.
+
+La segunda decisión es la **resolución por omisión**. Si la UID presentada no está en la caché local —porque el nodo acaba de encenderse, porque la caché está corrupta o porque el resident fue dado de baja hace minutos y la sincronización no ha llegado—, el resultado es `DENEGADO`, no "permitido por no saber". Un sistema de control de acceso que falla hacia la apertura no es un sistema con una tasa de error: es un sistema sin control de acceso.
+
+#### Flujos de interacción que cubre el prototipo
+
+El prototipo en Wokwi ejercita el recorrido completo de una credencial sobre el nodo, con el MFRC522, la puerta, el relé y el buzzer conectados y el ESP32 publicando por MQTT contra el broker del Edge.
+
+| Paso | Actor / componente | Acción | Respuesta del sistema | Verificación observable |
+| :--- | :--- | :--- | :--- | :--- |
+| 1 | Resident | Acerca la credencial a la superficie | El MFRC522 lee el UID y el nodo lo busca en la caché local | LED violeta intermitente = acción en curso |
+| 2 | ACC-01 | Compara contra credenciales, blacklist y permiso vigente | Decide `GRANTED` y acciona el relé | Parpadeo verde antes de 200 ms; relé completo antes de 500 ms |
+| 3 | ACC-01 | Publica el intento | `acc-01/attempts {uid, result, rssi, ts}` en menos de 200 ms | El `Serial Monitor` imprime "Acceso concedido" |
+| 4 | Edge API | Reenvía el intento | IoT Access Management persiste `AccessAttempt` y publica `PhysicalAccessGranted` | La tarjeta del dispositivo en el dashboard pasa a ONLINE con la hora de la lectura |
+| 5 | Resident | Retira la credencial | El relé vuelve a reposo y la puerta se cierra sola | El lector vuelve a LED verde fijo = normal |
+
+Los **caminos infelices** son los que justifican el diseño del hardware, y son cinco:
+
+| Situación | Comportamiento diseñado | Por qué esa respuesta |
+| :--- | :--- | :--- |
+| Credencial **suspendida o revocada** (por morosidad, `ResidentMarkedDelinquent`) | LED rojo con tono corto; el relé no acciona; se publica `PhysicalAccessDenied` | Son dos situaciones distintas para el resident —“tarjeta no leída” y “me la suspendieron”— y exigen respuestas opuestas: repetir el gesto en el primer caso, llamar al administrador en el segundo. Un único tono genérico obligaría al resident a adivinar siempre. |
+| **Sin broker** (WAN caído) | El nodo sigue resolviendo contra la caché, publica en cuanto vuelve el enlace y el LED pasa a `Neutral` con un parpadeo cada 5 s | Es el criterio C2: la operación del condominio no depende del cloud. Lo que se pierde es la inmediatez de la auditoría, no el acceso ya autorizado. |
+| **Puerta forzada o cable saboteado** | El reed dispara; LED rojo con tres parpadeos rápidos y tono, y se publica el estado de puerta | Es uno de los tres únicos casos que justifican el tono audible, porque exige una respuesta del resident en el momento y no puede resolverse en el dashboard de mañana. |
+| **Sin permiso vigente** (la reserva ya terminó) | LED ámbar, dos parpadeos lentos, sin tono | Es el estado `Atención` de 5.1.2: no es una falla ni una alarma, es una explicación. El resident está en la puerta correcta pero fuera de horario, y el ámbar le dice que la respuesta está en la aplicación. |
+| **Reinicio del dispositivo** | Contacto NA: la puerta queda abierta y el LED vuelve a normal al reconectarse | El peor resultado posible de un corte de energía en un espacio común es dejar gente encerrada; el criterio C1 manda sobre la conveniencia de la puerta cerrada. |
+
+### 5.6.5. Dispositivo 02 — Nodo de iluminación inteligente y sensado (LGT-01)
+
+#### Descripción y criterios de diseño
+
+El LGT-01 se instala embebido en cada luminaria de las áreas comunes. Mide presencia, nivel de lux y corriente, decide localmente el encendido y el apagado, y reporta telemetría al Edge. Es el nodo donde el criterio C2 es más estricto, porque la latencia de encendido es lo que el resident percibe como "la luz tarda": si el nodo consultara la nube antes de conmutar, cada vez que una persona cruza la puerta de la sala de fiestas esperaría en la oscuridad el tiempo de un viaje de ida y vuelta a los servidores.
+
+Los criterios que gobiernan su diseño son **C2** (decisión local del umbral de luz), **C3** (presupuesto de respuesta física), **C6** (aislamiento de la red) y **C5** (el nodo queda encima de la luminaria, sin mantenimiento).
+
+#### Diseño físico
+
+El LGT-01 se monta en el techo o en el marco de la luminaria, con el sensor PIR orientado hacia el acceso y con el campo de detección ajustado para que no alcance el fondo de la sala, de modo que un resident que cruza la puerta active la luz sin que alguien sentado al fondo la apague desde el borde opuesto. El acabado mate del frente evita reflejos que confundan tanto al sensor infrarrojo como a quien intenta ver el LED a contraluz; el LED queda en el borde inferior de la carcasa, que es la única posición visible desde el suelo.
+
+| Elemento | Cota / material | Razón de la decisión |
+| :--- | :--- | :--- |
+| Frontal del sensor PIR | Orientado hacia el acceso, sin detectar el fondo de la sala | Detecta el cruce de una persona y no el movimiento de alguien ya sentado. |
+| Ventana del LDR | Opuesta al PIR, nunca tras la propia fuente de luz | Si el LDR midiera la luz emitida por la luminaria, la lectura dependería del estado del actuador y el umbral de lux nunca se estabilizaría. |
+| LED de estado | En el borde inferior de la carcasa, visible desde el suelo | Es la única forma de que el resident sepa si el nodo está vivo sin abrir el tablero del condominio. |
+| Etiqueta | Con el ID de nodo, QR y tópico | El inventario de la aplicación lista luminarias por ubicación; la etiqueta dice cuál de ellas es. |
+| Alimentación | Vía derivación de la propia luminaria | Evita un cable de red por punto de luz y por lo tanto una obra mayor por nodo instalado. |
+
+#### Diseño de circuito
+
+| Componente | Función | Nota de diseño |
+| :--- | :--- | :--- |
+| **ESP32 DevKit V1** | Sensado, decisión local y publicación | Aplica la regla de `AutomationDecisionService` en su versión local: presencia, lux, franja horaria de reserva y anulación vigente. |
+| **PIR HC-SR501** | Presencia, salida digital | Sensor digital: no consume un canal ADC y su señal no requiere filtrado analógico. |
+| **LDR GL5528 con divisor 10 kΩ / 10 kΩ** | Nivel de lux | Va al **ADC1**; la salida digital DO del módulo se omite porque el umbral se define en el editor de reglas de la aplicación, no con un potenciómetro en el techo. |
+| **ACS712 5 A** | Corriente real de la luminaria, en mA | Pinza sobre la fase: es la forma de medir sin poner un conductor de 220 V en la placa (C6). |
+| **WS2812B** | Código de estado completo | Traducción literal de la tabla de 5.1.2. |
+| **BC547 + 1N4007** | Driver del relé con diodo de volante | La bobina del relé nunca conecta directamente al GPIO. |
+| **Relé SRD-05VDC-SL-C (SPDT 10 A)** | Conmutación de la luminaria | Contacto **NA**: ante reinicio del nodo, la luminaria queda apagada (C1 aplicado a una carga, con el criterio inverso al de la cerradura: el riesgo del error es el consumo de energía, no la seguridad de una persona). |
+
+La decisión de canal analógico es la que más restricciones impone al resto del circuito y conviene explicitarla: **todos los sensores analógicos se conectan al ADC1 (GPIO 32–39)**. El ADC2 del ESP32 deja de estar disponible mientras el driver Wi-Fi está activo, de modo que un LDR o un ACS712 en GPIO 4, 13, 14, 15, 25 o 27 devolvería lecturas corruptas justamente cuando el nodo está conectado, que es cuando más importa medir. Además, el LDR y el ACS712 comparten masa con la bobina del relé, de modo que un cable de potencia colocado mal puede derivar ruido de conmutación sobre la lectura de corriente. Por eso la fuente, la bobina y el plano de sensado se cablean con trayectorias separadas dentro de la caja, y el ACS712 se instala a 10 cm del borne, no sobre él.
+
+#### Flujos de interacción que cubre el prototipo
+
+| Paso | Disparador | Decisión | Respuesta física | Verificación observable |
+| :--- | :--- | :--- | :--- | :--- |
+| 1 | El PIR detecta presencia | El nodo lee el LDR | LED violeta intermitente durante el sensado | En Wokwi, "Simulate Motion" en el PIR |
+| 2 | Lux por debajo del umbral y franja dentro de `LightingSchedule` | Enciende localmente y publica `AreaPresenceDetected` | Relé en menos de 500 ms | El relé de Wokwi cambia de estado; el `Serial Monitor` imprime el valor de lux |
+| 3 | La reserva empieza (`ReservationStarted`) | Enciende de forma programada el área | Relé en menos de 500 ms | Simulación de la franja horaria de la regla |
+| 4 | Presencia detectada y luz alta | No enciende | LED verde fijo = normal, sin tono | El evento se publica igualmente: "hubo alguien y no encendimos" es un dato de analítica |
+| 5 | Inactividad por más de `PresenceTimeout` | Apaga | LED verde fijo | La curva de consumo en el dashboard refleja el ciclo |
+
+**Caminos infelices:**
+
+| Situación | Comportamiento diseñado | Razón |
+| :--- | :--- | :--- |
+| **Anulación manual desde la aplicación** | El nodo ejecuta la anulación con su duración y expiración, y lo registra como `OverrideTriggered` | Un resident que enciende la luz manualmente y se olvida de apagarla es un caso normal; la anulación tiene fecha de expiración justamente para que no quede una luminaria encendida hasta que alguien se fije. |
+| **Sin broker** | El nodo sigue encendiendo y apagando por su regla local, el LED pasa a `Neutral` con parpadeo de 5 s y acumula la telemetría en memoria | Un corte de internet en la noche no puede dejar el área común a oscuras. La telemetría pendiente se publica al restablecerse el enlace, marcada como local. |
+| **Reinicio del nodo** | La luminaria queda apagada y el nodo vuelve a su regla en menos de un minuto | Con contacto NA, un reinicio accidental no enciende un área vacía a las tres de la mañana. |
+| **Batería de respaldo degradada** (en las instalaciones con respaldo) | LED ámbar, dos parpadeos lentos; la automatización sigue operando | `Atención` es el estado intermedio entre "todo bien" y "falla": el administrador necesita verlo antes de que sea una falla, y el resident no debe presenciarla como una alarma sobre una luz que sí funciona. |
+| **Lectura de lux inválida** (LDR desconectado) | No se enciende por presencia en ese punto; publica `stale: true` y el LED pasa a ámbar | El firmware no rellena con el último valor ni interpola: un umbral de lux aplicado sobre una lectura muerta enciende la luz de día, que es el peor modo de falla visible para la comunidad. |
+
+### 5.6.6. Dispositivo 03 — Nodo hidráulico de detección de fugas (HYD-01)
+
+#### Descripción y criterios de diseño
+
+El HYD-01 se instala en la bomba y la cámara de agua de una zona hidráulica. Mide caudal y presión, distingue una fuga real de un consumo legítimo fuera de horario, corta la bomba y emite la alerta. Es el nodo con la consecuencia más grave de los cuatro, y por eso es también el que concentra las decisiones de **C1** (cortar antes que inundar), **C2** (el corte no espera al cloud) y **C5** (está en un cuarto de máquinas, sin nadie que lo mire).
+
+Los criterios que lo gobiernan se refuerzan: un corte de bomba es una molestia discutible; una inundación en un departamento es un daño irreversible. Ante la duda, el diseño corta.
+
+#### Diseño físico
+
+La carcasa se monta en la pared de la cámara de agua, a la altura de la vista del operador de mantenimiento, con prensaestopa y entrada de cable con prensaestopa PG7 para que el agua no entre por el conector. A diferencia de los otros nodos, este puede tener un tono audible porque está en un espacio técnico y no en un pasillo: el criterio de 5.1.2 que limita el tono a tres casos se cumple íntegro, pero el tono de corte automático se emite sin silenciamiento nocturno, porque un corte de bomba a las 3 a. m. sí requiere que alguien lo sepa.
+
+| Elemento | Cota / material | Razón de la decisión |
+| :--- | :--- | :--- |
+| Carcasa | IP54, con prensaestopa PG7 y junta | El cuarto de máquinas tiene humedad y goteo occasional; un nodo sin protección falla por entrada de agua y arrastra a la bomba. |
+| Sensor de caudal | En la línea de impulsión, aguas arriba de la bomba | Medir el caudal que llega a la bomba es lo que permite distinguir una demanda real de una fuga en la línea. |
+| Sensor de presión | En la toma de aspiración | Una caída de presión sin caudal correspondiente es lo que marca la bomba como `FAULT`, según `LeakDetectionService`. |
+| LED y buzzer | En el frente, visibles desde el acceso | El operador de mantenimiento debe ver el estado sin entrar al cuarto. |
+| Etiqueta | Con la zona hidráulica y el ID de la bomba | `LeakAlert` se crea sobre una bomba concreta; la alerta sin ubicación no es accionable. |
+
+#### Diseño de circuito
+
+| Componente | Función | Nota de diseño |
+| :--- | :--- | :--- |
+| **ESP32 DevKit V1** | Lectura, comparación contra umbrales, corte y publicación | Aplica localmente `LeakDetectionService`: caudal sobre umbral fuera de la franja esperada, sostenido más de `minDeviationMinutes`, se declara fuga. |
+| **Sensor de caudal con salida de pulsos** | Caudal instantáneo | Se conecta por interrupción: el firmware cuenta pulsos por intervalo en lugar de leer un ADC, porque el sensor no tiene salida analógica y porque contar pulsos en el flanco es la forma de no perder los eventos que la bomba genera. |
+| **Sensor de presión analógico** | Presión de la línea | Al **ADC1**, con la misma restricción de canal que el LGT-01. |
+| **Relé de corte de la bomba** | Interrumpe la alimentación de la bomba | Se acciona por **pulsos**, no por nivel mantenido: el corte tiene que funcionar también con la alimentación de la bomba en el mismo circuito que el nodo. |
+| **Buzzer piezo** | Fuga detectada y corte automático | Uno de los tres casos que 5.1.2 autoriza a hacer sonar. |
+| **WS2812B** | Estado de la bomba y de la línea | Código completo de 5.1.2. |
+| **Alimentación con respaldo** | Batería de respaldo del nodo | El corte de bomba por lectura local tiene que funcionar aunque se caiga la red eléctrica, no solo si se cae el internet. |
+
+La decisión de circuito que distingue a este nodo es el **corte por lectura local, no por comando remoto**. La arquitectura ya resolvió que `FlowReadingReceived` lo publica el Edge API y no Telemetry, priorizando la latencia de corte sobre la interpretación de dominio. Traducido al hardware, eso significa que el nodo no espera el comando `shutoff` del cloud: si su propia lectura supera el umbral durante el tiempo mínimo configurado, corta y publica el evento. El corte remoto sigue existiendo como redundancia —el administrador puede cortar desde la aplicación y el nodo obedece—, pero no es el mecanismo primario. Una inundación no espera el tiempo de un viaje de ida y vuelta a los servidores, y un nodo que solo cortara por comando remoto habría convertido la arquitectura offline-first en decorativa.
+
+#### Flujos de interacción que cubre el prototipo
+
+| Paso | Disparador | Decisión | Respuesta física | Verificación observable |
+| :--- | :--- | :--- | :--- | :--- |
+| 1 | Consumo legítimo dentro de la franja esperada | Caudal bajo el umbral | LED verde fijo = normal | La curva de caudal en el dashboard sigue el perfil de uso |
+| 2 | Caudal sobre el umbral fuera de la franja | Comienza el conteo de `minDeviationMinutes` | LED violeta intermitente = evaluando | El `Serial Monitor` imprime el tiempo de desviación acumulado |
+| 3 | La desviación se sostiene más de `minDeviationMinutes` | Declara fuga, corta la bomba | LED rojo con tres parpadeos rápidos + tono; relé de corte en menos de 500 ms | El relé de Wokwi se abre; se publica `LeakDetected` y `PumpShutOff` |
+| 4 | El administrador revisa y cierra la alerta | Registra la resolución | LED verde fijo = normal | `LeakResolved` publica; la alerta sale de la lista abierta |
+| 5 | Presión cae sin caudal correspondiente | Marca la bomba `FAULT` | LED rojo + tono | La bomba aparece como `FAULT` en el inventario |
+
+**Caminos infelices:**
+
+| Situación | Comportamiento diseñado | Razón |
+| :--- | :--- | :--- |
+| **Consumo legítimo nocturno** (una familia se ducha tarde) | La franja esperada y el umbral por zona evitan la falsa alarma; si aun así llegara a dispararse, la `LeakAlert` queda `OPEN` y el administrador puede resolverla sin que la bomba se haya detenido por un segundo | Una falsa alarma que apaga la bomba entrena al administrador a ignorar las alertas, que es el peor resultado posible para una fuga real. La separación entre `LOW`, `MEDIUM` y `HIGH` existe para que solo `HIGH` corte de inmediato. |
+| **Corte de la alimentación eléctrica** | El respaldo del nodo mantiene la lectura y el corte local; al restablecerse, publica el evento acumulado | El corte de bomba por lectura local tiene que ser independiente de la red, no solo del internet. |
+| **El sensor de caudal falla (no emite pulsos)** | No se declara ni fuga ni normalidad: publica `stale: true` y el LED pasa a ámbar | La ausencia de lectura se declara como ausencia. Un firmware que asumiera "sin pulsos = sin caudal" apagaría la bomba en cada falla del sensor. |
+| **Fuga lenta, por debajo del umbral durante minutos** | `minDeviationMinutes` y la línea base por zona evitan el disparo por ruido; el resto se cubre con analítica, no con corte | El corte es para la fuga evidente; la fuga lenta se detecta en el dashboard por tendencia, que es donde el costo de equivocarse es menor. |
+| **Apertura forzada de la caja del nodo** | Reed antimanipulación en la misma caja, publicado como parte del estado del dispositivo | Un nodo del cuarto de máquinas que puede ser abierto sin dejar rastro no es confiable para una función de seguridad hydraulic. |
+
+### 5.6.7. Dispositivo 04 — Medidor de consumo energético (PWR-01)
+
+#### Descripción y criterios de diseño
+
+El PWR-01 mide el consumo de las luminarias y de los equipos comunes de las áreas que las consumen, y es el dispositivo que alimenta el cálculo de kWh, las estadísticas y la detección de anomalías del contexto IoT Telemetry & Analytics. A diferencia de los otros tres nodos, **no actuá**: no enciende ni apaga nada. Su única salida es la lectura.
+
+Los criterios que lo gobiernan son **C5** (consumo y ausencia total de mantenimiento en el punto de medición), **C6** (la pinza de corriente es el único punto de contacto con el conductor energizado) y **C4** (el valor que publica es el mismo que muestra la tarjeta, con su marca de tiempo).
+
+#### Diseño físico
+
+El PWR-01 se monta en el tablero del cuadro eléctrico del área, o en el tablero de la bomba cuando corresponde. La carcasa es más cerrada que la de los otros nodos, porque no hay ninguna superficie de interacción que proteger: no hay LED de estado para el resident ni contactless que esperar. Aun así conserva el LED en estado `Warning` de batería baja cuando la instalación usa respaldo, y la etiqueta con el ID del medidor, porque el inventario de telemetría lista medidores por ubicación igual que lista luminarias.
+
+| Elemento | Cota / material | Razón de la decisión |
+| :--- | :--- | :--- |
+| Ventana de la pinza | Ø 12 mm, para conductores de hasta 12 mm | La pinza se cierra alrededor del conductor sin cortar ni pelar el cableado del edificio. |
+| Posición de la pinza | En la fase, a 10 cm del borne | Evita medir la caída de tensión del propio cable de conexión y mantiene la lectura estable. |
+| LED | `Warning` de batería baja, cuando hay respaldo | Único estado que el PWR-01 necesita poder mostrar: el resto se lee en el dashboard. |
+| Etiqueta | Con el ID del medidor y la zona | La anomalía se reporta por zona, no por nodo. |
+
+#### Diseño de circuito
+
+| Componente | Función | Nota de diseño |
+| :--- | :--- | :--- |
+| **ESP32 DevKit V1** | Muestreo, integración y publicación | Publica por evento y con un heartbeat de 60 s, igual que los otros nodos, para que la tarjeta del dispositivo pueda calcular la antigüedad de la lectura. |
+| **ACS712 5 A** | Corriente RMS de la zona | Salida analógica al **ADC1**; el cálculo de kWh lo hace el microservicio de telemetría, no el nodo. |
+| **WS2812B** | Estado de batería del respaldo | Solo para instalaciones con respaldo. |
+| **Pulsador** | Reinicio de fábrica del contador acumulado | Sellado igual que en los otros nodos; reinicia la energía acumulada, no la configuración. |
+| **Alimentación** | Derivación del propio cuadro | El medidor no necesita alimentación propia: se alimenta de la línea que mide. |
+
+La decisión que define a este nodo es **dónde se calcula el kWh**. El nodo mide corriente y la publica; el servidor la agrega en ventanas de tiempo. Concentrar el cálculo en el nodo obligaría a cada dispositivo a mantener la línea base y el modelo de consumo, y a sincronizar ese modelo con el servidor en cada cambio de regla, con el riesgo de que dos copias del cálculo diverjan. El cálculo en el servidor mantiene una sola verdad del consumo y deja al nodo con la única tarea que no puede fallar sin que se note, que es medir bien.
+
+#### Flujos de interacción que cubre el prototipo
+
+| Paso | Disparador | Decisión | Respuesta | Verificación observable |
+| :--- | :--- | :--- | :--- | :--- |
+| 1 | Corriente estable en la zona | Muestreo periódico | Publica `{ma, ts}` | La serie de consumo crece en el dashboard |
+| 2 | Consumo por encima de la línea base del área | Se evalúa la desviación | LED violeta intermitente = evaluando | Se publica el evento; el `Serial Monitor` imprime la desviación |
+| 3 | Anomalía confirmada | IoT Telemetry crea `AnomalyFlag` | LED `Danger` | `AbnormalConsumptionDetected` aparece en el panel de anomalías |
+| 4 | Normalización del consumo | La anomalía se cierra | LED verde fijo = normal | La serie vuelve a la línea base |
+
+**Caminos infelices:**
+
+| Situación | Comportamiento diseñado | Razón |
+| :--- | :--- | :--- |
+| **Conductor sin corriente** | Publica 0 mA con marca de tiempo válida; no es una lectura ausente | Un cero es un dato. La distinción entre "no hay consumo" y "no sé el consumo" es la misma que la tarjeta de la interfaz necesita para no presentar un vacío como si fuera un resultado. |
+| **Pinza abierta o mal cerrada** | Publica `stale: true` y LED ámbar | Es el modo de falla más común de una pinza de corriente, y el más silencioso: sin la marca de `stale`, el dashboard mostraría un cero perfecto durante horas. |
+| **Pico de corriente por arranque de la bomba** | Se integra como lectura normal; el filtro no descarta picos | Descartar picos "para limpiar la serie" produce un consumo subestimado justo cuando hay una anomalía real; la limpieza se hace en el análisis, no en la medida. |
+| **Sin broker** | El nodo acumula en memoria y publica al restablecerse, con marca de "local" | Criterio C2 aplicado a la lectura: la pérdida del enlace no interrumpe la medición, solo su visibilidad inmediata. |
+| **Alimentación interrumpida** | Con respaldo, el nodo sigue midiendo y avisa con LED ámbar cuando la batería baja | Sin respaldo, la lectura se declara ausente en lugar de congelarse en el último valor, porque un valor congelado en vivo es la forma más rápida de perder la confianza del usuario en todo el panel. |
+
+### 5.6.8. Verificación de los prototipos y presupuestos de respuesta
+
+Los cuatro prototipos se construyeron en Wokwi sobre ESP32 DevKit V1, con los sensores y actuadores reales del diseño, y se ejercitaron contra los flujos descritos en cada dispositivo. La verificación no se limita a "funciona": se contrasta contra los presupuestos de respuesta fijados en 5.1.2, porque esos tres números son la diferencia entre una alarma creíble y una alarma que el usuario aprende a ignorar.
+
+| Presupuesto de 5.1.2 | Valor | Verificación en el prototipo | Dispositivo donde es crítico |
+| :--- | :--- | :--- | :--- |
+| **El LED confirma la intención** | ≤ 200 ms | Con el MFRC522 leyendo la UID, el WS2812B cambia a violeta intermitente antes de los 200 ms | ACC-01, LGT-01 |
+| **El relé completa la acción física** | ≤ 500 ms | El relé de Wokwi conmuta dentro de la ventana, medido entre la decisión del firmware y el cambio de estado del contacto | ACC-01, HYD-01, LGT-01 |
+| **El tono llega antes de un segundo** | < 1 s | El buzzer suena dentro del segundo en el caso de apertura forzada, corte de bomba y fuga | ACC-01, HYD-01 |
+| **El LED baja al 10 % sin apagarse entre 23:00 y 06:00** | Verificado por inspección de firmware | La atenuación se aplica al brillo, nunca al estado: el LED apagado no codifica ningún estado | Todos |
+| **Sin broker, el nodo conserva el último estado y sigue operando** | Verificado desconectando el broker en la simulación | La caché en NVS y SPIFFS permite operar y encolar la telemetría | Todos |
+| **El mensaje distingue valor ausente de valor cero** | Verificado en el `Serial Monitor` | El campo `stale` acompaña a cualquier lectura que no provenga del sensor | PWR-01, HYD-01, LGT-01 |
+
+Estos presupuestos son, además, el criterio con el que se evalúa el firmware antes de cada despliegue. Un cambio que agregue un retardo perceptible al LED o al relé no es una regresión de rendimiento sino un cambio de comportamiento de la interfaz física, y se trata como tal: se mide contra la tabla, no contra una sensación.
+
+### 5.6.9. Trazabilidad con las historias de usuario
+
+El diseño de los dispositivos no introduce funcionalidades nuevas: materializa las que ya están especificadas. La correspondencia completa está en TS16 y TS17, que fijan el registro y la comunicación de los dispositivos ESP32 por MQTT.
+
+| Historia | Requisito que fija el dispositivo | Dispositivo y decisión de diseño que lo satisface |
+| :--- | :--- | :--- |
+| **TS16**, escenario 1 | Registrar el dispositivo con tipo, ubicación y edificio; queda `INACTIVO` hasta su primera conexión | Los cuatro nodos declaran su ID, tipo y ubicación en la etiqueta (C7) y no publican estado hasta conectar con el broker, de modo que el inventario de la aplicación y el objeto físico coincidan. |
+| **TS16**, escenario 2 | Heartbeat periódico actualiza el estado a `ACTIVO` y la marca de última conexión | Heartbeat de 60 s en los cuatro nodos, que es el mismo dato con el que la tarjeta de la interfaz calcula la antigüedad de la lectura. |
+| **TS16**, escenario 3 | Ausencia de heartbeat marca `OFFLINE` y notifica al administrador | El LED pasa a `Neutral` con un parpadeo cada 5 s y el sistema no finge normalidad: la ausencia se declara como ausencia, en el objeto y en la pantalla. |
+| **TS17**, escenario 1 | Recibir lecturas por MQTT y evaluar el umbral en menos de 500 ms | El umbral se evalúa localmente (C2) y el corte de la bomba ocurre dentro de la ventana de 500 ms, sin esperar la ida y vuelta al cloud. |
+| **TS17**, escenario 2 | Recibir comandos de actuación y confirmar con un ACK | Los nodos suscribidos a `cmd` ejecutan el comando y publican el estado resultante; el comando manual desde la aplicación es la excepción controlada a la regla de "una sola acción primaria por pantalla", con confirmación en la vista de detalle. |
+| **TS17**, escenario 3 | Pérdida del broker marca `OFFLINE`, descarta comandos pendientes y notifica sin afectar a los demás dispositivos | La caché local por nodo permite que cada dispositivo siga operando de forma independiente; un nodo sin enlace no arrastra a los demás, y los comandos pendientes hacia él se descartan en lugar de acumularse. |
 
 # Conclusiones
 # Conclusiones y Recomendaciones
