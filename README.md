@@ -3748,109 +3748,184 @@ El Impact Map muestra la relación entre el objetivo de negocio de Edifika y los
 
 En esta sección, se presenta el Product Backlog como una recopilación organizada de historias de usuario priorizadas, la estimación de estas se realizó mediante story points basados en la escala Fibonacci, con el fin de tener una planificación más clara y una gestión eficiente para desarrollo de Edifika.
 
+El backlog contiene la totalidad del alcance vigente: **86 historias de usuario y 33 historias técnicas (119 ítems)**, es decir, todas las historias especificadas en 3.1 salvo las retiradas por la decisión de alcance (US52, US66–US70, US77 y TS20). Las historias técnicas se agrupan en la épica **EP05 (Infraestructura, seguridad y arquitectura técnica)** y las capacidades IoT se distribuyen en cinco épicas: EP07 (control de acceso), EP08 (iluminación inteligente), EP09 (telemetría y analítica), EP10 (riego automático) y EP11 (Edge Gateway y dispositivos ESP32). El orden sigue dos criterios: primero la prioridad MoSCoW (*Must Have*, *Should Have*, *Could Have*) y, dentro de cada prioridad, las dependencias técnicas —la historia técnica de configuración base de cada microservicio precede a las historias de usuario que se implementan sobre él—. Las capacidades de monitoreo de tanque de agua, detección de fugas y calidad del aire quedaron **fuera del alcance del producto** y, por ello, no forman parte del backlog.
+
 | Orden | User Story ID | Título | Descripción | Epic ID | Story Points | MoSCoW |
 |-------|--------------|--------|-------------|---------|--------------|--------|
-| 1 | US04 | Verificar información de usuarios | Como administrador, quiero verificar la información de los usuarios para asegurar que sea correcta. | EP01 | 3 | Must Have |
-| 2 | US05 | Actualizar información de usuarios | Como administrador, quiero actualizar información de usuarios para mantener datos correctos. | EP01 | 2 | Must Have |
-| 3 | US07 | Registrar edificio y unidades | Como administrador, quiero registrar el edificio con sus unidades residenciales para gestionar la comunidad. | EP01 | 8 | Must Have |
-| 4 | US13 | Publicar comunicados oficiales | Como administrador, quiero publicar comunicados oficiales para informar a los residentes. | EP02 | 3 | Must Have |
-| 5 | US15 | Seguimiento de visualización | Como administrador, quiero saber quién ha visto los comunicados para asegurar su alcance. | EP02 | 5 | Should Have |
-| 6 | US18 | Aprobar o rechazar reservas | Como administrador, quiero aprobar o rechazar reservas para mantener el control. | EP03 | 3 | Should Have |
-| 7 | US19 | Evitar reservas duplicadas | Como administrador, quiero evitar reservas duplicadas para prevenir conflictos. | EP03 | 5 | Must Have |
-| 8 | US23 | Registrar pagos en el sistema | Como administrador, quiero registrar pagos para mantener actualizado el sistema. | EP04 | 3 | Must Have |
-| 9 | US24 | Visualizar residentes morosos | Como administrador, quiero visualizar residentes morosos para tomar acciones. | EP04 | 5 | Must Have |
-| 10 | US25 | Generar reportes financieros | Como administrador, quiero generar reportes financieros para evaluar el estado del condominio. | EP04 | 8 | Should Have |
-| 11 | US26 | Exportar reportes financieros | Como administrador, quiero exportar reportes para compartirlos con la comunidad. | EP04 | 3 | Should Have |
-| 12 | US31 | Notificación por reserva (Admin) | Como administrador, quiero saber cuándo alguien reserva un área común. | EP03 | 3 | Should Have |
-| 13 | US32 | Consultar Leyes y Manuales | Como administrador, quiero ver la normativa legal y del edificio. | EP05 | 3 | Could Have |
-| 14 | US33 | Ver disponibilidad global (Admin) | Como administrador, quiero ver el mapa de ocupación de todo el edificio. | EP03 | 5 | Should Have |
+| 1 | TS01 | Configuración de autenticación y autorización con JWT | Como desarrollador, quiero implementar autenticación y autorización basada en JWT en el microservicio IAM, para que solo los administradores autorizados puedan acceder a los endpoints protegidos del sistema. | EP05 | 5 | Must Have |
+| 2 | TS02 | Implementación de endpoints de registro e inicio de sesión con validaciones | Como desarrollador, quiero implementar los endpoints de registro e inicio de sesión del microservicio IAM con validaciones estrictas de datos. | EP05 | 5 | Must Have |
+| 3 | TS03 | Implementación de endpoints de gestión de usuarios | Como desarrollador, quiero implementar los endpoints CRUD de gestión de usuarios y consulta de roles en el microservicio IAM. | EP05 | 8 | Must Have |
+| 4 | TS04 | Configuración del API Gateway como punto de entrada centralizado | Como desarrollador, quiero configurar un API Gateway que centralice todas las solicitudes de la aplicación móvil hacia los microservicios de Edifika. | EP05 | 5 | Must Have |
+| 5 | TS05 | Configuración de base de datos PostgreSQL independiente por microservicio | Como desarrollador, quiero configurar una base de datos PostgreSQL independiente para cada microservicio de Edifika. | EP05 | 8 | Must Have |
+| 6 | TS15 | Configuración de CORS en el API Gateway | Como desarrollador, quiero configurar las políticas de CORS en el API Gateway para permitir que la aplicación móvil y el frontend se comuniquen correctamente con el backend. | EP05 | 3 | Must Have |
+| 7 | TS13 | Implementación de comunicación entre microservicios mediante REST | Como desarrollador, quiero implementar la comunicación entre microservicios de Edifika mediante llamadas REST con manejo controlado de errores. | EP05 | 5 | Must Have |
+| 8 | TS06 | Configuración base del microservicio Residential Management | Como desarrollador, quiero crear el microservicio de gestión residencial para administrar edificios, unidades y la vinculación de residentes con sus unidades. | EP05 | 5 | Must Have |
+| 9 | US02 | Registro con correo | Como usuario, quiero registrarme con mi correo para acceder a la plataforma. | EP01 | 3 | Must Have |
+| 10 | US03 | Inicio de sesión | Como usuario, quiero iniciar sesión para acceder a mi información. | EP01 | 2 | Must Have |
+| 11 | US07 | Registrar edificio y unidades | Como administrador, quiero registrar el edificio con sus unidades residenciales para gestionar la comunidad. | EP01 | 8 | Must Have |
+| 12 | US01 | Crear cuenta vinculada a unidad | Como residente, quiero crear una cuenta vinculada a mi unidad para acceder a la gestión de mi edificio. | EP01 | 5 | Must Have |
+| 13 | US04 | Verificar información de usuarios | Como administrador, quiero verificar la información de los usuarios para asegurar que sea correcta. | EP01 | 3 | Must Have |
+| 14 | US05 | Actualizar información de usuarios | Como administrador, quiero actualizar información de usuarios para mantener datos correctos. | EP01 | 2 | Must Have |
 | 15 | US34 | Activar/Desactivar cuentas | Como administrador, quiero controlar quién tiene acceso a la app. | EP01 | 3 | Must Have |
-| 16 | US35 | Cancelar reserva (Admin) | Como administrador, quiero anular una reserva de un residente. | EP03 | 3 | Should Have |
-| 17 | US36 | Crear encuestas o votaciones para la comunidad | Como administrador, quiero crear encuestas o votaciones para conocer la opinión de los residentes sobre temas del condominio. | EP05 | 5 | Could Have |
-| 18 | US37 | Moderar mensajes del muro comunitario | Como administrador, quiero revisar y eliminar mensajes inapropiados del muro para mantener un ambiente respetuoso. | EP05 | 3 | Could Have |
-| 19 | US38 | Habilitar o deshabilitar área común | Como administrador, quiero activar o desactivar áreas comunes para reflejar su disponibilidad real según mantenimiento o restricciones. | EP03 | 3 | Must Have |
-| 20 | US39 | Configurar reglas de área común | Como administrador, quiero definir las reglas, horarios y límites de cada área común para regular su uso correctamente. | EP03 | 5 | Should Have |
-| 21 | US40 | Ver historial de uso de áreas comunes | Como administrador, quiero consultar el historial completo de uso de las áreas comunes con estadísticas para tomar mejores decisiones de gestión. | EP03 | 5 | Could Have |
-| 22 | TS01 | Configuración de autenticación y autorización con JWT | Como desarrollador, quiero implementar autenticación y autorización basada en JWT en el microservicio IAM, para que solo los administradores autorizados puedan acceder a los endpoints protegidos del sistema. | EP-TS | 5 | Must Have |
-| 23 | TS02 | Implementación de endpoints de registro e inicio de sesión con validaciones | Como desarrollador, quiero implementar los endpoints de registro e inicio de sesión del microservicio IAM con validaciones estrictas de datos. | EP-TS | 5 | Must Have |
-| 24 | TS03 | Implementación de endpoints de gestión de usuarios | Como desarrollador, quiero implementar los endpoints CRUD de gestión de usuarios y consulta de roles en el microservicio IAM. | EP-TS | 8 | Must Have |
-| 25 | TS04 | Configuración del API Gateway como punto de entrada centralizado | Como desarrollador, quiero configurar un API Gateway que centralice todas las solicitudes de la aplicación móvil hacia los microservicios de Edifika. | EP-TS | 5 | Must Have |
-| 26 | TS05 | Configuración de base de datos PostgreSQL independiente por microservicio | Como desarrollador, quiero configurar una base de datos PostgreSQL independiente para cada microservicio de Edifika. | EP-TS | 8 | Must Have |
-| 27 | TS06 | Configuración base del microservicio Residential Management | Como desarrollador, quiero crear el microservicio de gestión residencial para administrar edificios, unidades y la vinculación de residentes con sus unidades. | EP-TS | 5 | Must Have |
-| 28 | TS07 | Configuración base del microservicio Payment Service con integración Culqi | Como desarrollador, quiero crear el microservicio de pagos para gestionar deudas, cuotas y transacciones del condominio integrándose con Culqi. | EP-TS | 5 | Must Have |
-| 29 | TS08 | Configuración base del microservicio Reservation Service | Como desarrollador, quiero crear el microservicio de reservas para gestionar la disponibilidad y uso de áreas comunes del condominio. | EP-TS | 5 | Must Have |
-| 30 | TS09 | Configuración base del microservicio Communication Service | Como desarrollador, quiero crear el microservicio de comunicados para que los administradores puedan publicar avisos oficiales. | EP-TS | 5 | Must Have |
-| 31 | TS10 | Configuración base del microservicio Notification Service con Firebase | Como desarrollador, quiero crear el microservicio de notificaciones integrado con Firebase Cloud Messaging. | EP-TS | 5 | Must Have |
-| 32 | TS11 | Configuración base del microservicio Report Service | Como desarrollador, quiero crear el microservicio de reportes para que los administradores puedan generar y exportar reportes financieros y de actividad del condominio. | EP-TS | 8 | Should Have |
-| 33 | TS12 | Configuración base del microservicio Messaging Forum Service | Como desarrollador, quiero crear el microservicio de foro comunitario para que los residentes puedan publicar mensajes en el canal de su edificio. | EP-TS | 5 | Could Have |
-| 34 | TS13 | Implementación de comunicación entre microservicios mediante REST | Como desarrollador, quiero implementar la comunicación entre microservicios de Edifika mediante llamadas REST con manejo controlado de errores. | EP-TS | 5 | Must Have |
-| 35 | TS14 | Documentación de API con Swagger y autenticación JWT | Como desarrollador, quiero integrar Swagger con soporte de autenticación JWT en cada microservicio de Edifika. | EP-TS | 3 | Should Have |
-| 36 | TS15 | Configuración de CORS en el API Gateway | Como desarrollador, quiero configurar las políticas de CORS en el API Gateway para permitir que la aplicación móvil y el frontend se comuniquen correctamente con el backend. | EP-TS | 3 | Must Have |
-| 37 | US48 | Registrar tarjeta de acceso a áreas comunes | Como administrador, quiero asignar una tarjeta de acceso a cada residente para controlar el ingreso a las áreas comunes del edificio. | EP07 | 5 | Should Have |
-| 38 | US49 | Desactivar acceso a áreas comunes por morosidad | Como sistema, quiero desactivar automáticamente el acceso de un residente moroso a las áreas comunes, permitiendo que el administrador pueda revertirlo en casos de emergencia. | EP07 | 5 | Should Have |
-| 39 | US50 | Configurar horarios de riego automático | Como administrador, quiero configurar los horarios y la duración del riego automático de las áreas verdes para optimizar el mantenimiento del edificio. | EP07 | 3 | Could Have |
-| 40 | US51 | Riego automático según humedad del suelo | Como sistema, quiero activar el riego automáticamente según el nivel de humedad del suelo para evitar el desperdicio de agua en las áreas verdes. | EP07 | 5 | Could Have |
-| 41 | US52 | Detección de fugas en tanque de agua | Como administrador, quiero monitorear el nivel del tanque de agua para detectar posibles fugas y actuar antes de que generen pérdidas mayores. | EP07 | 5 | Could Have |
-| 42 | US53 | Encendido automático de luces por movimiento | Como sistema, quiero encender automáticamente las luces de áreas comunes al detectar movimiento para mejorar la seguridad y el ahorro energético del edificio. | EP07 | 3 | Could Have |
-| 43 | TS16 | Configuración base del microservicio IoT Access Management | Como desarrollador, quiero crear el microservicio de IoT Access Management para gestionar el registro, estado y eventos de los dispositivos inteligentes del edificio. | EP-TS | 5 | Should Have |
-| 44 | TS17 | Comunicación con dispositivos ESP32 mediante protocolo MQTT | Como desarrollador, quiero implementar la comunicación entre el microservicio IoT Access Management y las placas ESP32 mediante MQTT, para recibir lecturas de sensores y enviar comandos de actuación en tiempo real. | EP-TS | 8 | Should Have |
-| 45 | US54 | Otorgar acceso temporal por reserva aprobada | Como residente, quiero que mi reserva aprobada me habilite automáticamente el ingreso al área común solo durante mi horario, para no depender del administrador para entrar. | EP07 | 5 | Should Have |
-| 46 | US55 | Consultar bitácora de accesos | Como administrador, quiero consultar la bitácora de intentos de acceso a las áreas comunes para auditar quién ingresó y detectar accesos no autorizados. | EP07 | 3 | Should Have |
-| 47 | US56 | Apertura remota de acceso | Como administrador, quiero abrir remotamente un acceso desde la aplicación para atender situaciones excepcionales sin desplazarme al lector. | EP07 | 3 | Could Have |
-| 48 | US57 | Configurar reglas de automatización de iluminación | Como administrador, quiero configurar reglas de iluminación por área común (presencia, umbral de lux, franja horaria, tiempo de apagado y prioridad) para automatizar el uso eficiente de la energía. | EP08 | 5 | Should Have |
-| 49 | US58 | Encender o apagar luces manualmente (override) | Como residente con una reserva vigente o como administrador, quiero encender o apagar manualmente las luces de un área por un tiempo determinado, para cubrir situaciones que la automatización no contempla. | EP08 | 5 | Should Have |
-| 50 | US59 | Encender área al iniciar una reserva | Como sistema, quiero encender automáticamente las luces del área reservada al iniciar la reserva, para que el residente encuentre el espacio listo para su uso. | EP08 | 3 | Should Have |
-| 51 | US60 | Registrar y consultar luminarias | Como administrador, quiero registrar las luminarias de cada área común y consultar su estado, para mantener un inventario actualizado del sistema de iluminación. | EP08 | 3 | Should Have |
-| 52 | US61 | Visualizar consumo energético por área y periodo | Como administrador, quiero visualizar el consumo energético (kWh) por área común y periodo, para identificar dónde se puede reducir el gasto eléctrico. | EP09 | 5 | Should Have |
-| 53 | US62 | Alertar consumo anómalo | Como administrador, quiero recibir una alerta cuando el consumo de un área se desvíe de su comportamiento habitual, para investigar posibles fallas o usos indebidos. | EP09 | 8 | Could Have |
-| 54 | US63 | Detectar falla de luminaria | Como administrador, quiero ser notificado cuando una luminaria no funcione pese a estar encendida, para repararla oportunamente. | EP09 | 5 | Could Have |
-| 55 | US64 | Monitorear estado de conexión de dispositivos | Como administrador, quiero ver el estado de conexión de todos los dispositivos IoT del edificio, para saber cuáles requieren atención. | EP09 | 3 | Should Have |
-| 56 | US65 | Consultar lecturas de sensores en tiempo real e históricas | Como administrador, quiero consultar las lecturas de los sensores en tiempo real y su histórico, para analizar el comportamiento de las áreas del edificio. | EP09 | 5 | Should Have |
-| 57 | US66 | Configurar reglas de detección de fugas | Como administrador, quiero configurar las reglas de detección de fugas por zona hidráulica (umbral de caudal, caída de presión, franja de consumo esperado y duración mínima), para adaptar la detección al uso real del edificio. | EP10 | 3 | Should Have |
-| 58 | US67 | Cortar automáticamente la bomba ante una fuga | Como sistema, quiero detectar una fuga a partir de las lecturas de caudal y presión y apagar la bomba, para minimizar la pérdida de agua. | EP10 | 8 | Should Have |
-| 59 | US68 | Gestionar alertas de fuga | Como administrador, quiero reconocer y resolver las alertas de fuga, para llevar el control del seguimiento de cada incidente. | EP10 | 3 | Should Have |
-| 60 | US69 | Apagar manualmente una bomba de agua | Como administrador, quiero apagar remotamente una bomba de agua desde la aplicación, para actuar de inmediato ante una emergencia. | EP10 | 3 | Could Have |
-| 61 | US70 | Detectar falla de bomba por caída de presión | Como administrador, quiero que el sistema identifique cuando una bomba presenta caída de presión sin caudal correspondiente, para atender una posible falla del equipo. | EP10 | 5 | Could Have |
-| 62 | TS18 | Configuración base del microservicio Smart Lighting & Automation | Como desarrollador, quiero crear el microservicio Smart Lighting & Automation para gestionar luminarias, reglas de automatización y comandos de override de forma independiente de los demás microservicios de Edifika. | EP-TS | 5 | Should Have |
-| 63 | TS19 | Configuración base del microservicio IoT Telemetry & Analytics con TimescaleDB | Como desarrollador, quiero crear el microservicio de telemetría con almacenamiento en TimescaleDB para ingerir lecturas de sensores y resolver consultas analíticas con baja latencia. | EP-TS | 8 | Should Have |
-| 64 | TS20 | Configuración base del microservicio Water Pump Leak Detection | Como desarrollador, quiero crear el microservicio de detección de fugas para gestionar bombas, reglas y alertas, ejecutando el corte de forma confiable ante una fuga. | EP-TS | 5 | Should Have |
-| 65 | TS21 | Implementación del Edge API con operación sin conexión y sincronización | Como desarrollador, quiero implementar el Edge API que se comunica por MQTT local con los nodos ESP32 y se sincroniza con la nube, para que el condominio siga operando aun sin conexión a internet. | EP-TS | 8 | Should Have |
-| 66 | TS22 | Publicación y consumo de eventos de dominio entre contextos IoT | Como desarrollador, quiero implementar la mensajería de eventos de dominio mediante el broker AMQP/MQTT con consumo idempotente, para integrar los contextos IoT con Reservation, Payment y Notification sin acoplarlos. | EP-TS | 5 | Should Have |
-| 67 | US71 | Leer tarjeta RFID y resolver el acceso | Como residente, quiero acercar mi tarjeta RFID al lector de la puerta para ingresar a un área común sin depender de otra persona. | EP11 | 5 | Must Have |
-| 68 | US72 | Abrir la cerradura eléctrica y re-bloquearla automáticamente | Como sistema, quiero energizar la cerradura eléctrica solo el tiempo necesario cuando se concede un acceso, para que la puerta no quede abierta. | EP11 | 5 | Must Have |
-| 69 | US73 | Emitir señales sonoras con el buzzer | Como residente, quiero escuchar una señal sonora distinta según el resultado de mi acceso, para saber si puedo pasar sin mirar la pantalla. | EP11 | 2 | Should Have |
-| 70 | US74 | Mostrar mensajes de estado en la pantalla OLED | Como residente, quiero ver en la pantalla OLED el resultado de mi acceso y el estado del sistema, para entender por qué se me permite o niega el ingreso. | EP11 | 3 | Should Have |
-| 71 | US75 | Registrar y sincronizar accesos generados sin conexión | Como administrador, quiero que los accesos ocurridos sin internet queden registrados y se sincronicen luego, para no perder la auditoría. | EP11 | 5 | Must Have |
-| 72 | US76 | Medir la humedad con el sensor de humedad | Como sistema, quiero leer periódicamente el sensor de humedad del ESP32, para disponer de datos confiables del área verde. | EP11 | 3 | Should Have |
-| 73 | US77 | Medir el nivel de agua con el sensor ultrasónico | Como administrador, quiero que el sensor ultrasónico mida el nivel del tanque de agua, para conocer su nivel sin revisarlo físicamente. | EP11 | 5 | Should Have |
-| 74 | US78 | Alertar localmente un nivel crítico | Como administrador, quiero que el sistema alerte con buzzer, pantalla y notificación cuando el nivel del tanque sea crítico, para actuar a tiempo. | EP11 | 3 | Should Have |
-| 75 | US79 | Registrar y autenticar nodos ESP32 | Como administrador, quiero registrar cada ESP32 en el Edge Gateway con sus sensores y actuadores, para que solo los dispositivos autorizados puedan operar. | EP11 | 5 | Must Have |
-| 76 | US80 | Monitorear el estado de los nodos desde el Edge Gateway | Como administrador, quiero que el Edge Gateway detecte cuándo un nodo deja de responder, para atender fallas de hardware o de red. | EP11 | 3 | Should Have |
-| 77 | US81 | Sincronizar credenciales, reservas y blacklist desde la nube | Como sistema, quiero que el Edge Gateway reciba y mantenga actualizada una copia local de credenciales, reservas vigentes y blacklist, para decidir accesos sin depender de internet. | EP11 | 5 | Must Have |
-| 78 | US82 | Reenviar telemetría y eventos a la nube | Como sistema, quiero que el Edge Gateway reenvíe las lecturas de los sensores y los eventos hacia la nube, para alimentar la analítica y las alertas. | EP11 | 5 | Should Have |
-| 79 | US83 | Ejecutar comandos remotos sobre los dispositivos | Como administrador, quiero enviar comandos desde la nube (abrir cerradura, activar alerta sonora o mensaje en pantalla) y que el Edge Gateway los ejecute en el dispositivo, para atender situaciones a distancia. | EP11 | 3 | Should Have |
-| 80 | TS23 | Configuración base del Edge Gateway con Python, Flask, Peewee ORM y SQLite | Como desarrollador, quiero crear el servicio Edge Gateway con Python, Flask, Peewee ORM y SQLite con configuración por variables de entorno y endpoint de salud, para tener una base ejecutable y desplegable en el equipo del edificio. | EP-TS | 5 | Must Have |
-| 81 | TS24 | Contrato de mensajes MQTT entre el Edge Gateway y los ESP32 | Como desarrollador, quiero definir y validar el contrato de tópicos y mensajes JSON entre el Edge Gateway y los nodos ESP32, para que firmware y servicio evolucionen sin romperse. | EP-TS | 5 | Must Have |
-| 82 | TS25 | Persistencia local con SQLite y cola de salida | Como desarrollador, quiero almacenar localmente credenciales, lecturas y eventos pendientes en SQLite, para garantizar la operación offline y la entrega confiable a la nube. | EP-TS | 5 | Must Have |
-| 83 | TS26 | Firmware base del ESP32 con lectura de sensores y reconexión | Como desarrollador, quiero implementar el firmware base del ESP32 que lea los sensores, controle los actuadores y mantenga la conexión Wi-Fi y MQTT, para que el nodo opere de forma autónoma y recuperable. | EP-TS | 8 | Must Have |
-| 84 | TS27 | Seguridad de la comunicación del Edge Gateway | Como desarrollador, quiero asegurar la comunicación entre los ESP32, el Edge Gateway y la nube, para evitar accesos o comandos no autorizados. | EP-TS | 5 | Should Have |
-| 85 | US84 | Mostrar fecha y hora en la pantalla OLED | Como residente, quiero ver la fecha y la hora actual en la pantalla OLED del punto de acceso, para saber la hora sin usar mi celular y verificar mi horario de reserva. | EP11 | 3 | Should Have |
-| 86 | US85 | Mantener y sincronizar el reloj del nodo | Como sistema, quiero que el nodo mantenga una hora precisa incluso sin internet y la sincronice con el Edge Gateway, para que los permisos por horario y las marcas de tiempo de los eventos sean confiables. | EP11 | 5 | Must Have |
-| 87 | TS28 | Estandarización de marcas de tiempo y zona horaria | Como desarrollador, quiero que todos los componentes registren las marcas de tiempo en UTC con formato ISO 8601 y las muestren en la zona America/Lima, para evitar inconsistencias entre el ESP32, el Edge Gateway y la nube. | EP-TS | 3 | Should Have |
-| 88 | US86 | Enrolar una tarjeta RFID desde el lector del nodo | Como administrador, quiero registrar una tarjeta nueva acercándola al lector del nodo, para asignarla a un residente sin digitar manualmente su número de serie. | EP11 | 5 | Should Have |
-| 89 | US87 | Restringir el acceso a un área por horario | Como administrador, quiero definir el horario permitido de cada área común, para que no se pueda ingresar fuera de las horas habilitadas aunque se tenga una credencial activa. | EP11 | 3 | Should Have |
-| 90 | US88 | Avisar el fin de una reserva en el punto de acceso | Como residente, quiero que el nodo del área reservada me avise cuando mi reserva esté por terminar, para desocupar el espacio a tiempo. | EP11 | 3 | Could Have |
-| 91 | US89 | Activar el modo mantenimiento en un dispositivo | Como administrador, quiero poner un nodo en modo mantenimiento, para repararlo o calibrarlo sin generar falsas alertas ni accesos inesperados. | EP11 | 3 | Should Have |
-| 92 | TS29 | Actualización remota (OTA) del firmware de los nodos ESP32 | Como desarrollador, quiero actualizar el firmware de los ESP32 de forma remota desde el Edge Gateway con verificación y reversión, para corregir errores y agregar funciones sin acceder físicamente a cada nodo. | EP-TS | 8 | Should Have |
-| 93 | US90 | Acceder a un área con el teléfono móvil | Como residente, quiero acercar mi teléfono con la app de Edifika al nodo de acceso para ingresar a un área común, igual que con mi tarjeta RFID. | EP11 | 8 | Should Have |
-| 94 | US91 | Revocar la credencial móvil de un teléfono | Como residente o administrador, quiero revocar la credencial móvil de un teléfono perdido o reemplazado, para que nadie pueda usarlo para ingresar. | EP11 | 5 | Should Have |
-| 95 | TS30 | Verificación de credenciales móviles firmadas en el Edge Gateway | Como desarrollador, quiero que el Edge Gateway verifique credenciales móviles firmadas criptográficamente sin consultar la nube, para aceptar teléfonos de forma segura incluso sin internet. | EP-TS | 8 | Should Have |
-| 96 | US92 | Calibrar los sensores de un nodo | Como administrador, quiero calibrar los sensores de un nodo (altura del tanque, umbral de humedad baja y umbral de nivel crítico), para que las lecturas y las alertas reflejen las condiciones reales del edificio. | EP11 | 3 | Should Have |
-| 97 | US93 | Consultar el estado del Edge Gateway sin internet | Como administrador, quiero consultar desde el sistema local el estado del Edge Gateway, sus nodos y los eventos pendientes de enviar, para operar y diagnosticar el edificio aunque no haya internet. | EP11 | 3 | Should Have |
-| 98 | TS31 | Despliegue del Edge Gateway con Docker Compose | Como desarrollador, quiero desplegar el Edge Gateway, el broker MQTT y un backend simulado con Docker Compose, para ejecutar y demostrar toda la solución con un solo comando. | EP-TS | 5 | Should Have |
-| 99 | TS32 | Simulador de nodos ESP32 para pruebas sin hardware | Como desarrollador, quiero un simulador de nodos ESP32 que respete el contrato MQTT, para probar el Edge Gateway sin depender del hardware físico. | EP-TS | 3 | Should Have |
-| 100 | TS33 | Contrato de integración entre el Edge Gateway y el backend | Como desarrollador, quiero un contrato de integración entre el Edge Gateway y el backend con entrega por lotes e idempotencia, para transportar la información de los nodos sin pérdidas ni duplicados. | EP-TS | 5 | Must Have |
-| 101 | TS34 | Pruebas automatizadas del Edge Gateway | Como desarrollador, quiero una suite de pruebas automatizadas del Edge Gateway que no dependa del broker ni de la red, para detectar regresiones antes de cada integración. | EP-TS | 5 | Should Have |
+| 16 | TS07 | Configuración base del microservicio Payment Service con integración Culqi | Como desarrollador, quiero crear el microservicio de pagos para gestionar deudas, cuotas y transacciones del condominio integrándose con Culqi. | EP05 | 5 | Must Have |
+| 17 | US21 | Ver deuda actual | Como residente, quiero saber cuánto debo de mantenimiento para planificar mi pago. | EP04 | 3 | Must Have |
+| 18 | US22 | Registrar pago con comprobante | Como residente, quiero subir la foto de mi voucher para que el administrador valide mi pago sin enviarlo por WhatsApp. | EP04 | 5 | Must Have |
+| 19 | US23 | Registrar pagos en el sistema | Como administrador, quiero registrar pagos para mantener actualizado el sistema. | EP04 | 3 | Must Have |
+| 20 | US30 | Pagar deuda en línea | Como residente, quiero pagar mi deuda con tarjeta de crédito o débito para cancelarla en línea sin trasladarme al banco. | EP04 | 8 | Must Have |
+| 21 | US24 | Visualizar residentes morosos | Como administrador, quiero visualizar residentes morosos para tomar acciones. | EP04 | 5 | Must Have |
+| 22 | TS08 | Configuración base del microservicio Reservation Service | Como desarrollador, quiero crear el microservicio de reservas para gestionar la disponibilidad y uso de áreas comunes del condominio. | EP05 | 5 | Must Have |
+| 23 | US16 | Ver disponibilidad de áreas comunes | Como residente o administrador, quiero ver qué áreas comunes están libres para planificar su uso sin cruces de horario. | EP03 | 3 | Must Have |
+| 24 | US17 | Reservar área común | Como residente, quiero reservar un área común para asegurar su uso en el horario que necesito. | EP03 | 5 | Must Have |
+| 25 | US19 | Evitar reservas duplicadas | Como administrador, quiero evitar reservas duplicadas para prevenir conflictos. | EP03 | 5 | Must Have |
+| 26 | US38 | Habilitar o deshabilitar área común | Como administrador, quiero activar o desactivar áreas comunes para reflejar su disponibilidad real según mantenimiento o restricciones. | EP03 | 3 | Must Have |
+| 27 | TS09 | Configuración base del microservicio Communication Service | Como desarrollador, quiero crear el microservicio de comunicados para que los administradores puedan publicar avisos oficiales. | EP05 | 5 | Must Have |
+| 28 | TS10 | Configuración base del microservicio Notification Service con Firebase | Como desarrollador, quiero crear el microservicio de notificaciones integrado con Firebase Cloud Messaging. | EP05 | 5 | Must Have |
+| 29 | US13 | Publicar comunicados oficiales | Como administrador, quiero publicar comunicados oficiales para informar a los residentes. | EP02 | 3 | Must Have |
+| 30 | US10 | Recepción de comunicados | Como residente, quiero recibir los comunicados oficiales del condominio para estar informado de los avisos del edificio. | EP02 | 3 | Must Have |
+| 31 | US08 | Notificaciones de emergencias | Como residente o administrador, quiero emitir y recibir avisos inmediatos de emergencias para actuar a tiempo ante situaciones de riesgo en el edificio. | EP02 | 8 | Must Have |
+| 32 | US41 | Visualizar sección Hero de la Landing Page | Como visitante, quiero ver una sección principal con el mensaje de valor de Edifika para entender rápidamente de qué trata el producto. | EP06 | 1 | Must Have |
+| 33 | US42 | Navegar entre secciones de la Landing Page | Como visitante, quiero usar la barra de navegación para desplazarme entre las secciones de la landing page de forma rápida. | EP06 | 1 | Must Have |
+| 34 | US47 | Acceder a la app web desde la Landing Page | Como usuario registrado, quiero acceder a la aplicación web directamente desde la landing page para iniciar sesión sin pasos adicionales. | EP06 | 1 | Must Have |
+| 35 | TS23 | Configuración base del Edge Gateway con Python, Flask, Peewee ORM y SQLite | Como desarrollador, quiero crear el servicio Edge Gateway con Python, Flask, Peewee ORM y SQLite con configuración por variables de entorno y endpoint de salud, para tener una base ejecutable y desplegable en el equipo del edificio. | EP05 | 5 | Must Have |
+| 36 | TS24 | Contrato de mensajes MQTT entre el Edge Gateway y los ESP32 | Como desarrollador, quiero definir y validar el contrato de tópicos y mensajes JSON entre el Edge Gateway y los nodos ESP32, para que firmware y servicio evolucionen sin romperse. | EP05 | 5 | Must Have |
+| 37 | TS25 | Persistencia local con SQLite y cola de salida | Como desarrollador, quiero almacenar localmente credenciales, lecturas y eventos pendientes en SQLite, para garantizar la operación offline y la entrega confiable a la nube. | EP05 | 5 | Must Have |
+| 38 | TS26 | Firmware base del ESP32 con lectura de sensores y reconexión | Como desarrollador, quiero implementar el firmware base del ESP32 que lea los sensores, controle los actuadores y mantenga la conexión Wi-Fi y MQTT, para que el nodo opere de forma autónoma y recuperable. | EP05 | 8 | Must Have |
+| 39 | TS33 | Contrato de integración entre el Edge Gateway y el backend | Como desarrollador, quiero un contrato de integración entre el Edge Gateway y el backend con entrega por lotes e idempotencia, para transportar la información de los nodos sin pérdidas ni duplicados. | EP05 | 5 | Must Have |
+| 40 | US79 | Registrar y autenticar nodos ESP32 | Como administrador, quiero registrar cada ESP32 en el Edge Gateway con sus sensores y actuadores, para que solo los dispositivos autorizados puedan operar. | EP11 | 5 | Must Have |
+| 41 | US71 | Leer tarjeta RFID y resolver el acceso | Como residente, quiero acercar mi tarjeta RFID al lector de la puerta para ingresar a un área común sin depender de otra persona. | EP11 | 5 | Must Have |
+| 42 | US72 | Abrir la cerradura eléctrica y re-bloquearla automáticamente | Como sistema, quiero energizar la cerradura eléctrica solo el tiempo necesario cuando se concede un acceso, para que la puerta no quede abierta. | EP11 | 5 | Must Have |
+| 43 | US75 | Registrar y sincronizar accesos generados sin conexión | Como administrador, quiero que los accesos ocurridos sin internet queden registrados y se sincronicen luego, para no perder la auditoría. | EP11 | 5 | Must Have |
+| 44 | US81 | Sincronizar credenciales, reservas y blacklist desde la nube | Como sistema, quiero que el Edge Gateway reciba y mantenga actualizada una copia local de credenciales, reservas vigentes y blacklist, para decidir accesos sin depender de internet. | EP11 | 5 | Must Have |
+| 45 | US85 | Mantener y sincronizar el reloj del nodo | Como sistema, quiero que el nodo mantenga una hora precisa incluso sin internet y la sincronice con el Edge Gateway, para que los permisos por horario y las marcas de tiempo de los eventos sean confiables. | EP11 | 5 | Must Have |
+| 46 | US06 | Editar perfil | Como residente, quiero editar mi perfil para mantener mi contacto actualizado. | EP01 | 2 | Should Have |
+| 47 | US28 | Consultar pagos pasados | Como residente, quiero ver mi historial de pagos para comprobar qué periodos tengo cancelados. | EP04 | 2 | Should Have |
+| 48 | US09 | Recordatorios de pago | Como residente, quiero recibir alertas de mis deudas próximas a vencer para pagar a tiempo y evitar la mora. | EP04 | 3 | Should Have |
+| 49 | US20 | Cancelar reserva | Como residente, quiero cancelar una reserva que ya no usaré para liberar el espacio a otros residentes. | EP03 | 2 | Should Have |
+| 50 | US18 | Aprobar o rechazar reservas | Como administrador, quiero aprobar o rechazar reservas para mantener el control. | EP03 | 3 | Should Have |
+| 51 | US11 | Notificaciones de reservas | Como residente, quiero recibir avisos sobre mis reservas de áreas comunes para no olvidar mis turnos ni sus cambios de estado. | EP03 | 2 | Should Have |
+| 52 | US31 | Notificación por reserva (Admin) | Como administrador, quiero saber cuándo alguien reserva un área común. | EP03 | 3 | Should Have |
+| 53 | US39 | Configurar reglas de área común | Como administrador, quiero definir las reglas, horarios y límites de cada área común para regular su uso correctamente. | EP03 | 5 | Should Have |
+| 54 | US33 | Ver disponibilidad global (Admin) | Como administrador, quiero ver el mapa de ocupación de todo el edificio. | EP03 | 5 | Should Have |
+| 55 | US35 | Cancelar reserva (Admin) | Como administrador, quiero anular una reserva de un residente. | EP03 | 3 | Should Have |
+| 56 | US14 | Visualizar comunicados anteriores | Como residente, quiero ver el historial de comunicados para consultar información anterior cuando la necesite. | EP02 | 2 | Should Have |
+| 57 | US15 | Seguimiento de visualización | Como administrador, quiero saber quién ha visto los comunicados para asegurar su alcance. | EP02 | 5 | Should Have |
+| 58 | TS11 | Configuración base del microservicio Report Service | Como desarrollador, quiero crear el microservicio de reportes para que los administradores puedan generar y exportar reportes financieros y de actividad del condominio. | EP05 | 8 | Should Have |
+| 59 | US25 | Generar reportes financieros | Como administrador, quiero generar reportes financieros para evaluar el estado del condominio. | EP04 | 8 | Should Have |
+| 60 | US26 | Exportar reportes financieros | Como administrador, quiero exportar reportes para compartirlos con la comunidad. | EP04 | 3 | Should Have |
+| 61 | US27 | Ver resumen de gastos | Como residente, quiero ver en qué se gasta el dinero del edificio para tener transparencia sobre la administración. | EP04 | 5 | Should Have |
+| 62 | US45 | Visualizar sección de funcionalidades | Como visitante, quiero ver las funcionalidades principales de Edifika para evaluar si la plataforma se adapta a mis necesidades. | EP06 | 2 | Should Have |
+| 63 | TS14 | Documentación de API con Swagger y autenticación JWT | Como desarrollador, quiero integrar Swagger con soporte de autenticación JWT en cada microservicio de Edifika. | EP05 | 3 | Should Have |
+| 64 | TS16 | Configuración base del microservicio IoT Access Management | Como desarrollador, quiero crear el microservicio de IoT Access Management para gestionar el registro, estado y eventos de los dispositivos inteligentes del edificio. | EP05 | 5 | Should Have |
+| 65 | TS17 | Comunicación con dispositivos ESP32 mediante protocolo MQTT | Como desarrollador, quiero implementar la comunicación entre el microservicio IoT Access Management y las placas ESP32 mediante MQTT, para recibir lecturas de sensores y enviar comandos de actuación en tiempo real. | EP05 | 8 | Should Have |
+| 66 | TS21 | Implementación del Edge API con operación sin conexión y sincronización | Como desarrollador, quiero implementar el Edge API que se comunica por MQTT local con los nodos ESP32 y se sincroniza con la nube, para que el condominio siga operando aun sin conexión a internet. | EP05 | 8 | Should Have |
+| 67 | TS22 | Publicación y consumo de eventos de dominio entre contextos IoT | Como desarrollador, quiero implementar la mensajería de eventos de dominio mediante el broker AMQP/MQTT con consumo idempotente, para integrar los contextos IoT con Reservation, Payment y Notification sin acoplarlos. | EP05 | 5 | Should Have |
+| 68 | TS27 | Seguridad de la comunicación del Edge Gateway | Como desarrollador, quiero asegurar la comunicación entre los ESP32, el Edge Gateway y la nube, para evitar accesos o comandos no autorizados. | EP05 | 5 | Should Have |
+| 69 | TS28 | Estandarización de marcas de tiempo y zona horaria | Como desarrollador, quiero que todos los componentes registren las marcas de tiempo en UTC con formato ISO 8601 y las muestren en la zona America/Lima, para evitar inconsistencias entre el ESP32, el Edge Gateway y la nube. | EP05 | 3 | Should Have |
+| 70 | US48 | Registrar tarjeta de acceso a áreas comunes | Como administrador, quiero asignar una tarjeta de acceso a cada residente para controlar el ingreso a las áreas comunes del edificio. | EP07 | 5 | Should Have |
+| 71 | US49 | Desactivar acceso a áreas comunes por morosidad | Como sistema, quiero desactivar automáticamente el acceso de un residente moroso a las áreas comunes, permitiendo que el administrador pueda revertirlo en casos de emergencia. | EP07 | 5 | Should Have |
+| 72 | US54 | Otorgar acceso temporal por reserva aprobada | Como residente, quiero que mi reserva aprobada me habilite automáticamente el ingreso al área común solo durante mi horario, para no depender del administrador para entrar. | EP07 | 5 | Should Have |
+| 73 | US55 | Consultar bitácora de accesos | Como administrador, quiero consultar la bitácora de intentos de acceso a las áreas comunes para auditar quién ingresó y detectar accesos no autorizados. | EP07 | 3 | Should Have |
+| 74 | US73 | Emitir señales sonoras con el buzzer | Como residente, quiero escuchar una señal sonora distinta según el resultado de mi acceso, para saber si puedo pasar sin mirar la pantalla. | EP11 | 2 | Should Have |
+| 75 | US74 | Mostrar mensajes de estado en la pantalla OLED | Como residente, quiero ver en la pantalla OLED el resultado de mi acceso y el estado del sistema, para entender por qué se me permite o niega el ingreso. | EP11 | 3 | Should Have |
+| 76 | US84 | Mostrar fecha y hora en la pantalla OLED | Como residente, quiero ver la fecha y la hora actual en la pantalla OLED del punto de acceso, para saber la hora sin usar mi celular y verificar mi horario de reserva. | EP11 | 3 | Should Have |
+| 77 | US86 | Enrolar una tarjeta RFID desde el lector del nodo | Como administrador, quiero registrar una tarjeta nueva acercándola al lector del nodo, para asignarla a un residente sin digitar manualmente su número de serie. | EP11 | 5 | Should Have |
+| 78 | US87 | Restringir el acceso a un área por horario | Como administrador, quiero definir el horario permitido de cada área común, para que no se pueda ingresar fuera de las horas habilitadas aunque se tenga una credencial activa. | EP11 | 3 | Should Have |
+| 79 | US80 | Monitorear el estado de los nodos desde el Edge Gateway | Como administrador, quiero que el Edge Gateway detecte cuándo un nodo deja de responder, para atender fallas de hardware o de red. | EP11 | 3 | Should Have |
+| 80 | US82 | Reenviar telemetría y eventos a la nube | Como sistema, quiero que el Edge Gateway reenvíe las lecturas de los sensores y los eventos hacia la nube, para alimentar la analítica y las alertas. | EP11 | 5 | Should Have |
+| 81 | US83 | Ejecutar comandos remotos sobre los dispositivos | Como administrador, quiero enviar comandos desde la nube (abrir cerradura, activar alerta sonora o mensaje en pantalla) y que el Edge Gateway los ejecute en el dispositivo, para atender situaciones a distancia. | EP11 | 3 | Should Have |
+| 82 | US89 | Activar el modo mantenimiento en un dispositivo | Como administrador, quiero poner un nodo en modo mantenimiento, para repararlo o calibrarlo sin generar falsas alertas ni accesos inesperados. | EP11 | 3 | Should Have |
+| 83 | US93 | Consultar el estado del Edge Gateway sin internet | Como administrador, quiero consultar desde el sistema local el estado del Edge Gateway, sus nodos y los eventos pendientes de enviar, para operar y diagnosticar el edificio aunque no haya internet. | EP11 | 3 | Should Have |
+| 84 | US90 | Acceder a un área con el teléfono móvil | Como residente, quiero acercar mi teléfono con la app de Edifika al nodo de acceso para ingresar a un área común, igual que con mi tarjeta RFID. | EP11 | 8 | Should Have |
+| 85 | US91 | Revocar la credencial móvil de un teléfono | Como residente o administrador, quiero revocar la credencial móvil de un teléfono perdido o reemplazado, para que nadie pueda usarlo para ingresar. | EP11 | 5 | Should Have |
+| 86 | TS30 | Verificación de credenciales móviles firmadas en el Edge Gateway | Como desarrollador, quiero que el Edge Gateway verifique credenciales móviles firmadas criptográficamente sin consultar la nube, para aceptar teléfonos de forma segura incluso sin internet. | EP05 | 8 | Should Have |
+| 87 | TS29 | Actualización remota (OTA) del firmware de los nodos ESP32 | Como desarrollador, quiero actualizar el firmware de los ESP32 de forma remota desde el Edge Gateway con verificación y reversión, para corregir errores y agregar funciones sin acceder físicamente a cada nodo. | EP05 | 8 | Should Have |
+| 88 | TS31 | Despliegue del Edge Gateway con Docker Compose | Como desarrollador, quiero desplegar el Edge Gateway, el broker MQTT y un backend simulado con Docker Compose, para ejecutar y demostrar toda la solución con un solo comando. | EP05 | 5 | Should Have |
+| 89 | TS32 | Simulador de nodos ESP32 para pruebas sin hardware | Como desarrollador, quiero un simulador de nodos ESP32 que respete el contrato MQTT, para probar el Edge Gateway sin depender del hardware físico. | EP05 | 3 | Should Have |
+| 90 | TS34 | Pruebas automatizadas del Edge Gateway | Como desarrollador, quiero una suite de pruebas automatizadas del Edge Gateway que no dependa del broker ni de la red, para detectar regresiones antes de cada integración. | EP05 | 5 | Should Have |
+| 91 | TS18 | Configuración base del microservicio Smart Lighting & Automation | Como desarrollador, quiero crear el microservicio Smart Lighting & Automation para gestionar luminarias, reglas de automatización y comandos de override de forma independiente de los demás microservicios de Edifika. | EP05 | 5 | Should Have |
+| 92 | US57 | Configurar reglas de automatización de iluminación | Como administrador, quiero configurar reglas de iluminación por área común (presencia, umbral de lux, franja horaria, tiempo de apagado y prioridad) para automatizar el uso eficiente de la energía. | EP08 | 5 | Should Have |
+| 93 | US58 | Encender o apagar luces manualmente (override) | Como residente con una reserva vigente o como administrador, quiero encender o apagar manualmente las luces de un área por un tiempo determinado, para cubrir situaciones que la automatización no contempla. | EP08 | 5 | Should Have |
+| 94 | US59 | Encender área al iniciar una reserva | Como sistema, quiero encender automáticamente las luces del área reservada al iniciar la reserva, para que el residente encuentre el espacio listo para su uso. | EP08 | 3 | Should Have |
+| 95 | US60 | Registrar y consultar luminarias | Como administrador, quiero registrar las luminarias de cada área común y consultar su estado, para mantener un inventario actualizado del sistema de iluminación. | EP08 | 3 | Should Have |
+| 96 | TS19 | Configuración base del microservicio IoT Telemetry & Analytics con TimescaleDB | Como desarrollador, quiero crear el microservicio de telemetría con almacenamiento en TimescaleDB para ingerir lecturas de sensores y resolver consultas analíticas con baja latencia. | EP05 | 8 | Should Have |
+| 97 | US64 | Monitorear estado de conexión de dispositivos | Como administrador, quiero ver el estado de conexión de todos los dispositivos IoT del edificio, para saber cuáles requieren atención. | EP09 | 3 | Should Have |
+| 98 | US65 | Consultar lecturas de sensores en tiempo real e históricas | Como administrador, quiero consultar las lecturas de los sensores en tiempo real y su histórico, para analizar el comportamiento de las áreas del edificio. | EP09 | 5 | Should Have |
+| 99 | US61 | Visualizar consumo energético por área y periodo | Como administrador, quiero visualizar el consumo energético (kWh) por área común y periodo, para identificar dónde se puede reducir el gasto eléctrico. | EP09 | 5 | Should Have |
+| 100 | US76 | Medir la humedad con el sensor de humedad | Como sistema, quiero leer periódicamente el sensor de humedad del ESP32, para disponer de datos confiables del área verde. | EP11 | 3 | Should Have |
+| 101 | US92 | Calibrar los sensores de un nodo | Como administrador, quiero calibrar el sensor de humedad de un nodo (valores en seco y en húmedo, umbral de humedad baja y umbral crítico), para que las lecturas y las alertas reflejen las condiciones reales del área verde. | EP11 | 3 | Should Have |
+| 102 | US50 | Configurar horarios de riego automático | Como administrador, quiero configurar los horarios y la duración del riego automático de las áreas verdes para optimizar el mantenimiento del edificio. | EP10 | 3 | Should Have |
+| 103 | US51 | Riego automático según humedad del suelo | Como sistema, quiero activar el riego automáticamente según el nivel de humedad del suelo para evitar el desperdicio de agua en las áreas verdes. | EP10 | 5 | Should Have |
+| 104 | US78 | Alertar localmente una humedad crítica del suelo | Como administrador, quiero que el sistema alerte con buzzer, pantalla y notificación cuando la humedad del suelo de un área verde sea crítica, para actuar a tiempo si el riego automático no la corrige. | EP11 | 3 | Should Have |
+| 105 | US40 | Ver historial de uso de áreas comunes | Como administrador, quiero consultar el historial completo de uso de las áreas comunes con estadísticas para tomar mejores decisiones de gestión. | EP03 | 5 | Could Have |
+| 106 | US12 | Configuración de notificaciones | Como residente, quiero elegir qué tipos de avisos recibir para no saturarme con notificaciones irrelevantes. | EP02 | 3 | Could Have |
+| 107 | US46 | Visualizar sección del equipo | Como visitante, quiero conocer al equipo detrás de Edifika para generar confianza antes de contratar el servicio. | EP06 | 1 | Could Have |
+| 108 | US43 | Cambiar idioma de la Landing Page | Como visitante internacional, quiero cambiar el idioma entre español e inglés para entender el contenido en mi idioma preferido. | EP06 | 3 | Could Have |
+| 109 | US44 | Cambiar tema visual (claro/oscuro) | Como visitante, quiero alternar entre el modo claro y oscuro de la landing page para mejorar mi experiencia visual. | EP06 | 2 | Could Have |
+| 110 | TS12 | Configuración base del microservicio Messaging Forum Service | Como desarrollador, quiero crear el microservicio de foro comunitario para que los residentes puedan publicar mensajes en el canal de su edificio. | EP05 | 5 | Could Have |
+| 111 | US29 | Publicar mensaje en la comunidad | Como residente, quiero publicar mensajes en el muro comunitario para comunicarme con mis vecinos en un canal ordenado. | EP02 | 3 | Could Have |
+| 112 | US37 | Moderar mensajes del muro comunitario | Como administrador, quiero revisar y eliminar mensajes inapropiados del muro para mantener un ambiente respetuoso. | EP05 | 3 | Could Have |
+| 113 | US36 | Crear encuestas o votaciones para la comunidad | Como administrador, quiero crear encuestas o votaciones para conocer la opinión de los residentes sobre temas del condominio. | EP05 | 5 | Could Have |
+| 114 | US32 | Consultar Leyes y Manuales | Como administrador, quiero ver la normativa legal y del edificio. | EP05 | 3 | Could Have |
+| 115 | US56 | Apertura remota de acceso | Como administrador, quiero abrir remotamente un acceso desde la aplicación para atender situaciones excepcionales sin desplazarme al lector. | EP07 | 3 | Could Have |
+| 116 | US88 | Avisar el fin de una reserva en el punto de acceso | Como residente, quiero que el nodo del área reservada me avise cuando mi reserva esté por terminar, para desocupar el espacio a tiempo. | EP11 | 3 | Could Have |
+| 117 | US53 | Encendido automático de luces por movimiento | Como sistema, quiero encender automáticamente las luces de áreas comunes al detectar movimiento para mejorar la seguridad y el ahorro energético del edificio. | EP08 | 3 | Could Have |
+| 118 | US62 | Alertar consumo anómalo | Como administrador, quiero recibir una alerta cuando el consumo de un área se desvíe de su comportamiento habitual, para investigar posibles fallas o usos indebidos. | EP09 | 8 | Could Have |
+| 119 | US63 | Detectar falla de luminaria | Como administrador, quiero ser notificado cuando una luminaria no funcione pese a estar encendida, para repararla oportunamente. | EP09 | 5 | Could Have |
+
+**Análisis de costos y viabilidad económica del despliegue Edge por edificio**
+
+La propuesta IoT de Edifika exige instalar hardware en cada edificio: un Edge Gateway y los nodos ESP32 de acceso, iluminación y riego. Para comprobar que ese despliegue es viable, se estimó la inversión inicial (CAPEX) de un **edificio de referencia de 40 departamentos** con 3 áreas comunes con control de acceso (por ejemplo piscina, gimnasio y salón de usos múltiples), 4 zonas de iluminación inteligente y 1 zona de riego. Los precios corresponden a la tienda peruana Naylamp Mechatronics (consulta de octubre de 2026); los ítems marcados con (*) son estimaciones del equipo.
+
+| Componente | Nodo de acceso (S/) | Nodo de iluminación (S/) | Nodo de riego (S/) |
+|---|---|---|---|
+| ESP32 DevKit V1 | 35.00 | 35.00 | 35.00 |
+| Lector RFID RC522 | 20.00 | — | — |
+| Cerradura eléctrica 12 VDC | 35.00 | — | — |
+| Sensor magnético de puerta MC-38 | 5.00 | — | — |
+| Pantalla OLED 0.96" SSD1306 | 25.00 | — | 25.00 |
+| Buzzer activo 5 VDC | 2.00 | — | 2.00 |
+| Módulo RTC DS3231 | 16.00 | — | — |
+| Sensor PIR HC-SR501 | — | 8.00 | — |
+| Módulo sensor LDR | — | 5.00 | — |
+| Sensor de corriente ACS712 20 A | — | 15.00 | — |
+| Sensor de humedad de suelo capacitivo v1.2 | — | — | 15.00 |
+| Válvula solenoide 1/2" 12 VDC (NC) | — | — | 25.00 |
+| Módulo relé 1 canal 5 VDC | 5.00 | 5.00 | 5.00 |
+| Fuente de alimentación | 25.00 (12 V 2 A) | 15.00 (5 V)* | 25.00 (12 V 2 A) |
+| Caja, borneras y cableado* | 30.00 | 30.00 | 35.00 |
+| **Costo por nodo** | **198.00** | **113.00** | **167.00** |
+
+| Edge Gateway (uno por edificio) | Costo (S/) |
+|---|---|
+| Raspberry Pi 4 Model B 4 GB | 520.00 |
+| Case para Raspberry Pi 4 | 40.00 |
+| Fuente USB-C 5 V 3 A* | 45.00 |
+| Tarjeta microSD 32 GB* | 35.00 |
+| **Total Edge Gateway** | **640.00** |
+
+| Inversión inicial del edificio de referencia | Cantidad | Subtotal (S/) |
+|---|---|---|
+| Edge Gateway | 1 | 640.00 |
+| Nodos de acceso | 3 | 594.00 |
+| Nodos de iluminación | 4 | 452.00 |
+| Nodo de riego | 1 | 167.00 |
+| Tarjetas RFID Mifare 1K (S/ 3.00 c/u) | 40 | 120.00 |
+| Instalación y configuración (2 técnicos, 1 día)* | 1 | 400.00 |
+| **CAPEX total** | | **2,373.00 (≈ USD 641)** |
+
+El costo de operación del Edge en el edificio es marginal: el Raspberry Pi consume alrededor de 5 W (≈ 3.6 kWh al mes, menos de S/ 3 mensuales) y utiliza la conexión a internet que el edificio ya tiene. Se reserva además un 10 % anual del CAPEX (≈ S/ 20 al mes) para reponer componentes dañados.
+
+**Recuperación de la inversión.** En las entrevistas, el administrador César indicó que las soluciones de gestión se pagan entre **2 y 5 USD por departamento al mes**. Se supone que el 30 % de ese ingreso cubre la infraestructura cloud compartida, el soporte y la operación, y que el 70 % restante recupera el hardware del edificio (tipo de cambio referencial: S/ 3.70 por USD).
+
+| Tarifa por departamento | Ingreso mensual (40 dptos.) | Margen para el hardware (70 %) | Meses para recuperar el CAPEX | Tamaño mínimo para recuperar en 12 meses |
+|---|---|---|---|---|
+| USD 2.00 | S/ 296.00 | S/ 207.20 | 11.5 | 39 departamentos |
+| USD 3.50 | S/ 518.00 | S/ 362.60 | 6.5 | 22 departamentos |
+| USD 5.00 | S/ 740.00 | S/ 518.00 | 4.6 | 15 departamentos |
+
+El tamaño mínimo se calcula con la parte fija del CAPEX (S/ 2,253, que no depende del número de departamentos) más S/ 3 por tarjeta RFID de cada departamento.
+
+**Conclusión de viabilidad.** Incluso con la tarifa mínima mencionada en las entrevistas, el hardware de un edificio de 40 departamentos se recupera en menos de un año, y con una tarifa intermedia basta con edificios de 22 departamentos. El componente más caro es el Edge Gateway (27 % del CAPEX). Un Raspberry Pi 4 de 2 GB (S/ 300) es suficiente para el servicio Flask, SQLite y el broker MQTT local, y reduce el CAPEX a S/ 2,153. Para edificios pequeños se recomienda cobrar una tarifa de instalación única o un plan IoT con permanencia mínima de 12 meses, de modo que la inversión en hardware no dependa solo de la suscripción mensual.
 
 # Capítulo IV: Solution Software Design
 
@@ -3872,10 +3947,12 @@ El equipo realizó la sesión de Design-Level EventStorming en **Miro**, siguien
 El equipo aplicó las tres técnicas de Candidate Context Discovery en conjunto, no de forma excluyente, sobre el tablero ya organizado en commands, policies y read models:
 
 - **Look-for-pivotal-events:** se buscaron los eventos que marcan un cambio de estado entre procesos de negocio distintos, es decir, los puntos donde un flujo termina y dispara (vía policy) el inicio de otro. `Reserva aceptada` es pivotal porque dispara la habilitación de acceso físico; `Pago fue registrado` / `Deuda marcada como pagada` es pivotal porque libera al residente de una suspensión de acceso; `Residente moroso fue detectado` es pivotal porque cruza de Payment hacia el control de acceso. Estos pivotes son los que terminaron materializándose como los eventos de integración entre contextos documentados en 4.1.1.2 y 4.1.2.
-- **Start-with-value:** se identificaron las partes del dominio con mayor valor diferencial para el negocio, usando como referencia directa las estrategias frente a competidores de 2.1.2, en particular la **Estrategia 6, "Gestión inteligente de áreas comunes"** (optimizar el uso de los recursos compartidos del condominio) y la **Estrategia 5, "Adaptación al contexto local"**,, que son las dos que el nivel IoT lleva más allá de lo que ofrecen Condo Control, Buildium y AppFolio. De las capacidades IoT exploradas en el storm, iluminación inteligente, control de acceso, monitoreo de tanque de agua, detección de fugas, riego automático, el equipo priorizó **acceso físico** y **iluminación/energía** por ser las de mayor valor demostrable dentro del alcance de un proyecto académico con hardware real (ESP32), y difirió riego y monitoreo de agua por requerir sensores/actuadores adicionales (electroválvulas, sensores de humedad de suelo, sensores de nivel) fuera del alcance de hardware de esta entrega.
+- **Start-with-value:** se identificaron las partes del dominio con mayor valor diferencial para el negocio, usando como referencia directa las estrategias frente a competidores de 2.1.2, en particular la **Estrategia 6, "Gestión inteligente de áreas comunes"** (optimizar el uso de los recursos compartidos del condominio) y la **Estrategia 5, "Adaptación al contexto local"**,, que son las dos que el nivel IoT lleva más allá de lo que ofrecen Condo Control, Buildium y AppFolio. De las capacidades IoT exploradas en el storm —iluminación inteligente, control de acceso, riego automático, monitoreo de tanque de agua, detección de fugas y calidad del aire— el equipo priorizó **acceso físico**, **iluminación/energía** y **riego automático**. Las dos primeras son las de mayor valor demostrable dentro del alcance de un proyecto académico con hardware real (ESP32); el riego se incorporó porque reutiliza el mismo nodo ESP32 con solo un sensor de humedad de suelo capacitivo y una electroválvula de bajo costo (ver el análisis de costos de 3.3). Se **descartaron** el monitoreo del tanque de agua, la detección de fugas y la calidad del aire: requieren sensores de nivel, caudal, presión y gases que exceden el presupuesto de hardware por edificio, y ninguna de las entrevistas de 2.2 las planteó como necesidad.
 
-  Esta decisión tiene un efecto directo sobre el Product Backlog de 3.3 que conviene explicitar: las historias **US50** (configurar horarios de riego), **US51** (riego según humedad del suelo) y **US52** (detección de fugas en tanque de agua) quedan **fuera del alcance de esta entrega** y no se les asigna bounded context en 4.2. Las tres estaban priorizadas como *Could Have* en el backlog, de modo que diferirlas no altera el alcance comprometido como *Must* o *Should*. Las restantes historias de la épica EP07 sí tienen contexto asignado: **US48** y **US49** en IoT Access Management, y **US53** en Smart Lighting & Automation. Del mismo modo, los términos *Monitoreo de Tanque de Agua*, *Detección de Fugas*, *Riego Automático* y *Calidad del Aire* definidos en el Ubiquitous Language de 2.5 permanecen como vocabulario del dominio, pero sin contexto implementador en esta entrega.
-- **Start-with-simple:** el timeline ya organizado en el paso 2 de EventStorming se descompuso en sub-timelines secuenciales por proceso (autenticación → gestión residencial → reservas → pagos → comunicación/foro → reportes, y luego los tres sub-timelines IoT), cada uno lo bastante simple como para sostener un propósito de negocio propio, ese es, en esencia, el criterio de corte que produjo los 11 candidatos de la tabla siguiente.
+  Esta decisión tiene un efecto directo sobre el Product Backlog de 3.3: las historias **US50** (configurar horarios de riego) y **US51** (riego según humedad del suelo) forman la épica **EP10** y se implementan en el bounded context **Smart Irrigation** (4.2.12), mientras que las historias de tanque y fugas (US52, US66–US70 y US77) y sus términos del Ubiquitous Language se retiraron del alcance. Las demás capacidades IoT quedan asignadas así: EP07 (US48, US49, US54–US56) en IoT Access Management, EP08 (US53, US57–US60) en Smart Lighting & Automation y EP09 (US61–US65) en IoT Telemetry & Analytics.
+
+  En la misma iteración se retiró **Incident Management**, que en una primera versión del corte se había identificado como contexto candidato. Su única historia en el Capítulo III es **US08**, que solo exige difundir una alerta de emergencia a todo el edificio y avisar al administrador con la ubicación de quien la reporta. No requiere el ciclo de vida de un ticket (asignación, estados de atención, cierre), que es lo que habría justificado un contexto propio, y el Capítulo III no define el rol de *Personal de Mantenimiento* que lo atendería. Por eso la capacidad se absorbió en **Communication**, que ya publica contenido uno-a-muchos hacia los residentes, y en **Notification**, que entrega el push y el SMS.
+- **Start-with-simple:** el timeline ya organizado en el paso 2 de EventStorming se descompuso en sub-timelines secuenciales por proceso (autenticación → gestión residencial → reservas → pagos → comunicación/foro → reportes, y luego los cuatro sub-timelines IoT: acceso, iluminación, telemetría y riego), cada uno lo bastante simple como para sostener un propósito de negocio propio. Ese es, en esencia, el criterio de corte que produjo los 12 bounded contexts de la tabla siguiente.
 
 La tabla resume, por cada proceso de negocio que sí se mantuvo en el alcance, el *Command* y *Actor* que lo origina, los *Domain Events* producidos, y las *Policies* / *Read Models* agregados en el paso 4, es decir, el nivel de detalle sobre el que se hizo el corte de bounded contexts:
 
@@ -3886,34 +3963,35 @@ La tabla resume, por cada proceso de negocio que sí se mantuvo en el alcance, e
 | Reservas | Registrar área común (Administrador) · Solicitar/Cancelar reserva (Residente) | Área común registrada, Reglas de área común registradas, Reserva solicitada, Reserva aceptada/rechazada, Reserva cancelada | — | Calendario de reservas |
 | Pagos y deudas | Registrar pago (Residente) | Deuda generada, Pago fue registrado, Pago rechazado, Deuda marcada como pagada, Recordatorio de deuda enviado | Si el pago es rechazado, la deuda permanece pendiente | Estado de cuenta del residente |
 | Comunicados y foro | Publicar anuncio (Administrador) · Agregar comentario / Crear encuesta / Votar (Residente) | Anuncio publicado, Comentario agregado, Encuesta creada, Voto registrado, Encuesta finalizada | — | Muro de anuncios, Resultados de la encuesta |
-| Incidencias y emergencias | Reportar incidencia (Residente) · Declarar emergencia (Administrador) | Incidencia reportada, Incidencia atendida, Incidencia resuelta, Emergencia declarada | Si la severidad es crítica, difundir a todo el edificio | Bandeja de incidencias del administrador |
+| Alertas de emergencia (dentro de Communication) | Declarar emergencia (Administrador) · Reportar emergencia (Residente) | Emergencia declarada, Emergencia reportada | Si la declara el administrador, difundir a todo el edificio por push y SMS · Si la reporta un residente, avisar al administrador con torre y departamento | — |
 | Reportes | Generar reporte financiero (Administrador) | Reporte financiero generado, Reporte financiero exportado | — | Dashboard financiero |
 | Notificaciones (transversal) | *(Sistema, automático)* | Notificación enviada, Notificación leída, Notificación de deuda fue enviada, Notificación enviada a usuario/administrador | — | — |
 | Acceso físico (IoT) | Escanear tarjeta (Residente) | Tarjeta RFID/NFC fue escaneada, Residente fue validado, Acceso fue concedido/rechazado/denegado, Puerta fue abierta, Tarjeta no reconocida, Residente moroso fue detectado | Si el residente es moroso, denegar el acceso | — |
 | Iluminación inteligente (IoT) | Activar interruptor manual (Residente/Administrador) | Movimiento detectado/no detectado en área común, Luces encendidas/apagadas automáticamente, Temporizador de inactividad iniciado, Fallo de conexión en sensor detectado, Luces permanecieron en modo seguro | Si no hay movimiento por 3 minutos, apagar luces | — |
-| *Riego y monitoreo de agua (descartado — ver start-with-value)* | *Activar riego manual* | *Riego activado/detenido automáticamente, Humedad del suelo medida, Fuga detectada, Nivel de agua medido, Fallo en válvula detectado* | *Si la humedad es suficiente, omitir el riego · Si el nivel es crítico o hay fuga, enviar alerta inmediata* | *Historial de riego, Panel de nivel de tanque de agua* |
+| Riego automático (IoT) | Configurar programación de riego (Administrador) | Programación de riego registrada, Humedad del suelo medida, Riego activado/detenido automáticamente, Riego omitido por humedad suficiente, Fallo en válvula detectado | Si la humedad es suficiente, omitir el riego · Si la válvula no responde, notificar al administrador | Historial de riego |
+| *Tanque de agua, fugas y calidad del aire (descartado — ver start-with-value)* | *—* | *Nivel de agua medido, Fuga detectada, Calidad del aire medida* | *Si el nivel es crítico o hay fuga, enviar alerta inmediata* | *Panel de nivel de tanque de agua* |
 
-A partir de este corte por proceso de negocio, y de la incorporación del nivel IoT priorizado, se identificaron **12 bounded contexts candidatos**, cada uno implementado como un microservicio independiente (más el API Gateway y el Edge API como componentes de infraestructura transversal, no bounded contexts de dominio). Los nueve primeros cubren la gestión administrativa del condominio; los tres últimos son los que sobrevivieron el filtro start-with-value dentro del nivel IoT:
+A partir de este corte por proceso de negocio, y de la incorporación del nivel IoT priorizado, se identificaron **12 bounded contexts**, cada uno implementado como un microservicio independiente (más el API Gateway y el Edge API como componentes de infraestructura transversal, no bounded contexts de dominio). Los ocho primeros cubren la gestión administrativa del condominio; los cuatro últimos son los que sobrevivieron el filtro start-with-value dentro del nivel IoT. Este es el **catálogo único** de contextos de la solución: el resto del informe (context map, arquitectura C4 y diseño táctico) se refiere exactamente a estos 12.
 
-| Sección | Bounded Context candidato | Responsabilidad principal |
+| Sección | Bounded Context | Responsabilidad principal |
 |---|---|---|
 | 4.2.1 | IAM / Auth | Registro, autenticación (JWT) y gestión de usuarios y roles (administradores/residentes). |
 | 4.2.2 | Residential Management | Registro de edificios, unidades y vinculación de residentes a sus unidades. |
 | 4.2.3 | Reservation | Disponibilidad, reserva y aprobación de uso de áreas comunes. |
 | 4.2.4 | Payment | Registro de deudas, pagos, comprobantes e integración con la pasarela Culqi. |
-| 4.2.5 | Notification | Envío de notificaciones push (Firebase Cloud Messaging) originadas por eventos de otros contextos. |
-| 4.2.6 | Communication | Publicación de comunicados oficiales y encuestas a la comunidad. |
+| 4.2.5 | Notification | Envío de notificaciones push (Firebase Cloud Messaging) y SMS originadas por eventos de otros contextos. |
+| 4.2.6 | Communication | Publicación de comunicados oficiales y encuestas a la comunidad, y difusión de alertas de emergencia. |
 | 4.2.7 | Forum | Muro comunitario de mensajes entre residentes. |
 | 4.2.8 | Report | Generación y exportación de reportes financieros y de morosidad. |
-| 4.2.9 | Incident Management | Reporte, seguimiento y escalacion de incidencias del edificio, y difusion de alertas de emergencia a la comunidad. |
-| 4.2.10 | IoT Access Management | Permisos de acceso a áreas comunes, credenciales RFID, y control de cerraduras según reservas activas. |
-| 4.2.11 | Smart Lighting & Automation | Reglas de automatización y control de luminarias de áreas comunes según presencia, lux ambiental, horarios de reserva y override manual. |
-| 4.2.12 | IoT Telemetry & Analytics | Ingesta de telemetría de sensores, cálculo cuantitativo de consumo energético (kWh), estadísticas y detección de anomalías de hardware. |
+| 4.2.9 | IoT Access Management | Permisos de acceso a áreas comunes, credenciales RFID, y control de cerraduras según reservas activas. |
+| 4.2.10 | Smart Lighting & Automation | Reglas de automatización y control de luminarias de áreas comunes según presencia, lux ambiental, horarios de reserva y override manual. |
+| 4.2.11 | IoT Telemetry & Analytics | Ingesta de telemetría de sensores (corriente, presencia y humedad del suelo), cálculo cuantitativo de consumo energético (kWh), estadísticas y detección de anomalías de hardware. |
+| 4.2.12 | Smart Irrigation | Programación y ejecución del riego de áreas verdes según horarios y humedad del suelo, con registro de los riegos ejecutados, omitidos y fallidos. |
 
 La columna **Sección** fija la numeración con la que cada contexto se desarrolla en 4.2 y se mantiene en todo el capítulo. La única sección que presenta los contextos en otro orden es 4.1.1.3, donde los canvases se elaboran por importancia estratégica según lo pide el enunciado; allí cada canvas indica entre paréntesis la sección que le corresponde.
 
 
-En cuanto a la persistencia, se mantiene el principio de **database-per-service** comprometido en la historia técnica **TS05** del Capítulo III: cada microservicio es dueño exclusivo de sus tablas y ningún contexto lee directamente las de otro. Lo que el modelo de despliegue de 4.1.3.4 hace es *alojar* esos esquemas lógicamente independientes sobre dos instancias gestionadas en vez de sobre once servidores separados, una instancia PostgreSQL para los esquemas de los contextos de gestión e IoT transaccionales, y una instancia TimescaleDB dedicada a las series de telemetría de alta frecuencia, cuyo perfil de escritura y consulta es incompatible con el transaccional. Es una decisión de infraestructura y de costo para el alcance académico del proyecto, no una relajación del aislamiento de datos entre contextos: la independencia lógica que exige TS05 se conserva íntegra.
+En cuanto a la persistencia, se mantiene el principio de **database-per-service** comprometido en la historia técnica **TS05** del Capítulo III: cada microservicio es dueño exclusivo de sus tablas y ningún contexto lee directamente las de otro. Lo que el modelo de despliegue de 4.1.3.4 hace es *alojar* esos esquemas lógicamente independientes sobre dos instancias gestionadas en vez de sobre doce servidores separados, una instancia PostgreSQL para los esquemas de los contextos de gestión e IoT transaccionales, y una instancia TimescaleDB dedicada a las series de telemetría de alta frecuencia, cuyo perfil de escritura y consulta es incompatible con el transaccional. Es una decisión de infraestructura y de costo para el alcance académico del proyecto, no una relajación del aislamiento de datos entre contextos: la independencia lógica que exige TS05 se conserva íntegra.
 
 #### 4.1.1.2. Domain Message Flows Modeling
 
@@ -3983,7 +4061,7 @@ Diagrama: [`plantuml/domain-storytelling/`](https://github.com/IoT-UPC-202620/ed
 
 Siguiendo a Nick Tune (*Bounded Context Canvas*, DDD Crew), cada contexto candidato de 4.1.1.1 se elaboró con el proceso iterativo de seis pasos indicado por el enunciado: **(1) Context Overview Definition** (nombre y propósito en una frase), **(2) Business Rules Distillation & Ubiquitous Language Capture** (reglas de negocio que el contexto hace cumplir y términos propios del dominio), **(3) Capability Analysis** (clasificación estratégica: rol de dominio Core/Supporting/Generic, modelo de negocio y estadio de evolución de Wardley), **(4) Capability Layering** (cuando el contexto agrupa más de una capability, se anota la jerarquía), **(5) Dependencies Capture** (comunicación entrante y saliente, con el patrón DDD de 4.1.2), y **(6) Design Critique** (alternativas consideradas y por qué se descartaron).
 
-El orden de elaboración siguió el criterio de importancia pedido por el enunciado: primero los contextos de los que depende toda la plataforma (IAM/Auth, Payment, Residential Management, Reservation), luego los tres contextos IoT que sostienen la propuesta de diferenciación del Capítulo II, y por último los contextos de soporte/genéricos (Communication, Notification, Report, Forum).
+El orden de elaboración siguió el criterio de importancia pedido por el enunciado: primero los contextos de los que depende toda la plataforma (IAM/Auth, Payment, Residential Management, Reservation), luego los cuatro contextos IoT que sostienen la propuesta de diferenciación del Capítulo II, y por último los contextos de soporte/genéricos (Communication, Notification, Report, Forum).
 
 **1. IAM / Auth (4.2.1)**
 
@@ -4037,20 +4115,20 @@ El orden de elaboración siguió el criterio de importancia pedido por el enunci
 | Model (Aggregates) | `CommonArea` (Entity), `Reservation` (Aggregate Root). |
 | Design Critique | Se consideró que Reservation controlara directamente el actuador de acceso/luces al aprobar una reserva, pero se descartó: acoplaría un contexto administrativo a protocolos de hardware (MQTT/Edge). Reservation solo emite el evento de dominio; son los contextos IoT quienes lo traducen a una acción física. |
 
-**5. IoT Access Management (4.2.10)**
+**5. IoT Access Management (4.2.9)**
 
 | Campo | Detalle |
 |---|---|
 | Purpose | Decidir y auditar quién puede abrir físicamente un área común, combinando credenciales, reservas vigentes y estado de morosidad. |
 | Strategic Classification | Domain Role: **Core** (pilar de la propuesta de diferenciación IoT del Capítulo II) · Business Model: Revenue Protector / Compliance Enforcer · Evolution: **Custom Built** (la combinación RFID + reservas + morosidad no es un producto de catálogo). |
 | Ubiquitous Language | Access Credential (Credencial de Acceso), Access Permission (Permiso de Acceso), Access Attempt (Intento de Acceso), Delinquent Resident. |
-| Business Decisions | Una credencial concede acceso solo si está activa, el residente no está moroso y existe un permiso vigente para esa área en ese instante (`AccessDecisionService`, ver 4.2.10.1) · un residente moroso se suspende automáticamente. |
+| Business Decisions | Una credencial concede acceso solo si está activa, el residente no está moroso y existe un permiso vigente para esa área en ese instante (`AccessDecisionService`, ver 4.2.9.1) · un residente moroso se suspende automáticamente. |
 | Inbound Communication | **Reservation** (Customer/Supplier, evento `ReservationApproved`) · **Payment** (Customer/Supplier, evento `ResidentMarkedDelinquent`). |
 | Outbound Communication | **Notification** (Customer/Supplier, eventos `PhysicalAccessGranted` / `PhysicalAccessDenied`) · **Edge API** (**Conformist** — sincroniza credenciales activas, reservas vigentes y blacklist hacia el gateway on-premise). |
 | Model (Aggregates) | `AccessCredential` (Aggregate Root), `AccessPermission` (Entity), `AccessAttempt` (Entity). |
 | Design Critique | Se evaluó que el Edge API tomara la decisión de acceso de forma autónoma consultando el cloud en cada intento, pero se descartó por latencia y por el requisito de resiliencia offline: la decisión final se cachea en el Edge y solo se sincroniza cuando hay conectividad, de ahí la relación Conformist hacia el Edge en vez de Customer/Supplier síncrona en tiempo real. |
 
-**6. Smart Lighting & Automation (4.2.11)**
+**6. Smart Lighting & Automation (4.2.10)**
 
 | Campo | Detalle |
 |---|---|
@@ -4058,49 +4136,49 @@ El orden de elaboración siguió el criterio de importancia pedido por el enunci
 | Strategic Classification | Domain Role: **Core** (diferenciador IoT) · Business Model: Cost Reducer (ahorro energético) · Evolution: **Custom Built** (la precedencia entre presencia/lux/reserva/override es una regla propia del negocio, no un producto de catálogo). |
 | Ubiquitous Language | Automation Rule (Regla de Automatización), Luminaire (Luminaria), Override Command (Comando de Override), Lux Threshold (Umbral de Lux). |
 | Business Decisions | Si no hay movimiento por 3 minutos, apagar luces (política capturada en el EventStorm, ver 4.1.1.1) · un override manual suspende temporalmente la automatización con precedencia sobre las reglas programadas. |
-| Inbound Communication | **Reservation** (Customer/Supplier, evento `ReservationStarted`) — el inicio de una reserva dispara el encendido programado del área · **Edge API** (Customer/Supplier, evento `AreaPresenceDetected` relayado desde el sensor PIR del nodo de iluminación, ver 4.2.11.3). |
+| Inbound Communication | **Reservation** (Customer/Supplier, evento `ReservationStarted`) — el inicio de una reserva dispara el encendido programado del área · **Edge API** (Customer/Supplier, evento `AreaPresenceDetected` relayado desde el sensor PIR del nodo de iluminación, ver 4.2.10.3). |
 | Outbound Communication | **Edge API** (**Conformist** — envía reglas de programación y comandos de override para ejecución local). |
 | Model (Aggregates) | `AutomationRule` (Aggregate Root), `Luminaire` (Entity), `OverrideCommand` (Entity). |
 | Design Critique | Se evaluó ejecutar la lógica de decisión (`AutomationDecisionService`) directamente en el Edge para no depender de la conectividad WAN, pero se optó por mantener la autoría de reglas en el cloud (más fácil de versionar y auditar desde la Web Application) y solo *empujar* las reglas ya resueltas al Edge — el mismo patrón Conformist que IoT Access Management. |
 
-**7. IoT Telemetry & Analytics (4.2.12)**
+**7. IoT Telemetry & Analytics (4.2.11)**
 
 | Campo | Detalle |
 |---|---|
-| Purpose | Ingerir telemetría de sensores, calcular consumo energético cuantitativo (kWh) y detectar anomalías de hardware, sosteniendo el requisito de analítica cuantitativa IoT del curso. |
-| Strategic Classification | Domain Role: **Core** (el más diferenciador de los tres contextos IoT: es el único que produce analítica cuantitativa) · Business Model: Decision Support / Cost Reducer · Evolution: **Genesis → Custom Built** (el cálculo de integración temporal de potencia y la detección de anomalías por baseline estadística se diseñaron a medida para este dominio). |
+| Purpose | Ingerir telemetría de sensores (corriente, presencia y humedad del suelo), calcular consumo energético cuantitativo (kWh) y detectar anomalías de hardware, sosteniendo el requisito de analítica cuantitativa IoT del curso. |
+| Strategic Classification | Domain Role: **Core** (el más diferenciador de los contextos IoT: es el único que produce analítica cuantitativa) · Business Model: Decision Support / Cost Reducer · Evolution: **Genesis → Custom Built** (el cálculo de integración temporal de potencia y la detección de anomalías por baseline estadística se diseñaron a medida para este dominio). |
 | Ubiquitous Language | Sensor Reading (Lectura de Sensor), Energy Consumption (Consumo Energético), Consumption Baseline (Línea Base de Consumo), Anomaly Flag (Marca de Anomalía). |
-| Business Decisions | El consumo se calcula por integración temporal de la potencia instantánea (`kWh = Σ(V × I × Δt) / 1000`) · una anomalía se distingue de una falla de luminaria por el patrón de corriente nula con la luminaria comandada en ON (`AnomalyDetectionService`, ver 4.2.12.1). |
+| Business Decisions | El consumo se calcula por integración temporal de la potencia instantánea (`kWh = Σ(V × I × Δt) / 1000`) · una anomalía se distingue de una falla de luminaria por el patrón de corriente nula con la luminaria comandada en ON (`AnomalyDetectionService`, ver 4.2.11.1). |
 | Inbound Communication | **Edge API** (Customer/Supplier, el Edge es *upstream* de datos) — reenvía la telemetría bufferizada y los registros de auditoría generados offline. |
-| Outbound Communication | **Notification** (eventos `AbnormalConsumptionDetected`, `LuminaireFailureDetected`) · **Report** (Customer/Supplier — aporta las métricas de consumo que Report consolida). |
+| Outbound Communication | **Notification** (eventos `AbnormalConsumptionDetected`, `LuminaireFailureDetected`) · **Report** (Customer/Supplier — aporta las métricas de consumo que Report consolida) · **Smart Irrigation** (Customer/Supplier, evento `SoilMoistureMeasured` con la lectura de humedad ya validada). |
 | Model (Aggregates) | `EnergyConsumption` (Aggregate Root), `ConsumptionBaseline` (Entity), `AnomalyFlag` (Entity), `SensorReading` (Value Object). |
 | Design Critique | Se consideró persistir la telemetría en la misma instancia PostgreSQL que el resto del dominio, pero se descartó por el perfil de escritura (alta frecuencia) y de consulta (series temporales) incompatible con el transaccional — de ahí la instancia TimescaleDB dedicada (ver 4.1.3.4), la única decisión de persistencia que rompe el patrón "un PostgreSQL para todos" del resto de contextos. |
 
-**8. Incident Management (4.2.9)**
+**8. Smart Irrigation (4.2.12)**
 
 | Campo | Detalle |
 |---|---|
-| Purpose | Permitir que un residente reporte una incidencia del edificio y que el administrador la siga hasta su cierre, y difundir alertas de emergencia a toda la comunidad. |
-| Strategic Classification | Domain Role: **Supporting** · Business Model: Engagement Creator / Compliance Enforcer · Evolution: **Product** (la gestión de tickets es un patrón conocido; lo propio del dominio es la escalación por severidad y la ubicación por torre/unidad). |
-| Ubiquitous Language | Incident (Incidencia), Incident Update (Seguimiento de Incidencias), Emergency Broadcast (Alerta de Emergencia), Severity (Severidad) — términos tomados directamente de 2.5. |
-| Business Decisions | Una incidencia de severidad `CRITICAL` se difunde de inmediato a todo el edificio; el resto se enruta solo al administrador · toda incidencia queda georreferenciada a la torre y el departamento del residente que la reporta (US08 esc. 2). |
-| Inbound Communication | Ninguna: es el residente o el administrador quien origina el hecho de dominio, no otro contexto. |
-| Outbound Communication | **Residential Management** (Customer/Supplier, REST síncrono — resuelve la ubicación del residente) · **Notification** (Customer/Supplier, eventos `IncidentReported`, `IncidentStatusChanged` y `EmergencyDeclared`) · **Cloudinary** (Anti-Corruption Layer — fotografías de la incidencia). |
-| Model (Aggregates) | `Incident` (Aggregate Root), `IncidentUpdate` (Entity), `EmergencyBroadcast` (Entity). |
-| Design Critique | Se evaluó anexar esta capability a Communication, que ya publica contenido hacia los residentes, pero se descartó por la misma razón que separa Communication de Forum: un comunicado es unidireccional y lo origina el administrador, mientras una incidencia la origina el residente y tiene ciclo de vida, estados y seguimiento propios. También se consideró introducir el rol *Personal de Mantenimiento* que define el Ubiquitous Language de 2.5 para asignarle las incidencias; se difirió porque los Capítulos I y III solo definen dos segmentos objetivo (administrador y residente), y añadir un tercer rol en IAM excedería lo especificado. |
+| Purpose | Regar las áreas verdes del edificio solo cuando es necesario, combinando las programaciones definidas por el administrador con la humedad del suelo medida por los nodos ESP32. |
+| Strategic Classification | Domain Role: **Supporting** (complementa la diferenciación IoT, pero no es el motivo principal de contratación) · Business Model: Cost Reducer (ahorro de agua y de mantenimiento de áreas verdes) · Evolution: **Custom Built** (la combinación de calendario y umbral de humedad por zona es una regla propia del negocio). |
+| Ubiquitous Language | Irrigation Zone (Zona de Riego), Irrigation Schedule (Programación de Riego), Moisture Threshold (Umbral de Humedad), Irrigation Run (Ejecución de Riego), Skipped Irrigation (Riego Omitido). |
+| Business Decisions | Dos programaciones de una misma zona no pueden superponerse (US50 esc. 2) · el riego programado se omite si la humedad del suelo está sobre el umbral (US51 esc. 2) · una lectura inválida se descarta y se aplica la programación por defecto (US51 esc. 3) · si la electroválvula no confirma la orden, el riego se registra como fallido y se notifica al administrador (US50 esc. 3). |
+| Inbound Communication | **IoT Telemetry & Analytics** (Customer/Supplier, evento `SoilMoistureMeasured`) — Telemetry es upstream de las lecturas que ingiere desde el Edge · **Edge API** (Customer/Supplier, evento `IrrigationRunReported`) — confirma la apertura y el cierre de la válvula. |
+| Outbound Communication | **Edge API** (**Conformist** — sincroniza programaciones y umbrales, y envía los comandos de apertura/cierre de válvula para su ejecución local) · **Notification** (Customer/Supplier, eventos `IrrigationFailed` y `MoistureSensorFaulty`). |
+| Model (Aggregates) | `IrrigationZone` (Aggregate Root), `IrrigationSchedule` (Entity), `IrrigationRun` (Entity). Value Objects: `MoistureThreshold`, `WateringWindow`. |
+| Design Critique | Se evaluó incorporar el riego a Smart Lighting & Automation, que también ejecuta reglas programadas sobre actuadores, pero se descartó: las reglas de iluminación dependen de presencia, lux y reservas, mientras que el riego depende de la humedad del suelo y de su propio calendario; un modelo común de "regla genérica" mezclaría dos lenguajes ubicuos y obligaría a compartir tipos entre contextos. También se evaluó que el Edge decidiera el riego de forma autónoma; se optó por mantener la autoría de programaciones y umbrales en el cloud y empujarlas al Edge, que ejecuta el riego aun sin conexión con la última programación sincronizada —el mismo patrón Conformist de IoT Access Management y Smart Lighting & Automation—. |
 
 **9. Communication (4.2.6)**
 
 | Campo | Detalle |
 |---|---|
-| Purpose | Publicar comunicados oficiales y encuestas de la comunidad hacia los residentes. |
+| Purpose | Publicar comunicados oficiales y encuestas de la comunidad hacia los residentes, y difundir alertas de emergencia. |
 | Strategic Classification | Domain Role: **Supporting** · Business Model: Engagement Creator · Evolution: **Product** (publicación de anuncios/encuestas es un patrón conocido). |
-| Ubiquitous Language | Announcement (Comunicado), Poll (Encuesta), Reach (Alcance). |
-| Business Decisions | Límite de un mensaje diario por residente (HTTP 429 si se excede) · voto único por encuesta (HTTP 409 si se duplica). |
+| Ubiquitous Language | Announcement (Comunicado), Poll (Encuesta), Reach (Alcance), Emergency Alert (Alerta de Emergencia). |
+| Business Decisions | Límite de un mensaje diario por residente (HTTP 429 si se excede) · voto único por encuesta (HTTP 409 si se duplica) · una alerta de emergencia declarada por el administrador se difunde a todo el edificio por push y SMS en menos de 5 s (US08 esc. 1) · una emergencia reportada por un residente llega al administrador con su torre y departamento (US08 esc. 2). |
 | Inbound Communication | Ninguna. |
-| Outbound Communication | **Notification** (Customer/Supplier, evento `AnnouncementPublished`) · **Cloudinary** (Anti-Corruption Layer — imágenes de comunicados). |
-| Model (Aggregates) | `Announcement` (Entity), `Poll` (Entity). |
-| Design Critique | Se evaluó fusionar Communication con Forum (ambos son "muros" de contenido), pero se mantuvieron separados porque su ubiquitous language y su ciclo de vida difieren: un comunicado es unidireccional y oficial (admin → todos), mientras un post de Forum es conversacional entre pares. |
+| Outbound Communication | **Notification** (Customer/Supplier, eventos `AnnouncementPublished`, `EmergencyDeclared` y `EmergencyReported`) · **Residential Management** (Customer/Supplier, REST síncrono — resuelve la torre y el departamento de quien reporta una emergencia) · **Cloudinary** (Anti-Corruption Layer — imágenes de comunicados). |
+| Model (Aggregates) | `Announcement` (Entity), `Poll` (Entity), `EmergencyAlert` (Entity). |
+| Design Critique | Se evaluó fusionar Communication con Forum (ambos son "muros" de contenido), pero se mantuvieron separados porque su ubiquitous language y su ciclo de vida difieren: un comunicado es unidireccional y oficial (admin → todos), mientras un post de Forum es conversacional entre pares. Las alertas de emergencia se ubicaron aquí y no en un contexto propio (ver la retirada de Incident Management en 4.1.1.1) porque también son mensajes uno-a-muchos sin ciclo de vida de atención. |
 
 **10. Notification (4.2.5)**
 
@@ -4110,10 +4188,10 @@ El orden de elaboración siguió el criterio de importancia pedido por el enunci
 | Strategic Classification | Domain Role: **Generic** (envío de notificaciones es una capability resuelta por FCM) · Business Model: Engagement Creator · Evolution: **Commodity** (delegada casi por completo a Firebase Cloud Messaging). |
 | Ubiquitous Language | Notification (Notificación), Device Token (Token de Dispositivo). |
 | Business Decisions | Si el envío a FCM falla, la notificación se marca pendiente de reintento sin afectar el estado del contexto que originó el evento (compensación, ver 4.1.1.2). |
-| Inbound Communication | **Communication** (`AnnouncementPublished`) · **Payment** (`PaymentApproved`) · **Reservation** (`ReservationApproved`) · **IoT Access Management** (`PhysicalAccessGranted`/`Denied`) · **IoT Telemetry & Analytics** (`AbnormalConsumptionDetected`, `LuminaireFailureDetected`) — todos Customer/Supplier, Notification es downstream puro. |
+| Inbound Communication | **Communication** (`AnnouncementPublished`, `EmergencyDeclared`, `EmergencyReported`) · **Payment** (`PaymentApproved`) · **Reservation** (`ReservationApproved`) · **IoT Access Management** (`PhysicalAccessGranted`/`Denied`) · **IoT Telemetry & Analytics** (`AbnormalConsumptionDetected`, `LuminaireFailureDetected`) · **Smart Irrigation** (`IrrigationFailed`, `MoistureSensorFaulty`) — todos Customer/Supplier, Notification es downstream puro. |
 | Outbound Communication | **Firebase Cloud Messaging** (Anti-Corruption Layer). |
 | Model (Aggregates) | `Notification` (Entity), `DeviceToken` (Entity). |
-| Design Critique | Al ser el único punto de consumo de eventos de los cinco contextos que publican alertas (Communication, Payment, Reservation, IoT Access Management e IoT Telemetry & Analytics), se evaluó el riesgo de que un fallo en Notification bloqueara el broker para todos; se mitigó con el **Factory Pattern** para desacoplar la creación del tipo de notificación (Push/Email/SMS) de su envío, y con colas de reintento independientes por evento. |
+| Design Critique | Al ser el único punto de consumo de eventos de los seis contextos que publican alertas (Communication, Payment, Reservation, IoT Access Management, IoT Telemetry & Analytics y Smart Irrigation), se evaluó el riesgo de que un fallo en Notification bloqueara el broker para todos; se mitigó con el **Factory Pattern** para desacoplar la creación del tipo de notificación (Push/Email/SMS) de su envío, y con colas de reintento independientes por evento. |
 
 **11. Report (4.2.8)**
 
@@ -4149,7 +4227,8 @@ El nivel IoT introduce un patrón de relación característico de este tipo de s
 
 | Contexto origen | Contexto destino | Relación observada | Patrón DDD más cercano (a validar) |
 |---|---|---|---|
-| Communication | Notification | Emite evento al publicar un comunicado para que se notifique a los residentes. | Customer/Supplier (Communication es upstream) |
+| Communication | Notification | Emite `AnnouncementPublished` al publicar un comunicado, y `EmergencyDeclared` / `EmergencyReported` ante una emergencia (US08), para que se notifique a los residentes o al administrador. | Customer/Supplier (Communication es upstream) |
+| Communication | Residential Management | Consulta síncrona para resolver la torre y el departamento del residente que reporta una emergencia (US08 esc. 2). | Customer/Supplier (Communication es downstream) |
 | Payment | Notification | Emite evento al aprobar un pago. | Customer/Supplier |
 | Reservation | Notification | Emite evento al aprobar una reserva. | Customer/Supplier |
 | Payment | Culqi (sistema externo) | Integración vía Adapter/ACL (pasarela de pagos). | Anti-corruption Layer |
@@ -4158,16 +4237,17 @@ El nivel IoT introduce un patrón de relación característico de este tipo de s
 | Reservation | IoT Access Management | `ReservationApproved` habilita el permiso temporal de acceso al área común reservada. | Customer/Supplier (Reservation es upstream) |
 | Reservation | Smart Lighting & Automation | El inicio de la reserva dispara el encendido programado del área común. | Customer/Supplier |
 | Payment | IoT Access Management | `ResidentMarkedDelinquent` suspende los permisos de acceso del residente moroso. | Customer/Supplier |
-| Incident Management | Notification | Emite `IncidentReported`, `IncidentStatusChanged` y `EmergencyDeclared` para avisar al administrador y, en emergencias, a toda la comunidad. | Customer/Supplier |
-| Incident Management | Residential Management | Consulta síncrona para resolver la torre y el departamento del residente que reporta la incidencia (US08 esc. 2). | Customer/Supplier (Incident Management es downstream) |
-| Incident Management | Cloudinary (sistema externo) | Integración vía Adapter/ACL para las fotografías adjuntas a la incidencia. | Anti-corruption Layer |
 | IoT Access Management | Notification | Emite `PhysicalAccessGranted` / `PhysicalAccessDenied` para notificar accesos y rechazos. | Customer/Supplier |
 | IoT Telemetry & Analytics | Notification | Emite `AbnormalConsumptionDetected` y `LuminaireFailureDetected` para alertar al administrador. | Customer/Supplier |
+| IoT Telemetry & Analytics | Smart Irrigation | Publica `SoilMoistureMeasured` con la lectura de humedad del suelo ya validada, que alimenta la decisión de riego (US51). | Customer/Supplier (Telemetry es upstream) |
+| Smart Irrigation | Notification | Emite `IrrigationFailed` y `MoistureSensorFaulty` para avisar al administrador de un riego no ejecutado o de un sensor con falla. | Customer/Supplier |
 | IoT Telemetry & Analytics | Report | Aporta las métricas de consumo energético que Report consolida en la analítica de la comunidad. | Customer/Supplier (Report es downstream) |
 | IoT Access Management | Edge API | Sincroniza credenciales activas, reservas vigentes y blacklist hacia el gateway on-premise. | Conformist (el Edge conforma el modelo definido en el cloud) |
 | Smart Lighting & Automation | Edge API | Envía las reglas de automatización y los comandos de override manual. | Conformist |
+| Smart Irrigation | Edge API | Sincroniza programaciones y umbrales de humedad, y envía los comandos de apertura y cierre de la electroválvula. | Conformist |
 | Edge API | IoT Telemetry & Analytics | Reenvía la telemetría bufferizada y los registros de auditoría generados durante la operación offline. | Customer/Supplier (el Edge es upstream de datos) |
-| Edge API | Smart Lighting & Automation | Relaya el evento `AreaPresenceDetected` apenas recibe la lectura del sensor PIR, priorizando latencia de encendido sobre interpretación de dominio. | Customer/Supplier (el Edge es upstream de datos, ver 4.2.11.3) |
+| Edge API | Smart Lighting & Automation | Relaya el evento `AreaPresenceDetected` apenas recibe la lectura del sensor PIR, priorizando latencia de encendido sobre interpretación de dominio. | Customer/Supplier (el Edge es upstream de datos, ver 4.2.10.3) |
+| Edge API | Smart Irrigation | Confirma la ejecución de cada riego (`IrrigationRunReported`), incluidos los ejecutados sin conexión. | Customer/Supplier (el Edge es upstream de datos) |
 | Dispositivos embebidos (ESP32) | Edge API | Intercambio local MQTT de lecturas y comandos; el firmware se adapta al contrato del Edge API. | Conformist (infraestructura física, no bounded context de dominio) |
 | API Gateway | Todos los contextos | Enrutamiento y validación de JWT (infraestructura transversal, no bounded context de dominio). | — |
 
@@ -4180,10 +4260,10 @@ Sobre el mapa anterior, el equipo evaluó explícitamente las preguntas de dise�
 | ¿Qué pasaría si **movemos** este capability a otro contexto? | Mover la decisión de acceso (`AccessDecisionService`) del cloud (IoT Access Management) al Edge API, para que abra la puerta sin ida y vuelta al cloud. | **Se descarta mover el contexto completo**, pero sí se replica su *resultado* (credenciales/permisos ya resueltos) en el Edge vía sincronización — el Edge cachea la decisión, no la recalcula. Mantiene a IoT Access Management como única fuente de verdad y evita que la regla de negocio (moroso → sin acceso) viva en dos lugares. |
 | ¿Qué pasaría si **descomponemos** el capability y movemos un sub-capability a otro contexto? | Separar la emisión/gestión de credenciales RFID de la decisión de acceso en tiempo real, creando un contexto "Credential Management" aparte de "Access Decision". | **Se descarta**: ambos sub-capabilities comparten el mismo Aggregate (`AccessCredential`) y el mismo invariante (una credencial suspendida no debe poder decidir un acceso), partirlos forzaría una transacción distribuida para algo que hoy es una operación local. |
 | ¿Qué pasaría si **partimos** el bounded context en varios? | Partir Payment en "Billing" (deudas/cuotas) y "Payment Processing" (cobro/Culqi) como dos contextos independientes. | **Se descarta para el alcance actual**: el volumen de reglas de negocio no justifica el costo de coordinación entre dos contextos: la Saga de aprobación (4.1.1.2) necesita ambas responsabilidades en la misma transacción local. Queda anotado como refactor natural si el dominio de facturación creciera (ej. múltiples pasarelas de pago). |
-| ¿Qué pasaría si **tomamos capabilities de 3 contexts** para formar uno nuevo? | Extraer la lógica de "generar alerta" que hoy vive de forma repetida en IoT Access Management, Smart Lighting y IoT Telemetry, y consolidarla en un contexto nuevo. | **Ya resuelto por diseño**: ese contexto nuevo es exactamente **Notification** — los tres contextos IoT solo publican el evento de dominio (`PhysicalAccessDenied`, `AbnormalConsumptionDetected`, etc.) y es Notification quien concentra el *Factory Pattern* de creación de la alerta (push/email/SMS), evitando triplicar esa lógica. |
+| ¿Qué pasaría si **tomamos capabilities de 3 contexts** para formar uno nuevo? | Extraer la lógica de "generar alerta" que hoy vive de forma repetida en IoT Access Management, IoT Telemetry y Smart Irrigation, y consolidarla en un contexto nuevo. | **Ya resuelto por diseño**: ese contexto nuevo es exactamente **Notification** — los contextos IoT solo publican el evento de dominio (`PhysicalAccessDenied`, `AbnormalConsumptionDetected`, `IrrigationFailed`, etc.) y es Notification quien concentra el *Factory Pattern* de creación de la alerta (push/email/SMS), evitando triplicar esa lógica. |
 | ¿Qué pasaría si **duplicamos** una funcionalidad para romper una dependencia? | Que Report mantenga su propia copia denormalizada de pagos/deudas (vía eventos) en lugar de consultar a Payment por REST síncrono. | **Se descarta por ahora** (queda como Design Critique de Report en 4.1.1.3): el volumen de datos y el timebox del proyecto no justifican construir un pipeline de proyecciones; se acepta el acoplamiento síncrono Report → Payment sabiendo que es la única lectura cross-context sin desacoplar del informe. |
 | ¿Qué pasaría si creamos un **shared service** para reducir duplicación? | Un servicio compartido de "estado de morosidad" consultado tanto por IoT Access Management como por futuras integraciones (ej. bloqueo de reservas a morosos). | **Se descarta un servicio nuevo**: Payment ya es la fuente de verdad y publica `ResidentMarkedDelinquent`; crear un shared service solo agregaría un salto de red adicional sin nueva capability. Se prefiere que cada contexto interesado se suscriba al evento (Customer/Supplier) en vez de introducir un Shared Kernel. |
-| ¿Qué pasaría si **aislamos los core capabilities** y movemos el resto a un contexto aparte? | Separar `EnergyCalculationService`/`AnomalyDetectionService` (core, diferenciador) de la ingesta cruda de telemetría (`TelemetryIngestionService`, más genérica) en dos contextos. | **Se descarta dividir en dos microservicios** por el timebox del curso, pero sí se aisló en capas dentro del mismo contexto (Domain Service vs. Application Service, ver 4.2.12): si el volumen de sensores creciera, la ingesta cruda es la primera candidata a externalizarse hacia una plataforma IoT genérica (ej. AWS IoT Core), dejando el cálculo de energía y la detección de anomalías —el verdadero valor de negocio— en el contexto propio. |
+| ¿Qué pasaría si **aislamos los core capabilities** y movemos el resto a un contexto aparte? | Separar `EnergyCalculationService`/`AnomalyDetectionService` (core, diferenciador) de la ingesta cruda de telemetría (`TelemetryIngestionService`, más genérica) en dos contextos. | **Se descarta dividir en dos microservicios** por el timebox del curso, pero sí se aisló en capas dentro del mismo contexto (Domain Service vs. Application Service, ver 4.2.11): si el volumen de sensores creciera, la ingesta cruda es la primera candidata a externalizarse hacia una plataforma IoT genérica (ej. AWS IoT Core), dejando el cálculo de energía y la detección de anomalías —el verdadero valor de negocio— en el contexto propio. |
 
 Ninguna de las siete preguntas llevó a mover una línea del context map de la tabla anterior; el resultado de la discusión fue, en todos los casos, una confirmación explícita del diseño existente (o una nota de refactor futuro), no un cambio de alcance.
 
@@ -4425,25 +4505,25 @@ Antes del detalle por capas, la tabla siguiente cierra la trazabilidad entre los
 | 4.2.2 | Residential Management | EP01 | US04, US07 | TS06 |
 | 4.2.3 | Reservation | EP03 | US16, US17, US18, US19, US20, US33, US35, US38, US39, US40 | TS08 |
 | 4.2.4 | Payment | EP04 | US21, US22, US23, US24, US27, US28, US30 | TS07 |
-| 4.2.5 | Notification | EP02 | US09, US10, US11, US12, US31 | TS10 |
-| 4.2.6 | Communication | EP02 | US13, US14, US15, US32, US36 | TS09 |
+| 4.2.5 | Notification | EP02, EP03, EP04 | US09, US10, US11, US12, US31 | TS10 |
+| 4.2.6 | Communication | EP02 | US08, US13, US14, US15, US32, US36 | TS09 |
 | 4.2.7 | Forum | EP02 | US29, US37 | TS12 |
 | 4.2.8 | Report | EP04 | US25, US26 | TS11 |
-| 4.2.9 | Incident Management | EP02 | US08 | *(sin TS — ver nota)* |
-| 4.2.10 | IoT Access Management | EP07 | US48, US49 | TS16, TS17 |
-| 4.2.11 | Smart Lighting & Automation | EP07 | US53 | TS17 |
-| 4.2.12 | IoT Telemetry & Analytics | EP07 | *(sin historia asociada — ver nota)* | TS17 |
+| 4.2.9 | IoT Access Management | EP07 | US48, US49, US54, US55, US56 | TS16, TS17 |
+| 4.2.10 | Smart Lighting & Automation | EP08 | US53, US57, US58, US59, US60 | TS18 |
+| 4.2.11 | IoT Telemetry & Analytics | EP09 | US61, US62, US63, US64, US65 | TS19 |
+| 4.2.12 | Smart Irrigation | EP10 | US50, US51 | *(por definir en 3.1)* |
 
-Cuatro observaciones que se desprenden de esta trazabilidad:
+Observaciones que se desprenden de esta trazabilidad:
 
-- **EP05 (Infraestructura, seguridad y arquitectura técnica)** no se mapea a un bounded context propio porque es transversal: TS04, TS13, TS14 y TS15 se materializan en el API Gateway, y TS05 en la estrategia de persistencia descrita en 4.1.1.1 — ambos son infraestructura, no dominio.
+- **EP05 (Infraestructura, seguridad y arquitectura técnica)** no se mapea a un bounded context propio porque es transversal: TS04, TS13, TS14 y TS15 se materializan en el API Gateway, TS05 en la estrategia de persistencia descrita en 4.1.1.1, y TS21–TS34 en el Edge API; las historias técnicas de configuración base de cada microservicio figuran en la columna correspondiente.
 - **EP06 (Landing Page e Interfaz Web)**, con US41–US47, tampoco corresponde a un bounded context: se implementa en los containers *Landing Page* y *Web Application* de 4.1.3.3, que consumen los contextos existentes sin aportar dominio propio.
-- **Incident Management** implementa US08, la única historia de EP02 que no correspondía a Communication ni a Notification, y no tiene historia técnica asociada porque el Capítulo III no previó el microservicio: TS01–TS17 no incluyen su configuración base. Queda anotado como historia técnica a añadir junto con las de §4.2.12.
-- **IoT Telemetry & Analytics** es el único contexto sin respaldo en el backlog de 3.3: responde al requisito del curso sobre procesamiento, cálculo estadístico y visualización de información cuantitativa recolectada por los dispositivos, pero el Capítulo III no llegó a redactar las historias correspondientes (medición de consumo en kWh, dashboard de telemetría y detección de anomalías de hardware). Queda registrado como **brecha de especificación a cerrar en la siguiente entrega**, incorporando esas historias a EP07 antes de dar por cerrado el alcance.
+- **EP11 (Edge Gateway e integración con dispositivos ESP32)**, con US71–US93, se implementa en el container *Edge API & Gateway Controller* y en el firmware de los nodos: es infraestructura on-premise que ejecuta localmente lo que deciden los contextos cloud (relación Conformist de 4.1.2), no un bounded context de dominio.
+- **US08 (alertas de emergencia)** se implementa en Communication, que publica `EmergencyDeclared` y `EmergencyReported`, y la entrega por push y SMS la realiza Notification. El contexto Incident Management, identificado en una primera iteración, se retiró del catálogo (ver 4.1.1.1).
 
 **Nivel de detalle de cada capa**
 
-Cada bounded context se documenta a continuación separando Domain, Interface, Application e Infrastructure Layer. La subsección 4.2.X.1–4.2.X.4 da el diccionario en prosa (nombre, propósito e intención de cada clase, con sus atributos y relaciones principales); el detalle exacto de atributos tipados, métodos, *scope* y multiplicidad que pide el statement para el nivel de código vive en el Class Diagram UML de 4.2.X.6.1 de cada contexto (los 11 contextos ya cuentan con el suyo, ver 4.2.1–4.2.12) — evitando así transcribir en texto plano el mismo detalle que el diagrama ya expresa formalmente.
+Cada bounded context se documenta a continuación separando Domain, Interface, Application e Infrastructure Layer. La subsección 4.2.X.1–4.2.X.4 da el diccionario en prosa (nombre, propósito e intención de cada clase, con sus atributos y relaciones principales); el detalle exacto de atributos tipados, métodos, *scope* y multiplicidad que pide el statement para el nivel de código vive en el Class Diagram UML de 4.2.X.6.1 de cada contexto (los contextos 4.2.1–4.2.11 ya cuentan con el suyo; el de Smart Irrigation se incorpora junto con su diseño táctico en 4.2.12) — evitando así transcribir en texto plano el mismo detalle que el diagrama ya expresa formalmente.
 
 ### 4.2.1. Bounded Context: IAM / Auth
 
