@@ -5828,6 +5828,42 @@ La navegación del sitio público se apoya en una barra superior fija con enlace
 
 ### 5.3.1. Landing Page Wireframe
 
+**Primera vista**
+<p align="center">
+  <img src="assets/img/Lan1eraview.png" alt="Lan1eraview" width="400" />
+</p>
+
+**Funciones**
+<p align="center">
+  <img src="assets/img/Lanfunciones.png" alt="Lanfunciones" width="400" />
+</p>
+
+**Para quien**
+<p align="center">
+  <img src="assets/img/Lanparaqn.png" alt="Lanparaqn" width="400" />
+</p>
+
+**Planes**
+<p align="center">
+  <img src="assets/img/Lanplanes.png" alt="Lanplanes" width="400" />
+</p>
+
+**Equipo**
+<p align="center">
+  <img src="assets/img/Lanequipo.png" alt="Lanequipo" width="400" />
+</p>
+
+
+<p align="center">
+  <img src="assets/img/Lanequipo2.png" alt="Lanequipo2" width="400" />
+</p>
+
+**Solicitar Demo**
+<p align="center">
+  <img src="assets/img/Lansolidemo.png" alt="Lansolidemo" width="400" />
+</p>
+
+
 ### 5.3.2. Landing Page Mock-Up
 
 **Primera vista**
