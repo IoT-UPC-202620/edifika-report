@@ -3005,27 +3005,21 @@ Ninguna de las siete preguntas llevó a mover una línea del context map de la t
 
 ### 4.1.3. Software Architecture
 
-La arquitectura se modeló con **C4 Model** aplicando *Diagram-as-Code* mediante **Structurizr DSL**. El modelo fuente único vive en [`arquitectura/diagrama.dsl`](https://github.com/IoT-UPC-202620/edifika-report/blob/main/arquitectura/diagrama.dsl) y de él se generan las cuatro vistas que se presentan a continuación (System Landscape, System Context, Container y Deployment), de modo que los cuatro diagramas son siempre consistentes entre sí por construcción.
+La arquitectura se modeló con C4 Model aplicando Diagram-as-Code mediante Structurizr DSL. Un único modelo fuente genera las cuatro vistas que se presentan a continuación (System Landscape, System Context, Container y Deployment), de modo que los cuatro diagramas son consistentes entre sí por construcción.
 
-La solución adopta una **arquitectura IoT distribuida en tres niveles** —*Cloud Computing*, *Edge Computing* y *IoT Devices con Embedded Systems*— y se apoya en los siguientes estilos y patrones:
+La solución adopta una arquitectura IoT distribuida en tres niveles: Cloud Computing, Edge Computing y IoT Devices con Embedded Systems, y se apoya en los siguientes estilos y patrones:
 
 - **Microservices Architecture:** escalabilidad y disponibilidad independientes; un fallo en Comunicados no interrumpe Pagos ni el control de accesos.
+- **Database per Service:** cada microservicio es dueño exclusivo de su base de datos; ningún servicio lee ni escribe la base de otro.
 - **Layered Architecture** dentro de cada microservicio (Interface / Application / Domain / Infrastructure).
-- **API Gateway Pattern:** punto único de entrada, validación del JWT, **políticas CORS** (TS15), rate limiting y enrutamiento.
-- **Event-Driven Architecture:** un *Message & Event Broker* AMQP/MQTT desacopla la publicación de eventos de dominio de su consumo. Esto **complementa** —no reemplaza— la comunicación REST entre microservicios comprometida en la historia técnica **TS13** del Capítulo III: se usa REST síncrono cuando el emisor necesita la respuesta para continuar (Report → Payment, Residential Management → IAM, y la sincronización Cloud → Edge), y eventos asíncronos cuando el emisor no debe quedar bloqueado ni acoplado al consumidor (todo lo que desemboca en Notification, y los disparadores hacia los contextos IoT).
-- **Saga Pattern coreografiado:** consistencia entre contextos sin locks distribuidos (ver 4.1.1.2).
-- **CQRS parcial:** Report separa la lectura de reportes de las operaciones de escritura de los demás contextos.
-- **Edge Computing offline-first:** el Edge API cachea credenciales y reservas activas, y mantiene operativos los accesos y la iluminación de áreas comunes aunque se caiga el enlace WAN del condominio.
+- **API Gateway Pattern:** punto único de entrada, validación del JWT, políticas CORS, rate limiting y enrutamiento.
+- **Event-Driven Architecture:** un Message & Event Broker AMQP/MQTT desacopla la publicación de eventos de dominio de su consumo. Complementa la comunicación REST entre microservicios. Se usa REST síncrono cuando el emisor necesita la respuesta para continuar (Payment → Residential Management para validar la unidad, y la sincronización Cloud → Edge), y eventos asíncronos cuando el emisor no debe quedar bloqueado ni acoplado al consumidor (todo lo que desemboca en Notification y Report, y los disparadores hacia los contextos IoT).
+- **Saga Pattern:** consistencia entre contextos sin locks distribuidos. En Payment, el cobro con Culqi se orquesta con compensación ante rechazo y un estado de verificación ante timeout.
+- **CQRS parcial:** Report construye su propio modelo de lectura a partir de los eventos que consume, sin consultar las bases de otros contextos.
+- **Ports & Adapters (Anti-Corruption Layer):** las integraciones con Culqi, Cloudinary y Firebase se encapsulan detrás de interfaces propias del dominio.
+- **Edge Computing offline-first:** el Edge API cachea credenciales RFID y reservas activas, y mantiene operativos los accesos, la iluminación y el riego aunque se caiga el enlace WAN del condominio.
 
-**Tres decisiones que se apartan de lo especificado en el Capítulo III**
-
-La arquitectura debe ser fiel a los requisitos, y donde se aparta de ellos corresponde declararlo en vez de dejar la divergencia tácita:
-
-| Decisión | Lo que especifica el Capítulo III | Lo que hace la arquitectura y por qué |
-|---|---|---|
-| **Tres contextos IoT en lugar de uno** | TS16 define un único microservicio *IoT Access Management* que gestiona "el registro, estado y eventos de los dispositivos inteligentes del edificio" | Se separa en IoT Access Management, Smart Lighting & Automation e IoT Telemetry & Analytics. Los tres tienen Ubiquitous Language, invariantes y perfiles de carga distintos —decisión de acceso, precedencia de reglas de iluminación e ingesta de series temporales— y agruparlos habría producido un contexto sin un propósito de negocio único. TS16 debe reescribirse como tres historias técnicas de configuración base. |
-| **Edge API entre el cloud y los ESP32** | TS17 especifica MQTT **directo** entre el microservicio y las placas ESP32 | Se interpone un gateway on-premise. **Ningún requisito pide operación sin conexión**: es una decisión propia del equipo, tomada porque una cerradura eléctrica que depende del enlace WAN del condominio deja a los residentes sin acceso ante cualquier corte, y porque la latencia de encendido de luces por presencia no tolera un ida y vuelta al cloud. Su costo debe explicitarse: exige **una instalación física por edificio**, lo que para el caso de la entrevista de 2.2.2 —un administrador con 15 edificios— significa 15 despliegues on-premise. Si ese costo se considera inaceptable, la alternativa fiel a TS17 es MQTT directo aceptando la pérdida de acceso durante los cortes. |
-| **Riego fuera de alcance** | TS17 incluye "activar riego" entre los comandos de actuación, y US50–US52 cubren riego y monitoreo de agua | Se difiere por falta de hardware (ver 4.1.1.1). TS17 debe corregirse para retirar el riego de su lista de comandos, de modo que la historia técnica no comprometa una capacidad que el alcance ya excluyó. |
+**Stack tecnológico**
 
 | Categoría | Herramienta / Tecnología |
 |---|---|
@@ -3033,44 +3027,43 @@ La arquitectura debe ser fiel a los requisitos, y donde se aparta de ellos corre
 | Landing Page | HTML5 / CSS3 / JavaScript |
 | Framework Frontend Web | Angular / TypeScript (SPA) |
 | Mobile Application | Flutter / Dart |
-| Lenguaje / Framework Backend | Java / Spring Boot / Spring Data JPA |
+| Lenguaje / Framework Backend | Java 21 / Spring Boot / Spring Data JPA |
 | API Gateway | Spring Cloud Gateway / Java |
 | Edge API | Python / Flask / Peewee ORM / SQLite |
 | Embedded Applications | ESP32 / C++ |
-| Mensajería y eventos | EMQX / RabbitMQ (AMQP y MQTT) |
-| Base de Datos | PostgreSQL (datos de negocio) / TimescaleDB (series de telemetría) |
-| Servicios externos | Culqi (pagos con tarjeta, Yape y Plin) / Cloudinary (imágenes y comprobantes) / Firebase Cloud Messaging (push) / Twilio (SMS de emergencia) |
-| Documentación de APIs | Swagger / OpenAPI 3 con esquema de seguridad Bearer JWT (TS14) |
+| Mensajería y eventos | RabbitMQ (AMQP) / EMQX (MQTT) |
+| Base de Datos | PostgreSQL (una base por microservicio) / TimescaleDB (series de telemetría) |
+| Servicios externos | Culqi (tarjeta, Yape y billeteras móviles) / Cloudinary (imágenes y comprobantes) / Firebase Cloud Messaging (push) |
+| Documentación de APIs | Swagger / OpenAPI 3 con esquema de seguridad Bearer JWT |
 | Canal de tiempo real | Server-Sent Events (SSE) sobre el API Gateway |
 | Diagramación de arquitectura | Structurizr DSL (C4 Model) |
-| Testing | JUnit / Mockito |
+| Testing | JUnit / Mockito / WireMock |
 | CI / CD | GitHub Actions |
 
 #### 4.1.3.1. Software Architecture System Landscape Diagram
 
-El System Landscape amplía el foco: en lugar de mirar hacia adentro de Edifika, ubica la plataforma dentro del **ecosistema completo del negocio de administración de condominios**. A diferencia del Context Diagram, aquí Edifika no se dibuja como sistema *en alcance* con un boundary propio, sino como un sistema más del paisaje, al mismo nivel que los servicios de terceros de los que depende. Esta vista permite discutir el modelo de negocio —quién llega al producto y por qué canal— antes de entrar a decisiones técnicas.
+El System Landscape ubica a Edifika dentro del ecosistema completo del negocio de administración de condominios. A diferencia del Context Diagram, Edifika no se dibuja como sistema en alcance con boundary propio, sino como un sistema más del ecosistema, al mismo nivel que los servicios de terceros de los que depende. Esta vista permite discutir el modelo de negocio —quién llega al producto y por qué canal— antes de entrar a decisiones técnicas.
 
-![System Landscape Diagram](assets/img/system-landscape-diagram.png)
+![System Landscape Diagram](assets/img/landscape-diagram.png)
 
 *Figura. System Landscape View de Edifika. Elaborado por el equipo aplicando C4 Model con Structurizr DSL (Structurizr, s.f.).*
 
-El paisaje está compuesto por tres segmentos de personas y cuatro sistemas externos:
+El ecosistema está compuesto por tres segmentos de personas y tres sistemas externos:
 
 | Elemento | Tipo | Rol en el ecosistema |
 |---|---|---|
-| Visitor | Person | Prospecto anónimo que consulta el Landing Page estático para conocer el modelo de negocio, los segmentos objetivo y los precios antes de registrarse. |
-| Administrator | Person | Administra residentes, pagos, unidades, reservas, comunicados oficiales, foro, reportes y **reglas de automatización IoT**. |
-| Owner or Tenant | Person | Consulta deudas, paga, reserva áreas comunes, accede a los espacios vía RFID, interactúa con la iluminación y participa del foro del edificio. |
-| Culqi | Software System | Pasarela de pagos externa para cuotas de mantenimiento, deudas y servicios. Es la que habilita los medios de pago locales **Yape y Plin** además de tarjeta de crédito y débito, cumpliendo la táctica de adaptación al contexto local de 2.1.2 (HTTPS/REST). |
-| Cloudinary | Software System | Servicio cloud externo de almacenamiento, optimización y entrega de imágenes: publicaciones del foro, comunicados oficiales, **comprobantes de pago** (US22) y fotografías de incidencias (US08) (HTTPS/REST). |
-| Firebase Cloud Messaging | Software System | Servicio externo de notificaciones push en tiempo real hacia las aplicaciones móviles (HTTPS/REST). |
-| Twilio | Software System | Pasarela externa de SMS, usada como canal redundante del push en las alertas de emergencia, donde US08 exige alcanzar a todos los residentes en menos de 5 segundos (HTTPS/REST). |
+| Visitor | Person | Prospecto anónimo que consulta el Landing Page para conocer el modelo de negocio, los segmentos objetivo y los precios antes de registrarse. |
+| Administrator | Person | Administra residentes, unidades, deudas, aprobación de pagos, reservas, comunicados oficiales, reportes y reglas de automatización IoT desde la Web Application. |
+| Owner or Tenant | Person | Consulta y paga deudas, reserva áreas comunes, lee comunicados, participa del foro y accede a las áreas comunes con su tarjeta RFID, desde la Mobile Application. |
+| Culqi | Software System | Pasarela de pagos para cuotas de mantenimiento y deudas. Habilita billeteras móviles además de tarjeta de crédito y débito, cumpliendo la táctica de adaptación al contexto local (HTTPS/REST). |
+| Cloudinary | Software System | Almacenamiento, optimización y entrega de imágenes de comunicados oficiales, publicaciones del foro y comprobantes de pago (HTTPS/REST). |
+| Firebase Cloud Messaging | Software System | Notificaciones push en tiempo real hacia la Mobile Application (HTTPS/REST). |
 
-El **Visitor** es el segmento que cierra el circuito Landing Page → Web/Mobile Application exigido para la solución: llega de forma anónima al sitio estático y desde ahí los call-to-action lo dirigen a la aplicación que corresponde a su segmento. Los otros dos segmentos ya operan sobre la plataforma autenticados, con roles distintos sobre las mismas capacidades.
+El **Visitor** cierra el circuito Landing Page → Web/Mobile Application exigido para la solución: llega de forma anónima al sitio estático y desde ahí los call-to-action lo dirigen a la aplicación de su segmento. El Landing Page es el único punto que comparten los tres segmentos; a partir de él, el Administrator opera desde la web y el Owner or Tenant desde el móvil.
 
 #### 4.1.3.2. Software Architecture Context Level Diagrams
 
-El Context Diagram toma el paisaje anterior y fija el foco en Edifika: la plataforma se representa como una caja única en el centro —sin abrir su interior— rodeada por los usuarios que la operan y por los sistemas de terceros con los que se integra. Es el nivel de abstracción con el que se conversa con stakeholders no técnicos: qué entra, qué sale y con quién se habla, sin comprometer todavía ninguna decisión de tecnología.
+El Context Diagram fija el foco en Edifika: la plataforma se representa como una caja única —sin abrir su interior— rodeada por los usuarios que la operan y los sistemas de terceros con los que se integra. Es el nivel con el que se conversa con stakeholders no técnicos: qué entra, qué sale y con quién se habla.
 
 ![Context Diagram](assets/img/context-diagram.png)
 
@@ -3078,71 +3071,82 @@ El Context Diagram toma el paisaje anterior y fija el foco en Edifika: la plataf
 
 Las interacciones representadas son:
 
-- **Visitor → Edifika:** consulta información del modelo de negocio, contenido por segmento objetivo y precios a través del Landing Page.
-- **Administrator → Edifika:** gestiona la operación del condominio, aprueba reservas y monitorea alertas (incluidas las alertas de consumo anómalo y de falla de luminarias que produce el nivel IoT).
-- **Owner or Tenant → Edifika:** consulta deudas, paga, reserva áreas comunes, activa la iluminación de áreas comunes.
-- **Edifika → Culqi:** procesa los pagos en línea (HTTPS/REST).
-- **Edifika → Cloudinary:** sube y recupera las imágenes asociadas a comunicados oficiales y publicaciones del foro (HTTPS/REST).
-- **Edifika → Firebase Cloud Messaging:** envía las notificaciones push de los eventos del sistema a los usuarios móviles (HTTPS/REST).
-- **Edifika → Twilio:** envía por SMS las alertas de emergencia, en paralelo al push, para cumplir el alcance y la latencia que exige US08 (HTTPS/REST).
+- **Visitor → Edifika:** consulta el modelo de negocio, el contenido por segmento y los precios.
+- **Administrator → Edifika:** gestiona la operación del condominio, aprueba pagos y reservas, configura reglas IoT y monitorea alertas de consumo anómalo y falla de dispositivos.
+- **Owner or Tenant → Edifika:** paga deudas, reserva áreas comunes, lee comunicados, usa el foro y accede a las áreas comunes con RFID.
+- **Edifika → Culqi:** tokeniza tarjetas y procesa los pagos en línea (HTTPS/REST).
+- **Edifika → Cloudinary:** sube y recupera imágenes de comunicados, publicaciones del foro y comprobantes de pago (HTTPS/REST).
+- **Edifika → Firebase Cloud Messaging:** envía las notificaciones push a los residentes (HTTPS/REST).
 
-Las integraciones con terceros se acotan deliberadamente a cuatro: la pasarela de pagos, el servicio de gestión de imágenes, el servicio de notificaciones push y la pasarela de SMS. El resto de las capacidades —incluidas las de acceso físico, iluminación y telemetría— se resuelve dentro de Edifika, de modo que ningún flujo crítico de la operación del condominio queda condicionado a la disponibilidad de un proveedor externo.
+Las integraciones con terceros se acotan a tres: pagos, imágenes y notificaciones push. Las capacidades de acceso físico, iluminación, riego y telemetría se resuelven dentro de Edifika, de modo que ningún flujo crítico del condominio depende de la disponibilidad de un proveedor externo.
 
 #### 4.1.3.3. Software Architecture Container Level Diagrams
 
-El Container Diagram abre la caja de Edifika y muestra los **22 containers** que componen la solución, distribuidos en los tres niveles de la arquitectura IoT. Cada container es una unidad de despliegue independiente —se construye, versiona y despliega por separado— y el color en el diagrama identifica su nivel: naranja el Landing Page y el Edge API, azul los clientes y los microservicios de gestión, verde los microservicios IoT cloud, morado el broker, azul oscuro las bases de datos y rojo los dispositivos embebidos.
+El Container Diagram abre la caja de Edifika y muestra los 33 containers de la solución, distribuidos en los tres niveles de la arquitectura IoT. Cada container es una unidad de despliegue independiente. El color identifica su tipo: azul los clientes web y los microservicios de gestión, celeste la Mobile Application, verde azulado el API Gateway, verde los microservicios IoT, morado el broker, azul oscuro las bases de datos, naranja el Edge API y rojo los dispositivos embebidos.
 
 ![Container Diagram](assets/img/container-diagram.png)
 
-*Figura. Container View de Edifika. Elaborado por el equipo aplicando C4 Model con Structurizr DSL (Structurizr, s.f.). Cada container es una unidad de despliegue independiente.*
+*Figura. Container View de Edifika. Elaborado por el equipo aplicando C4 Model con Structurizr DSL (Structurizr, s.f.).*
 
 **Decisiones de tecnología por container**
 
 | Nivel | Container | Tecnología | Responsabilidad |
 |---|---|---|---|
-| Presentación | Landing Page | HTML5 / CSS3 / JavaScript | Sitio estático que presenta el modelo de negocio, los segmentos objetivo y los precios, con call-to-action por segmento. |
-| Presentación | Web Application | Angular / TypeScript (SPA) | Pagos, reservas, comunicados, **dashboards de telemetría IoT** y reportes desde el navegador. |
-| Presentación | Mobile Application | Flutter / Dart | Pagos, reservas, comunicados, y foro desde iOS y Android. |
-| Entrada | API Gateway | Spring Cloud Gateway / Java | Punto único de entrada: enrutamiento, validación del token JWT mediante `BearerAuthorizationRequestFilter`, **políticas CORS** (TS15), rate limiting y publicación del canal **SSE** de disponibilidad en tiempo real. |
-| Cloud — gestión | IAM / Auth Service | Spring Boot / Spring Data JPA / Java | Autenticación, autorización, roles y emisión/validación de JWT. |
+| Presentación | Landing Page | HTML5 / CSS3 / JavaScript | Sitio estático con el modelo de negocio, segmentos objetivo y precios; redirige al Administrator a la web y al residente a la tienda de aplicaciones. |
+| Presentación | Web Application | Angular / TypeScript (SPA) | Solo para administradores: residentes, unidades, deudas, aprobación de pagos, comunicados, reservas, reportes, reglas IoT y dashboards de telemetría. |
+| Presentación | Mobile Application | Flutter / Dart | Solo para residentes:** consulta y pago de deudas, reservas, comunicados, foro y notificaciones push en iOS y Android. Tokeniza la tarjeta directamente con Culqi usando la llave pública. |
+| Entrada | API Gateway | Spring Cloud Gateway / Java | Punto único de entrada: enrutamiento, validación del JWT, políticas CORS, rate limiting y canal SSE de disponibilidad en tiempo real. |
+| Cloud — gestión | IAM / Auth Service | Spring Boot / Spring Data JPA / Java | Autenticación, autorización, roles y emisión de JWT. |
 | Cloud — gestión | Residential Management Service | Spring Boot / Spring Data JPA / Java | Edificios, unidades, residentes y su vínculo con las unidades. |
-| Cloud — gestión | Payment Service | Spring Boot / Spring Data JPA / Java | Deudas, cuotas, pagos, comprobantes e integración con Culqi. |
-| Cloud — gestión | Reservation Service | Spring Boot / Spring Data JPA / Java | Áreas comunes, disponibilidad, reservas, aprobaciones y cancelaciones. |
-| Cloud — gestión | Communication Service | Spring Boot / Spring Data JPA / Java | Comunicados oficiales y avisos administrativos. |
+| Cloud — gestión | Payment Service | Spring Boot / Spring Data JPA / Java | Deudas, pagos, comprobantes y cobros con Culqi mediante Saga, con idempotencia por `Idempotency-Key`. |
+| Cloud — gestión | Communication Service | Spring Boot / Spring Data JPA / Java | Comunicados oficiales, avisos administrativos y su estado de lectura. |
 | Cloud — gestión | Messaging / Forum Service | Spring Boot / Spring Data JPA / Java | Publicaciones, comentarios e interacciones del foro privado de cada edificio. |
-| Cloud — gestión | Notification Service | Spring Boot / Spring Data JPA / Java | Consume eventos del sistema y envía las notificaciones push (incluidas las alertas IoT). |
-| Cloud — gestión | Report Service | Spring Boot / Spring Data JPA / Java | Reportes de pagos, morosidad, reservas y analítica de la comunidad. |
-| Cloud — gestión | Incident Management Service | Spring Boot / Spring Data JPA / Java | Reporte y seguimiento de incidencias del edificio y difusión de alertas de emergencia. |
-| Cloud — IoT | IoT Access Management Service | Spring Boot / Spring Data JPA / Java | Permisos de acceso a áreas comunes, credenciales RFID , y control de cerraduras según reservas activas. |
-| Cloud — IoT | Smart Lighting & Automation Service | Spring Boot / Spring Data JPA / Java | Control de luminarias según presencia, nivel de lux ambiental, horarios de reserva y override manual. |
-| Cloud — IoT | IoT Telemetry & Analytics Service | Spring Boot / Spring Data JPA / Java | Ingesta de telemetría, **cálculo cuantitativo de energía (kWh)**, estadísticas y detección de anomalías de hardware. |
-| Asincronía | Message & Event Broker | EMQX / RabbitMQ | Recibe y distribuye los eventos de dominio asíncronos (AMQP/MQTT): pagos, reservas, telemetría y comandos de actuadores. |
-| Datos | PostgreSQL Database | PostgreSQL | Usuarios, edificios, unidades, deudas, pagos, reservas, comunicados, foro, notificaciones y credenciales de acceso. |
-| Datos | Telemetry Database | TimescaleDB / PostgreSQL | Lecturas de sensores de alta frecuencia, registros de presencia, métricas de consumo y series ambientales. |
-| Edge | Edge API & Gateway Controller | Flask / Peewee ORM / SQLite / Python | Gateway on-premise: caché de credenciales offline, coordinación local de dispositivos y operación resiliente ante caídas de internet. |
-| Device | Common Area Access Controller | ESP32 / Embedded C++ | Lector RFID (RC522), sensor magnético de puerta, buzzer y relé de cerradura eléctrica. |
+| Cloud — gestión | Reservation Service | Spring Boot / Spring Data JPA / Java | Áreas comunes, reglas, disponibilidad, reservas y aprobaciones. |
+| Cloud — gestión | Notification Service | Spring Boot / Spring Data JPA / Java | Consume eventos del sistema y envía notificaciones push, incluidas las alertas IoT. |
+| Cloud — gestión | Report Service | Spring Boot / Spring Data JPA / Java | Reportes de pagos, morosidad, reservas, actividad de la comunidad y consumo, construidos desde los eventos que consume. |
+| Cloud — IoT | IoT Access Management Service | Spring Boot / Spring Data JPA / Java | Credenciales RFID, permisos por área común, restricción por morosidad y auditoría de accesos. |
+| Cloud — IoT | Smart Lighting & Automation Service | Spring Boot / Spring Data JPA / Java | Control de luminarias según presencia, lux ambiental, horarios de reserva y override manual. |
+| Cloud — IoT | Smart Irrigation Service | Spring Boot / Spring Data JPA / Java | Riego automático de áreas verdes según horarios y umbrales de humedad del suelo, con override manual. |
+| Cloud — IoT | IoT Telemetry & Analytics Service | Spring Boot / Spring Data JPA / Java | Ingesta de telemetría y logs de todos los dispositivos, cálculo de consumo de energía (kWh) y agua, y detección de anomalías y fallas. |
+| Datos | IAM Database | PostgreSQL | Usuarios, roles y credenciales. |
+| Datos | Residential Database | PostgreSQL | Edificios, unidades y asignaciones usuario-unidad. |
+| Datos | Payment Database | PostgreSQL | Deudas, pagos y transacciones. |
+| Datos | Communication Database | PostgreSQL | Comunicados, confirmaciones de lectura y referencias a imágenes. |
+| Datos | Forum Database | PostgreSQL | Foros, publicaciones, comentarios y reacciones. |
+| Datos | Reservation Database | PostgreSQL | Áreas comunes, reglas y reservas. |
+| Datos | Notification Database | PostgreSQL | Historial de notificaciones, tokens de dispositivo y preferencias. |
+| Datos | Report Database | PostgreSQL | Modelos de lectura y agregaciones para reportes. |
+| Datos | Access Database | PostgreSQL | Credenciales RFID, permisos, blacklist y auditoría de accesos. |
+| Datos | Lighting Database | PostgreSQL | Políticas, horarios y configuración de luminarias. |
+| Datos | Irrigation Database | PostgreSQL | Zonas, horarios, umbrales de humedad y configuración de válvulas. |
+| Datos | Telemetry Database | TimescaleDB / PostgreSQL | Lecturas de alta frecuencia, logs de dispositivos, métricas de consumo y series ambientales. |
+| Asincronía | Message & Event Broker | RabbitMQ (AMQP) / EMQX (MQTT) | Distribuye eventos de dominio (AMQP) y telemetría y comandos de dispositivos (MQTT). |
+| Edge | Edge API & Gateway Controller | Python / Flask / Peewee ORM / SQLite | Gateway on-premise: caché de credenciales RFID offline, coordinación local de dispositivos y operación resiliente ante caídas de internet. |
+| Device | Common Area Access Controller | ESP32 / Embedded C++ | Lector RFID, sensor magnético de puerta, buzzer y relé de cerradura eléctrica. |
 | Device | Smart Lighting & Sensing Node | ESP32 / Embedded C++ | Sensor de presencia PIR, sensor de lux LDR, sensor de corriente ACS712 y relé de luminaria. |
+| Device | Smart Irrigation Node | ESP32 / Embedded C++ | Sensor capacitivo de humedad del suelo, sensor de flujo de agua y relé de válvula solenoide. |
 
 **Documentación y contrato de las APIs**
 
-Cada uno de los 12 microservicios expone su propia interfaz **Swagger / OpenAPI 3** con el esquema de seguridad *Bearer JWT* declarado, de modo que los endpoints protegidos puedan probarse desde la propia interfaz gráfica introduciendo un token válido (TS14). El API Gateway no agrega ni unifica esas interfaces: cada servicio es dueño del contrato que publica, coherentemente con el principio de que cada bounded context define su propio modelo.
+Cada uno de los 12 microservicios expone su propia interfaz Swagger / OpenAPI 3 con el esquema de seguridad Bearer JWT, de modo que los endpoints protegidos se prueban desde la interfaz gráfica con un token válido (TS14). El API Gateway no unifica esas interfaces: cada servicio es dueño del contrato que publica, coherente con el principio de que cada bounded context define su propio modelo.
 
 **Cómo se comunican los containers**
 
-1. **Síncrono REST/JSON sobre HTTPS con JWT:** Web y Mobile Application consumen el API Gateway, que enruta hacia los 12 microservicios. Ningún cliente accede directamente a un microservicio.
-2. **Asíncrono AMQP:** los microservicios publican eventos de dominio en el broker (`PaymentApproved`, `ReservationApproved`, `AnnouncementPublished`, `PhysicalAccessGranted`, `AbnormalConsumptionDetected`, etc.) y el broker los entrega a Notification, Report, Access y Lighting. Esto es lo que sostiene el Saga coreografiado de 4.1.1.2.
-3. **MQTT local (Edge ↔ Device):** los dispositivos ESP32 envían intentos de acceso, estado de puerta, presencia, lux y corriente al Edge API, y reciben de vuelta comandos de apertura, feedback y PWM de luminaria.
-4. **MQTT/AMQP sobre WAN (Edge → Cloud):** el Edge API reenvía al broker los registros de auditoría generados offline y la telemetría acumulada.
-5. **Sincronización REST (Cloud → Edge):** IoT Access Management sincroniza credenciales activas, reservas vigentes y blacklist; Smart Lighting envía reglas de programación y overrides manuales.
-6. **JDBC/SQL:** los microservicios de gestión e IoT persisten en PostgreSQL; Telemetry escribe y consulta agregaciones en TimescaleDB.
-7. **SSE (servidor → cliente):** Reservation publica a través del API Gateway un flujo Server-Sent Events con los cambios de disponibilidad de áreas comunes, de modo que un residente que está consultando un horario vea liberarse u ocuparse ese espacio sin recargar (US19 esc. 3 y Estrategia 6 de 2.1.2). Es el único canal de servidor a cliente que no pasa por notificación push.
-8. **Interacción física:** el residente presenta su tarjeta RFID, y su movimiento es detectado por el sensor PIR. Es el único canal del diagrama que no es de software.
+1. **Síncrono REST/JSON sobre HTTPS con JWT:** la Web y la Mobile Application consumen el API Gateway, que enruta hacia los 12 microservicios. Ningún cliente accede directamente a un microservicio.
+2. **Asíncrono AMQP:** los microservicios publican eventos de dominio en el broker (`PaymentConfirmed`, `ResidentMarkedDelinquent`, `ReservationApproved`, `AnnouncementPublished`, `PhysicalAccessGranted`, `AbnormalConsumptionDetected`, entre otros) y el broker los entrega a Notification, Report, Access, Lighting e Irrigation.
+3. **MQTT local (Edge ↔ Device):** los ESP32 envían al Edge API intentos de acceso RFID, estado de puerta, presencia, lux, corriente, humedad del suelo y flujo de agua; reciben de vuelta comandos de apertura, feedback, PWM de luminaria y apertura o cierre de válvula.
+4. **MQTT/AMQP sobre WAN (Edge → Cloud):** el Edge API reenvía al broker los registros de acceso generados offline y la telemetría acumulada.
+5. **Sincronización REST (Cloud → Edge):** IoT Access Management sincroniza credenciales activas, ventanas de reserva y blacklist; Smart Lighting y Smart Irrigation envían horarios y overrides manuales.
+6. **JDBC/SQL:** cada microservicio persiste únicamente en su propia base de datos; Telemetry escribe y consulta agregaciones en TimescaleDB.
+7. **SSE (servidor → cliente):** Reservation publica, a través del API Gateway, un flujo Server-Sent Events con los cambios de disponibilidad de áreas comunes, de modo que un residente vea liberarse u ocuparse un horario sin recargar.
+8. **Integraciones externas:** la Mobile Application tokeniza la tarjeta con Culqi; Payment crea el cargo con la llave secreta; Payment, Communication y Forum usan Cloudinary; Notification usa Firebase Cloud Messaging.
+9. **Interacción física:** el residente presenta su tarjeta RFID y su movimiento es detectado por el sensor PIR. Es el único canal del diagrama que no es de software.
 
-La distribución de responsabilidades sigue el mismo criterio en los tres niveles: el cloud concentra las reglas de negocio y la persistencia de largo plazo, el edge concentra la autonomía operativa de cada condominio, y los dispositivos se limitan a sensar y actuar. Esa separación es la que permite que un corte de internet degrade la solución en lugar de detenerla: los dispositivos siguen respondiendo al Edge API y este sigue decidiendo con su caché local.
+El cloud concentra las reglas de negocio y la persistencia de largo plazo, el edge concentra la autonomía operativa de cada condominio y los dispositivos se limitan a sensar y actuar. Esa separación permite que un corte de internet degrade la solución en lugar de detenerla: los dispositivos siguen respondiendo al Edge API y este sigue decidiendo con su caché local.
 
 #### 4.1.3.4. Software Architecture Deployment Diagrams
 
-El Deployment Diagram muestra en qué infraestructura se ejecuta cada uno de los containers del nivel anterior. La solución se despliega en **cinco nodos de infraestructura**: los dispositivos del usuario final, el PaaS que aloja el backend, el proveedor gestionado de bases de datos, el broker gestionado y —la diferencia central respecto de una solución puramente web— el **sitio físico del condominio**, donde viven el Edge Server y los dispositivos embebidos.
+El Deployment Diagram muestra en qué infraestructura se ejecuta cada container. La solución se despliega en seis grupos de infraestructura: los dispositivos de cada segmento de usuario, el PaaS del backend, el proveedor gestionado de bases de datos transaccionales, el proveedor de series temporales, el broker gestionado y la diferencia central respecto de una solución puramente web, el sitio físico del condominio, donde viven el Edge Server y los dispositivos embebidos.
 
 ![Deployment Diagram](assets/img/deployment-diagram.png)
 
@@ -3150,25 +3154,29 @@ El Deployment Diagram muestra en qué infraestructura se ejecuta cada uno de los
 
 | Deployment Node | Infraestructura | Containers desplegados |
 |---|---|---|
-| Client Devices → Web Browser | Chrome, Edge, Safari o Firefox (desktop/mobile) | Landing Page, Web Application |
-| Client Devices → Mobile Device | Smartphone iOS o Android | Mobile Application |
-| Render → API Gateway Node | Render Web Service | API Gateway |
-| Render → Core Microservices Cluster | Render Web Services | IAM, Residential Management, Payment, Reservation, Communication, Messaging/Forum, Notification, Report e Incident Management |
-| Render → IoT Cloud Microservices Cluster | Render Web Services | IoT Access Management, Smart Lighting & Automation, IoT Telemetry & Analytics |
-| Supabase → PostgreSQL Instance | PostgreSQL 15 gestionado | PostgreSQL Database |
-| Supabase → TimescaleDB Instance | PostgreSQL 15 + TimescaleDB | Telemetry Database |
-| Message Broker Cloud | CloudAMQP / EMQX Cloud | Message & Event Broker |
-| Condominium Site → Edge Server | Raspberry Pi 4 / Mini PC on-premise | Edge API & Gateway Controller |
-| Condominium Site → Common Area Door Unit | Hardware embebido en cada puerta de área común | Common Area Access Controller |
-| Condominium Site → Common Area Lighting Unit | Hardware embebido en cada luminaria | Smart Lighting & Sensing Node |
+| Administrator Workstation → Web Browser | Chrome, Edge o Firefox en Windows / macOS | Landing Page, Web Application |
+| Resident Smartphone → Mobile Browser | Chrome o Safari Mobile | Landing Page |
+| Resident Smartphone → Mobile OS | Android 10+ / iOS 15+ | Mobile Application |
+| Visitor Device → Browser | Cualquier navegador moderno | Landing Page |
+| Render → API Gateway Node | Render Web Service / Docker / Java 21 | API Gateway |
+| Render → Core Microservices | Render Web Services / Docker / Java 21 | IAM, Residential Management, Payment, Communication, Messaging/Forum, Reservation, Notification, Report |
+| Render → IoT Cloud Microservices | Render Web Services / Docker / Java 21 | IoT Access Management, Smart Lighting & Automation, Smart Irrigation, IoT Telemetry & Analytics |
+| Supabase → PostgreSQL Instance | PostgreSQL 15 gestionado, un schema y una credencial por servicio | Las 11 bases transaccionales (IAM, Residential, Payment, Communication, Forum, Reservation, Notification, Report, Access, Lighting, Irrigation) |
+| Timescale Cloud → TimescaleDB Instance | PostgreSQL + TimescaleDB gestionado | Telemetry Database |
+| Managed Broker Cloud | CloudAMQP / EMQX Cloud | Message & Event Broker |
+| Culqi Cloud / Cloudinary Cloud / Google Firebase | SaaS | Culqi, Cloudinary, Firebase Cloud Messaging |
+| Condominium Site → Edge Server | Raspberry Pi 4 on-premise | Edge API & Gateway Controller |
+| Condominium Site → Common Area Door Unit | Hardware embebido por puerta de área común | Common Area Access Controller |
+| Condominium Site → Common Area Lighting Unit | Hardware embebido por zona de iluminación | Smart Lighting & Sensing Node |
+| Condominium Site → Green Area Irrigation Unit | Hardware embebido por zona de riego | Smart Irrigation Node |
 
-El **Condominium Site** se instala una vez por edificio y es lo que hace viable el requisito de resiliencia: si se cae el enlace a internet, el Edge Server sigue validando credenciales contra su caché local y accionando cerraduras y luminarias; cuando el enlace se restablece, reenvía al broker los registros de auditoría y la telemetría acumulada. Los clusters de Render son *stateless*, de modo que escalan horizontalmente sin coordinación, y toda la persistencia queda confinada a Supabase.
+El **Condominium Site** se instala una vez por edificio y hace viable la resiliencia: si se cae el enlace a internet, el Edge Server sigue validando credenciales RFID contra su caché local y accionando cerraduras, luminarias y válvulas; cuando el enlace se restablece, reenvía al broker los registros de acceso y la telemetría acumulada.
 
-La elección de infraestructura responde al perfil de carga de cada pieza: los clusters de Render son *stateless* y escalan horizontalmente sin coordinación; Supabase concentra la persistencia en dos instancias separadas porque el perfil de escritura de la telemetría —alta frecuencia y consulta por series temporales— no es compatible con el transaccional; el broker se contrata gestionado para no asumir la operación de su alta disponibilidad; y el sitio del condominio es la única infraestructura que el equipo instala y mantiene físicamente.
+La infraestructura responde al perfil de carga de cada pieza: los servicios de Render son *stateless* y escalan horizontalmente sin coordinación; la persistencia transaccional se aísla por schema dentro de Supabase; la telemetría se separa en TimescaleDB porque su perfil —escritura de alta frecuencia y consulta por series temporales, no es compatible con el transaccional; el broker se contrata gestionado para no asumir la operación de su alta disponibilidad; y el sitio del condominio es la única infraestructura que el equipo instala y mantiene físicamente.
 
 ### 4.1.4. Atributos de Calidad y Presupuesto de Rendimiento
 
-Los criterios de aceptación del Capítulo III no solo describen comportamiento: fijan **once presupuestos de tiempo de respuesta** y un conjunto de decisiones de seguridad y concurrencia que son, en rigor, requisitos no funcionales. Esta sección los recoge como restricciones de arquitectura verificables, en lugar de dejarlos enterrados en los escenarios Gherkin.
+Los criterios de aceptación del Capítulo III no solo describen comportamiento: fijan once presupuestos de tiempo de respuesta y un conjunto de decisiones de seguridad y concurrencia que son, en rigor, requisitos no funcionales. Esta sección los recoge como restricciones de arquitectura verificables, en lugar de dejarlos enterrados en los escenarios Gherkin.
 
 #### 4.1.4.1. Presupuesto de latencia
 
