@@ -192,7 +192,7 @@ AV1 (20/09/2026):
         - [4.2.4.6.2. Bounded Context Database Design Diagram](#42462-bounded-context-database-design-diagram)
     - [4.2.5. Bounded Context: Notification](#425-bounded-context-notification)
       - [4.2.5.1. Domain Layer](#4251-domain-layer)
-      - [4.2.5.2. Interface Layer](#4252-interface-layer)
+      - [. Interface Layer](#4252-interface-layer)
       - [4.2.5.3. Application Layer](#4253-application-layer)
       - [4.2.5.4. Infrastructure Layer](#4254-infrastructure-layer)
       - [4.2.5.5. Bounded Context Software Architecture Component Level Diagrams](#4255-bounded-context-software-architecture-component-level-diagrams)
@@ -4369,7 +4369,7 @@ El agregado principal identificado es:
 
 #### 4.2.5.2. Interface Layer
 
-**NotificationController**: bandeja y marcado de lectura del residente (US10). **DeviceTokenController**: registro y baja del token del dispositivo. **NotificationPreferenceController**: configuración de notificaciones (US12). Como *Consumers*: `AnnouncementEventConsumer`, `PaymentEventConsumer`, `ReservationEventConsumer`, `AccessEventConsumer`, `TelemetryAlertEventConsumer` e `IncidentEventConsumer`, suscritos por el broker a los seis contextos que publican eventos notificables.
+**NotificationController**: bandeja y marcado de lectura del residente (US10). **DeviceTokenController**: registro y baja del token del dispositivo. **NotificationPreferenceController**: configuración de notificaciones (US12). Como *Consumers*: `AnnouncementEventConsumer`, `PaymentEventConsumer`, `ReservationEventConsumer`, `AccessEventConsumer` e `TelemetryAlertEventConsumer` , suscritos por el broker a los seis contextos que publican eventos notificables.
 
 #### 4.2.5.3. Application Layer
 
@@ -4385,8 +4385,7 @@ El agregado principal identificado es:
 | ReservationApprovedEventHandler | ReservationApproved | Notifica al residente (US11) y al administrador (US31). |
 | PhysicalAccessEventHandler | PhysicalAccessGranted / PhysicalAccessDenied | Notifica eventos de acceso físico. |
 | TelemetryAlertEventHandler | AbnormalConsumptionDetected / LuminaireFailureDetected | Notifica alertas de telemetría. |
-| IncidentReportedEventHandler | IncidentReported | Avisa al administrador con la ubicación exacta de la incidencia (US08 esc. 2). |
-| EmergencyDeclaredEventHandler | EmergencyDeclared | Difusión `EMERGENCY` a todo el edificio por push y SMS en paralelo (US08 esc. 1). |
+
 
 #### 4.2.5.4. Infrastructure Layer
 
