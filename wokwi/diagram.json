@@ -1,0 +1,67 @@
+{
+  "version": 1,
+  "author": "Edifika",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 0, "left": 0, "attrs": {} },
+
+    { "type": "chip-rfid-rc522", "id": "rfid", "top": -90, "left": 330, "attrs": {} },
+    { "type": "board-ssd1306", "id": "oled", "top": 140, "left": 330, "attrs": { "i2cAddress": "0x3c" } },
+    { "type": "wokwi-ds1307", "id": "rtc", "top": 290, "left": 330, "attrs": {} },
+
+    { "type": "wokwi-potentiometer", "id": "hum", "top": -110, "left": -290, "attrs": {} },
+    { "type": "wokwi-hc-sr04", "id": "us", "top": 20, "left": -400, "attrs": { "distance": "120" } },
+    { "type": "wokwi-resistor", "id": "r_echo_hi", "top": 60, "left": -200, "rotate": 90, "attrs": { "value": "1000" } },
+    { "type": "wokwi-resistor", "id": "r_echo_lo", "top": 150, "left": -200, "rotate": 90, "attrs": { "value": "2000" } },
+    { "type": "wokwi-buzzer", "id": "bz", "top": 250, "left": -230, "attrs": { "volume": "0.5" } },
+    { "type": "wokwi-relay-module", "id": "rly", "top": 340, "left": -350, "attrs": {} },
+    { "type": "wokwi-resistor", "id": "r_lock", "top": 360, "left": -170, "attrs": { "value": "220" } },
+    { "type": "wokwi-led", "id": "lock", "top": 420, "left": -170, "attrs": { "color": "yellow", "label": "Cerradura" } }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+
+    [ "rfid:3V3", "esp:3V3", "red", [] ],
+    [ "rfid:GND", "esp:GND.2", "black", [] ],
+    [ "rfid:SDA", "esp:5", "orange", [] ],
+    [ "rfid:SCK", "esp:18", "blue", [] ],
+    [ "rfid:MOSI", "esp:23", "green", [] ],
+    [ "rfid:MISO", "esp:19", "purple", [] ],
+    [ "rfid:RST", "esp:27", "gray", [] ],
+
+    [ "oled:VCC", "esp:3V3", "red", [] ],
+    [ "oled:GND", "esp:GND.2", "black", [] ],
+    [ "oled:SDA", "esp:21", "green", [] ],
+    [ "oled:SCL", "esp:22", "yellow", [] ],
+
+    [ "rtc:5V", "esp:5V", "red", [] ],
+    [ "rtc:GND", "esp:GND.2", "black", [] ],
+    [ "rtc:SDA", "esp:21", "green", [] ],
+    [ "rtc:SCL", "esp:22", "yellow", [] ],
+
+    [ "hum:VCC", "esp:3V3", "red", [] ],
+    [ "hum:GND", "esp:GND.1", "black", [] ],
+    [ "hum:SIG", "esp:34", "cyan", [] ],
+
+    [ "us:VCC", "esp:5V", "red", [] ],
+    [ "us:GND", "esp:GND.1", "black", [] ],
+    [ "us:TRIG", "esp:32", "orange", [] ],
+    [ "us:ECHO", "r_echo_hi:1", "blue", [] ],
+    [ "r_echo_hi:2", "esp:33", "blue", [] ],
+    [ "r_echo_hi:2", "r_echo_lo:1", "blue", [] ],
+    [ "r_echo_lo:2", "esp:GND.1", "black", [] ],
+
+    [ "bz:2", "esp:25", "magenta", [] ],
+    [ "bz:1", "esp:GND.1", "black", [] ],
+
+    [ "rly:VCC", "esp:5V", "red", [] ],
+    [ "rly:GND", "esp:GND.1", "black", [] ],
+    [ "rly:IN", "esp:26", "brown", [] ],
+    [ "rly:COM", "esp:5V", "red", [] ],
+    [ "rly:NO", "r_lock:1", "yellow", [] ],
+    [ "r_lock:2", "lock:A", "yellow", [] ],
+    [ "lock:C", "esp:GND.1", "black", [] ]
+  ],
+  "dependencies": {}
+}

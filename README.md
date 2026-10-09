@@ -244,7 +244,43 @@ AV1 (20/09/2026):
       - [4.2.12.6. Bounded Context Software Architecture Code Level Diagrams](#42126-bounded-context-software-architecture-code-level-diagrams)
         - [4.2.12.6.1. Bounded Context Domain Layer Class Diagrams](#421261-bounded-context-domain-layer-class-diagrams)
         - [4.2.12.6.2. Bounded Context Database Design Diagram](#421262-bounded-context-database-design-diagram)
-    - [Conclusiones](#conclusiones)
+- [CAPÍTULO V: Solution UI/UX Design](#capítulo-v-solution-uiux-design)
+  - [5.1. Style Guidelines](#51-style-guidelines)
+    - [5.1.1. General Style Guidelines](#511-general-style-guidelines)
+    - [5.1.2. Web, Mobile and IoT Style Guidelines](#512-web-mobile-and-iot-style-guidelines)
+  - [5.2. Information Architecture](#52-information-architecture)
+    - [5.2.1. Organization Systems](#521-organization-systems)
+    - [5.2.2. Labeling Systems](#522-labeling-systems)
+    - [5.2.3. SEO Tags and Meta Tags](#523-seo-tags-and-meta-tags)
+    - [5.2.4. Searching Systems](#524-searching-systems)
+    - [5.2.5. Navigation Systems](#525-navigation-systems)
+  - [5.3. Landing Page UI Design](#53-landing-page-ui-design)
+    - [5.3.1. Landing Page Wireframe](#531-landing-page-wireframe)
+    - [5.3.2. Landing Page Mock-up](#532-landing-page-mock-up)
+  - [5.4. Applications UX/UI Design](#54-applications-uxui-design)
+    - [5.4.1. Applications Wireframes](#541-applications-wireframes)
+    - [5.4.2. Applications Wireflow Diagrams](#542-applications-wireflow-diagrams)
+      - [5.4.2.1. Applications Mock-ups](#5421-applications-mock-ups)
+    - [5.4.3. Applications User Flow Diagrams](#543-applications-user-flow-diagrams)
+  - [5.5. Applications Prototyping](#55-applications-prototyping)
+  - [5.6. IoT Device Design](#56-iot-device-design)
+- [CAPÍTULO VI: Product Implementation, Validation & Deployment](#capítulo-vi-product-implementation-validation--deployment)
+  - [6.1. Software Configuration Management](#61-software-configuration-management)
+    - [6.1.1. Software Development Environment Configuration](#611-software-development-environment-configuration)
+    - [6.1.2. Source Code Management](#612-source-code-management)
+    - [6.1.3. Source Code Style Guide & Coding Conventions](#613-source-code-style-guide--coding-conventions)
+    - [6.1.4. Software Deployment Configuration](#614-software-deployment-configuration)
+  - [6.2. Landing Page, Services & Applications Implementation](#62-landing-page-services--applications-implementation)
+    - [6.2.1. Sprint 1](#621-sprint-1)
+      - [6.2.1.1. Sprint Planning 1](#6211-sprint-planning-1)
+      - [6.2.1.2. Aspect Leaders and Collaborators](#6212-aspect-leaders-and-collaborators)
+      - [6.2.1.3. Sprint Backlog 1](#6213-sprint-backlog-1)
+      - [6.2.1.4. Development Evidence for Sprint Review](#6214-development-evidence-for-sprint-review)
+      - [6.2.1.5. Testing Suite Evidence for Sprint Review](#6215-testing-suite-evidence-for-sprint-review)
+      - [6.2.1.6. Execution Evidence for Sprint Review](#6216-execution-evidence-for-sprint-review)
+      - [6.2.1.7. Services Documentation Evidence for Sprint Review](#6217-services-documentation-evidence-for-sprint-review)
+      - [6.2.1.8. Software Deployment Evidence for Sprint Review](#6218-software-deployment-evidence-for-sprint-review)
+      - [6.2.1.9. Team Collaboration Insights during Sprint](#6219-team-collaboration-insights-during-sprint)
 - [Conclusiones y Recomendaciones](#conclusiones-y-recomendaciones)
 - [Referencias Bibliográficas](#referencias-bibliográficas)
 - [Anexos](#anexos)
@@ -1079,9 +1115,13 @@ Visualización instantánea de datos generados por sensores y dispositivos conec
 | EP02 | Comunicación centralizada | Esta épica aborda la gestión de notificaciones y comunicados dentro del edificio, permitiendo mantener informados a los residentes sobre incidencias, pagos, reservas y anuncios importantes. Incluye la personalización de notificaciones y el seguimiento de visualización de comunicados. | US08, US10, US12, US13, US14, US15, US29, US31, US32, US36, US37 |
 | EP03 | Gestión de áreas comunes | Esta épica se centra en la administración y uso eficiente de las áreas comunes del edificio. Permite a los residentes consultar disponibilidad, realizar y cancelar reservas, mientras que los administradores pueden aprobar solicitudes y evitar conflictos de horario. | US11, US16, US17, US18, US19, US20, US33, US35, US38, US39, US40 |
 | EP04 | Gestión financiera y reportes | Esta épica se enfoca en la administración económica del edificio, permitiendo a los residentes consultar su deuda, registrar pagos y revisar su historial financiero. Los administradores pueden identificar morosos, generar y exportar reportes financieros. | US09, US21, US22, US23, US24, US25, US26, US27, US28, US30 |
-| EP05 | Infraestructura, seguridad y arquitectura técnica | Esta épica abarca todos los aspectos técnicos necesarios para el correcto funcionamiento del sistema Edifika, incluyendo la configuración de microservicios, autenticación JWT, API Gateway, bases de datos independientes, documentación de APIs, comunicación entre servicios y despliegue en la nube. Su objetivo es garantizar que la plataforma sea segura, escalable y mantenible. | TS01, TS02, TS03, TS04, TS05, TS06, TS07, TS08, TS09, TS10, TS11, TS12, TS13, TS14, TS15 |
+| EP05 | Infraestructura, seguridad y arquitectura técnica | Esta épica abarca todos los aspectos técnicos necesarios para el correcto funcionamiento del sistema Edifika, incluyendo la configuración de microservicios, autenticación JWT, API Gateway, bases de datos independientes, documentación de APIs, comunicación entre servicios y despliegue en la nube. Su objetivo es garantizar que la plataforma sea segura, escalable y mantenible. | TS01, TS02, TS03, TS04, TS05, TS06, TS07, TS08, TS09, TS10, TS11, TS12, TS13, TS14, TS15, TS16, TS17, TS18, TS19, TS20, TS21, TS22, TS23, TS24, TS25, TS26, TS27, TS28, TS29, TS30, TS31, TS32, TS33, TS34 |
 | EP06 | Landing Page e Interfaz Web | Esta épica cubre todas las funcionalidades visibles en la landing page pública de Edifika y la interfaz web de la aplicación. Incluye navegación, presentación de contenido y acceso a la plataforma, con el objetivo de atraer y convertir nuevos usuarios. | US41, US42, US43, US44, US45, US46, US47 |
-| EP07 | Smart Building e Internet de las Cosas (IoT) | Esta épica abarca la integración de dispositivos IoT dentro del edificio para automatizar y controlar el acceso a áreas comunes y unidades mediante sensores, cerraduras inteligentes. Permite a los residentes gestionar el acceso a sus reservas de forma remota, mientras que los administradores pueden monitorear en tiempo real el estado de los dispositivos, registrar eventos de apertura/cierre y detectar accesos no autorizados, fortaleciendo la seguridad y la eficiencia operativa del edificio. | US48, US49, US50, US51, US52, US53 |
+| EP07 | Smart Building e Internet de las Cosas (IoT) | Esta épica abarca la integración de dispositivos IoT dentro del edificio para automatizar y controlar el acceso a áreas comunes y unidades mediante sensores, cerraduras inteligentes. Permite a los residentes gestionar el acceso a sus reservas de forma remota, mientras que los administradores pueden monitorear en tiempo real el estado de los dispositivos, registrar eventos de apertura/cierre y detectar accesos no autorizados, fortaleciendo la seguridad y la eficiencia operativa del edificio. | US48, US49, US50, US51, US52, US53, US54, US55, US56 |
+| EP08 | Iluminación inteligente y automatización | Esta épica abarca la automatización de la iluminación de áreas comunes mediante reglas configurables (presencia, lux, horario y prioridad), el control manual temporal (override) y la gestión del inventario de luminarias, buscando mejorar la seguridad y reducir el consumo energético. | US57, US58, US59, US60 |
+| EP09 | Telemetría y analítica IoT | Esta épica cubre la ingesta, almacenamiento y análisis de las lecturas de los sensores. Permite al administrador visualizar consumo energético, recibir alertas de consumo anómalo y fallas de luminarias, y monitorear el estado de conexión de los dispositivos. | US61, US62, US63, US64, US65 |
+| EP10 | Detección de fugas en bombas de agua | Esta épica se enfoca en prevenir pérdidas de agua mediante la detección automática de fugas a partir de caudal y presión, el corte de bombas, la gestión de alertas y la detección de fallas de equipos hidráulicos. | US66, US67, US68, US69, US70 |
+| EP11 | Edge Gateway e integración con dispositivos ESP32 | Esta épica abarca el servicio Edge Gateway (Python, Flask, Peewee ORM y SQLite) que se ejecuta en el edificio y se comunica por MQTT local con los nodos ESP32 (lector RFID, cerradura eléctrica, buzzer, pantalla OLED, sensor de humedad y sensor ultrasónico). Resuelve accesos con una caché local, opera sin conexión a internet y se sincroniza con la nube. | US71, US72, US73, US74, US75, US76, US77, US78, US79, US80, US81, US82, US83, US84, US85, US86, US87, US88, US89, US90, US91, US92, US93 |
 
 **User Stories:**
 
@@ -2529,8 +2569,1240 @@ Visualización instantánea de datos generados por sensores y dispositivos conec
   </td>
   <td>EP05</td>
 </tr>
+
+<tr>
+  <td><strong>US54</strong></td>
+  <td>Otorgar acceso temporal por reserva aprobada</td>
+  <td>Como residente, quiero que mi reserva aprobada me habilite automáticamente el ingreso al área común solo durante mi horario, para no depender del administrador para entrar.</td>
+  <td>
+    <strong>Escenario 1: Acceso habilitado dentro de la ventana de reserva.</strong><br>
+    Dado que el administrador aprueba la reserva de la piscina de un residente de 18:00 a 20:00 y este tiene una tarjeta ACTIVA,<br>
+    cuando el residente presenta su tarjeta en el lector de la piscina a las 18:30,<br>
+    entonces el sistema concede el acceso, registra el intento como GRANTED y el lector libera la puerta en menos de 1 segundo.<br><br>
+    <strong>Escenario 2: Acceso denegado fuera de la ventana.</strong><br>
+    Dado que el residente tiene un permiso vigente de 18:00 a 20:00,<br>
+    cuando presenta su tarjeta a las 20:15,<br>
+    entonces el sistema deniega el acceso, registra el intento como DENIED y el lector muestra la señal de denegación.<br><br>
+    <strong>Escenario 3: Reserva cancelada.</strong><br>
+    Dado que el residente tenía un permiso de acceso generado por una reserva aprobada,<br>
+    cuando la reserva es cancelada,<br>
+    entonces el sistema revoca el permiso, lo sincroniza con el Edge API y cualquier intento posterior con esa reserva es denegado.
+  </td>
+  <td>EP07</td>
+</tr>
+
+<tr>
+  <td><strong>US55</strong></td>
+  <td>Consultar bitácora de accesos</td>
+  <td>Como administrador, quiero consultar la bitácora de intentos de acceso a las áreas comunes para auditar quién ingresó y detectar accesos no autorizados.</td>
+  <td>
+    <strong>Escenario 1: Consulta con filtros.</strong><br>
+    Dado que el administrador selecciona un área común, un rango de fechas y el resultado GRANTED o DENIED,<br>
+    cuando solicita la bitácora,<br>
+    entonces el sistema retorna los intentos ordenados por fecha descendente con dispositivo, credencial enmascarada, resultado y marca de tiempo en menos de 500 ms.<br><br>
+    <strong>Escenario 2: Sin resultados.</strong><br>
+    Dado que no existen intentos de acceso para los filtros seleccionados,<br>
+    cuando el administrador ejecuta la consulta,<br>
+    entonces el sistema muestra "No se encontraron intentos de acceso para los filtros seleccionados" sin generar un error.<br><br>
+    <strong>Escenario 3: Intentos denegados repetidos.</strong><br>
+    Dado que una misma credencial acumula 3 intentos DENIED consecutivos en el mismo lector en menos de 5 minutos,<br>
+    cuando el sistema registra el tercer intento,<br>
+    entonces marca el evento como "Posible acceso no autorizado" y notifica al administrador con la ubicación del lector.
+  </td>
+  <td>EP07</td>
+</tr>
+
+<tr>
+  <td><strong>US56</strong></td>
+  <td>Apertura remota de acceso</td>
+  <td>Como administrador, quiero abrir remotamente un acceso desde la aplicación para atender situaciones excepcionales sin desplazarme al lector.</td>
+  <td>
+    <strong>Escenario 1: Apertura exitosa.</strong><br>
+    Dado que el administrador selecciona un lector en estado ACTIVO,<br>
+    cuando solicita la apertura remota,<br>
+    entonces el sistema publica el comando al dispositivo, recibe el ACK en menos de 2 segundos y registra el evento con el identificador del administrador.<br><br>
+    <strong>Escenario 2: Lector desconectado.</strong><br>
+    Dado que el lector seleccionado se encuentra en estado OFFLINE,<br>
+    cuando el administrador solicita la apertura remota,<br>
+    entonces el sistema muestra "El lector no está disponible" y no encola el comando para evitar aperturas diferidas inesperadas.<br><br>
+    <strong>Escenario 3: Sin confirmación del dispositivo.</strong><br>
+    Dado que el sistema publicó el comando de apertura,<br>
+    cuando transcurren 5 segundos sin recibir el ACK,<br>
+    entonces el sistema muestra "No se confirmó la apertura" y registra el intento como fallido.
+  </td>
+  <td>EP07</td>
+</tr>
+
+<tr>
+  <td><strong>US57</strong></td>
+  <td>Configurar reglas de automatización de iluminación</td>
+  <td>Como administrador, quiero configurar reglas de iluminación por área común (presencia, umbral de lux, franja horaria, tiempo de apagado y prioridad) para automatizar el uso eficiente de la energía.</td>
+  <td>
+    <strong>Escenario 1: Configuración exitosa.</strong><br>
+    Dado que el administrador define para el pasillo de la Torre A presencia requerida, umbral de 50 lux, franja de 18:00 a 06:00, apagado a los 120 segundos y prioridad 1,<br>
+    cuando guarda la regla,<br>
+    entonces el sistema la persiste y la envía al Edge API para su ejecución local, retornando 201 en menos de 300 ms.<br><br>
+    <strong>Escenario 2: Conflicto de prioridad.</strong><br>
+    Dado que ya existe una regla activa con la misma prioridad y franja solapada en el área,<br>
+    cuando el administrador intenta guardar una nueva regla,<br>
+    entonces el sistema retorna 409 con "Ya existe una regla con la misma prioridad para esta franja" sin crear el registro.<br><br>
+    <strong>Escenario 3: Valores inválidos.</strong><br>
+    Dado que el administrador ingresa un umbral de lux negativo o una franja con hora de inicio igual a la de fin,<br>
+    cuando envía la configuración,<br>
+    entonces el sistema retorna 400 indicando el campo inválido y no guarda la regla.
+  </td>
+  <td>EP08</td>
+</tr>
+
+<tr>
+  <td><strong>US58</strong></td>
+  <td>Encender o apagar luces manualmente (override)</td>
+  <td>Como residente con una reserva vigente o como administrador, quiero encender o apagar manualmente las luces de un área por un tiempo determinado, para cubrir situaciones que la automatización no contempla.</td>
+  <td>
+    <strong>Escenario 1: Override aplicado.</strong><br>
+    Dado que el residente tiene una reserva vigente del salón de eventos,<br>
+    cuando solicita encender las luces por 2 horas,<br>
+    entonces el sistema aplica el override ON, suspende la automatización de esa zona durante ese tiempo y publica OverrideTriggered.<br><br>
+    <strong>Escenario 2: Expiración del override.</strong><br>
+    Dado que un override tiene una duración configurada,<br>
+    cuando se cumple el tiempo del override,<br>
+    entonces el sistema lo da por finalizado y la zona retoma la automatización según la regla vigente.<br><br>
+    <strong>Escenario 3: Usuario sin autorización.</strong><br>
+    Dado que un residente sin reserva vigente intenta controlar las luces de un área,<br>
+    cuando envía la solicitud,<br>
+    entonces el sistema retorna 403 con "No tienes permiso para controlar esta zona" sin enviar ningún comando.
+  </td>
+  <td>EP08</td>
+</tr>
+
+<tr>
+  <td><strong>US59</strong></td>
+  <td>Encender área al iniciar una reserva</td>
+  <td>Como sistema, quiero encender automáticamente las luces del área reservada al iniciar la reserva, para que el residente encuentre el espacio listo para su uso.</td>
+  <td>
+    <strong>Escenario 1: Encendido programado.</strong><br>
+    Dado que una reserva aprobada inicia a las 18:00 y el área no tiene presencia detectada,<br>
+    cuando el sistema recibe el evento ReservationStarted,<br>
+    entonces enciende las luminarias del área y publica LuminaireTurnedOn.<br><br>
+    <strong>Escenario 2: Override vigente con precedencia.</strong><br>
+    Dado que existe un override OFF vigente solicitado por el administrador en esa área,<br>
+    cuando inicia la reserva,<br>
+    entonces el sistema respeta el override y no enciende las luces, aplicando la precedencia definida en AutomationDecisionService.<br><br>
+    <strong>Escenario 3: Edge API sin respuesta.</strong><br>
+    Dado que el sistema envía el comando de encendido al Edge API,<br>
+    cuando este no confirma la ejecución,<br>
+    entonces el sistema reintenta hasta 3 veces y, si persiste el fallo, notifica al administrador con la ubicación afectada.
+  </td>
+  <td>EP08</td>
+</tr>
+
+<tr>
+  <td><strong>US60</strong></td>
+  <td>Registrar y consultar luminarias</td>
+  <td>Como administrador, quiero registrar las luminarias de cada área común y consultar su estado, para mantener un inventario actualizado del sistema de iluminación.</td>
+  <td>
+    <strong>Escenario 1: Registro exitoso.</strong><br>
+    Dado que el administrador ingresa ubicación, área común y potencia nominal de una luminaria,<br>
+    cuando confirma el registro,<br>
+    entonces el sistema la guarda con estado OFF y retorna 201 en menos de 300 ms.<br><br>
+    <strong>Escenario 2: Luminaria duplicada.</strong><br>
+    Dado que ya existe una luminaria registrada en la misma ubicación y área,<br>
+    cuando el administrador intenta registrarla nuevamente,<br>
+    entonces el sistema retorna 409 con "La luminaria ya se encuentra registrada" sin crear el registro.<br><br>
+    <strong>Escenario 3: Consulta de estado por área.</strong><br>
+    Dado que el administrador selecciona un área común,<br>
+    cuando consulta sus luminarias,<br>
+    entonces el sistema lista cada luminaria con su estado ON/OFF y su última conexión.
+  </td>
+  <td>EP08</td>
+</tr>
+
+<tr>
+  <td><strong>US61</strong></td>
+  <td>Visualizar consumo energético por área y periodo</td>
+  <td>Como administrador, quiero visualizar el consumo energético (kWh) por área común y periodo, para identificar dónde se puede reducir el gasto eléctrico.</td>
+  <td>
+    <strong>Escenario 1: Consulta exitosa.</strong><br>
+    Dado que el administrador selecciona un área y un rango de fechas válido,<br>
+    cuando solicita el reporte de consumo,<br>
+    entonces el sistema retorna el consumo en kWh agregado por periodo en menos de 1 segundo.<br><br>
+    <strong>Escenario 2: Periodo sin datos.</strong><br>
+    Dado que no existen lecturas para el área en el rango seleccionado,<br>
+    cuando el administrador consulta el consumo,<br>
+    entonces el sistema responde 200 con consumo 0 y el mensaje "Sin datos de consumo para el periodo".<br><br>
+    <strong>Escenario 3: Rango de fechas inválido.</strong><br>
+    Dado que la fecha de inicio es posterior a la fecha de fin,<br>
+    cuando el administrador envía la consulta,<br>
+    entonces el sistema retorna 400 con "El rango de fechas no es válido" sin consultar la base de series temporales.
+  </td>
+  <td>EP09</td>
+</tr>
+
+<tr>
+  <td><strong>US62</strong></td>
+  <td>Alertar consumo anómalo</td>
+  <td>Como administrador, quiero recibir una alerta cuando el consumo de un área se desvíe de su comportamiento habitual, para investigar posibles fallas o usos indebidos.</td>
+  <td>
+    <strong>Escenario 1: Anomalía detectada.</strong><br>
+    Dado que el consumo de un área supera su media móvil en más de 3 desviaciones estándar (|z| > 3),<br>
+    cuando el sistema evalúa la nueva agregación,<br>
+    entonces registra un AnomalyFlag con severidad y evidencia, publica AbnormalConsumptionDetected y notifica al administrador.<br><br>
+    <strong>Escenario 2: Consumo dentro de la línea base.</strong><br>
+    Dado que el consumo del área se mantiene dentro del rango esperado,<br>
+    cuando el sistema evalúa la agregación,<br>
+    entonces no genera alerta y actualiza la línea base.<br><br>
+    <strong>Escenario 3: Línea base insuficiente.</strong><br>
+    Dado que el área tiene menos de 7 días de datos,<br>
+    cuando el sistema intenta evaluar anomalías,<br>
+    entonces omite la evaluación y registra "Línea base en construcción" sin generar falsas alertas.
+  </td>
+  <td>EP09</td>
+</tr>
+
+<tr>
+  <td><strong>US63</strong></td>
+  <td>Detectar falla de luminaria</td>
+  <td>Como administrador, quiero ser notificado cuando una luminaria no funcione pese a estar encendida, para repararla oportunamente.</td>
+  <td>
+    <strong>Escenario 1: Falla detectada.</strong><br>
+    Dado que una luminaria fue comandada en ON y su corriente medida es 0 durante más de 30 segundos,<br>
+    cuando el sistema evalúa la lectura,<br>
+    entonces publica LuminaireFailureDetected y notifica al administrador con la ubicación exacta de la luminaria.<br><br>
+    <strong>Escenario 2: Luminaria apagada.</strong><br>
+    Dado que una luminaria en estado OFF reporta corriente nula,<br>
+    cuando el sistema evalúa la lectura,<br>
+    entonces lo considera comportamiento normal y no genera alerta.<br><br>
+    <strong>Escenario 3: Sensor sin lectura.</strong><br>
+    Dado que el sensor de corriente deja de enviar datos,<br>
+    cuando el sistema no recibe lecturas dentro del tiempo límite,<br>
+    entonces no declara falla de luminaria y lo trata como dispositivo sin comunicación (US64).
+  </td>
+  <td>EP09</td>
+</tr>
+
+<tr>
+  <td><strong>US64</strong></td>
+  <td>Monitorear estado de conexión de dispositivos</td>
+  <td>Como administrador, quiero ver el estado de conexión de todos los dispositivos IoT del edificio, para saber cuáles requieren atención.</td>
+  <td>
+    <strong>Escenario 1: Visualización del estado.</strong><br>
+    Dado que el administrador abre el panel de dispositivos,<br>
+    cuando el sistema carga la información,<br>
+    entonces muestra cada dispositivo con estado ACTIVO u OFFLINE y su última conexión.<br><br>
+    <strong>Escenario 2: Dispositivo sin heartbeat.</strong><br>
+    Dado que un dispositivo no emite heartbeat durante el tiempo límite configurado,<br>
+    cuando se ejecuta la validación periódica,<br>
+    entonces el sistema lo marca OFFLINE, descarta los comandos pendientes hacia él, publica DeviceWentOffline y notifica al administrador sin afectar a los demás dispositivos.<br><br>
+    <strong>Escenario 3: Reconexión.</strong><br>
+    Dado que un dispositivo OFFLINE reanuda su heartbeat,<br>
+    cuando el sistema recibe la señal,<br>
+    entonces lo marca ACTIVO, registra la recuperación y no ejecuta los comandos que fueron descartados.
+  </td>
+  <td>EP09</td>
+</tr>
+
+<tr>
+  <td><strong>US65</strong></td>
+  <td>Consultar lecturas de sensores en tiempo real e históricas</td>
+  <td>Como administrador, quiero consultar las lecturas de los sensores en tiempo real y su histórico, para analizar el comportamiento de las áreas del edificio.</td>
+  <td>
+    <strong>Escenario 1: Consulta de serie temporal.</strong><br>
+    Dado que el administrador selecciona un sensor y un rango de tiempo,<br>
+    cuando solicita la serie,<br>
+    entonces el sistema retorna las lecturas agregadas con su unidad de medida en menos de 1 segundo.<br><br>
+    <strong>Escenario 2: Lectura fuera de rango.</strong><br>
+    Dado que un sensor envía un valor inválido o fuera del rango físico posible,<br>
+    cuando el sistema recibe la lectura,<br>
+    entonces la descarta, la registra como inválida y no la incluye en las series ni en los cálculos.<br><br>
+    <strong>Escenario 3: Lectura duplicada.</strong><br>
+    Dado que llega una lectura con el mismo dispositivo y marca de tiempo ya registrados,<br>
+    cuando el sistema procesa el mensaje,<br>
+    entonces lo ignora de forma idempotente sin duplicar el registro.
+  </td>
+  <td>EP09</td>
+</tr>
+
+<tr>
+  <td><strong>US66</strong></td>
+  <td>Configurar reglas de detección de fugas</td>
+  <td>Como administrador, quiero configurar las reglas de detección de fugas por zona hidráulica (umbral de caudal, caída de presión, franja de consumo esperado y duración mínima), para adaptar la detección al uso real del edificio.</td>
+  <td>
+    <strong>Escenario 1: Configuración exitosa.</strong><br>
+    Dado que el administrador define para una zona un caudal máximo de 5 L/min fuera de la franja 06:00-22:00 y una duración mínima de 10 minutos,<br>
+    cuando guarda la regla,<br>
+    entonces el sistema la persiste como activa y retorna 201 en menos de 300 ms.<br><br>
+    <strong>Escenario 2: Zona con regla activa.</strong><br>
+    Dado que la zona ya tiene una regla activa,<br>
+    cuando el administrador intenta registrar otra,<br>
+    entonces el sistema retorna 409 con "La zona ya tiene una regla activa" sin crear el registro.<br><br>
+    <strong>Escenario 3: Valores inválidos.</strong><br>
+    Dado que el administrador ingresa un umbral de caudal menor o igual a cero,<br>
+    cuando envía la configuración,<br>
+    entonces el sistema retorna 400 indicando el campo inválido sin guardar la regla.
+  </td>
+  <td>EP10</td>
+</tr>
+
+<tr>
+  <td><strong>US67</strong></td>
+  <td>Cortar automáticamente la bomba ante una fuga</td>
+  <td>Como sistema, quiero detectar una fuga a partir de las lecturas de caudal y presión y apagar la bomba, para minimizar la pérdida de agua.</td>
+  <td>
+    <strong>Escenario 1: Fuga detectada.</strong><br>
+    Dado que el caudal supera el umbral fuera de la franja esperada y se mantiene más allá de la duración mínima configurada,<br>
+    cuando el sistema evalúa la lectura,<br>
+    entonces crea una LeakAlert en estado OPEN, ordena el corte de la bomba, publica LeakDetected y PumpShutOff, y notifica al administrador en menos de 5 segundos.<br><br>
+    <strong>Escenario 2: Consumo legítimo.</strong><br>
+    Dado que el caudal elevado ocurre dentro de la franja de consumo esperado,<br>
+    cuando el sistema evalúa la lectura,<br>
+    entonces no declara fuga ni corta la bomba.<br><br>
+    <strong>Escenario 3: Corte no confirmado.</strong><br>
+    Dado que el sistema ordenó apagar la bomba,<br>
+    cuando esta no confirma la ejecución mediante ACK,<br>
+    entonces eleva la severidad de la alerta a HIGH y notifica "No se pudo cortar la bomba" al administrador.
+  </td>
+  <td>EP10</td>
+</tr>
+
+<tr>
+  <td><strong>US68</strong></td>
+  <td>Gestionar alertas de fuga</td>
+  <td>Como administrador, quiero reconocer y resolver las alertas de fuga, para llevar el control del seguimiento de cada incidente.</td>
+  <td>
+    <strong>Escenario 1: Reconocimiento de alerta.</strong><br>
+    Dado que existe una alerta en estado OPEN,<br>
+    cuando el administrador la reconoce,<br>
+    entonces el sistema cambia su estado a ACKNOWLEDGED y registra el usuario y la hora.<br><br>
+    <strong>Escenario 2: Resolución de alerta.</strong><br>
+    Dado que existe una alerta en estado ACKNOWLEDGED,<br>
+    cuando el administrador la marca como resuelta,<br>
+    entonces el sistema cambia su estado a RESOLVED, registra resolvedAt y publica LeakResolved.<br><br>
+    <strong>Escenario 3: Alerta ya resuelta.</strong><br>
+    Dado que la alerta ya se encuentra en estado RESOLVED,<br>
+    cuando el administrador intenta resolverla nuevamente,<br>
+    entonces el sistema retorna 409 sin modificar el registro.
+  </td>
+  <td>EP10</td>
+</tr>
+
+<tr>
+  <td><strong>US69</strong></td>
+  <td>Apagar manualmente una bomba de agua</td>
+  <td>Como administrador, quiero apagar remotamente una bomba de agua desde la aplicación, para actuar de inmediato ante una emergencia.</td>
+  <td>
+    <strong>Escenario 1: Apagado exitoso.</strong><br>
+    Dado que la bomba está en estado ON y conectada,<br>
+    cuando el administrador solicita su apagado,<br>
+    entonces el sistema envía el comando, recibe el ACK, actualiza el estado a OFF y registra el evento con el administrador responsable.<br><br>
+    <strong>Escenario 2: Bomba ya apagada.</strong><br>
+    Dado que la bomba se encuentra en estado OFF,<br>
+    cuando el administrador solicita apagarla,<br>
+    entonces el sistema responde "La bomba ya se encuentra apagada" sin enviar un nuevo comando.<br><br>
+    <strong>Escenario 3: Dispositivo desconectado.</strong><br>
+    Dado que el nodo hidráulico está OFFLINE,<br>
+    cuando el administrador solicita el apagado,<br>
+    entonces el sistema informa "No se pudo contactar la bomba" y registra el intento fallido.
+  </td>
+  <td>EP10</td>
+</tr>
+
+<tr>
+  <td><strong>US70</strong></td>
+  <td>Detectar falla de bomba por caída de presión</td>
+  <td>Como administrador, quiero que el sistema identifique cuando una bomba presenta caída de presión sin caudal correspondiente, para atender una posible falla del equipo.</td>
+  <td>
+    <strong>Escenario 1: Bomba en falla.</strong><br>
+    Dado que la presión cae por debajo del umbral sin un caudal correspondiente,<br>
+    cuando el sistema evalúa la lectura,<br>
+    entonces marca la bomba como FAULT y notifica al administrador.<br><br>
+    <strong>Escenario 2: Caída de presión con caudal.</strong><br>
+    Dado que la presión baja y existe caudal acorde al consumo,<br>
+    cuando el sistema evalúa la lectura,<br>
+    entonces no marca la bomba como FAULT y continúa evaluando posibles fugas.<br><br>
+    <strong>Escenario 3: Lectura de presión ausente.</strong><br>
+    Dado que el sensor no envía la lectura de presión,<br>
+    cuando el sistema no puede completar la evaluación,<br>
+    entonces no cambia el estado de la bomba y registra el dispositivo como sin comunicación.
+  </td>
+  <td>EP10</td>
+</tr>
+
+<tr>
+  <td>TS18</td>
+  <td>Configuración base del microservicio Smart Lighting & Automation</td>
+  <td>Como desarrollador, quiero crear el microservicio Smart Lighting & Automation para gestionar luminarias, reglas de automatización y comandos de override de forma independiente de los demás microservicios de Edifika.</td>
+  <td>
+    <strong>Escenario 1: Persistencia de regla y luminaria</strong><br>
+    Dado que el administrador envía una regla de automatización válida con token JWT,<br>
+    cuando el microservicio procesa la solicitud,<br>
+    entonces persiste la regla en su propia base PostgreSQL y retorna 201 en menos de 300 ms.<br><br>
+    <strong>Escenario 2: Resolución por precedencia</strong><br>
+    Dado que coexisten una regla programada y un override vigente sobre la misma luminaria,<br>
+    cuando AutomationDecisionService evalúa el estado objetivo,<br>
+    entonces aplica el override por encima de la regla y publica el evento correspondiente.<br><br>
+    <strong>Escenario 3: Aislamiento de fallos</strong><br>
+    Dado que la base de datos del servicio deja de responder,<br>
+    cuando ocurre el error de conexión,<br>
+    entonces únicamente este microservicio retorna errores 500 mientras los demás continúan operando con normalidad.
+  </td>
+  <td>EP05</td>
+</tr>
+
+<tr>
+  <td>TS19</td>
+  <td>Configuración base del microservicio IoT Telemetry & Analytics con TimescaleDB</td>
+  <td>Como desarrollador, quiero crear el microservicio de telemetría con almacenamiento en TimescaleDB para ingerir lecturas de sensores y resolver consultas analíticas con baja latencia.</td>
+  <td>
+    <strong>Escenario 1: Ingesta de lectura válida</strong><br>
+    Dado que el Edge API reenvía una lectura de sensor por MQTT,<br>
+    cuando el servicio la valida y normaliza,<br>
+    entonces la persiste en la hypertable sensor_readings en menos de 500 ms.<br><br>
+    <strong>Escenario 2: Consulta sobre agregados continuos</strong><br>
+    Dado que el administrador consulta el consumo de un mes,<br>
+    cuando el servicio resuelve la consulta,<br>
+    entonces responde usando agregados continuos sin recorrer la serie cruda, en menos de 1 segundo.<br><br>
+    <strong>Escenario 3: Mensaje malformado</strong><br>
+    Dado que llega un mensaje MQTT con formato inválido,<br>
+    cuando el servicio intenta procesarlo,<br>
+    entonces lo descarta, registra el error y continúa procesando los siguientes mensajes sin interrumpir la ingesta.
+  </td>
+  <td>EP05</td>
+</tr>
+
+<tr>
+  <td>TS20</td>
+  <td>Configuración base del microservicio Water Pump Leak Detection</td>
+  <td>Como desarrollador, quiero crear el microservicio de detección de fugas para gestionar bombas, reglas y alertas, ejecutando el corte de forma confiable ante una fuga.</td>
+  <td>
+    <strong>Escenario 1: Registro de bomba y regla</strong><br>
+    Dado que el administrador registra una bomba y su regla de detección con token JWT,<br>
+    cuando el microservicio procesa la solicitud,<br>
+    entonces persiste los datos en su base PostgreSQL y retorna 201 en menos de 300 ms.<br><br>
+    <strong>Escenario 2: Evaluación de lectura de caudal</strong><br>
+    Dado que el servicio recibe el evento FlowReadingReceived,<br>
+    cuando LeakDetectionService evalúa la lectura contra la regla activa,<br>
+    entonces crea la alerta y ordena el corte únicamente cuando se cumplen umbral, franja y duración mínima.<br><br>
+    <strong>Escenario 3: Evento duplicado</strong><br>
+    Dado que el mismo FlowReadingReceived llega dos veces,<br>
+    cuando el servicio lo procesa,<br>
+    entonces no genera una segunda alerta ni un segundo comando de corte.
+  </td>
+  <td>EP05</td>
+</tr>
+
+<tr>
+  <td>TS21</td>
+  <td>Implementación del Edge API con operación sin conexión y sincronización</td>
+  <td>Como desarrollador, quiero implementar el Edge API que se comunica por MQTT local con los nodos ESP32 y se sincroniza con la nube, para que el condominio siga operando aun sin conexión a internet.</td>
+  <td>
+    <strong>Escenario 1: Operación sin conexión</strong><br>
+    Dado que se pierde la conexión a internet del edificio,<br>
+    cuando un residente presenta una tarjeta con permiso vigente,<br>
+    entonces el Edge API resuelve el acceso con las credenciales, reservas y blacklist sincronizadas previamente y mantiene el acceso funcionando.<br><br>
+    <strong>Escenario 2: Sincronización al reconectar</strong><br>
+    Dado que el Edge API acumuló eventos y lecturas durante la desconexión,<br>
+    cuando se restablece la conexión,<br>
+    entonces los envía en orden cronológico a la nube sin duplicarlos.<br><br>
+    <strong>Escenario 3: Reenvío de eventos de baja latencia</strong><br>
+    Dado que el Edge API recibe una lectura de presencia o de caudal por MQTT local,<br>
+    cuando la reenvía como evento,<br>
+    entonces lo publica en menos de 200 ms priorizando la latencia sobre su interpretación de dominio.
+  </td>
+  <td>EP05</td>
+</tr>
+
+<tr>
+  <td>TS22</td>
+  <td>Publicación y consumo de eventos de dominio entre contextos IoT</td>
+  <td>Como desarrollador, quiero implementar la mensajería de eventos de dominio mediante el broker AMQP/MQTT con consumo idempotente, para integrar los contextos IoT con Reservation, Payment y Notification sin acoplarlos.</td>
+  <td>
+    <strong>Escenario 1: Consumo de evento de otro contexto</strong><br>
+    Dado que Reservation publica ReservationApproved,<br>
+    cuando IoT Access Management consume el evento,<br>
+    entonces crea el permiso temporal correspondiente en menos de 500 ms.<br><br>
+    <strong>Escenario 2: Consumo idempotente</strong><br>
+    Dado que el broker entrega el mismo evento más de una vez,<br>
+    cuando el consumidor lo procesa,<br>
+    entonces aplica el efecto una sola vez, registrando el identificador del evento procesado.<br><br>
+    <strong>Escenario 3: Broker no disponible</strong><br>
+    Dado que el broker no responde al publicar un evento,<br>
+    cuando el contexto intenta enviarlo,<br>
+    entonces lo conserva en una cola de salida y lo reintenta hasta confirmar su entrega sin perder el evento.
+  </td>
+  <td>EP05</td>
+</tr>
+
+
+<tr>
+  <td><strong>US71</strong></td>
+  <td>Leer tarjeta RFID y resolver el acceso</td>
+  <td>Como residente, quiero acercar mi tarjeta RFID al lector de la puerta para ingresar a un área común sin depender de otra persona.</td>
+  <td>
+    <strong>Escenario 1: Acceso concedido</strong><br>
+    Dado que el lector RFID del ESP32 lee la tarjeta de un residente con credencial ACTIVA y permiso vigente en la caché local del Edge Gateway,<br>
+    cuando el ESP32 publica el UID leído por MQTT local,<br>
+    entonces el Edge Gateway resuelve el acceso como GRANTED y responde al nodo en menos de 500 ms, sin consultar a la nube.<br><br>
+    <strong>Escenario 2: Tarjeta desconocida o revocada</strong><br>
+    Dado que el UID leído no existe en la caché o figura en la blacklist,<br>
+    cuando el Edge Gateway evalúa el intento,<br>
+    entonces responde DENIED al nodo y registra el intento con el UID, el dispositivo y la marca de tiempo.<br><br>
+    <strong>Escenario 3: Lecturas repetidas</strong><br>
+    Dado que la misma tarjeta permanece frente al lector,<br>
+    cuando el ESP32 detecta el mismo UID varias veces en menos de 2 segundos,<br>
+    entonces el sistema procesa una sola lectura y descarta las repetidas para no generar intentos duplicados.
+  </td>
+  <td>EP11</td>
+</tr>
+
+<tr>
+  <td><strong>US72</strong></td>
+  <td>Abrir la cerradura eléctrica y re-bloquearla automáticamente</td>
+  <td>Como sistema, quiero energizar la cerradura eléctrica solo el tiempo necesario cuando se concede un acceso, para que la puerta no quede abierta.</td>
+  <td>
+    <strong>Escenario 1: Apertura temporal</strong><br>
+    Dado que el Edge Gateway resolvió un acceso como GRANTED,<br>
+    cuando envía el comando de apertura al ESP32,<br>
+    entonces el nodo activa la cerradura durante el tiempo configurado (por ejemplo 5 segundos), vuelve a bloquearla y confirma con un ACK.<br><br>
+    <strong>Escenario 2: Cerradura sin confirmación</strong><br>
+    Dado que el Edge Gateway envió el comando de apertura,<br>
+    cuando no recibe el ACK del nodo en 3 segundos,<br>
+    entonces registra el evento como fallido y notifica al administrador "La cerradura no respondió".<br><br>
+    <strong>Escenario 3: Reinicio del nodo con la cerradura activa</strong><br>
+    Dado que el ESP32 se reinicia mientras la cerradura está energizada,<br>
+    cuando el nodo arranca,<br>
+    entonces la cerradura inicia en estado bloqueado y no se reactiva hasta recibir un nuevo comando.
+  </td>
+  <td>EP11</td>
+</tr>
+
+<tr>
+  <td><strong>US73</strong></td>
+  <td>Emitir señales sonoras con el buzzer</td>
+  <td>Como residente, quiero escuchar una señal sonora distinta según el resultado de mi acceso, para saber si puedo pasar sin mirar la pantalla.</td>
+  <td>
+    <strong>Escenario 1: Acceso concedido</strong><br>
+    Dado que el Edge Gateway responde GRANTED,<br>
+    cuando el ESP32 recibe el resultado,<br>
+    entonces el buzzer emite un pitido corto.<br><br>
+    <strong>Escenario 2: Acceso denegado</strong><br>
+    Dado que el Edge Gateway responde DENIED,<br>
+    cuando el ESP32 recibe el resultado,<br>
+    entonces el buzzer emite dos pitidos largos.<br><br>
+    <strong>Escenario 3: Alerta crítica</strong><br>
+    Dado que el Edge Gateway envía un comando de alerta al nodo,<br>
+    cuando el ESP32 lo recibe,<br>
+    entonces el buzzer emite un patrón intermitente hasta que el comando de silencio llegue o venza el tiempo máximo configurado.
+  </td>
+  <td>EP11</td>
+</tr>
+
+<tr>
+  <td><strong>US74</strong></td>
+  <td>Mostrar mensajes de estado en la pantalla OLED</td>
+  <td>Como residente, quiero ver en la pantalla OLED el resultado de mi acceso y el estado del sistema, para entender por qué se me permite o niega el ingreso.</td>
+  <td>
+    <strong>Escenario 1: Mensaje de acceso concedido</strong><br>
+    Dado que el Edge Gateway responde GRANTED con el nombre del residente,<br>
+    cuando el ESP32 recibe el resultado,<br>
+    entonces la OLED muestra "Acceso concedido" y el nombre del residente durante 3 segundos y luego regresa a la pantalla de reposo.<br><br>
+    <strong>Escenario 2: Mensaje de acceso denegado con motivo</strong><br>
+    Dado que el Edge Gateway responde DENIED con un motivo (tarjeta no registrada, fuera de horario o moroso),<br>
+    cuando el ESP32 recibe el resultado,<br>
+    entonces la OLED muestra "Acceso denegado" y el motivo en un texto de máximo 2 líneas.<br><br>
+    <strong>Escenario 3: Edge Gateway inalcanzable</strong><br>
+    Dado que el ESP32 no logra comunicarse con el Edge Gateway,<br>
+    cuando transcurren 5 segundos sin respuesta,<br>
+    entonces la OLED muestra "Sin conexión" y el nodo no concede el acceso hasta restablecer la comunicación.
+  </td>
+  <td>EP11</td>
+</tr>
+
+<tr>
+  <td><strong>US75</strong></td>
+  <td>Registrar y sincronizar accesos generados sin conexión</td>
+  <td>Como administrador, quiero que los accesos ocurridos sin internet queden registrados y se sincronicen luego, para no perder la auditoría.</td>
+  <td>
+    <strong>Escenario 1: Registro local sin internet</strong><br>
+    Dado que el edificio perdió la conexión a internet,<br>
+    cuando un residente accede con su tarjeta,<br>
+    entonces el Edge Gateway resuelve el acceso con su caché y guarda el intento en la cola local de salida (outbox).<br><br>
+    <strong>Escenario 2: Sincronización al reconectar</strong><br>
+    Dado que existen intentos pendientes en la cola local,<br>
+    cuando se restablece la conexión con la nube,<br>
+    entonces los envía en orden cronológico con su marca de tiempo original y marca cada uno como sincronizado solo tras recibir la confirmación.<br><br>
+    <strong>Escenario 3: Fallo parcial de sincronización</strong><br>
+    Dado que la nube rechaza o no responde a un lote de intentos,<br>
+    cuando el Edge Gateway recibe el error,<br>
+    entonces conserva los registros no confirmados y reintenta con espera creciente sin eliminar ni duplicar ninguno.
+  </td>
+  <td>EP11</td>
+</tr>
+
+<tr>
+  <td><strong>US76</strong></td>
+  <td>Medir la humedad con el sensor de humedad</td>
+  <td>Como sistema, quiero leer periódicamente el sensor de humedad del ESP32, para disponer de datos confiables del área verde.</td>
+  <td>
+    <strong>Escenario 1: Lectura periódica</strong><br>
+    Dado que el sensor de humedad está conectado y calibrado con sus valores en seco y en húmedo,<br>
+    cuando se cumple el intervalo de muestreo configurado (por ejemplo 30 segundos),<br>
+    entonces el ESP32 publica la lectura en porcentaje con el identificador del dispositivo y la marca de tiempo, y el Edge Gateway la almacena.<br><br>
+    <strong>Escenario 2: Lectura fuera de rango</strong><br>
+    Dado que el sensor entrega un valor fuera del rango 0 % a 100 % tras la calibración,<br>
+    cuando el Edge Gateway recibe la lectura,<br>
+    entonces la descarta, la registra como inválida y notifica "Posible falla del sensor" si ocurren 3 lecturas inválidas consecutivas.<br><br>
+    <strong>Escenario 3: Humedad bajo el umbral</strong><br>
+    Dado que la humedad medida es menor al umbral configurado,<br>
+    cuando el Edge Gateway evalúa la lectura,<br>
+    entonces genera el evento "Humedad baja" con la zona y el valor, y lo reenvía a la nube.
+  </td>
+  <td>EP11</td>
+</tr>
+
+<tr>
+  <td><strong>US77</strong></td>
+  <td>Medir el nivel de agua con el sensor ultrasónico</td>
+  <td>Como administrador, quiero que el sensor ultrasónico mida el nivel del tanque de agua, para conocer su nivel sin revisarlo físicamente.</td>
+  <td>
+    <strong>Escenario 1: Cálculo del nivel</strong><br>
+    Dado que el sensor ultrasónico mide una distancia hasta la superficie del agua y la altura del tanque está calibrada,<br>
+    cuando el ESP32 publica la medición,<br>
+    entonces el Edge Gateway calcula el nivel como porcentaje de llenado y lo almacena con su marca de tiempo.<br><br>
+    <strong>Escenario 2: Medición fuera del rango del sensor</strong><br>
+    Dado que el sensor entrega una distancia menor a 2 cm o mayor a 400 cm, o no recibe eco,<br>
+    cuando el Edge Gateway recibe la medición,<br>
+    entonces la descarta y registra "Medición inválida" sin modificar el último nivel válido.<br><br>
+    <strong>Escenario 3: Suavizado de ruido</strong><br>
+    Dado que el sensor entrega una medición aislada con una variación brusca respecto a las anteriores,<br>
+    cuando el Edge Gateway la evalúa,<br>
+    entonces la promedia con las últimas muestras (por ejemplo mediana de 5) para evitar falsas alertas.
+  </td>
+  <td>EP11</td>
+</tr>
+
+<tr>
+  <td><strong>US78</strong></td>
+  <td>Alertar localmente un nivel crítico</td>
+  <td>Como administrador, quiero que el sistema alerte con buzzer, pantalla y notificación cuando el nivel del tanque sea crítico, para actuar a tiempo.</td>
+  <td>
+    <strong>Escenario 1: Nivel bajo crítico</strong><br>
+    Dado que el nivel del tanque cae por debajo del umbral crítico configurado (por ejemplo 15 %),<br>
+    cuando el Edge Gateway evalúa la medición,<br>
+    entonces ordena al nodo mostrar "Nivel crítico" en la OLED, activar el buzzer y envía una notificación al administrador.<br><br>
+    <strong>Escenario 2: Recuperación del nivel</strong><br>
+    Dado que existe una alerta activa de nivel crítico,<br>
+    cuando el nivel supera el umbral más una histéresis (por ejemplo 20 %),<br>
+    entonces el Edge Gateway cierra la alerta, silencia el buzzer y restablece la pantalla de reposo.<br><br>
+    <strong>Escenario 3: Alerta sin conexión a la nube</strong><br>
+    Dado que ocurre un nivel crítico sin conexión a internet,<br>
+    cuando el Edge Gateway lo detecta,<br>
+    entonces activa la alerta local en el nodo y encola la notificación para enviarla al recuperar la conexión.
+  </td>
+  <td>EP11</td>
+</tr>
+
+<tr>
+  <td><strong>US79</strong></td>
+  <td>Registrar y autenticar nodos ESP32</td>
+  <td>Como administrador, quiero registrar cada ESP32 en el Edge Gateway con sus sensores y actuadores, para que solo los dispositivos autorizados puedan operar.</td>
+  <td>
+    <strong>Escenario 1: Registro exitoso</strong><br>
+    Dado que el administrador ingresa el identificador, la ubicación y las capacidades del nodo (RFID, cerradura, buzzer, OLED, humedad, ultrasonido),<br>
+    cuando confirma el registro,<br>
+    entonces el Edge Gateway guarda el dispositivo y genera sus credenciales de conexión.<br><br>
+    <strong>Escenario 2: Dispositivo no registrado</strong><br>
+    Dado que un ESP32 desconocido intenta publicar o suscribirse en el broker local,<br>
+    cuando el Edge Gateway lo detecta,<br>
+    entonces rechaza sus mensajes, los registra como intento no autorizado y no los procesa.<br><br>
+    <strong>Escenario 3: Identificador duplicado</strong><br>
+    Dado que ya existe un nodo con el mismo identificador,<br>
+    cuando el administrador intenta registrarlo de nuevo,<br>
+    entonces el sistema retorna 409 con "El dispositivo ya está registrado" sin crear el registro.
+  </td>
+  <td>EP11</td>
+</tr>
+
+<tr>
+  <td><strong>US80</strong></td>
+  <td>Monitorear el estado de los nodos desde el Edge Gateway</td>
+  <td>Como administrador, quiero que el Edge Gateway detecte cuándo un nodo deja de responder, para atender fallas de hardware o de red.</td>
+  <td>
+    <strong>Escenario 1: Heartbeat normal</strong><br>
+    Dado que un nodo envía su heartbeat dentro del intervalo esperado,<br>
+    cuando el Edge Gateway lo recibe,<br>
+    entonces marca el nodo como ACTIVO y actualiza su última conexión.<br><br>
+    <strong>Escenario 2: Nodo sin respuesta</strong><br>
+    Dado que un nodo no envía heartbeat durante el tiempo límite configurado,<br>
+    cuando se ejecuta la validación periódica,<br>
+    entonces el Edge Gateway lo marca OFFLINE, descarta los comandos pendientes hacia él y reporta el cambio a la nube sin afectar a los otros nodos.<br><br>
+    <strong>Escenario 3: Reconexión del nodo</strong><br>
+    Dado que un nodo OFFLINE vuelve a enviar su heartbeat,<br>
+    cuando el Edge Gateway lo recibe,<br>
+    entonces lo marca ACTIVO, registra la recuperación y lo reporta a la nube.
+  </td>
+  <td>EP11</td>
+</tr>
+
+<tr>
+  <td><strong>US81</strong></td>
+  <td>Sincronizar credenciales, reservas y blacklist desde la nube</td>
+  <td>Como sistema, quiero que el Edge Gateway reciba y mantenga actualizada una copia local de credenciales, reservas vigentes y blacklist, para decidir accesos sin depender de internet.</td>
+  <td>
+    <strong>Escenario 1: Sincronización inicial</strong><br>
+    Dado que el Edge Gateway inicia y tiene conexión con la nube,<br>
+    cuando solicita el estado vigente,<br>
+    entonces almacena en su base local las credenciales activas, las reservas vigentes y la blacklist, y registra la versión sincronizada.<br><br>
+    <strong>Escenario 2: Actualización incremental</strong><br>
+    Dado que la nube publica el cambio de una credencial (emisión, suspensión o revocación),<br>
+    cuando el Edge Gateway recibe la actualización,<br>
+    entonces aplica el cambio en su caché en menos de 5 segundos y los siguientes accesos usan el dato actualizado.<br><br>
+    <strong>Escenario 3: Caché desactualizada</strong><br>
+    Dado que el Edge Gateway no se sincroniza durante más del tiempo máximo permitido (por ejemplo 24 horas),<br>
+    cuando se cumple dicho plazo,<br>
+    entonces sigue operando con la última caché disponible, registra una advertencia y notifica al administrador al recuperar la conexión.
+  </td>
+  <td>EP11</td>
+</tr>
+
+<tr>
+  <td><strong>US82</strong></td>
+  <td>Reenviar telemetría y eventos a la nube</td>
+  <td>Como sistema, quiero que el Edge Gateway reenvíe las lecturas de los sensores y los eventos hacia la nube, para alimentar la analítica y las alertas.</td>
+  <td>
+    <strong>Escenario 1: Reenvío en línea</strong><br>
+    Dado que el Edge Gateway recibió una lectura válida y tiene conexión con la nube,<br>
+    cuando la procesa,<br>
+    entonces la reenvía a la nube en menos de 2 segundos con el identificador del dispositivo y la marca de tiempo original.<br><br>
+    <strong>Escenario 2: Reenvío tras desconexión</strong><br>
+    Dado que la nube estuvo inalcanzable y existen lecturas almacenadas,<br>
+    cuando se restablece la conexión,<br>
+    entonces las envía en lotes por orden cronológico sin duplicados.<br><br>
+    <strong>Escenario 3: Límite de almacenamiento local</strong><br>
+    Dado que la cola local alcanza el tamaño máximo configurado,<br>
+    cuando ingresan nuevas lecturas,<br>
+    entonces el Edge Gateway descarta primero las lecturas de telemetría más antiguas, conserva los eventos de acceso y alertas, y registra la pérdida.
+  </td>
+  <td>EP11</td>
+</tr>
+
+<tr>
+  <td><strong>US83</strong></td>
+  <td>Ejecutar comandos remotos sobre los dispositivos</td>
+  <td>Como administrador, quiero enviar comandos desde la nube (abrir cerradura, activar alerta sonora o mensaje en pantalla) y que el Edge Gateway los ejecute en el dispositivo, para atender situaciones a distancia.</td>
+  <td>
+    <strong>Escenario 1: Comando ejecutado</strong><br>
+    Dado que la nube envía el comando de apertura de una cerradura cuyo nodo está ACTIVO,<br>
+    cuando el Edge Gateway lo recibe,<br>
+    entonces lo publica al ESP32, espera el ACK y reporta el resultado a la nube en menos de 2 segundos.<br><br>
+    <strong>Escenario 2: Nodo OFFLINE o en mantenimiento</strong><br>
+    Dado que el nodo destino está OFFLINE o en modo mantenimiento (desactivado),<br>
+    cuando el Edge Gateway recibe el comando,<br>
+    entonces lo rechaza de inmediato con el motivo "Dispositivo no disponible" o "Dispositivo en mantenimiento" y no lo encola.<br><br>
+    <strong>Escenario 3: Comando no autorizado</strong><br>
+    Dado que el comando llega sin un token válido de la nube,<br>
+    cuando el Edge Gateway lo procesa,<br>
+    entonces responde 401, no lo envía al dispositivo y lo registra como intento no autorizado.
+  </td>
+  <td>EP11</td>
+</tr>
+
+<tr>
+  <td>TS23</td>
+  <td>Configuración base del Edge Gateway con Python, Flask, Peewee ORM y SQLite</td>
+  <td>Como desarrollador, quiero crear el servicio Edge Gateway con Python, Flask, Peewee ORM y SQLite con configuración por variables de entorno y endpoint de salud, para tener una base ejecutable y desplegable en el equipo del edificio.</td>
+  <td>
+    <strong>Escenario 1: Arranque del servicio</strong><br>
+    Dado que el servicio se inicia con la configuración requerida,<br>
+    cuando Flask termina de levantar,<br>
+    entonces el endpoint GET /health responde 200 en menos de 200 ms con el estado del servicio, de la base local y del broker.<br><br>
+    <strong>Escenario 2: Documentación de la API</strong><br>
+    Dado que el desarrollador accede a la interfaz Swagger (OpenAPI) del servicio,<br>
+    cuando la interfaz carga,<br>
+    entonces muestra todos los endpoints con sus esquemas de solicitud y respuesta definidos en los esquemas de validación.<br><br>
+    <strong>Escenario 3: Configuración faltante</strong><br>
+    Dado que falta una variable de entorno obligatoria,<br>
+    cuando el servicio intenta iniciar,<br>
+    entonces falla al arrancar con un mensaje que indica la variable ausente, sin quedar en un estado parcial.
+  </td>
+  <td>EP05</td>
+</tr>
+
+<tr>
+  <td>TS24</td>
+  <td>Contrato de mensajes MQTT entre el Edge Gateway y los ESP32</td>
+  <td>Como desarrollador, quiero definir y validar el contrato de tópicos y mensajes JSON entre el Edge Gateway y los nodos ESP32, para que firmware y servicio evolucionen sin romperse.</td>
+  <td>
+    <strong>Escenario 1: Mensaje válido</strong><br>
+    Dado que un ESP32 publica una lectura que cumple el esquema (deviceId, tipo, valor, unidad y marca de tiempo),<br>
+    cuando el Edge Gateway la recibe en su tópico,<br>
+    entonces la valida con su esquema de validación y la procesa en menos de 100 ms.<br><br>
+    <strong>Escenario 2: Mensaje inválido</strong><br>
+    Dado que llega un mensaje con campos faltantes o tipos incorrectos,<br>
+    cuando el Edge Gateway lo valida,<br>
+    entonces lo descarta, registra el error con el tópico de origen y continúa procesando los siguientes.<br><br>
+    <strong>Escenario 3: Versión de contrato</strong><br>
+    Dado que un nodo publica con una versión de esquema no soportada,<br>
+    cuando el Edge Gateway la evalúa,<br>
+    entonces rechaza el mensaje y reporta "Versión de firmware incompatible" para ese dispositivo.
+  </td>
+  <td>EP05</td>
+</tr>
+
+<tr>
+  <td>TS25</td>
+  <td>Persistencia local con SQLite y cola de salida</td>
+  <td>Como desarrollador, quiero almacenar localmente credenciales, lecturas y eventos pendientes en SQLite, para garantizar la operación offline y la entrega confiable a la nube.</td>
+  <td>
+    <strong>Escenario 1: Persistencia tras reinicio</strong><br>
+    Dado que el Edge Gateway tiene datos en su base local,<br>
+    cuando el servicio se reinicia,<br>
+    entonces recupera credenciales, reservas y eventos pendientes sin pérdida de información.<br><br>
+    <strong>Escenario 2: Escritura atómica del evento</strong><br>
+    Dado que se procesa un intento de acceso,<br>
+    cuando el sistema lo registra,<br>
+    entonces guarda el resultado y el evento de salida en una única transacción para que no exista uno sin el otro.<br><br>
+    <strong>Escenario 3: Base local corrupta o llena</strong><br>
+    Dado que la base local no puede escribirse,<br>
+    cuando el servicio detecta el error,<br>
+    entonces lo registra, notifica a la nube cuando es posible y continúa respondiendo accesos de solo lectura con la caché en memoria.
+  </td>
+  <td>EP05</td>
+</tr>
+
+<tr>
+  <td>TS26</td>
+  <td>Firmware base del ESP32 con lectura de sensores y reconexión</td>
+  <td>Como desarrollador, quiero implementar el firmware base del ESP32 que lea los sensores, controle los actuadores y mantenga la conexión Wi-Fi y MQTT, para que el nodo opere de forma autónoma y recuperable.</td>
+  <td>
+    <strong>Escenario 1: Publicación de lecturas</strong><br>
+    Dado que el nodo está conectado a Wi-Fi y al broker local,<br>
+    cuando se cumple el intervalo de muestreo,<br>
+    entonces publica las lecturas de humedad y ultrasonido y el heartbeat en sus tópicos.<br><br>
+    <strong>Escenario 2: Reconexión automática</strong><br>
+    Dado que se pierde la conexión Wi-Fi o MQTT,<br>
+    cuando el nodo detecta la desconexión,<br>
+    entonces reintenta con espera creciente sin reiniciarse, y los actuadores permanecen en estado seguro (cerradura bloqueada, buzzer apagado).<br><br>
+    <strong>Escenario 3: Watchdog</strong><br>
+    Dado que el programa principal se bloquea,<br>
+    cuando vence el temporizador watchdog,<br>
+    entonces el nodo se reinicia y retoma su operación normal.
+  </td>
+  <td>EP05</td>
+</tr>
+
+<tr>
+  <td>TS27</td>
+  <td>Seguridad de la comunicación del Edge Gateway</td>
+  <td>Como desarrollador, quiero asegurar la comunicación entre los ESP32, el Edge Gateway y la nube, para evitar accesos o comandos no autorizados.</td>
+  <td>
+    <strong>Escenario 1: Conexión de nodo autenticada</strong><br>
+    Dado que un ESP32 se conecta al broker local con sus credenciales,<br>
+    cuando el broker valida usuario y contraseña,<br>
+    entonces permite publicar y suscribirse únicamente a los tópicos asignados a ese dispositivo.<br><br>
+    <strong>Escenario 2: Comunicación con la nube</strong><br>
+    Dado que el Edge Gateway invoca a la nube,<br>
+    cuando envía la solicitud,<br>
+    entonces usa HTTPS y un token de servicio, y no registra secretos en los logs.<br><br>
+    <strong>Escenario 3: Credencial comprometida</strong><br>
+    Dado que el administrador revoca las credenciales de un nodo,<br>
+    cuando el nodo intenta reconectarse,<br>
+    entonces el broker rechaza la conexión y el Edge Gateway registra el intento.
+  </td>
+  <td>EP05</td>
+</tr>
+
+
+<tr>
+  <td><strong>US84</strong></td>
+  <td>Mostrar fecha y hora en la pantalla OLED</td>
+  <td>Como residente, quiero ver la fecha y la hora actual en la pantalla OLED del punto de acceso, para saber la hora sin usar mi celular y verificar mi horario de reserva.</td>
+  <td>
+    <strong>Escenario 1: Pantalla de reposo</strong><br>
+    Dado que el nodo no está procesando ningún acceso,<br>
+    cuando la OLED está en reposo,<br>
+    entonces muestra la fecha y la hora en formato 24 horas (HH:MM) en la zona horaria America/Lima, actualizada cada minuto con una desviación máxima de 1 segundo.<br><br>
+    <strong>Escenario 2: Regreso al reloj tras un acceso</strong><br>
+    Dado que la OLED muestra el resultado de un acceso,<br>
+    cuando transcurren 3 segundos,<br>
+    entonces vuelve a mostrar la fecha y la hora sin perder el estado de la hora actual.<br><br>
+    <strong>Escenario 3: Hora no válida</strong><br>
+    Dado que el reloj del nodo no tiene una hora válida (por ejemplo, tras perder la batería del RTC),<br>
+    cuando la OLED intenta mostrar la hora,<br>
+    entonces muestra "Hora no sincronizada" en lugar de una hora incorrecta y el nodo solicita la hora al Edge Gateway.
+  </td>
+  <td>EP11</td>
+</tr>
+
+<tr>
+  <td><strong>US85</strong></td>
+  <td>Mantener y sincronizar el reloj del nodo</td>
+  <td>Como sistema, quiero que el nodo mantenga una hora precisa incluso sin internet y la sincronice con el Edge Gateway, para que los permisos por horario y las marcas de tiempo de los eventos sean confiables.</td>
+  <td>
+    <strong>Escenario 1: Sincronización con el Edge Gateway</strong><br>
+    Dado que el Edge Gateway tiene la hora sincronizada con una fuente NTP,<br>
+    cuando el nodo detecta una diferencia mayor a 2 segundos respecto a la hora del Edge Gateway,<br>
+    entonces ajusta su reloj y registra el ajuste con la diferencia corregida.<br><br>
+    <strong>Escenario 2: Operación sin internet</strong><br>
+    Dado que el edificio perdió la conexión a internet,<br>
+    cuando pasan varias horas sin sincronización NTP,<br>
+    entonces el Edge Gateway y el reloj del nodo continúan funcionando con su última hora válida y el sistema registra la desviación estimada.<br><br>
+    <strong>Escenario 3: Arranque con hora inválida</strong><br>
+    Dado que el nodo se inicia y su reloj no tiene una hora válida,<br>
+    cuando se conecta al Edge Gateway,<br>
+    entonces solicita la hora, la aplica antes de procesar accesos con ventana horaria y no concede accesos que dependan del horario hasta tenerla.
+  </td>
+  <td>EP11</td>
+</tr>
+
+<tr>
+  <td>TS28</td>
+  <td>Estandarización de marcas de tiempo y zona horaria</td>
+  <td>Como desarrollador, quiero que todos los componentes registren las marcas de tiempo en UTC con formato ISO 8601 y las muestren en la zona America/Lima, para evitar inconsistencias entre el ESP32, el Edge Gateway y la nube.</td>
+  <td>
+    <strong>Escenario 1: Registro en UTC</strong><br>
+    Dado que un nodo publica una lectura o evento,<br>
+    cuando el Edge Gateway lo recibe,<br>
+    entonces lo almacena con la marca de tiempo en UTC (ISO 8601) y el offset original no se pierde.<br><br>
+    <strong>Escenario 2: Visualización en hora local</strong><br>
+    Dado que el administrador consulta la bitácora de accesos,<br>
+    cuando el sistema muestra las fechas,<br>
+    entonces las presenta en America/Lima sin alterar el valor almacenado.<br><br>
+    <strong>Escenario 3: Marca de tiempo inválida</strong><br>
+    Dado que llega un evento con una marca de tiempo muy distinta a la hora actual (por ejemplo, más de 5 minutos en el futuro),<br>
+    cuando el Edge Gateway lo valida,<br>
+    entonces conserva el evento, lo marca como "Hora sospechosa" y usa la hora de recepción del Edge Gateway como referencia.
+  </td>
+  <td>EP05</td>
+</tr>
+
+
+<tr>
+  <td><strong>US86</strong></td>
+  <td>Enrolar una tarjeta RFID desde el lector del nodo</td>
+  <td>Como administrador, quiero registrar una tarjeta nueva acercándola al lector del nodo, para asignarla a un residente sin digitar manualmente su número de serie.</td>
+  <td>
+    <strong>Escenario 1: Registro exitoso</strong><br>
+    Dado que el administrador activa el modo registro para un residente en un nodo y el Edge Gateway tiene conexión con la nube,<br>
+    cuando acerca una tarjeta no registrada al lector durante la ventana de registro (60 segundos),<br>
+    entonces el Edge Gateway captura el UID, lo envía a la nube para vincularlo al residente y la OLED muestra "Tarjeta registrada" con un pitido corto.<br><br>
+    <strong>Escenario 2: Tarjeta ya asignada</strong><br>
+    Dado que el modo registro está activo,<br>
+    cuando se acerca una tarjeta cuyo UID ya pertenece a otro residente,<br>
+    entonces el sistema no modifica ninguna asignación, la OLED muestra "Tarjeta en uso" y el buzzer emite dos pitidos largos.<br><br>
+    <strong>Escenario 3: Ventana de registro vencida</strong><br>
+    Dado que el modo registro está activo y no se acerca ninguna tarjeta,<br>
+    cuando transcurren los 60 segundos,<br>
+    entonces el Edge Gateway desactiva el modo registro, el nodo vuelve a su pantalla de reposo y registra el evento como "Registro cancelado por tiempo".<br><br>
+    <strong>Escenario 4: Registro sin conexión a internet</strong><br>
+    Dado que el Edge Gateway no tiene conexión con la nube,<br>
+    cuando el administrador necesita registrar una tarjeta,<br>
+    entonces el registro por lector no se habilita y el administrador la registra manualmente (UID y residente) desde el sistema local del condominio, que sigue funcionando sin internet a través del Edge Gateway; la tarjeta queda activa de inmediato en los lectores y se sincroniza con la nube al restablecerse la conexión.
+  </td>
+  <td>EP11</td>
+</tr>
+
+<tr>
+  <td><strong>US87</strong></td>
+  <td>Restringir el acceso a un área por horario</td>
+  <td>Como administrador, quiero definir el horario permitido de cada área común, para que no se pueda ingresar fuera de las horas habilitadas aunque se tenga una credencial activa.</td>
+  <td>
+    <strong>Escenario 1: Configuración exitosa</strong><br>
+    Dado que el administrador define que la piscina solo permite ingreso entre las 06:00 y las 22:00,<br>
+    cuando guarda el horario,<br>
+    entonces el sistema lo almacena, lo sincroniza con el Edge Gateway y los nodos del área lo aplican en menos de 5 segundos.<br><br>
+    <strong>Escenario 2: Intento fuera de horario</strong><br>
+    Dado que el horario de un área es de 06:00 a 22:00,<br>
+    cuando un residente con credencial ACTIVA presenta su tarjeta a las 23:10,<br>
+    entonces el Edge Gateway responde DENIED con el motivo "Fuera de horario", la OLED lo muestra y el intento queda registrado.<br><br>
+    <strong>Escenario 3: Horario inválido</strong><br>
+    Dado que el administrador ingresa una hora de inicio igual o posterior a la de fin,<br>
+    cuando intenta guardar el horario,<br>
+    entonces el sistema retorna 400 con "El horario no es válido" sin modificar el horario vigente.
+  </td>
+  <td>EP11</td>
+</tr>
+
+<tr>
+  <td><strong>US88</strong></td>
+  <td>Avisar el fin de una reserva en el punto de acceso</td>
+  <td>Como residente, quiero que el nodo del área reservada me avise cuando mi reserva esté por terminar, para desocupar el espacio a tiempo.</td>
+  <td>
+    <strong>Escenario 1: Aviso previo al fin</strong><br>
+    Dado que hay una reserva vigente que termina a las 20:00 y el aviso está configurado a 10 minutos,<br>
+    cuando el reloj llega a las 19:50,<br>
+    entonces la OLED del nodo del área muestra "Reserva termina en 10 min" y el buzzer emite dos pitidos cortos.<br><br>
+    <strong>Escenario 2: Reserva cancelada o modificada</strong><br>
+    Dado que se programó un aviso de fin de reserva,<br>
+    cuando la reserva se cancela o su horario cambia antes del aviso,<br>
+    entonces el Edge Gateway elimina el aviso original y programa uno nuevo solo si la reserva sigue vigente.<br><br>
+    <strong>Escenario 3: Operación sin conexión</strong><br>
+    Dado que el Edge Gateway no tiene conexión con la nube,<br>
+    cuando llega la hora del aviso,<br>
+    entonces usa la caché local de reservas y su reloj para mostrar el aviso igualmente.
+  </td>
+  <td>EP11</td>
+</tr>
+
+<tr>
+  <td><strong>US89</strong></td>
+  <td>Activar el modo mantenimiento en un dispositivo</td>
+  <td>Como administrador, quiero poner un nodo en modo mantenimiento, para repararlo o calibrarlo sin generar falsas alertas ni accesos inesperados.</td>
+  <td>
+    <strong>Escenario 1: Activación del modo</strong><br>
+    Dado que el administrador selecciona un nodo ACTIVO y define una duración máxima (por ejemplo, 2 horas),<br>
+    cuando activa el modo mantenimiento,<br>
+    entonces el Edge Gateway cambia su estado a MANTENIMIENTO y desactiva el nodo: deja de procesar sus lecturas, accesos y comandos, suspende sus alertas de desconexión y de lecturas inválidas, la OLED muestra "En mantenimiento" y registra al administrador que lo activó.<br><br>
+    <strong>Escenario 2: Nodo desactivado durante el mantenimiento</strong><br>
+    Dado que un nodo está en mantenimiento,<br>
+    cuando un residente presenta su tarjeta o llega un comando automático o remoto (incluido el de un administrador),<br>
+    entonces el sistema no concede el acceso ni ejecuta el comando, la OLED indica que el nodo está en mantenimiento, la cerradura permanece bloqueada y el intento queda registrado; para operar el nodo se debe finalizar primero el mantenimiento.<br><br>
+    <strong>Escenario 3: Finalización del modo</strong><br>
+    Dado que un nodo está en mantenimiento,<br>
+    cuando el administrador lo finaliza o vence la duración máxima,<br>
+    entonces el nodo vuelve a ACTIVO, se reanudan sus alertas y se registra la duración total del mantenimiento.
+  </td>
+  <td>EP11</td>
+</tr>
+
+<tr>
+  <td>TS29</td>
+  <td>Actualización remota (OTA) del firmware de los nodos ESP32</td>
+  <td>Como desarrollador, quiero actualizar el firmware de los ESP32 de forma remota desde el Edge Gateway con verificación y reversión, para corregir errores y agregar funciones sin acceder físicamente a cada nodo.</td>
+  <td>
+    <strong>Escenario 1: Actualización exitosa</strong><br>
+    Dado que el administrador carga una nueva versión de firmware y selecciona un nodo ACTIVO sin un acceso en curso,<br>
+    cuando el Edge Gateway inicia la actualización,<br>
+    entonces el nodo descarga el firmware, verifica su integridad, se reinicia y reporta la nueva versión, y el Edge Gateway la registra.<br><br>
+    <strong>Escenario 2: Firmware corrupto o no autorizado</strong><br>
+    Dado que el nodo descarga un firmware cuyo hash o firma no coincide con el esperado,<br>
+    cuando valida la integridad,<br>
+    entonces rechaza la actualización, mantiene la versión actual y reporta el fallo al Edge Gateway.<br><br>
+    <strong>Escenario 3: Arranque fallido tras actualizar</strong><br>
+    Dado que el nodo se reinicia con la nueva versión,<br>
+    cuando el firmware no completa el arranque o no reporta su heartbeat en 60 segundos,<br>
+    entonces el nodo vuelve automáticamente a la versión anterior y reporta "Actualización revertida".<br><br>
+    <strong>Escenario 4: Acceso en curso</strong><br>
+    Dado que el nodo está procesando un acceso o tiene la cerradura energizada,<br>
+    cuando se solicita la actualización,<br>
+    entonces el Edge Gateway la posterga hasta que el nodo esté en reposo y no interrumpe la operación.
+  </td>
+  <td>EP05</td>
+</tr>
+
+
+<tr>
+  <td><strong>US90</strong></td>
+  <td>Acceder a un área con el teléfono móvil</td>
+  <td>Como residente, quiero acercar mi teléfono con la app de Edifika al nodo de acceso para ingresar a un área común, igual que con mi tarjeta RFID.</td>
+  <td>
+    <strong>Escenario 1: Acceso concedido con el teléfono</strong><br>
+    Dado que el residente tiene una credencial móvil ACTIVA en la app y un permiso vigente para el área,<br>
+    cuando acerca su teléfono al nodo de acceso,<br>
+    entonces el nodo lee la credencial, el Edge Gateway la valida y responde GRANTED en menos de 1 segundo, con la misma señal de la OLED, el buzzer y la cerradura que en un acceso con tarjeta.<br><br>
+    <strong>Escenario 2: Credencial vencida</strong><br>
+    Dado que la credencial móvil presentada tiene una vigencia corta (por ejemplo, 30 segundos) y ya expiró,<br>
+    cuando el Edge Gateway la evalúa,<br>
+    entonces responde DENIED con el motivo "Credencial vencida", la OLED indica que se debe abrir de nuevo la app y el intento queda registrado.<br><br>
+    <strong>Escenario 3: Credencial reutilizada</strong><br>
+    Dado que el Edge Gateway ya aceptó una credencial móvil con el mismo identificador único (nonce),<br>
+    cuando se presenta de nuevo,<br>
+    entonces responde DENIED con el motivo "Credencial ya utilizada" y registra el intento como posible reutilización.<br><br>
+    <strong>Escenario 4: Acceso sin internet</strong><br>
+    Dado que el Edge Gateway no tiene conexión con la nube,<br>
+    cuando un residente acerca su teléfono,<br>
+    entonces valida la credencial con las claves y permisos sincronizados previamente y la hora de su reloj, y resuelve el acceso con normalidad.
+  </td>
+  <td>EP11</td>
+</tr>
+
+<tr>
+  <td><strong>US91</strong></td>
+  <td>Revocar la credencial móvil de un teléfono</td>
+  <td>Como residente o administrador, quiero revocar la credencial móvil de un teléfono perdido o reemplazado, para que nadie pueda usarlo para ingresar.</td>
+  <td>
+    <strong>Escenario 1: Revocación con conexión</strong><br>
+    Dado que una credencial móvil ACTIVA es revocada desde la aplicación o por el administrador,<br>
+    cuando la nube publica la revocación,<br>
+    entonces el Edge Gateway la agrega a su lista de bloqueo en menos de 5 segundos y los intentos posteriores son DENIED con el motivo "Credencial revocada".<br><br>
+    <strong>Escenario 2: Cambio de teléfono</strong><br>
+    Dado que un residente registra un teléfono nuevo y ya tiene una credencial móvil ACTIVA,<br>
+    cuando se emite la nueva credencial,<br>
+    entonces la credencial anterior queda revocada y solo la nueva concede acceso.<br><br>
+    <strong>Escenario 3: Edge Gateway sin sincronizar</strong><br>
+    Dado que el Edge Gateway no tiene conexión con la nube y existe una revocación pendiente,<br>
+    cuando el administrador la requiere de inmediato,<br>
+    entonces puede bloquear manualmente la credencial desde el sistema local del condominio, se aplica en los nodos al instante y se concilia con la nube al reconectar.
+  </td>
+  <td>EP11</td>
+</tr>
+
+<tr>
+  <td>TS30</td>
+  <td>Verificación de credenciales móviles firmadas en el Edge Gateway</td>
+  <td>Como desarrollador, quiero que el Edge Gateway verifique credenciales móviles firmadas criptográficamente sin consultar la nube, para aceptar teléfonos de forma segura incluso sin internet.</td>
+  <td>
+    <strong>Escenario 1: Firma válida</strong><br>
+    Dado que la credencial móvil está firmada con la clave del emisor sincronizada en el Edge Gateway,<br>
+    cuando el Edge Gateway verifica la firma, la vigencia y el permiso,<br>
+    entonces acepta la credencial y resuelve el acceso en menos de 300 ms sin consultar la nube.<br><br>
+    <strong>Escenario 2: Firma inválida o alterada</strong><br>
+    Dado que la credencial presentada fue modificada o fue firmada con otra clave,<br>
+    cuando el Edge Gateway verifica la firma,<br>
+    entonces la rechaza, responde DENIED y registra el intento como "Credencial alterada" sin revelar el motivo detallado al nodo.<br><br>
+    <strong>Escenario 3: Rotación de claves</strong><br>
+    Dado que la nube emite una nueva clave de firma,<br>
+    cuando el Edge Gateway la sincroniza,<br>
+    entonces acepta credenciales firmadas con la clave nueva y con la anterior durante el periodo de transición, y luego descarta la anterior.<br><br>
+    <strong>Escenario 4: Lectura incompleta</strong><br>
+    Dado que el teléfono se aleja antes de transmitir toda la credencial,<br>
+    cuando el nodo detecta una lectura incompleta,<br>
+    entonces la OLED muestra "Reintente", no se consume el identificador único y no se registra como intento denegado.
+  </td>
+  <td>EP05</td>
+</tr>
+
+
+<tr>
+  <td><strong>US92</strong></td>
+  <td>Calibrar los sensores de un nodo</td>
+  <td>Como administrador, quiero calibrar los sensores de un nodo (altura del tanque, umbral de humedad baja y umbral de nivel crítico), para que las lecturas y las alertas reflejen las condiciones reales del edificio.</td>
+  <td>
+    <strong>Escenario 1: Calibración exitosa</strong><br>
+    Dado que el administrador define una altura de tanque de 150 cm, un umbral de humedad baja de 30 % y un nivel crítico de 15 %,<br>
+    cuando guarda la calibración,<br>
+    entonces el Edge Gateway aplica los valores a las lecturas siguientes y reporta el cambio a la nube.<br><br>
+    <strong>Escenario 2: Valores fuera de rango</strong><br>
+    Dado que el administrador ingresa una altura de tanque menor a 10 cm o un umbral mayor a 100 %,<br>
+    cuando intenta guardar la calibración,<br>
+    entonces el sistema retorna 422 indicando el valor inválido y mantiene la calibración vigente.<br><br>
+    <strong>Escenario 3: Nodo no registrado</strong><br>
+    Dado que el identificador del nodo no existe en el Edge Gateway,<br>
+    cuando el administrador intenta calibrarlo,<br>
+    entonces el sistema retorna 404 sin crear ni modificar ningún registro.
+  </td>
+  <td>EP11</td>
+</tr>
+
+<tr>
+  <td><strong>US93</strong></td>
+  <td>Consultar el estado del Edge Gateway sin internet</td>
+  <td>Como administrador, quiero consultar desde el sistema local el estado del Edge Gateway, sus nodos y los eventos pendientes de enviar, para operar y diagnosticar el edificio aunque no haya internet.</td>
+  <td>
+    <strong>Escenario 1: Estado general</strong><br>
+    Dado que el edificio no tiene conexión a internet,<br>
+    cuando el administrador consulta el estado del Edge Gateway,<br>
+    entonces el sistema muestra la cantidad de nodos por estado, los eventos pendientes de envío, la última sincronización con la nube y si la caché está desactualizada.<br><br>
+    <strong>Escenario 2: Eventos pendientes</strong><br>
+    Dado que existen eventos que aún no fueron entregados a la nube,<br>
+    cuando el administrador consulta la cola de eventos,<br>
+    entonces el sistema los lista en orden cronológico con su tipo, la cantidad de intentos y el último error.<br><br>
+    <strong>Escenario 3: Consulta sin autorización</strong><br>
+    Dado que la solicitud no incluye un token válido,<br>
+    cuando se consulta el estado o la cola de eventos,<br>
+    entonces el sistema retorna 401 y no revela información del edificio.
+  </td>
+  <td>EP11</td>
+</tr>
+
+<tr>
+  <td>TS31</td>
+  <td>Despliegue del Edge Gateway con Docker Compose</td>
+  <td>Como desarrollador, quiero desplegar el Edge Gateway, el broker MQTT y un backend simulado con Docker Compose, para ejecutar y demostrar toda la solución con un solo comando.</td>
+  <td>
+    <strong>Escenario 1: Arranque completo</strong><br>
+    Dado que el desarrollador ejecuta docker compose up,<br>
+    cuando los servicios superan sus verificaciones de salud,<br>
+    entonces el Edge Gateway responde 200 en /health, conectado al broker MQTT y al backend.<br><br>
+    <strong>Escenario 2: Persistencia tras reinicio</strong><br>
+    Dado que el Edge Gateway tiene credenciales y eventos pendientes almacenados,<br>
+    cuando se reinicia su contenedor,<br>
+    entonces recupera la información desde el volumen sin pérdida de datos.<br><br>
+    <strong>Escenario 3: Broker aún no disponible</strong><br>
+    Dado que el broker MQTT todavía no está listo o se cae,<br>
+    cuando el Edge Gateway intenta conectarse,<br>
+    entonces reintenta con espera creciente sin terminar el proceso y se suscribe de nuevo al reconectar.
+  </td>
+  <td>EP05</td>
+</tr>
+
+<tr>
+  <td>TS32</td>
+  <td>Simulador de nodos ESP32 para pruebas sin hardware</td>
+  <td>Como desarrollador, quiero un simulador de nodos ESP32 que respete el contrato MQTT, para probar el Edge Gateway sin depender del hardware físico.</td>
+  <td>
+    <strong>Escenario 1: Nodo virtual en operación</strong><br>
+    Dado que el simulador se ejecuta con el identificador de un nodo registrado,<br>
+    cuando transcurre el intervalo de muestreo,<br>
+    entonces publica el heartbeat y las lecturas de humedad y ultrasonido conforme al contrato y confirma los comandos recibidos.<br><br>
+    <strong>Escenario 2: Lectura de una tarjeta</strong><br>
+    Dado que el desarrollador indica un UID de tarjeta,<br>
+    cuando el simulador lo publica como lectura de acceso,<br>
+    entonces muestra el resultado recibido del Edge Gateway y termina con código 0 si el acceso fue concedido y 1 si fue denegado.<br><br>
+    <strong>Escenario 3: Cerradura que no responde</strong><br>
+    Dado que el simulador se ejecuta sin confirmar comandos,<br>
+    cuando el Edge Gateway envía una orden de apertura,<br>
+    entonces la orden expira y el Edge Gateway reporta una alerta de cerradura sin respuesta.
+  </td>
+  <td>EP05</td>
+</tr>
+
+<tr>
+  <td>TS33</td>
+  <td>Contrato de integración entre el Edge Gateway y el backend</td>
+  <td>Como desarrollador, quiero un contrato de integración entre el Edge Gateway y el backend con entrega por lotes e idempotencia, para transportar la información de los nodos sin pérdidas ni duplicados.</td>
+  <td>
+    <strong>Escenario 1: Entrega idempotente por lotes</strong><br>
+    Dado que el Edge Gateway envía un lote de eventos, cada uno con un identificador único,<br>
+    cuando el backend los acepta,<br>
+    entonces responde con los identificadores aceptados y un reenvío del mismo lote no duplica ningún evento.<br><br>
+    <strong>Escenario 2: Error transitorio</strong><br>
+    Dado que el backend responde 5xx, 429 o no está disponible,<br>
+    cuando el Edge Gateway intenta entregar los eventos,<br>
+    entonces los conserva en su cola y reintenta con espera creciente (máximo 60 segundos) sin perder el orden cronológico.<br><br>
+    <strong>Escenario 3: Rechazo permanente</strong><br>
+    Dado que el backend rechaza un evento con un error 4xx distinto de 401, 403, 408 y 429,<br>
+    cuando se agotan 5 intentos,<br>
+    entonces el Edge Gateway descarta ese evento, lo registra y continúa con los siguientes sin bloquear la cola.
+  </td>
+  <td>EP05</td>
+</tr>
+
+<tr>
+  <td>TS34</td>
+  <td>Pruebas automatizadas del Edge Gateway</td>
+  <td>Como desarrollador, quiero una suite de pruebas automatizadas del Edge Gateway que no dependa del broker ni de la red, para detectar regresiones antes de cada integración.</td>
+  <td>
+    <strong>Escenario 1: Ejecución aislada</strong><br>
+    Dado que el desarrollador ejecuta la suite en un equipo sin broker MQTT ni internet,<br>
+    cuando las pruebas se ejecutan,<br>
+    entonces todas usan dobles de prueba para el broker y el backend, cada una con su propia base de datos, y terminan en menos de 30 segundos.<br><br>
+    <strong>Escenario 2: Cobertura de escenarios</strong><br>
+    Dado que cada historia del Edge Gateway define sus escenarios de aceptación,<br>
+    cuando se revisa la suite,<br>
+    entonces existe al menos una prueba por escenario, incluidos los casos de error.<br><br>
+    <strong>Escenario 3: Detección de regresiones</strong><br>
+    Dado que un cambio altera una regla de negocio, como el orden de entrega de eventos o la decisión de acceso,<br>
+    cuando se ejecuta la suite,<br>
+    entonces al menos una prueba falla e indica el comportamiento que cambió.
+  </td>
+  <td>EP05</td>
+</tr>
+
   </tbody>
 </table>
+
+**Criterios transversales de aceptación para historias IoT**
+
+Las siguientes condiciones aplican a todas las historias de las épicas EP07 a EP11 y a las historias técnicas TS16 a TS34, además de los escenarios específicos de cada historia:
+
+- **Confirmación de actuación:** todo comando enviado a un dispositivo (abrir, encender, apagar, cortar) debe ser confirmado mediante un mensaje ACK; si no se recibe dentro del tiempo límite, la acción se registra como fallida y se notifica.
+- **Trazabilidad:** toda acción de actuación o cambio de configuración registra quién lo realizó (usuario o sistema), cuándo y sobre qué dispositivo.
+- **Dispositivos desconectados:** un dispositivo en estado OFFLINE no recibe comandos diferidos; su indisponibilidad no afecta al resto de dispositivos.
+- **Idempotencia:** un evento o lectura repetido (mismo identificador o misma marca de tiempo) no produce efectos duplicados.
+- **Seguridad:** los endpoints exigen token JWT válido y rol autorizado; en caso contrario retornan 401 o 403.
+- **Continuidad operativa:** las funciones críticas de acceso, iluminación y corte de bombas se ejecutan en el Edge API sin depender de la conexión a internet.
+- **Marcas de tiempo:** todos los eventos y lecturas se registran en UTC (ISO 8601) con la hora del reloj del nodo sincronizado con el Edge Gateway, y se muestran en la zona America/Lima.
+- **Rendimiento:** los tiempos indicados en cada escenario se miden desde la recepción del evento o solicitud hasta la respuesta o confirmación del dispositivo.
 
 
 ## Justificación y Trazabilidad de las Historias de Usuario
@@ -2564,6 +3836,46 @@ Visualización instantánea de datos generados por sensores y dispositivos conec
 | **US51 – Riego automático según humedad del suelo**        | Sistema                   | Automatización del mantenimiento de áreas verdes.                            | **No existe evidencia directa en las entrevistas** que sustente esta necesidad.                                                                                                                                             |
 | **US52 – Detección de fugas en tanque de agua**            | Administrador             | Prevención de pérdidas relacionadas con infraestructura.                     | **No existe evidencia directa en las entrevistas** que sustente esta necesidad.                                                                                                                                             |
 | **US53 – Encendido automático de luces por movimiento**    | Sistema                   | Automatización y control de áreas comunes.                                   | **No existe evidencia directa en las entrevistas** que sustente esta necesidad.                                                                                                                                             |
+| **US54 – Otorgar acceso temporal por reserva aprobada** | Residente / Administrador | Control de ingreso a áreas comunes sin intervención manual. | Se deriva del problema de gestión manual de reservas (US18, US19) y de la regla de AccessDecisionService (4.2.9). Las entrevistas no mencionan control físico de ingreso. **No existe evidencia directa en las entrevistas** que sustente esta necesidad. Corresponde a una funcionalidad propuesta dentro del alcance IoT del sistema. |
+| **US55 – Consultar bitácora de accesos** | Administrador | Falta de trazabilidad sobre el uso de áreas comunes. | Se relaciona con la falta de control y trazabilidad en áreas comunes (US40). **No existe evidencia directa en las entrevistas** que sustente esta necesidad. Corresponde a una funcionalidad propuesta dentro del alcance IoT del sistema. |
+| **US56 – Apertura remota de acceso** | Administrador | Atención de emergencias o fallas del lector. | **No existe evidencia directa en las entrevistas** que sustente esta necesidad. Corresponde a una funcionalidad propuesta dentro del alcance IoT del sistema. |
+| **US57 – Configurar reglas de automatización de iluminación** | Administrador | Consumo energético innecesario en áreas comunes. | Amplía US53 incorporando condiciones de lux, horario y prioridad (4.2.10). **No existe evidencia directa en las entrevistas** que sustente esta necesidad. Corresponde a una funcionalidad propuesta dentro del alcance IoT del sistema. |
+| **US58 – Encender o apagar luces manualmente (override)** | Residente / Administrador | Falta de control manual sobre la iluminación de áreas comunes. | **No existe evidencia directa en las entrevistas** que sustente esta necesidad. Corresponde a una funcionalidad propuesta dentro del alcance IoT del sistema. |
+| **US59 – Encender área al iniciar una reserva** | Sistema | Automatización y preparación de áreas comunes. | Integra Reservation Service con Smart Lighting (4.2.10.3). **No existe evidencia directa en las entrevistas** que sustente esta necesidad. Corresponde a una funcionalidad propuesta dentro del alcance IoT del sistema. |
+| **US60 – Registrar y consultar luminarias** | Administrador | Falta de inventario centralizado de dispositivos. | **No existe evidencia directa en las entrevistas** que sustente esta necesidad. Corresponde a una funcionalidad propuesta dentro del alcance IoT del sistema. |
+| **US61 – Visualizar consumo energético por área y periodo** | Administrador | Falta de transparencia y control de gastos del edificio. | Se relaciona con la preocupación por la transparencia de los gastos (US25). **No existe evidencia directa en las entrevistas** que sustente esta necesidad. Corresponde a una funcionalidad propuesta dentro del alcance IoT del sistema. |
+| **US62 – Alertar consumo anómalo** | Administrador | Detección tardía de consumos irregulares. | **No existe evidencia directa en las entrevistas** que sustente esta necesidad. Corresponde a una funcionalidad propuesta dentro del alcance IoT del sistema. |
+| **US63 – Detectar falla de luminaria** | Administrador | Mantenimiento correctivo tardío de la iluminación. | **No existe evidencia directa en las entrevistas** que sustente esta necesidad. Corresponde a una funcionalidad propuesta dentro del alcance IoT del sistema. |
+| **US64 – Monitorear estado de conexión de dispositivos** | Administrador | Falta de visibilidad sobre el estado de la infraestructura IoT. | Complementa TS16 y TS17 desde la perspectiva del administrador. **No existe evidencia directa en las entrevistas** que sustente esta necesidad. Corresponde a una funcionalidad propuesta dentro del alcance IoT del sistema. |
+| **US65 – Consultar lecturas de sensores en tiempo real e históricas** | Administrador | Falta de visibilidad en tiempo real de los dispositivos. | Responde a la funcionalidad de Monitoreo en Tiempo Real e Historial de Eventos definida en el alcance IoT. **No existe evidencia directa en las entrevistas** que sustente esta necesidad. Corresponde a una funcionalidad propuesta dentro del alcance IoT del sistema. |
+| **US66 – Configurar reglas de detección de fugas** | Administrador | Pérdidas de agua por infraestructura hidráulica. | Se relaciona con US52 (monitoreo de tanque), ampliando el alcance hacia bombas de agua (4.2.12). **No existe evidencia directa en las entrevistas** que sustente esta necesidad. Corresponde a una funcionalidad propuesta dentro del alcance IoT del sistema. |
+| **US67 – Cortar automáticamente la bomba ante una fuga** | Sistema | Pérdidas mayores de agua por fugas no detectadas. | **No existe evidencia directa en las entrevistas** que sustente esta necesidad. Corresponde a una funcionalidad propuesta dentro del alcance IoT del sistema. |
+| **US68 – Gestionar alertas de fuga** | Administrador | Falta de seguimiento de incidentes de infraestructura. | **No existe evidencia directa en las entrevistas** que sustente esta necesidad. Corresponde a una funcionalidad propuesta dentro del alcance IoT del sistema. |
+| **US69 – Apagar manualmente una bomba de agua** | Administrador | Respuesta lenta ante emergencias hidráulicas. | **No existe evidencia directa en las entrevistas** que sustente esta necesidad. Corresponde a una funcionalidad propuesta dentro del alcance IoT del sistema. |
+| **US70 – Detectar falla de bomba por caída de presión** | Administrador | Fallas de equipos hidráulicos detectadas tarde. | **No existe evidencia directa en las entrevistas** que sustente esta necesidad. Corresponde a una funcionalidad propuesta dentro del alcance IoT del sistema. |
+| **US71 – Leer tarjeta RFID y resolver el acceso** | Residente | Control de ingreso a áreas comunes sin intervención manual. | Se relaciona con la gestión de acceso a áreas comunes (US48 y US54). **No existe evidencia directa en las entrevistas** que sustente esta necesidad. Corresponde a una funcionalidad propuesta dentro del alcance IoT del sistema. |
+| **US72 – Abrir la cerradura eléctrica y re-bloquearla automáticamente** | Sistema | Seguridad física de las áreas comunes. | **No existe evidencia directa en las entrevistas** que sustente esta necesidad. Corresponde a una funcionalidad propuesta dentro del alcance IoT del sistema. |
+| **US73 – Emitir señales sonoras con el buzzer** | Residente | Falta de retroalimentación inmediata en el punto de acceso. | **No existe evidencia directa en las entrevistas** que sustente esta necesidad. Corresponde a una funcionalidad propuesta dentro del alcance IoT del sistema. |
+| **US74 – Mostrar mensajes de estado en la pantalla OLED** | Residente | Falta de información clara en el punto de acceso. | **No existe evidencia directa en las entrevistas** que sustente esta necesidad. Corresponde a una funcionalidad propuesta dentro del alcance IoT del sistema. |
+| **US75 – Registrar y sincronizar accesos generados sin conexión** | Administrador | Pérdida de trazabilidad ante caídas de internet. | Responde al requisito de resiliencia offline del Edge definido en el Cap. IV. **No existe evidencia directa en las entrevistas** que sustente esta necesidad. Corresponde a una funcionalidad propuesta dentro del alcance IoT del sistema. |
+| **US76 – Medir la humedad con el sensor de humedad** | Sistema | Monitoreo del estado de las áreas verdes. | Es la base de US51 (riego según humedad). **No existe evidencia directa en las entrevistas** que sustente esta necesidad. Corresponde a una funcionalidad propuesta dentro del alcance IoT del sistema. |
+| **US77 – Medir el nivel de agua con el sensor ultrasónico** | Administrador | Control del nivel del tanque de agua. | Alimenta la historia US52. **No existe evidencia directa en las entrevistas** que sustente esta necesidad. Corresponde a una funcionalidad propuesta dentro del alcance IoT del sistema. |
+| **US78 – Alertar localmente un nivel crítico** | Administrador | Detección tardía de problemas en el suministro de agua. | Se relaciona con la prevención de pérdidas del tanque (US52). **No existe evidencia directa en las entrevistas** que sustente esta necesidad. Corresponde a una funcionalidad propuesta dentro del alcance IoT del sistema. |
+| **US79 – Registrar y autenticar nodos ESP32** | Administrador | Control sobre qué dispositivos forman parte de la red del edificio. | **No existe evidencia directa en las entrevistas** que sustente esta necesidad. Corresponde a una funcionalidad propuesta dentro del alcance IoT del sistema. |
+| **US80 – Monitorear el estado de los nodos desde el Edge Gateway** | Administrador | Falta de visibilidad sobre la salud de los dispositivos. | Es el origen de los datos de US64. **No existe evidencia directa en las entrevistas** que sustente esta necesidad. Corresponde a una funcionalidad propuesta dentro del alcance IoT del sistema. |
+| **US81 – Sincronizar credenciales, reservas y blacklist desde la nube** | Sistema | Continuidad del acceso ante caídas de internet. | Responde al requisito de resiliencia offline del Edge (Cap. IV). **No existe evidencia directa en las entrevistas** que sustente esta necesidad. Corresponde a una funcionalidad propuesta dentro del alcance IoT del sistema. |
+| **US82 – Reenviar telemetría y eventos a la nube** | Sistema | Pérdida de datos de sensores ante fallas de conectividad. | **No existe evidencia directa en las entrevistas** que sustente esta necesidad. Corresponde a una funcionalidad propuesta dentro del alcance IoT del sistema. |
+| **US83 – Ejecutar comandos remotos sobre los dispositivos** | Administrador | Atención remota de situaciones excepcionales. | Es la contraparte en el Edge de US56. **No existe evidencia directa en las entrevistas** que sustente esta necesidad. Corresponde a una funcionalidad propuesta dentro del alcance IoT del sistema. |
+| **US84 – Mostrar fecha y hora en la pantalla OLED** | Residente | Falta de referencia horaria en el punto de acceso. | Complementa US74 y es necesaria para los permisos con ventana horaria de US54. **No existe evidencia directa en las entrevistas** que sustente esta necesidad. Corresponde a una funcionalidad propuesta dentro del alcance IoT del sistema. |
+| **US85 – Mantener y sincronizar el reloj del nodo** | Sistema | Permisos por horario y auditoría dependen de una hora confiable. | Requisito técnico de US54, US55 y US75, que usan marcas de tiempo y ventanas horarias. **No existe evidencia directa en las entrevistas** que sustente esta necesidad. Corresponde a una funcionalidad propuesta dentro del alcance IoT del sistema. |
+| **US86 – Enrolar una tarjeta RFID desde el lector del nodo** | Administrador | Registro manual de tarjetas propenso a errores de digitación. | Simplifica el flujo de US48 (registrar tarjeta de acceso). **No existe evidencia directa en las entrevistas** que sustente esta necesidad. Corresponde a una funcionalidad propuesta dentro del alcance IoT del sistema. |
+| **US87 – Restringir el acceso a un área por horario** | Administrador | Uso de áreas comunes fuera de las horas permitidas. | Complementa US39 (configurar reglas de área común) en el control físico del acceso. **No existe evidencia directa en las entrevistas** que sustente esta necesidad. Corresponde a una funcionalidad propuesta dentro del alcance IoT del sistema. |
+| **US88 – Avisar el fin de una reserva en el punto de acceso** | Residente | Conflictos por superposición de horarios en áreas comunes. | Responde al problema de cruces de horarios señalado en las entrevistas (US19). El aviso físico es una funcionalidad propuesta. |
+| **US89 – Activar el modo mantenimiento en un dispositivo** | Administrador | Falsas alertas y riesgos al intervenir dispositivos. | **No existe evidencia directa en las entrevistas** que sustente esta necesidad. Corresponde a una funcionalidad propuesta dentro del alcance IoT del sistema. |
+| **US90 – Acceder a un área con el teléfono móvil** | Residente | Dependencia de llevar una tarjeta física para ingresar. | Extiende US71 (tarjeta RFID) a un segundo medio de credencial. **No existe evidencia directa en las entrevistas** que sustente esta necesidad. Corresponde a una funcionalidad propuesta dentro del alcance IoT del sistema. |
+| **US91 – Revocar la credencial móvil de un teléfono** | Residente / Administrador | Riesgo de acceso indebido por pérdida de un teléfono. | Equivale para el teléfono al reporte de tarjeta extraviada de US48. **No existe evidencia directa en las entrevistas** que sustente esta necesidad. Corresponde a una funcionalidad propuesta dentro del alcance IoT del sistema. |
+| **US92 – Calibrar los sensores de un nodo** | Administrador | Lecturas que no representan el tanque ni el área verde reales. | Complementa US76, US77 y US78, que dependen de valores calibrados. **No existe evidencia directa en las entrevistas** que sustente esta necesidad. Corresponde a una funcionalidad propuesta dentro del alcance IoT del sistema. |
+| **US93 – Consultar el estado del Edge Gateway sin internet** | Administrador | Falta de visibilidad del sistema cuando se cae internet. | Responde al requisito de operación sin conexión del Edge (Cap. IV) y respalda el registro manual de US86. **No existe evidencia directa en las entrevistas** que sustente esta necesidad. Corresponde a una funcionalidad propuesta dentro del alcance IoT del sistema. |
 
 
 
@@ -2623,6 +3935,63 @@ En esta sección, se presenta el Product Backlog como una recopilación organiza
 | 42 | US53 | Encendido automático de luces por movimiento | Como sistema, quiero encender automáticamente las luces de áreas comunes al detectar movimiento para mejorar la seguridad y el ahorro energético del edificio. | EP07 | 3 | Could Have |
 | 43 | TS16 | Configuración base del microservicio IoT Access Management | Como desarrollador, quiero crear el microservicio de IoT Access Management para gestionar el registro, estado y eventos de los dispositivos inteligentes del edificio. | EP-TS | 5 | Should Have |
 | 44 | TS17 | Comunicación con dispositivos ESP32 mediante protocolo MQTT | Como desarrollador, quiero implementar la comunicación entre el microservicio IoT Access Management y las placas ESP32 mediante MQTT, para recibir lecturas de sensores y enviar comandos de actuación en tiempo real. | EP-TS | 8 | Should Have |
+| 45 | US54 | Otorgar acceso temporal por reserva aprobada | Como residente, quiero que mi reserva aprobada me habilite automáticamente el ingreso al área común solo durante mi horario, para no depender del administrador para entrar. | EP07 | 5 | Should Have |
+| 46 | US55 | Consultar bitácora de accesos | Como administrador, quiero consultar la bitácora de intentos de acceso a las áreas comunes para auditar quién ingresó y detectar accesos no autorizados. | EP07 | 3 | Should Have |
+| 47 | US56 | Apertura remota de acceso | Como administrador, quiero abrir remotamente un acceso desde la aplicación para atender situaciones excepcionales sin desplazarme al lector. | EP07 | 3 | Could Have |
+| 48 | US57 | Configurar reglas de automatización de iluminación | Como administrador, quiero configurar reglas de iluminación por área común (presencia, umbral de lux, franja horaria, tiempo de apagado y prioridad) para automatizar el uso eficiente de la energía. | EP08 | 5 | Should Have |
+| 49 | US58 | Encender o apagar luces manualmente (override) | Como residente con una reserva vigente o como administrador, quiero encender o apagar manualmente las luces de un área por un tiempo determinado, para cubrir situaciones que la automatización no contempla. | EP08 | 5 | Should Have |
+| 50 | US59 | Encender área al iniciar una reserva | Como sistema, quiero encender automáticamente las luces del área reservada al iniciar la reserva, para que el residente encuentre el espacio listo para su uso. | EP08 | 3 | Should Have |
+| 51 | US60 | Registrar y consultar luminarias | Como administrador, quiero registrar las luminarias de cada área común y consultar su estado, para mantener un inventario actualizado del sistema de iluminación. | EP08 | 3 | Should Have |
+| 52 | US61 | Visualizar consumo energético por área y periodo | Como administrador, quiero visualizar el consumo energético (kWh) por área común y periodo, para identificar dónde se puede reducir el gasto eléctrico. | EP09 | 5 | Should Have |
+| 53 | US62 | Alertar consumo anómalo | Como administrador, quiero recibir una alerta cuando el consumo de un área se desvíe de su comportamiento habitual, para investigar posibles fallas o usos indebidos. | EP09 | 8 | Could Have |
+| 54 | US63 | Detectar falla de luminaria | Como administrador, quiero ser notificado cuando una luminaria no funcione pese a estar encendida, para repararla oportunamente. | EP09 | 5 | Could Have |
+| 55 | US64 | Monitorear estado de conexión de dispositivos | Como administrador, quiero ver el estado de conexión de todos los dispositivos IoT del edificio, para saber cuáles requieren atención. | EP09 | 3 | Should Have |
+| 56 | US65 | Consultar lecturas de sensores en tiempo real e históricas | Como administrador, quiero consultar las lecturas de los sensores en tiempo real y su histórico, para analizar el comportamiento de las áreas del edificio. | EP09 | 5 | Should Have |
+| 57 | US66 | Configurar reglas de detección de fugas | Como administrador, quiero configurar las reglas de detección de fugas por zona hidráulica (umbral de caudal, caída de presión, franja de consumo esperado y duración mínima), para adaptar la detección al uso real del edificio. | EP10 | 3 | Should Have |
+| 58 | US67 | Cortar automáticamente la bomba ante una fuga | Como sistema, quiero detectar una fuga a partir de las lecturas de caudal y presión y apagar la bomba, para minimizar la pérdida de agua. | EP10 | 8 | Should Have |
+| 59 | US68 | Gestionar alertas de fuga | Como administrador, quiero reconocer y resolver las alertas de fuga, para llevar el control del seguimiento de cada incidente. | EP10 | 3 | Should Have |
+| 60 | US69 | Apagar manualmente una bomba de agua | Como administrador, quiero apagar remotamente una bomba de agua desde la aplicación, para actuar de inmediato ante una emergencia. | EP10 | 3 | Could Have |
+| 61 | US70 | Detectar falla de bomba por caída de presión | Como administrador, quiero que el sistema identifique cuando una bomba presenta caída de presión sin caudal correspondiente, para atender una posible falla del equipo. | EP10 | 5 | Could Have |
+| 62 | TS18 | Configuración base del microservicio Smart Lighting & Automation | Como desarrollador, quiero crear el microservicio Smart Lighting & Automation para gestionar luminarias, reglas de automatización y comandos de override de forma independiente de los demás microservicios de Edifika. | EP-TS | 5 | Should Have |
+| 63 | TS19 | Configuración base del microservicio IoT Telemetry & Analytics con TimescaleDB | Como desarrollador, quiero crear el microservicio de telemetría con almacenamiento en TimescaleDB para ingerir lecturas de sensores y resolver consultas analíticas con baja latencia. | EP-TS | 8 | Should Have |
+| 64 | TS20 | Configuración base del microservicio Water Pump Leak Detection | Como desarrollador, quiero crear el microservicio de detección de fugas para gestionar bombas, reglas y alertas, ejecutando el corte de forma confiable ante una fuga. | EP-TS | 5 | Should Have |
+| 65 | TS21 | Implementación del Edge API con operación sin conexión y sincronización | Como desarrollador, quiero implementar el Edge API que se comunica por MQTT local con los nodos ESP32 y se sincroniza con la nube, para que el condominio siga operando aun sin conexión a internet. | EP-TS | 8 | Should Have |
+| 66 | TS22 | Publicación y consumo de eventos de dominio entre contextos IoT | Como desarrollador, quiero implementar la mensajería de eventos de dominio mediante el broker AMQP/MQTT con consumo idempotente, para integrar los contextos IoT con Reservation, Payment y Notification sin acoplarlos. | EP-TS | 5 | Should Have |
+| 67 | US71 | Leer tarjeta RFID y resolver el acceso | Como residente, quiero acercar mi tarjeta RFID al lector de la puerta para ingresar a un área común sin depender de otra persona. | EP11 | 5 | Must Have |
+| 68 | US72 | Abrir la cerradura eléctrica y re-bloquearla automáticamente | Como sistema, quiero energizar la cerradura eléctrica solo el tiempo necesario cuando se concede un acceso, para que la puerta no quede abierta. | EP11 | 5 | Must Have |
+| 69 | US73 | Emitir señales sonoras con el buzzer | Como residente, quiero escuchar una señal sonora distinta según el resultado de mi acceso, para saber si puedo pasar sin mirar la pantalla. | EP11 | 2 | Should Have |
+| 70 | US74 | Mostrar mensajes de estado en la pantalla OLED | Como residente, quiero ver en la pantalla OLED el resultado de mi acceso y el estado del sistema, para entender por qué se me permite o niega el ingreso. | EP11 | 3 | Should Have |
+| 71 | US75 | Registrar y sincronizar accesos generados sin conexión | Como administrador, quiero que los accesos ocurridos sin internet queden registrados y se sincronicen luego, para no perder la auditoría. | EP11 | 5 | Must Have |
+| 72 | US76 | Medir la humedad con el sensor de humedad | Como sistema, quiero leer periódicamente el sensor de humedad del ESP32, para disponer de datos confiables del área verde. | EP11 | 3 | Should Have |
+| 73 | US77 | Medir el nivel de agua con el sensor ultrasónico | Como administrador, quiero que el sensor ultrasónico mida el nivel del tanque de agua, para conocer su nivel sin revisarlo físicamente. | EP11 | 5 | Should Have |
+| 74 | US78 | Alertar localmente un nivel crítico | Como administrador, quiero que el sistema alerte con buzzer, pantalla y notificación cuando el nivel del tanque sea crítico, para actuar a tiempo. | EP11 | 3 | Should Have |
+| 75 | US79 | Registrar y autenticar nodos ESP32 | Como administrador, quiero registrar cada ESP32 en el Edge Gateway con sus sensores y actuadores, para que solo los dispositivos autorizados puedan operar. | EP11 | 5 | Must Have |
+| 76 | US80 | Monitorear el estado de los nodos desde el Edge Gateway | Como administrador, quiero que el Edge Gateway detecte cuándo un nodo deja de responder, para atender fallas de hardware o de red. | EP11 | 3 | Should Have |
+| 77 | US81 | Sincronizar credenciales, reservas y blacklist desde la nube | Como sistema, quiero que el Edge Gateway reciba y mantenga actualizada una copia local de credenciales, reservas vigentes y blacklist, para decidir accesos sin depender de internet. | EP11 | 5 | Must Have |
+| 78 | US82 | Reenviar telemetría y eventos a la nube | Como sistema, quiero que el Edge Gateway reenvíe las lecturas de los sensores y los eventos hacia la nube, para alimentar la analítica y las alertas. | EP11 | 5 | Should Have |
+| 79 | US83 | Ejecutar comandos remotos sobre los dispositivos | Como administrador, quiero enviar comandos desde la nube (abrir cerradura, activar alerta sonora o mensaje en pantalla) y que el Edge Gateway los ejecute en el dispositivo, para atender situaciones a distancia. | EP11 | 3 | Should Have |
+| 80 | TS23 | Configuración base del Edge Gateway con Python, Flask, Peewee ORM y SQLite | Como desarrollador, quiero crear el servicio Edge Gateway con Python, Flask, Peewee ORM y SQLite con configuración por variables de entorno y endpoint de salud, para tener una base ejecutable y desplegable en el equipo del edificio. | EP-TS | 5 | Must Have |
+| 81 | TS24 | Contrato de mensajes MQTT entre el Edge Gateway y los ESP32 | Como desarrollador, quiero definir y validar el contrato de tópicos y mensajes JSON entre el Edge Gateway y los nodos ESP32, para que firmware y servicio evolucionen sin romperse. | EP-TS | 5 | Must Have |
+| 82 | TS25 | Persistencia local con SQLite y cola de salida | Como desarrollador, quiero almacenar localmente credenciales, lecturas y eventos pendientes en SQLite, para garantizar la operación offline y la entrega confiable a la nube. | EP-TS | 5 | Must Have |
+| 83 | TS26 | Firmware base del ESP32 con lectura de sensores y reconexión | Como desarrollador, quiero implementar el firmware base del ESP32 que lea los sensores, controle los actuadores y mantenga la conexión Wi-Fi y MQTT, para que el nodo opere de forma autónoma y recuperable. | EP-TS | 8 | Must Have |
+| 84 | TS27 | Seguridad de la comunicación del Edge Gateway | Como desarrollador, quiero asegurar la comunicación entre los ESP32, el Edge Gateway y la nube, para evitar accesos o comandos no autorizados. | EP-TS | 5 | Should Have |
+| 85 | US84 | Mostrar fecha y hora en la pantalla OLED | Como residente, quiero ver la fecha y la hora actual en la pantalla OLED del punto de acceso, para saber la hora sin usar mi celular y verificar mi horario de reserva. | EP11 | 3 | Should Have |
+| 86 | US85 | Mantener y sincronizar el reloj del nodo | Como sistema, quiero que el nodo mantenga una hora precisa incluso sin internet y la sincronice con el Edge Gateway, para que los permisos por horario y las marcas de tiempo de los eventos sean confiables. | EP11 | 5 | Must Have |
+| 87 | TS28 | Estandarización de marcas de tiempo y zona horaria | Como desarrollador, quiero que todos los componentes registren las marcas de tiempo en UTC con formato ISO 8601 y las muestren en la zona America/Lima, para evitar inconsistencias entre el ESP32, el Edge Gateway y la nube. | EP-TS | 3 | Should Have |
+| 88 | US86 | Enrolar una tarjeta RFID desde el lector del nodo | Como administrador, quiero registrar una tarjeta nueva acercándola al lector del nodo, para asignarla a un residente sin digitar manualmente su número de serie. | EP11 | 5 | Should Have |
+| 89 | US87 | Restringir el acceso a un área por horario | Como administrador, quiero definir el horario permitido de cada área común, para que no se pueda ingresar fuera de las horas habilitadas aunque se tenga una credencial activa. | EP11 | 3 | Should Have |
+| 90 | US88 | Avisar el fin de una reserva en el punto de acceso | Como residente, quiero que el nodo del área reservada me avise cuando mi reserva esté por terminar, para desocupar el espacio a tiempo. | EP11 | 3 | Could Have |
+| 91 | US89 | Activar el modo mantenimiento en un dispositivo | Como administrador, quiero poner un nodo en modo mantenimiento, para repararlo o calibrarlo sin generar falsas alertas ni accesos inesperados. | EP11 | 3 | Should Have |
+| 92 | TS29 | Actualización remota (OTA) del firmware de los nodos ESP32 | Como desarrollador, quiero actualizar el firmware de los ESP32 de forma remota desde el Edge Gateway con verificación y reversión, para corregir errores y agregar funciones sin acceder físicamente a cada nodo. | EP-TS | 8 | Should Have |
+| 93 | US90 | Acceder a un área con el teléfono móvil | Como residente, quiero acercar mi teléfono con la app de Edifika al nodo de acceso para ingresar a un área común, igual que con mi tarjeta RFID. | EP11 | 8 | Should Have |
+| 94 | US91 | Revocar la credencial móvil de un teléfono | Como residente o administrador, quiero revocar la credencial móvil de un teléfono perdido o reemplazado, para que nadie pueda usarlo para ingresar. | EP11 | 5 | Should Have |
+| 95 | TS30 | Verificación de credenciales móviles firmadas en el Edge Gateway | Como desarrollador, quiero que el Edge Gateway verifique credenciales móviles firmadas criptográficamente sin consultar la nube, para aceptar teléfonos de forma segura incluso sin internet. | EP-TS | 8 | Should Have |
+| 96 | US92 | Calibrar los sensores de un nodo | Como administrador, quiero calibrar los sensores de un nodo (altura del tanque, umbral de humedad baja y umbral de nivel crítico), para que las lecturas y las alertas reflejen las condiciones reales del edificio. | EP11 | 3 | Should Have |
+| 97 | US93 | Consultar el estado del Edge Gateway sin internet | Como administrador, quiero consultar desde el sistema local el estado del Edge Gateway, sus nodos y los eventos pendientes de enviar, para operar y diagnosticar el edificio aunque no haya internet. | EP11 | 3 | Should Have |
+| 98 | TS31 | Despliegue del Edge Gateway con Docker Compose | Como desarrollador, quiero desplegar el Edge Gateway, el broker MQTT y un backend simulado con Docker Compose, para ejecutar y demostrar toda la solución con un solo comando. | EP-TS | 5 | Should Have |
+| 99 | TS32 | Simulador de nodos ESP32 para pruebas sin hardware | Como desarrollador, quiero un simulador de nodos ESP32 que respete el contrato MQTT, para probar el Edge Gateway sin depender del hardware físico. | EP-TS | 3 | Should Have |
+| 100 | TS33 | Contrato de integración entre el Edge Gateway y el backend | Como desarrollador, quiero un contrato de integración entre el Edge Gateway y el backend con entrega por lotes e idempotencia, para transportar la información de los nodos sin pérdidas ni duplicados. | EP-TS | 5 | Must Have |
+| 101 | TS34 | Pruebas automatizadas del Edge Gateway | Como desarrollador, quiero una suite de pruebas automatizadas del Edge Gateway que no dependa del broker ni de la red, para detectar regresiones antes de cada integración. | EP-TS | 5 | Should Have |
 
 # Capítulo IV: Solution Software Design
 
@@ -4729,6 +6098,342 @@ Implementación JPA de los repositorios sobre PostgreSQL; `EdgeCommandPublisher`
 
 *Figura. Diagrama Entidad-Relación — extensión Water Pump Leak Detection. Elaborado con PlantUML.*
 
+
+# Capítulo V: Solution UI/UX Design
+
+## 5.1. Style Guidelines
+
+### 5.1.1. General Style Guidelines
+
+### 5.1.2. Web, Mobile and IoT Style Guidelines
+
+## 5.2. Information Architecture
+
+### 5.2.1. Organization Systems
+
+### 5.2.2. Labeling Systems
+
+### 5.2.3. SEO Tags and Meta Tags
+
+### 5.2.4. Searching Systems
+
+### 5.2.5. Navigation Systems
+
+## 5.3. Landing Page UI Design
+
+### 5.3.1. Landing Page Wireframe
+
+### 5.3.2. Landing Page Mock-up
+
+## 5.4. Applications UX/UI Design
+
+### 5.4.1. Applications Wireframes
+
+### 5.4.2. Applications Wireflow Diagrams
+
+#### 5.4.2.1. Applications Mock-ups
+
+### 5.4.3. Applications User Flow Diagrams
+
+## 5.5. Applications Prototyping
+
+## 5.6. IoT Device Design
+
+# Capítulo VI: Product Implementation, Validation & Deployment
+
+## 6.1. Software Configuration Management
+
+### 6.1.1. Software Development Environment Configuration
+
+Esta subsección registra las herramientas utilizadas para desarrollar el **Edge Gateway** (servicio Edge del proyecto). Las herramientas de los demás productos digitales (Landing Page, Web Services, Web Applications y Mobile Applications) se agregan en este mismo cuadro conforme se incorporan.
+
+| Producto de software | Versión | Propósito en el proyecto | Referencia |
+|---|---|---|---|
+| Python | 3.12 (imagen Docker) | Lenguaje del Edge Gateway, según el enunciado para Edge Services | https://www.python.org/downloads/ |
+| Flask | 3.1.3 | Framework web del Edge Gateway (API REST local) | https://flask.palletsprojects.com/ |
+| flask-smorest | 0.47.0 | Definición de endpoints y documentación OpenAPI/Swagger | https://flask-smorest.readthedocs.io/ |
+| marshmallow | 4.3.1 | Validación de solicitudes REST y de mensajes MQTT | https://marshmallow.readthedocs.io/ |
+| Peewee ORM | 4.5.2 | Acceso a datos del Edge Gateway, según el enunciado | https://docs.peewee-orm.com/ |
+| SQLite | incluido en Python | Base de datos local del Edge Gateway (modo WAL) | https://www.sqlite.org/ |
+| paho-mqtt | 2.1.0 | Cliente MQTT para comunicarse con los nodos ESP32 | https://eclipse.dev/paho/ |
+| Eclipse Mosquitto | 2 | Broker MQTT local entre los nodos ESP32 y el Edge Gateway | https://mosquitto.org/ |
+| gunicorn | 26.2.0 | Servidor de aplicación del contenedor del Edge Gateway | https://gunicorn.org/ |
+| pytest | 9.1.1 | Pruebas unitarias y de integración del Edge Gateway | https://docs.pytest.org/ |
+| Docker y Docker Compose | 29.8 / 5.5 | Empaquetado y despliegue local de todo el servicio | https://www.docker.com/products/docker-desktop/ |
+| GitHub | — | Control de versiones y repositorio del Edge Gateway | https://github.com/ |
+
+### 6.1.2. Source Code Management
+
+El código fuente se gestiona en GitHub, dentro de la organización pública del equipo. Cada producto digital tiene su propio repositorio, que incluye el proyecto y sus archivos de pruebas.
+
+| Producto | Repositorio |
+|---|---|
+| Edge Gateway (Python, Flask, Peewee, SQLite) | https://github.com/IoT-UPC-202620/Edifika-Microservice-IoT-Gateway |
+
+**GitFlow.** El Edge Gateway aplica GitFlow con las siguientes ramas:
+
+| Rama | Origen | Destino | Convención de nombre | Ejemplo |
+|---|---|---|---|---|
+| `main` | — | — | Contiene solo versiones publicadas, cada una con su tag | `v0.1.0` |
+| `develop` | `main` | — | Rama de integración | `develop` |
+| Feature | `develop` | `develop` (merge `--no-ff`) | `feature/<ID de historia>-<nombre corto>` | `feature/US71-access-control` |
+| Release | `develop` | `main` y `develop` | `release/<versión>` | `release/0.1.0` |
+| Hotfix | `main` | `main` y `develop` | `hotfix/<nombre>` | `hotfix/lock-timeout` |
+
+Cada historia o grupo de historias relacionadas se desarrolla en su propia rama feature y se integra a `develop` mediante un merge sin avance rápido (`--no-ff`), de modo que el historial conserve qué cambios pertenecen a cada historia.
+
+**Semantic Versioning.** Las versiones siguen el formato `MAJOR.MINOR.PATCH`. La primera versión funcional es la **0.1.0**: se preparó en `release/0.1.0` (con su `CHANGELOG.md`), se integró a `main` y se etiquetó como `v0.1.0`.
+
+**Conventional Commits.** Los mensajes de commit usan el formato `<tipo>(<ámbito>): <descripción>`, con los tipos `feat`, `fix`, `docs`, `test`, `chore` y `refactor`, y mencionan entre paréntesis los identificadores de las historias implementadas. Por ejemplo: `feat(access): resolve RFID access locally with lock, buzzer and OLED feedback (US71-US75, US87)`.
+
+### 6.1.3. Source Code Style Guide & Coding Conventions
+
+Convenciones adoptadas para el código Python del Edge Gateway:
+
+| Aspecto | Convención |
+|---|---|
+| Estilo general | PEP 8 (https://peps.python.org/pep-0008/) |
+| Documentación | Docstrings según PEP 257 (https://peps.python.org/pep-0257/) en módulos y clases públicas |
+| Nomenclatura | En inglés. `snake_case` para funciones, variables y módulos; `PascalCase` para clases; `MAYUSCULAS_CON_GUION_BAJO` para constantes |
+| Tipado | Anotaciones de tipo en las firmas públicas de los servicios |
+| Organización | Capas separadas: `api` (interfaz REST), `services` (reglas de negocio), `mqtt` (contrato y mensajería), `models` y `db` (persistencia) |
+| Mensajes al usuario | Inglés como idioma por defecto (mensajes de la API, de la pantalla OLED y de la documentación Swagger), según el enunciado |
+| Configuración | Solo mediante variables de entorno con el prefijo `EDGE_`; ningún secreto en el código |
+| Pruebas | Un archivo por componente; el nombre de cada prueba describe el comportamiento esperado, y los escenarios Dado/Cuando/Entonces de las historias se traducen en pruebas `pytest` |
+| Commits y ramas | Conventional Commits y GitFlow (ver 6.1.2) |
+
+### 6.1.4. Software Deployment Configuration
+
+El Edge Gateway se despliega con **Docker Compose**, junto con el broker MQTT y un backend simulado. La solución completa se levanta con un solo comando:
+
+```bash
+docker compose up --build                  # broker + Edge Gateway + backend simulado
+docker compose --profile sim up --build    # además, dos nodos ESP32 virtuales
+```
+
+**Servicios del `docker-compose.yml`**
+
+| Servicio | Imagen | Puerto | Función |
+|---|---|---|---|
+| `mosquitto` | `eclipse-mosquitto:2` | 1883 | Broker MQTT local. Verificación de salud con `mosquitto_sub` |
+| `edge-gateway` | Construida desde el `Dockerfile` (`python:3.12-slim`) | 8000 | API REST, Swagger (`/docs`) y `/health` |
+| `mock-cloud` | Misma imagen | 9000 | Backend simulado que recibe los eventos y entrega las credenciales |
+| `seed`, `sim-door`, `sim-garden` | Misma imagen (perfil `sim`) | — | Registro de los nodos de demostración y dos ESP32 virtuales |
+
+**Decisiones de despliegue**
+
+- El Edge Gateway se ejecuta con **un solo worker** de gunicorn (y varios hilos), porque el cliente MQTT y los planificadores de tareas deben existir una única vez.
+- La base de datos SQLite se guarda en el volumen `edge-data`, de modo que sobrevive a los reinicios del contenedor. El broker conserva su estado en el volumen `mosquitto-data`.
+- El Edge Gateway espera a que el broker y el backend superen sus verificaciones de salud antes de iniciar (`depends_on` con `service_healthy`). Si el broker se cae después, el cliente reintenta la conexión con espera creciente.
+- El contenedor se ejecuta con un usuario sin privilegios y define su propio `HEALTHCHECK` sobre `/health`.
+
+**Variables de entorno principales**
+
+| Variable | Valor por defecto en Compose | Descripción |
+|---|---|---|
+| `EDGE_SERVICE_TOKEN` | `dev-service-token` | Token Bearer de la API REST local (obligatorio) |
+| `EDGE_MQTT_HOST` | `mosquitto` | Broker MQTT |
+| `EDGE_CLOUD_BASE_URL` | `http://mock-cloud:9000` | Backend al que se envían los eventos |
+| `EDGE_CLOUD_TOKEN` | `dev-cloud-token` | Credencial del Edge Gateway ante el backend |
+| `EDGE_DATABASE_PATH` | `/data/edge-gateway.db` | Archivo SQLite |
+| `EDGE_TIMEZONE` | `America/Lima` | Zona horaria de los horarios de las áreas |
+
+Los valores se pueden sobrescribir con un archivo `.env` (ver `.env.example`). La topología desplegada se representa en el Deployment Diagram de la sección 4.1.3.4.
+
+## 6.2. Landing Page, Services & Applications Implementation
+
+### 6.2.1. Sprint 1
+
+#### 6.2.1.1. Sprint Planning 1
+
+#### 6.2.1.2. Aspect Leaders and Collaborators
+
+#### 6.2.1.3. Sprint Backlog 1
+
+#### 6.2.1.4. Development Evidence for Sprint Review
+
+El Edge Gateway se desarrolló en ramas feature de GitFlow. Cada rama se integró a `develop` con su commit convencional, y el release `0.1.0` se integró a `main`. Repositorio: https://github.com/IoT-UPC-202620/Edifika-Microservice-IoT-Gateway
+
+| Rama | Commit | Historias | Qué se desarrolló |
+|---|---|---|---|
+| `feature/TS23-flask-base` | `b846d26` | TS23 | Aplicación Flask, configuración por variables de entorno, `/health`, Swagger y token Bearer |
+| `feature/TS25-local-persistence` | `d962edc` | TS25 | Modelos Peewee sobre SQLite (modo WAL) y cola de salida de eventos (outbox) |
+| `feature/TS24-mqtt-contract` | `6daef9c` | TS24 | Contrato MQTT versionado, router de mensajes, puente paho-mqtt y comandos con confirmación (ACK) |
+| `feature/US79-US80-device-registry` | `90a80df` | US79, US80, US85 | Registro de nodos, heartbeat, detección de nodos sin conexión y sincronización de reloj |
+| `feature/US71-access-control` | `ab2d202` | US71–US75, US87 | Decisión local de acceso RFID, cerradura, buzzer y OLED, horarios por área y registro manual de tarjetas |
+| `feature/US76-sensor-telemetry` | `6a80218` | US76–US78, US92 | Lecturas de humedad y ultrasonido, nivel de agua, alertas locales y calibración |
+| `feature/TS33-cloud-integration` | `9ca706a` | TS33, US75, US81, US82, US93 | Envío por lotes al backend, sincronización de la caché y endpoints de estado local |
+| `feature/US83-remote-commands-maintenance` | `da711b3` | US83, US89 | Comandos remotos y modo mantenimiento |
+| `feature/TS31-docker-compose` | `fb0a2db` | TS31, TS32, TS33 | Docker Compose, simulador de nodos y backend simulado |
+| `feature/docs-readme` | `4e7bd48` | — | Documentación del repositorio |
+| `release/0.1.0` | `171a6f9` | — | Preparación de la versión 0.1.0 y `CHANGELOG.md` |
+
+**Estructura del código**
+
+```
+main.py                    punto de entrada (gunicorn main:app)
+edge_gateway/
+  config.py  gateway.py    configuración · raíz de composición y tareas en segundo plano
+  mqtt/                    contrato (esquemas), router y puente paho-mqtt
+  services/                access, devices, telemetry, commands, remote, outbox, sync, alerts, credentials
+  api/                     blueprints REST y esquemas
+  models.py  db.py         modelos Peewee · configuración de SQLite
+mock_cloud/                backend simulado para pruebas locales
+simulator/                 nodos ESP32 virtuales
+tests/                     suite de pruebas pytest
+```
+
+El código de la aplicación tiene cerca de 2 700 líneas y las pruebas cerca de 1 900.
+
+**Decisiones de diseño relevantes**
+
+- **Offline first:** las decisiones de acceso nunca consultan la nube; todo lo que debe llegar al backend pasa por la cola de salida en SQLite. Un registro y su evento se escriben en una misma transacción.
+- **Alertas con estado:** cada condición (humedad baja, nivel crítico de agua, nodo sin conexión) se anuncia una vez al producirse y una vez al resolverse, no por cada lectura.
+- **Mantenimiento significa desactivado:** un nodo en mantenimiento no procesa tarjetas, lecturas, comandos ni genera alertas hasta que el mantenimiento termina, de forma manual o por vencimiento.
+- **Cola con prioridad:** si la cola de salida se llena, se descartan primero las lecturas de telemetría más antiguas; los accesos y las alertas nunca se descartan.
+
+#### 6.2.1.5. Testing Suite Evidence for Sprint Review
+
+Las pruebas se encuentran en la carpeta `tests/` del repositorio y se ejecutan con `pytest`. La suite tiene **188 pruebas** que **no necesitan broker MQTT ni internet**: el broker, el backend y el reloj se reemplazan con dobles de prueba (`FakePublisher`, `FakeCloud`, `FakeClock`), y cada prueba usa su propia base de datos SQLite temporal. La suite completa se ejecuta en unos 12 segundos.
+
+```bash
+pip install -r requirements-dev.txt
+pytest
+# 188 passed
+```
+
+| Archivo de pruebas | Pruebas | Qué verifica | Historias |
+|---|---|---|---|
+| `test_base.py` | 6 | Arranque, `/health`, Swagger/OpenAPI y configuración obligatoria | TS23 |
+| `test_persistence.py` | 7 | Modo WAL, persistencia tras reinicio, escritura atómica y límite de la cola | TS25 |
+| `test_mqtt_contract.py` | 21 | Esquemas, versión de contrato, router resistente a mensajes inválidos y puente MQTT | TS24 |
+| `test_commands.py` | 9 | Comandos, ACK, tiempos de espera y alerta de cerradura sin respuesta | TS24, US72 |
+| `test_devices.py` | 19 | Registro de nodos, heartbeat, desconexión, recuperación, sincronización de reloj, planificador y API | US79, US80, US85 |
+| `test_access.py` | 29 | Decisiones de acceso (tarjeta válida, desconocida, bloqueada, vencida, sin reserva, fuera de horario), lecturas repetidas, intentos denegados y API | US71–US75, US87 |
+| `test_telemetry.py` | 28 | Validación de lecturas, nivel de agua, filtro de picos, alertas con histéresis y calibración | US76–US78, US92 |
+| `test_cloud_integration.py` | 38 | Entrega por lotes, reintentos, caída y recuperación de la nube, cliente HTTP, sincronización y estado local | TS33, US75, US81, US82, US93 |
+| `test_remote_and_maintenance.py` | 26 | Comandos remotos, errores HTTP y modo mantenimiento | US83, US89 |
+| `test_mock_cloud.py` | 5 | Backend simulado: autenticación, idempotencia y sincronización | TS33 |
+| **Total** | **188** | | |
+
+**Escenarios de aceptación.** Los escenarios Dado/Cuando/Entonces de cada historia (Capítulo III) se tradujeron en pruebas con nombres descriptivos. Por ejemplo, el escenario de US75 "Registro local sin internet" se verifica en `test_access_attempts_made_while_offline_reach_the_cloud_afterwards`, y el de US89 "Nodo desactivado durante el mantenimiento" en `test_node_in_maintenance_rejects_every_remote_command_even_from_an_admin`.
+
+**Verificación de la suite.** Se comprobó que las pruebas detectan errores reales introduciendo fallos a propósito: invertir el orden de entrega de eventos, eliminar la espera entre reintentos y quitar la protección de las tarjetas registradas sin conexión. En los tres casos al menos una prueba falló y señaló el comportamiento alterado.
+
+#### 6.2.1.6. Execution Evidence for Sprint Review
+
+Se ejecutó el servicio completo de extremo a extremo: broker MQTT real, backend simulado, Edge Gateway y nodos ESP32 virtuales, que se comunican con el contrato MQTT descrito en 6.2.1.7. Para esta verificación el broker fue un broker MQTT de código abierto ejecutado en el mismo equipo.
+
+**1. Arranque y salud.** El Edge Gateway se conectó al broker, sincronizó la caché con el backend y reportó todas sus dependencias en estado correcto:
+
+```
+INFO edge_gateway.mqtt.bridge: Connected to MQTT broker localhost:1883
+INFO edge_gateway.services.sync: Cache synchronised to version 1: {'credentials': 1, 'permissions': 1, 'areaSchedules': 1, 'removed': 0}
+GET /health -> {"status":"ok", "checks":{"database":{"ok":true}, "outbox":{...,"pending":0}, "cache":{"version":1,"stale":false}, "mqtt":{"ok":true}}}
+```
+
+**2. Registro de nodos y primer heartbeat.** Se registraron dos nodos mediante la API; a los pocos segundos de iniciar los nodos virtuales ambos pasaron de `INACTIVE` a `ACTIVE`:
+
+```
+esp32-door-01   ACTIVE
+esp32-garden-01 ACTIVE
+```
+
+**3. Lectura de tarjetas en la puerta.** Una tarjeta con reserva vigente abre la puerta y una tarjeta desconocida es rechazada; en ambos casos el nodo recibe qué mostrar en la pantalla OLED y qué sonido emitir:
+
+```
+[esp32-door-01] -> card 04A1B2C3
+[esp32-door-01] <- access_result {"result": "GRANTED", "reason": "ok", "message": "Access granted", "buzzer": "granted", "name": "Ana Perez", "lockMs": 5000}
+
+[esp32-door-01] -> card DEADBEEF
+[esp32-door-01] <- access_result {"result": "DENIED", "reason": "unknown_credential", "message": "Card not registered", "buzzer": "denied"}
+```
+
+**4. Operación sin internet.** Se simuló la caída del backend. Con el backend caído, la tarjeta válida igualmente abrió la puerta y los eventos quedaron en la cola local; al restablecerse el servicio llegaron todos, en orden y sin duplicados:
+
+```
+(backend caído)   [esp32-door-01] GRANTED: Access granted
+                  status -> outbox: {'pending': 17, 'consecutiveFailures': 2, 'lastError': 'HTTP 503'}
+(backend restaurado)
+                  backend recibió los 3 accesos (GRANTED, DENIED, GRANTED) y 100 lecturas; pendientes en cola: 4 (lecturas nuevas)
+```
+
+**5. Comandos remotos y mantenimiento.** El Edge Gateway ejecuta comandos solo en nodos activos y espera su confirmación:
+
+```
+POST /devices/esp32-door-01/commands  {"type":"unlock","params":{"durationMs":3000}}  -> 200 {"status":"ACKED"}
+PUT  /devices/esp32-door-01/maintenance {"enabled":true,"durationMinutes":30}          -> 200 status MAINTENANCE
+POST /devices/esp32-door-01/commands  {"type":"unlock"}                                -> 409 "Device under maintenance"
+tarjeta presentada en mantenimiento                                                    -> DENIED: Under maintenance
+```
+
+Además, el backend recibió el resultado de cada comando remoto con el administrador que lo solicitó (`requestedBy`).
+
+**6. Seguridad básica.** Una solicitud sin token Bearer a la API responde `401`.
+
+#### 6.2.1.7. Services Documentation Evidence for Sprint Review
+
+El Edge Gateway documenta su API REST con **OpenAPI/Swagger**: la interfaz está disponible en `/docs` y la especificación en `/openapi.json`. Todos los endpoints, excepto `/health`, requieren el token Bearer configurado en `EDGE_SERVICE_TOKEN`. Los textos de la documentación y de las respuestas están en inglés, idioma por defecto del proyecto.
+
+**Endpoints de la API REST local**
+
+| Método | Ruta | Descripción | Historias |
+|---|---|---|---|
+| GET | `/health` | Estado del servicio y de sus dependencias (base de datos, broker, cola de eventos y caché) | TS23 |
+| POST | `/api/v1/devices` | Registrar un nodo; queda `INACTIVE` hasta su primer heartbeat | US79 |
+| GET | `/api/v1/devices` | Listar los nodos | US80, US93 |
+| GET | `/api/v1/devices/{device_id}` | Consultar un nodo | US80 |
+| PATCH | `/api/v1/devices/{device_id}/settings` | Calibrar altura del tanque y umbrales | US92 |
+| PUT | `/api/v1/devices/{device_id}/maintenance` | Activar o finalizar el modo mantenimiento | US89 |
+| POST | `/api/v1/devices/{device_id}/commands` | Ejecutar un comando (abrir cerradura, mostrar mensaje, sonar buzzer) y esperar su confirmación | US83 |
+| POST | `/api/v1/credentials` | Registrar una tarjeta manualmente, también sin internet | US86 (registro manual) |
+| GET | `/api/v1/credentials` | Listar las credenciales en caché | US93 |
+| PATCH | `/api/v1/credentials/{uid}/status` | Activar, suspender o revocar una credencial | US91 (bloqueo manual) |
+| GET | `/api/v1/access-attempts` | Bitácora de accesos, con la credencial enmascarada | US55, US93 |
+| GET | `/api/v1/readings` | Lecturas de sensores | US65 |
+| POST | `/api/v1/sync` | Recibir credenciales, reservas y horarios enviados por la nube | US81 |
+| GET | `/api/v1/status` | Estado del Edge Gateway: nodos, cola de eventos y caché | US93 |
+| GET | `/api/v1/outbox` | Eventos pendientes de enviar a la nube | US93 |
+
+Los errores tienen una forma común: `{"code": 409, "status": "Conflict", "message": "..."}`. Los errores de validación (`422`) incluyen un objeto `errors` con el detalle de cada campo.
+
+**Contrato MQTT entre los nodos y el Edge Gateway** (prefijo `edifika/v1`, versión de esquema 1). Todos los mensajes son JSON con la versión `v` y la marca de tiempo `ts` del reloj del nodo.
+
+| Sentido | Tópico | Contenido |
+|---|---|---|
+| Nodo → Edge | `edifika/v1/nodes/{deviceId}/heartbeat` | `deviceId`, `ts`, `fw` (versión de firmware, opcional) |
+| Nodo → Edge | `edifika/v1/nodes/{deviceId}/access` | `credentialType` (`RFID`), `credential` (UID de la tarjeta) |
+| Nodo → Edge | `edifika/v1/nodes/{deviceId}/readings` | `sensor` (`humidity` o `ultrasonic`), `value` (puede ser nulo si el sensor no midió), `unit` |
+| Nodo → Edge | `edifika/v1/nodes/{deviceId}/ack` | `commandId`, `status` (`OK` o `FAILED`), `detail` |
+| Edge → Nodo | `edifika/v1/nodes/{deviceId}/commands` | `commandId`, `type`, `params` |
+
+Tipos de comando que debe atender el firmware: `access_result` (resultado de una lectura de tarjeta: abrir `lockMs`, mensaje para la OLED y patrón del buzzer), `unlock`, `display`, `buzzer`, `alert` (alerta local, por ejemplo nivel crítico de agua), `maintenance` y `time_sync`. El nodo debe confirmar con un `ack` cada comando que incluya `commandId`. Un mensaje con una versión de esquema distinta o con un formato inválido se descarta y se reporta a la nube una sola vez por dispositivo.
+
+**Contrato entre el Edge Gateway y el backend.** Las llamadas incluyen `Authorization: Bearer <token>` y el encabezado `X-Gateway-Id`.
+
+| Operación | Descripción |
+|---|---|
+| `POST /api/v1/edge/events` | Entrega por lotes de eventos `{eventId, kind, occurredAt, payload}`. El backend responde con los `eventId` aceptados y **debe deduplicar por `eventId`**, porque la entrega es al menos una vez. Tipos de evento: `access_attempt`, `reading`, `alert`, `device_status`, `command_result` y `credential_changed` |
+| `GET /api/v1/edge/sync?since={versión}` | Credenciales, ventanas de reserva y horarios de áreas. Entrega una copia completa (`full: true`) o solo los cambios desde la versión indicada |
+
+Ante un error `5xx`, `401`, `403`, `408`, `429` o una falla de red, el Edge Gateway conserva los eventos y reintenta con espera creciente (máximo 60 segundos). Ante cualquier otro error `4xx`, descarta el evento tras 5 intentos para que no bloquee la cola.
+
+#### 6.2.1.8. Software Deployment Evidence for Sprint Review
+
+El despliegue del Edge Gateway se define de forma reproducible en el repositorio (https://github.com/IoT-UPC-202620/Edifika-Microservice-IoT-Gateway):
+
+| Archivo | Contenido |
+|---|---|
+| `Dockerfile` | Imagen del Edge Gateway (`python:3.12-slim`, usuario sin privilegios, `HEALTHCHECK` y gunicorn con un worker) |
+| `docker-compose.yml` | Servicios `mosquitto`, `edge-gateway`, `mock-cloud` y, con el perfil `sim`, `seed`, `sim-door` y `sim-garden`; volúmenes `edge-data` y `mosquitto-data` |
+| `mosquitto/mosquitto.conf` | Configuración del broker MQTT local |
+| `.env.example` | Variables de entorno que se pueden sobrescribir |
+
+El archivo `docker-compose.yml` se validó con `docker compose config`, que confirma la sintaxis y la resolución de sus variables, y los seis servicios (`mosquitto`, `edge-gateway`, `mock-cloud`, `seed`, `sim-door` y `sim-garden`) quedan definidos. Los pasos de despliegue están en la sección 6.1.4.
+
+> **Pendiente de evidencia:** capturas de la ejecución de `docker compose up --build` con los contenedores en estado `healthy` y de la interfaz Swagger en `http://localhost:8000/docs`.
+
+#### 6.2.1.9. Team Collaboration Insights during Sprint
 
 # Conclusiones
 # Conclusiones y Recomendaciones
