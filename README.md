@@ -3155,7 +3155,7 @@ Los criterios de aceptación describen el comportamiento esperado cuando una dep
 
 **Trazabilidad con el Capítulo III**
 
-Antes del detalle por capas, la tabla siguiente cierra la trazabilidad entre los 12 bounded contexts y el alcance especificado en el Capítulo III, de modo que ningún contexto exista sin una necesidad que lo justifique y ninguna historia comprometida quede sin contexto implementador.
+Antes del detalle por capas, la tabla siguiente cierra la trazabilidad entre los bounded contexts y el alcance especificado en el Capítulo III (US01–US93 y TS01–TS34, 127 historias), de modo que ningún contexto exista sin una necesidad que lo justifique y ninguna historia comprometida quede sin contexto implementador.
 
 | # | Bounded Context | Épica(s) del Cap. III | Historias que implementa | Historia técnica base |
 |---|---|---|---|---|
@@ -3163,21 +3163,31 @@ Antes del detalle por capas, la tabla siguiente cierra la trazabilidad entre los
 | 4.2.2 | Residential Management | EP01 | US04, US07 | TS06 |
 | 4.2.3 | Reservation | EP03 | US16, US17, US18, US19, US20, US33, US35, US38, US39, US40 | TS08 |
 | 4.2.4 | Payment | EP04 | US21, US22, US23, US24, US27, US28, US30 | TS07 |
-| 4.2.5 | Notification | EP02 | US09, US10, US11, US12, US31 | TS10 |
+| 4.2.5 | Notification | EP02, EP03 | US09, US10, US11, US12, US31 | TS10 |
 | 4.2.6 | Communication | EP02 | US13, US14, US15, US32, US36 | TS09 |
 | 4.2.7 | Forum | EP02 | US29, US37 | TS12 |
 | 4.2.8 | Report | EP04 | US25, US26 | TS11 |
-| 4.2.9 | Incident Management | EP02 | US08 | *(sin TS — ver nota)* |
-| 4.2.10 | IoT Access Management | EP07 | US48, US49 | TS16, TS17 |
-| 4.2.11 | Smart Lighting & Automation | EP07 | US53 | TS17 |
-| 4.2.12 | IoT Telemetry & Analytics | EP07 | *(sin historia asociada — ver nota)* | TS17 |
+| 4.2.9 | Incident Management | EP02 | US08 | (sin TS — ver nota 3) |
+| 4.2.10 | IoT Access Management | EP07, EP11 | US48, US49, US54, US55, US56, US71, US72, US73, US74, US75, US86, US87, US88, US90, US91 | TS16, TS17, TS30 |
+| 4.2.11 | Smart Lighting & Automation | EP08 | US53, US57, US58, US59, US60 | TS18 |
+| 4.2.12 | IoT Telemetry & Analytics | EP09, EP11 | US61, US62, US63, US64, US65, US76, US92 | TS19 |
+| 4.2.13 | Water Pump Leak Detection | EP10, EP11 | US52, US66, US67, US68, US69, US70, US77, US78 | TS20 |
+| Transv. | Edge API / Edge Gateway (transversal a los contextos IoT) | EP11 | US79, US80, US81, US82, US83, US84, US85, US89, US93 | TS21, TS22, TS23, TS24, TS25, TS26, TS27, TS28, TS29, TS31, TS32, TS33, TS34 |
+| Transv. | API Gateway y persistencia (sin contexto de dominio propio) | EP05 | — | TS04, TS05, TS13, TS14, TS15 |
+| — | Landing Page y Web App (containers, sin contexto de dominio) | EP06 | US41, US42, US43, US44, US45, US46, US47 | — |
+| — | Sin contexto: riego automático (fuera de alcance, sin hardware) | EP12 | US50, US51 | — |
 
-Cuatro observaciones que se desprenden de esta trazabilidad:
+Observaciones que se desprenden de esta trazabilidad:
 
-- **EP05 (Infraestructura, seguridad y arquitectura técnica)** no se mapea a un bounded context propio porque es transversal: TS04, TS13, TS14 y TS15 se materializan en el API Gateway, y TS05 en la estrategia de persistencia descrita en 4.1.1.1 — ambos son infraestructura, no dominio.
-- **EP06 (Landing Page e Interfaz Web)**, con US41–US47, tampoco corresponde a un bounded context: se implementa en los containers *Landing Page* y *Web Application* de 4.1.3.3, que consumen los contextos existentes sin aportar dominio propio.
-- **Incident Management** implementa US08, la única historia de EP02 que no correspondía a Communication ni a Notification, y no tiene historia técnica asociada porque el Capítulo III no previó el microservicio: TS01–TS17 no incluyen su configuración base. Queda anotado como historia técnica a añadir junto con las de §4.2.12.
-- **IoT Telemetry & Analytics** es el único contexto sin respaldo en el backlog de 3.3: responde al requisito del curso sobre procesamiento, cálculo estadístico y visualización de información cuantitativa recolectada por los dispositivos, pero el Capítulo III no llegó a redactar las historias correspondientes (medición de consumo en kWh, dashboard de telemetría y detección de anomalías de hardware). Queda registrado como **brecha de especificación a cerrar en la siguiente entrega**, incorporando esas historias a EP07 antes de dar por cerrado el alcance.
+1. EP05 (Infraestructura, seguridad y arquitectura técnica) no se mapea a un bounded context propio porque es transversal: TS04, TS13, TS14 y TS15 se materializan en el API Gateway, y TS05 en la estrategia de persistencia descrita en 4.1.1.1. Son infraestructura, no dominio.
+2. EP06 (Landing Page e Interfaz Web), con US41–US47, tampoco corresponde a un bounded context: se implementa en los containers Landing Page y Web Application de 4.1.3.3, que consumen los contextos existentes sin aportar dominio propio.
+3. Incident Management implementa US08 (EP02) y no tiene historia técnica asociada: TS01–TS34 no incluyen su configuración base. Queda anotado como historia técnica pendiente de añadir.
+4. IoT Telemetry & Analytics ya cuenta con respaldo en el backlog: EP09 (US61–US65) cubre el consumo energético, las alertas de consumo anómalo, la falla de luminarias, el estado de conexión de dispositivos y las lecturas de sensores, y TS19 define el microservicio con TimescaleDB. La brecha de especificación anotada en la versión anterior queda cerrada.
+5. EP07 queda dedicada al control de acceso (US48, US49, US54–US56); la iluminación (EP08), la telemetría (EP09) y la detección de fugas (EP10) tienen épicas propias, y EP11 agrupa los nodos ESP32 y el Edge Gateway (US71–US93), que sirven a los tres contextos IoT.
+6. US50 y US51 (riego automático, EP12) no tienen contexto implementador: el riego queda fuera del alcance de esta entrega por falta de hardware (4.1.1.1), por lo que su MoSCoW es Won't Have.
+7. TS16 queda limitada a IoT Access Management (TS18, TS19 y TS20 cubren Smart Lighting, Telemetry y Water Pump Leak Detection), y TS17 comunica el contexto de acceso con los ESP32 a través del Edge API por MQTT local, sin comandos de riego.
+8. El Edge API / Edge Gateway (TS21–TS29, TS31–TS34) es un componente transversal a los contextos IoT, no un bounded context propio.
+
 
 **Nivel de detalle de cada capa**
 
