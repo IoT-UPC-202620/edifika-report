@@ -539,45 +539,47 @@ La validación de estas hipótesis permitirá identificar qué funcionalidades a
 
 #### 1.2.2.4. Lean UX Canvas
 
-![Lean Ux Canvas](assets/img/lean_ux_canvas.png)
+![Lean Ux Canvas](assets/img/lean_ux_canvas1.png)
 
  *Figura. Lean Ux Canvas. Elaborado por el equipo utilizando Figma (Figma, s.f.).*
 
 ## 1.3. Segmentos objetivo
 
-**Administradores de edificios y condominios:**
+### Administradores de edificios y condominios
 
-Una gran parte de las administraciones aún utiliza herramientas informales como Excel, WhatsApp o registros manuales, lo que genera desorden en la gestión y dificulta la toma de decisiones.
+Este segmento comprende a las personas responsables de coordinar la administración, las finanzas y el funcionamiento de los edificios residenciales. En condominios estudiados en Lima se han identificado dificultades relacionadas con el uso de registros manuales, la cobranza de cuotas y la comunicación con los residentes (Nieto-Cárdenas et al., 2025). Para este grupo, Edifika plantea integrar las actividades administrativas con la supervisión de las instalaciones comunes.
 
-- Edad estimada: 25 a 60 años
-- Ubicación: Zonas urbanas con alta concentración de edificios residenciales como Lima Metropolitana, Arequipa o Callao
-- Características demográficas y de comportamiento:
-   - Son responsables de la gestión operativa, administrativa y financiera del condominio.
-   - Utilizan herramientas básicas y poco integradas para el control de pagos y comunicación.
-   - Enfrentan problemas frecuentes de morosidad y desorganización.
-   - Buscan optimizar procesos y reducir conflictos entre residentes.
-- Necesidades principales:
-   - Gestionar de manera clara y automatizada las deudas y pagos.
-   - Enviar comunicados organizados y verificables.
-   - Contar con reportes que faciliten la toma de decisiones.
-   - Reducir la carga operativa manual y mejorar la eficiencia.
+- **Edad:** Personas adultas responsables de la administración del condominio, sin un rango etario excluyente.
+- **Ubicación inicial:** Lima Metropolitana y Callao.
+- **Características demográficas y de comportamiento:**
+  - Administran pagos, deudas, reservas, comunicados y reportes.
+  - Coordinan el mantenimiento y funcionamiento de las áreas comunes.
+  - Pueden utilizar hojas de cálculo, mensajería y registros físicos para sus actividades.
+  - Necesitan consultar información financiera y operativa para tomar decisiones.
+- **Necesidades principales:**
+  - Centralizar la información de pagos, deudas y estados de cuenta.
+  - Organizar reservas y comunicados desde una misma plataforma.
+  - Consultar reportes administrativos y financieros.
+  - Supervisar los accesos autorizados y sus registros mediante dispositivos IoT.
+  - Monitorear el estado de los dispositivos conectados y el funcionamiento de la iluminación en áreas comunes.
 
-**Propietarios e inquilinos de condominios:**
+### Propietarios e inquilinos de condominios
 
-El crecimiento de la vivienda vertical en ciudades ha incrementado la cantidad de personas que viven en condominios, generando la necesidad de herramientas digitales que faciliten la convivencia, el acceso a información y la participación en la gestión del edificio.
+Este segmento comprende a las personas que poseen o habitan unidades residenciales y utilizan los servicios compartidos del edificio. Sus necesidades se relacionan con la consulta de información, la coordinación de reservas y el acceso a las áreas comunes. Asto-Aguilar et al. (2021) documentaron dificultades en los procesos manuales de reservas en un condominio peruano, mientras que Nieto-Cárdenas et al. (2025) identificaron problemas vinculados con la comunicación y la información sobre pagos.
 
-- Edad estimada: 18 a 55 años
-- Ubicación: Zonas urbanas residenciales en ciudades como Lima y Callao
-- Características demográficas y de comportamiento:
-   - Incluye tanto propietarios como inquilinos que residen en el condominio.
-   - Utilizan smartphones y aplicaciones móviles de manera frecuente.
-   - Buscan soluciones rápidas, claras y accesibles.
-   - Valoran la transparencia en la gestión y la buena comunicación.
-- Necesidades principales:
-   - Consultar sus deudas y estado de pagos en cualquier momento.
-   - Recibir notificaciones y comunicados importantes.
-   - Reservar áreas comunes de forma sencilla.
-   - Mantenerse informados y participar en la vida del condominio.
+- **Edad:** Personas adultas propietarias o residentes, sin un rango etario excluyente.
+- **Ubicación inicial:** Lima Metropolitana y Callao.
+- **Características demográficas y de comportamiento:**
+  - Incluye propietarios residentes, propietarios no residentes e inquilinos.
+  - Consultan información sobre pagos, normas y actividades del condominio.
+  - Utilizan espacios compartidos sujetos a horarios, reservas y autorizaciones.
+  - Pueden acceder a los servicios digitales desde dispositivos móviles o computadoras.
+- **Necesidades principales:**
+  - Consultar sus pagos, deudas y estados de cuenta según los permisos asignados.
+  - Recibir comunicados y notificaciones oportunamente.
+  - Reservar áreas comunes y verificar su disponibilidad.
+  - Utilizar accesos autorizados a espacios compartidos mediante mecanismos seguros.
+  - Contar con instalaciones comunes cuyo funcionamiento responda a las necesidades de uso.
 
 # Capítulo II: Requirements Elicitation & Analysis
 
