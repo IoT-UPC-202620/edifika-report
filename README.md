@@ -2796,6 +2796,79 @@ En cuanto a la persistencia, se mantiene el principio de **database-per-service*
 
 #### 4.1.1.3. Bounded Context Canvases
 
+Siguiendo a Nick Tune (*Bounded Context Canvas* V4, DDD Crew), cada contexto candidato de 4.1.1.1 se elaboró con el proceso iterativo de seis pasos: **(1) Context Overview Definition**, **(2) Business Rules Distillation & Ubiquitous Language Capture**, **(3) Capability Analysis**, **(4) Capability Layering**, **(5) Dependencies Capture** y **(6) Design Critique**. Los canvases se presentan por importancia estratégica: primero los contextos de los que depende toda la plataforma (IAM, Payment, Residential Management, Reservation), luego los contextos IoT que sostienen la propuesta de diferenciación (junto con el Edge API, que se documenta como componente de infraestructura), y por último los contextos de soporte y genéricos. Entre paréntesis se indica la sección de 4.2 que corresponde a cada contexto.
+
+**1. IAM / Auth (4.2.1)**
+
+![Bounded Context Canvas IAM](assets/img/bc-canvas-iam.png)
+
+*Figura. Bounded Context Canvas de IAM (Identity & Access Management). Elaborado por el equipo utilizando Miro (Miro, s.f.).*
+
+**2. Payment (4.2.4)**
+
+![Bounded Context Canvas Payment](assets/img/bc-canvas-payment.png)
+
+*Figura. Bounded Context Canvas de Payment. Elaborado por el equipo utilizando Miro (Miro, s.f.).*
+
+**3. Residential Management (4.2.2)**
+
+![Bounded Context Canvas Residential Management](assets/img/bc-canvas-residential-management.png)
+
+*Figura. Bounded Context Canvas de Residential Management. Elaborado por el equipo utilizando Miro (Miro, s.f.).*
+
+**4. Reservation (4.2.3)**
+
+![Bounded Context Canvas Reservation](assets/img/bc-canvas-reservation.png)
+
+*Figura. Bounded Context Canvas de Reservation. Elaborado por el equipo utilizando Miro (Miro, s.f.).*
+
+**5. IoT Access Management (4.2.10)**
+
+![Bounded Context Canvas IoT Access Management](assets/img/bc-canvas-iot-access-management.png)
+
+*Figura. Bounded Context Canvas de IoT Access Management. Elaborado por el equipo utilizando Miro (Miro, s.f.).*
+
+**6. Smart Lighting & Automation (4.2.11)**
+
+![Bounded Context Canvas Smart Lighting & Automation](assets/img/bc-canvas-smart-lighting.png)
+
+*Figura. Bounded Context Canvas de Smart Lighting & Automation. Elaborado por el equipo utilizando Miro (Miro, s.f.).*
+
+**7. IoT Telemetry & Analytics (4.2.12)**
+
+![Bounded Context Canvas IoT Telemetry & Analytics](assets/img/bc-canvas-iot-telemetry.png)
+
+*Figura. Bounded Context Canvas de IoT Telemetry & Analytics. Elaborado por el equipo utilizando Miro (Miro, s.f.).*
+
+**8. Edge API (infraestructura transversal)**
+
+![Bounded Context Canvas Edge API](assets/img/bc-canvas-edge-api.png)
+
+*Figura. Canvas del Edge API, gateway on-premise que actúa como Conformist del modelo cloud; no es un bounded context de dominio, pero se documenta por ser el puente entre los dispositivos ESP32 y los contextos IoT. Elaborado por el equipo utilizando Miro (Miro, s.f.).*
+
+**9. Incident Management (4.2.9)**
+
+![Bounded Context Canvas Incident Management](assets/img/bc-canvas-incident-management.png)
+
+*Figura. Bounded Context Canvas de Incident Management. Elaborado por el equipo utilizando Miro (Miro, s.f.).*
+
+**10. Communication (4.2.6)**
+
+![Bounded Context Canvas Communication](assets/img/bc-canvas-communication.png)
+
+*Figura. Bounded Context Canvas de Communication. Elaborado por el equipo utilizando Miro (Miro, s.f.).*
+
+**11. Notification (4.2.5)**
+
+![Bounded Context Canvas Notification](assets/img/bc-canvas-notification.png)
+
+*Figura. Bounded Context Canvas de Notification. Elaborado por el equipo utilizando Miro (Miro, s.f.).*
+
+**12. Report (4.2.8)**
+
+![Bounded Context Canvas Report](assets/img/bc-canvas-report.png)
+
+*Figura. Bounded Context Canvas de Report. Elaborado por el equipo utilizando Miro (Miro, s.f.).*
 
 
 ### 4.1.2. Context Mapping
