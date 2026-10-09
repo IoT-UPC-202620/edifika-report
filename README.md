@@ -41,7 +41,7 @@
 </table>
 <br>
 
-<h4>Setiembre, 2026</h4>
+<h4>Octubre, 2026</h4>
 
 </div>
 
@@ -49,7 +49,7 @@
 
 ## Registro de Versiones del Informe
 
-<div align="center">I
+<div align="center">
 <table>
   <thead>
     <tr>
@@ -77,6 +77,24 @@
         - Capítulo II: Requirements Elicitation & Analysis <br>
         - Capítulo III: Requirements Specification <br>
         - Capítulo IV: Solution Software Design
+      </td>
+    </tr>
+    <tr>
+      <td>TB1</td>
+      <td>09/10/2026</td>
+      <td>
+        - Acuña Corahua, Jonatan Ariel <br>
+        - Collantes Carrillo, Diego Mateo <br>
+        - Landa Ortiz, Sergio Javier <br>
+        - Ortiz Cardenas, Johanna Antuanete <br>
+        - Perez Tuesta, Gabriel <br>
+        - Lizarbe Alvarez, Ariana Nickole <br>
+        - Sarmiento Medina, Loreley
+      </td>
+      <td>
+        - Correcciones en los Capítulos I a IV <br>
+        - Capítulo V: Solution UI/UX Design <br>
+        - Capítulo VI: Product Implementation, Validation & Deployment (6.1 Software Configuration Management y 6.2.1 Sprint 1)
       </td>
     </tr>
   </tbody>
@@ -315,6 +333,7 @@ AV1: Participé activamente en las entrevistas realizadas a los usuarios para re
 
 Ortiz Cardenas, Johanna Antuanete<br><br>
 AV1: Participé en el Design-Level EventStorming de la extensión IoT, identificando los comandos, eventos de dominio y políticas que conectan los Bounded Contexts Reservation, Smart Lighting & Automation e IoT Access Management. A partir de ese modelo, redacté y documenté el Domain Layer, Interface Layer, Application Layer e Infrastructure Layer de todos los Bounded Contexts del Capítulo IV, incluyendo el nuevo contexto de Water Pump Leak Detection, junto con sus diagramas de clases y de entidad-relación en PlantUML. <br><br>
+TB1: Avancé en el desarrollo de los microservicios IAM, Residential Management y Payment, implementando sus funcionalidades principales e integrando Payment con la pasarela Culqi en ambiente de pruebas. Además, realicé correcciones en el informe para mantener la consistencia entre las historias de usuario, los bounded contexts y la arquitectura de la solución.<br><br>
 
 Perez Tuesta, Gabriel<br><br>
 AV1: Asumí el desarrollo de los principales artefactos de investigación y análisis centrados en el usuario. Diseñé las entrevistas para la validación del segmento objetivo, elaboré el User Persona, el Customer Journey Map, el Análisis Competitivo y la User Task Matrix, contribuyendo a comprender las necesidades de los usuarios, identificar oportunidades de mejora y establecer una base sólida para la definición de requerimientos y funcionalidades del producto.<br><br>
@@ -323,7 +342,8 @@ Sarmiento Medina, Loreley<br><br>
 AV1:Participé en el Design-Level EventStorming, en la identificación de los Bounded Contexts y en la definición de sus capas Domain, Application, Interface e Infrastructure. Además, apoyé en la elaboración de User Stories y en correcciones generales del informe. 
 </td>
 <td>
-AV1: Durante esta entrega, el equipo desarrolló actividades de investigación y análisis orientadas a comprender el problema, identificar las necesidades de los usuarios y evaluar el contexto competitivo del producto. La elaboración del análisis competitivo, el diseño y ejecución de entrevistas, los User Personas, la User Task Matrix y el User Journey Map permitió obtener información relevante sobre los usuarios objetivo, sus necesidades, comportamientos y desafíos. Como resultado, se estableció una base sólida para la definición de requerimientos y la toma de decisiones en las siguientes etapas del proyecto, asegurando que la propuesta de solución estuviera alineada con las necesidades identificadas. Además, en el Capítulo IV el equipo pasó de la investigación al diseño de la solución: la arquitectura y los Bounded Contexts estratégicos quedaron definidos y sirvieron de base para el diseño táctico de cada contexto.
+AV1: Durante esta entrega, el equipo desarrolló actividades de investigación y análisis orientadas a comprender el problema, identificar las necesidades de los usuarios y evaluar el contexto competitivo del producto. La elaboración del análisis competitivo, el diseño y ejecución de entrevistas, los User Personas, la User Task Matrix y el User Journey Map permitió obtener información relevante sobre los usuarios objetivo, sus necesidades, comportamientos y desafíos. Como resultado, se estableció una base sólida para la definición de requerimientos y la toma de decisiones en las siguientes etapas del proyecto, asegurando que la propuesta de solución estuviera alineada con las necesidades identificadas. Además, en el Capítulo IV el equipo pasó de la investigación al diseño de la solución: la arquitectura y los Bounded Contexts estratégicos quedaron definidos y sirvieron de base para el diseño táctico de cada contexto.<br><br>
+TB1: Durante esta entrega, el equipo trabajó de forma conjunta en el diseño UX/UI de la solución y en el primer sprint de desarrollo. Se definieron las guías de estilo, la arquitectura de información, los wireframes, mock-ups y prototipos de la landing page y de las aplicaciones web y móvil, así como el diseño de los dispositivos IoT. En paralelo, se avanzó en la implementación de los microservicios del Sprint 1, distribuyendo las responsabilidades entre los integrantes. Este trabajo compartido permitió llevar el diseño de la solución a una primera versión funcional del producto.<br><br>
 </td>
 </tr>
 <tr>
@@ -344,6 +364,8 @@ AV1: Participé en la planificación y desarrollo de las actividades de investig
 Ortiz Cardenas, Johanna Antuanete<br><br>
 AV1: Planifiqué las sesiones de Design-Level EventStorming para la extensión IoT, definiendo el alcance de eventos a modelar por cada Bounded Context. Cumplí con la meta de dejar documentado y homogéneo todo el Capítulo IV, redactando cada Bounded Context bajo el mismo formato y corrigiendo la numeración de secciones para mantener la trazabilidad del informe.<br><br>
 
+TB1: Avancé en el desarrollo de los microservicios IAM, Residential Management y Payment, implementando sus funcionalidades principales e integrando Payment con la pasarela Culqi en ambiente de pruebas. Además, realicé correcciones en el informe para mantener la consistencia entre las historias de usuario, los bounded contexts y la arquitectura de la solución.<br><br>
+
 Perez Tuesta, Gabriel<br><br>
 AV1: Planifiqué y desarrollé las actividades relacionadas con la investigación de usuarios y el análisis del contexto del producto. Diseñé las entrevistas, elaboré el User Persona, el Journey Map, el Análisis Competitivo y la User Task Matrix, cumpliendo con los objetivos establecidos para la fase de descubrimiento y validación inicial del proyecto.<br><br>
 
@@ -351,7 +373,8 @@ Sarmiento Medina, Loreley<br><br>
 AV1:Colaboré en la organización y revisión de los Bounded Contexts, User Stories y artefactos del proyecto, realizando correcciones generales para mantener la consistencia del informe y contribuir al cumplimiento de los objetivos de la entrega. 
 </td>
 <td>
-AV1: Durante esta entrega, el equipo organizó y ejecutó las actividades correspondientes a la fase de investigación y análisis del proyecto. La planificación de entrevistas, el análisis del mercado y la construcción de artefactos centrados en el usuario permitieron recopilar información relevante y estructurar el conocimiento obtenido. Gracias a ello, se cumplieron los objetivos planteados para la etapa de descubrimiento, generando insumos que sirvieron como base para la definición de requerimientos y el diseño de la solución propuesta. Además, trabajar sobre un único repositorio del informe, con un pipeline automatizado para generar el PDF y un registro de versiones, permitió que los integrantes avanzaran en paralelo y que cada aporte quedara trazable en los commits.
+AV1: Durante esta entrega, el equipo organizó y ejecutó las actividades correspondientes a la fase de investigación y análisis del proyecto. La planificación de entrevistas, el análisis del mercado y la construcción de artefactos centrados en el usuario permitieron recopilar información relevante y estructurar el conocimiento obtenido. Gracias a ello, se cumplieron los objetivos planteados para la etapa de descubrimiento, generando insumos que sirvieron como base para la definición de requerimientos y el diseño de la solución propuesta. Además, trabajar sobre un único repositorio del informe, con un pipeline automatizado para generar el PDF y un registro de versiones, permitió que los integrantes avanzaran en paralelo y que cada aporte quedara trazable en los commits.<br><br>
+TB1: El equipo estableció como metas de esta entrega completar el diseño UX/UI y avanzar el Sprint 1. Para ello, se planificaron y distribuyeron las tareas de diseño de interfaces e implementación de microservicios, y se realizaron correcciones en el informe para mantener la consistencia entre los requisitos, la arquitectura y el diseño. Como resultado, se cumplieron los objetivos planteados, obteniendo un diseño de interfaces validado y los primeros microservicios implementados como base para los siguientes sprints.<br><br>
 </td>
 </tr>
 </tbody>
