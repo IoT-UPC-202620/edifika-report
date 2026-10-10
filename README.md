@@ -290,7 +290,7 @@ TB1 (10/10/2026):
     - [5.4.3.1 Web Application Mock-ups](#5411-web-application-mock-ups)
     - [5.4.3.2 Mobile Application Mock-ups](#5412-mobile-applications-mock-ups) 
     - [5.4.4. Applications User Flow Diagrams](#543-applications-user-flow-diagrams)
-  - [5.5. Applications Prototyping](#55-applications-prototyping)
+  - [5.5. Application Prototyping](#55-applications-prototyping)
   - [5.6. IoT Device Design](#56-iot-device-design)
 - [CAPÍTULO VI: Product Implementation, Validation & Deployment](#capítulo-vi-product-implementation-validation--deployment)
   - [6.1. Software Configuration Management](#61-software-configuration-management)
