@@ -6153,6 +6153,11 @@ Este flujo parte del dashboard hacia la sección Finance, donde se revisan los i
   <img src="assets/img/mockups/login.jpg" alt="Login" width="800" />
 </p>
 
+**Perfil:**
+<p align="center">
+  <img src="assets/img/perfil.jpg" alt="Perfil" width="800" />
+</p>
+
 **Register:**
 
 <p align="center">
@@ -6181,6 +6186,36 @@ Este flujo parte del dashboard hacia la sección Finance, donde se revisan los i
 <p align="center">
   <img src="assets/img/mockups/community-wall.jpg" alt="Community" width="800" />
 </p>
+
+**Documentation:**
+
+<p align="center">
+  <img src="assets/img/documentation.jpg" alt="Documentation" width="800" />
+</p>
+
+**Iot:**
+<p align="center">
+  <img src="assets/img/iot.jpg" alt="Iot" width="800" />
+</p>
+
+**Iot iluminaria:**
+
+<p align="center">
+  <img src="assets/img/iluminaria.jpg" alt="Iluminaria" width="800" />
+</p>
+
+**Iot Control de accesos:**
+
+<p align="center">
+  <img src="assets/img/controldeaccesos.jpg" alt="Controldeaccesos" width="800" />
+</p>
+
+**Iot Riego Automatico:**
+
+<p align="center">
+  <img src="assets/img/riegoauto.jpg" alt="Riegoauto" width="800" />
+</p>
+
 
 Link del Figma: https://www.figma.com/design/ty6TOS7jOtA6f0111hRNGo/Edifika---Login-Mockup?node-id=0-1&p=f&t=GfR39Vruiix1XYFB-0
 
