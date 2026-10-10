@@ -6322,7 +6322,8 @@ Link del Figma: https://www.figma.com/design/ty6TOS7jOtA6f0111hRNGo/Edifika---Lo
   <img src="assets/img/prototipo.png" alt="Community" width="800" />
 </p>
 
-Link del video de explicacion:
+Link del video de explicacion: https://upcedupe-my.sharepoint.com/:v:/g/personal/u202321281_upc_edu_pe/IQBwU3GkseDaQ5ubFJ-E_1L0AUdz8f3R_OVEOXefxDbmJvE?e=Ue3wVO&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D
+
 
 ## 5.6. IoT Device Design
 
