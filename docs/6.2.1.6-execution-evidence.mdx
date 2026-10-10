@@ -1,0 +1,51 @@
+---
+title: "6.2.1.6. Execution Evidence for Sprint Review"
+section: "Capítulo VI: Product Implementation, Validation & Deployment"
+sprint: 1
+status: borrador
+---
+
+# 6.2.1.6. Execution Evidence for Sprint Review
+
+Esta sección inicia con un resumen que explica lo alcanzado en el Sprint 1 y presenta screenshots de las principales vistas implementadas, junto con referencias a los productos digitales entregados. No se incluye video de navegación para este Sprint, según lo indicado por el equipo.
+
+## Resumen de lo alcanzado en el Sprint 1
+
+El Sprint 1 (21/09/2026 – 10/10/2026) cerró con los tres productos comprometidos:
+
+- **Landing Page (`IoT-UPC-202620/Iot-LandingPage`)**: publicado en su URL pública, con hero, propuesta de valor, secciones informativas, funcionalidades, galería de capturas, formulario de contacto, navegación responsiva y traducciones ES/EN. Se evidencia con los mockups disponibles en el repositorio.
+- **Web Application (`IoT-UPC-202620/FrontEnd`)**: desplegado en Vercel con pantallas operativas: inicio de sesión, registro, gestión de edificios y unidades, foro, reservas (calendario), finanzas (deuda y pagos), documentación y dashboard Smart IoT. Se utilizan datos semilla (`json-server`) y se evidencia mediante capturas de los mockups de diseño (`assets/img/mockups/`).
+- **Edge Gateway (`IoT-UPC-202620/Edifika-Microservice-IoT-Gateway`)**: servicio ejecutándose de extremo a extremo dentro del edificio con Docker Compose (`mosquitto`, `edge-gateway`, `mock-cloud`). Se evidencia con los contratos MQTT, REST API (`/docs` Swagger), bitácora de accesos y simulador de nodos ESP32.
+
+## Screenshots de las principales vistas implementadas
+
+### Landing Page
+
+Las siguientes capturas corresponden a los mockups del producto y a la versión publicada de la Landing Page:
+
+- `assets/img/mockups/common-areas.jpg` — Sección de funcionalidades (áreas comunes, reservas y pagos).
+- `assets/img/mockups/community-wall.jpg` — Vista previa del foro de la comunidad.
+- `assets/img/mockups/finance.jpg` — Vista de finanzas (deuda y pagos).
+- `assets/img/mockups/login.jpg` — Pantalla de inicio de sesión.
+- `assets/img/mockups/register.jpg` — Registro de residente.
+- `assets/img/mockups/reservation-form.jpg` — Formulario de reserva de área común.
+- `assets/img/mockups/units-residents.jpg` — Listado de unidades y residentes.
+
+Adicionalmente, la Landing Page implementada en `Iot-LandingPage/assets/img/mockups/` incluye las capturas reales de las pantallas operativas del FrontEnd, optimizadas en la sección `#showcase` (ver commit `8dd3610`).
+
+### Web Application (FrontEnd)
+
+Las pantallas operativas implementadas corresponden a los módulos del Sprint Backlog 1 (`US01`-`US25`):
+
+- Inicio de sesión (`login.jpg`) y registro (`register.jpg`).
+- Gestión de edificios y unidades (`units-residents.jpg`).
+- Foro de comunicaciones (`community-wall.jpg`).
+- Calendario de reservas (`reservation-form.jpg`, `common-areas.jpg`).
+- Panel de finanzas (`finance.jpg`).
+- Módulos adicionales: documentación y dashboard Smart IoT (demostración con datos locales, sin integración con Edge Gateway en este Sprint).
+
+No se incluyen capturas de ejecución del Edge Gateway en este informe porque su evidencia principal es funcional (demostración en vivo con broker MQTT, nodos virtuales y sincronización con backend), y se describe con mayor detalle en la sección 6.2.1.4.
+
+---
+
+*Nota: No se adjunta archivo de video para este Sprint, conforme a las instrucciones del equipo. La navegación y el flujo de usuario pueden verificarse directamente en las URLs públicas y mediante los mockups referenciados.*
