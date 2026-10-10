@@ -323,27 +323,45 @@ AV1: Asumí el desarrollo de los principales artefactos de diseño de la soluci�
 TB1: Asumí el liderazgo técnico de la parte IoT y Edge de la solución. Definí la épica EP11 (Edge Gateway e integración con dispositivos ESP32) con sus 23 historias de usuario (US71–US93) y diseñé el nodo ESP32 en Wokwi (lector RFID RC522, cerradura con relé, buzzer, pantalla OLED, sensor de humedad y sensor ultrasónico), documentando su mapa de pines y las decisiones de cableado, y desarrollé el firmware de prueba del nodo. También documenté las herramientas del Edge Gateway (Python, Flask, Peewee, SQLite, MQTT con Mosquitto y Docker). Finalmente, completé los 12 Bounded Context Canvases y corregí los diagramas de Domain Message Flow Modeling, manteniendo alineados el diseño estratégico y los requisitos.<br><br>
 
 Collantes Carrillo, Diego Mateo<br><br>
+
 AV1: Desarrollé liderazgo compartido al coordinar colaborativamente la sección de Strategic-Level Domain-Driven Design. Guié al equipo en el Design-Level EventStorming (Candidate Context Discovery, Domain Message Flows Modeling y Bounded Context Canvases) y en el desarrollo del Context Mapping, facilitando la alineación y estructuración estratégica del dominio del sistema. <br><br>
+
+TB1: Coordiné la documentación de las secciones de diseño y entorno de desarrollo del informe. Completé la Information Architecture (5.2) con los mock-ups de login, registro, muro comunitario, áreas comunes, formulario de reserva, finanzas y unidades/residentes, y documenté el diseño de los dispositivos IoT (5.6). En el Capítulo VI documenté las herramientas y entornos de desarrollo (Trello, Discord, Figma, GitHub con GitFlow, Conventional Commits y Semantic Versioning, IntelliJ IDEA, VS Code, Angular, Spring Boot, Postman, Swagger, GitHub Pages y Render), las herramientas y el despliegue con Docker Compose del Edge Gateway, la matriz de líderes y colaboradores (LACX) y la evidencia de desarrollo, testing y ejecución del Sprint Review (6.2.1.4, 6.2.1.5 y 6.2.1.6).<br><br>
 
 
 Landa Ortiz, Sergio Javier<br><br>
+
 AV1: <br>Desarrollé el Capítulo I del informe, incluyendo la definición del Startup Profile, la descripción de la startup y de los integrantes del equipo, los antecedentes y la problemática, así como la aplicación del proceso Lean UX mediante la elaboración de los Problem Statements, Assumptions, Hypothesis Statements y Lean UX Canvas. Además, definí los segmentos objetivo del proyecto, proporcionando una base estructurada para que el equipo comprendiera el contexto de la solución y alineara las actividades de investigación y análisis desarrolladas en las siguientes etapas.<br>
 
+TB1: Asumí el diseño de la Landing Page de la solución. Elaboré los wireframes y los mock-ups de sus secciones (primera vista, funciones, para quién, planes, equipo y solicitud de demo), que sirvieron como base visual común para el desarrollo de la Landing Page del Sprint 1 y mantienen coherencia con la propuesta de valor definida en el Capítulo I.<br>
+
 Lizarbe Alvarez, Ariana Nickole<br><br>
+
 AV1: Participé activamente en las entrevistas realizadas a los usuarios para recopilar información sobre sus necesidades, comportamientos y problemas. Además, elaboré los User Stories, el Product Backlog y el Impact Mapping, contribuyendo a organizar los requerimientos, priorizar funcionalidades y relacionar las necesidades identificadas con los objetivos del producto. Estas actividades permitieron aportar al trabajo colaborativo y facilitar la toma de decisiones del equipo durante la definición de la solución. <br><br>
 
+TB1: Revisé y reestructuré el diseño de las entrevistas (2.2.1). Redacté un guion semiestructurado para cada segmento objetivo (administradores de edificios y condominios, y propietarios e inquilinos) con preguntas abiertas que cubren la gestión administrativa y financiera, las reservas, la comunicación y los temas IoT (control de accesos, iluminación y riego automático), de modo que las entrevistas aportaran información útil para validar los requisitos del producto.<br><br>
+
 Ortiz Cardenas, Johanna Antuanete<br><br>
+
 AV1: Participé en el Design-Level EventStorming de la extensión IoT, identificando los comandos, eventos de dominio y políticas que conectan los Bounded Contexts Reservation, Smart Lighting & Automation e IoT Access Management. A partir de ese modelo, redacté y documenté el Domain Layer, Interface Layer, Application Layer e Infrastructure Layer de todos los Bounded Contexts del Capítulo IV, incluyendo el nuevo contexto de Water Pump Leak Detection, junto con sus diagramas de clases y de entidad-relación en PlantUML. <br><br>
+
 TB1: Avancé en el desarrollo de los microservicios IAM, Residential Management y Payment, implementando sus funcionalidades principales e integrando Payment con la pasarela Culqi en ambiente de pruebas. Además, realicé correcciones en el informe para mantener la consistencia entre las historias de usuario, los bounded contexts y la arquitectura de la solución.<br><br>
 
 Perez Tuesta, Gabriel<br><br>
+
 AV1: Asumí el desarrollo de los principales artefactos de investigación y análisis centrados en el usuario. Diseñé las entrevistas para la validación del segmento objetivo, elaboré el User Persona, el Customer Journey Map, el Análisis Competitivo y la User Task Matrix, contribuyendo a comprender las necesidades de los usuarios, identificar oportunidades de mejora y establecer una base sólida para la definición de requerimientos y funcionalidades del producto.<br><br>
 
+TB1: Asumí el desarrollo principal del Capítulo V (Solution UI/UX Design). Definí las Style Guidelines generales y para Web, Mobile e IoT, y la Information Architecture (sistemas de organización, etiquetado, SEO, búsqueda y navegación). Elaboré los wireframes y mock-ups de las aplicaciones web y móvil (inicio, login, anuncios, comunidad, reservas, pagos, deudas, notificaciones, perfil, documentación, dashboard y módulos IoT como control de accesos, iluminación y riego automático), los wireflows, los User Flow Diagrams y el prototipo de la aplicación con su video explicativo.<br><br>
+
 Sarmiento Medina, Loreley<br><br>
-AV1:Participé en el Design-Level EventStorming, en la identificación de los Bounded Contexts y en la definición de sus capas Domain, Application, Interface e Infrastructure. Además, apoyé en la elaboración de User Stories y en correcciones generales del informe. 
+
+AV1:Participé en el Design-Level EventStorming, en la identificación de los Bounded Contexts y en la definición de sus capas Domain, Application, Interface e Infrastructure. Además, apoyé en la elaboración de User Stories y en correcciones generales del informe.<br><br>
+
+TB1: Amplié el diseño táctico del Capítulo IV con el Bounded Context Smart Irrigation (4.2.12), documentando los aggregates IrrigationZone e IrrigationRun, los value objects, enumeraciones, domain services, command handler, event handlers y repositorios. Actualicé el diagrama entidad-relación (ERD) y las referencias, corregí la sección de Interface Layer y actualicé el Capítulo I (antecedentes y problemática, Lean UX Problem Statements, Assumptions y Hypothesis Statements, Lean UX Canvas, segmentos objetivo y análisis de competidores).
 </td>
 <td>
 AV1: Durante esta entrega, el equipo desarrolló actividades de investigación y análisis orientadas a comprender el problema, identificar las necesidades de los usuarios y evaluar el contexto competitivo del producto. La elaboración del análisis competitivo, el diseño y ejecución de entrevistas, los User Personas, la User Task Matrix y el User Journey Map permitió obtener información relevante sobre los usuarios objetivo, sus necesidades, comportamientos y desafíos. Como resultado, se estableció una base sólida para la definición de requerimientos y la toma de decisiones en las siguientes etapas del proyecto, asegurando que la propuesta de solución estuviera alineada con las necesidades identificadas. Además, en el Capítulo IV el equipo pasó de la investigación al diseño de la solución: la arquitectura y los Bounded Contexts estratégicos quedaron definidos y sirvieron de base para el diseño táctico de cada contexto.<br><br>
+
 TB1: Durante esta entrega, el equipo trabajó de forma conjunta en el diseño UX/UI de la solución y en el primer sprint de desarrollo. Se definieron las guías de estilo, la arquitectura de información, los wireframes, mock-ups y prototipos de la landing page y de las aplicaciones web y móvil, así como el diseño de los dispositivos IoT. En paralelo, se avanzó en la implementación de los microservicios del Sprint 1, distribuyendo las responsabilidades entre los integrantes. Este trabajo compartido permitió llevar el diseño de la solución a una primera versión funcional del producto.<br><br>
 </td>
 </tr>
@@ -356,23 +374,37 @@ TB1: Planifiqué el trabajo del frente IoT y Edge dividiéndolo en entregables v
 
 Collantes Carrillo, Diego Mateo<br><br>
 AV1: Fomenté un entorno colaborativo e inclusivo al coordinar la planificación y ejecución estratégica del dominio del proyecto (Strategic-Level Domain-Driven Design). Establecí metas claras facilitando el Design-Level EventStorming (Candidate Context Discovery, Domain Message Flows Modeling y Bounded Context Canvases) y organicé el trabajo en equipo para definir el Context Mapping, cumpliendo exitosamente con los objetivos planteados. <br><br>
+TB1: Establecí como meta que el equipo contara con un entorno de desarrollo, despliegue y seguimiento documentado y reproducible. Para ello definí el flujo de trabajo con GitFlow (ramas main, develop, feature, release y hotfix), las convenciones de commits y versionado, y los pasos de despliegue del Edge Gateway con Docker Compose, y registré en la matriz LACX las responsabilidades de cada integrante, incluidos quienes no tenían tareas propias. Además, consolidé en el Sprint Review las evidencias de commits de los repositorios de Landing Page, Web Application y Edge Gateway, cumpliendo con los objetivos de documentación del Sprint.<br><br>
 
 Landa Ortiz, Sergio Javier<br><br>
 AV1: <br>Planifiqué y desarrollé el Capítulo I del proyecto, organizando la información relacionada con la startup, la problemática, el proceso Lean UX y los segmentos objetivo. Establecí una estructura clara para documentar el contexto y la propuesta inicial del producto, permitiendo que el equipo trabajara sobre una base común y alineada. Gracias a ello, se cumplieron los objetivos de la etapa inicial del proyecto y se facilitó el desarrollo de las actividades posteriores de investigación, validación y diseño de la solución.<br>
 
+TB1: Planifiqué el diseño de la Landing Page en dos etapas, primero los wireframes de cada sección y luego los mock-ups con el diseño visual final, con el fin de validar la estructura antes de definir el aspecto. Cumplí la meta de entregar ambos artefactos dentro del Sprint, lo que permitió que el equipo contara con un diseño aprobado para la implementación de la Landing Page.<br>
+
 Lizarbe Alvarez, Ariana Nickole<br><br>
+
 AV1: Participé en la planificación y desarrollo de las actividades de investigación y definición del producto. Colaboré en las entrevistas con usuarios y elaboré los User Stories, Product Backlog e Impact Mapping, organizando los requerimientos y funcionalidades de acuerdo con los objetivos identificados. Con estas actividades contribuí al cumplimiento de los objetivos de la etapa y a mantener una organización clara del trabajo del equipo. <br><br>
 
+TB1: Planifiqué la revisión del instrumento de entrevistas de la sección 2.2 para el Sprint, diferenciando los guiones por segmento objetivo y corrigiendo la redacción de las preguntas para que fueran claras y no condicionaran las respuestas. Entregué la revisión mediante una rama propia (feature/cap-2) integrada al repositorio por pull request, cumpliendo con la meta de dejar el Capítulo II consistente con el alcance IoT del proyecto.<br><br>
+
 Ortiz Cardenas, Johanna Antuanete<br><br>
+
 AV1: Planifiqué las sesiones de Design-Level EventStorming para la extensión IoT, definiendo el alcance de eventos a modelar por cada Bounded Context. Cumplí con la meta de dejar documentado y homogéneo todo el Capítulo IV, redactando cada Bounded Context bajo el mismo formato y corrigiendo la numeración de secciones para mantener la trazabilidad del informe.<br><br>
 
-TB1: Avancé en el desarrollo de los microservicios IAM, Residential Management y Payment, implementando sus funcionalidades principales e integrando Payment con la pasarela Culqi en ambiente de pruebas. Además, realicé correcciones en el informe para mantener la consistencia entre las historias de usuario, los bounded contexts y la arquitectura de la solución.<br><br>
+TB1: Avancé en el desarrollo de los microservicios IAM, Residential Management y Payment, implementando sus funcionalidades principales e integrando Payment con la pasarela Culqi en ambiente de pruebas. Además, realicé correcciones en el informe para mantener la consistencia entre las historias de usuario, los bounded contexts y la arquitectura de la solución.
+<br><br>
 
-Perez Tuesta, Gabriel<br><br>
+Perez Tuesta, Gabriel
+<br><br>
 AV1: Planifiqué y desarrollé las actividades relacionadas con la investigación de usuarios y el análisis del contexto del producto. Diseñé las entrevistas, elaboré el User Persona, el Journey Map, el Análisis Competitivo y la User Task Matrix, cumpliendo con los objetivos establecidos para la fase de descubrimiento y validación inicial del proyecto.<br><br>
 
-Sarmiento Medina, Loreley<br><br>
-AV1:Colaboré en la organización y revisión de los Bounded Contexts, User Stories y artefactos del proyecto, realizando correcciones generales para mantener la consistencia del informe y contribuir al cumplimiento de los objetivos de la entrega. 
+TB1: Planifiqué el Capítulo V como una estructura completa desde el inicio del Sprint (guías de estilo, arquitectura de información, interfaces de la landing y de las aplicaciones, prototipado y diseño IoT), lo que permitió que el equipo distribuyera y completara cada sección en paralelo. Cumplí los objetivos de diseño al entregar los wireframes, mock-ups, wireflows, User Flows y el prototipo con su video explicativo.<br><br>
+
+Sarmiento Medina, Loreley
+<br><br>
+AV1:Colaboré en la organización y revisión de los Bounded Contexts, User Stories y artefactos del proyecto, realizando correcciones generales para mantener la consistencia del informe y contribuir al cumplimiento de los objetivos de la entrega.
+<br><br>
+TB1: Me propuse que el modelo del sistema incluyera también el riego automático y que la investigación inicial reflejara los hallazgos de las entrevistas. Para ello incorporé el Bounded Context Smart Irrigation con todas sus capas, actualicé el ERD y las referencias, y revisé el Capítulo I (Lean UX, Lean UX Canvas, segmentos objetivo y competidores), cumpliendo con los objetivos del Sprint y manteniendo la coherencia entre el Capítulo I y el diseño de la solución.
 </td>
 <td>
 AV1: Durante esta entrega, el equipo organizó y ejecutó las actividades correspondientes a la fase de investigación y análisis del proyecto. La planificación de entrevistas, el análisis del mercado y la construcción de artefactos centrados en el usuario permitieron recopilar información relevante y estructurar el conocimiento obtenido. Gracias a ello, se cumplieron los objetivos planteados para la etapa de descubrimiento, generando insumos que sirvieron como base para la definición de requerimientos y el diseño de la solución propuesta. Además, trabajar sobre un único repositorio del informe, con un pipeline automatizado para generar el PDF y un registro de versiones, permitió que los integrantes avanzaran en paralelo y que cada aporte quedara trazable en los commits.<br><br>
