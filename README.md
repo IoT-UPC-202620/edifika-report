@@ -6213,10 +6213,10 @@ Link del Figma: https://www.figma.com/design/ty6TOS7jOtA6f0111hRNGo/Edifika---Lo
 - Si ya tiene cuenta, desde Register puede ir directo a Login con "Back to Login".
 
 <p align="center">
-  <img src="assets/img/userflow1.jpeg" alt="Community" width="800" />
+  <img src="assets/img/userflow1.jpg" alt="Community" width="800" />
 </p>
 
-**User Flow 2: Reserva de un Área Común **
+**User Flow 2: Reserva de un Área Común**
 
 **User Persona: Administrador**   
 **User goal: Registrar una reserva de un área común sin generar cruces de horario.** 
@@ -6241,7 +6241,7 @@ Link del Figma: https://www.figma.com/design/ty6TOS7jOtA6f0111hRNGo/Edifika---Lo
 - Si cierra el modal sin confirmar, no se crea ninguna reserva.
 
 <p align="center">
-  <img src="assets/img/userflow2.jpeg" alt="Community" width="800" />
+  <img src="assets/img/userflow2.jpg" alt="Community" width="800" />
 </p>
 
 
@@ -6270,7 +6270,7 @@ Link del Figma: https://www.figma.com/design/ty6TOS7jOtA6f0111hRNGo/Edifika---Lo
 - Si falla el envío del aviso, el sistema muestra un error y permite reintentar.
 
 <p align="center">
-  <img src="assets/img/userflow3.jpeg" alt="Community" width="800" />
+  <img src="assets/img/userflow3.jpg" alt="Community" width="800" />
 </p>
 
 
