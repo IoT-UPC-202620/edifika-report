@@ -6318,6 +6318,12 @@ Link del Figma: https://www.figma.com/design/ty6TOS7jOtA6f0111hRNGo/Edifika---Lo
 
 ## 5.5. Application Prototyping
 
+<p align="center">
+  <img src="assets/img/prototipo.jpg" alt="Community" width="800" />
+</p>
+
+Link del video de explicacion:
+
 ## 5.6. IoT Device Design
 
 ### 5.6.1. Introducción y criterios de diseño
