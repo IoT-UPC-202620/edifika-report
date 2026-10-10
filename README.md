@@ -6011,11 +6011,237 @@ La navegación del sitio público se apoya en una barra superior fija con enlace
 
 ### 5.3.1. Landing Page Wireframe
 
+**Primera vista**
+<p align="center">
+  <img src="assets/img/Lan1eraview.png" alt="Lan1eraview" width="400" />
+</p>
+
+**Funciones**
+<p align="center">
+  <img src="assets/img/Lanfunciones.png" alt="Lanfunciones" width="400" />
+</p>
+
+**Para quien**
+<p align="center">
+  <img src="assets/img/Lanparaqn.png" alt="Lanparaqn" width="400" />
+</p>
+
+**Planes**
+<p align="center">
+  <img src="assets/img/Lanplanes.png" alt="Lanplanes" width="400" />
+</p>
+
+**Equipo**
+<p align="center">
+  <img src="assets/img/Lanequipo.png" alt="Lanequipo" width="400" />
+</p>
+
+
+<p align="center">
+  <img src="assets/img/Lanequipo2.png" alt="Lanequipo2" width="400" />
+</p>
+
+**Solicitar Demo**
+<p align="center">
+  <img src="assets/img/Lansolidemo.png" alt="Lansolidemo" width="400" />
+</p>
+
+
 ### 5.3.2. Landing Page Mock-Up
+
+**Primera vista**
+<p align="center">
+  <img src="assets/img/L1eraview.png" alt="L1eraview" width="400" />
+</p>
+
+**Funciones**
+<p align="center">
+  <img src="assets/img/Lfunciones.png" alt="Lfunciones" width="400" />
+</p>
+
+**Para quien**
+<p align="center">
+  <img src="assets/img/Lparaqn.png" alt="Lparaqn" width="400" />
+</p>
+
+**Planes**
+<p align="center">
+  <img src="assets/img/Lplanes.png" alt="Lplanes" width="400" />
+</p>
+
+**Equipo**
+<p align="center">
+  <img src="assets/img/Lequipo.png" alt="Lequipo" width="400" />
+</p>
+
+
+<p align="center">
+  <img src="assets/img/Lequipo2.png" alt="Lequipo2" width="400" />
+</p>
+
+**Solicitar Demo**
+<p align="center">
+  <img src="assets/img/Lsolidemo.png" alt="Lsolidemo" width="400" />
+</p>
 
 ### 5.4. Applications UX/UI Design
 
-### 5.4.1. Applications Wireframes
+
+### 5.4.1. Applications Mobile Wireframes
+
+
+**Login**
+
+<p align="center">
+  <img src="assets/img/wlogin.jpeg" alt="Wlogin" width="400" />
+</p>
+
+**Inicio**
+
+<p align="center">
+  <img src="assets/img/winicio.jpeg" alt="Winicio" width="400" />
+</p>
+
+**Mis Deudas**
+
+<p align="center">
+  <img src="assets/img/wdeuda.jpeg" alt="Wdeuda" width="400" />
+</p>
+
+**Mis pagos**
+
+<p align="center">
+  <img src="assets/img/wpagos.jpeg" alt="Wpagos" width="400" />
+</p>
+
+**Nueva Reserva**
+
+<p align="center">
+  <img src="assets/img/wnreserva.jpeg" alt="Wnreserva" width="400" />
+</p>
+
+**Mis reservas**
+
+<p align="center">
+  <img src="assets/img/wreserva.jpeg" alt="Wreserva" width="400" />
+</p>
+
+**Reserva confirmada**
+
+<p align="center">
+  <img src="assets/img/wreservaconfirmada.jpeg" alt="Wreservaconfirmada" width="400" />
+</p>
+
+**Notificaciones**
+
+<p align="center">
+  <img src="assets/img/wnoti.jpeg" alt="Wnoti" width="400" />
+</p>
+
+**Anuncios**
+
+<p align="center">
+  <img src="assets/img/wanuncio.jpeg" alt="Wanuncio" width="400" />
+</p>
+
+**Comunidad**
+
+<p align="center">
+  <img src="assets/img/wcomu.jpeg" alt="Wcomu" width="400" />
+</p>
+
+**Tema de foro**
+
+<p align="center">
+  <img src="assets/img/wtemaforo.jpeg" alt="Wtemaforo" width="400" />
+</p>
+
+**Nueva Publicacion**
+
+<p align="center">
+  <img src="assets/img/wnuevapub.jpeg" alt="Wnuevapub" width="400" />
+</p>
+
+Link del figma: https://www.figma.com/design/1ksaEJeKckW1WPlgeNyTbH/Untitled?node-id=0-1&p=f&t=tIjJgbZzzg9sNfAf-0
+
+
+
+### 5.4.2. Applications Mobile Mockups
+
+**Login**
+
+<p align="center">
+  <img src="assets/img/wloginm.jpg" alt="Wloginm" width="400" />
+</p>
+
+**Inicio**
+
+<p align="center">
+  <img src="assets/img/winiciom.jpg" alt="Winiciom" width="400" />
+</p>
+
+**Mis Deudas**
+
+<p align="center">
+  <img src="assets/img/wdeudam.png" alt="Wdeudam" width="400" />
+</p>
+
+**Mis pagos**
+
+<p align="center">
+  <img src="assets/img/wpagosm.png" alt="Wpagosm" width="400" />
+</p>
+
+**Nueva Reserva**
+
+<p align="center">
+  <img src="assets/img/wnreservam.png" alt="Wnreservam" width="400" />
+</p>
+
+**Mis reservas**
+
+<p align="center">
+  <img src="assets/img/wreservam.png" alt="Wreservam" width="400" />
+</p>
+
+**Reserva confirmada**
+
+<p align="center">
+  <img src="assets/img/wreservaconfirmadam.png" alt="Wreservaconfirmadam" width="400" />
+</p>
+
+**Notificaciones**
+
+<p align="center">
+  <img src="assets/img/wnotim.png" alt="Wnotim" width="400" />
+</p>
+
+**Anuncios**
+
+<p align="center">
+  <img src="assets/img/wanunciosm.png" alt="Wanunciosm" width="400" />
+</p>
+
+**Comunidad**
+
+<p align="center">
+  <img src="assets/img/wcomum.png" alt="Wcomum" width="400" />
+</p>
+
+**Tema de foro**
+
+<p align="center">
+  <img src="assets/img/wtemaforom.png" alt="Wtemaforom" width="400" />
+</p>
+
+**Nueva Publicacion**
+
+<p align="center">
+  <img src="assets/img/wnuevapubm.png" alt="Wnuevapubm" width="400" />
+</p>
+
+
+### 5.4.3. Applications Wireframes
 
 **Login**
 
@@ -6059,7 +6285,7 @@ La navegación del sitio público se apoya en una barra superior fija con enlace
 
 Link del Figma: https://www.figma.com/design/ty6TOS7jOtA6f0111hRNGo/Edifika---Login-Mockup?node-id=19-339&t=GfR39Vruiix1XYFB-0
 
-### 5.4.2. Applications Wireflow Diagrams
+### 5.4.4. Applications Wireflow Diagrams
 
 **1. Wireflow 1: Registro e inicio de sesión del administrador**
 
@@ -6102,7 +6328,7 @@ User goal: El administrador quiere revisar los ingresos y las deudas del edifici
 
 Este flujo parte del dashboard hacia la sección Finance, donde se revisan los indicadores y la lista de residentes con saldos pendientes. Desde ahí el administrador envía un aviso de cobro.
 
-### 5.4.3. Applications Mock-Ups
+### 5.4.5. Applications Mock-Ups
 
 **Login:**
 
@@ -6110,10 +6336,21 @@ Este flujo parte del dashboard hacia la sección Finance, donde se revisan los i
   <img src="assets/img/mockups/login.jpg" alt="Login" width="800" />
 </p>
 
+
 **Register:**
 
 <p align="center">
   <img src="assets/img/mockups/register.jpg" alt="Register" width="800" />
+</p>
+
+**Perfil:**
+<p align="center">
+  <img src="assets/img/perfil.jpg" alt="Perfil" width="800" />
+</p>
+
+**Dashboard:**
+<p align="center">
+  <img src="assets/img/dashboard1.jpg" alt="Perfil" width="800" />
 </p>
 
 **Units & Residents:**
@@ -6139,14 +6376,44 @@ Este flujo parte del dashboard hacia la sección Finance, donde se revisan los i
   <img src="assets/img/mockups/community-wall.jpg" alt="Community" width="800" />
 </p>
 
+**Documentation:**
+
+<p align="center">
+  <img src="assets/img/documentation.jpg" alt="Documentation" width="800" />
+</p>
+
+**Iot:**
+<p align="center">
+  <img src="assets/img/iot.jpg" alt="Iot" width="800" />
+</p>
+
+**Iot iluminaria:**
+
+<p align="center">
+  <img src="assets/img/iluminaria.jpg" alt="Iluminaria" width="800" />
+</p>
+
+**Iot Control de accesos:**
+
+<p align="center">
+  <img src="assets/img/controldeaccesos.jpg" alt="Controldeaccesos" width="800" />
+</p>
+
+**Iot Riego Automatico:**
+
+<p align="center">
+  <img src="assets/img/riegoauto.jpg" alt="Riegoauto" width="800" />
+</p>
+
+
 Link del Figma: https://www.figma.com/design/ty6TOS7jOtA6f0111hRNGo/Edifika---Login-Mockup?node-id=0-1&p=f&t=GfR39Vruiix1XYFB-0
 
-### 5.4.4. Applications User Flow Diagrams
+### 5.4.6. Applications User Flow Diagrams
 
-**User Flow 1: **
+**User Flow 1: Registro e Inicio de Sesión del Administrador**
 
-**User Persona:**   
-**User goal:** 
+**User Persona: Administrador**   
+**User goal: Crear su cuenta de administrador e ingresar al panel para gestionar el edificio.** 
 
 **Pantallas base:**
 
@@ -6156,57 +6423,90 @@ Link del Figma: https://www.figma.com/design/ty6TOS7jOtA6f0111hRNGo/Edifika---Lo
 
 **Happy path:**
 
+1. El administrador abre Edifika y, al no tener cuenta, entra a Register.
+2. Completa nombre, correo, contraseña, teléfono y documento, acepta los términos y pulsa "Create Admin Account".
+3. El sistema valida los datos y lo redirige a Login.
+4. Ingresa su correo y contraseña y pulsa "Login to Dashboard".
+5. El sistema valida las credenciales y muestra el Dashboard para gestionar el edificio.
 
 
 **Unhappy paths:**
 
+- Si el correo ya existe o faltan campos obligatorios en Register, el sistema muestra el error y el usuario corrige los datos.
+- Si las credenciales son incorrectas en Login, el sistema muestra el error y el usuario reintenta.
+- Si ya tiene cuenta, desde Register puede ir directo a Login con "Back to Login".
 
+<p align="center">
+  <img src="assets/img/userflow1.jpg" alt="Community" width="800" />
+</p>
 
+**User Flow 2: Reserva de un Área Común**
 
-
----
-
-**User Flow 2: **
-
-**User Persona:**   
-**User goal:** 
+**User Persona: Administrador**   
+**User goal: Registrar una reserva de un área común sin generar cruces de horario.** 
 
 **Pantallas base:**
 
+- Common Areas
+- Add Reservation (modal)
+- Common Areas con la reserva creada
+
+**Happy path:**
+
+1. El administrador entra a Common Areas y revisa el calendario.
+2. Pulsa "Add Reservation" y se abre el modal.
+3. Completa área, fecha, horario y residente, y confirma.
+4. El sistema valida que la fecha sea válida y el horario esté disponible.
+5. La reserva se crea y aparece en el calendario de Common Areas.
+
+**Unhappy paths:**
+
+- Si el horario ya está reservado o faltan campos, el sistema muestra el error y el usuario corrige los datos en el modal.
+- Si cierra el modal sin confirmar, no se crea ninguna reserva.
+
+<p align="center">
+  <img src="assets/img/userflow2.jpg" alt="Community" width="800" />
+</p>
+
+
+**User Flow 3: Seguimiento Financiero y Morosidad**
+
+**User Persona: Administrador**   
+**User goal: Identificar a los residentes con saldo pendiente y enviarles un aviso de cobro.** 
+
+**Pantallas base:**
+
+- Dashboard
+- Finance
 
 
 **Happy path:**
 
-
-
-**Unhappy paths:**
-
-
-
-
-
----
-
-**User Flow 3: **
-
-**User Persona:**   
-**User goal:** 
-
-**Pantallas base:**
-
-
-
-**Happy path:**
-
-
+1. El administrador entra al Dashboard y revisa las facturas impagas.
+2. Va a Finance y revisa los saldos pendientes.
+3. Identifica residentes con saldo pendiente.
+4. Envía el aviso de cobro al residente.
+5. El sistema confirma el envío y el seguimiento continúa.
 
 **Unhappy paths:**
 
+- Si no hay residentes con saldo pendiente, no se requiere acción.
+- Si falla el envío del aviso, el sistema muestra un error y permite reintentar.
 
+<p align="center">
+  <img src="assets/img/userflow3.jpg" alt="Community" width="800" />
+</p>
 
 
 
 ## 5.5. Application Prototyping
+
+<p align="center">
+  <img src="assets/img/prototipo.png" alt="Community" width="800" />
+</p>
+
+Link del video de explicacion: https://upcedupe-my.sharepoint.com/:v:/g/personal/u202321281_upc_edu_pe/IQBwU3GkseDaQ5ubFJ-E_1L0AUdz8f3R_OVEOXefxDbmJvE?e=Ue3wVO&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D
+
 
 ## 5.6. IoT Device Design
 
