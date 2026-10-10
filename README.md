@@ -277,9 +277,13 @@ AV1 (20/09/2026):
     - [5.3.2. Landing Page Mock-up](#532-landing-page-mock-up)
   - [5.4. Applications UX/UI Design](#54-applications-uxui-design)
     - [5.4.1. Applications Wireframes](#541-applications-wireframes)
+    - [5.4.1.1 Web Application Wireframes](#5411-web-application-wireframes)
+    - [5.4.1.2 Mobile Application Wireframes](#5412-mobile-applications-wireframes)  
     - [5.4.2. Applications Wireflow Diagrams](#542-applications-wireflow-diagrams)
-      - [5.4.2.1. Applications Mock-ups](#5421-applications-mock-ups)
-    - [5.4.3. Applications User Flow Diagrams](#543-applications-user-flow-diagrams)
+    - [5.4.3. Applications Mock-ups](#5421-applications-mock-ups)
+		-[5.4.3.1 Web Applicatio Mock-ups](#5411-web-application-mock-ups)
+		-[5.4.3.2 Mobile Application Mock-ups](#5412-mobile-applications-mock-ups) 
+    - [5.4.4. Applications User Flow Diagrams](#543-applications-user-flow-diagrams)
   - [5.5. Applications Prototyping](#55-applications-prototyping)
   - [5.6. IoT Device Design](#56-iot-device-design)
 - [CAPÍTULO VI: Product Implementation, Validation & Deployment](#capítulo-vi-product-implementation-validation--deployment)
@@ -6129,8 +6133,54 @@ La navegación del sitio público se apoya en una barra superior fija con enlace
 ### 5.4. Applications UX/UI Design
 
 
-### 5.4.1. Applications Mobile Wireframes
+### 5.4.1. Applications Wireframes
+A continuación se presentan los wireframes de nuestra aplicación tanto en mobile como web
 
+### 5.4.1.1 Web Application Wireframes
+
+**Login**
+
+<p align="center">
+  <img src="assets/img/login.jpeg" alt="Login" width="800" />
+</p>
+
+**Register**
+
+<p align="center">
+  <img src="assets/img/register.jpeg" alt="Register" width="800" />
+</p>
+
+**Dashboard**
+
+<p align="center">
+  <img src="assets/img/dashboard.jpeg" alt="Dashboard" width="800" />
+</p>
+
+**Units & Residents**
+<p align="center">
+  <img src="assets/img/units.jpeg" alt="Units" width="800" />
+</p>
+
+**Common Areas**
+
+<p align="center">
+  <img src="assets/img/common.jpeg" alt="Common" width="800" />
+</p>
+
+**Finance**
+<p align="center">
+  <img src="assets/img/finance.jpeg" alt="Finance" width="800" />
+</p>
+
+**Community Wall**
+
+<p align="center">
+  <img src="assets/img/community.jpeg" alt="Community" width="800" />
+</p>
+
+Link del Figma: https://www.figma.com/design/ty6TOS7jOtA6f0111hRNGo/Edifika---Login-Mockup?node-id=19-339&t=GfR39Vruiix1XYFB-0
+
+### 5.4.1.2 Mobile Application Wireframes
 
 **Login**
 
@@ -6206,129 +6256,7 @@ La navegación del sitio público se apoya en una barra superior fija con enlace
 
 Link del figma: https://www.figma.com/design/1ksaEJeKckW1WPlgeNyTbH/Untitled?node-id=0-1&p=f&t=tIjJgbZzzg9sNfAf-0
 
-
-
-### 5.4.2. Applications Mobile Mockups
-
-**Login**
-
-<p align="center">
-  <img src="assets/img/wloginm.jpg" alt="Wloginm" width="400" />
-</p>
-
-**Inicio**
-
-<p align="center">
-  <img src="assets/img/winiciom.jpg" alt="Winiciom" width="400" />
-</p>
-
-**Mis Deudas**
-
-<p align="center">
-  <img src="assets/img/wdeudam.png" alt="Wdeudam" width="400" />
-</p>
-
-**Mis pagos**
-
-<p align="center">
-  <img src="assets/img/wpagosm.png" alt="Wpagosm" width="400" />
-</p>
-
-**Nueva Reserva**
-
-<p align="center">
-  <img src="assets/img/wnreservam.png" alt="Wnreservam" width="400" />
-</p>
-
-**Mis reservas**
-
-<p align="center">
-  <img src="assets/img/wreservam.png" alt="Wreservam" width="400" />
-</p>
-
-**Reserva confirmada**
-
-<p align="center">
-  <img src="assets/img/wreservaconfirmadam.png" alt="Wreservaconfirmadam" width="400" />
-</p>
-
-**Notificaciones**
-
-<p align="center">
-  <img src="assets/img/wnotim.png" alt="Wnotim" width="400" />
-</p>
-
-**Anuncios**
-
-<p align="center">
-  <img src="assets/img/wanunciosm.png" alt="Wanunciosm" width="400" />
-</p>
-
-**Comunidad**
-
-<p align="center">
-  <img src="assets/img/wcomum.png" alt="Wcomum" width="400" />
-</p>
-
-**Tema de foro**
-
-<p align="center">
-  <img src="assets/img/wtemaforom.png" alt="Wtemaforom" width="400" />
-</p>
-
-**Nueva Publicacion**
-
-<p align="center">
-  <img src="assets/img/wnuevapubm.png" alt="Wnuevapubm" width="400" />
-</p>
-
-
-### 5.4.3. Applications Wireframes
-
-**Login**
-
-<p align="center">
-  <img src="assets/img/login.jpeg" alt="Login" width="800" />
-</p>
-
-**Register**
-
-<p align="center">
-  <img src="assets/img/register.jpeg" alt="Register" width="800" />
-</p>
-
-**Dashboard**
-
-<p align="center">
-  <img src="assets/img/dashboard.jpeg" alt="Dashboard" width="800" />
-</p>
-
-**Units & Residents**
-<p align="center">
-  <img src="assets/img/units.jpeg" alt="Units" width="800" />
-</p>
-
-**Common Areas**
-
-<p align="center">
-  <img src="assets/img/common.jpeg" alt="Common" width="800" />
-</p>
-
-**Finance**
-<p align="center">
-  <img src="assets/img/finance.jpeg" alt="Finance" width="800" />
-</p>
-
-**Community Wall**
-
-<p align="center">
-  <img src="assets/img/community.jpeg" alt="Community" width="800" />
-</p>
-
-Link del Figma: https://www.figma.com/design/ty6TOS7jOtA6f0111hRNGo/Edifika---Login-Mockup?node-id=19-339&t=GfR39Vruiix1XYFB-0
-
-### 5.4.4. Applications Wireflow Diagrams
-
+### 5.4.2. Applications Wireflow Diagrams
 **1. Wireflow 1: Registro e inicio de sesión del administrador**
 
 User Persona: Administrador
@@ -6370,8 +6298,8 @@ User goal: El administrador quiere revisar los ingresos y las deudas del edifici
 
 Este flujo parte del dashboard hacia la sección Finance, donde se revisan los indicadores y la lista de residentes con saldos pendientes. Desde ahí el administrador envía un aviso de cobro.
 
-### 5.4.5. Applications Mock-Ups
-
+### 5.4.3. Applications Mock-ups
+#### 5.4.3.1 Web Application Mock-ups
 **Login:**
 
 <p align="center">
@@ -6450,7 +6378,81 @@ Este flujo parte del dashboard hacia la sección Finance, donde se revisan los i
 
 Link del Figma: https://www.figma.com/design/ty6TOS7jOtA6f0111hRNGo/Edifika---Login-Mockup?node-id=0-1&p=f&t=GfR39Vruiix1XYFB-0
 
-### 5.4.6. Applications User Flow Diagrams
+#### 5.4.3.2 Mobile Application Mock-ups
+
+**Login**
+
+<p align="center">
+  <img src="assets/img/wloginm.jpg" alt="Wloginm" width="400" />
+</p>
+
+**Inicio**
+
+<p align="center">
+  <img src="assets/img/winiciom.jpg" alt="Winiciom" width="400" />
+</p>
+
+**Mis Deudas**
+
+<p align="center">
+  <img src="assets/img/wdeudam.png" alt="Wdeudam" width="400" />
+</p>
+
+**Mis pagos**
+
+<p align="center">
+  <img src="assets/img/wpagosm.png" alt="Wpagosm" width="400" />
+</p>
+
+**Nueva Reserva**
+
+<p align="center">
+  <img src="assets/img/wnreservam.png" alt="Wnreservam" width="400" />
+</p>
+
+**Mis reservas**
+
+<p align="center">
+  <img src="assets/img/wreservam.png" alt="Wreservam" width="400" />
+</p>
+
+**Reserva confirmada**
+
+<p align="center">
+  <img src="assets/img/wreservaconfirmadam.png" alt="Wreservaconfirmadam" width="400" />
+</p>
+
+**Notificaciones**
+
+<p align="center">
+  <img src="assets/img/wnotim.png" alt="Wnotim" width="400" />
+</p>
+
+**Anuncios**
+
+<p align="center">
+  <img src="assets/img/wanunciosm.png" alt="Wanunciosm" width="400" />
+</p>
+
+**Comunidad**
+
+<p align="center">
+  <img src="assets/img/wcomum.png" alt="Wcomum" width="400" />
+</p>
+
+**Tema de foro**
+
+<p align="center">
+  <img src="assets/img/wtemaforom.png" alt="Wtemaforom" width="400" />
+</p>
+
+**Nueva Publicacion**
+
+<p align="center">
+  <img src="assets/img/wnuevapubm.png" alt="Wnuevapubm" width="400" />
+</p>
+
+### 5.4.4. Applications User Flow Diagrams
 
 **User Flow 1: Registro e Inicio de Sesión del Administrador**
 
@@ -6538,8 +6540,6 @@ Link del Figma: https://www.figma.com/design/ty6TOS7jOtA6f0111hRNGo/Edifika---Lo
 <p align="center">
   <img src="assets/img/userflow3.jpg" alt="Community" width="800" />
 </p>
-
-
 
 ## 5.5. Application Prototyping
 
@@ -9166,3 +9166,23 @@ En esta sección el equipo explica cómo se han desarrollado las actividades de 
 - Yin, P., Luo, Z., & Pouramini, S. (2024). Case study on multi-objective Modified Supply-Demand-based Optimization Algorithm for energy-efficient building retrofitting. Sustainable Cities and Society, 114, 105734. https://doi.org/10.1016/j.scs.2024.105734
 
 # Anexos
+
+Enlace de EventStorming: `https://miro.com/app/board/uXjVHpqw3HE=/?share_link_id=398813526730`
+Enlace de diagrama de base de datos : `https://lucid.app/lucidchart/ef3938cf-6749-4f9f-87eb-2e84ed2fe7da/edit?invitationId=inv_d3a9c70d-2d50-4650-87a6-0b6fbec001bb&page=0_0#`
+Enlace de repositorio de Landing page: `https://github.com/IoT-UPC-202620/Iot-LandingPage.git`
+Enlace de repositorio de Frontend: `https://github.com/IoT-UPC-202620/FrontEnd.git` 
+Enlace de repositorio de IoT Gateway: `https://github.com/IoT-UPC-202620/Edifika-Microservice-IoT-Gateway.git` 
+Enlace de repositorio de Residential Management microservice: `https://github.com/IoT-UPC-202620/Edifika-Microservice-Residential-Managemen.git`
+Enlace de repositorio de Reservation microservice: `https://github.com/IoT-UPC-202620/Edifika-Microservice-Reservation.git` 
+Enlace de repositorio de Report microservice: `https://github.com/IoT-UPC-202620/Edifika-Microservice-Report.git`
+Enlace de repositorio de IAM microservice: `https://github.com/IoT-UPC-202620/Edifika-Microservice-IAM.git` 
+Enlace de repositorio de Forum microservice: `https://github.com/IoT-UPC-202620/Edifika-Microservice-Forum.git` 
+Enlace de repositorio de Notification microservice: `https://github.com/IoT-UPC-202620/Edifika-Microservice-Notification.git` 
+Enlace de repositorio de Communications microservice: `https://github.com/IoT-UPC-202620/Edifika-Microservice-Communications.git` 
+Enlace de repositorio de ApiGateway: `https://github.com/IoT-UPC-202620/Edifika-ApiGateway.git`
+Enlace de repositorio de Payment microservice: `https://github.com/IoT-UPC-202620/Edifika-Microservice-Payment.git`
+Enlace de repositorio de esp32: `https://github.com/IoT-UPC-202620/esp32.git` 
+
+*Despliegues*
+Enlace de despliegue de Landing Page:`https://iot-upc-202620.github.io/Iot-LandingPage/`
+Enlace de despliegue de frontend:`https://edifika-frontend.vercel.app/`
