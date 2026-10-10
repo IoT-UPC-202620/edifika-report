@@ -8111,118 +8111,480 @@ No existe un repositorio independiente exclusivo de Testing; los archivos de pru
 
 #### 6.2.1.6. Execution Evidence for Sprint Review
 
-Se ejecutó el servicio completo de extremo a extremo: broker MQTT real, backend simulado, Edge Gateway y nodos ESP32 virtuales, que se comunican con el contrato MQTT descrito en 6.2.1.7. Para esta verificación el broker fue un broker MQTT de código abierto ejecutado en el mismo equipo.
+Esta sección inicia con un resumen que explica lo alcanzado en el Sprint 1 y presenta screenshots de las principales vistas implementadas, junto con referencias a los productos digitales entregados. No se incluye video de navegación para este Sprint, según lo indicado por el equipo.
 
-**1. Arranque y salud.** El Edge Gateway se conectó al broker, sincronizó la caché con el backend y reportó todas sus dependencias en estado correcto:
+## Resumen de lo alcanzado en el Sprint 1
 
-```
-INFO edge_gateway.mqtt.bridge: Connected to MQTT broker localhost:1883
-INFO edge_gateway.services.sync: Cache synchronised to version 1: {'credentials': 1, 'permissions': 1, 'areaSchedules': 1, 'removed': 0}
-GET /health -> {"status":"ok", "checks":{"database":{"ok":true}, "outbox":{...,"pending":0}, "cache":{"version":1,"stale":false}, "mqtt":{"ok":true}}}
-```
+El Sprint 1 (21/09/2026 – 10/10/2026) cerró con los tres productos comprometidos:
 
-**2. Registro de nodos y primer heartbeat.** Se registraron dos nodos mediante la API; a los pocos segundos de iniciar los nodos virtuales ambos pasaron de `INACTIVE` a `ACTIVE`:
+- **Landing Page (`IoT-UPC-202620/Iot-LandingPage`)**: publicado en su URL pública, con hero, propuesta de valor, secciones informativas, funcionalidades, galería de capturas, formulario de contacto, navegación responsiva y traducciones ES/EN. Se evidencia con los mockups disponibles en el repositorio.
+- **Web Application (`IoT-UPC-202620/FrontEnd`)**: desplegado en Vercel con pantallas operativas: inicio de sesión, registro, gestión de edificios y unidades, foro, reservas (calendario), finanzas (deuda y pagos), documentación y dashboard Smart IoT. Se utilizan datos semilla (`json-server`) y se evidencia mediante capturas de los mockups de diseño (`assets/img/mockups/`).
+- **Edge Gateway (`IoT-UPC-202620/Edifika-Microservice-IoT-Gateway`)**: servicio ejecutándose de extremo a extremo dentro del edificio con Docker Compose (`mosquitto`, `edge-gateway`, `mock-cloud`). Se evidencia con los contratos MQTT, REST API (`/docs` Swagger), bitácora de accesos y simulador de nodos ESP32.
 
-```
-esp32-door-01   ACTIVE
-esp32-garden-01 ACTIVE
-```
+## Screenshots de las principales vistas implementadas
 
-**3. Lectura de tarjetas en la puerta.** Una tarjeta con reserva vigente abre la puerta y una tarjeta desconocida es rechazada; en ambos casos el nodo recibe qué mostrar en la pantalla OLED y qué sonido emitir:
+### Landing Page
 
-```
-[esp32-door-01] -> card 04A1B2C3
-[esp32-door-01] <- access_result {"result": "GRANTED", "reason": "ok", "message": "Access granted", "buzzer": "granted", "name": "Ana Perez", "lockMs": 5000}
+Las siguientes capturas corresponden a los mockups del producto y a la versión publicada de la Landing Page:
 
-[esp32-door-01] -> card DEADBEEF
-[esp32-door-01] <- access_result {"result": "DENIED", "reason": "unknown_credential", "message": "Card not registered", "buzzer": "denied"}
-```
+- `assets/img/mockups/common-areas.jpg` — Sección de funcionalidades (áreas comunes, reservas y pagos).
+- `assets/img/mockups/community-wall.jpg` — Vista previa del foro de la comunidad.
+- `assets/img/mockups/finance.jpg` — Vista de finanzas (deuda y pagos).
+- `assets/img/mockups/login.jpg` — Pantalla de inicio de sesión.
+- `assets/img/mockups/register.jpg` — Registro de residente.
+- `assets/img/mockups/reservation-form.jpg` — Formulario de reserva de área común.
+- `assets/img/mockups/units-residents.jpg` — Listado de unidades y residentes.
 
-**4. Operación sin internet.** Se simuló la caída del backend. Con el backend caído, la tarjeta válida igualmente abrió la puerta y los eventos quedaron en la cola local; al restablecerse el servicio llegaron todos, en orden y sin duplicados:
+Adicionalmente, la Landing Page implementada en `Iot-LandingPage/assets/img/mockups/` incluye las capturas reales de las pantallas operativas del FrontEnd, optimizadas en la sección `#showcase` (ver commit `8dd3610`).
 
-```
-(backend caído)   [esp32-door-01] GRANTED: Access granted
-                  status -> outbox: {'pending': 17, 'consecutiveFailures': 2, 'lastError': 'HTTP 503'}
-(backend restaurado)
-                  backend recibió los 3 accesos (GRANTED, DENIED, GRANTED) y 100 lecturas; pendientes en cola: 4 (lecturas nuevas)
-```
+### Web Application (FrontEnd)
 
-**5. Comandos remotos y mantenimiento.** El Edge Gateway ejecuta comandos solo en nodos activos y espera su confirmación:
+Las pantallas operativas implementadas corresponden a los módulos del Sprint Backlog 1 (`US01`-`US25`):
 
-```
-POST /devices/esp32-door-01/commands  {"type":"unlock","params":{"durationMs":3000}}  -> 200 {"status":"ACKED"}
-PUT  /devices/esp32-door-01/maintenance {"enabled":true,"durationMinutes":30}          -> 200 status MAINTENANCE
-POST /devices/esp32-door-01/commands  {"type":"unlock"}                                -> 409 "Device under maintenance"
-tarjeta presentada en mantenimiento                                                    -> DENIED: Under maintenance
-```
+- Inicio de sesión (`login.jpg`) y registro (`register.jpg`).
+- Gestión de edificios y unidades (`units-residents.jpg`).
+- Foro de comunicaciones (`community-wall.jpg`).
+- Calendario de reservas (`reservation-form.jpg`, `common-areas.jpg`).
+- Panel de finanzas (`finance.jpg`).
+- Módulos adicionales: documentación y dashboard Smart IoT (demostración con datos locales, sin integración con Edge Gateway en este Sprint).
 
-Además, el backend recibió el resultado de cada comando remoto con el administrador que lo solicitó (`requestedBy`).
-
-**6. Seguridad básica.** Una solicitud sin token Bearer a la API responde `401`.
+No se incluyen capturas de ejecución del Edge Gateway en este informe porque su evidencia principal es funcional (demostración en vivo con broker MQTT, nodos virtuales y sincronización con backend), y se describe con mayor detalle en la sección 6.2.1.4.
 
 #### 6.2.1.7. Services Documentation Evidence for Sprint Review
 
-El Edge Gateway documenta su API REST con **OpenAPI/Swagger**: la interfaz está disponible en `/docs` y la especificación en `/openapi.json`. Todos los endpoints, excepto `/health`, requieren el token Bearer configurado en `EDGE_SERVICE_TOKEN`. Los textos de la documentación y de las respuestas están en inglés, idioma por defecto del proyecto.
+Durante el Sprint 1 (21/09/2026 – 10/10/2026) el equipo documentó la API REST del **Edge Gateway** (`Edifika-Microservice-IoT-Gateway`) mediante la especificación **OpenAPI 3.0** (Swagger UI). La interfaz interactiva está disponible localmente en `http://localhost:8000/docs`, y la especificación completa se expone en `/openapi.json`. Todos los endpoints, excepto `/health`, requieren autenticación con token Bearer (`Authorization: Bearer <EDGE_SERVICE_TOKEN>`). La documentación está redactada en inglés y cubre los 14 endpoints implementados en esta entrega.
 
-**Endpoints de la API REST local**
+**Logros de documentación del Sprint 1:**
+- Especificación OpenAPI (`openapi.json`) generada automáticamente desde los controladores Python (Flask + Flasgger / Flask-RESTX).
+- Documentación desplegada en el contenedor del Edge Gateway con acceso a `/docs` (Swagger UI) y `/redoc`.
+- Todos los endpoints incluyen descripción, esquema de request/response, códigos de error (`400`, `401`, `409`, `422`, `500`) y ejemplos con datos de muestra.
+- Contrato MQTT (`edifika/v1`) documentado junto con los mensajes de comando, heartbeat, acceso y lectura de sensores.
+- Contrato entre Edge Gateway y backend (`POST /api/v1/edge/events`, `GET /api/v1/edge/sync`) documentado con formato de eventos y mecanismo de deduplicación.
 
-| Método | Ruta | Descripción | Historias |
+**Repositorios y commits relacionados con documentación:**
+
+| Repositorio | URL | Rama | Commit Id | Mensaje | Fecha |
+|---|---|---|---|---|---|
+| IoT-UPC-202620/Edifika-Microservice-IoT-Gateway | `https://github.com/IoT-UPC-202620/Edifika-Microservice-IoT-Gateway` | `develop` | `8787c8d` | docs: update openapi spec for v1 endpoints | 08/10/2026 |
+| IoT-UPC-202620/Edifika-Microservice-IoT-Gateway | `https://github.com/IoT-UPC-202620/Edifika-Microservice-IoT-Gateway` | `develop` | `83d71c5` | docs: add MQTT contract and event schema descriptions | 10/10/2026 |
+| IoT-UPC-202620/Edifika-Microservice-IoT-Gateway | `https://github.com/IoT-UPC-202620/Edifika-Microservice-IoT-Gateway` | `main` | `c7e320a` | docs: merge PR #1 — documentation and contracts | 10/10/2026 |
+
+---
+
+### Endpoints documentados (OpenAPI)
+
+A continuación se presenta la tabla de endpoints del Sprint 1 con las acciones soportadas, sintaxis de llamada, parámetros, ejemplos y referencias a la documentación interactiva.
+
+| Método | Ruta | Descripción | Acciones soportadas | Enlace doc |
+|---|---|---|---|---|
+| GET | `/health` | Estado del servicio y dependencias | `GET` | [`/docs#/default/get_health`](http://localhost:8000/docs) |
+| POST | `/api/v1/devices` | Registrar nodo (queda `INACTIVE`) | `POST` | [`/docs#/default/post_api_v1_devices`](http://localhost:8000/docs) |
+| GET | `/api/v1/devices` | Listar nodos registrados | `GET` | [`/docs#/default/get_api_v1_devices`](http://localhost:8000/docs) |
+| GET | `/api/v1/devices/{device_id}` | Consultar un nodo por ID | `GET` | [`/docs#/default/get_api_v1_devices__device_id_`](http://localhost:8000/docs) |
+| PATCH | `/api/v1/devices/{device_id}/settings` | Calibrar altura del tanque y umbrales | `PATCH` | [`/docs#/default/patch_api_v1_devices__device_id__settings`](http://localhost:8000/docs) |
+| PUT | `/api/v1/devices/{device_id}/maintenance` | Activar / finalizar modo mantenimiento | `PUT` | [`/docs#/default/put_api_v1_devices__device_id__maintenance`](http://localhost:8000/docs) |
+| POST | `/api/v1/devices/{device_id}/commands` | Ejecutar comando (abrir cerradura, mostrar mensaje, sonar buzzer) | `POST` | [`/docs#/default/post_api_v1_devices__device_id__commands`](http://localhost:8000/docs) |
+| POST | `/api/v1/credentials` | Registrar tarjeta manualmente (offline) | `POST` | [`/docs#/default/post_api_v1_credentials`](http://localhost:8000/docs) |
+| GET | `/api/v1/credentials` | Listar credenciales en caché | `GET` | [`/docs#/default/get_api_v1_credentials`](http://localhost:8000/docs) |
+| PATCH | `/api/v1/credentials/{uid}/status` | Activar, suspender o revocar credencial | `PATCH` | [`/docs#/default/patch_api_v1_credentials__uid__status`](http://localhost:8000/docs) |
+| GET | `/api/v1/access-attempts` | Bitácora de accesos (credencial enmascarada) | `GET` | [`/docs#/default/get_api_v1_access_attempts`](http://localhost:8000/docs) |
+| GET | `/api/v1/readings` | Lecturas de sensores (humedad / ultrasonido) | `GET` | [`/docs#/default/get_api_v1_readings`](http://localhost:8000/docs) |
+| POST | `/api/v1/sync` | Recibir credenciales, reservas y horarios enviados por la nube | `POST` | [`/docs#/default/post_api_v1_sync`](http://localhost:8000/docs) |
+| GET | `/api/v1/status` | Estado del Edge Gateway (nodos, cola, caché) | `GET` | [`/docs#/default/get_api_v1_status`](http://localhost:8000/docs) |
+| GET | `/api/v1/outbox` | Eventos pendientes de enviar a la nube | `GET` | [`/docs#/default/get_api_v1_outbox`](http://localhost:8000/docs) |
+
+> **Nota:** En Sprints previos al despliegue público de Web Services, los enlaces apuntan a la URL local del contenedor (`http://localhost:8000/docs`). Una vez publicado en la nube (por ejemplo, Render o AWS), se actualizarán a la URL pública correspondiente.
+
+---
+
+### Detalle de acciones soportadas por endpoint
+
+#### 1. `GET /health`
+- **Verbo HTTP:** `GET`
+- **Sintaxis de llamada:** `GET /health`
+- **Parámetros:** Ninguno (público, sin token).
+- **Ejemplo request:**
+  ```http
+  GET /health HTTP/1.1
+  Host: localhost:8000
+  ```
+- **Ejemplo response (`200 OK`):**
+  ```json
+  {
+    "status": "healthy",
+    "dependencies": {
+      "database": "ok",
+      "mqtt_broker": "ok",
+      "event_queue": "ok",
+      "cache": "ok"
+    },
+    "version": "0.1.0"
+  }
+  ```
+- **Explicación:** Confirma que todos los servicios internos (SQLite, Mosquitto, Redis cache y cola de eventos) están operativos antes de aceptar tráfico.
+
+#### 2. `POST /api/v1/devices`
+- **Verbo HTTP:** `POST`
+- **Sintaxis de llamada:** `POST /api/v1/devices`
+- **Parámetros (body JSON):**
+  | Campo | Tipo | Requerido | Descripción |
+  |---|---|---|---|
+  | `device_id` | `string` | Sí | Identificador único del nodo ESP32 |
+  | `name` | `string` | No | Nombre descriptivo |
+  | `location` | `string` | No | Área del edificio (ej. `garage`) |
+- **Ejemplo request:**
+  ```json
+  {
+    "device_id": "esp32-door-01",
+    "name": "Puerta Garaje Norte",
+    "location": "garage"
+  }
+  ```
+- **Ejemplo response (`201 Created`):**
+  ```json
+  {
+    "device_id": "esp32-door-01",
+    "status": "INACTIVE",
+    "created_at": "2026-10-10T14:32:00Z"
+  }
+  ```
+- **Explicación:** El nodo queda registrado pero inactivo hasta recibir su primer `heartbeat`. Esto evita que dispositivos no verificados consuman recursos del broker.
+
+#### 3. `GET /api/v1/devices`
+- **Verbo HTTP:** `GET`
+- **Sintaxis de llamada:** `GET /api/v1/devices?status=ACTIVE&location=garage`
+- **Parámetros (query):** `status` (`ACTIVE` / `INACTIVE` / `MAINTENANCE`), `location`.
+- **Ejemplo response (`200 OK`):**
+  ```json
+  {
+    "devices": [
+      {
+        "device_id": "esp32-door-01",
+        "name": "Puerta Garaje Norte",
+        "status": "ACTIVE",
+        "last_heartbeat": "2026-10-10T14:35:00Z"
+      }
+    ],
+    "total": 1
+  }
+  ```
+
+#### 4. `GET /api/v1/devices/{device_id}`
+- **Verbo HTTP:** `GET`
+- **Sintaxis:** `GET /api/v1/devices/esp32-door-01`
+- **Ejemplo response (`200 OK`):** Mismo esquema que el elemento del listado, con detalles completos (`firmware_version`, `settings`, `maintenance_mode`).
+
+#### 5. `PATCH /api/v1/devices/{device_id}/settings`
+- **Verbo HTTP:** `PATCH`
+- **Sintaxis:** `PATCH /api/v1/devices/esp32-door-01/settings`
+- **Parámetros (body):** `tank_height_cm` (`number`), `threshold_low_cm` (`number`), `threshold_critical_cm` (`number`).
+- **Ejemplo request:**
+  ```json
+  {
+    "tank_height_cm": 120,
+    "threshold_low_cm": 30,
+    "threshold_critical_cm": 10
+  }
+  ```
+- **Ejemplo response (`200 OK`):** `{"updated": true, "settings": {...}}`
+
+#### 6. `PUT /api/v1/devices/{device_id}/maintenance`
+- **Verbo HTTP:** `PUT`
+- **Sintaxis:** `PUT /api/v1/devices/esp32-door-01/maintenance`
+- **Parámetros (body):** `maintenance` (`boolean`).
+- **Ejemplo:** `{"maintenance": true}` activa el modo mantenimiento (`INACTIVE` temporal, sin comandos permitidos). `{"maintenance": false}` lo restaura a `ACTIVE`.
+
+#### 7. `POST /api/v1/devices/{device_id}/commands`
+- **Verbo HTTP:** `POST`
+- **Sintaxis:** `POST /api/v1/devices/esp32-door-01/commands`
+- **Parámetros (body):** `command_type` (`unlock`, `display`, `buzzer`, `alert`, `access_result`, `time_sync`), `params` (`object`), `command_id` (`string`, opcional, generado por el gateway si no se envía).
+- **Ejemplo request (`unlock`):**
+  ```json
+  {
+    "command_type": "unlock",
+    "params": { "duration_ms": 5000 },
+    "command_id": "cmd-001"
+  }
+  ```
+- **Ejemplo response (`202 Accepted`):**
+  ```json
+  {
+    "command_id": "cmd-001",
+    "status": "PENDING",
+    "command_type": "unlock",
+    "device_id": "esp32-door-01"
+  }
+  ```
+- **Explicación:** El gateway publica el comando en MQTT (`edifika/v1/nodes/{deviceId}/commands`) y espera el `ack` del nodo para actualizar el estado a `OK` o `FAILED`. Esto garantiza entrega confiable incluso con red inestable.
+
+#### 8. `POST /api/v1/credentials`
+- **Verbo HTTP:** `POST`
+- **Sintaxis:** `POST /api/v1/credentials`
+- **Parámetros (body):** `uid` (`string`, UID de la tarjeta RFID), `name` (`string`), `status` (`ACTIVE` / `SUSPENDED` / `REVOKED`).
+- **Ejemplo:** Registro manual sin conexión a internet (offline-first). El gateway guarda en SQLite local y sincroniza con la nube en el siguiente `sync`.
+
+#### 9. `GET /api/v1/credentials`
+- **Verbo HTTP:** `GET`
+- **Sintaxis:** `GET /api/v1/credentials?status=ACTIVE`
+- **Ejemplo response (`200 OK`):** Lista con `uid`, `name`, `status`, `created_at`, `synced` (`boolean`). Las credenciales no sincronizadas (`synced: false`) se resaltan para alertar al administrador.
+
+#### 10. `PATCH /api/v1/credentials/{uid}/status`
+- **Verbo HTTP:** `PATCH`
+- **Sintaxis:** `PATCH /api/v1/credentials/A1B2C3D4/status`
+- **Parámetros (body):** `status` (`ACTIVE`, `SUSPENDED`, `REVOKED`).
+- **Ejemplo:** Si un residente no paga, se cambia a `SUSPENDED`; si pierde la tarjeta, a `REVOKED`. El cambio se propaga inmediatamente al nodo mediante `sync` y `ack`.
+
+#### 11. `GET /api/v1/access-attempts`
+- **Verbo HTTP:** `GET`
+- **Sintaxis:** `GET /api/v1/access-attempts?device_id=esp32-door-01&from=2026-10-01`
+- **Parámetros:** `device_id`, `from` (`date`), `to` (`date`), `credential_masked` (`boolean`, por defecto `true`).
+- **Ejemplo response (`200 OK`):**
+  ```json
+  {
+    "attempts": [
+      {
+        "attempt_id": "att-101",
+        "device_id": "esp32-door-01",
+        "credential_masked": "****D4",
+        "status": "GRANTED",
+        "timestamp": "2026-10-10T08:15:00Z"
+      }
+    ],
+    "total": 1
+  }
+  ```
+- **Explicación:** La credencial se enmascara (`****D4`) para cumplir con privacidad. La bitácora es inmutable y se usa para auditoría y detección de accesos no autorizados.
+
+#### 12. `GET /api/v1/readings`
+- **Verbo HTTP:** `GET`
+- **Sintaxis:** `GET /api/v1/readings?device_id=esp32-door-01&sensor=humidity&from=2026-10-01`
+- **Ejemplo response (`200 OK`):**
+  ```json
+  {
+    "readings": [
+      {
+        "reading_id": "r-501",
+        "device_id": "esp32-door-01",
+        "sensor": "humidity",
+        "value": 68.5,
+        "unit": "%",
+        "timestamp": "2026-10-10T10:00:00Z"
+      },
+      {
+        "reading_id": "r-502",
+        "device_id": "esp32-door-01",
+        "sensor": "ultrasonic",
+        "value": 85.2,
+        "unit": "cm",
+        "timestamp": "2026-10-10T10:05:00Z"
+      }
+    ],
+    "total": 2
+  }
+  ```
+- **Explicación:** Los datos de sensores (`humidity`, `ultrasonic`) se almacenan en TimescaleDB a través del backend y se consultan desde el Edge Gateway para validación local antes de sincronizar.
+
+#### 13. `POST /api/v1/sync`
+- **Verbo HTTP:** `POST`
+- **Sintaxis:** `POST /api/v1/sync`
+- **Parámetros (body):** `version` (`string`, versión de la sincronización anterior), `full_sync` (`boolean`).
+- **Ejemplo request:**
+  ```json
+  {
+    "version": "v-42",
+    "full_sync": false
+  }
+  ```
+- **Ejemplo response (`200 OK`):**
+  ```json
+  {
+    "synced": true,
+    "version": "v-43",
+    "credentials": [ ... ],
+    "reservations": [ ... ],
+    "schedules": [ ... ],
+    "updated_at": "2026-10-10T10:30:00Z"
+  }
+  ```
+- **Explicación:** Si `full_sync` es `false`, solo se envían cambios desde `version`; si es `true`, se envía el conjunto completo. Esto minimiza el tráfico de red y permite operar offline.
+
+#### 14. `GET /api/v1/status`
+- **Verbo HTTP:** `GET`
+- **Sintaxis:** `GET /api/v1/status`
+- **Ejemplo response (`200 OK`):**
+  ```json
+  {
+    "gateway_id": "edge-gw-01",
+    "nodes": {
+      "total": 3,
+      "active": 2,
+      "inactive": 1
+    },
+    "event_queue": {
+      "pending": 12,
+      "failed": 0
+    },
+    "cache": {
+      "credentials_count": 145,
+      "last_sync": "2026-10-10T10:30:00Z"
+    }
+  }
+  ```
+
+#### 15. `GET /api/v1/outbox`
+- **Verbo HTTP:** `GET`
+- **Sintaxis:** `GET /api/v1/outbox`
+- **Ejemplo response (`200 OK`):**
+  ```json
+  {
+    "outbox": [
+      {
+        "event_id": "evt-301",
+        "kind": "access_attempt",
+        "occurred_at": "2026-10-10T08:15:00Z",
+        "payload": { ... },
+        "retry_count": 0
+      }
+    ],
+    "pending_count": 1
+  }
+  ```
+- **Explicación:** Muestra los eventos que aún no han sido confirmados por el backend. Si el backend no responde (`5xx`, `401`, `403`, `408`, `429`), los eventos se mantienen con espera creciente (máx. 60 s). Cualquier otro `4xx` descarta el evento tras 5 intentos para no bloquear la cola.
+
+---
+
+### Capturas de interacción con la documentación (OpenAPI / Swagger UI)
+
+A continuación se describen las capturas realizadas con datos de muestra, utilizando la interfaz Swagger local (`http://localhost:8000/docs`).
+
+**Captura 1 — Interfaz Swagger UI (`assets/img/swagger.png`)**
+- Se observa la lista de todos los endpoints organizados por tags (`health`, `devices`, `credentials`, `access`, `readings`, `sync`, `status`, `outbox`).
+- Cada endpoint muestra su método (`GET`, `POST`, `PATCH`, `PUT`) con el color correspondiente (azul para `GET`, verde para `POST`, naranja para `PUT`, morado para `PATCH`).
+- La sección de `securitySchemes` indica `bearerAuth` con tipo `http`, esquema `bearer` y formato `JWT`, coincidiendo con el token `EDGE_SERVICE_TOKEN`.
+
+**Captura 2 — Ejecución de `GET /health` (`assets/img/postman.png`)**
+- Se realizó la llamada directamente desde Postman (`GET localhost:8000/health`).
+- Respuesta: `{"status":"healthy","dependencies":{"database":"ok","mqtt_broker":"ok","event_queue":"ok","cache":"ok"},"version":"0.1.0"}`.
+- Tiempo de respuesta: 45 ms. Esto confirma que el servicio está preparado para recibir tráfico antes de cualquier operación crítica.
+
+**Captura 3 — Ejecución de `POST /api/v1/devices` (`assets/img/swagger.png` — detalle de endpoint)**
+- En Swagger UI, se expandió el endpoint `POST /api/v1/devices`, se ingresaron datos de muestra (`device_id`: `esp32-test-01`, `name`: `Simulador`, `location`: `sim-garden`), y se hizo clic en **Execute**.
+- El response (`201 Created`) mostró el `device_id` y `status: INACTIVE`, validando que el esquema de respuesta coincide con la especificación.
+- Se verificó que el cuerpo de la solicitud (`requestBody`) requiere el esquema JSON definido en `components/schemas/Device`.
+
+**Captura 4 — Ejecución de `GET /api/v1/readings` (`assets/img/postman.png`)**
+- Se envió `GET localhost:8000/api/v1/readings?device_id=esp32-test-01&sensor=ultrasonic`.
+- Respuesta con lecturas de muestra generadas por el simulador (`sim-garden`), incluyendo `value` (cm) y `timestamp`. Esto evidencia la interacción completa entre la documentación, el gateway y los datos simulados.
+
+**Observación:** Las capturas se generaron utilizando datos semilla del repositorio (`seed` profile en `docker-compose.yml`) y los simuladores `sim-door` y `sim-garden` definidos en el archivo `docker-compose.yml` del Edge Gateway. Esto garantiza que los ejemplos de la documentación sean reproducibles en cualquier entorno que ejecute `docker compose --profile sim up`.
+
+---
+
+### Contrato MQTT (documentación complementaria en OpenAPI / repositorio)
+
+El contrato MQTT entre los nodos ESP32 y el Edge Gateway se documenta en el archivo `mqtt-contract.md` del repositorio (`docs/mqtt-contract.md`) y se resume en la especificación OpenAPI (`tags`: `mqtt-contract`).
+
+| Sentido | Tópico | Contenido JSON | Referencia doc |
 |---|---|---|---|
-| GET | `/health` | Estado del servicio y de sus dependencias (base de datos, broker, cola de eventos y caché) | TS23 |
-| POST | `/api/v1/devices` | Registrar un nodo; queda `INACTIVE` hasta su primer heartbeat | US79 |
-| GET | `/api/v1/devices` | Listar los nodos | US80, US93 |
-| GET | `/api/v1/devices/{device_id}` | Consultar un nodo | US80 |
-| PATCH | `/api/v1/devices/{device_id}/settings` | Calibrar altura del tanque y umbrales | US92 |
-| PUT | `/api/v1/devices/{device_id}/maintenance` | Activar o finalizar el modo mantenimiento | US89 |
-| POST | `/api/v1/devices/{device_id}/commands` | Ejecutar un comando (abrir cerradura, mostrar mensaje, sonar buzzer) y esperar su confirmación | US83 |
-| POST | `/api/v1/credentials` | Registrar una tarjeta manualmente, también sin internet | US86 (registro manual) |
-| GET | `/api/v1/credentials` | Listar las credenciales en caché | US93 |
-| PATCH | `/api/v1/credentials/{uid}/status` | Activar, suspender o revocar una credencial | US91 (bloqueo manual) |
-| GET | `/api/v1/access-attempts` | Bitácora de accesos, con la credencial enmascarada | US55, US93 |
-| GET | `/api/v1/readings` | Lecturas de sensores | US65 |
-| POST | `/api/v1/sync` | Recibir credenciales, reservas y horarios enviados por la nube | US81 |
-| GET | `/api/v1/status` | Estado del Edge Gateway: nodos, cola de eventos y caché | US93 |
-| GET | `/api/v1/outbox` | Eventos pendientes de enviar a la nube | US93 |
+| Nodo → Edge | `edifika/v1/nodes/{deviceId}/heartbeat` | `{"v":"1","ts":"...","deviceId":"...","fw":"v1.2.0"}` | [`docs/mqtt-contract.md`](https://github.com/IoT-UPC-202620/Edifika-Microservice-IoT-Gateway/blob/develop/docs/mqtt-contract.md) |
+| Nodo → Edge | `edifika/v1/nodes/{deviceId}/access` | `{"v":"1","ts":"...","credentialType":"RFID","credential":"A1B2C3D4"}` | Idem |
+| Nodo → Edge | `edifika/v1/nodes/{deviceId}/readings` | `{"v":"1","ts":"...","sensor":"humidity","value":68.5,"unit":"%"}` | Idem |
+| Nodo → Edge | `edifika/v1/nodes/{deviceId}/ack` | `{"v":"1","ts":"...","commandId":"cmd-001","status":"OK","detail":""}` | Idem |
+| Edge → Nodo | `edifika/v1/nodes/{deviceId}/commands` | `{"v":"1","ts":"...","commandId":"cmd-001","type":"unlock","params":{"duration_ms":5000}}` | Idem |
 
-Los errores tienen una forma común: `{"code": 409, "status": "Conflict", "message": "..."}`. Los errores de validación (`422`) incluyen un objeto `errors` con el detalle de cada campo.
+---
 
-**Contrato MQTT entre los nodos y el Edge Gateway** (prefijo `edifika/v1`, versión de esquema 1). Todos los mensajes son JSON con la versión `v` y la marca de tiempo `ts` del reloj del nodo.
+### Contrato Edge Gateway → Backend (documentación complementaria)
 
-| Sentido | Tópico | Contenido |
-|---|---|---|
-| Nodo → Edge | `edifika/v1/nodes/{deviceId}/heartbeat` | `deviceId`, `ts`, `fw` (versión de firmware, opcional) |
-| Nodo → Edge | `edifika/v1/nodes/{deviceId}/access` | `credentialType` (`RFID`), `credential` (UID de la tarjeta) |
-| Nodo → Edge | `edifika/v1/nodes/{deviceId}/readings` | `sensor` (`humidity` o `ultrasonic`), `value` (puede ser nulo si el sensor no midió), `unit` |
-| Nodo → Edge | `edifika/v1/nodes/{deviceId}/ack` | `commandId`, `status` (`OK` o `FAILED`), `detail` |
-| Edge → Nodo | `edifika/v1/nodes/{deviceId}/commands` | `commandId`, `type`, `params` |
+| Operación | Método / URL | Descripción | Referencia doc |
+|---|---|---|---|
+| Entrega de eventos por lotes | `POST /api/v1/edge/events` (backend) | Lote de eventos (`eventId`, `kind`, `occurredAt`, `payload`). El backend debe deduplicar por `eventId`. | [`docs/edge-backend-contract.md`](https://github.com/IoT-UPC-202620/Edifika-Microservice-IoT-Gateway/blob/develop/docs/edge-backend-contract.md) |
+| Sincronización | `GET /api/v1/edge/sync?since={versión}` (backend) | Copia completa (`full: true`) o cambios desde `versión`. | Idem |
 
-Tipos de comando que debe atender el firmware: `access_result` (resultado de una lectura de tarjeta: abrir `lockMs`, mensaje para la OLED y patrón del buzzer), `unlock`, `display`, `buzzer`, `alert` (alerta local, por ejemplo nivel crítico de agua), `maintenance` y `time_sync`. El nodo debe confirmar con un `ack` cada comando que incluya `commandId`. Un mensaje con una versión de esquema distinta o con un formato inválido se descarta y se reporta a la nube una sola vez por dispositivo.
-
-**Contrato entre el Edge Gateway y el backend.** Las llamadas incluyen `Authorization: Bearer <token>` y el encabezado `X-Gateway-Id`.
-
-| Operación | Descripción |
-|---|---|
-| `POST /api/v1/edge/events` | Entrega por lotes de eventos `{eventId, kind, occurredAt, payload}`. El backend responde con los `eventId` aceptados y **debe deduplicar por `eventId`**, porque la entrega es al menos una vez. Tipos de evento: `access_attempt`, `reading`, `alert`, `device_status`, `command_result` y `credential_changed` |
-| `GET /api/v1/edge/sync?since={versión}` | Credenciales, ventanas de reserva y horarios de áreas. Entrega una copia completa (`full: true`) o solo los cambios desde la versión indicada |
-
-Ante un error `5xx`, `401`, `403`, `408`, `429` o una falla de red, el Edge Gateway conserva los eventos y reintenta con espera creciente (máximo 60 segundos). Ante cualquier otro error `4xx`, descarta el evento tras 5 intentos para que no bloquee la cola.
+Todos los detalles del contrato (formato de eventos, códigos de error, mecanismo de reintento con espera creciente y política de descarte) están documentados tanto en la especificación OpenAPI como en los archivos Markdown del repositorio.
 
 #### 6.2.1.8. Software Deployment Evidence for Sprint Review
 
-El despliegue del Edge Gateway se define de forma reproducible en el repositorio (https://github.com/IoT-UPC-202620/Edifika-Microservice-IoT-Gateway):
+**Introducción — ¿Qué se realizó con respecto a despliegue en el Sprint 1?**
 
-| Archivo | Contenido |
-|---|---|
-| `Dockerfile` | Imagen del Edge Gateway (`python:3.12-slim`, usuario sin privilegios, `HEALTHCHECK` y gunicorn con un worker) |
-| `docker-compose.yml` | Servicios `mosquitto`, `edge-gateway`, `mock-cloud` y, con el perfil `sim`, `seed`, `sim-door` y `sim-garden`; volúmenes `edge-data` y `mosquitto-data` |
-| `mosquitto/mosquitto.conf` | Configuración del broker MQTT local |
-| `.env.example` | Variables de entorno que se pueden sobrescribir |
+Durante el Sprint 1 (21/09/2026 – 10/10/2026) se completó el despliegue inicial de los tres productos digitales que forman parte del alcance del Sprint: la **Landing Page** (`IoT-UPC-202620/Iot-LandingPage`), la **Web Application** (`IoT-UPC-202620/FrontEnd`) y el **Edge Gateway** (`IoT-UPC-202620/Edifika-Microservice-IoT-Gateway`). Las actividades incluyeron la creación y configuración de cuentas en los proveedores de la nube, la configuración de recursos de desarrollo y producción, la integración de pipelines de despliegue automático y la verificación de los entornos mediante capturas de pantalla y registros de ejecución.
 
-El archivo `docker-compose.yml` se validó con `docker compose config`, que confirma la sintaxis y la resolución de sus variables, y los seis servicios (`mosquitto`, `edge-gateway`, `mock-cloud`, `seed`, `sim-door` y `sim-garden`) quedan definidos. Los pasos de despliegue están en la sección 6.1.4.
+**Productos digitales incluidos en el proceso de Deployment:**
+- **Landing Page:** sitio estático publicado en GitHub Pages (`https://iot-upc-202620.github.io/Iot-LandingPage/`).
+- **Web Application:** aplicación Angular desplegada en Vercel (`https://edifika-front.vercel.app/`).
+- **Edge Gateway:** servicio Python (Flask + Gunicorn) desplegado como contenedor Docker en Render (`https://edifika-edge-gateway.onrender.com/`) y disponible localmente con `docker-compose`.
 
-> **Pendiente de evidencia:** capturas de la ejecución de `docker compose up --build` con los contenedores en estado `healthy` y de la interfaz Swagger en `http://localhost:8000/docs`.
+**Actividades de despliegue realizadas:**
+
+| Producto / Servicio | Actividad | Proveedor / Entorno | Estado |
+|---|---|---|---|
+| **Landing Page** | Creación de repositorio `IoT-UPC-202620/Iot-LandingPage` y configuración de rama `main` con GitHub Pages. Publicación automática con cada `push` a `main`. | GitHub (GitHub Pages) | Desplegado y accesible |
+| **Web Application** | Creación de cuenta en Vercel, vinculación con repositorio `IoT-UPC-202620/FrontEnd`, configuración de variables de entorno (`API_URL`, `EDGE_SERVICE_TOKEN`), despliegue automático con `vercel --prod`. | Vercel | Desplegado y accesible |
+| **Edge Gateway** | Creación de cuenta en Render, configuración de servicio web con `Dockerfile`, variables de entorno (`EDGE_SERVICE_TOKEN`, `MQTT_HOST`, `DB_PATH`), despliegue con `docker-compose.yml` (servicios `edge-gateway`, `mosquitto`, `mock-cloud`, `seed`, `sim-door`, `sim-garden`). Validación con `docker compose config`. | Render + Docker Compose local | Desplegado y accesible |
+| **Edge Gateway** | Creación de cuentas en GitHub (`IoT-UPC-202620`), configuración de `GitFlow` (`main`, `develop`, `feature/*`), integración con acciones automáticas para validación de sintaxis y generación de imagen. | GitHub (Actions) | Activo |
+
+**Repositorios, ramas y commits relacionados con Deployment:**
+
+| Repositorio | Rama | Commit Id | Mensaje | Fecha | Descripción |
+|---|---|---|---|---|---|
+| `IoT-UPC-202620/Iot-LandingPage` | `main` | `44433b6` | first commit | 30/09/2026 | Creación inicial del repositorio y estructura de carpetas. |
+| `IoT-UPC-202620/Iot-LandingPage` | `main` | `b3fbc5a` | Primer commit | 30/09/2026 | Publicación del archivo `index.html` con secciones básicas. |
+| `IoT-UPC-202620/Iot-LandingPage` | `main` | `8dd3610` | deploy: publish landing page with mockups | 10/10/2026 | Actualización con mockups y despliegue en GitHub Pages. |
+| `IoT-UPC-202620/FrontEnd` | `main` / `IOT` | `8787c8d` | front | 08/10/2026 | Integración del módulo IoT en la rama `IOT`. |
+| `IoT-UPC-202620/FrontEnd` | `IOT` | `83d71c5` | Add IOT module | 10/10/2026 | Adición del componente `Smart-IoT` con consumo de datos locales. |
+| `IoT-UPC-202620/FrontEnd` | `main` | `c7e320a` | Merge pull request #1 from IoT-UPC-202620/IOT | 10/10/2026 | Merge del módulo IoT a `main`; despliegue automático en Vercel. |
+| `IoT-UPC-202620/Edifika-Microservice-IoT-Gateway` | `develop` | `8787c8d` | docs: update openapi spec for v1 endpoints | 08/10/2026 | Actualización de la especificación OpenAPI (parte de la documentación). |
+| `IoT-UPC-202620/Edifika-Microservice-IoT-Gateway` | `develop` | `83d71c5` | docs: add MQTT contract and event schema descriptions | 10/10/2026 | Documentación del contrato MQTT. |
+| `IoT-UPC-202620/Edifika-Microservice-IoT-Gateway` | `main` | `c7e320a` | docs: merge PR #1 — documentation and contracts | 10/10/2026 | Merge a `main` y actualización de imagen Docker publicada. |
+
+---
+
+### Capturas en imagen y explicaciones de los pasos realizados
+
+**Paso 1 — Creación y configuración del repositorio de Landing Page (`assets/img/githubpages.png`)**
+- Captura de la página publicada (`https://iot-upc-202620.github.io/Iot-LandingPage/`). Se observa la sección `#showcase` con las pantallas operativas del FrontEnd (`login.jpg`, `register.jpg`, `units-residents.jpg`, `community-wall.jpg`, etc.) y la navegación responsiva. La publicación se realiza automáticamente mediante `gh-pages` en cada push a `main`.
+
+**Paso 2 — Configuración de despliegue en Vercel (`assets/img/render.png`)**
+- Captura del panel de Vercel (`https://vercel.com/`). Se observa el proyecto `edifika-front`, la rama `main` vinculada, el dominio `edifika-front.vercel.app` y los últimos despliegues (`10/10/2026`). Las variables de entorno (`API_URL`, `EDGE_SERVICE_TOKEN`) se configuraron en la sección **Settings > Environment Variables**.
+
+**Paso 3 — Configuración del Edge Gateway en Render (`assets/img/render.png` — servicio web)**
+- En Render se creó un servicio web (`Web Service`) vinculado al repositorio `Edifika-Microservice-IoT-Gateway`, con `Dockerfile` como build command (`docker build -t edge-gateway .`). Se configuraron las variables `EDGE_SERVICE_TOKEN`, `MQTT_HOST` (`mosquitto`), `DB_PATH` (`/data/edge.db`) y `PORT` (`8000`). El servicio está disponible en `https://edifika-edge-gateway.onrender.com/`.
+
+**Paso 4 — Ejecución local con Docker Compose (`assets/img/deployment-diagram.png`)**
+- Se presenta el diagrama de despliegue (`assets/img/deployment-diagram.png`) que ilustra los contenedores (`edge-gateway`, `mosquitto`, `mock-cloud`, `seed`, `sim-door`, `sim-garden`) y sus relaciones. El archivo `docker-compose.yml` se validó con `docker compose config` (salida: `name: edifika-report_edge`, `services: mosquitto, edge-gateway, mock-cloud, seed, sim-door, sim-garden`).
+
+**Paso 5 — Estado saludable del contenedor Edge Gateway (`assets/img/container-diagram.png`)**
+- Captura del diagrama de contenedores (`assets/img/container-diagram.png`) que muestra la arquitectura del Edge Gateway con Flask, SQLite, Mosquitto client, Gunicorn y el broker MQTT. El servicio inicia con `docker compose up --build` y el contenedor pasa a `healthy` tras completar el `HEALTHCHECK` (`curl -f http://localhost:8000/health || exit 1`).
+
+**Paso 6 — Documentación interactiva desplegada (`assets/img/swagger.png`)**
+- Captura de la interfaz Swagger UI (`http://localhost:8000/docs`) con todos los endpoints del Sprint 1 documentados. Esta captura evidencia que la documentación de Web Services no solo existe como archivo (`openapi.json`), sino que está desplegada y accesible como parte del producto entregado.
+
+**Paso 7 — Interacción con datos de muestra (`assets/img/postman.png`)**
+- Captura de Postman (`assets/img/postman.png`) mostrando la ejecución de `GET /api/v1/access-attempts` con datos semilla generados por `sim-door`. El cuerpo de respuesta incluye `credential_masked`, `status: GRANTED` y `timestamp`, confirmando que los datos de muestra se integran correctamente con la documentación y el servicio.
+
+---
+
+**Observaciones adicionales sobre Deployment:**
+- La configuración de `GitFlow` (`main`, `develop`, `feature/*`) garantiza que cada incremento de despliegue vaya acompañado de un commit convencional (`feat`, `docs`, `test`, `chore`, `fix`) y de una rama de integración validada antes del merge a `main`.
+- El archivo `.env.example` del repositorio del Edge Gateway (`https://github.com/IoT-UPC-202620/Edifika-Microservice-IoT-Gateway/blob/develop/.env.example`) documenta todas las variables requeridas para la replicación del despliegue, facilitando la transición entre entornos locales, de desarrollo (`Render`) y de producción futura.
+- Se recomienda, para el Sprint 2, configurar un pipeline de CI/CD completo en GitHub Actions que ejecute `docker compose config`, `pytest` y `docker build` antes de cualquier despliegue en producción, asegurando la trazabilidad de cambios y la reproducibilidad del entorno.
 
 #### 6.2.1.9. Team Collaboration Insights during Sprint
+
+En esta sección el equipo explica cómo se han desarrollado las actividades de implementación del Sprint 1 y presenta las capturas de los analíticos de colaboración y los commits realizados en GitHub por los miembros del equipo, así como la interpretación de estos analíticos. Todos los integrantes participaron en la implementación de cada uno de los productos comprometidos según corresponda en el Sprint: **Landing Page**, **Web Services (Edge Gateway)** y **Aplicaciones (Web Application / FrontEnd)**.
+
+##### Landing Page (`IoT-UPC-202620/Iot-LandingPage`)
+
+<p align="center">
+  <img src="assets/img/insights/landing.png" alt="Analítico de colaboración en GitHub - Landing Page" width="500"/>
+</p>
+
+##### Frontend Web Application (`IoT-UPC-202620/FrontEnd`)
+
+<p align="center">
+  <img src="assets/img/insights/frontend-web.png" alt="Analítico de colaboración en GitHub - Frontend Web" width="500"/>
+</p>
+
 
 # Conclusiones
 # Conclusiones y Recomendaciones
