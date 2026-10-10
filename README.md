@@ -7654,79 +7654,460 @@ c. Revisar los logs del contenedor `edge-gateway` para confirmar la conexión al
 
 #### 6.2.1.1. Sprint Planning 1
 
+El Sprint Planning Meeting del Sprint 1 se realizó el **21 de septiembre de 2026**, inmediatamente después de la entrega de AV1 y al inicio de la etapa de implementación de la solución. La sesión se condujo de forma remota por Microsoft Teams, con el Scrum Master designado como facilitador y una duración de tres horas. Participaron los siete integrantes del equipo, quienes actuaron como Developers y revisaron conjuntamente el alcance de la iteración.
+
+La sesión se apoyó en el Product Backlog de la sección 3.3, en el diseño de solución del Capítulo IV y en los criterios de aceptación redactados en Gherkin para cada historia. A partir de estos insumos, el equipo realizó tres actividades: la selección de las historias y technical stories que componen el Sprint 1, la definición del Sprint Goal como criterio único de éxito de la iteración y la asignación de responsables según la matriz de líderes y colaboradores que se presenta en 6.2.1.2.
+
+El alcance comprometido se concentró en tres productos digitales: la **Landing Page** pública de Edifika, la **Web Application** (frontend) y el **Edge Gateway**, el servicio Edge que se ejecuta dentro del edificio y se comunica por MQTT local con los nodos ESP32. Estos tres productos se eligieron porque son los entregables exigidos para esta etapa (TB1 – Stage Review) y porque, juntos, permiten demostrar de extremo a extremo la propuesta de valor de Edifika: un visitante entiende la plataforma y accede a ella, un administrador o un residente usa las primeras pantallas de la aplicación, y el edificio opera su control de acceso de manera autónoma.
+
+**Cuadro de resumen del Sprint Planning Meeting**
+
+| Sprint # | Sprint 1 |
+|---|---|
+| Sprint Planning | Background |
+| Date | 2026-09-21 |
+| Time | 07:30 PM |
+| Location | Reunión virtual por Microsoft Teams (enlace compartido en el servidor de Discord del equipo) |
+| Prepared By | Acuña Corahua, Jonatan Ariel |
+| Attendees | Acuña Corahua, Jonatan Ariel; Collantes Carrillo, Diego Mateo; Landa Ortiz, Sergio Javier; Lizarbe Alvarez, Ariana Nickole; Ortiz Cardenas, Johanna Antuanete; Perez Tuesta, Gabriel; Sarmiento Medina, Loreley |
+| Facilitator | Acuña Corahua, Jonatan Ariel (Scrum Master) |
+| Sprint Period | 2026-09-21 – 2026-10-09 (3 semanas) |
+| Sprint 1 – 1 Review | Pendiente de celebrarse el 2026-10-09. Se verificará el Sprint Goal contra los tres productos digitales comprometidos (Landing Page, Web Application y Edge Gateway) y se demostrarán los resultados alcanzados a nivel de producto: URLs públicas de la Landing Page y de la Web Application, y una demostración de extremo a extremo del Edge Gateway con broker MQTT, backend y nodos ESP32 virtuales. |
+| Sprint 1 – 1 Retrospective | Pendiente de celebrarse el 2026-10-09, después de la Review. Se identificarán oportunidades de mejora en la forma de trabajo del equipo: estimación de historias, coordinación entre el trabajo de frontend y el de backend, y gestión de los repositorios del proyecto. |
+| Sprint 1 Goal | *Our focus is on* publicar la primera versión de la Landing Page de Edifika con el modelo de negocio y el propósito de la plataforma; entregar las primeras pantallas operativas de la Web Application para administradores y residentes —inicio de sesión, gestión de datos de usuarios, activación y desactivación de cuentas, y consulta de la deuda actual—; y entregar el Edge Gateway que resuelve el acceso con tarjeta RFID a las áreas comunes del edificio y mantiene en la nube las credenciales, reservas y reglas de acceso sincronizadas. *We believe it delivers* a los visitantes información clara para decidir si usan Edifika y un acceso directo a la aplicación según su rol; a los administradores y residentes una experiencia de uso inicial de la plataforma en lugar de depender de hojas de cálculo y aplicaciones de mensajería; y al edificio un control de acceso a las áreas comunes que sigue operando aunque se pierda la conexión a internet, sin necesitar que el administrador se desplace al punto de acceso. *This will be confirmed when* la Landing Page y la Web Application estén publicadas en sus URLs públicas y sean navegables; un visitante, un administrador y un residente puedan completar su flujo correspondiente sin intervención de soporte; y en una demostración en vivo un nodo ESP32 lea una tarjeta RFID, conceda el acceso, registre el evento localmente y ese evento llegue al backend una vez restablecida la conexión. |
+| Sprint 1 Velocity | 165 story points. Al ser el primer sprint del proyecto no existía velocidad histórica, por lo que el equipo fijó su capacidad antes de arrancar y la cifra cierra como línea base de la velocidad del Scrum Team. |
+| Sum of Story Points | 165 story points (36 historias: 3 de la Landing Page, 12 de la Web Application y 21 del Edge Gateway) |
+
+**Definición del Sprint Goal según la Scrum Guide.** La Scrum Guide define el Sprint Goal en los siguientes términos (Schwaber y Sutherland, 2020):
+
+> "El Sprint Goal es el objetivo individual del Sprint. Es un compromiso para los Developers, flexible en términos del trabajo exacto que se requiere para alcanzarlo. El Sprint Goal también crea coherencia y enfoque, buscando que los miembros del Scrum Team trabajen juntos en vez de ir en pos de iniciativas individuales."
+
+Por su importancia, el equipo dedicó una parte específica de la sesión a identificarlo. Se consideró que el Sprint Goal debe enfocarse en el negocio o en la perspectiva del usuario —por ejemplo, entregar un nuevo feature o un conjunto de features— y no en el detalle técnico de las tareas. Por ello se redactó en términos de _outcome_, _impact_, _customer_ y _event_, se formuló como un objetivo SMART y se estableció colectivamente.
+
+**Contexto previo al Sprint Goal.** Al cierre de AV1 el equipo tenía un Product Backlog de 82 ítems (397 story points) y ningún Sprint Goal, porque hasta ese momento todo el esfuerzo se había invertido en investigación, análisis y diseño. Para el Sprint 1 el equipo decidió priorizar tres líneas de trabajo: publicar el sitio público que presenta el modelo de negocio y la plataforma, entregar las primeras pantallas operativas de la Web Application y materializar la parte Edge del producto dentro del edificio. Estas tres líneas permiten demostrar el producto de extremo a extremo ante la TB1, que exige la Landing Page y el Frontend Web Application desplegados.
+
+**Sprint Goal del Sprint 1**
+
+> **_Our focus is on_** publicar la primera versión de la Landing Page de Edifika con el modelo de negocio y el propósito de la plataforma; entregar las primeras pantallas operativas de la Web Application para administradores y residentes —inicio de sesión, gestión de datos de usuarios, activación y desactivación de cuentas, y consulta de la deuda actual—; y entregar el Edge Gateway que resuelve el acceso con tarjeta RFID a las áreas comunes del edificio y mantiene en la nube las credenciales, reservas y reglas de acceso sincronizadas.
+>
+> **_We believe it delivers_** a los visitantes información clara para decidir si usan Edifika y un acceso directo a la aplicación según su rol; a los administradores y residentes una experiencia de uso inicial de la plataforma en lugar de depender de hojas de cálculo y aplicaciones de mensajería; y al edificio un control de acceso a las áreas comunes que sigue operando aunque se pierda la conexión a internet, sin necesitar que el administrador se desplace al punto de acceso.
+>
+> **_This will be confirmed when_** la Landing Page y la Web Application estén publicadas en sus URLs públicas y sean navegables; un visitante, un administrador y un residente puedan completar su flujo correspondiente sin intervención de soporte; y en una demostración en vivo un nodo ESP32 lea una tarjeta RFID, conceda el acceso, registre el evento localmente y ese evento llegue al backend una vez restablecida la conexión.
+
+**Identificación de Outcome, Impact, Customer(s) y Event.** Aplicar la plantilla de Scrum.org por sí solo no garantiza un buen Sprint Goal, por lo que el equipo verificó explícitamente cada uno de sus cuatro elementos:
+
+| Elemento | Definición en el Sprint 1 |
+|---|---|
+| Outcome | Landing Page y Web Application publicadas y navegables, y Edge Gateway ejecutándose de extremo a extremo dentro del edificio. |
+| Impact | Los visitantes comprenden la propuesta de valor y acceden a la aplicación; los administradores y residentes dejan de depender de procesos manuales para sus primeras operaciones; el edificio gana un control de acceso que no se detiene por falta de internet. |
+| Customer(s) | Visitantes de la Landing Page; administradores y residentes de la Web Application; administrador del edificio, como responsable del Edge Gateway. |
+| Event | Las dos URLs públicas responden y admiten navegación; los tres segmentos completan su flujo sin soporte; y en una demostración en vivo una tarjeta RFID concede un acceso, el evento queda registrado localmente y llega al backend tras restablecerse la conexión. |
+
+**Verificación de los criterios SMART**
+
+| Criterio | Cómo se cumple en el Sprint Goal |
+|---|---|
+| Specific | Nombra los features y conjuntos de features comprometidos: la Landing Page, las pantallas de inicio de sesión, gestión de usuarios, activación de cuentas y consulta de deuda, y el acceso RFID a áreas comunes. |
+| Measurable | El evento de confirmación es observable y verificable en la Review: dos URLs públicas navegables, tres flujos completados sin soporte y una demostración de extremo a extremo. |
+| Attainable | Corresponde a 165 story points, la capacidad que el equipo fijó para tres semanas, y reutiliza contratos y stack tecnológico ya definidos en el Capítulo IV. |
+| Relevant | Responde directamente a los segmentos objetivo del proyecto y al problema de gestión manual identificado en la sección 1.2.1. |
+| Time-bound | El Sprint concluye el 2026-10-09 y se revisa en esa fecha. |
+
+**Alcance del feature-set comprometido.** La redacción es específica en cuanto a los features comprometidos y a cómo benefician a los segmentos objetivo, sin detallar cómo se implementarán:
+
+| Segmento objetivo | Features comprometidos | Beneficio esperado |
+|---|---|---|
+| Visitantes | Explicación del modelo de negocio y del propósito de la plataforma, sección de funcionalidades y acceso a la aplicación según el rol | Comprender la propuesta de valor y decidir adoptarla sin intermediarios |
+| Administradores | Inicio de sesión, actualización de datos de usuarios y activación o desactivación de cuentas | Administrar quién accede a la plataforma sin intervención del desarrollador |
+| Residentes | Inicio de sesión y consulta de la deuda actual | Conocer su estado de cuenta desde la plataforma en lugar de consultar al administrador |
+| Administradores del edificio (Edge) | Acceso con tarjeta RFID a las áreas comunes y sincronización de credenciales, reservas y reglas | Controlar el ingreso a áreas comunes sin depender del administrador en el punto de acceso, incluso sin internet |
+
+**Criterios de redacción descartados.** El equipo descartó dos enfoques habituales que producen Sprint Goals deficientes:
+
+1. **Centrar el objetivo en el equipo o en el cierre de un ítem de gestión.** Un objetivo como "cerrar la épica de la Landing Page en el tablero de Trello" o "lograr la aprobación del docente" satisface al interior del Scrum Team, pero no al producto ni al usuario, por lo que se descartó.
+2. **Detallar las tareas técnicas en el objetivo.** Expresar el Goal como "configurar el broker MQTT y el backend" invierte la relación del Sprint Goal con las tareas: el objetivo debe permanecer flexible en cuanto al trabajo exacto requerido para alcanzarlo.
+
+**Relación del Sprint Goal con la selección de épicas e historias.** El Sprint Goal se estableció **en conjunto** por el Scrum Team antes de seleccionar el trabajo del Sprint. Esa decisión fue la que permitió decidir qué épicas e historias debían considerarse en la iteración en función de su contribución al objetivo, y no únicamente por su posición en el Product Backlog. Como resultado, las historias que no contribuyen de forma directa al Outcome quedaron fuera del Sprint 1 y se arrastraron al Sprint 2.
+
+La **Definition of Done** acordada para el Sprint 1 exige que cada historia cumpla sus escenarios de aceptación en Gherkin, que tenga cobertura de pruebas automatizadas cuando aplique, que sus criterios de estilo se respeten según la guía de la sección 6.1.3, que el código esté integrado en la rama `develop` mediante un commit convencional y que el producto esté desplegado y accesible desde su URL pública. El Sprint Goal se formuló sobre la base de features concretas, pero no sobre ítems del backlog. Por esa razón, el detalle de las historias comprometidas, su estimación en story points, sus responsables y su estado se presentan en el **Sprint Backlog 1** de la sección 6.2.1.3.
+
 #### 6.2.1.2. Aspect Leaders and Collaborators
+
+El Sprint 1 fue el primero del proyecto y puso a prueba una dificultad de coordinación que los Sprints anteriores no habían presentado: el equipo había trabajado siempre de forma conjunta sobre un mismo incremento y, al llegar a la etapa de implementación, esa práctica ya no era sostenible. El Sprint 1 comprometió 36 historias (165 story points) sobre tres productos digitales que viven en tres repositorios distintos y que, además, involucraban a personas con perfiles técnicos muy diferentes entre sí: frontend, backend, IoT y comunicación. Ante ese escenario, el equipo elaboró el Leadership-and-Collaboration Matrix (LACX), un artefacto que, por cada aspecto dentro del alcance del Sprint, indica quién actúa como líder (**L**) y quién o quiénes actúan como colaboradores (**C**), con el fin de brindar mayor claridad y efectividad en la comunicación al interior del equipo.
+
+La matriz no sustituye la auto-organización del Scrum Team: todos los integrantes son responsables del Sprint Goal y ninguno queda excluido de la entrega. Lo que la matriz hace es explicitar, antes de que empiece el trabajo, quién es la persona de referencia para cada aspecto. En la práctica esto evitó dos tipos de fricción observados durante el Sprint 1: preguntas dirigidas a la persona equivocada sobre una parte del producto que no dominaba, y bloqueos esperando una respuesta que la persona correcta no sabía que se le estaba pidiendo.
+
+##### Criterios para definir los aspectos
+
+Un **aspecto** del Sprint es un subconjunto identificable del alcance funcional de la solución —por ejemplo, un _feature_, un grupo de features, un _bounded context_ o un producto digital completo— que reúna las siguientes condiciones:
+
+1. **Es un subconjunto del alcance comprometido.** El aspecto se corresponde con historias o technical stories que efectivamente están en el Sprint Backlog, nunca con trabajo futuro.
+2. **Tiene una frontera técnica y funcional reconocible.** Los aspectos siguen límites que el equipo ya identificó en el diseño de solución del Capítulo IV: un repositorio, un módulo, un contrato de integración o un flujo de negocio.
+3. **Requiere una decisión que alguien debe tomar.** Si el aspecto no concentra decisiones ni preguntas de arquitectura o de producto, no necesita un líder explícito y no se incluye.
+4. **Su líder puede nombrarse sin ambigüedad.** Un aspecto tiene exactamente un líder; la responsabilidad de coordinar ese aspecto no se delega ni se reparte.
+
+Con estos criterios, el Sprint 1 quedó organizado en siete aspectos. La sección 6.2.1.1 los introduce como tres productos digitales (Landing Page, Web Application y Edge Gateway); desde el punto de vista de la coordinación interna, esa granularidad de producto resultó demasiado gruesa, y se afinó hasta el detalle con el que realmente se comunican los integrantes del equipo.
+
+| Aspecto | Descripción | Alcance |
+| --- | --- | --- |
+| A1 | Landing Page | Sitio público de presentación del modelo de negocio y de la plataforma Edifika |
+| A2 | Gestión de usuarios, unidades y comunicación | Identidad, registro de residentes, edificios y unidades, y publicación en la comunidad |
+| A3 | Reservas, áreas comunes y pagos | Disponibilidad, reserva, cancelación, reglas de uso, consulta de deuda y registro de pagos |
+| A4 | Núcleo offline, contratos e integración del Edge Gateway | Servicio Edge, persistencia local, cola de salida, contrato MQTT e integración con el backend |
+| A5 | Resolución de acceso y monitoreo de dispositivos | Motor de decisión de acceso, credenciales en caché, registro de nodos, alertas y bitácora |
+| A6 | Pruebas automatizadas y aseguramiento de calidad | Suites de pruebas unitarias y de integración del frontend y del Edge Gateway |
+| A7 | Integración, despliegue y documentación técnica | Integración en `develop`, despliegue en Vercel, stack de Docker Compose y documentación de contratos |
+
+##### Matriz de líderes y colaboradores (LACX)
+
+Cada celda de la matriz indica la relación del integrante del equipo con el aspecto: **L** si actúa como líder y **C** si actúa como colaborador. Cuando un aspecto tiene más de un colaborador, se listan los nombres de pila separados por coma.
+
+| Team Member (Last Name, First Name) | GitHub Username | A1. Landing Page | A2. Usuarios, unidades y comunicación | A3. Reservas, áreas comunes y pagos | A4. Núcleo offline e integración (Edge) | A5. Acceso y monitoreo de dispositivos | A6. Pruebas y calidad | A7. Integración, despliegue y documentación |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Landa Ortiz, Sergio Javier | `Serkekes2006` | L | — | — | — | C | C | C |
+| Collantes Carrillo, Diego Mateo | `D4D3v4l` | C | C | C | C | C | L | L |
+| Sarmiento Medina, Loreley | `loreleysarmiento` | — | L | L | — | — | C | C |
+| Perez Tuesta, Gabriel | `Gabyoko` | — | C | C | — | — | C | C |
+| Acuña Corahua, Jonatan Ariel | `JonatanFD` | — | — | — | L | L | C | C |
+| Lizarbe Alvarez, Ariana Nickole | `ariaalizz` | — | C | C | — | — | C | — |
+| Ortiz Cardenas, Johanna Antuanete | `Antuanete01` | — | C | C | — | — | C | — |
+| **Líder del aspecto** | | **Sergio** | **Loreley** | **Loreley** | **Jonatan** | **Jonatan** | **Diego** | **Diego** |
+
+**Leyenda.** *L* = líder del aspecto, responsable de tomar las decisiones que le corresponden, de mantener la coordinación con el resto del equipo y de ser el punto de contacto ante dudas. *C* = colaborador, quien participa en el diseño y en la implementación del aspecto y a quien se le asignan las tareas concretas del mismo. *—* = no participa del aspecto.
+
+El desglose de la responsabilidad por aspecto queda así:
+
+| Aspecto | Líder (L) | Colaboradores (C) |
+| --- | --- | --- |
+| A1. Landing Page | Landa Ortiz, Sergio Javier | Collantes Carrillo, Diego Mateo |
+| A2. Gestión de usuarios, unidades y comunicación | Sarmiento Medina, Loreley | Perez Tuesta, Gabriel; Collantes Carrillo, Diego Mateo; Lizarbe Alvarez, Ariana Nickole; Ortiz Cardenas, Johanna Antuanete |
+| A3. Reservas, áreas comunes y pagos | Sarmiento Medina, Loreley | Perez Tuesta, Gabriel; Collantes Carrillo, Diego Mateo; Lizarbe Alvarez, Ariana Nickole; Ortiz Cardenas, Johanna Antuanete |
+| A4. Núcleo offline, contratos e integración del Edge Gateway | Acuña Corahua, Jonatan Ariel | Collantes Carrillo, Diego Mateo |
+| A5. Resolución de acceso y monitoreo de dispositivos | Acuña Corahua, Jonatan Ariel | Collantes Carrillo, Diego Mateo |
+| A6. Pruebas automatizadas y aseguramiento de calidad | Collantes Carrillo, Diego Mateo | Sarmiento Medina, Loreley; Perez Tuesta, Gabriel; Lizarbe Alvarez, Ariana Nickole; Ortiz Cardenas, Johanna Antuanete; Acuña Corahua, Jonatan Ariel |
+| A7. Integración, despliegue y documentación técnica | Collantes Carrillo, Diego Mateo | Landa Ortiz, Sergio Javier; Sarmiento Medina, Loreley; Perez Tuesta, Gabriel; Acuña Corahua, Jonatan Ariel |
+
+##### Relación de la matriz con la selección de tasks
+
+La organización de líderes y colaboradores tiene relación directa con la posterior selección de tasks en el Sprint: cada aspecto tiene asignado exactamente un líder, y es ese líder quien, junto con sus colaboradores, descompuso las historias comprometidas en las tasks del Sprint Backlog. De este modo, cada task del Sprint recae en un aspecto, y cada aspecto tiene un responsable de coordinación identificable.
+
+| Aspecto | Historias del Sprint | Tasks derivadas | Responsable de la descomposición |
+| --- | --- | --- | --- |
+| A1. Landing Page | US26, US27, US28 (EP06) | T-L01 a T-L08 | Sergio (L) |
+| A2. Usuarios, unidades y comunicación | US01 a US04, US09 (EP01, EP02) | T-W01 a T-W07 | Loreley (L) |
+| A3. Reservas, áreas comunes y pagos | US12, US13, US15, US16, US18, US20, US25 (EP03, EP04) | T-W08 a T-W14 | Loreley (L) |
+| A4. Núcleo offline, contratos e integración | TS21, TS23, TS24, TS25, TS29, TS30, TS31, US47, US50 (EP05, EP10) | T-E01 a T-E04, T-E10, T-E14 | Jonatan (L) |
+| A5. Acceso y monitoreo de dispositivos | TS28, US29, US30, US33, US34, US35, US43, US44, US45, US46, US49 (EP07, EP09, EP10) | T-E05 a T-E09, T-E11, T-E12 | Jonatan (L) |
+| A6. Pruebas y calidad | TS32 (EP05) | T-E15, T-W17 | Diego (L) |
+| A7. Integración, despliegue y documentación | — | T-W15, T-E13, T-E16, T-E17 | Diego (L) |
+| **Total** | **36 historias · 165 story points** | **42 tasks** | |
+
+La asignación de responsables que aparece en las columnas *Assigned To* del Sprint Backlog 1 (sección 6.2.1.3) respeta esta organización: las tasks de cada aspecto fueron ejecutadas por su líder o por sus colaboradores, nunca por alguien ajeno al aspecto.
+
+##### Ejemplo de aplicación
+
+La task **T-E03 — Contrato MQTT y puente paho-mqtt** pertenece al aspecto **A4**, cuyo líder es Jonatan y cuyo colaborador es Diego. La descomposición de la historia TS24 la hizo el líder del aspecto y la implementación se repartió entre ambos según la parte del contrato que correspondía. Del mismo modo, la task **T-W09 — Flujo de reserva** pertenece al aspecto **A3**, cuyo líder es Loreley; la descomposición de la historia US13 la hizo Loreley y la implementaron Loreley, Gabriel y Diego. Este patrón se repitió en los 42 casos del Sprint 1: cada task tiene un aspecto de origen y ese aspecto tiene un líder.
+
+##### Participación de los integrantes sin tareas propias
+
+Ariana Lizarbe Alvarez y Johanna Ortiz Cardenas participaron en el Sprint 1 en calidad de colaboradoras de apoyo en los aspectos A2, A3 y A6. Su aporte principal fue la revisión, la construcción de casos de prueba y el acompañamiento a los aspectos de reservas y pagos (A3) y del Edge Gateway (A4) en lo relativo a la verificación de criterios de aceptación. Ninguna de las dos tuvo tareas asignadas en el Sprint Backlog 1, por lo que su aportación no aparece en la columna *Assigned To* de la sección 6.2.1.3; se registran aquí para que la matriz refleje el esfuerzo real del equipo y no solo el trabajo con task asignado.
+
+##### Mantenimiento de la matriz durante el Sprint
+
+La matriz LACX se elaboró en el Sprint Planning del 21 de septiembre de 2026 y se mantuvo como artefacto vivo durante todo el Sprint. Se actualizó en dos ocasiones, y ambas quedaron registradas en el tablero del Sprint y en el canal de comunicación del equipo:
+
+| Fecha | Cambio | Motivo |
+| --- | --- | --- |
+| 2026-09-24 | Se separó el aspecto «Edge Gateway» en A4 (núcleo offline, contratos e integración) y A5 (resolución de acceso y monitoreo de dispositivos). | Jonatan llevaba en paralelo la implementación del núcleo offline y la del motor de decisión de acceso; separar los aspectos permitió distinguir quién respondía por el contrato MQTT y quién por la lógica de resolución de acceso. |
+| 2026-10-02 | Se agregó un aspecto transversal de integración y despliegue (A7), bajo responsabilidad de Diego. | Los despliegues de Vercel y de Docker Compose, y la documentación de contratos, bloqueaban a los tres productos digitales y no tenían un responsable único. |
 
 #### 6.2.1.3. Sprint Backlog 1
 
+El Sprint Backlog 1 recoge el trabajo comprometido en el Sprint Planning del 21 de septiembre de 2026, cuya descripción completa se encuentra en la sección 6.2.1.1. El objetivo principal del Sprint fue **publicar la primera versión de la Landing Page de Edifika, entregar las primeras pantallas operativas de la Web Application y dejar el Edge Gateway ejecutándose de extremo a extremo dentro del edificio**, para demostrar la propuesta de valor de la plataforma de extremo a extremo ante la TB1.
+
+El Sprint cerró con **36 historias comprometidas y 165 story points** repartidos entre tres productos digitales, desarrollados en tres repositorios independientes:
+
+| Producto digital | Repositorio | Historias | Story Points |
+|---|---|---|---|
+| Landing Page | `IoT-UPC-202620/Iot-LandingPage` | 3 | 5 |
+| Web Application | `IoT-UPC-202620/FrontEnd` | 12 | 53 |
+| Edge Gateway | `IoT-UPC-202620/Edifika-Microservice-IoT-Gateway` | 21 | 107 |
+| **Total** | | **36** | **165** |
+
+Los identificadores de historia y technical story empleados en esta tabla son los del Product Backlog del Capítulo III (sección 3.3). El Edge Gateway se desarrolló además con un desglose interno más fino (`US71`–`US93`, `TS33`, `TS34`) que no figura en el Capítulo III; en esta sección ese desglose se **consolida** en las historias correspondientes del informe, y la columna *Referencia interna* permite trazarlo.
+
+**Sprint Board**
+
+| Artefacto | Referencia |
+|---|---|
+| Tablero del Sprint 1 en Trello | `https://trello.com/b/edifika-sprint-1` |
+| Captura del tablero | `assets/img/board/sprint-1-board.png` |
+
+**Historias de usuario asignadas al Sprint**
+
+| Story Id | Story Title | Epic | Producto digital | Story Points | Estado | Assigned To |
+|---|---|---|---|---|---|---|
+| US26 | Visualizar hero y navegar en la Landing Page | EP06 | Landing Page | 2 | Completado | Landa Ortiz, Sergio Javier |
+| US27 | Visualizar sección de funcionalidades | EP06 | Landing Page | 2 | Completado | Landa Ortiz, Sergio Javier; Collantes Carrillo, Diego Mateo |
+| US28 | Acceder a la aplicación desde la Landing Page | EP06 | Landing Page | 1 | Completado | Landa Ortiz, Sergio Javier |
+| US01 | Registrar residente y vincularlo a su unidad | EP01 | Web Application | 5 | Completado | Perez Tuesta, Gabriel |
+| US02 | Inicio de sesión | EP01 | Web Application | 2 | Completado | Perez Tuesta, Gabriel |
+| US03 | Actualizar información de usuarios | EP01 | Web Application | 2 | Completado | Perez Tuesta, Gabriel |
+| US04 | Registrar edificio y unidades | EP01 | Web Application | 8 | Completado | Perez Tuesta, Gabriel |
+| US09 | Publicar mensaje en la comunidad | EP02 | Web Application | 3 | Completado | Perez Tuesta, Gabriel |
+| US12 | Ver disponibilidad de áreas comunes | EP03 | Web Application | 5 | Completado | Perez Tuesta, Gabriel |
+| US13 | Reservar área común | EP03 | Web Application | 8 | Completado | Perez Tuesta, Gabriel |
+| US15 | Cancelar reserva | EP03 | Web Application | 3 | Completado | Perez Tuesta, Gabriel |
+| US16 | Configurar reglas y estado de área común | EP03 | Web Application | 8 | Completado | Perez Tuesta, Gabriel |
+| US18 | Ver deuda actual | EP04 | Web Application | 3 | Completado | Perez Tuesta, Gabriel |
+| US20 | Registrar pagos en el sistema | EP04 | Web Application | 3 | Completado | Perez Tuesta, Gabriel |
+| US25 | Resolver pago en verificación | EP04 | Web Application | 3 | Completado | Perez Tuesta, Gabriel |
+| TS21 | Implementación del Edge Gateway con operación sin conexión y sincronización | EP05 | Edge Gateway | 8 | Completado | Acuña Corahua, Jonatan Ariel |
+| TS23 | Configuración base del Edge Gateway con Python, Flask, Peewee ORM y SQLite | EP05 | Edge Gateway | 5 | Completado | Acuña Corahua, Jonatan Ariel |
+| TS24 | Contrato de mensajes MQTT entre el Edge Gateway y los ESP32 | EP05 | Edge Gateway | 5 | Completado | Acuña Corahua, Jonatan Ariel |
+| TS25 | Persistencia local con SQLite y cola de salida | EP05 | Edge Gateway | 5 | Completado | Acuña Corahua, Jonatan Ariel |
+| TS28 | Estandarización de marcas de tiempo y sincronización de reloj | EP05 | Edge Gateway | 5 | Completado | Acuña Corahua, Jonatan Ariel |
+| TS29 | Despliegue del Edge Gateway con Docker Compose | EP05 | Edge Gateway | 5 | Completado | Acuña Corahua, Jonatan Ariel |
+| TS30 | Simulador de nodos ESP32 para pruebas sin hardware | EP05 | Edge Gateway | 3 | Completado | Acuña Corahua, Jonatan Ariel |
+| TS31 | Contrato de integración entre el Edge Gateway y el backend | EP05 | Edge Gateway | 5 | Completado | Acuña Corahua, Jonatan Ariel |
+| TS32 | Pruebas automatizadas del Edge Gateway | EP05 | Edge Gateway | 5 | Completado | Acuña Corahua, Jonatan Ariel |
+| US29 | Registrar tarjeta RFID de acceso a áreas comunes | EP07 | Edge Gateway | 5 | Parcial (edge) | Acuña Corahua, Jonatan Ariel |
+| US30 | Desactivar acceso a áreas comunes por morosidad | EP07 | Edge Gateway | 5 | Parcial (edge) | Acuña Corahua, Jonatan Ariel |
+| US33 | Otorgar acceso temporal por reserva aprobada | EP07 | Edge Gateway | 5 | Parcial (edge) | Acuña Corahua, Jonatan Ariel |
+| US34 | Consultar bitácora de accesos | EP07 | Edge Gateway | 3 | Completado | Acuña Corahua, Jonatan Ariel |
+| US35 | Apertura remota de acceso | EP07 | Edge Gateway | 5 | Parcial (edge) | Acuña Corahua, Jonatan Ariel |
+| US43 | Detectar falla de dispositivo | EP09 | Edge Gateway | 5 | Parcial (edge) | Acuña Corahua, Jonatan Ariel |
+| US44 | Monitorear estado de conexión de dispositivos | EP09 | Edge Gateway | 5 | Parcial (edge) | Acuña Corahua, Jonatan Ariel |
+| US45 | Leer tarjeta RFID y resolver el acceso | EP10 | Edge Gateway | 5 | Completado | Acuña Corahua, Jonatan Ariel |
+| US46 | Abrir la cerradura eléctrica y re-bloquearla automáticamente | EP10 | Edge Gateway | 5 | Completado | Acuña Corahua, Jonatan Ariel |
+| US47 | Registrar y sincronizar datos generados sin conexión | EP10 | Edge Gateway | 8 | Completado | Acuña Corahua, Jonatan Ariel |
+| US49 | Registrar y autenticar nodos ESP32 | EP10 | Edge Gateway | 5 | Completado | Acuña Corahua, Jonatan Ariel |
+| US50 | Sincronizar credenciales, reservas, reglas y blacklist desde la nube | EP10 | Edge Gateway | 5 | Completado | Acuña Corahua, Jonatan Ariel |
+| **Total** | | | | **165** | | |
+
+Las historias marcadas como **Parcial (edge)** cubren la parte que corresponde al Edge Gateway; su contraparte en la nube depende de microservicios que no se implementaron en el Sprint 1 y quedan comprometidas para el Sprint 2.
+
+**Work-items / Tasks**
+
+| Task Id | Story Id | Task Title | Task Description | Estimation (Hours) | Assigned To |
+|---|---|---|---|---|---|
+| T-L01 | US26 | Maquetación del hero | Sección principal con propuesta de valor, subtítulo y botón de llamada a la acción | 6 | Landa Ortiz, Sergio Javier |
+| T-L02 | US26 | Barra de navegación responsiva | Menú con anclas a secciones, menú hamburguesa en móvil y desplazamiento suave | 5 | Landa Ortiz, Sergio Javier |
+| T-L03 | US26 | Secciones informativas | Secciones de cómo funciona, segmentos objetivo, estadísticas, precios y equipo | 10 | Landa Ortiz, Sergio Javier |
+| T-L04 | US26 | Traducciones es / en | Diccionarios i18n y conmutación de idioma en todos los textos visibles | 6 | Landa Ortiz, Sergio Javier |
+| T-L05 | US27 | Sección de funcionalidades | Tarjetas de pagos, reservas y comunicados con iconografía y descripción | 6 | Landa Ortiz, Sergio Javier |
+| T-L06 | US27 | Galería de capturas | Lightbox con las siete pantallas de la aplicación y navegación entre imágenes | 7 | Collantes Carrillo, Diego Mateo |
+| T-L07 | US28 | Formulario de contacto | Campos de nombre, correo y edificio con validación y mensaje de éxito | 5 | Landa Ortiz, Sergio Javier |
+| T-L08 | — | Metadatos SEO | Metaetiquetas de descripción y viewport, y pie de página con enlace al repositorio | 2 | Landa Ortiz, Sergio Javier |
+| T-W01 | US02 | Pantalla de inicio de sesión | Formulario reactivo, validación de credenciales y almacenamiento del token | 8 | Perez Tuesta, Gabriel |
+| T-W02 | US02 | Guardia de rutas e interceptor | `authGuard` para el layout privado e interceptor que adjunta el token Bearer | 5 | Perez Tuesta, Gabriel |
+| T-W03 | US01 | Formulario de unidad y vinculación | Alta de unidad, asignación de titular y asociación usuario–unidad | 10 | Perez Tuesta, Gabriel |
+| T-W04 | US03 | Listado y edición de usuarios | Tabla de usuarios con formulario de edición y actualización | 8 | Perez Tuesta, Gabriel |
+| T-W05 | US04 | Formulario de edificio y unidades | Alta de torres y unidades con validaciones de dominio | 12 | Perez Tuesta, Gabriel |
+| T-W06 | US04 | Página de unidades y residentes | Listado con filtros por torre y estado | 8 | Perez Tuesta, Gabriel |
+| T-W07 | US09 | Publicación en el foro | Composición de publicaciones y listado del hilo | 6 | Perez Tuesta, Gabriel |
+| T-W08 | US12 | Calendario de disponibilidad | Vista de calendario con los cupos ocupados por área y fecha | 12 | Perez Tuesta, Gabriel |
+| T-W09 | US13 | Flujo de reserva | Selección de área y horario, confirmación y tarjetas de reserva | 12 | Perez Tuesta, Gabriel |
+| T-W10 | US15 | Cancelación de reserva | Acción de cancelación con confirmación y actualización del calendario | 4 | Perez Tuesta, Gabriel |
+| T-W11 | US16 | Administración de áreas comunes | CRUD de áreas, estados y reglas de uso por área | 12 | Perez Tuesta, Gabriel |
+| T-W12 | US18 | Consulta de deuda | Panel de deuda por unidad y detalle del resident | 8 | Perez Tuesta, Gabriel |
+| T-W13 | US20 | Registro de pagos | Formulario de pago manual con voucher y estado en verificación | 6 | Perez Tuesta, Gabriel |
+| T-W14 | US25 | Resolución de pagos | Acciones de confirmar o rechazar un pago pendiente | 4 | Perez Tuesta, Gabriel |
+| T-W15 | — | Fake API y despliegue en Vercel | `json-server` con datos semilla, rutas y reescrituras de `vercel.json` | 14 | Perez Tuesta, Gabriel |
+| T-W16 | — | Módulos Smart IoT y Centro de Documentación | Dashboard de accesos, iluminación y riego, y centro de documentación | 16 | Sarmiento Medina, Loreley |
+| T-W17 | — | Suite de pruebas unitarias | 26 archivos `.spec.ts` con Karma para servicios, componentes y guardas | 10 | Perez Tuesta, Gabriel; Sarmiento Medina, Loreley |
+| T-E01 | TS23 | Aplicación Flask y endpoint de salud | Estructura de la aplicación, configuración por entorno, `/health` y Swagger con flask-smorest | 10 | Acuña Corahua, Jonatan Ariel |
+| T-E02 | TS25 | Esquema SQLite y cola de salida | Modelos Peewee en modo WAL y cola de salida durable con escritura transaccional | 12 | Acuña Corahua, Jonatan Ariel |
+| T-E03 | TS24 | Contrato MQTT y puente paho-mqtt | Esquemas versionados, router tolerante a mensajes inválidos y confirmación con `ack` | 12 | Acuña Corahua, Jonatan Ariel |
+| T-E04 | TS23, TS24, TS25 | Endpoints REST del servicio | Blueprints de dispositivos, credenciales, lecturas, estado y sincronización | 14 | Acuña Corahua, Jonatan Ariel |
+| T-E05 | US45, US46 | Motor de decisión de acceso | Resolución local con credencial, reserva, horario y estado, más retorno de `lockMs` | 14 | Acuña Corahua, Jonatan Ariel |
+| T-E06 | US29, US30, US33 | Gestión de credenciales en caché | Alta manual sin conexión, suspensión, revocación y lista negra por morosidad | 10 | Acuña Corahua, Jonatan Ariel |
+| T-E07 | US49, US44 | Registro y seguimiento de nodos | Registro, `heartbeat`, detección de desconexión, recuperación y estado | 10 | Acuña Corahua, Jonatan Ariel |
+| T-E08 | TS28 | Sincronización de reloj | Cálculo de deriva, `time_sync` y marcado de relojes sospechosos | 6 | Acuña Corahua, Jonatan Ariel |
+| T-E09 | US43 | Validación de lecturas y alertas | Lecturas de humedad y ultrasonido, conversión a nivel de agua y alertas con histéresis | 12 | Acuña Corahua, Jonatan Ariel |
+| T-E10 | TS21, US47, US50 | Transporte al backend y caché | Envío por lotes con reintentos, `eventId` idempotente y sincronización por pull y push | 14 | Acuña Corahua, Jonatan Ariel |
+| T-E11 | US34 | Bitácora de accesos | Endpoint de intentos de acceso con credencial enmascarada | 5 | Acuña Corahua, Jonatan Ariel |
+| T-E12 | US35 | Comandos remotos y mantenimiento | Envío de comandos con espera de confirmación y modo mantenimiento completo | 10 | Acuña Corahua, Jonatan Ariel |
+| T-E13 | TS29 | Stack de Docker Compose | Servicios `mosquitto`, `edge-gateway` y `mock-cloud` con volúmenes y healthchecks | 10 | Acuña Corahua, Jonatan Ariel |
+| T-E14 | TS30 | Simulador de nodos ESP32 | Nodos virtuales que respetan el contrato MQTT, con comandos de siembra y lectura de tarjeta | 8 | Acuña Corahua, Jonatan Ariel |
+| T-E15 | TS32 | Suite de pruebas automatizadas | 188 pruebas con dobles de prueba para broker, nube y reloj, sin red | 16 | Acuña Corahua, Jonatan Ariel |
+| T-E16 | TS31 | Documentación de contratos | Contrato MQTT, contrato Edge–backend y documentación de la API REST | 8 | Acuña Corahua, Jonatan Ariel |
+| T-E17 | — | Flujo de trabajo y versionado | Ramas `feature/`, `release/0.1.0`, `CHANGELOG.md` y README del repositorio | 6 | Acuña Corahua, Jonatan Ariel |
+| **Total** | | | | **379** | |
+
+**Estructura de control de estado del Sprint**
+
+| Sprint # | Sprint 1 |
+|---|---|
+| User Story | Work-Item / Task |
+| Story Id | Task Id · Task Title · Task Description · Estimation (Hours) · Assigned To |
+| US26 · US27 · US28 (EP06) | T-L01 a T-L08 |
+| US01 a US25 (EP01–EP04) | T-W01 a T-W17 |
+| TS21 a TS32 · US29 a US50 (EP05–EP10) | T-E01 a T-E17 |
+
+**Trabajo realizado sin historia asociada.** El Sprint incluyó dos módulos del Frontend que no corresponden a ninguna historia del Product Backlog y que, además, se implementaron con datos locales en lugar de consumir la API:
+
+| Módulo | Descripción | Estado |
+|---|---|---|
+| Centro de Documentación | Protocolos de emergencia, contactos críticos y repositorio documental, con datos de demostración (`isDemo: true`) | Demostración, sin persistencia |
+| Dashboard Smart IoT | Paneles de control de accesos, iluminación y riego, con datos de demostración (`isDemo: true`) | Demostración, sin integración con el Edge Gateway |
+
+Estos módulos no se incluyeron en los 165 story points comprometidos porque no existía una historia asociada en el Capítulo III y porque su comportamiento se planifica conectar con los servicios reales en el Sprint 2.
+
+**Historias del Product Backlog revisadas y no comprometidas**
+
+| Historia | Motivo |
+|---|---|
+| TS01 a TS05 | Configuración de IAM y API Gateway; es la base del backend y se implementa antes que las historias funcionales del Sprint 2 |
+| TS06 a TS20 | Configuración base de los microservicios de Residential Management, Payment, Reservation, Communication, Notification, Report, Forum, IoT Access Management, Smart Lighting, Telemetry e Irrigation |
+| TS22 | Comunicación por broker de eventos de dominio entre microservicios |
+| TS26 | Firmware base de los nodos ESP32; requiere los contratos MQTT y de cloud ya estabilizados |
+| TS27 | Seguridad de la comunicación del Edge Gateway (autenticación del broker y TLS) |
+| US05 | Activar o desactivar cuentas; el listado de usuarios solo fija el estado de verificación |
+| US06, US07, US08 | Comunicados oficiales; la API de comunicados aún no expone los endpoints que el frontend consume |
+| US11, US17 | Notificaciones de reservas y recordatorios de pago |
+| US14 | Aprobar o rechazar reservas; no se implementó la vista de aprobación |
+| US22 | Generar y exportar reportes financieros; el endpoint de reportes aún no existe en la API |
+| US24 | Pagar la deuda en línea con Culqi; no se implementó la integración con la pasarela de pago |
+| US31, US32, US36, US37, US38, US39, US40 | Riego e iluminación automática del lado del cloud |
+| US41 | Visualizar consumo de energía y agua en el dashboard del administrador |
+| US42 | Alertar consumo anómalo en la nube |
+
 #### 6.2.1.4. Development Evidence for Sprint Review
 
-El Edge Gateway se desarrolló en ramas feature de GitFlow. Cada rama se integró a `develop` con su commit convencional, y el release `0.1.0` se integró a `main`. Repositorio: https://github.com/IoT-UPC-202620/Edifika-Microservice-IoT-Gateway
+En esta sección se explica y presenta los avances en implementación con relación a los productos de la solución según el alcance del Sprint 1: **Landing Page**, **Web Application (FrontEnd)** y **Edge Gateway**. La sección inicia con una introducción que resume los principales avances en la implementación.
 
-| Rama | Commit | Historias | Qué se desarrolló |
-|---|---|---|---|
-| `feature/TS23-flask-base` | `b846d26` | TS23 | Aplicación Flask, configuración por variables de entorno, `/health`, Swagger y token Bearer |
-| `feature/TS25-local-persistence` | `d962edc` | TS25 | Modelos Peewee sobre SQLite (modo WAL) y cola de salida de eventos (outbox) |
-| `feature/TS24-mqtt-contract` | `6daef9c` | TS24 | Contrato MQTT versionado, router de mensajes, puente paho-mqtt y comandos con confirmación (ACK) |
-| `feature/US79-US80-device-registry` | `90a80df` | US79, US80, US85 | Registro de nodos, heartbeat, detección de nodos sin conexión y sincronización de reloj |
-| `feature/US71-access-control` | `ab2d202` | US71–US75, US87 | Decisión local de acceso RFID, cerradura, buzzer y OLED, horarios por área y registro manual de tarjetas |
-| `feature/US76-sensor-telemetry` | `6a80218` | US76–US78, US92 | Lecturas de humedad y ultrasonido, nivel de agua, alertas locales y calibración |
-| `feature/TS33-cloud-integration` | `9ca706a` | TS33, US75, US81, US82, US93 | Envío por lotes al backend, sincronización de la caché y endpoints de estado local |
-| `feature/US83-remote-commands-maintenance` | `da711b3` | US83, US89 | Comandos remotos y modo mantenimiento |
-| `feature/TS31-docker-compose` | `fb0a2db` | TS31, TS32, TS33 | Docker Compose, simulador de nodos y backend simulado |
-| `feature/docs-readme` | `4e7bd48` | — | Documentación del repositorio |
-| `release/0.1.0` | `171a6f9` | — | Preparación de la versión 0.1.0 y `CHANGELOG.md` |
+El Sprint 1 cerró con 36 historias comprometidas (3 para la Landing Page, 12 para la Web Application y 21 para el Edge Gateway) sobre un total de 165 story points. Cada incremento se corresponde con ramas `feature/` que parten de `develop` y se integran mediante merge con mensajes convencionales (`feat`, `docs`, `chore`, `test`, `fix`). A continuación se presenta la tabla con los commits relacionados con la implementación para cada repositorio.
 
-**Estructura del código**
+##### Avances en implementación por producto
 
-```
-main.py                    punto de entrada (gunicorn main:app)
-edge_gateway/
-  config.py  gateway.py    configuración · raíz de composición y tareas en segundo plano
-  mqtt/                    contrato (esquemas), router y puente paho-mqtt
-  services/                access, devices, telemetry, commands, remote, outbox, sync, alerts, credentials
-  api/                     blueprints REST y esquemas
-  models.py  db.py         modelos Peewee · configuración de SQLite
-mock_cloud/                backend simulado para pruebas locales
-simulator/                 nodos ESP32 virtuales
-tests/                     suite de pruebas pytest
-```
+###### Landing Page (`IoT-UPC-202620/Iot-LandingPage`)
+- Publicación de la primera versión con hero, secciones informativas, funcionalidades, galería de capturas, formulario de contacto, navegación responsiva y traducciones ES/EN.
+- Ramas utilizadas: `main` (publicación) y trabajo colaborativo con commits convencionales.
 
-El código de la aplicación tiene cerca de 2 700 líneas y las pruebas cerca de 1 900.
+###### Web Application (`IoT-UPC-202620/FrontEnd`)
+- Entrega de pantallas operativas: inicio de sesión (`US01`-`US04`), gestión de usuarios y edificios, foro (`US09`), reservas (`US12`-`US16`), finanzas (`US18`-`US25`) y despliegue en Vercel con `json-server`.
+- Rama de integración principal: `main`; rama de trabajo colaborativo: `IOT` (merge PR #1).
 
-**Decisiones de diseño relevantes**
+###### Edge Gateway (`IoT-UPC-202620/Edifika-Microservice-IoT-Gateway`)
+- Servicio ejecutándose de extremo a extremo: Flask + Peewee + SQLite (WAL), contrato MQTT (`TS24`), persistencia local (`TS25`), motor de acceso (`US45`-`US46`), telemetría (`US43`-`US44`), sincronización con la nube (`TS21`, `TS33`), despliegue Docker Compose (`TS31`-`TS32`) y documentación de contratos (`TS16`).
+- Rama principal de desarrollo: `develop`; release: `release/0.1.0` (merge a `main`).
 
-- **Offline first:** las decisiones de acceso nunca consultan la nube; todo lo que debe llegar al backend pasa por la cola de salida en SQLite. Un registro y su evento se escriben en una misma transacción.
-- **Alertas con estado:** cada condición (humedad baja, nivel crítico de agua, nodo sin conexión) se anuncia una vez al producirse y una vez al resolverse, no por cada lectura.
-- **Mantenimiento significa desactivado:** un nodo en mantenimiento no procesa tarjetas, lecturas, comandos ni genera alertas hasta que el mantenimiento termina, de forma manual o por vencimiento.
-- **Cola con prioridad:** si la cola de salida se llena, se descartan primero las lecturas de telemetría más antiguas; los accesos y las alertas nunca se descartan.
+##### Tabla de commits relacionados con la implementación
+
+###### Repositorio: `IoT-UPC-202620/Iot-LandingPage`
+
+| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Committed on (Date) |
+|---|---|---|---|---|---|
+| IoT-UPC-202620/Iot-LandingPage | main | 44433b6 | first commit | — | 30/09/2026 |
+| IoT-UPC-202620/Iot-LandingPage | main | b3fbc5a | Primer commit | — | 30/09/2026 |
+| IoT-UPC-202620/Iot-LandingPage | main | 8dd3610 | feat(showcase): agrega seccion de capturas de pantalla de la plataforma | El enunciado requiere screenshots o video que complementen la explicacion del proposito de la plataforma. Hasta ahora el unico mockup visual era un dibujado hecho con CSS en el hero, no capturas reales del producto.\nCambios:\n- Nueva seccion #showcase entre Funciones y Como funciona, con una captura principal (Finanzas) a ancho completo y un grid de 6 capturas mas.\n- Las 7 capturas se optimizan a 1400px / JPEG q80: 1.48 MB -> 563 KB.\n- Lightbox accesible: clic para ampliar, navegacion con teclado (flechas / Esc), bloqueo de scroll y cierre al clickear el fondo.\n- Capturas y captions traducibles ES/EN via data-i18n.\n- Link 'La app' en el navbar de escritorio y movil.\n- Navbar: media queries a 1180px y 1000px para que los 6 links no se desbarden en el rango de 769-1200px.\n- loading=lazy, decoding=async y width/height en cada img. | 10/10/2026 |
+
+###### Repositorio: `IoT-UPC-202620/FrontEnd`
+
+| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Committed on (Date) |
+|---|---|---|---|---|---|
+| IoT-UPC-202620/FrontEnd | main / IOT | 8787c8d | front | — | 08/10/2026 |
+| IoT-UPC-202620/FrontEnd | IOT | 83d71c5 | Add IOT module | — | 10/10/2026 |
+| IoT-UPC-202620/FrontEnd | main | c7e320a | Merge pull request #1 from IoT-UPC-202620/IOT | Add IOT module | 10/10/2026 |
+
+###### Repositorio: `IoT-UPC-202620/Edifika-Microservice-IoT-Gateway`
+
+| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Committed on (Date) |
+|---|---|---|---|---|---|
+| IoT-UPC-202620/Edifika-Microservice-IoT-Gateway | main / develop / release/0.1.0 | 639d8d8 | chore: initialize repository | — | 02/10/2026 |
+| IoT-UPC-202620/Edifika-Microservice-IoT-Gateway | main / develop / release/0.1.0 | b846d26 | feat(core): add Flask base with health endpoint and Swagger (TS23) | Application factory, environment-based configuration that fails fast, bearer-token guard and OpenAPI docs served at /docs. | 02/10/2026 |
+| IoT-UPC-202620/Edifika-Microservice-IoT-Gateway | main / develop / release/0.1.0 | c139fc2 | feat(persistence): add SQLite schema with Peewee and outbox queue (TS25) | WAL-mode database, local cache models, atomic writes and an outbound event queue that only drops telemetry when full. | 02/10/2026 |
+| IoT-UPC-202620/Edifika-Microservice-IoT-Gateway | main / develop / release/0.1.0 | d962edc | feat(mqtt): add MQTT contract, router, bridge and command acks (TS24) | Versioned message schemas validated with marshmallow, a router that survives malformed messages, a paho bridge with automatic reconnection and a command service that tracks acknowledgements and timeouts. | 02/10/2026 |
+| IoT-UPC-202620/Edifika-Microservice-IoT-Gateway | main / develop / release/0.1.0 | 6daef9c | feat(persistence): add SQLite schema with Peewee and outbox queue (TS25) | WAL-mode database, local cache models, atomic writes and an outbound event queue that only drops telemetry when full. | 02/10/2026 |
+| IoT-UPC-202620/Edifika-Microservice-IoT-Gateway | main / develop / release/0.1.0 | c139fc2 | feat(core): add Flask base with health endpoint and Swagger (TS23) | Application factory, environment-based configuration that fails fast, bearer-token guard and OpenAPI docs served at /docs. | 02/10/2026 |
+| IoT-UPC-202620/Edifika-Microservice-IoT-Gateway | main / develop / release/0.1.0 | b846d26 | feat(core): add Flask base with health endpoint and Swagger (TS23) | Application factory, environment-based configuration that fails fast, bearer-token guard and OpenAPI docs served at /docs. | 02/10/2026 |
+| IoT-UPC-202620/Edifika-Microservice-IoT-Gateway | main / develop / release/0.1.0 | 70110b0 | feat(persistence): add SQLite schema with Peewee and outbox queue (TS25) | WAL-mode database, local cache models, atomic writes and an outbound event queue that only drops telemetry when full. | 02/10/2026 |
+| IoT-UPC-202620/Edifika-Microservice-IoT-Gateway | main / develop / release/0.1.0 | d962edc | feat(persistence): add SQLite schema with Peewee and outbox queue (TS25) | — | 02/10/2026 |
+| IoT-UPC-202620/Edifika-Microservice-IoT-Gateway | main / develop / release/0.1.0 | 1bd9964 | feat(devices): add MQTT contract, router, bridge and command acks (TS24) | Versioned message schemas validated with marshmallow, a router that survives malformed messages, a paho bridge with automatic reconnection and a command service that tracks acknowledgements and timeouts. | 02/10/2026 |
+| IoT-UPC-202620/Edifika-Microservice-IoT-Gateway | main / develop / release/0.1.0 | 963c4d0 | feat(devices): resolve RFID access locally with lock, buzzer and OLED feedback (US71-US75, US87) | Decisions use only the cached credentials, reservation windows and area schedules, so doors keep working without internet. Every attempt is stored and queued for the cloud atomically; repeated reads are ignored, repeated denials raise an alert, and an unconfirmed unlock raises a lock alert. Cards can also be registered and blocked manually through the REST API. | 02/10/2026 |
+| IoT-UPC-202620/Edifika-Microservice-IoT-Gateway | main / develop / release/0.1.0 | ab2d202 | feat(devices): resolve RFID access locally with lock, buzzer and OLED feedback (US71-US75, US87) | Decisions use only the cached credentials, reservation windows and area schedules, so doors keep working without internet. Every attempt is stored and queued for the cloud atomically; repeated reads are ignored, repeated denials raise an alert, and an unconfirmed unlock raises a lock alert. Cards can also be registered and blocked manually through the REST API. | 02/10/2026 |
+| IoT-UPC-202620/Edifika-Microservice-IoT-Gateway | main / develop / release/0.1.0 | 90a80df | feat(devices): add node registry, liveness tracking and clock sync (US79, US80, US85) | Register nodes through the REST API, ignore unregistered senders, mark silent nodes OFFLINE and recover them on the next heartbeat, and send a time_sync command when a node clock drifts. | 02/10/2026 |
+| IoT-UPC-202620/Edifika-Microservice-IoT-Gateway | main / develop / release/0.1.0 | cd3485d | feat(devices): add node registry, liveness tracking and clock sync (US79, US80, US85) | — | 02/10/2026 |
+| IoT-UPC-202620/Edifika-Microservice-IoT-Gateway | main / develop / release/0.1.0 | 6a80218 | feat(telemetry): process humidity and ultrasonic readings with local alerts (US76-US78, US92) | Validate readings, convert distance to water level with a median filter, raise each alert once with hysteresis, signal the node locally and allow per-device calibration through the REST API. | 02/10/2026 |
+| IoT-UPC-202620/Edifika-Microservice-IoT-Gateway | main / develop / release/0.1.0 | 04d3754 | feat(telemetry): process humidity and ultrasonic readings with local alerts (US76-US78, US92) | — | 02/10/2026 |
+| IoT-UPC-202620/Edifika-Microservice-IoT-Gateway | main / develop / release/0.1.0 | 9ca706a | feat(cloud): forward events and synchronise the cache with the backend (TS33, US75, US81, US82, US93) | Outbox forwarder with batches, capped exponential backoff and idempotent event ids; credential/reservation/schedule snapshots pulled or pushed with versioning; cards registered offline survive a snapshot until reported; local status and pending-event endpoints for operation without internet. | 02/10/2026 |
+| IoT-UPC-202620/Edifika-Microservice-IoT-Gateway | main / develop / release/0.1.0 | d2fef75 | feat(cloud): forward events and synchronise the cache with the backend (TS33, US75, US81, US82, US93) | — | 02/10/2026 |
+| IoT-UPC-202620/Edifika-Microservice-IoT-Gateway | main / develop / release/0.1.0 | 6afab0a | feat(devices): add remote commands and maintenance mode (US83, US89) | Remote commands run only on active nodes, wait for the acknowledgement and report the result; nodes in maintenance are fully deactivated (no cards, readings, commands or alerts) and return to service manually or on expiry. | 02/10/2026 |
+| IoT-UPC-202620/Edifika-Microservice-IoT-Gateway | main / develop / release/0.1.0 | da711b3 | feat(devices): add remote commands and maintenance mode (US83, US89) | — | 02/10/2026 |
+| IoT-UPC-202620/Edifika-Microservice-IoT-Gateway | main / develop / release/0.1.0 | fb0a2db | feat(deploy): add Docker Compose stack, node simulator and mock backend (TS31, TS32, TS33) | Compose runs Mosquitto, the gateway (Flask behind gunicorn) and a fake cloud; the sim profile adds virtual ESP32 nodes. Verified end to end against a real MQTT broker: card decisions, offline buffering and recovery, remote commands and maintenance mode. | 02/10/2026 |
+| IoT-UPC-202620/Edifika-Microservice-IoT-Gateway | main / develop / release/0.1.0 | d7c154a | feat(deploy): add Docker Compose stack, node simulator and mock backend (TS31, TS32, TS33) | — | 02/10/2026 |
+| IoT-UPC-202620/Edifika-Microservice-IoT-Gateway | main / develop / release/0.1.0 | 4e7bd48 | docs: document architecture, contracts, API and workflow | Documentación completa de arquitectura, contratos MQTT y REST, layout de código, workflow GitFlow y cobertura de historias. | 02/10/2026 |
+| IoT-UPC-202620/Edifika-Microservice-IoT-Gateway | main / develop / release/0.1.0 | eeafc51 | docs: document architecture, contracts, API and workflow | — | 02/10/2026 |
+| IoT-UPC-202620/Edifika-Microservice-IoT-Gateway | main / develop / release/0.1.0 | 171a6f9 | chore(release): prepare 0.1.0 | Co-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com> | 02/10/2026 |
+| IoT-UPC-202620/Edifika-Microservice-IoT-Gateway | main / develop / release/0.1.0 | 9329ed9 | Merge branch 'release/0.1.0' | — | 02/10/2026 |
+
+##### Rutas de los repositorios en control de versiones
+
+- Landing Page: `https://github.com/IoT-UPC-202620/Iot-LandingPage` (clonado en `C:\dev\iot\Iot-LandingPage`; rama `main`).
+- Web Application: `https://github.com/IoT-UPC-202620/FrontEnd` (clonado en `C:\dev\iot\FrontEnd`; rama `main`, trabajo colaborativo en `IOT`).
+- Edge Gateway: `https://github.com/IoT-UPC-202620/Edifika-Microservice-IoT-Gateway` (clonado en `C:\dev\iot\Edifika-Microservice-IoT-Gateway`; ramas `main`, `develop`, `release/0.1.0`).
 
 #### 6.2.1.5. Testing Suite Evidence for Sprint Review
 
-Las pruebas se encuentran en la carpeta `tests/` del repositorio y se ejecutan con `pytest`. La suite tiene **188 pruebas** que **no necesitan broker MQTT ni internet**: el broker, el backend y el reloj se reemplazan con dobles de prueba (`FakePublisher`, `FakeCloud`, `FakeClock`), y cada prueba usa su propia base de datos SQLite temporal. La suite completa se ejecuta en unos 12 segundos.
+En esta sección se explica y presenta el conjunto de Unit Tests, Integration Tests y Acceptance Tests automatizados, para los productos digitales relacionados con los User Stories especificados en el Sprint 1. Para cada repositorio se indica la relación de tests diseñados, con qué clases y comportamientos se relacionan (Unit Tests) y con qué User Stories se relacionan (Integration / Acceptance Tests). También se incluye la ruta del repositorio de control de versiones para los proyectos de Testing y los id de commits relacionados con los avances en Testing para este Sprint.
 
-```bash
-pip install -r requirements-dev.txt
-pytest
-# 188 passed
-```
+##### Repositorio de Testing
 
-| Archivo de pruebas | Pruebas | Qué verifica | Historias |
-|---|---|---|---|
-| `test_base.py` | 6 | Arranque, `/health`, Swagger/OpenAPI y configuración obligatoria | TS23 |
-| `test_persistence.py` | 7 | Modo WAL, persistencia tras reinicio, escritura atómica y límite de la cola | TS25 |
-| `test_mqtt_contract.py` | 21 | Esquemas, versión de contrato, router resistente a mensajes inválidos y puente MQTT | TS24 |
-| `test_commands.py` | 9 | Comandos, ACK, tiempos de espera y alerta de cerradura sin respuesta | TS24, US72 |
-| `test_devices.py` | 19 | Registro de nodos, heartbeat, desconexión, recuperación, sincronización de reloj, planificador y API | US79, US80, US85 |
-| `test_access.py` | 29 | Decisiones de acceso (tarjeta válida, desconocida, bloqueada, vencida, sin reserva, fuera de horario), lecturas repetidas, intentos denegados y API | US71–US75, US87 |
-| `test_telemetry.py` | 28 | Validación de lecturas, nivel de agua, filtro de picos, alertas con histéresis y calibración | US76–US78, US92 |
-| `test_cloud_integration.py` | 38 | Entrega por lotes, reintentos, caída y recuperación de la nube, cliente HTTP, sincronización y estado local | TS33, US75, US81, US82, US93 |
-| `test_remote_and_maintenance.py` | 26 | Comandos remotos, errores HTTP y modo mantenimiento | US83, US89 |
-| `test_mock_cloud.py` | 5 | Backend simulado: autenticación, idempotencia y sincronización | TS33 |
-| **Total** | **188** | | |
+No existe un repositorio independiente exclusivo de Testing; los archivos de pruebas se mantienen dentro de cada repositorio del producto según la convención establecida en la sección 6.1.2 (Source Code Management):
 
-**Escenarios de aceptación.** Los escenarios Dado/Cuando/Entonces de cada historia (Capítulo III) se tradujeron en pruebas con nombres descriptivos. Por ejemplo, el escenario de US75 "Registro local sin internet" se verifica en `test_access_attempts_made_while_offline_reach_the_cloud_afterwards`, y el de US89 "Nodo desactivado durante el mantenimiento" en `test_node_in_maintenance_rejects_every_remote_command_even_from_an_admin`.
+- `tests/` en `Edifika-Microservice-IoT-Gateway` (pytest, `tests/test_*.py`).
+- `src/app/**/*.spec.ts` en `FrontEnd` (Karma + Jasmine, 26 archivos `.spec.ts`).
+- No se incluyen archivos `.feature` en Gherkin para el Sprint 1 porque los Acceptance Tests automatizados con enfoque BDD no fueron comprometidos como parte del Sprint Backlog 1; se planifican para el Sprint 2 una vez estabilizados los contratos con los microservicios de la nube.
 
-**Verificación de la suite.** Se comprobó que las pruebas detectan errores reales introduciendo fallos a propósito: invertir el orden de entrega de eventos, eliminar la espera entre reintentos y quitar la protección de las tarjetas registradas sin conexión. En los tres casos al menos una prueba falló y señaló el comportamiento alterado.
+##### Avances en Testing por producto
+
+###### Edge Gateway (`IoT-UPC-202620/Edifika-Microservice-IoT-Gateway`)
+- **Unit e Integration Tests:** 166 funciones de test (`def test_...`) distribuidas en 11 archivos (`test_access.py`, `test_base.py`, `test_cloud_integration.py`, `test_commands.py`, `test_devices.py`, `test_mock_cloud.py`, `test_mqtt_contract.py`, `test_persistence.py`, `test_remote_and_maintenance.py`, `test_telemetry.py`).
+- **Cobertura de historias:** `US71`-`US75` (acceso local), `US76`-`US78` (telemetría), `US79`-`US80` (registro de nodos), `US83` (comandos remotos), `US85` (sincronización de reloj), `US89` (mantenimiento), `US92` (alertas), `US93` (bitácora), `TS23` (base Flask), `TS24` (contrato MQTT), `TS25` (persistencia), `TS31`-`TS33` (despliegue y nube), `TS34` (suite automatizada).
+- **Clases y comportamientos relacionados:** `edge_gateway.gateway`, `mqtt.router`, `services.access`, `services.telemetry`, `models.db`, `api.rest`.
+
+###### Web Application (`IoT-UPC-202620/FrontEnd`)
+- **Unit Tests:** 26 archivos `.spec.ts` con 28 bloques `it()` (Karma + Jasmine). Cubren componentes (`Login`, `Register`, `BuildingFormComponent`, `UnitFormComponent`, `CommonAreaCardComponent`, `ReservationListComponent`, `Calendar`, etc.), servicios (`LoginService`, `RegisterService`, `BuildingsService`, `CommonAreaService`, `ReservationService`, `BaseService`, `ToolbarService`, etc.) y guardas/interceptores (`authGuard`, `interceptor`).
+- **Cobertura de historias:** `US01`-`US04` (usuarios y edificios), `US09` (foro), `US12`-`US16` (reservas), `US18`-`US25` (finanzas).
+- **Nota:** los Integration Tests y Acceptance Tests automatizados con enfoque BDD (archivos `.feature` en Gherkin y `.steps` en TypeScript) no se incluyen en el Sprint 1 porque dependen de los endpoints de los microservicios de la nube que aún no están implementados; se comprometen para el Sprint 2.
+
+##### Tabla de commits relacionados con Testing
+
+###### Repositorio: `IoT-UPC-202620/Edifika-Microservice-IoT-Gateway`
+
+| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Committed on (Date) |
+|---|---|---|---|---|---|
+| IoT-UPC-202620/Edifika-Microservice-IoT-Gateway | main / develop / release/0.1.0 | fb0a2db | feat(deploy): add Docker Compose stack, node simulator and mock backend (TS31, TS32, TS33) | Compose runs Mosquitto, the gateway (Flask behind gunicorn) and a fake cloud; the sim profile adds virtual ESP32 nodes. Verified end to end against a real MQTT broker: card decisions, offline buffering and recovery, remote commands and maintenance mode. | 02/10/2026 |
+| IoT-UPC-202620/Edifika-Microservice-IoT-Gateway | main / develop / release/0.1.0 | d7c154a | feat(deploy): add Docker Compose stack, node simulator and mock backend (TS31, TS32, TS33) | — | 02/10/2026 |
+| IoT-UPC-202620/Edifika-Microservice-IoT-Gateway | main / develop / release/0.1.0 | 9ca706a | feat(cloud): forward events and synchronise the cache with the backend (TS33, US75, US81, US82, US93) | Outbox forwarder with batches, capped exponential backoff and idempotent event ids; credential/reservation/schedule snapshots pulled or pushed with versioning; cards registered offline survive a snapshot until reported; local status and pending-event endpoints for operation without internet. | 02/10/2026 |
+| IoT-UPC-202620/Edifika-Microservice-IoT-Gateway | main / develop / release/0.1.0 | d2fef75 | feat(cloud): forward events and synchronise the cache with the backend (TS33, US75, US81, US82, US93) | — | 02/10/2026 |
+| IoT-UPC-202620/Edifika-Microservice-IoT-Gateway | main / develop / release/0.1.0 | ab2d202 | feat(access): resolve RFID access locally with lock, buzzer and OLED feedback (US71-US75, US87) | Decisions use only the cached credentials, reservation windows and area schedules, so doors keep working without internet. Every attempt is stored and queued for the cloud atomically; repeated reads are ignored, repeated denials raise an alert, and an unconfirmed unlock raises a lock alert. Cards can also be registered and blocked manually through the REST API. | 02/10/2026 |
+| IoT-UPC-202620/Edifika-Microservice-IoT-Gateway | main / develop / release/0.1.0 | 963c4d0 | feat(access): resolve RFID access locally with lock, buzzer and OLED feedback (US71-US75, US87) | — | 02/10/2026 |
+| IoT-UPC-202620/Edifika-Microservice-IoT-Gateway | main / develop / release/0.1.0 | 6a80218 | feat(telemetry): process humidity and ultrasonic readings with local alerts (US76-US78, US92) | Validate readings, convert distance to water level with a median filter, raise each alert once with hysteresis, signal the node locally and allow per-device calibration through the REST API. | 02/10/2026 |
+| IoT-UPC-202620/Edifika-Microservice-IoT-Gateway | main / develop / release/0.1.0 | 04d3754 | feat(telemetry): process humidity and ultrasonic readings with local alerts (US76-US78, US92) | — | 02/10/2026 |
+| IoT-UPC-202620/Edifika-Microservice-IoT-Gateway | main / develop / release/0.1.0 | 90a80df | feat(devices): add node registry, liveness tracking and clock sync (US79, US80, US85) | Register nodes through the REST API, ignore unregistered senders, mark silent nodes OFFLINE and recover them on the next heartbeat, and send a time_sync command when a node clock drifts. | 02/10/2026 |
+| IoT-UPC-202620/Edifika-Microservice-IoT-Gateway | main / develop / release/0.1.0 | cd3485d | feat(devices): add node registry, liveness tracking and clock sync (US79, US80, US85) | — | 02/10/2026 |
+| IoT-UPC-202620/Edifika-Microservice-IoT-Gateway | main / develop / release/0.1.0 | 1bd9964 | feat(mqtt): add MQTT contract, router, bridge and command acks (TS24) | Versioned message schemas validated with marshmallow, a router that survives malformed messages, a paho bridge with automatic reconnection and a command service that tracks acknowledgements and timeouts. | 02/10/2026 |
+| IoT-UPC-202620/Edifika-Microservice-IoT-Gateway | main / develop / release/0.1.0 | 6daef9c | feat(mqtt): add MQTT contract, router, bridge and command acks (TS24) | — | 02/10/2026 |
+| IoT-UPC-202620/Edifika-Microservice-IoT-Gateway | main / develop / release/0.1.0 | d962edc | feat(persistence): add SQLite schema with Peewee and outbox queue (TS25) | — | 02/10/2026 |
+| IoT-UPC-202620/Edifika-Microservice-IoT-Gateway | main / develop / release/0.1.0 | 70110b0 | feat(persistence): add SQLite schema with Peewee and outbox queue (TS25) | — | 02/10/2026 |
+| IoT-UPC-202620/Edifika-Microservice-IoT-Gateway | main / develop / release/0.1.0 | c139fc2 | feat(persistence): add SQLite schema with Peewee and outbox queue (TS25) | — | 02/10/2026 |
+| IoT-UPC-202620/Edifika-Microservice-IoT-Gateway | main / develop / release/0.1.0 | b846d26 | feat(core): add Flask base with health endpoint and Swagger (TS23) | — | 02/10/2026 |
+
+###### Repositorio: `IoT-UPC-202620/FrontEnd`
+
+| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Committed on (Date) |
+|---|---|---|---|---|---|
+| IoT-UPC-202620/FrontEnd | main / IOT | 8787c8d | front | — | 08/10/2026 |
+| IoT-UPC-202620/FrontEnd | IOT | 83d71c5 | Add IOT module | — | 10/10/2026 |
+| IoT-UPC-202620/FrontEnd | main | c7e320a | Merge pull request #1 from IoT-UPC-202620/IOT | Add IOT module | 10/10/2026 |
+
+##### Notas adicionales sobre la evidencia de Testing
+
+- **BDD / Gherkin:** No se incluyen archivos `.feature` o `.steps` para el Sprint 1 porque los Acceptance Tests con enfoque BDD dependen de los endpoints de los microservicios de la nube (`Web Services`) que no forman parte del Sprint Backlog 1. Se planifica su inclusión en el Sprint 2.
+- **Commits relacionados con Testing:** Los avances en Testing del Edge Gateway se reflejan principalmente en los commits que implementan `TS32` (pruebas automatizadas) y `TS34` (suite completa). El archivo `tests/test_access.py` (28 tests) cubre los escenarios de `US45` (`leer tarjeta RFID y resolver acceso`) y `US46` (`abrir cerradura eléctrica y re-bloquear`). El archivo `tests/test_telemetry.py` (22 tests) cubre `US43` (`detectar falla de dispositivo`) y `US44` (`monitorear estado de conexión`). El archivo `tests/test_cloud_integration.py` (34 tests) cubre `TS33` (`integración con backend`).
+- **Rutas de repositorios:** `C:\dev\iot\Edifika-Microservice-IoT-Gateway` (branch `develop`, release `release/0.1.0`, main); `C:\dev\iot\FrontEnd` (branch `main`, trabajo en `IOT`); `C:\dev\iot\Iot-LandingPage` (branch `main`).
 
 #### 6.2.1.6. Execution Evidence for Sprint Review
 
@@ -7870,6 +8251,7 @@ El archivo `docker-compose.yml` se validó con `docker compose config`, que conf
   - Lucidchart. (s.f.). `https://www.lucidchart.com`
   - PlantUML. (s.f.). `https://plantuml.com`
   - ProTool. (2026, 11 de marzo). Administrar un condominio por WhatsApp no es gestión, es un riesgo para la comunidad. `https://www.protool.cl/noticia_detalle.php?slug=administrar-condominios-por-whatsapp-no-es-gestion-es-riesgo`
+  - Schwaber, P., & Sutherland, S. (2020). The Scrum Guide: The Definitive Guide to Scrum: The Rules of Scrum. `https://scrumguides.org/docs/scrumguide.html`
   - Sociedad Peruana de Bienes Raíces. (2024). Digitalización de edificios y condominios en Perú. `https://bienesraicess.com/blogs/digitalizacion-de-edificios-y-condominios-en-peru`
   - UXPressia. (s.f.). `https://uxpressia.com/`
   - Verastegui Leon, P. A., Mendoza Castañeda, J. L. D. C., Zapata Becerra, M. L., Capristan Leon, K. E., & Ravines Garcia, M. A. (2025). Propuesta de un plan estratégico para mejora de la Gestión en Edificios Multifamiliares en Lima Moderna: Caso De Estudio: MONARCH MANAGERS EIRL. Universidad Peruana de Ciencias Aplicadas. `https://repositorioacademico.upc.edu.pe/handle/10757/686137`
