@@ -6316,7 +6316,7 @@ Link del Figma: https://www.figma.com/design/ty6TOS7jOtA6f0111hRNGo/Edifika---Lo
 
 
 
-## 5.5. Application Prototyping
+## 5.5. Applications Prototyping
 
 <p align="center">
   <img src="assets/img/prototipo.png" alt="Community" width="800" />
