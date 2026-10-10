@@ -6186,10 +6186,10 @@ Link del Figma: https://www.figma.com/design/ty6TOS7jOtA6f0111hRNGo/Edifika---Lo
 
 ### 5.4.6. Applications User Flow Diagrams
 
-**User Flow 1: **
+**User Flow 1: Registro e Inicio de Sesión del Administrador**
 
-**User Persona:**   
-**User goal:** 
+**User Persona: Administrador**   
+**User goal: Crear su cuenta de administrador e ingresar al panel para gestionar el edificio.** 
 
 **Pantallas base:**
 
@@ -6199,53 +6199,79 @@ Link del Figma: https://www.figma.com/design/ty6TOS7jOtA6f0111hRNGo/Edifika---Lo
 
 **Happy path:**
 
+1. El administrador abre Edifika y, al no tener cuenta, entra a Register.
+2. Completa nombre, correo, contraseña, teléfono y documento, acepta los términos y pulsa "Create Admin Account".
+3. El sistema valida los datos y lo redirige a Login.
+4. Ingresa su correo y contraseña y pulsa "Login to Dashboard".
+5. El sistema valida las credenciales y muestra el Dashboard para gestionar el edificio.
 
 
 **Unhappy paths:**
 
+- Si el correo ya existe o faltan campos obligatorios en Register, el sistema muestra el error y el usuario corrige los datos.
+- Si las credenciales son incorrectas en Login, el sistema muestra el error y el usuario reintenta.
+- Si ya tiene cuenta, desde Register puede ir directo a Login con "Back to Login".
 
+<p align="center">
+  <img src="assets/img/userflow1.jpeg" alt="Community" width="800" />
+</p>
 
+**User Flow 2: Reserva de un Área Común **
 
-
----
-
-**User Flow 2: **
-
-**User Persona:**   
-**User goal:** 
+**User Persona: Administrador**   
+**User goal: Registrar una reserva de un área común sin generar cruces de horario.** 
 
 **Pantallas base:**
 
+- Common Areas
+- Add Reservation (modal)
+- Common Areas con la reserva creada
+
+**Happy path:**
+
+1. El administrador entra a Common Areas y revisa el calendario.
+2. Pulsa "Add Reservation" y se abre el modal.
+3. Completa área, fecha, horario y residente, y confirma.
+4. El sistema valida que la fecha sea válida y el horario esté disponible.
+5. La reserva se crea y aparece en el calendario de Common Areas.
+
+**Unhappy paths:**
+
+- Si el horario ya está reservado o faltan campos, el sistema muestra el error y el usuario corrige los datos en el modal.
+- Si cierra el modal sin confirmar, no se crea ninguna reserva.
+
+<p align="center">
+  <img src="assets/img/userflow2.jpeg" alt="Community" width="800" />
+</p>
+
+
+**User Flow 3: Seguimiento Financiero y Morosidad**
+
+**User Persona: Administrador**   
+**User goal: Identificar a los residentes con saldo pendiente y enviarles un aviso de cobro.** 
+
+**Pantallas base:**
+
+- Dashboard
+- Finance
 
 
 **Happy path:**
 
-
-
-**Unhappy paths:**
-
-
-
-
-
----
-
-**User Flow 3: **
-
-**User Persona:**   
-**User goal:** 
-
-**Pantallas base:**
-
-
-
-**Happy path:**
-
-
+1. El administrador entra al Dashboard y revisa las facturas impagas.
+2. Va a Finance y revisa los saldos pendientes.
+3. Identifica residentes con saldo pendiente.
+4. Envía el aviso de cobro al residente.
+5. El sistema confirma el envío y el seguimiento continúa.
 
 **Unhappy paths:**
 
+- Si no hay residentes con saldo pendiente, no se requiere acción.
+- Si falla el envío del aviso, el sistema muestra un error y permite reintentar.
 
+<p align="center">
+  <img src="assets/img/userflow3.jpeg" alt="Community" width="800" />
+</p>
 
 
 
