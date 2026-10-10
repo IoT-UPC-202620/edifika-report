@@ -6153,15 +6153,21 @@ Este flujo parte del dashboard hacia la sección Finance, donde se revisan los i
   <img src="assets/img/mockups/login.jpg" alt="Login" width="800" />
 </p>
 
-**Perfil:**
-<p align="center">
-  <img src="assets/img/perfil.jpg" alt="Perfil" width="800" />
-</p>
 
 **Register:**
 
 <p align="center">
   <img src="assets/img/mockups/register.jpg" alt="Register" width="800" />
+</p>
+
+**Perfil:**
+<p align="center">
+  <img src="assets/img/perfil.jpg" alt="Perfil" width="800" />
+</p>
+
+**Dashboard:**
+<p align="center">
+  <img src="assets/img/dashboard.jpg" alt="Perfil" width="800" />
 </p>
 
 **Units & Residents:**
