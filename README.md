@@ -6319,7 +6319,7 @@ Link del Figma: https://www.figma.com/design/ty6TOS7jOtA6f0111hRNGo/Edifika---Lo
 ## 5.5. Application Prototyping
 
 <p align="center">
-  <img src="assets/img/prototipo.jpg" alt="Community" width="800" />
+  <img src="assets/img/prototipo.png" alt="Community" width="800" />
 </p>
 
 Link del video de explicacion:
