@@ -6167,7 +6167,7 @@ Este flujo parte del dashboard hacia la sección Finance, donde se revisan los i
 
 **Dashboard:**
 <p align="center">
-  <img src="assets/img/dashboard.jpg" alt="Perfil" width="800" />
+  <img src="assets/img/dashboard1.jpg" alt="Perfil" width="800" />
 </p>
 
 **Units & Residents:**
