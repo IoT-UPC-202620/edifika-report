@@ -1,4 +1,4 @@
-// Edifika - prueba: DHT11 + OLED SSD1306 + RFID RC522
+// Edifika - prueba: DHT11 + OLED SSD1306 + RFID RC522 + rele de cerradura
 // Basado en el sketch que ya funcionaba; se quito el ultrasonico por ahora.
 // Placa: ESP32 Dev Module. Monitor serie a 115200.
 //
@@ -26,9 +26,15 @@
 #define RFID_RST   27
 
 // Buzzer: 1 = activo (pita solo con voltaje), 0 = pasivo (necesita tono)
+// Con 0 se genera un tono de 2 kHz, que hace sonar tanto pasivos como activos.
 #define BUZZER_PIN     25
-#define BUZZER_ACTIVO  1
+#define BUZZER_ACTIVO  0
 #define BUZZER_FREC    2000   // Hz, solo para pasivo
+
+// Rele de la cerradura (modulo de 2 canales SRD-05VDC-SL-C, se usa IN1).
+// La mayoria de estos modulos se activan con LOW. Si el tuyo hace clic con HIGH, pon 0.
+#define RELE_PIN          26
+#define RELE_ACTIVO_BAJO  1
 
 DHT dht(DHTPIN, DHTTYPE);
 Adafruit_SSD1306 oled(ANCHO, ALTO, &Wire, -1);
@@ -37,6 +43,7 @@ MFRC522 rfid(RFID_SS, RFID_RST);
 const unsigned long MOSTRAR_TARJETA_MS = 3000;
 const unsigned long REFRESCO_PANTALLA_MS = 500;
 const unsigned long BEEP_MS = 500;
+const unsigned long APERTURA_MS = 3000;   // tiempo que la cerradura queda energizada
 
 float temp = NAN, hum = NAN;
 unsigned long tDHT = 0;
@@ -50,6 +57,36 @@ bool hayTarjeta = false;
 
 bool sonando = false;
 unsigned long tBeep = 0;
+
+bool abierta = false;
+unsigned long tApertura = 0;
+
+// ---------------- rele / cerradura ----------------
+void releEscribir(bool encender) {
+  digitalWrite(RELE_PIN, (encender != RELE_ACTIVO_BAJO) ? HIGH : LOW);
+}
+
+void releIniciar() {
+  releEscribir(false);      // fija el nivel de reposo antes de habilitar la salida
+  pinMode(RELE_PIN, OUTPUT);
+  releEscribir(false);      // cerradura bloqueada al arrancar
+}
+
+// Energiza la cerradura APERTURA_MS sin bloquear el resto del programa
+void abrirCerradura() {
+  abierta = true;
+  tApertura = millis();
+  releEscribir(true);
+  Serial.println("Cerradura abierta");
+}
+
+void actualizarCerradura() {
+  if (abierta && millis() - tApertura >= APERTURA_MS) {
+    abierta = false;
+    releEscribir(false);
+    Serial.println("Cerradura cerrada");
+  }
+}
 
 // ---------------- buzzer ----------------
 void buzzerEncender() {
@@ -86,6 +123,7 @@ void buzzerIniciar() {
 
 // Suena BEEP_MS sin bloquear el resto del programa
 void iniciarBeep() {
+  Serial.println("Beep");
   sonando = true;
   tBeep = millis();
   buzzerEncender();
@@ -99,8 +137,15 @@ void actualizarBeep() {
 }
 
 void setup() {
+  releIniciar();             // primero, para que el rele no haga clic al encender
   Serial.begin(115200);
   buzzerIniciar();
+
+  // Pitido de arranque: si no suena aqui, el problema es el buzzer/cableado, no el RFID
+  Serial.println("Probando buzzer...");
+  buzzerEncender();
+  delay(300);
+  buzzerApagar();
 
   dht.begin();
 
@@ -204,6 +249,7 @@ void dibujar() {
 // ---------------- bucle ----------------
 void loop() {
   actualizarBeep();
+  actualizarCerradura();
 
   if (millis() - tDHT >= 2000) {        // el DHT11 no admite lecturas mas rapidas
     tDHT = millis();
@@ -218,6 +264,7 @@ void loop() {
     hayTarjeta = true;
     tTarjeta = millis();
     iniciarBeep();
+    abrirCerradura();       // por ahora abre con cualquier tarjeta
     ultimoUid = uidTarjeta;
     ultimoUid.replace(" ", "");
     tPantalla = 0;
