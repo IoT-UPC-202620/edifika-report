@@ -16,7 +16,11 @@
     { "type": "wokwi-buzzer", "id": "bz", "top": 250, "left": -230, "attrs": { "volume": "0.5" } },
     { "type": "wokwi-relay-module", "id": "rly", "top": 340, "left": -350, "attrs": {} },
     { "type": "wokwi-resistor", "id": "r_lock", "top": 360, "left": -170, "attrs": { "value": "220" } },
-    { "type": "wokwi-led", "id": "lock", "top": 420, "left": -170, "attrs": { "color": "yellow", "label": "Cerradura" } }
+    { "type": "wokwi-led", "id": "lock", "top": 420, "left": -170, "attrs": { "color": "yellow", "label": "Cerradura" } },
+    { "type": "wokwi-rgb-led", "id": "rgb", "top": 300, "left": 180, "attrs": { "common": "cathode" } },
+    { "type": "wokwi-resistor", "id": "r_rgb_r", "top": 260, "left": 120, "rotate": 90, "attrs": { "value": "220" } },
+    { "type": "wokwi-resistor", "id": "r_rgb_g", "top": 260, "left": 150, "rotate": 90, "attrs": { "value": "220" } },
+    { "type": "wokwi-resistor", "id": "r_rgb_b", "top": 260, "left": 180, "rotate": 90, "attrs": { "value": "220" } }
   ],
   "connections": [
     [ "esp:TX", "$serialMonitor:RX", "", [] ],
@@ -61,7 +65,15 @@
     [ "rly:COM", "esp:5V", "red", [] ],
     [ "rly:NO", "r_lock:1", "yellow", [] ],
     [ "r_lock:2", "lock:A", "yellow", [] ],
-    [ "lock:C", "esp:GND.1", "black", [] ]
+    [ "lock:C", "esp:GND.1", "black", [] ],
+
+    [ "esp:13", "r_rgb_r:1", "red", [] ],
+    [ "r_rgb_r:2", "rgb:R", "red", [] ],
+    [ "esp:14", "r_rgb_g:1", "green", [] ],
+    [ "r_rgb_g:2", "rgb:G", "green", [] ],
+    [ "esp:15", "r_rgb_b:1", "blue", [] ],
+    [ "r_rgb_b:2", "rgb:B", "blue", [] ],
+    [ "rgb:COM", "esp:GND.2", "black", [] ]
   ],
   "dependencies": {}
 }

@@ -1,4 +1,4 @@
-// Edifika - prueba: DHT11 + OLED SSD1306 + RFID RC522 + rele de cerradura
+// Edifika - prueba: DHT11 + OLED SSD1306 + RFID RC522 + rele de cerradura + LED RGB
 // Basado en el sketch que ya funcionaba; se quito el ultrasonico por ahora.
 // Placa: ESP32 Dev Module. Monitor serie a 115200.
 //
@@ -36,6 +36,15 @@
 #define RELE_PIN          26
 #define RELE_ACTIVO_BAJO  1
 
+// LED RGB de 4 patas, cada color con su resistencia de 220 ohm.
+// Catodo comun (pata larga a GND) = 0; anodo comun (pata larga a 3V3) = 1.
+#define RGB_R_PIN         13
+#define RGB_G_PIN         14
+#define RGB_B_PIN         15
+#define RGB_ANODO_COMUN   0
+#define RGB_FREC          5000
+#define RGB_PASO_MS       10      // 510 pasos x 10 ms = ~5 s de rojo a azul
+
 DHT dht(DHTPIN, DHTTYPE);
 Adafruit_SSD1306 oled(ANCHO, ALTO, &Wire, -1);
 MFRC522 rfid(RFID_SS, RFID_RST);
@@ -60,6 +69,10 @@ unsigned long tBeep = 0;
 
 bool abierta = false;
 unsigned long tApertura = 0;
+
+int fase = 0;             // 0..510: 0 rojo, 255 verde, 510 azul
+int sentido = 1;          // +1 hacia azul, -1 de vuelta a rojo
+unsigned long tRgb = 0;
 
 // ---------------- rele / cerradura ----------------
 void releEscribir(bool encender) {
@@ -86,6 +99,49 @@ void actualizarCerradura() {
     releEscribir(false);
     Serial.println("Cerradura cerrada");
   }
+}
+
+// ---------------- led rgb ----------------
+// En core 2.x se usan los canales 2-4 para no compartir timer con el buzzer (canal 0).
+void rgbEscribir(uint8_t r, uint8_t g, uint8_t b) {
+#if RGB_ANODO_COMUN
+  r = 255 - r; g = 255 - g; b = 255 - b;
+#endif
+#if ESP_ARDUINO_VERSION_MAJOR >= 3
+  ledcWrite(RGB_R_PIN, r);
+  ledcWrite(RGB_G_PIN, g);
+  ledcWrite(RGB_B_PIN, b);
+#else
+  ledcWrite(2, r);
+  ledcWrite(3, g);
+  ledcWrite(4, b);
+#endif
+}
+
+void rgbIniciar() {
+#if ESP_ARDUINO_VERSION_MAJOR >= 3
+  ledcAttach(RGB_R_PIN, RGB_FREC, 8);
+  ledcAttach(RGB_G_PIN, RGB_FREC, 8);
+  ledcAttach(RGB_B_PIN, RGB_FREC, 8);
+#else
+  ledcSetup(2, RGB_FREC, 8); ledcAttachPin(RGB_R_PIN, 2);
+  ledcSetup(3, RGB_FREC, 8); ledcAttachPin(RGB_G_PIN, 3);
+  ledcSetup(4, RGB_FREC, 8); ledcAttachPin(RGB_B_PIN, 4);
+#endif
+  rgbEscribir(255, 0, 0);
+}
+
+// Rojo -> amarillo -> verde -> cian -> azul y de vuelta, sin bloquear
+void actualizarRgb() {
+  if (millis() - tRgb < RGB_PASO_MS) return;
+  tRgb = millis();
+
+  fase += sentido;
+  if (fase >= 510) { fase = 510; sentido = -1; }
+  if (fase <= 0)   { fase = 0;   sentido = 1;  }
+
+  if (fase <= 255) rgbEscribir(255 - fase, fase, 0);               // rojo -> verde
+  else             rgbEscribir(0, 510 - fase, fase - 255);         // verde -> azul
 }
 
 // ---------------- buzzer ----------------
@@ -140,6 +196,7 @@ void setup() {
   releIniciar();             // primero, para que el rele no haga clic al encender
   Serial.begin(115200);
   buzzerIniciar();
+  rgbIniciar();
 
   // Pitido de arranque: si no suena aqui, el problema es el buzzer/cableado, no el RFID
   Serial.println("Probando buzzer...");
@@ -250,6 +307,7 @@ void dibujar() {
 void loop() {
   actualizarBeep();
   actualizarCerradura();
+  actualizarRgb();
 
   if (millis() - tDHT >= 2000) {        // el DHT11 no admite lecturas mas rapidas
     tDHT = millis();
