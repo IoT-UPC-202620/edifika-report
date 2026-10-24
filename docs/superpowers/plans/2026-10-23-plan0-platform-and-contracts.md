@@ -42,7 +42,7 @@
   - `rabbitmq.conf`: `management.load_definitions = /etc/rabbitmq/definitions.json`.
   - `definitions.json`: los 3 exchanges, el usuario `edifika` con tag `administrator`, y permisos `.*` en `/`. Tiene la contraseña de desarrollo `edifika-dev` en texto plano, porque así lo admite RabbitMQ con `password` en lugar de `password_hash`. Se documenta como **solo dev**.
   - `mosquitto.conf`: `listener 1883`, `allow_anonymous true`, persistencia en `/mosquitto/data/` y log a stdout.
-  - `acl.example`: comentado, con un ejemplo por dispositivo (`user esp32-door-01` / `topic readwrite edifika/v1/nodes/esp32-door-01/#`).
+  - `acl.example`: comentado, con un ejemplo por dispositivo (`user esp32-acc-01` / `topic readwrite edifika/v1/nodes/esp32-acc-01/#`).
 - [ ] **Step 3:** Verificar.
   Run: `docker compose down -v; docker compose up -d --wait --wait-timeout 120; docker compose ps --format "{{.Service}} {{.Health}}"`
   Expected: exit 0; `rabbitmq healthy`, `mosquitto healthy`, `postgres healthy`.
@@ -58,7 +58,7 @@
 - Create: `contracts/README.md`, una copia de `docs/superpowers/specs/2026-10-23-iot-contracts.md` con encabezado "copia versionada; editar aquí y en el spec".
 - Create: `contracts/schemas/envelope.schema.json`
 - Create: `contracts/schemas/payloads/{AccessAttempt,Reading,Alert,DeviceStatus,CommandResult,CredentialChanged,PhysicalAccessGranted,PhysicalAccessDenied,DeviceRegistered,DeviceUpdated,DeviceDecommissioned,AccessModeChanged,DeviceWentOffline,SensorFaulty,DeviceCommandRequested,SyncRequested}.schema.json`
-- Create: `contracts/schemas/sync.schema.json`, `contracts/schemas/mqtt/{heartbeat,access,readings,ack,command}.schema.json`
+- Create: `contracts/schemas/sync.schema.json`, `contracts/schemas/mqtt/{heartbeat,access,readings,ack,command}.schema.json`. Los esquemas MQTT del nodo aceptan los dos dialectos de los contratos §1: `v` como `1` o `"1"`, y `ts` como número, string `date-time` o `null`. Los ejemplos en `examples/mqtt/` usan la forma del firmware de referencia (`esp32-acc-01`).
 - Create: `contracts/schemas/rest/access/*.schema.json`, uno por resource de los contratos §4.1 y por cuerpo de request de §4.2.
 - Create: `contracts/schemas/rest/telemetry/*.schema.json`, uno por resource de §5.
 - Create: `contracts/schemas/rest/error.schema.json`

@@ -24,7 +24,7 @@
   - El gateway, desde `C:\Users\nanak\Dev\edge-gateway` (variable `EDGE_GATEWAY_DIR`, por defecto `../../edge-gateway`).
 - `JWT_SECRET` común: `e2e-secret-key-must-be-at-least-32-characters-long`.
 - Datos semilla del test:
-  - Edificio `12`, gateway `edge-gateway-01`, puerta `esp32-door-01`.
+  - Edificio `12`, gateway `edge-gateway-01`, puerta `esp32-acc-01`.
   - Residentes `15` (titular, al día), `16` (invitado, al día), `17` (al día, no invitado) y `18` (moroso).
   - Unidades `40`, `41`, `42` y `43`.
   - Tarjetas `04A1B2C3` (15), `04A1B2C4` (16), `04A1B2C5` (17) y `04A1B2C6` (18).
@@ -50,7 +50,7 @@
   - `telemetry` (build, puerto 8090, `telemetry_db`).
   - `api-gateway` (build, 8080; `ACCESS_SERVICE_URL=http://access:8089`, `TELEMETRY_SERVICE_URL=http://telemetry:8090`).
   - `edge-gateway` (build desde `EDGE_GATEWAY_DIR`; `EDGE_MQTT_HOST=mosquitto`, `EDGE_AMQP_URL=amqp://edifika:edifika-dev@rabbitmq:5672/`, `EDGE_SYNC_BASE_URL=http://access:8089`, `EDGE_SYNC_API_KEY=${E2E_GATEWAY_API_KEY}`, `EDGE_SYNC_INTERVAL_S=5`, `EDGE_OUTBOX_INTERVAL_S=1`).
-  - `sim-door` (misma imagen del gateway; `python -m simulator run --device esp32-door-01`).
+  - `sim-door` (misma imagen del gateway; `python -m simulator run --device esp32-acc-01`).
 - Create: `e2e/wiremock/mappings/{residents-building-12.json, debts-default.json}`. Residentes 15–18 activos en las unidades 40–43, y deudas `[]` por defecto.
 - Create: `e2e/README.md`
 
@@ -70,6 +70,7 @@
   - `tokens.user(user_id: int, admin=False) -> str`: JWT HS256 con claims `sub`, `user_id` y `roles`.
   - `api.Client(base_url, token)`, con `.get/.post/.put/.patch/.delete(path, json=None) -> requests.Response`.
   - `mqtt_node.Node(device_code)`:
+    - Publica con el dialecto del firmware de referencia (`"v":"1"`, `ts` ISO-8601 `Z`, sin `deviceId` en `access`, `readings` y `ack`; ack de error `FAILED`), igual que `NodeMessages.cpp` del repo `esp32` tras el Plan 6.
     - `.tap(uid) -> dict`: publica `access` y devuelve el `access_result` recibido en ≤ 2 s.
     - `.wait_command(type_, timeout) -> dict`.
     - `.ack(command_id, status="OK")`.
@@ -138,7 +139,7 @@ def test_6_reservation_ends_offline_and_door_returns_to_free_access(world):
 
 def test_7_telemetry_every_10s_visible(world):
     world.node.publish_reading("temperature", 24.5, "°C"); world.node.publish_reading("humidity", 61.0, "%")
-    wait_until(lambda: {l["magnitude"] for l in world.admin.get("/telemetry/devices/esp32-door-01/latest").json()["latest"]} == {"TEMPERATURE", "HUMIDITY"}, 15)
+    wait_until(lambda: {l["magnitude"] for l in world.admin.get("/telemetry/devices/esp32-acc-01/latest").json()["latest"]} == {"TEMPERATURE", "HUMIDITY"}, 15)
 ```
 
 Los escenarios comparten estado y se ejecutan en orden, con nombres numerados y `-p no:randomly`.

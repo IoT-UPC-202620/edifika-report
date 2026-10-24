@@ -14,7 +14,7 @@
 
 - Repo: `C:\Users\nanak\Dev\edge-gateway`. Gitflow según el roadmap: cada tarea en `feature/H1-<slug>` desde `develop`, cerrada con `merge --no-ff` a `develop`; al terminar, `release/0.2.0` con `chore(release): prepare 0.2.0`. **Sin push.**
 - Tests: `.venv/Scripts/python -m pytest -q`. Los 188 tests existentes deben seguir en verde y la suite unitaria tarda < 30 s. Las pruebas que necesitan broker real llevan `@pytest.mark.integration` y quedan excluidas por defecto.
-- Contrato MQTT en `v = 1`, prefijo `edifika/v1`. Un firmware de v0.1.0 debe seguir funcionando sin cambios.
+- Contrato MQTT en `v = 1`, prefijo `edifika/v1`. El gateway acepta los dos dialectos del envelope de los contratos §1: `v` como `1` o `"1"`, y `ts` como epoch, ISO-8601 `Z` o `null`. El nodo de referencia es el firmware de `C:\Users\nanak\Dev\edifika\esp32` (`esp32-acc-01`). Un firmware de v0.1.0 debe seguir funcionando sin cambios.
 - Sobre AMQP, routing keys, colas y payloads: exactamente los de los contratos §3. `producer = "edge-gateway"`, `buildingId = null`. `correlationId = commandId` en `CommandResult` y `null` en el resto.
 - `eventType` = `kind` en PascalCase. La routing key es `edge.` + `kind` con `_` reemplazado por `-`.
 - Variables: las de los contratos §7 para el Edge Gateway. `EDGE_CLOUD_BASE_URL` y `EDGE_CLOUD_TOKEN` son alias deprecados de `EDGE_SYNC_BASE_URL` y `EDGE_SYNC_API_KEY`.
@@ -29,6 +29,7 @@
 3. **Orden duplicada** (redelivery con el mismo `commandId`): llega una sola vez al nodo → test en Task 6.
 4. **La reserva termina sin internet**: la puerta vuelve a `FREE_ACCESS` y el nodo recibe `mode` a tiempo → test en Task 5.
 5. **`rgb` a una puerta en `FREE_ACCESS`, a un dispositivo desconocido o vencida**: no llega al nodo y vuelve `CommandResult` `FAILED` o `EXPIRED` con `detail` → tests en Task 6.
+6. **Nodo real recién encendido, sin NTP** (`ts: null`): sus mensajes se aceptan con la hora del gateway y no disparan `time_sync` en bucle → test en Task 7A.
 
 ---
 
@@ -44,7 +45,7 @@
   - Campos de `Config`: `mqtt_tls: bool = False`, `mqtt_ca_file: str = ""`, `mqtt_client_id: str = ""`, `amqp_url: str = ""`, `amqp_events_exchange: str = "edifika.events"`, `amqp_commands_exchange: str = "edifika.edge.commands"`, `amqp_prefetch: int = 10`, `sync_base_url: str = ""`, `sync_api_key: str = ""`.
   - Se eliminan `cloud_base_url` y `cloud_token`.
 
-- [ ] **Step 0:** `git checkout develop && git checkout -b feature/H1-configurable-endpoints`; `.venv/Scripts/pip install pika==1.3.2`. Las tareas siguientes usan, en orden: `feature/H1-amqp-publisher`, `feature/H1-event-sink-wiring`, `feature/H1-cloud-devices-reservations`, `feature/H1-door-roles`, `feature/H1-cloud-orders`, `feature/H1-temperature-device-status`, `feature/H1-door-simulator`, `feature/H1-rabbitmq-integration-tests` y `feature/H1-docs`.
+- [ ] **Step 0:** `git checkout develop && git checkout -b feature/H1-configurable-endpoints`; `.venv/Scripts/pip install pika==1.3.2`. Las tareas siguientes usan, en orden: `feature/H1-amqp-publisher`, `feature/H1-event-sink-wiring`, `feature/H1-cloud-devices-reservations`, `feature/H1-door-roles`, `feature/H1-cloud-orders`, `feature/H1-temperature-device-status`, `feature/H1-esp32-firmware-dialect`, `feature/H1-door-simulator`, `feature/H1-rabbitmq-integration-tests` y `feature/H1-docs`.
 - [ ] **Step 1: Write the failing tests**
 
 ```python
@@ -115,11 +116,11 @@ Regla de errores:
 ```python
 def test_envelope_follows_contract():
     rk, body, props = to_envelope({"eventId": "a"*32, "kind": "command_result", "occurredAt": "2026-10-23T15:00:00Z",
-                                   "payload": {"deviceId": "esp32-door-01", "commandId": "c1", "type": "rgb", "status": "OK", "detail": None}}, "edge-gateway-01")
+                                   "payload": {"deviceId": "esp32-acc-01", "commandId": "c1", "type": "rgb", "status": "OK", "detail": None}}, "edge-gateway-01")
     assert rk == "edge.command-result"
     assert json.loads(body) == {"eventId": "a"*32, "eventType": "CommandResult", "eventVersion": 1, "occurredAt": "2026-10-23T15:00:00Z",
         "producer": "edge-gateway", "buildingId": None, "gatewayCode": "edge-gateway-01", "correlationId": "c1",
-        "payload": {"deviceId": "esp32-door-01", "commandId": "c1", "type": "rgb", "status": "OK", "detail": None}}
+        "payload": {"deviceId": "esp32-acc-01", "commandId": "c1", "type": "rgb", "status": "OK", "detail": None}}
     assert props["message_id"] == "a"*32 and props["type"] == "CommandResult" and props["delivery_mode"] == 2 and props["correlation_id"] == "c1"
 
 @pytest.mark.skipif(not PLATFORM_CONTRACTS.exists(), reason="Edifika-IoT-Platform contracts not present")
@@ -211,14 +212,14 @@ def test_without_amqp_url_events_stay_queued(config):
 ```python
 def test_sync_registers_cloud_devices(gw):
     gw.sync.apply(load(snapshot(devices=[door()])))
-    d = Device.get_by_id("esp32-door-01")
+    d = Device.get_by_id("esp32-acc-01")
     assert (d.managed, d.name, d.capability_list[:3]) == ("cloud", "Puerta piscina", ["rfid", "lock", "buzzer"])
 def test_full_snapshot_keeps_local_devices(gw):
     gw.devices.register("esp32-local"); gw.sync.apply(load(snapshot(version=2, devices=[door()])))
     assert Device.get_or_none(Device.device_id == "esp32-local")
 def test_reservation_permissions_for_holder_and_guests(gw):
     gw.sync.apply(load(snapshot(devices=[door()], reservations=[resv("7", holder="15", guests=["16", "21"])])))
-    assert {p.resident_id for p in AccessPermission.select().where(AccessPermission.device_id == "esp32-door-01")} == {"15", "16", "21"}
+    assert {p.resident_id for p in AccessPermission.select().where(AccessPermission.device_id == "esp32-acc-01")} == {"15", "16", "21"}
 def test_removed_reservation_drops_its_permissions(gw): ...
 def test_reservation_for_unknown_device_is_skipped(gw, caplog): ...
 def test_v010_database_is_migrated_in_place(tmp_path):
@@ -262,12 +263,12 @@ def test_reserved_grants_holder_and_guest(gw, publisher): ...
 def test_mode_switches_at_start_and_end_without_sync(gw, publisher, clock):
     seed(reservation starts=now+1min, ends=now+2min)
     assert gw.access.check_mode_changes() == []
-    clock.advance(minutes=1); assert gw.access.check_mode_changes() == ["esp32-door-01"]
-    assert publisher.commands("esp32-door-01", "mode")[-1]["params"] == {"mode": "RESERVED"}
+    clock.advance(minutes=1); assert gw.access.check_mode_changes() == ["esp32-acc-01"]
+    assert publisher.commands("esp32-acc-01", "mode")[-1]["params"] == {"mode": "RESERVED"}
     Device.update(led_color="#FF00AA").execute()
     clock.advance(minutes=1); gw.access.check_mode_changes()
-    assert publisher.commands("esp32-door-01", "mode")[-1]["params"] == {"mode": "FREE_ACCESS"}
-    assert Device.get_by_id("esp32-door-01").led_color is None
+    assert publisher.commands("esp32-acc-01", "mode")[-1]["params"] == {"mode": "FREE_ACCESS"}
+    assert Device.get_by_id("esp32-acc-01").led_color is None
     assert [e["event"] for e in outbox_payloads("device_status")][-2:] == ["mode_changed", "mode_changed"]
 ```
 
@@ -314,7 +315,7 @@ Los tests existentes de `tests/test_access.py` se mantienen sin modificar.
 ```python
 def test_rgb_on_reserved_door_uses_cloud_command_id(gw, publisher, reserved_door, handler):
     handler.handle(order("cmd-1", color="#00ff88"))
-    c = publisher.commands("esp32-door-01", "rgb")[-1]
+    c = publisher.commands("esp32-acc-01", "rgb")[-1]
     assert (c["commandId"], c["params"]) == ("cmd-1", {"color": "#00FF88"})
 def test_ack_ok_reports_result_ok(gw, publisher, reserved_door, handler): ...     # COMMAND_RESULT status OK, commandId cmd-1
 def test_duplicate_order_is_sent_once(gw, publisher, reserved_door, handler): ...
@@ -346,7 +347,7 @@ def test_consumer_nacks_without_requeue_on_error(fake_conn): ...
 
 ```python
 def test_temperature_reading_is_forwarded(gw):
-    gw.router.handle(*msg(P, "esp32-door-01", "readings", sensor="temperature", value=24.5, unit="°C"))
+    gw.router.handle(*msg(P, "esp32-acc-01", "readings", sensor="temperature", value=24.5, unit="°C"))
     p = last_payload("reading"); assert (p["sensor"], p["value"], p["unit"]) == ("temperature", 24.5, "°C")
 def test_temperature_out_of_range_is_invalid_and_three_raise_fault(gw): ...   # 120 °C x3 -> alert sensor_fault_temperature raised
 def test_device_back_online_emits_online(gw, clock): ...
@@ -357,15 +358,62 @@ def test_firmware_change_emits_once(gw): ...
 - [ ] **Step 2:** Run → FAIL. **Step 3:** Implementar. **Step 4:** Suite completa → PASS.
 - [ ] **Step 5:** Commit `feat(telemetry): temperature readings and online/offline/firmware status events`.
 
+### Task 7A: Dialecto del firmware de referencia (`esp32`) y recuperación del rol
+
+**Rama:** `feature/H1-esp32-firmware-dialect`
+
+**Files:**
+- Modify: `edge_gateway/mqtt/contract.py`:
+  - `v` acepta `1` o `"1"`.
+  - `ts` acepta número, string ISO-8601 con `Z` o `null`; `parse_message` lo convierte a epoch float o `None`.
+  - `deviceId` pasa a ser opcional en `access`, `readings` y `ack`; si falta, se completa con el del tópico; si viene, debe coincidir.
+  - `AckSchema.status` acepta `OK`, `FAILED` y `ERROR`, y normaliza `ERROR` a `FAILED`. Un `detail` vacío (`""`) se convierte en `None`.
+  - `ReadingSchema.unit`: `"C"` se normaliza a `"°C"`.
+- Modify: `edge_gateway/services/telemetry.py`, `services/devices.py` y `services/commands.py`. Cuando `ts` es `None`:
+  - Se usa la hora del gateway con `timeSuspect=True` en las lecturas.
+  - **No** se manda `time_sync` (el nodo sincroniza por NTP), así se evita un bucle.
+- Modify: `edge_gateway/services/devices.py`: al pasar a `ACTIVE`, si el dispositivo tiene `lock`, llama a `access.resend_mode(device)`, que envía el `mode` actual (y `color` si corresponde). Así un nodo reiniciado recupera su rol (contratos §1.3).
+- Test: `tests/test_firmware_dialect.py`
+
+**Interfaces:**
+- Produces:
+  - `contract.parse_ts(value) -> float | None`.
+  - `AccessService.resend_mode(device) -> None`.
+  - Helper de tests `firmware_msg(prefix, device_id, channel, **fields) -> tuple[str, str]`, en `tests/helpers.py`. Genera el payload tal como lo arma `NodeMessages.cpp`: `"v":"1"`, `ts` ISO y sin `deviceId` en `access`, `readings` y `ack`.
+
+- [ ] **Step 1: Write the failing tests**
+
+```python
+def test_firmware_heartbeat_with_string_version_and_iso_ts_is_accepted(gw):
+    gw.router.handle(*firmware_msg(P, "esp32-acc-01", "heartbeat", deviceId="esp32-acc-01", fw="v0.3.0"))
+    assert Device.get_by_id("esp32-acc-01").firmware == "v0.3.0" and not gw.router.rejected
+def test_access_without_device_id_uses_topic(gw, publisher):
+    gw.router.handle(*firmware_msg(P, "esp32-acc-01", "access", credentialType="RFID", credential="04A1B2C3"))
+    assert publisher.commands("esp32-acc-01", "access_result")
+def test_null_ts_reading_is_kept_as_time_suspect_and_no_time_sync(gw, publisher):
+    gw.router.handle(*firmware_msg(P, "esp32-acc-01", "readings", ts=None, sensor="temperature", value=24.0, unit="C"))
+    p = last_payload("reading"); assert (p["unit"], p["timeSuspect"]) == ("°C", True)
+    assert not publisher.commands("esp32-acc-01", "time_sync")
+def test_ack_error_is_failed_and_empty_detail_is_none(gw, publisher): ...
+def test_mismatched_device_id_is_still_rejected(gw): ...
+def test_node_back_online_receives_current_mode(gw, publisher, clock):  # reserved door goes OFFLINE then heartbeat
+    ...; assert publisher.commands("esp32-acc-01", "mode")[-1]["params"]["mode"] == "RESERVED"
+def test_v010_integer_envelope_still_accepted(gw): ...
+```
+
+- [ ] **Step 2:** FAIL. **Step 3:** Implementar. **Step 4:** Suite completa → PASS.
+- [ ] **Step 5:** Commit `feat(mqtt): accept the esp32 firmware envelope and resend the door mode on reconnect (H1)`.
+
 ### Task 8: Simulador del nodo de puerta
 
 **Files:**
 - Create: `simulator/node_state.py` (`NodeState`, con `mode="FREE_ACCESS"` y `led="status"`; `apply(command: dict) -> str` devuelve la línea de log)
 - Modify: `simulator/__main__.py`:
+  - El dispositivo por defecto es `esp32-acc-01`, y publica **con el mismo dialecto que el firmware de referencia** (usar `firmware_msg` o su equivalente): `"v":"1"`, `ts` ISO y sin `deviceId` en `access`, `readings` y `ack`.
   - Variables `SIM_MQTT_USERNAME`, `SIM_MQTT_PASSWORD` y `SIM_MQTT_TLS`.
   - `run` publica heartbeat cada 10 s y `temperature` (22–27 °C) y `humidity` (50–70 %) cada 10 s.
   - Responde `ack OK` a todo comando, salvo `rgb` en `FREE_ACCESS`, que responde `FAILED "not reserved"`.
-  - Imprime `[esp32-door-01] mode=RESERVED`, `[esp32-door-01] led=#00FF88`.
+  - Imprime `[esp32-acc-01] mode=RESERVED`, `[esp32-acc-01] led=#00FF88`.
 - Test: `tests/test_simulator_state.py`
 
 - [ ] **Step 1:** Escribir los tests de `NodeState`:
@@ -387,7 +435,7 @@ Requiere la plataforma del Plan 0 levantada. Variables: `EDGE_IT_AMQP_URL=amqp:/
 
 ```python
 def test_tap_reaches_rabbitmq_within_6_seconds(it_gateway, spy):        # spy bound to "edge.access-attempt"
-    t0 = time.monotonic(); it_gateway.tap("esp32-door-01", "04A1B2C3")
+    t0 = time.monotonic(); it_gateway.tap("esp32-acc-01", "04A1B2C3")
     env = spy.get(timeout=6); assert env["eventType"] == "AccessAttempt" and time.monotonic() - t0 <= 6
 def test_twenty_taps_during_outage_arrive_once(it_gateway_unreachable_then_real, spy):
     ...  # 20 taps with AMQP URL on port 1 -> outbox pending 20; switch events sink to real URL; flush -> 20 distinct eventIds
