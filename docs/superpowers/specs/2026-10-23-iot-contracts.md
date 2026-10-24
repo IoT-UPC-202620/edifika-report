@@ -35,7 +35,7 @@ Prefijo `edifika/v1`, QoS 1, sin retained.
 
 | Canal | Payload (forma del firmware de referencia) | Notas |
 |---|---|---|
-| `heartbeat` | `{"v":"1","ts":"2026-10-24T15:04:05Z","deviceId":"esp32-acc-01","fw":"v0.3.0"}` | Al conectar y luego **cada 10 s**. El gateway marca offline tras `EDGE_HEARTBEAT_TIMEOUT_S` (30 s, es decir 3 heartbeats). `fw` es opcional |
+| `heartbeat` | `{"v":"1","ts":"2026-10-24T15:04:05Z","deviceId":"esp32-acc-01","fw":"v0.5.0","mode":"RESERVED","color":"#800080"}` | Al conectar y luego **cada 10 s**. El gateway marca offline tras `EDGE_HEARTBEAT_TIMEOUT_S` (30 s, es decir 3 heartbeats). `fw` es opcional. `mode` y `color` (opcionales) informan lo que la puerta muestra ahora mismo; `color` es `null` fuera de `RESERVED`. Al iniciar una sesión MQTT (arranque o reconexión) el nodo envía un heartbeat de inmediato |
 | `access` | `{"v":"1","ts":…,"credentialType":"RFID","credential":"04A1B2C3"}` | UID compacto, en mayúsculas. **`deviceId` es opcional**: si falta, se toma del tópico; si viene, debe coincidir |
 | `readings` | `{"v":"1","ts":…,"sensor":"temperature","value":24.5,"unit":"°C"}` | Un mensaje por sensor, **cada 10 s** con el último valor válido. `value: null` significa que no hubo medida. `deviceId` es opcional, igual que en `access` |
 | `ack` | `{"v":"1","ts":…,"commandId":"c0ffee…","status":"OK","detail":""}` | `status`: `OK` o `FAILED`. Se acepta `ERROR` como alias de `FAILED`. `detail` vacío equivale a `null`. Es obligatorio para todo comando con `commandId`, en ≤ 3 s. `deviceId` es opcional |
@@ -80,6 +80,7 @@ Un `type` desconocido se responde con `ack FAILED "unsupported command"`.
 - **Malla 3x3:** sin cambios. La fila 1 se enciende con la cerradura abierta, la fila 2 con temperatura ≥ 28 °C y la fila 3 con humedad ≥ 70 %.
 - **Mantenimiento:** con `maintenance.active = true` el nodo ignora las tarjetas y muestra `message`.
 - **Arranque:** el modo inicial es `FREE_ACCESS`. El gateway envía `mode` cuando el nodo vuelve a `ACTIVE`, así que un nodo reiniciado recupera su rol.
+- **Resincronización:** el gateway compara el `mode` y el `color` de cada heartbeat con la configuración vigente y, si difieren, reenvía `mode` (con `color`). Lo hace como máximo cada `EDGE_MODE_RESYNC_INTERVAL_S` (10 s). Así, un nodo que se reinició, se reconectó o perdió una orden recupera la configuración más reciente en el primer heartbeat.
 
 ## 2. Sync de caché: Edge Gateway → IoT Access Management
 
