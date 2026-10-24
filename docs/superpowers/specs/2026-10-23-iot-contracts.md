@@ -53,8 +53,8 @@ Un valor fuera de rango cuenta como lectura inválida; tres lecturas inválidas 
 
 | `type` | `params` | El nodo hace |
 |---|---|---|
-| `access_result` | `{"result":"GRANTED","reason":"ok","message":"Access granted","buzzer":"granted","name":"Ana Perez","lockMs":5000}` (si es DENIED: sin `name` ni `lockMs`) | abre el relé `lockMs`, muestra el mensaje y el nombre, suena el buzzer, y pone el LED en verde o rojo 2 s si está en `FREE_ACCESS` |
-| `mode` | `{"mode":"RESERVED","color":"#00FF88"}` o `{"mode":"FREE_ACCESS"}` | guarda el modo. En `RESERVED` pinta `color` (si no viene, mantiene el último) y muestra `RESERVED` en el OLED. En `FREE_ACCESS` el LED vuelve a mostrar el estado (blanco en reposo) |
+| `access_result` | `{"result":"GRANTED","reason":"ok","message":"Access granted","buzzer":"granted","name":"Ana Perez","lockMs":5000}` (si es DENIED: sin `name` ni `lockMs`) | abre el relé `lockMs`, muestra el mensaje y el nombre, suena el buzzer, (el LED RGB no cambia; solo se enciende en `RESERVED`) |
+| `mode` | `{"mode":"RESERVED","color":"#00FF88"}` o `{"mode":"FREE_ACCESS"}` | guarda el modo. En `RESERVED` pinta `color` (si no viene, mantiene el último) y muestra `RESERVED` en el OLED. En `FREE_ACCESS` el LED RGB se **apaga** |
 | `rgb` | `{"color":"#00FF88"}` | pinta el color. Si el nodo está en `FREE_ACCESS`, responde `ack FAILED "not reserved"` |
 | `unlock` | `{"durationMs":5000}` (el firmware acepta también `duration_ms`) | abre durante el tiempo indicado; si no viene, usa `LOCK_OPEN_DURATION_IN_MILLISECONDS` (REST local) |
 | `display` | `{"message":"…"}` (1..64) | OLED |
@@ -73,11 +73,10 @@ Un `type` desconocido se responde con `ack FAILED "unsupported command"`.
   3. Espera `access_result` hasta 5 s.
   4. Si no llega respuesta, deniega localmente y muestra `Gateway no disponible` (US47).
   5. Las lecturas repetidas de la misma tarjeta dentro de esa espera se ignoran.
-- **LED RGB:** el degradado continuo se elimina.
-  - En `FREE_ACCESS` el LED es blanco en reposo, y verde o rojo durante 2 s tras cada decisión.
-  - En `RESERVED` muestra el color fijado.
-  - En `maintenance` es ámbar (`#FF8000`).
-  - Al arrancar, sin conexión, es rojo fijo hasta el primer heartbeat aceptado.
+- **LED RGB:** el degradado continuo se elimina. **Regla: el LED solo se enciende con la puerta en `RESERVED`.**
+  - Fuera de `RESERVED` está **apagado siempre**: en `FREE_ACCESS`, tras cada decisión, en mantenimiento, sin broker y al arrancar. El feedback lo dan la OLED y el buzzer.
+  - En `RESERVED` muestra el color fijado (blanco si nunca se fijó), también sin conexión con el broker.
+  - En `maintenance` se apaga, aunque la puerta esté reservada.
 - **Malla 3x3:** sin cambios. La fila 1 se enciende con la cerradura abierta, la fila 2 con temperatura ≥ 28 °C y la fila 3 con humedad ≥ 70 %.
 - **Mantenimiento:** con `maintenance.active = true` el nodo ignora las tarjetas y muestra `message`.
 - **Arranque:** el modo inicial es `FREE_ACCESS`. El gateway envía `mode` cuando el nodo vuelve a `ACTIVE`, así que un nodo reiniciado recupera su rol.
