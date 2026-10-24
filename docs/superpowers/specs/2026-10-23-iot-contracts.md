@@ -23,19 +23,24 @@ Fecha: 2026-10-23 · Complementa a `2026-10-23-iot-integration-design.md` · **F
 
 Prefijo `edifika/v1`, QoS 1, sin retained.
 
-- Todo mensaje lleva `v: 1` y `ts` (epoch en segundos, float, reloj del nodo).
+**Firmware de referencia:** `IoT-UPC-202620/esp32` (`C:\Users\nanak\Dev\edifika\esp32`), nodo `EdifikaNode` sobre ModestIoT, `DEVICE_ID = "esp32-acc-01"`. El firmware de `edifika-report/wokwi` está **obsoleto**.
+
 - El nodo publica en `edifika/v1/nodes/{deviceCode}/{canal}` y escucha `edifika/v1/nodes/{deviceCode}/commands`.
+- **Envelope del nodo.** El gateway acepta las dos formas siguientes, y es la regla que manda:
+  - `v`: entero `1` o string `"1"`. El firmware de referencia envía `"1"`. Cualquier otro valor da `unsupported_version`.
+  - `ts`: puede llegar como epoch en segundos (número) o como ISO-8601 UTC con `Z`, que es lo que envía el firmware. También puede ser `null` mientras el nodo no tiene la hora sincronizada por NTP. Si es `null`, el gateway usa su propia hora y marca la lectura con `timeSuspect: true`.
+  - Hacia el nodo, el gateway siempre envía `v: 1` (entero) y `ts` en epoch.
 
 ### 1.1 Del nodo al gateway
 
-| Canal | Payload | Notas |
+| Canal | Payload (forma del firmware de referencia) | Notas |
 |---|---|---|
-| `heartbeat` | `{"v":1,"deviceId":"esp32-door-01","ts":1782000000.0,"fw":"door-1.2.0"}` | cada 10 s; `fw` opcional |
-| `access` | `{"v":1,"deviceId":"esp32-door-01","ts":…,"credentialType":"RFID","credential":"04A1B2C3"}` | UID sin espacios |
-| `readings` | `{"v":1,"deviceId":"esp32-door-01","ts":…,"sensor":"temperature","value":24.5,"unit":"°C"}` | un mensaje por sensor; `value: null` = sin medida |
-| `ack` | `{"v":1,"deviceId":"esp32-door-01","ts":…,"commandId":"c0ffee…","status":"OK","detail":null}` | `status`: `OK` o `FAILED`; obligatorio para todo comando con `commandId`, en ≤ 3 s |
+| `heartbeat` | `{"v":"1","ts":"2026-10-24T15:04:05Z","deviceId":"esp32-acc-01","fw":"v0.3.0"}` | Al conectar y luego **cada 10 s**. El gateway marca offline tras `EDGE_HEARTBEAT_TIMEOUT_S` (30 s, es decir 3 heartbeats). `fw` es opcional |
+| `access` | `{"v":"1","ts":…,"credentialType":"RFID","credential":"04A1B2C3"}` | UID compacto, en mayúsculas. **`deviceId` es opcional**: si falta, se toma del tópico; si viene, debe coincidir |
+| `readings` | `{"v":"1","ts":…,"sensor":"temperature","value":24.5,"unit":"°C"}` | Un mensaje por sensor, **cada 10 s** con el último valor válido. `value: null` significa que no hubo medida. `deviceId` es opcional, igual que en `access` |
+| `ack` | `{"v":"1","ts":…,"commandId":"c0ffee…","status":"OK","detail":""}` | `status`: `OK` o `FAILED`. Se acepta `ERROR` como alias de `FAILED`. `detail` vacío equivale a `null`. Es obligatorio para todo comando con `commandId`, en ≤ 3 s. `deviceId` es opcional |
 
-Sensores (`sensor`, `unit`, rango válido):
+Sensores (`sensor`, `unit`, rango válido). La unidad `C` se normaliza a `°C`.
 - `temperature`, `°C`, −40..85
 - `humidity`, `%`, 0..100
 - `ultrasonic`, `cm`, 2..400
@@ -51,12 +56,31 @@ Un valor fuera de rango cuenta como lectura inválida; tres lecturas inválidas 
 | `access_result` | `{"result":"GRANTED","reason":"ok","message":"Access granted","buzzer":"granted","name":"Ana Perez","lockMs":5000}` (si es DENIED: sin `name` ni `lockMs`) | abre el relé `lockMs`, muestra el mensaje y el nombre, suena el buzzer, y pone el LED en verde o rojo 2 s si está en `FREE_ACCESS` |
 | `mode` | `{"mode":"RESERVED","color":"#00FF88"}` o `{"mode":"FREE_ACCESS"}` | guarda el modo. En `RESERVED` pinta `color` (si no viene, mantiene el último) y muestra `RESERVED` en el OLED. En `FREE_ACCESS` el LED vuelve a mostrar el estado (blanco en reposo) |
 | `rgb` | `{"color":"#00FF88"}` | pinta el color. Si el nodo está en `FREE_ACCESS`, responde `ack FAILED "not reserved"` |
-| `unlock` | `{"durationMs":5000}` | abre (legacy, REST local) |
+| `unlock` | `{"durationMs":5000}` (el firmware acepta también `duration_ms`) | abre durante el tiempo indicado; si no viene, usa `LOCK_OPEN_DURATION_IN_MILLISECONDS` (REST local) |
 | `display` | `{"message":"…"}` (1..64) | OLED |
 | `buzzer` | `{"pattern":"granted\|denied\|alert\|off"}` | sonido |
 | `alert` | `{"kind":"…","active":true,"message":"…","buzzer":"alert"}` | aviso local |
 | `maintenance` | `{"active":true,"message":"Under maintenance"}` | desactiva o reactiva el nodo |
 | `time_sync` | `{"epoch":1782000000,"timezone":"America/Lima","driftSeconds":3.1}` | ajusta el reloj |
+
+Un `type` desconocido se responde con `ack FAILED "unsupported command"`.
+
+### 1.3 Comportamiento obligatorio del nodo de puerta
+
+- **Lectura de tarjeta:**
+  1. El nodo publica `access`, suena un beep corto y muestra `Validando...`.
+  2. **No abre por su cuenta** (`UNLOCK_ON_ANY_CARD = false`).
+  3. Espera `access_result` hasta 5 s.
+  4. Si no llega respuesta, deniega localmente y muestra `Gateway no disponible` (US47).
+  5. Las lecturas repetidas de la misma tarjeta dentro de esa espera se ignoran.
+- **LED RGB:** el degradado continuo se elimina.
+  - En `FREE_ACCESS` el LED es blanco en reposo, y verde o rojo durante 2 s tras cada decisión.
+  - En `RESERVED` muestra el color fijado.
+  - En `maintenance` es ámbar (`#FF8000`).
+  - Al arrancar, sin conexión, es rojo fijo hasta el primer heartbeat aceptado.
+- **Malla 3x3:** sin cambios. La fila 1 se enciende con la cerradura abierta, la fila 2 con temperatura ≥ 28 °C y la fila 3 con humedad ≥ 70 %.
+- **Mantenimiento:** con `maintenance.active = true` el nodo ignora las tarjetas y muestra `message`.
+- **Arranque:** el modo inicial es `FREE_ACCESS`. El gateway envía `mode` cuando el nodo vuelve a `ACTIVE`, así que un nodo reiniciado recupera su rol.
 
 ## 2. Sync de caché: Edge Gateway → IoT Access Management
 
@@ -83,13 +107,13 @@ Un valor fuera de rango cuenta como lectura inválida; tres lecturas inválidas 
       "status": "ACTIVE", "validFrom": null, "validUntil": null }
   ],
   "devices": [
-    { "deviceCode": "esp32-door-01", "name": "Puerta piscina", "location": "Piso 1",
+    { "deviceCode": "esp32-acc-01", "name": "Puerta piscina", "location": "Piso 1",
       "capabilities": ["RFID","LOCK","BUZZER","OLED","RGB_LED","TEMPERATURE","HUMIDITY"],
       "ledColor": "#00FF88", "status": "ACTIVE", "settings": {} }
   ],
   "removedDeviceCodes": [],
   "reservations": [
-    { "id": "7", "deviceCode": "esp32-door-01", "holderResidentId": "15",
+    { "id": "7", "deviceCode": "esp32-acc-01", "holderResidentId": "15",
       "startsAt": "2026-10-23T20:00:00Z", "endsAt": "2026-10-23T22:00:00Z",
       "authorizedResidentIds": ["16", "21"] }
   ],
@@ -146,11 +170,11 @@ Propiedades AMQP:
 
 | Routing key | eventType | payload |
 |---|---|---|
-| `edge.access-attempt` | `AccessAttempt` | `{"deviceId":"esp32-door-01","areaId":null,"credential":"04A1B2C3","credentialType":"RFID","residentId":"15","result":"GRANTED","reason":"ok","accessMode":"FREE_ACCESS"}` |
-| `edge.reading` | `Reading` | `{"deviceId":"esp32-door-01","areaId":null,"sensor":"temperature","value":24.5,"unit":"°C","capturedAt":"2026-10-23T15:04:00Z","timeSuspect":false}` (`levelPct` solo para `ultrasonic`) |
-| `edge.alert` | `Alert` | `{"alert":"sensor_fault_temperature","state":"raised","deviceId":"esp32-door-01","sensor":"temperature"}` |
-| `edge.device-status` | `DeviceStatus` | `{"deviceId":"esp32-door-01","event":"online"}`; variantes en la tabla de abajo |
-| `edge.command-result` | `CommandResult` | `{"deviceId":"esp32-door-01","commandId":"…","type":"rgb","status":"OK","detail":null}` |
+| `edge.access-attempt` | `AccessAttempt` | `{"deviceId":"esp32-acc-01","areaId":null,"credential":"04A1B2C3","credentialType":"RFID","residentId":"15","result":"GRANTED","reason":"ok","accessMode":"FREE_ACCESS"}` |
+| `edge.reading` | `Reading` | `{"deviceId":"esp32-acc-01","areaId":null,"sensor":"temperature","value":24.5,"unit":"°C","capturedAt":"2026-10-23T15:04:00Z","timeSuspect":false}` (`levelPct` solo para `ultrasonic`) |
+| `edge.alert` | `Alert` | `{"alert":"sensor_fault_temperature","state":"raised","deviceId":"esp32-acc-01","sensor":"temperature"}` |
+| `edge.device-status` | `DeviceStatus` | `{"deviceId":"esp32-acc-01","event":"online"}`; variantes en la tabla de abajo |
+| `edge.command-result` | `CommandResult` | `{"deviceId":"esp32-acc-01","commandId":"…","type":"rgb","status":"OK","detail":null}` |
 | `edge.credential-changed` | `CredentialChanged` | `{"uid":"04A1B2C3","residentId":"guardia-1","status":"ACTIVE","source":"edge_manual"}` |
 
 **Valores de `reason` en `AccessAttempt`:** `ok`, `unknown_credential`, `credential_suspended`, `credential_revoked`, `credential_expired`, `outside_schedule`, `no_permission`, `not_authorized`, `maintenance`, `unsupported_credential_type`.
@@ -176,13 +200,13 @@ Propiedades AMQP:
 
 | Routing key | eventType | Productor | payload |
 |---|---|---|---|
-| `access.physical-access-granted` | `PhysicalAccessGranted` | access | `{"attemptId":101,"deviceId":3,"deviceCode":"esp32-door-01","userId":15,"credentialId":9,"accessMode":"RESERVED","occurredAt":"…"}` |
-| `access.physical-access-denied` | `PhysicalAccessDenied` | access | `{"attemptId":102,"deviceId":3,"deviceCode":"esp32-door-01","userId":null,"rfidUidMasked":"****B2C3","accessMode":"FREE_ACCESS","reason":"DELINQUENT","occurredAt":"…"}` |
-| `iot.device-registered` / `iot.device-updated` | `DeviceRegistered` / `DeviceUpdated` | access | `{"deviceId":3,"deviceCode":"esp32-door-01","gatewayCode":"edge-gateway-01","buildingId":12,"name":"Puerta piscina","deviceType":"DOOR","capabilities":["RFID","LOCK","RGB_LED","TEMPERATURE","HUMIDITY"],"accessMode":"FREE_ACCESS","status":"ACTIVE"}` |
-| `iot.device-decommissioned` | `DeviceDecommissioned` | access | `{"deviceId":3,"deviceCode":"esp32-door-01"}` |
-| `iot.access-mode-changed` | `AccessModeChanged` | access | `{"deviceId":3,"deviceCode":"esp32-door-01","from":"FREE_ACCESS","to":"RESERVED","reservationId":7}` |
-| `telemetry.device-went-offline` | `DeviceWentOffline` | telemetry | `{"deviceCode":"esp32-door-01","lastSeenAt":"…"}` |
-| `telemetry.sensor-faulty` | `SensorFaulty` | telemetry | `{"deviceCode":"esp32-door-01","sensor":"temperature"}` |
+| `access.physical-access-granted` | `PhysicalAccessGranted` | access | `{"attemptId":101,"deviceId":3,"deviceCode":"esp32-acc-01","userId":15,"credentialId":9,"accessMode":"RESERVED","occurredAt":"…"}` |
+| `access.physical-access-denied` | `PhysicalAccessDenied` | access | `{"attemptId":102,"deviceId":3,"deviceCode":"esp32-acc-01","userId":null,"rfidUidMasked":"****B2C3","accessMode":"FREE_ACCESS","reason":"DELINQUENT","occurredAt":"…"}` |
+| `iot.device-registered` / `iot.device-updated` | `DeviceRegistered` / `DeviceUpdated` | access | `{"deviceId":3,"deviceCode":"esp32-acc-01","gatewayCode":"edge-gateway-01","buildingId":12,"name":"Puerta piscina","deviceType":"DOOR","capabilities":["RFID","LOCK","RGB_LED","TEMPERATURE","HUMIDITY"],"accessMode":"FREE_ACCESS","status":"ACTIVE"}` |
+| `iot.device-decommissioned` | `DeviceDecommissioned` | access | `{"deviceId":3,"deviceCode":"esp32-acc-01"}` |
+| `iot.access-mode-changed` | `AccessModeChanged` | access | `{"deviceId":3,"deviceCode":"esp32-acc-01","from":"FREE_ACCESS","to":"RESERVED","reservationId":7}` |
+| `telemetry.device-went-offline` | `DeviceWentOffline` | telemetry | `{"deviceCode":"esp32-acc-01","lastSeenAt":"…"}` |
+| `telemetry.sensor-faulty` | `SensorFaulty` | telemetry | `{"deviceCode":"esp32-acc-01","sensor":"temperature"}` |
 
 En los eventos de dominio, `buildingId` del sobre es el del dispositivo. `reason` usa el enum de la nube: `GRANTED`, `NOT_REGISTERED`, `SUSPENDED`, `DELINQUENT`, `REVOKED`, `EXPIRED`, `NOT_AUTHORIZED`, `MAINTENANCE`, `OUT_OF_SCHEDULE`, `UNSUPPORTED`.
 
@@ -190,7 +214,7 @@ En los eventos de dominio, `buildingId` del sobre es el del dispositivo. `reason
 
 | Routing key | eventType | payload |
 |---|---|---|
-| `<gatewayCode>.device-command` | `DeviceCommandRequested` | `{"commandId":"5b0e…(uuid sin guiones, 32 hex)","deviceCode":"esp32-door-01","type":"rgb","params":{"color":"#00FF88"},"expiresAt":"2026-10-23T15:04:15Z"}` |
+| `<gatewayCode>.device-command` | `DeviceCommandRequested` | `{"commandId":"5b0e…(uuid sin guiones, 32 hex)","deviceCode":"esp32-acc-01","type":"rgb","params":{"color":"#00FF88"},"expiresAt":"2026-10-23T15:04:15Z"}` |
 | `<gatewayCode>.sync-requested` | `SyncRequested` | `{"syncVersion":43}` |
 
 El sobre lleva `producer: "iot-access-management"`, `gatewayCode` y `buildingId`. El resultado de una orden vuelve como `edge.command-result`, con `commandId` y `correlationId` iguales.
@@ -215,7 +239,7 @@ Base: `/api/v1`. Puerto 8089. Todas las rutas requieren JWT salvo `/api/v1/edge/
 // GatewayCredentialsResource  (solo en create y rotate)
 { "gatewayId": 1, "gatewayCode": "edge-gateway-01", "apiKey": "egk_3f9c…(48 chars)" }
 // DeviceResource
-{ "id": 3, "deviceCode": "esp32-door-01", "gatewayId": 1, "gatewayCode": "edge-gateway-01", "buildingId": 12,
+{ "id": 3, "deviceCode": "esp32-acc-01", "gatewayId": 1, "gatewayCode": "edge-gateway-01", "buildingId": 12,
   "name": "Puerta piscina", "location": "Piso 1", "deviceType": "DOOR",
   "capabilities": ["RFID","LOCK","BUZZER","OLED","RGB_LED","TEMPERATURE","HUMIDITY"],
   "accessMode": "RESERVED", "activeReservationId": 7, "ledColor": "#00FF88", "unlockSeconds": 5,
@@ -235,13 +259,13 @@ Base: `/api/v1`. Puerto 8089. Todas las rutas requieren JWT salvo `/api/v1/edge/
 { "commandId": "5b0e…", "deviceId": 3, "type": "SET_LED", "params": { "color": "#00FF88" }, "status": "PENDING",
   "detail": null, "requestedBy": 15, "requestedAt": "…", "expiresAt": "…", "resolvedAt": null }
 // AccessAttemptResource
-{ "id": 101, "deviceId": 3, "deviceCode": "esp32-door-01", "userId": 15, "credentialId": 9, "rfidUidMasked": "****B2C3",
+{ "id": 101, "deviceId": 3, "deviceCode": "esp32-acc-01", "userId": 15, "credentialId": 9, "rfidUidMasked": "****B2C3",
   "accessMode": "FREE_ACCESS", "result": "DENIED", "reason": "DELINQUENT", "occurredAt": "…", "receivedAt": "…" }
 // ResidentStatusResource
 { "userId": 15, "buildingId": 12, "unitIds": [40], "delinquent": true, "overdueDebtCount": 2,
   "checkedAt": "…", "lastError": null }
 // DoorSummaryResource  (vista de la app móvil)
-{ "deviceId": 3, "deviceCode": "esp32-door-01", "name": "Puerta piscina", "location": "Piso 1", "buildingId": 12,
+{ "deviceId": 3, "deviceCode": "esp32-acc-01", "name": "Puerta piscina", "location": "Piso 1", "buildingId": 12,
   "status": "ACTIVE", "accessMode": "RESERVED",
   "currentReservation": { "id": 7, "startsAt": "…", "endsAt": "…", "mine": true },
   "ledColor": "#00FF88", "canEnter": true, "canReserve": false, "canChangeLed": true }
@@ -266,7 +290,7 @@ Notas:
 | `GET /iot/gateways` | ADMIN | `?buildingId=` | `200 [GatewayResource]` |
 | `GET /iot/gateways/{id}` | ADMIN | — | `200 GatewayResource` · 404 |
 | `POST /iot/gateways/{id}/api-key` | ADMIN | — | `200 GatewayCredentialsResource` (la clave anterior deja de servir) |
-| `POST /iot/devices` | ADMIN | `{"deviceCode":"esp32-door-01","gatewayId":1,"name":"Puerta piscina","location":"Piso 1","deviceType":"DOOR","capabilities":["RFID","LOCK","BUZZER","OLED","RGB_LED","TEMPERATURE","HUMIDITY"],"unlockSeconds":5}` | `201 DeviceResource` (status `PROVISIONED`) · 409 código duplicado · 400 `DOOR` sin `RFID` y `LOCK` |
+| `POST /iot/devices` | ADMIN | `{"deviceCode":"esp32-acc-01","gatewayId":1,"name":"Puerta piscina","location":"Piso 1","deviceType":"DOOR","capabilities":["RFID","LOCK","BUZZER","OLED","RGB_LED","TEMPERATURE","HUMIDITY"],"unlockSeconds":5}` | `201 DeviceResource` (status `PROVISIONED`) · 409 código duplicado · 400 `DOOR` sin `RFID` y `LOCK` |
 | `GET /iot/devices` | ADMIN | `?gatewayId=&buildingId=&deviceType=&status=` | `200 [DeviceResource]` |
 | `GET /iot/devices/{id}` | ADMIN | — | `200 DeviceResource` |
 | `PATCH /iot/devices/{id}` | ADMIN | `{"name"?, "location"?, "capabilities"?, "unlockSeconds"?}` | `200 DeviceResource` |
@@ -309,16 +333,16 @@ Base: `/api/v1/telemetry`. Puerto 8090. Cualquier usuario autenticado. Los no AD
 
 ```json
 // DeviceTelemetryResource
-{ "deviceCode": "esp32-door-01", "deviceId": 3, "name": "Puerta piscina", "buildingId": 12,
+{ "deviceCode": "esp32-acc-01", "deviceId": 3, "name": "Puerta piscina", "buildingId": 12,
   "connectionStatus": "ACTIVE", "lastHeartbeatAt": "…",
   "latest": [ { "magnitude": "TEMPERATURE", "value": 24.5, "unit": "°C", "capturedAt": "…" },
               { "magnitude": "HUMIDITY", "value": 61.0, "unit": "%", "capturedAt": "…" } ] }
 // ReadingSeriesResource
-{ "deviceCode": "esp32-door-01", "magnitude": "TEMPERATURE", "unit": "°C", "bucket": "1m",
+{ "deviceCode": "esp32-acc-01", "magnitude": "TEMPERATURE", "unit": "°C", "bucket": "1m",
   "from": "…", "to": "…",
   "points": [ { "t": "2026-10-23T15:04:00Z", "value": 24.4, "min": 24.1, "max": 24.6, "count": 6 } ] }
 // TelemetryAlertResource
-{ "id": 5, "deviceCode": "esp32-door-01", "kind": "sensor_fault_temperature", "state": "RAISED",
+{ "id": 5, "deviceCode": "esp32-acc-01", "kind": "sensor_fault_temperature", "state": "RAISED",
   "details": { "sensor": "temperature" }, "occurredAt": "…" }
 ```
 

@@ -41,7 +41,7 @@ Solo hay una puerta física, así que los flujos de negocio se validan dándole 
 5. Una API REST completa para la futura app móvil Flutter: autenticación (la de IAM, existente), las operaciones de residente y las de administrador, documentada en Swagger.
 6. Un contrato RabbitMQ único (exchanges, routing keys, sobre, colas, DLQ, idempotencia).
 7. Tests unitarios por servicio y tests de integración de punta a punta con broker real.
-8. `wokwi/FIRMWARE_INTEGRATION.md` en el repo de documentación, con todos los cambios que necesita el firmware para integrarse.
+8. Firmware de referencia (`edifika/esp32`, `EdifikaNode` sobre ModestIoT, `esp32-acc-01`) integrado con el contrato v1: la puerta abre por decisión del gateway, el LED refleja el rol, heartbeat y lecturas cada 10 s (Plan 6). El sketch de `edifika-report/wokwi` queda marcado como obsoleto.
 
 **No-objetivos**
 - Cambios en la web (FrontEnd), la app móvil, Payment, Reservation, Residential, IAM, Notification, Report, Forum o Communications. La única excepción son las **rutas** del ApiGateway (solo configuración).
@@ -61,7 +61,8 @@ Solo hay una puerta física, así que los flujos de negocio se validan dándole 
 | Pieza | Estado |
 |---|---|
 | Edge Gateway (`Dev/edge-gateway`, `develop` = `origin/main` en código) | Flask 3.1, Peewee, SQLite, paho-mqtt 2.1. Contrato `edifika/v1/nodes/{deviceId}/{heartbeat\|access\|readings\|ack\|commands}`. Outbox con lotes y backoff. Sync `GET /api/v1/edge/sync`. Sensores: `humidity`, `ultrasonic`. Dispositivos registrados solo en local. Sin TLS MQTT. Decide con credencial, permiso por área y horario. `develop` no está en el remoto. |
-| Firmware de documentación | Prueba de hardware sin WiFi/MQTT; abre con cualquier tarjeta. No se modifica. |
+| Firmware de documentación (`wokwi`) | **Obsoleto**; no se usa ni se modifica. |
+| Firmware de referencia (`edifika/esp32`) | `EdifikaNode` sobre ModestIoT, con WiFi y MQTT, `esp32-acc-01`. Envelope `"v":"1"` con `ts` ISO o `null`. Solo entiende `unlock`, el ack de error es `ERROR`, el heartbeat va cada 30 s y por defecto abre con cualquier tarjeta. Se adapta en el Plan 6, y el gateway acepta su envelope (Plan 1, Task 7A). |
 | Servicios Java | Sin mensajería. Payment es la mejor plantilla. JWT HMAC con `JWT_SECRET` compartido; claims `user_id`, `roles` (`ADMIN, OWNER, TENANT`). |
 | Datos de deudas | Payment: `GET /api/v1/payments/debts/unit/{unitId}`. Residential: unidades y residentes (`/api/v1/residential/...`). Ambos validan JWT localmente con el secreto compartido. |
 | ApiGateway | Spring Cloud Gateway, `permitAll`, rutas en properties y en `RoutesConfig`. Puertos 8080–8088 ocupados. |
@@ -103,7 +104,7 @@ Estilo de Payment: IDs `Long` IDENTITY, agregados que extienden `AuditableAbstra
 
 | Campo | Tipo | Notas |
 |---|---|---|
-| deviceCode | String, único | es el `deviceId` de los tópicos MQTT, p. ej. `esp32-door-01` |
+| deviceCode | String, único | es el `deviceId` de los tópicos MQTT, p. ej. `esp32-acc-01` |
 | gatewayId | Long | |
 | buildingId | Long | heredado del gateway |
 | name, location | String | p. ej. "Puerta piscina" |
@@ -311,7 +312,7 @@ Todas las respuestas usan el `ErrorResource` de Payment. Los listados se filtran
 5. **Cambio de LED asíncrono** (202 + consulta del estado), con vencimiento a los 10 s.
 6. **Tarjetas creadas en el edge:** Access hace upsert desde `edge.credential-changed` (`origin = EDGE`, `userId = null`), para que la siguiente sincronización completa no las borre. Si la nube cambió la credencial después del `occurredAt`, gana la nube.
 7. **Gateway:** trabajo en `Dev/edge-gateway`, en la rama `feature/amqp-integration`. Las rutas del ApiGateway se hacen en su clon, en la rama `feature/iot-routes`.
-8. **Firmware:** solo `FIRMWARE_INTEGRATION.md`. La validación de punta a punta usa el simulador del gateway.
+8. **Firmware:** se modifica el repo `esp32` (Plan 6) sin tocar `src/ModestIoT/`. La validación de punta a punta usa el simulador del gateway con el mismo dialecto que el firmware, y la prueba con la placa es manual.
 
 ## 12. Variables de entorno de los servicios Java
 
@@ -330,6 +331,7 @@ Cada hito cierra con sus métricas comprobadas por comando, registradas en `Edif
 | H2 | **IoT Access Management** completo (modelo, API, consumidores, publicador, sync, verificación de deudas con stubs WireMock de Residential/Payment) | Tests unitarios (dominio, servicios, controladores) en verde. Integración con RabbitMQ real (Testcontainers): un `AccessAttempt` enviado 3 veces se guarda una vez y produce un solo `PhysicalAccess*`. Deuda vencida (WireMock) → credencial `SUSPENDED/DELINQUENT` → `syncVersion` + 1. `POST` de credencial 201 en < 300 ms |
 | H3 | **IoT Telemetry** | Integración: 100 `Reading` → 100 filas, sin duplicados al reenviarlos; p95 de ingesta < 500 ms; `latest` devuelve la última temperatura y humedad; un `device_offline` del edge → `DeviceWentOffline` |
 | H4 | **De punta a punta**: Access + Telemetry + gateway + simulador + ApiGateway en el compose de la plataforma | `pytest integration-tests` en verde con 6 escenarios: (1) `FREE_ACCESS`, residente al día → concedido; (2) `FREE_ACCESS`, residente con deuda (stub) → denegado `DELINQUENT`, y ese residente no puede reservar (409); (3) un residente reserva → el nodo simulado recibe `mode RESERVED` en < 5 s; (4) durante la reserva: titular → concedido, invitado agregado por el titular → concedido, otro residente al día → denegado `NOT_AUTHORIZED`; (5) LED en `RESERVED` por el titular → el nodo recibe `rgb` y el comando queda `OK` en < 3 s; otro residente → 403; en `FREE_ACCESS` → 409; (6) con RabbitMQ y la API detenidos, una reserva que termina devuelve la puerta a `FREE_ACCESS` a tiempo (± 2 s) solo con el gateway; (7) lecturas cada 10 s visibles en `/telemetry/.../latest`. Todo a través del ApiGateway, con el JWT de IAM (o uno firmado con el mismo secreto si IAM no está en el compose) |
-| H5 | **Documentación**: `wokwi/FIRMWARE_INTEGRATION.md`, READMEs de cada repo, colección Postman de la API para la app móvil | El documento de firmware cubre WiFi/MQTT, identidad, heartbeat, acceso con espera de `access_result`, `mode`, `rgb`, lecturas, `ack`, pines y diferencias con `diagram.json`; la colección Postman cubre todos los endpoints de §10 |
+| H5 | **Documentación**: nota de obsoleto en `wokwi/README.md`, READMEs de cada repo, colección Postman de la API para la app móvil | La colección Postman cubre todos los endpoints de §10 |
+| H6 | **Firmware `esp32`**: contrato v1 completo en el nodo | Tests de host en verde; compilación de la placa; checklist manual de 7 pasos con la placa |
 
 Requisito de entorno: Docker Desktop encendido desde H0 (Testcontainers y compose).
