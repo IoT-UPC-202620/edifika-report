@@ -1,4 +1,4 @@
-// Edifika - prueba: DHT11 + OLED SSD1306 + RFID RC522 + rele de cerradura + LED RGB
+// Edifika - prueba: DHT11 + OLED SSD1306 + RFID RC522 + rele de cerradura + LED RGB + malla 3x3
 // Basado en el sketch que ya funcionaba; se quito el ultrasonico por ahora.
 // Placa: ESP32 Dev Module. Monitor serie a 115200.
 //
@@ -41,9 +41,17 @@
 #define RGB_R_PIN         13
 #define RGB_G_PIN         14
 #define RGB_B_PIN         15
-#define RGB_ANODO_COMUN   0
+#define RGB_ANODO_COMUN   1       // el de este montaje enciende con la pata larga a 3V3
 #define RGB_FREC          5000
 #define RGB_PASO_MS       10      // 510 pasos x 10 ms = ~5 s de rojo a azul
+
+// Malla de LEDs 3x3: cada fila (3 LEDs) la conmuta un transistor NPN.
+// GPIO -> 1k -> base. HIGH = fila encendida.
+const uint8_t FILA_PIN[3] = {16, 17, 2};   // GPIO2 tambien enciende el LED azul de la placa
+
+// Condiciones de ejemplo para cada fila; cambialas a lo que necesites
+const float TEMP_ALTA = 28.0;   // C
+const float HUM_ALTA  = 70.0;   // %
 
 DHT dht(DHTPIN, DHTTYPE);
 Adafruit_SSD1306 oled(ANCHO, ALTO, &Wire, -1);
@@ -144,6 +152,32 @@ void actualizarRgb() {
   else             rgbEscribir(0, 510 - fase, fase - 255);         // verde -> azul
 }
 
+// ---------------- malla 3x3 ----------------
+void filaEscribir(uint8_t fila, bool encender) {
+  if (fila < 3) digitalWrite(FILA_PIN[fila], encender ? HIGH : LOW);
+}
+
+// Enciende varias filas a la vez: bit 0 = fila 1, bit 1 = fila 2, bit 2 = fila 3.
+// Ej.: filasEscribir(0b101) enciende la 1 y la 3.
+void filasEscribir(uint8_t mascara) {
+  for (uint8_t i = 0; i < 3; i++) filaEscribir(i, mascara & (1 << i));
+}
+
+void filasIniciar() {
+  for (uint8_t i = 0; i < 3; i++) {
+    digitalWrite(FILA_PIN[i], LOW);
+    pinMode(FILA_PIN[i], OUTPUT);
+  }
+}
+
+void actualizarFilas() {
+  uint8_t mascara = 0;
+  if (abierta)                          mascara |= 0b001;   // fila 1: cerradura abierta
+  if (!isnan(temp) && temp >= TEMP_ALTA) mascara |= 0b010;   // fila 2: hace calor
+  if (!isnan(hum)  && hum  >= HUM_ALTA)  mascara |= 0b100;   // fila 3: mucha humedad
+  filasEscribir(mascara);
+}
+
 // ---------------- buzzer ----------------
 void buzzerEncender() {
 #if BUZZER_ACTIVO
@@ -197,6 +231,7 @@ void setup() {
   Serial.begin(115200);
   buzzerIniciar();
   rgbIniciar();
+  filasIniciar();
 
   // Pitido de arranque: si no suena aqui, el problema es el buzzer/cableado, no el RFID
   Serial.println("Probando buzzer...");
@@ -308,6 +343,7 @@ void loop() {
   actualizarBeep();
   actualizarCerradura();
   actualizarRgb();
+  actualizarFilas();
 
   if (millis() - tDHT >= 2000) {        // el DHT11 no admite lecturas mas rapidas
     tDHT = millis();

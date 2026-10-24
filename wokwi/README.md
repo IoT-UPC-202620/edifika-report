@@ -1,5 +1,9 @@
 # Wokwi — Diseño del dispositivo IoT (ESP32)
 
+> [!WARNING]
+> **Obsoleto**: El sketch y firmware contenidos en esta carpeta están obsoletos y no deben utilizarse.
+> El firmware de referencia oficial del proyecto se encuentra en el repositorio [`IoT-UPC-202620/esp32`](https://github.com/IoT-UPC-202620/esp32) (`EdifikaNode` sobre ModestIoT, nodo `esp32-acc-01`), integrado y documentado en [`docs/superpowers/plans/2026-10-24-plan6-esp32-firmware.md`](../docs/superpowers/plans/2026-10-24-plan6-esp32-firmware.md).
+
 Carpeta de trabajo para el diagrama de circuito y el firmware del nodo ESP32 de Edifika. Respalda la sección **5.6. IoT Device Design** del informe.
 
 ## Hardware del nodo
