@@ -97,6 +97,20 @@
         - Capítulo VI: Product Implementation, Validation & Deployment (6.1 Software Configuration Management y 6.2.1 Sprint 1)
       </td>
     </tr>
+    <tr>
+      <td>AV2</td>
+      <td>29/10/2026</td>
+      <td>
+        - Acuña Corahua, Jonatan Ariel
+      </td>
+      <td>
+        - Capítulo VI: 6.2.2 Sprint 2 (frente IoT: contratos v1, Edge Gateway integrado con la nube, IoT Access Management, IoT Telemetry, pruebas de punta a punta, rutas del ApiGateway y firmware ESP32) <br>
+        - Estructura de 6.3 Validation Interviews, 6.4 Video About-the-Product y Video About-the-Team <br>
+        - Actualización de Student Outcome y de la tabla de contenidos <br>
+        - Anexos: enlaces de los repositorios IoT y anexo Videos de Exposiciones <br>
+        - Corrección del enlace de despliegue de la Web Application en 6.2.1.8
+      </td>
+    </tr>
   </tbody>
 </table>
 </div>
@@ -113,6 +127,12 @@ TB1 (10/10/2026):
 <br>
 <p align="center">
   <img src="assets/img/in2.png" alt="logo" />
+</p>
+
+AV2 (**[POR COMPLETAR: fecha]**):
+<br>
+<p align="center">
+  <b>[POR COMPLETAR: captura de los Insights del repositorio para AV2]</b>
 </p>
 
 ## **Contenido**
@@ -309,7 +329,23 @@ TB1 (10/10/2026):
       - [6.2.1.7. Services Documentation Evidence for Sprint Review](#6217-services-documentation-evidence-for-sprint-review)
       - [6.2.1.8. Software Deployment Evidence for Sprint Review](#6218-software-deployment-evidence-for-sprint-review)
       - [6.2.1.9. Team Collaboration Insights during Sprint](#6219-team-collaboration-insights-during-sprint)
+    - [6.2.2. Sprint 2](#622-sprint-2)
+      - [6.2.2.1. Sprint Planning 2](#6221-sprint-planning-2)
+      - [6.2.2.2. Aspect Leaders and Collaborators](#6222-aspect-leaders-and-collaborators)
+      - [6.2.2.3. Sprint Backlog 2](#6223-sprint-backlog-2)
+      - [6.2.2.4. Development Evidence for Sprint Review](#6224-development-evidence-for-sprint-review)
+      - [6.2.2.5. Testing Suite Evidence for Sprint Review](#6225-testing-suite-evidence-for-sprint-review)
+      - [6.2.2.6. Execution Evidence for Sprint Review](#6226-execution-evidence-for-sprint-review)
+      - [6.2.2.7. Services Documentation Evidence for Sprint Review](#6227-services-documentation-evidence-for-sprint-review)
+      - [6.2.2.8. Software Deployment Evidence for Sprint Review](#6228-software-deployment-evidence-for-sprint-review)
+      - [6.2.2.9. Team Collaboration Insights during Sprint](#6229-team-collaboration-insights-during-sprint)
+  - [6.3. Validation Interviews](#63-validation-interviews)
+    - [6.3.1. Diseño de Entrevistas](#631-diseño-de-entrevistas)
+    - [6.3.2. Registro de Entrevistas](#632-registro-de-entrevistas)
+    - [6.3.3. Evaluaciones según heurísticas](#633-evaluaciones-según-heurísticas)
+  - [6.4. Video About-the-Product](#64-video-about-the-product)
 - [Conclusiones y Recomendaciones](#conclusiones-y-recomendaciones)
+  - [Video About-the-Team](#video-about-the-team)
 - [Referencias Bibliográficas](#referencias-bibliográficas)
 - [Anexos](#anexos)
 
@@ -331,6 +367,7 @@ ABET – EAC - Student Outcome 5: La capacidad de funcionar efectivamente en un 
 Acuña Corahua, Jonatan Ariel<br><br>
 AV1: Asumí el desarrollo de los principales artefactos de diseño de la solución. Modelé la arquitectura del sistema con C4 Model en Structurizr DSL (Landscape, Context, Container y Deployment, incluidos los microservicios IoT, el nivel de Edge Computing on-premise y los nodos físicos ESP32), definí los Bounded Contexts estratégicos, el Design-Level EventStorming de la extensión IoT y los diagramas de Domain Storytelling, y elaboré el modelado táctico DDD con la persistencia híbrida (PostgreSQL y TimescaleDB), consolidando el Capítulo IV como base común del diseño.<br><br>
 TB1: Asumí el liderazgo técnico de la parte IoT y Edge de la solución. Definí la épica EP11 (Edge Gateway e integración con dispositivos ESP32) con sus 23 historias de usuario (US71–US93) y diseñé el nodo ESP32 en Wokwi (lector RFID RC522, cerradura con relé, buzzer, pantalla OLED, sensor de humedad y sensor ultrasónico), documentando su mapa de pines y las decisiones de cableado, y desarrollé el firmware de prueba del nodo. También documenté las herramientas del Edge Gateway (Python, Flask, Peewee, SQLite, MQTT con Mosquitto y Docker). Finalmente, completé los 12 Bounded Context Canvases y corregí los diagramas de Domain Message Flow Modeling, manteniendo alineados el diseño estratégico y los requisitos.<br><br>
+AV2: Lideré el frente IoT del Sprint 2, cuyo objetivo fue conectar los dispositivos del edificio con la plataforma en la nube. Fijé un documento único de contratos de comunicación v1 (MQTT, AMQP, sincronización y REST) para que las líneas de trabajo avanzaran en paralelo sin bloquearse, e implementé sobre él el Edge Gateway integrado con RabbitMQ, los microservicios IoT Access Management e IoT Telemetry, las rutas IoT del ApiGateway y el firmware de referencia del nodo ESP32. Cerré cada hito con una métrica medida y lo validé con 7 escenarios de punta a punta a través del ApiGateway, dejando documentados los 35 endpoints IoT para que los frentes web y móvil puedan construir sus vistas sin depender del backend.<br><br>
 
 Collantes Carrillo, Diego Mateo<br><br>
 
@@ -381,6 +418,7 @@ TB1: Durante esta entrega, el equipo trabajó de forma conjunta en el diseño UX
 Acuña Corahua, Jonatan Ariel<br><br>
 AV1: Estructuré el repositorio del informe con una carpeta por capítulo según las pautas del trabajo final, migré los contenidos base y organicé los recursos gráficos en un directorio común de assets. Configuré un pipeline en Docker (Pandoc y Eisvogel, con filtros propios para tablas y HTML) que compila todo el informe a PDF y mantuve el Registro de Versiones, de modo que el equipo trabaje sobre una misma fuente y cada avance quede trazable.<br><br>
 TB1: Planifiqué el trabajo del frente IoT y Edge dividiéndolo en entregables verificables: historias de usuario, herramientas del Edge Gateway, diseño del dispositivo en Wokwi y firmware de prueba, y cerré el Sprint con los Bounded Context Canvases y la corrección de los Domain Message Flows. Trabajé en ramas por funcionalidad con pull requests hacia main, incorporé el enunciado de la entrega al repositorio como referencia común y depuré el Product Backlog retirando ítems innecesarios para que el equipo trabaje sobre requisitos consistentes con la arquitectura.<br><br>
+AV2: Planifiqué el Sprint 2 del frente IoT como siete hitos (H0 a H6), cada uno con su repositorio, su rama de GitFlow y una métrica de cierre verificable, y dejé la hoja de ruta y los planes por hito versionados en el repositorio del informe para que cualquier integrante pueda retomar una tarea. Cumplí los objetivos de cada hito con TDD y releases con Semantic Versioning, registré las métricas obtenidas con su comando y resultado, y publiqué una colección Postman y la documentación OpenAPI de la API IoT como base común para el trabajo del resto del equipo.<br><br>
 
 Collantes Carrillo, Diego Mateo<br><br>
 AV1: Fomenté un entorno colaborativo e inclusivo al coordinar la planificación y ejecución estratégica del dominio del proyecto (Strategic-Level Domain-Driven Design). Establecí metas claras facilitando el Design-Level EventStorming (Candidate Context Discovery, Domain Message Flows Modeling y Bounded Context Canvases) y organicé el trabajo en equipo para definir el Context Mapping, cumpliendo exitosamente con los objetivos planteados. <br><br>
@@ -9042,7 +9080,7 @@ Durante el Sprint 1 (21/09/2026 – 10/10/2026) se completó el despliegue inici
 
 **Productos digitales incluidos en el proceso de Deployment:**
 - **Landing Page:** sitio estático publicado en GitHub Pages (`https://iot-upc-202620.github.io/Iot-LandingPage/`).
-- **Web Application:** aplicación Angular desplegada en Vercel (`https://edifika-front.vercel.app/`).
+- **Web Application:** aplicación Angular desplegada en Vercel (`https://edifika-frontend.vercel.app/`).
 - **Edge Gateway:** servicio Python (Flask + Gunicorn) desplegado como contenedor Docker en Render (`https://edifika-edge-gateway.onrender.com/`) y disponible localmente con `docker-compose`.
 
 **Actividades de despliegue realizadas:**
@@ -9117,6 +9155,716 @@ En esta sección el equipo explica cómo se han desarrollado las actividades de 
 </p>
 
 
+### 6.2.2. Sprint 2
+
+#### 6.2.2.1. Sprint Planning 2
+
+El Sprint 2 inició después de la entrega de TB1 (09/10/2026) y tuvo como punto de partida el resultado del Sprint 1: la Landing Page y la Web Application publicadas, y el Edge Gateway funcionando de extremo a extremo dentro del edificio, pero conversando con un backend simulado (`mock-cloud`). Las historias del Sprint 1 marcadas como **Parcial (edge)** —registro de tarjetas, suspensión por morosidad, acceso por reserva y monitoreo de dispositivos— tenían resuelta la parte del edificio, pero no su contraparte en la nube.
+
+Por esa razón, el Sprint 2 se planificó alrededor de un objetivo concreto: **conectar los dispositivos físicos del edificio con la plataforma en la nube**. Para que varias líneas de trabajo avanzaran en paralelo sin bloquearse entre sí, el equipo fijó primero un documento único de contratos de comunicación (versión v1) y dividió el trabajo IoT en siete hitos verificables (H0 a H6), cada uno con su propio repositorio, su rama de GitFlow y una métrica de cierre medible. La hoja de ruta, los planes por hito y el diseño de integración se encuentran versionados en este mismo repositorio (`docs/superpowers/plans/` y `docs/superpowers/specs/`).
+
+| Hito | Producto / repositorio | Resultado esperado |
+|---|---|---|
+| H0 | `Edifika-IoT-Platform` | Infraestructura local (RabbitMQ, Mosquitto, TimescaleDB) y contratos v1 en JSON Schema |
+| H1 | `Edifika-Microservice-IoT-Gateway` | Edge Gateway integrado con la nube por AMQP, con operación sin conexión |
+| H2 | `Edifika-Microservice-IoT-Access-Management` | Microservicio de credenciales RFID, morosidad, reservas de puerta y control de dispositivos |
+| H3 | `Edifika-Microservice-IoT-Telemetry` | Microservicio de telemetría sobre TimescaleDB con alertas y estado de conexión |
+| H4 | `Edifika-IoT-Platform` | Pruebas de punta a punta a través del ApiGateway |
+| H5 | `Edifika-ApiGateway`, `Edifika-IoT-Platform` | Rutas IoT en el ApiGateway y colección Postman de la API |
+| H6 | `esp32` | Firmware de referencia del nodo ESP32 sobre el contrato v1 |
+
+**Cuadro de resumen del Sprint Planning Meeting**
+
+| Sprint # | Sprint 2 |
+|---|---|
+| Sprint Planning | Background |
+| Date | **[POR COMPLETAR: fecha de la reunión]** |
+| Time | **[POR COMPLETAR: hora]** |
+| Location | **[POR COMPLETAR: lugar o enlace de la reunión]** |
+| Prepared By | Acuña Corahua, Jonatan Ariel |
+| Attendees | **[POR COMPLETAR: asistentes]** |
+| Sprint Period | 2026-10-10 – **[POR COMPLETAR: fecha de cierre]** |
+| Sprint 2 – 1 Review | **[POR COMPLETAR: resultados de la Review del Sprint 1]** |
+| Sprint 2 – 1 Retrospective | **[POR COMPLETAR: oportunidades de mejora acordadas en la Retrospective del Sprint 1]** |
+| Sprint 2 Goal | *Our focus is on* conectar los dispositivos del edificio con la plataforma en la nube. *We believe it delivers* control centralizado del acceso a áreas comunes a los administradores, acceso y reservas sin trámites a los residentes al día, y endpoints documentados a los desarrolladores web y móvil. *This will be confirmed when* los 7 escenarios de punta a punta pasan a través del ApiGateway contra el stack completo. |
+| Sprint 2 Velocity | **[POR COMPLETAR: velocity establecida por el equipo en el Sprint Planning]**. El frente IoT comprometió 65 story points. |
+| Sum of Story Points | 65 story points del frente IoT (12 historias). **[POR COMPLETAR: sumar las historias de los demás frentes del Sprint 2]** |
+
+**Sprint Goal del Sprint 2**
+
+> **_Our focus is on_** conectar los dispositivos físicos del edificio con la plataforma en la nube: credenciales RFID gestionadas desde la nube con suspensión automática por morosidad, reservas de puerta con invitados y control del LED del nodo, telemetría de temperatura y humedad con alertas y estado de conexión, y un firmware ESP32 de referencia que habla el contrato v1.
+>
+> **_We believe it delivers_** a los administradores un control centralizado del acceso a las áreas comunes, sin registrar tarjetas ni bloquear morosos a mano, y visibilidad del estado de cada dispositivo; a los residentes al día, acceso inmediato y reservas con invitados; y a los desarrolladores de la Web Application y de la aplicación móvil, endpoints documentados para construir estas funciones sin depender del equipo de backend.
+>
+> **_This will be confirmed when_** los 7 escenarios de punta a punta (acceso libre, residente moroso, reserva, roles de titular e invitado, LED, fin de reserva sin conexión y telemetría) pasan a través del ApiGateway contra el stack completo, un evento de acceso llega a la nube en 6 segundos o menos, y la colección de la API cubre el 100 % de los endpoints del contrato.
+
+**Identificación de Outcome, Impact, Customer(s) y Event**
+
+| Elemento | Definición en el Sprint 2 |
+|---|---|
+| Outcome | Dispositivos ESP32, Edge Gateway y microservicios IoT integrados en un mismo flujo, con contratos versionados. |
+| Impact | Los administradores dejan de gestionar tarjetas y morosidad a mano; los residentes reservan y comparten el acceso; los desarrolladores disponen de una API IoT estable. |
+| Customer(s) | Administradores del edificio, residentes, y desarrolladores de la Web Application y de la aplicación móvil. |
+| Event | Los 7 escenarios de punta a punta en verde a través del ApiGateway, con métricas de latencia medidas. |
+
+**Verificación de los criterios SMART**
+
+| Criterio | Cómo se cumple en el Sprint Goal |
+|---|---|
+| Specific | Nombra los features comprometidos: credenciales RFID, morosidad, reservas de puerta con invitados, LED, telemetría y firmware del nodo. |
+| Measurable | Cada hito tiene una métrica de cierre (sección 6.2.2.5): número de tests en verde, latencias p95 y escenarios de punta a punta. |
+| Attainable | Reutiliza el Edge Gateway del Sprint 1 y la plantilla de los microservicios existentes (Payment), y los carriles de trabajo solo dependen de los contratos. |
+| Relevant | Cierra la contraparte en la nube de las historias que el Sprint 1 dejó en **Parcial (edge)**. |
+| Time-bound | Se revisa al cierre del Sprint 2, antes de la entrega de AV2. |
+
+#### 6.2.2.2. Aspect Leaders and Collaborators
+
+En el Sprint 2 el trabajo IoT se organizó por hitos, y cada hito se convirtió en un aspecto del Sprint con un único líder, siguiendo los mismos criterios que en la sección 6.2.1.2: cada aspecto es un subconjunto del alcance comprometido, tiene una frontera técnica reconocible (un repositorio o un contrato) y concentra decisiones que alguien debe tomar.
+
+| Aspecto | Descripción | Alcance |
+|---|---|---|
+| B1 | Contratos v1 y plataforma local | Documento de contratos, JSON Schema de MQTT, AMQP, sync y REST, e infraestructura con Docker Compose (H0) |
+| B2 | Edge Gateway integrado con la nube | Publicador AMQP, consumo de órdenes de la nube, roles de puerta y operación sin conexión (H1) |
+| B3 | IoT Access Management | Gateways, dispositivos, credenciales RFID, morosidad, reservas de puerta, invitados y LED (H2) |
+| B4 | IoT Telemetry | Ingesta idempotente, hypertable de TimescaleDB, alertas y estado de conexión (H3) |
+| B5 | Pruebas de punta a punta | Stack completo con Docker Compose y los 7 escenarios de negocio (H4) |
+| B6 | Rutas IoT y documentación de la API | Rutas en el ApiGateway y colección Postman (H5) |
+| B7 | Firmware ESP32 | Firmware de referencia del nodo de puerta sobre el contrato v1 (H6) |
+| **[POR COMPLETAR]** | Landing Page, Web Application y aplicación móvil | Aspectos de los demás frentes del Sprint 2 |
+
+##### Matriz de líderes y colaboradores (LACX)
+
+| Team Member (Last Name, First Name) | GitHub Username | B1. Contratos y plataforma | B2. Edge Gateway | B3. Access Management | B4. Telemetry | B5. Punta a punta | B6. Rutas y documentación | B7. Firmware ESP32 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Acuña Corahua, Jonatan Ariel | `JonatanFD` | L | L | L | L | L | L | L |
+| Collantes Carrillo, Diego Mateo | `D4D3v4l` | **[POR COMPLETAR]** | | | | | | |
+| Landa Ortiz, Sergio Javier | `Serkekes2006` | **[POR COMPLETAR]** | | | | | | |
+| Lizarbe Alvarez, Ariana Nickole | `ariaalizz` | **[POR COMPLETAR]** | | | | | | |
+| Ortiz Cardenas, Johanna Antuanete | `Antuanete01` | **[POR COMPLETAR]** | | | | | | |
+| Perez Tuesta, Gabriel | `Gabyoko` | **[POR COMPLETAR]** | | | | | | |
+| Sarmiento Medina, Loreley | `loreleysarmiento` | **[POR COMPLETAR]** | | | | | | |
+
+**Leyenda.** *L* = líder del aspecto. *C* = colaborador.
+
+##### Relación de la matriz con la selección de tasks
+
+| Aspecto | Historias del Sprint | Tasks derivadas | Responsable de la descomposición |
+| --- | --- | --- | --- |
+| B1. Contratos y plataforma | TS22 | T2-H0-01, T2-H0-02 | Jonatan (L) |
+| B2. Edge Gateway | TS17, TS22 | T2-H1-01 a T2-H1-11 | Jonatan (L) |
+| B3. Access Management | TS16, US29, US30, US33 | T2-H2-01 a T2-H2-11 | Jonatan (L) |
+| B4. Telemetry | TS19, US43, US44 | T2-H3-01 a T2-H3-05 | Jonatan (L) |
+| B5. Punta a punta | US29, US30, US33, US44 | T2-H4-01 a T2-H4-03 | Jonatan (L) |
+| B6. Rutas y documentación | TS14 | T2-H5-01 a T2-H5-03 | Jonatan (L) |
+| B7. Firmware ESP32 | TS26, TS17, US47 | T2-H6-01 a T2-H6-07 | Jonatan (L) |
+| **Total (frente IoT)** | **12 historias · 65 story points** | **42 tasks** | |
+
+#### 6.2.2.3. Sprint Backlog 2
+
+El objetivo principal del Sprint 2 es **conectar los dispositivos físicos del edificio con la plataforma en la nube**, cerrando la contraparte en la nube de las historias que el Sprint 1 dejó en estado **Parcial (edge)** y entregando la primera versión del firmware del nodo ESP32 y de los microservicios IoT.
+
+**Sprint Board**
+
+| Artefacto | Referencia |
+|---|---|
+| Tablero del Sprint 2 | **[POR COMPLETAR: URL pública del tablero]** |
+| Captura del tablero | **[POR COMPLETAR: `assets/img/board/sprint-2-board.png`]** |
+
+**Historias de usuario asignadas al Sprint (frente IoT)**
+
+Los identificadores son los del Product Backlog de la sección 3.3. El estado **Completado (servicios)** indica que la historia está implementada y probada en los servicios (firmware, Edge Gateway y microservicios) y expuesta por el ApiGateway; las vistas de la Web Application y de la aplicación móvil que la consumen se registran en sus propios frentes.
+
+| Story Id | Story Title | Epic | Producto digital | Story Points | Estado | Assigned To |
+|---|---|---|---|---|---|---|
+| TS16 | Configuración base del microservicio IoT Access Management | EP05 | IoT Access Management | 5 | Completado | Acuña Corahua, Jonatan Ariel |
+| TS19 | Configuración base del microservicio IoT Telemetry & Analytics con TimescaleDB | EP05 | IoT Telemetry | 8 | Completado | Acuña Corahua, Jonatan Ariel |
+| TS22 | Publicación y consumo de eventos de dominio mediante el broker | EP05 | Edge Gateway / microservicios IoT | 5 | Completado | Acuña Corahua, Jonatan Ariel |
+| TS17 | Comunicación con dispositivos ESP32 a través del Edge Gateway | EP05 | Edge Gateway / firmware | 8 | Completado | Acuña Corahua, Jonatan Ariel |
+| TS26 | Firmware base del ESP32 con lectura de sensores y reconexión | EP05 | Firmware ESP32 | 8 | Completado (prueba física pendiente) | Acuña Corahua, Jonatan Ariel |
+| TS14 | Documentación de API con Swagger y autenticación JWT | EP05 | Microservicios IoT | 3 | Completado | Acuña Corahua, Jonatan Ariel |
+| US29 | Registrar tarjeta RFID de acceso a áreas comunes | EP07 | IoT Access Management | 5 | Completado (servicios) | Acuña Corahua, Jonatan Ariel |
+| US30 | Desactivar acceso a áreas comunes por morosidad | EP07 | IoT Access Management | 5 | Completado (servicios) | Acuña Corahua, Jonatan Ariel |
+| US33 | Otorgar acceso temporal por reserva aprobada | EP07 | IoT Access Management | 5 | Completado (servicios) | Acuña Corahua, Jonatan Ariel |
+| US44 | Monitorear estado de conexión de dispositivos | EP09 | IoT Telemetry | 5 | Completado (servicios) | Acuña Corahua, Jonatan Ariel |
+| US43 | Detectar falla de dispositivo | EP09 | IoT Telemetry | 5 | Completado (servicios) | Acuña Corahua, Jonatan Ariel |
+| US47 | Mostrar el resultado del acceso en el punto de acceso | EP10 | Firmware ESP32 | 3 | Completado (prueba física pendiente) | Acuña Corahua, Jonatan Ariel |
+| **Total** | | | | **65** | | |
+| **[POR COMPLETAR]** | Historias de la Landing Page, la Web Application y la aplicación móvil | | | | | |
+
+**Work-items / Tasks (frente IoT)**
+
+Las tasks corresponden a la descomposición de cada hito en sus planes de implementación (`docs/superpowers/plans/`).
+
+> **[POR COMPLETAR: registrar en la columna *Estimation (Hours)* la estimación de cada task según el tablero del Sprint.]**
+
+| Task Id | Story Id | Task Title | Task Description | Estimation (Hours) | Assigned To |
+|---|---|---|---|---|---|
+| T2-H0-01 | TS22 | Infraestructura local | Docker Compose con RabbitMQ, Mosquitto y TimescaleDB, y exchanges `edifika.events`, `edifika.edge.commands` y `edifika.dlx` | — | Acuña Corahua, Jonatan Ariel |
+| T2-H0-02 | TS22 | Contratos como JSON Schema | Esquemas v1 de mensajes MQTT, sobre AMQP, snapshot de sync y recursos REST, con ejemplos validados | — | Acuña Corahua, Jonatan Ariel |
+| T2-H1-01 | TS17 | Configuración y TLS MQTT | Endpoints configurables, TLS para MQTT, client ID propio y broker independiente | — | Acuña Corahua, Jonatan Ariel |
+| T2-H1-02 | TS22 | Publicador AMQP con confirmaciones | Publicación de eventos al exchange `edifika.events` con publisher confirms | — | Acuña Corahua, Jonatan Ariel |
+| T2-H1-03 | TS22 | Cableado de eventos y sync | Eventos por AMQP y sincronización por HTTP con API key del gateway | — | Acuña Corahua, Jonatan Ariel |
+| T2-H1-04 | US33 | Nodos y reservas desde la nube | Sincronización de dispositivos y reservas de puerta desde Access Management, con migración de la base local | — | Acuña Corahua, Jonatan Ariel |
+| T2-H1-05 | US33 | Decisión por rol de puerta | Evaluación `FREE_ACCESS` / `RESERVED` según reservas activas y cambio de rol sin conexión | — | Acuña Corahua, Jonatan Ariel |
+| T2-H1-06 | TS17 | Órdenes de la nube | Consumo de `SyncRequested` y `DeviceCommandRequested` (`rgb`) con deduplicación | — | Acuña Corahua, Jonatan Ariel |
+| T2-H1-07 | US43 | Temperatura y estado del nodo | Lecturas de temperatura con detección de valores fuera de rango y alertas de falla | — | Acuña Corahua, Jonatan Ariel |
+| T2-H1-08 | TS17 | Dialecto del firmware de referencia | Soporte del formato del firmware (`"v": "1"`, marcas de tiempo ISO) y recuperación del rol al reconectar | — | Acuña Corahua, Jonatan Ariel |
+| T2-H1-09 | TS17 | Simulador del nodo de puerta | Simulador con estado de modo, LED RGB y publicación de temperatura y humedad | — | Acuña Corahua, Jonatan Ariel |
+| T2-H1-10 | TS22 | Integración real con RabbitMQ y Mosquitto | Pruebas de entrega ≤ 6 s, recuperación de 20 taps tras una caída y decisión local < 500 ms | — | Acuña Corahua, Jonatan Ariel |
+| T2-H1-11 | TS17 | Reconciliación del modo de puerta | Reenvío de la configuración cuando el heartbeat del nodo reporta un modo distinto (release 0.3.0) | — | Acuña Corahua, Jonatan Ariel |
+| T2-H2-01 | TS16 | Esqueleto del servicio | Proyecto Spring Boot desde la plantilla de Payment, con arquitectura por capas y perfiles | — | Acuña Corahua, Jonatan Ariel |
+| T2-H2-02 | TS22 | Infraestructura de mensajería | Topología RabbitMQ, sobre de integración, publicadores y guardia de idempotencia | — | Acuña Corahua, Jonatan Ariel |
+| T2-H2-03 | TS16 | Gateways y dispositivos | Registro de Edge Gateways con API key y de dispositivos IoT, mantenimiento y baja | — | Acuña Corahua, Jonatan Ariel |
+| T2-H2-04 | US29 | Credenciales RFID | Alta, listado y cambio de estado de tarjetas, con envío al edge | — | Acuña Corahua, Jonatan Ariel |
+| T2-H2-05 | TS22 | Sync del edge | Endpoint `GET /api/v1/edge/sync` y notificación de cambios al gateway | — | Acuña Corahua, Jonatan Ariel |
+| T2-H2-06 | US30 | Estado del residente y deudas | Consulta a Residential Management y Payment; suspensión `SUSPENDED/DELINQUENT` por morosidad | — | Acuña Corahua, Jonatan Ariel |
+| T2-H2-07 | US33 | Reservas de puerta e invitados | Reserva de puerta, autorizados, cancelación y ciclo de vida de la reserva | — | Acuña Corahua, Jonatan Ariel |
+| T2-H2-08 | TS22 | Consumidor de eventos del edge | Procesamiento idempotente de los eventos de acceso y de estado enviados por el gateway | — | Acuña Corahua, Jonatan Ariel |
+| T2-H2-09 | US33 | Comandos al nodo (LED RGB) | Cambio de color del LED por el titular de la reserva y consulta del estado del comando | — | Acuña Corahua, Jonatan Ariel |
+| T2-H2-10 | US29 | Vistas del residente y auditoría | Mis puertas, credenciales, reservas e intentos de acceso; auditoría para el administrador | — | Acuña Corahua, Jonatan Ariel |
+| T2-H2-11 | TS16 | Cierre de H2 | Prueba de latencia, documentación y release 0.1.0 | — | Acuña Corahua, Jonatan Ariel |
+| T2-H3-01 | TS19 | Esqueleto | Proyecto Spring Boot del microservicio de telemetría | — | Acuña Corahua, Jonatan Ariel |
+| T2-H3-02 | TS19 | Modelo de datos e hypertable | Lecturas de sensores en hypertable de TimescaleDB, proyección de dispositivos y alertas | — | Acuña Corahua, Jonatan Ariel |
+| T2-H3-03 | US44 | Consumidores de eventos | Ingesta idempotente de lecturas, alertas, estado del dispositivo y proyección del registro | — | Acuña Corahua, Jonatan Ariel |
+| T2-H3-04 | US43 | API REST de telemetría | Dispositivos, última lectura, series agregadas por intervalo y alertas | — | Acuña Corahua, Jonatan Ariel |
+| T2-H3-05 | TS19 | Cierre de H3 | Métricas, documentación y release 0.1.0 | — | Acuña Corahua, Jonatan Ariel |
+| T2-H4-01 | US30 | Compose de punta a punta | Stack con RabbitMQ, Mosquitto, TimescaleDB, WireMock, microservicios, ApiGateway y Edge Gateway | — | Acuña Corahua, Jonatan Ariel |
+| T2-H4-02 | US29 | Fixtures del suite | Generador de JWT, cliente REST, nodo MQTT virtual, espía AMQP y cliente de WireMock | — | Acuña Corahua, Jonatan Ariel |
+| T2-H4-03 | US33 | Escenarios de H4 | Los 7 escenarios de negocio de punta a punta a través del ApiGateway | — | Acuña Corahua, Jonatan Ariel |
+| T2-H5-01 | TS14 | Rutas IoT en el ApiGateway | Rutas `/api/v1/iot/**`, `/api/v1/access/**`, `/api/v1/edge/**` y `/api/v1/telemetry/**` con tests | — | Acuña Corahua, Jonatan Ariel |
+| T2-H5-02 | TS26 | Firmware del informe obsoleto | Nota de obsoleto en `wokwi/README.md`; el firmware vigente es el del repositorio `esp32` | — | Acuña Corahua, Jonatan Ariel |
+| T2-H5-03 | TS14 | Colección Postman | Colección de la API IoT para la aplicación móvil, con entorno local | — | Acuña Corahua, Jonatan Ariel |
+| T2-H6-01 | TS26 | GitFlow y arnés de tests en el host | Ramas del repositorio y tests del firmware ejecutables en el host con `g++` | — | Acuña Corahua, Jonatan Ariel |
+| T2-H6-02 | TS17 | `CommandParser` | Interpretación de los 9 comandos MQTT del contrato v1 | — | Acuña Corahua, Jonatan Ariel |
+| T2-H6-03 | US47 | `DoorPresentation` | Máquina de estados de la decisión de acceso, el modo de puerta y el LED | — | Acuña Corahua, Jonatan Ariel |
+| T2-H6-04 | TS26 | `EdifikaNode` conectado al contrato | Heartbeats, lecturas de temperatura y humedad, acuses de comandos y reconexión | — | Acuña Corahua, Jonatan Ariel |
+| T2-H6-05 | TS17 | Broker y documentación | Broker de pruebas del repositorio, script de comandos con Mosquitto y documentación | — | Acuña Corahua, Jonatan Ariel |
+| T2-H6-06 | TS26 | Compilación de la placa y release | Compilación con `arduino-cli` y releases v0.3.0 a v0.5.0 | — | Acuña Corahua, Jonatan Ariel |
+| T2-H6-07 | US47 | Checklist de aceptación con la placa | Prueba manual con el hardware real | — | Acuña Corahua, Jonatan Ariel |
+
+**Cuadro de control de estado del Sprint 2**
+
+| Sprint # | Sprint 2 |
+|---|---|
+| User Story | Work-Item / Task |
+| Story Id | Task Id · Task Title · Task Description · Estimation (Hours) · Assigned To |
+| TS22 | T2-H0-01, T2-H0-02, T2-H1-02, T2-H1-03, T2-H1-10, T2-H2-02, T2-H2-05, T2-H2-08 |
+| TS17 | T2-H1-01, T2-H1-06, T2-H1-08, T2-H1-09, T2-H1-11, T2-H6-02, T2-H6-05 |
+| TS16 | T2-H2-01, T2-H2-03, T2-H2-11 |
+| TS19 | T2-H3-01, T2-H3-02, T2-H3-05 |
+| TS14 | T2-H5-01, T2-H5-03 |
+| TS26 | T2-H5-02, T2-H6-01, T2-H6-04, T2-H6-06 |
+| US29 | T2-H2-04, T2-H2-10, T2-H4-02 |
+| US30 | T2-H2-06, T2-H4-01 |
+| US33 | T2-H1-04, T2-H1-05, T2-H2-07, T2-H2-09, T2-H4-03 |
+| US43 | T2-H1-07, T2-H3-04 |
+| US44 | T2-H3-03 |
+| US47 | T2-H6-03, T2-H6-07 |
+
+#### 6.2.2.4. Development Evidence for Sprint Review
+
+En esta sección se explican y presentan los avances en implementación del Sprint 2. El frente IoT entregó seis productos versionados con Semantic Versioning y GitFlow: la plataforma de contratos e infraestructura, el Edge Gateway integrado con la nube, dos microservicios nuevos, las rutas IoT del ApiGateway y el firmware del nodo ESP32.
+
+##### Avances en implementación por producto
+
+###### Plataforma IoT (`IoT-UPC-202620/Edifika-IoT-Platform`) — releases v0.1.0 y v0.2.0
+- Infraestructura local con Docker Compose: RabbitMQ 4, Eclipse Mosquitto 2 y TimescaleDB (PostgreSQL 17), con los exchanges durables `edifika.events`, `edifika.edge.commands` y `edifika.dlx`.
+- Contratos de comunicación v1 en JSON Schema (Draft 2020-12): sobre de integración AMQP, snapshot de sincronización, 16 esquemas de eventos y comandos, mensajes MQTT del nodo y recursos REST.
+- Stack de punta a punta (`docker-compose.e2e.yml`) que levanta los microservicios, el ApiGateway, el Edge Gateway, un nodo simulado y stubs de WireMock para Residential Management y Payment.
+
+###### Edge Gateway (`IoT-UPC-202620/Edifika-Microservice-IoT-Gateway`) — releases v0.2.0 y v0.3.0
+- Publicador AMQP con publisher confirms y consumidor de órdenes de la nube en la cola `edge.<gateway_id>.commands`, con dead-letter exchange.
+- Sincronización de dispositivos y reservas de puerta desde IoT Access Management, y evaluación del rol de la puerta (`FREE_ACCESS` / `RESERVED`) incluso sin conexión.
+- Telemetría de temperatura con detección de valores fuera de rango, soporte del dialecto del firmware de referencia y reconciliación del modo de puerta a partir de los heartbeats.
+
+###### IoT Access Management (`IoT-UPC-202620/Edifika-Microservice-IoT-Access-Management`) — release v0.1.0
+- Microservicio Spring Boot 4 (Java 21) con Spring Data JPA sobre PostgreSQL y mensajería con RabbitMQ.
+- Gestión de Edge Gateways y dispositivos, credenciales RFID con suspensión automática por morosidad (consultando Residential Management y Payment), reservas de puerta con invitados, control del LED del nodo, vistas del residente y auditoría de accesos.
+- Endpoint de sincronización para el Edge Gateway y consumidor idempotente de los eventos del edificio.
+
+###### IoT Telemetry (`IoT-UPC-202620/Edifika-Microservice-IoT-Telemetry`) — release v0.1.0
+- Microservicio Spring Boot 4 con lecturas de sensores almacenadas en una hypertable de TimescaleDB.
+- Ingesta idempotente de lecturas, alertas y estado de los dispositivos, con eventos `DeviceWentOffline` y `SensorFaulty`.
+- API REST de dispositivos con telemetría, última lectura, series agregadas por intervalo y alertas.
+
+###### ApiGateway (`IoT-UPC-202620/Edifika-ApiGateway`)
+- Rutas hacia IoT Access Management (`/api/v1/iot/**`, `/api/v1/access/**`, `/api/v1/edge/**`) y hacia IoT Telemetry (`/api/v1/telemetry/**`), configurables por variables de entorno.
+
+###### Firmware ESP32 (`IoT-UPC-202620/esp32`) — releases v0.3.0, v0.4.0 y v0.5.0
+- Nodo de puerta `EdifikaNode` sobre el contrato MQTT v1: heartbeats con el modo de la puerta y el color del LED, lecturas de temperatura y humedad cada 10 segundos, y acuses `OK` / `FAILED` de los comandos.
+- `CommandParser` con los 9 comandos remotos del contrato y `DoorPresentation`, una máquina de estados que gobierna la pantalla OLED, el buzzer y el LED RGB, que solo se enciende mientras la puerta está reservada.
+- El acceso queda autorizado de forma central por el Edge Gateway (`UNLOCK_ON_ANY_CARD = false`).
+
+###### Residential Management (`IoT-UPC-202620/Edifika-Microservice-Residential-Managemen`)
+- Ajuste de la versión de Spring Boot a 3.4.5 para el despliegue en Render.
+
+##### Tabla de commits relacionados con la implementación
+
+###### Repositorio: `IoT-UPC-202620/Edifika-IoT-Platform`
+
+| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Committed on (Date) |
+|---|---|---|---|---|---|
+| IoT-UPC-202620/Edifika-IoT-Platform | develop → main | ad78f5d | chore: initial commit | — | 24/10/2026 |
+| IoT-UPC-202620/Edifika-IoT-Platform | develop → main | 9c5c6fe | chore(infra): local RabbitMQ, Mosquitto and TimescaleDB stack (H0) | — | 24/10/2026 |
+| IoT-UPC-202620/Edifika-IoT-Platform | develop → main | 858ded4 | chore(release): prepare 0.1.0 (H0) | — | 24/10/2026 |
+| IoT-UPC-202620/Edifika-IoT-Platform | develop → main | 50251e6 | chore(e2e): end-to-end compose with services, gateway, simulator and WireMock stubs (H4) | — | 24/10/2026 |
+| IoT-UPC-202620/Edifika-IoT-Platform | develop → main | bd51f45 | chore(release): prepare 0.2.0 (H4) | — | 24/10/2026 |
+
+###### Repositorio: `IoT-UPC-202620/Edifika-Microservice-IoT-Gateway`
+
+| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Committed on (Date) |
+|---|---|---|---|---|---|
+| IoT-UPC-202620/Edifika-Microservice-IoT-Gateway | develop → main | 875273a | feat(config): configurable MQTT TLS, AMQP and sync endpoints with legacy aliases (H1) | — | 24/10/2026 |
+| IoT-UPC-202620/Edifika-Microservice-IoT-Gateway | develop → main | a3abfff | feat(amqp): publish outbox events to RabbitMQ with publisher confirms (H1) | — | 24/10/2026 |
+| IoT-UPC-202620/Edifika-Microservice-IoT-Gateway | develop → main | 039587f | refactor(gateway): split event sink (AMQP) from cache sync client (HTTP) (H1) | — | 24/10/2026 |
+| IoT-UPC-202620/Edifika-Microservice-IoT-Gateway | develop → main | e53dd18 | feat(sync): cloud-managed devices and door reservations with schema migration (H1) | — | 24/10/2026 |
+| IoT-UPC-202620/Edifika-Microservice-IoT-Gateway | develop → main | b06f642 | feat(access): door role from reservations with offline mode switching (H1) | — | 24/10/2026 |
+| IoT-UPC-202620/Edifika-Microservice-IoT-Gateway | develop → main | 273c309 | feat(amqp): consume cloud orders (sync-requested, rgb) from the gateway queue (H1) | — | 24/10/2026 |
+| IoT-UPC-202620/Edifika-Microservice-IoT-Gateway | develop → main | 39d5de0 | feat(telemetry): temperature readings and online/offline/firmware status events (H1) | — | 24/10/2026 |
+| IoT-UPC-202620/Edifika-Microservice-IoT-Gateway | develop → main | 2ca9538 | feat(mqtt): accept the esp32 firmware envelope and resend the door mode on reconnect (H1) | — | 24/10/2026 |
+| IoT-UPC-202620/Edifika-Microservice-IoT-Gateway | develop → main | 0085a53 | feat(simulator): door node with role, RGB LED and temperature/humidity (H1) | — | 24/10/2026 |
+| IoT-UPC-202620/Edifika-Microservice-IoT-Gateway | develop → main | 52d9b8a | chore(release): prepare 0.2.0 (H1) | — | 24/10/2026 |
+| IoT-UPC-202620/Edifika-Microservice-IoT-Gateway | develop → main | 7280d3a | fix(commands): accept set_led in addition to rgb in cloud commands (H1) | — | 24/10/2026 |
+| IoT-UPC-202620/Edifika-Microservice-IoT-Gateway | develop → main | 22b5e8e | feat(mqtt): reconcile the door mode reported in node heartbeats (H1) | A node can now report the mode and LED colour it shows in every | 24/10/2026 |
+| IoT-UPC-202620/Edifika-Microservice-IoT-Gateway | develop → main | eaa4784 | chore(release): prepare 0.3.0 (H1) | — | 24/10/2026 |
+
+###### Repositorio: `IoT-UPC-202620/Edifika-Microservice-IoT-Access-Management`
+
+| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Committed on (Date) |
+|---|---|---|---|---|---|
+| IoT-UPC-202620/Edifika-Microservice-IoT-Access-Management | develop → main | ff22aa5 | chore: initial commit | — | 24/10/2026 |
+| IoT-UPC-202620/Edifika-Microservice-IoT-Access-Management | develop → main | 68f7777 | chore: scaffold IoT Access Management from Payment template (H2) | — | 24/10/2026 |
+| IoT-UPC-202620/Edifika-Microservice-IoT-Access-Management | develop → main | 28d4feb | feat(messaging): RabbitMQ topology, integration envelope publishers and idempotency guard (H2) | — | 24/10/2026 |
+| IoT-UPC-202620/Edifika-Microservice-IoT-Access-Management | develop → main | 142e76c | feat(devices): gateway and ESP32 device registry with API keys and registry events (H2) | — | 24/10/2026 |
+| IoT-UPC-202620/Edifika-Microservice-IoT-Access-Management | develop → main | f004677 | feat(credentials): RFID credentials with debt suspension and edge upsert (H2) | — | 24/10/2026 |
+| IoT-UPC-202620/Edifika-Microservice-IoT-Access-Management | develop → main | a9f0f15 | feat(access): complete edge sync, debt check, door reservations, edge events, device control and resident views (H2) | — | 24/10/2026 |
+| IoT-UPC-202620/Edifika-Microservice-IoT-Access-Management | develop → main | 553e5d0 | chore(release): prepare 0.1.0 (H2) | — | 24/10/2026 |
+| IoT-UPC-202620/Edifika-Microservice-IoT-Access-Management | develop → main | 83b43b4 | fix(build): promote spring-boot-http-client and restclient to compile scope for RestClient.Builder runtime (H2) | — | 24/10/2026 |
+| IoT-UPC-202620/Edifika-Microservice-IoT-Access-Management | develop → main | 61c178d | fix(edge-events): align event types and payload keys with contract v1 §3.3 (H2) | — | 24/10/2026 |
+| IoT-UPC-202620/Edifika-Microservice-IoT-Access-Management | develop → main | b238e4a | fix(commands): send type rgb per contract v1 §3.5 in DeviceCommandRequested (H2) | — | 24/10/2026 |
+
+###### Repositorio: `IoT-UPC-202620/Edifika-Microservice-IoT-Telemetry`
+
+| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Committed on (Date) |
+|---|---|---|---|---|---|
+| IoT-UPC-202620/Edifika-Microservice-IoT-Telemetry | develop → main | 498d368 | chore: initial commit | — | 24/10/2026 |
+| IoT-UPC-202620/Edifika-Microservice-IoT-Telemetry | develop → main | 6220fc4 | chore: scaffold IoT Telemetry from Payment template (H3) | — | 24/10/2026 |
+| IoT-UPC-202620/Edifika-Microservice-IoT-Telemetry | develop → main | 45b6fad | feat(model): sensor readings with Timescale hypertable, device projection and alerts (H3) | — | 24/10/2026 |
+| IoT-UPC-202620/Edifika-Microservice-IoT-Telemetry | develop → main | aacdb9c | feat(ingestion): idempotent readings, alerts, device status and registry projection (H3) | — | 24/10/2026 |
+| IoT-UPC-202620/Edifika-Microservice-IoT-Telemetry | develop → main | 1b81bcd | feat(api): telemetry devices, latest, bucketed series and alerts (H3) | — | 24/10/2026 |
+| IoT-UPC-202620/Edifika-Microservice-IoT-Telemetry | develop → main | fe09166 | chore(release): prepare 0.1.0 (H3) | — | 24/10/2026 |
+| IoT-UPC-202620/Edifika-Microservice-IoT-Telemetry | develop → main | 981d17c | fix(build): promote spring-boot-http-client to compile scope for ClientHttpRequestFactoryBuilder runtime (H3) | — | 24/10/2026 |
+
+###### Repositorio: `IoT-UPC-202620/Edifika-ApiGateway`
+
+| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Committed on (Date) |
+|---|---|---|---|---|---|
+| IoT-UPC-202620/Edifika-ApiGateway | develop → main | eca9910 | feat(routes): route IoT Access Management and IoT Telemetry through the gateway (H5) | — | 24/10/2026 |
+
+###### Repositorio: `IoT-UPC-202620/esp32`
+
+| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Committed on (Date) |
+|---|---|---|---|---|---|
+| IoT-UPC-202620/esp32 | develop → master | bbd0d47 | chore: first commit | — | 22/10/2026 |
+| IoT-UPC-202620/esp32 | develop → master | c9f54b2 | chore: converted | — | 24/10/2026 |
+| IoT-UPC-202620/esp32 | develop → master | c743499 | feat(gateway): parse every v1 command into a typed NodeCommand (H6) | — | 24/10/2026 |
+| IoT-UPC-202620/esp32 | develop → master | 424d461 | feat(devices): pure door presentation state machine for decision, mode and LED (H6) | — | 24/10/2026 |
+| IoT-UPC-202620/esp32 | develop → master | 449fe23 | feat(node): gateway-driven access, door roles, RGB status and periodic readings (H6) | — | 24/10/2026 |
+| IoT-UPC-202620/esp32 | develop → master | c27d4ec | chore(release): prepare 0.3.0 (H6) | — | 24/10/2026 |
+| IoT-UPC-202620/esp32 | develop → master | f852a48 | feat(devices): light the RGB LED only while the door is reserved (H6) | Outside RESERVED the LED stays off in every state (free access, after an | 24/10/2026 |
+| IoT-UPC-202620/esp32 | develop → master | 207af2d | chore(release): prepare 0.4.0 (H6) | — | 24/10/2026 |
+| IoT-UPC-202620/esp32 | develop → master | 5088338 | feat(gateway): report the door mode and LED colour in heartbeats (H6) | Every heartbeat now carries the mode and colour the door shows, and a | 24/10/2026 |
+| IoT-UPC-202620/esp32 | develop → master | b6878e8 | chore(release): prepare 0.5.0 (H6) | — | 24/10/2026 |
+
+###### Repositorio: `IoT-UPC-202620/Edifika-Microservice-Residential-Managemen`
+
+| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Committed on (Date) |
+|---|---|---|---|---|---|
+| IoT-UPC-202620/Edifika-Microservice-Residential-Managemen | main | c87e449 | fix: downgrade Spring Boot to stable 3.4.5 for Render deploy | — | 20/10/2026 |
+
+##### Rutas de los repositorios en control de versiones
+
+| Producto | Repositorio | Rama de integración |
+|---|---|---|
+| Plataforma IoT | `https://github.com/IoT-UPC-202620/Edifika-IoT-Platform` | `develop` → `main` |
+| Edge Gateway | `https://github.com/IoT-UPC-202620/Edifika-Microservice-IoT-Gateway` | `develop` → `main` |
+| IoT Access Management | `https://github.com/IoT-UPC-202620/Edifika-Microservice-IoT-Access-Management` | `develop` → `main` |
+| IoT Telemetry | `https://github.com/IoT-UPC-202620/Edifika-Microservice-IoT-Telemetry` | `develop` → `main` |
+| ApiGateway | `https://github.com/IoT-UPC-202620/Edifika-ApiGateway` | `dev` → `main` |
+| Firmware ESP32 | `https://github.com/IoT-UPC-202620/esp32` | `develop` → `master` |
+
+> **[POR COMPLETAR: avances y commits de la Landing Page, la Web Application y la aplicación móvil del Sprint 2.]**
+
+#### 6.2.2.5. Testing Suite Evidence for Sprint Review
+
+En esta sección se presenta el conjunto de Unit Tests, Integration Tests y Acceptance Tests automatizados del Sprint 2. Cada hito se cerró con su suite en verde y con una métrica medida, registrada con el comando y su resultado en `Edifika-IoT-Platform/MILESTONES.md`. La regla de trabajo de cada task fue TDD: primero el test que falla, luego la implementación y, con la suite en verde, el commit.
+
+##### Repositorios y ubicación de los tests
+
+| Producto | Ubicación | Herramientas |
+|---|---|---|
+| Plataforma IoT | `tests/` (contratos y colección Postman) e `integration-tests/` (punta a punta) | pytest, jsonschema |
+| Edge Gateway | `tests/` y `tests/integration/` | pytest |
+| IoT Access Management | `src/test/java` (`*Test` unitarios, `*IT` de integración) | JUnit 5, Testcontainers (PostgreSQL y RabbitMQ), WireMock |
+| IoT Telemetry | `src/test/java` | JUnit 5, Testcontainers (TimescaleDB y RabbitMQ) |
+| ApiGateway | `src/test/java/com/edifika/apigateway/IotRoutesTest.java` | JUnit 5 |
+| Firmware ESP32 | `test/` (`test_command_parser.cpp`, `test_door_presentation.cpp`) | arnés propio en C++ ejecutado en el host |
+
+##### Métricas de cierre por hito
+
+| Hito | Métrica comprometida | Comando | Resultado |
+|---|---|---|---|
+| H0 (infraestructura) | `up --wait` < 120 s | `docker compose up -d --wait --wait-timeout 120` | 11.5 s; RabbitMQ, Mosquitto y PostgreSQL saludables |
+| H0 (contratos) | 100 % de los ejemplos válidos contra sus esquemas | `pytest -v` | 53 tests en verde en 0.39 s |
+| H1 (Edge Gateway) | Suite en verde; tap → RabbitMQ ≤ 6 s; 20 taps durante una caída → 20 eventos sin duplicados; decisión local < 500 ms | `pytest -q` | 251 tests en verde (247 unitarios y de contrato, 4 de integración); tap → RabbitMQ en ~0.5 s; 20 taps recuperados sin duplicados; decisión local en ~15 ms |
+| H2 (Access Management) | Idempotencia ×3 → 1 fila y 1 evento; deuda → `SUSPENDED/DELINQUENT`; p95 de `POST` credencial < 300 ms | `mvnw -B verify` | Suite completa en verde; idempotencia confirmada; morosidad probada; p95 ~85 ms (promedio ~42 ms) |
+| H3 (Telemetry) | 100 lecturas → 100 filas sin duplicados al reenviar; p95 de ingesta < 500 ms | `mvnw -B verify` | 100 lecturas en 1.2 s (~12.1 ms por lectura); deduplicación al 100 % |
+| H4 (punta a punta) | 7 escenarios en verde a través del ApiGateway | `pytest integration-tests/test_h4_scenarios.py -v` | 7 escenarios en verde contra el stack completo |
+| H5 (rutas y documentación) | Rutas con tests; colección que cubre el 100 % de los endpoints del contrato | `pytest tests/test_postman_collection.py -v` | Cobertura del 100 % verificada; 55 tests en verde en la suite de la plataforma |
+| H6 (firmware) | Tests del host en verde; compilación de la placa | `bash test/run_tests.sh`; `arduino-cli compile` | Tests del host en verde (28 en v0.5.0); compilación exitosa (Flash 77 %, RAM 15 %) |
+
+##### Unit Tests
+
+**IoT Access Management.** Los tests unitarios verifican el modelo de dominio y los servicios de aplicación:
+
+| Clase de test | Clase y comportamiento relacionado |
+|---|---|
+| `AccessCredentialTest`, `RfidUidTest` | Normalización del UID RFID y transiciones de estado de la credencial (activa, suspendida, revocada) |
+| `CredentialCommandServiceImplTest` | Alta de credenciales y suspensión por morosidad |
+| `DebtCheckServiceTest`, `RestPaymentDebtServiceTest`, `RestResidentialDirectoryTest` | Verificación de deudas contra Payment y Residential Management, y manejo de fallos |
+| `DoorReservationTest`, `ReservationCommandServiceImplTest`, `ReservationLifecycleSchedulerTest` | Reglas de la reserva de puerta (solapamiento, invitados, cancelación) y su ciclo de vida |
+| `DeviceControlCommandServiceImplTest`, `RgbColorTest` | Órdenes de LED: validación del color y autorización del titular |
+| `EdgeEventCommandServiceImplTest`, `EdgeSnapshotServiceTest` | Procesamiento de eventos del edge y armado del snapshot de sincronización |
+| `EdgeGatewayTest`, `GatewayCommandServiceImplTest`, `IotDeviceTest`, `DeviceCodeTest`, `DeviceCommandServiceImplTest`, `DoorSummaryQueryServiceImplTest` | Gateways, dispositivos, códigos de dispositivo y vistas de puerta |
+
+**IoT Telemetry.** `TelemetryIngestionServiceImplTest` (ingesta idempotente y generación de alertas) y `GetReadingSeriesQueryTest` (validación de las series agregadas).
+
+**Edge Gateway.** Los archivos agregados en el Sprint 2 cubren el publicador AMQP (`test_amqp_publisher.py`), las órdenes de la nube (`test_cloud_commands.py`), los roles de puerta (`test_access_modes.py`), la sincronización de dispositivos (`test_sync_devices.py`), el dialecto del firmware (`test_firmware_dialect.py`), la reconciliación del modo (`test_mode_reconciliation.py`) y el simulador (`test_simulator_state.py`).
+
+**Firmware ESP32.** `test_command_parser.cpp` cubre los 9 comandos del contrato y `test_door_presentation.cpp` la máquina de estados de la puerta.
+
+##### Integration Tests
+
+| Producto | Tests de integración | Qué verifican |
+|---|---|---|
+| IoT Access Management | `AccessCredentialControllerIT`, `DoorReservationControllerIT`, `IotDeviceControllerIT`, `MyAccessControllerIT`, `ResidentStatusControllerIT`, `DeviceControlControllerIT`, `EdgeSyncControllerIT`, `EdgeEventConsumerIT`, `ProcessedEventGuardIT`, `RabbitMqConfigurationIT`, `CreateCredentialLatencyIT`, `ApplicationContextIT` | Endpoints REST contra PostgreSQL real (Testcontainers), consumo de eventos por RabbitMQ, idempotencia y latencia p95 |
+| IoT Telemetry | `TelemetryReadingControllerIT`, `EdgeTelemetryConsumerIT`, `HypertableInitializerIT`, `ApplicationContextIT` | Creación de la hypertable, ingesta desde RabbitMQ y consultas REST sobre TimescaleDB |
+| Edge Gateway | `tests/integration/` | Entrega a RabbitMQ en ≤ 6 s, recuperación tras una caída, ida y vuelta de órdenes de la nube y decisión local < 500 ms |
+| ApiGateway | `IotRoutesTest` | Enrutamiento de las cuatro rutas IoT |
+
+##### Acceptance Tests (punta a punta)
+
+Los Acceptance Tests del Sprint 2 están automatizados en `Edifika-IoT-Platform/integration-tests/test_h4_scenarios.py` y se ejecutan contra el stack completo de `docker-compose.e2e.yml`, entrando siempre por el ApiGateway con tokens JWT reales y un nodo ESP32 virtual que habla el dialecto del firmware.
+
+| # | Escenario | Historias relacionadas |
+|---|---|---|
+| 1 | Un residente al día con acceso libre entra a la puerta | US29 |
+| 2 | Un residente moroso es rechazado y no puede crear reservas | US30 |
+| 3 | Una reserva cambia el nodo a modo `RESERVED` | US33 |
+| 4 | Durante la reserva solo entran el titular y sus invitados | US33 |
+| 5 | El titular cambia el color del LED; un tercero recibe `403` | US33 |
+| 6 | La reserva termina sin conexión y el Edge Gateway restablece `FREE_ACCESS` | US33, TS22 |
+| 7 | La telemetría del nodo se ingiere y se consulta por la API REST | US44, US43 |
+
+> **[POR COMPLETAR: los escenarios están escritos en pytest. Si el docente exige el formato BDD, agregar los archivos `.feature` en Gherkin y sus steps para estos 7 escenarios.]**
+
+##### Tabla de commits relacionados con Testing
+
+###### Repositorio: `IoT-UPC-202620/Edifika-IoT-Platform`
+
+| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Committed on (Date) |
+|---|---|---|---|---|---|
+| IoT-UPC-202620/Edifika-IoT-Platform | develop → main | d2d0445 | docs(contracts): v1 JSON schemas for MQTT, AMQP, sync and REST (H0) | — | 24/10/2026 |
+| IoT-UPC-202620/Edifika-IoT-Platform | develop → main | 2c37998 | docs(postman): full IoT API collection for the mobile app (H5) | — | 24/10/2026 |
+| IoT-UPC-202620/Edifika-IoT-Platform | develop → main | 50251e6 | chore(e2e): end-to-end compose with services, gateway, simulator and WireMock stubs (H4) | — | 24/10/2026 |
+| IoT-UPC-202620/Edifika-IoT-Platform | develop → main | cbab5c4 | test(e2e): fixtures for API, MQTT node, AMQP spy, tokens and WireMock (H4) | — | 24/10/2026 |
+| IoT-UPC-202620/Edifika-IoT-Platform | develop → main | af73ec8 | test(e2e): H4 scenarios for door roles, reservations, LED, offline and telemetry (H4) | — | 24/10/2026 |
+
+###### Repositorio: `IoT-UPC-202620/Edifika-Microservice-IoT-Gateway`
+
+| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Committed on (Date) |
+|---|---|---|---|---|---|
+| IoT-UPC-202620/Edifika-Microservice-IoT-Gateway | develop → main | 875273a | feat(config): configurable MQTT TLS, AMQP and sync endpoints with legacy aliases (H1) | — | 24/10/2026 |
+| IoT-UPC-202620/Edifika-Microservice-IoT-Gateway | develop → main | a3abfff | feat(amqp): publish outbox events to RabbitMQ with publisher confirms (H1) | — | 24/10/2026 |
+| IoT-UPC-202620/Edifika-Microservice-IoT-Gateway | develop → main | 039587f | refactor(gateway): split event sink (AMQP) from cache sync client (HTTP) (H1) | — | 24/10/2026 |
+| IoT-UPC-202620/Edifika-Microservice-IoT-Gateway | develop → main | e53dd18 | feat(sync): cloud-managed devices and door reservations with schema migration (H1) | — | 24/10/2026 |
+| IoT-UPC-202620/Edifika-Microservice-IoT-Gateway | develop → main | b06f642 | feat(access): door role from reservations with offline mode switching (H1) | — | 24/10/2026 |
+| IoT-UPC-202620/Edifika-Microservice-IoT-Gateway | develop → main | 273c309 | feat(amqp): consume cloud orders (sync-requested, rgb) from the gateway queue (H1) | — | 24/10/2026 |
+| IoT-UPC-202620/Edifika-Microservice-IoT-Gateway | develop → main | 39d5de0 | feat(telemetry): temperature readings and online/offline/firmware status events (H1) | — | 24/10/2026 |
+| IoT-UPC-202620/Edifika-Microservice-IoT-Gateway | develop → main | 2ca9538 | feat(mqtt): accept the esp32 firmware envelope and resend the door mode on reconnect (H1) | — | 24/10/2026 |
+| IoT-UPC-202620/Edifika-Microservice-IoT-Gateway | develop → main | 0085a53 | feat(simulator): door node with role, RGB LED and temperature/humidity (H1) | — | 24/10/2026 |
+| IoT-UPC-202620/Edifika-Microservice-IoT-Gateway | develop → main | 1f26ba0 | test(integration): RabbitMQ round trip, outage recovery and local latency (H1) | — | 24/10/2026 |
+| IoT-UPC-202620/Edifika-Microservice-IoT-Gateway | develop → main | 22b5e8e | feat(mqtt): reconcile the door mode reported in node heartbeats (H1) | A node can now report the mode and LED colour it shows in every | 24/10/2026 |
+
+###### Repositorio: `IoT-UPC-202620/Edifika-Microservice-IoT-Access-Management`
+
+| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Committed on (Date) |
+|---|---|---|---|---|---|
+| IoT-UPC-202620/Edifika-Microservice-IoT-Access-Management | develop → main | 68f7777 | chore: scaffold IoT Access Management from Payment template (H2) | — | 24/10/2026 |
+| IoT-UPC-202620/Edifika-Microservice-IoT-Access-Management | develop → main | 28d4feb | feat(messaging): RabbitMQ topology, integration envelope publishers and idempotency guard (H2) | — | 24/10/2026 |
+| IoT-UPC-202620/Edifika-Microservice-IoT-Access-Management | develop → main | 142e76c | feat(devices): gateway and ESP32 device registry with API keys and registry events (H2) | — | 24/10/2026 |
+| IoT-UPC-202620/Edifika-Microservice-IoT-Access-Management | develop → main | f004677 | feat(credentials): RFID credentials with debt suspension and edge upsert (H2) | — | 24/10/2026 |
+| IoT-UPC-202620/Edifika-Microservice-IoT-Access-Management | develop → main | a9f0f15 | feat(access): complete edge sync, debt check, door reservations, edge events, device control and resident views (H2) | — | 24/10/2026 |
+
+###### Repositorio: `IoT-UPC-202620/Edifika-Microservice-IoT-Telemetry`
+
+| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Committed on (Date) |
+|---|---|---|---|---|---|
+| IoT-UPC-202620/Edifika-Microservice-IoT-Telemetry | develop → main | 6220fc4 | chore: scaffold IoT Telemetry from Payment template (H3) | — | 24/10/2026 |
+| IoT-UPC-202620/Edifika-Microservice-IoT-Telemetry | develop → main | 45b6fad | feat(model): sensor readings with Timescale hypertable, device projection and alerts (H3) | — | 24/10/2026 |
+| IoT-UPC-202620/Edifika-Microservice-IoT-Telemetry | develop → main | aacdb9c | feat(ingestion): idempotent readings, alerts, device status and registry projection (H3) | — | 24/10/2026 |
+| IoT-UPC-202620/Edifika-Microservice-IoT-Telemetry | develop → main | 1b81bcd | feat(api): telemetry devices, latest, bucketed series and alerts (H3) | — | 24/10/2026 |
+
+###### Repositorio: `IoT-UPC-202620/Edifika-ApiGateway`
+
+| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Committed on (Date) |
+|---|---|---|---|---|---|
+| IoT-UPC-202620/Edifika-ApiGateway | develop → main | eca9910 | feat(routes): route IoT Access Management and IoT Telemetry through the gateway (H5) | — | 24/10/2026 |
+
+###### Repositorio: `IoT-UPC-202620/esp32`
+
+| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Committed on (Date) |
+|---|---|---|---|---|---|
+| IoT-UPC-202620/esp32 | develop → master | 4b59220 | test: add host-side test harness with vendored ArduinoJson (H6) | — | 24/10/2026 |
+| IoT-UPC-202620/esp32 | develop → master | c743499 | feat(gateway): parse every v1 command into a typed NodeCommand (H6) | — | 24/10/2026 |
+| IoT-UPC-202620/esp32 | develop → master | 424d461 | feat(devices): pure door presentation state machine for decision, mode and LED (H6) | — | 24/10/2026 |
+| IoT-UPC-202620/esp32 | develop → master | f852a48 | feat(devices): light the RGB LED only while the door is reserved (H6) | Outside RESERVED the LED stays off in every state (free access, after an | 24/10/2026 |
+| IoT-UPC-202620/esp32 | develop → master | 5088338 | feat(gateway): report the door mode and LED colour in heartbeats (H6) | Every heartbeat now carries the mode and colour the door shows, and a | 24/10/2026 |
+
+#### 6.2.2.6. Execution Evidence for Sprint Review
+
+En el Sprint 2 el frente IoT dejó funcionando el flujo completo entre el dispositivo y la nube: un nodo ESP32 (real o simulado) lee una tarjeta RFID, el Edge Gateway decide el acceso en el propio edificio en ~15 ms y publica el evento en RabbitMQ en ~0.5 s; IoT Access Management aplica la morosidad y las reservas y envía las órdenes de vuelta al edificio; e IoT Telemetry almacena las lecturas de temperatura y humedad y expone su estado. Todo el flujo es accesible desde el ApiGateway y está verificado por los 7 escenarios de la sección 6.2.2.5.
+
+| Evidencia | Producto | Captura |
+|---|---|---|
+| Stack de punta a punta levantado (`docker compose ps`) | Plataforma IoT | **[POR COMPLETAR]** |
+| Ejecución de los 7 escenarios en verde | Plataforma IoT | **[POR COMPLETAR]** |
+| Eventos del edge en la consola de RabbitMQ (`edifika.events`) | Edge Gateway | **[POR COMPLETAR]** |
+| Nodo de puerta reservado con el LED encendido | Firmware ESP32 | **[POR COMPLETAR]** |
+| Respuesta de telemetría por el ApiGateway | IoT Telemetry | **[POR COMPLETAR]** |
+
+**Video de la ejecución del Sprint 2:** **[POR COMPLETAR: URL del video en Microsoft Stream/Clipchamp]**
+
+> **[POR COMPLETAR: capturas de la Landing Page y de la Web Application en su nueva versión.]**
+
+#### 6.2.2.7. Services Documentation Evidence for Sprint Review
+
+En el Sprint 2 se documentaron los 35 endpoints de los dos microservicios IoT nuevos. Ambos generan su especificación OpenAPI con springdoc y publican Swagger UI; los contratos de request y response se versionaron además como JSON Schema en `Edifika-IoT-Platform/contracts/`, y la colección Postman `Edifika-IoT.postman_collection.json` cubre el 100 % de los endpoints a través del ApiGateway, verificado por un test automatizado.
+
+| Servicio | Swagger UI (local) | Especificación OpenAPI |
+|---|---|---|
+| IoT Access Management | `http://localhost:8089/swagger-ui/index.html` | `http://localhost:8089/v3/api-docs` |
+| IoT Telemetry | `http://localhost:8090/swagger-ui.html` | `http://localhost:8090/v3/api-docs` |
+| ApiGateway (punto de entrada) | — | Base `http://localhost:8080/api/v1` |
+
+Todos los endpoints requieren un token JWT en la cabecera `Authorization: Bearer <token>`, salvo `GET /api/v1/edge/sync`, que autentica al Edge Gateway con su API key.
+
+##### Endpoints de IoT Access Management
+
+| Verbo | Ruta | Acción | Parámetros |
+|---|---|---|---|
+| POST | `/api/v1/iot/gateways` | Registrar un Edge Gateway | Body: código, edificio, nombre |
+| GET | `/api/v1/iot/gateways` | Listar Edge Gateways | Query: `buildingId` |
+| GET | `/api/v1/iot/gateways/{id}` | Obtener un Edge Gateway | Path: `id` |
+| POST | `/api/v1/iot/gateways/{id}/api-key` | Rotar la API key del gateway | Path: `id` |
+| POST | `/api/v1/iot/devices` | Registrar un dispositivo IoT | Body: código, gateway, tipo, nombre |
+| GET | `/api/v1/iot/devices` | Listar dispositivos | Query: `gatewayId`, `buildingId` |
+| GET | `/api/v1/iot/devices/{id}` | Obtener un dispositivo | Path: `id` |
+| PATCH | `/api/v1/iot/devices/{id}` | Actualizar un dispositivo | Path: `id`; body parcial |
+| PUT | `/api/v1/iot/devices/{id}/maintenance` | Activar o finalizar el modo mantenimiento | Path: `id`; body: `enabled` |
+| DELETE | `/api/v1/iot/devices/{id}` | Dar de baja un dispositivo | Path: `id` |
+| POST | `/api/v1/access/credentials` | Registrar una tarjeta RFID | Body: `rfidUid`, `buildingId`, `userId`, `holderName`, vigencia |
+| GET | `/api/v1/access/credentials` | Listar credenciales | Query: `buildingId`, `userId` |
+| PATCH | `/api/v1/access/credentials/{id}/status` | Activar, suspender o revocar una credencial | Path: `id`; body: `status` |
+| GET | `/api/v1/iot/devices/{id}/reservations` | Ver la disponibilidad de una puerta | Path: `id`; query: `from`, `to` |
+| POST | `/api/v1/iot/devices/{id}/reservations` | Reservar una puerta | Path: `id`; body: `startsAt`, `endsAt` |
+| GET | `/api/v1/access/reservations` | Listar reservas (administrador) | Query: `deviceId` |
+| GET | `/api/v1/access/reservations/{id}` | Obtener una reserva | Path: `id` |
+| DELETE | `/api/v1/access/reservations/{id}` | Cancelar una reserva | Path: `id` |
+| POST | `/api/v1/access/reservations/{id}/authorizations` | Agregar un invitado a la reserva | Path: `id`; body: `userId` |
+| GET | `/api/v1/access/reservations/{id}/authorizations` | Listar los invitados | Path: `id` |
+| DELETE | `/api/v1/access/reservations/{id}/authorizations/{userId}` | Quitar un invitado | Path: `id`, `userId` |
+| PUT | `/api/v1/iot/devices/{id}/led` | Cambiar el color del LED (titular de la reserva) | Path: `id`; body: `color` |
+| GET | `/api/v1/iot/device-commands/{commandId}` | Consultar el estado de un comando | Path: `commandId` |
+| GET | `/api/v1/access/me/doors` | Mis puertas asignadas | — |
+| GET | `/api/v1/access/me/credentials` | Mis credenciales RFID | — |
+| GET | `/api/v1/access/me/reservations` | Mis reservas | — |
+| GET | `/api/v1/access/me/attempts` | Mis intentos de acceso | Query: `limit` |
+| GET | `/api/v1/access/attempts` | Auditoría de accesos (administrador) | Query: `limit` |
+| GET | `/api/v1/access/residents/{userId}/status` | Estado y deudas del residente | Path: `userId` |
+| POST | `/api/v1/access/residents/{userId}/debt-check` | Forzar la verificación de deudas | Path: `userId` |
+| GET | `/api/v1/edge/sync` | Sincronización del caché del Edge Gateway | Query: `since` (versión); API key del gateway |
+
+##### Endpoints de IoT Telemetry
+
+| Verbo | Ruta | Acción | Parámetros |
+|---|---|---|---|
+| GET | `/api/v1/telemetry/devices` | Listar los dispositivos con telemetría y su estado de conexión | — |
+| GET | `/api/v1/telemetry/devices/{deviceCode}/latest` | Última lectura de cada magnitud del dispositivo | Path: `deviceCode` |
+| GET | `/api/v1/telemetry/readings` | Serie de lecturas, cruda o agregada por intervalo | Query: `deviceCode`, `magnitude`, `bucket`, `from`, `to` |
+| GET | `/api/v1/telemetry/alerts` | Alertas de telemetría | — |
+
+##### Ejemplos de request y response
+
+**Registrar una tarjeta RFID** — `POST /api/v1/access/credentials`
+
+```json
+{ "rfidUid": "04 a1 b2 c3", "buildingId": 12, "userId": 15, "holderName": "Ana Perez", "validFrom": null, "validUntil": null }
+```
+
+Respuesta: el UID se normaliza y la credencial queda asociada al residente. Si el residente es moroso, la credencial se devuelve suspendida:
+
+```json
+{ "id": 9, "rfidUid": "04A1B2C3", "buildingId": 12, "userId": 15, "holderName": "Ana Perez", "status": "SUSPENDED", "suspensionReason": "DELINQUENT", "validFrom": null, "validUntil": null, "origin": "CLOUD", "createdAt": "2026-10-23T14:00:00Z", "updatedAt": "2026-10-23T15:00:00Z" }
+```
+
+**Reservar una puerta** — `POST /api/v1/iot/devices/3/reservations` con `{ "startsAt": "2026-10-23T20:00:00Z", "endsAt": "2026-10-23T22:00:00Z" }`
+
+```json
+{ "id": 7, "deviceId": 3, "holderUserId": 15, "startsAt": "2026-10-23T20:00:00Z", "endsAt": "2026-10-23T22:00:00Z", "status": "SCHEDULED", "authorizedUserIds": [16, 21], "createdBy": 15, "createdAt": "2026-10-23T14:00:00Z" }
+```
+
+Si la puerta ya está reservada en ese horario, el servicio responde `409 Conflict`:
+
+```json
+{ "status": 409, "error": "Conflict", "message": "La puerta ya está reservada en ese horario", "timestamp": "2026-10-23T15:04:05Z" }
+```
+
+**Cambiar el color del LED** — `PUT /api/v1/iot/devices/3/led` con `{ "color": "#00ff88" }`. La orden se envía al edificio y se puede seguir con `GET /api/v1/iot/device-commands/{commandId}`:
+
+```json
+{ "commandId": "5b0e0000000000000000000000000001", "deviceId": 3, "type": "SET_LED", "params": { "color": "#00FF88" }, "status": "PENDING", "detail": null, "requestedBy": 15, "requestedAt": "2026-10-23T15:00:00Z", "expiresAt": "2026-10-23T15:00:10Z", "resolvedAt": null }
+```
+
+**Última lectura de un dispositivo** — `GET /api/v1/telemetry/devices/esp32-acc-01/latest`
+
+```json
+{ "deviceCode": "esp32-acc-01", "deviceId": 3, "name": "Puerta piscina", "buildingId": 12, "connectionStatus": "ACTIVE", "lastHeartbeatAt": "2026-10-23T15:00:00Z", "latest": [ { "magnitude": "TEMPERATURE", "value": 24.5, "unit": "°C", "capturedAt": "2026-10-23T15:04:00Z" }, { "magnitude": "HUMIDITY", "value": 61.0, "unit": "%", "capturedAt": "2026-10-23T15:04:00Z" } ] }
+```
+
+**Serie agregada por minuto** — `GET /api/v1/telemetry/readings?deviceCode=esp32-acc-01&magnitude=TEMPERATURE&bucket=1m`
+
+```json
+{ "deviceCode": "esp32-acc-01", "magnitude": "TEMPERATURE", "unit": "°C", "bucket": "1m", "from": "2026-10-23T14:00:00Z", "to": "2026-10-23T15:00:00Z", "points": [ { "t": "2026-10-23T15:04:00Z", "value": 24.4, "min": 24.1, "max": 24.6, "count": 6 } ] }
+```
+
+##### Capturas de la interacción con la documentación
+
+| Captura | Descripción |
+|---|---|
+| **[POR COMPLETAR]** | Swagger UI de IoT Access Management con la ejecución de `POST /api/v1/access/credentials` |
+| **[POR COMPLETAR]** | Swagger UI de IoT Telemetry con la consulta de `GET /api/v1/telemetry/devices/{deviceCode}/latest` |
+| **[POR COMPLETAR]** | Colección Postman ejecutada contra el ApiGateway |
+
+##### Commits relacionados con la documentación
+
+###### Repositorio: `IoT-UPC-202620/Edifika-IoT-Platform`
+
+| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Committed on (Date) |
+|---|---|---|---|---|---|
+| IoT-UPC-202620/Edifika-IoT-Platform | develop → main | d2d0445 | docs(contracts): v1 JSON schemas for MQTT, AMQP, sync and REST (H0) | — | 24/10/2026 |
+| IoT-UPC-202620/Edifika-IoT-Platform | develop → main | 2c37998 | docs(postman): full IoT API collection for the mobile app (H5) | — | 24/10/2026 |
+| IoT-UPC-202620/Edifika-IoT-Platform | develop → main | 343a679 | docs: record H1, H2 and H6 milestone metrics (Platform) | — | 24/10/2026 |
+| IoT-UPC-202620/Edifika-IoT-Platform | develop | 6904398 | docs(contracts): light the door RGB LED only while reserved (H6) | — | 24/10/2026 |
+| IoT-UPC-202620/Edifika-IoT-Platform | develop | f020102 | docs(contracts): report door mode and LED colour in heartbeats for resync (H6) | — | 24/10/2026 |
+
+###### Repositorio: `IoT-UPC-202620/Edifika-Microservice-IoT-Gateway`
+
+| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Committed on (Date) |
+|---|---|---|---|---|---|
+| IoT-UPC-202620/Edifika-Microservice-IoT-Gateway | develop → main | 6a8a3d4 | docs: AMQP integration, broker profiles and door roles (0.2.0) (H1) | — | 24/10/2026 |
+
+###### Repositorio: `IoT-UPC-202620/Edifika-Microservice-IoT-Telemetry`
+
+| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Committed on (Date) |
+|---|---|---|---|---|---|
+| IoT-UPC-202620/Edifika-Microservice-IoT-Telemetry | develop → main | c9fb94f | docs: README and H3 milestone metrics (H3) | — | 24/10/2026 |
+
+###### Repositorio: `IoT-UPC-202620/esp32`
+
+| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Committed on (Date) |
+|---|---|---|---|---|---|
+| IoT-UPC-202620/esp32 | develop → master | 3696f96 | docs: document the v1 contract behaviour, node registration and command examples (H6) | — | 24/10/2026 |
+
+#### 6.2.2.8. Software Deployment Evidence for Sprint Review
+
+En el Sprint 2 el trabajo de despliegue del frente IoT se centró en dejar cada servicio empaquetado y reproducible: cada microservicio nuevo tiene su `Dockerfile`, la plataforma orquesta la infraestructura y el stack completo con Docker Compose, y cada producto se publicó como una versión etiquetada en GitHub siguiendo GitFlow y Semantic Versioning.
+
+| Producto / Servicio | Actividad | Entorno | Estado |
+|---|---|---|---|
+| Plataforma IoT | Infraestructura con `docker-compose.yml` (RabbitMQ con su definición de exchanges, Mosquitto y TimescaleDB) | Docker Compose local | Operativo; levanta en 11.5 s |
+| Plataforma IoT | Stack de punta a punta con `docker-compose.e2e.yml` (8 servicios más el nodo simulado) | Docker Compose local | Operativo; usado por los 7 escenarios |
+| IoT Access Management | Imagen con `Dockerfile`; configuración por variables de entorno (`PORT`, base de datos, RabbitMQ, URLs de Residential y Payment) | Docker | Imagen construida en el stack de punta a punta |
+| IoT Telemetry | Imagen con `Dockerfile`; configuración por variables de entorno | Docker | Imagen construida en el stack de punta a punta |
+| ApiGateway | Rutas IoT configurables con `ACCESS_SERVICE_URL` y `TELEMETRY_SERVICE_URL` | Docker | Configurado |
+| Firmware ESP32 | Compilación de la placa con `arduino-cli` (core 3.3.12) | Placa ESP32 | Compilación exitosa; prueba física pendiente |
+| Microservicios IoT | Despliegue en la nube | **[POR COMPLETAR: proveedor y URL]** | **[POR COMPLETAR]** |
+
+**Releases publicadas en el Sprint 2**
+
+| Repositorio | Versiones |
+|---|---|
+| `Edifika-IoT-Platform` | v0.1.0, v0.2.0 |
+| `Edifika-Microservice-IoT-Gateway` | v0.2.0, v0.3.0 |
+| `Edifika-Microservice-IoT-Access-Management` | v0.1.0 |
+| `Edifika-Microservice-IoT-Telemetry` | v0.1.0 |
+| `esp32` | v0.3.0, v0.4.0, v0.5.0 |
+
+**Pasos para reproducir el despliegue local del stack IoT**
+
+1. Clonar `Edifika-IoT-Platform` y levantar la infraestructura con `docker compose up -d --wait`.
+2. Levantar el stack completo con `docker compose -f docker-compose.e2e.yml up -d --build`, que construye las imágenes de los microservicios, el ApiGateway y el Edge Gateway.
+3. Importar en Postman la colección `postman/Edifika-IoT.postman_collection.json` con el entorno `Edifika-IoT.local.postman_environment.json` (base `http://localhost:8080/api/v1`).
+
+| Captura | Descripción |
+|---|---|
+| **[POR COMPLETAR]** | Contenedores del stack de punta a punta en estado saludable |
+| **[POR COMPLETAR]** | Releases de los repositorios IoT en GitHub |
+| **[POR COMPLETAR]** | Despliegue de la nueva versión de la Landing Page y de la Web Application |
+
+#### 6.2.2.9. Team Collaboration Insights during Sprint
+
+En el Sprint 2, la implementación del frente IoT se organizó en carriles paralelos que solo dependían del documento de contratos, de modo que cada hito avanzó en su propio repositorio y con su propia rama de GitFlow, y se integró recién al quedar en verde. La siguiente tabla resume los commits del Sprint 2 por repositorio y autor, obtenidos del historial de GitHub (sin contar los merges):
+
+| Repositorio | Autor | Commits |
+|---|---|---|
+| `Edifika-Microservice-IoT-Gateway` | JonatanFD | 15 |
+| `Edifika-IoT-Platform` | JonatanFD | 12 |
+| `esp32` | JonatanFD | 12 |
+| `edifika-report` | JonatanFD | 11 |
+| `Edifika-Microservice-IoT-Access-Management` | JonatanFD | 10 |
+| `Edifika-Microservice-IoT-Telemetry` | JonatanFD | 8 |
+| `Edifika-ApiGateway` | JonatanFD | 1 |
+| `Edifika-Microservice-Residential-Managemen` | D4D3v4l | 1 |
+
+| Analítico | Captura |
+|---|---|
+| Insights de commits de los repositorios IoT | **[POR COMPLETAR]** |
+| Insights de la Landing Page y de la Web Application | **[POR COMPLETAR]** |
+
+> **[POR COMPLETAR: interpretación del equipo sobre los analíticos y participación de cada integrante en la Landing Page, la Web Application y la aplicación móvil del Sprint 2.]**
+
+## 6.3. Validation Interviews
+
+> **[POR COMPLETAR: introducción a las entrevistas de validación, en las que usuarios de los segmentos objetivo interactúan con la Landing Page y con las aplicaciones.]**
+
+### 6.3.1. Diseño de Entrevistas
+
+> **[POR COMPLETAR: por cada segmento objetivo, los elementos de la sesión de validación (Landing Page y aplicaciones) y los user flows que se evaluarán.]**
+
+### 6.3.2. Registro de Entrevistas
+
+> **[POR COMPLETAR: de 3 a 5 entrevistas por segmento. Para cada una: nombres, apellidos, edad, distrito, captura de un cuadro del video, URL del video en Microsoft Stream/Clipchamp con el minuto de inicio y la duración, y un resumen de las apreciaciones del entrevistado sobre las tareas asignadas.]**
+
+### 6.3.3. Evaluaciones según heurísticas
+
+> **[POR COMPLETAR: evaluación de las sesiones de validación con el formato de evaluación heurística del Anexo D del enunciado (usabilidad, arquitectura de información e inclusive design).]**
+
+## 6.4. Video About-the-Product
+
+> **[POR COMPLETAR: introducción y resumen del contenido del video, al menos un testimonio positivo de un usuario de las entrevistas de validación, captura del video, URL en Microsoft Stream/Clipchamp, URL en YouTube usado en la Landing Page y duración.]**
+
+
 # Conclusiones
 # Conclusiones y Recomendaciones
 
@@ -9144,6 +9892,10 @@ En esta sección el equipo explica cómo se han desarrollado las actividades de 
 - **Probar el nodo con hardware real.** Verificar con el montaje físico las diferencias respecto de la simulación (cerradura de 12 V, sensor de humedad de suelo, lector RC522 y reloj RTC), en particular que la cerradura quede bloqueada al arrancar y ante un corte de energía.
 - **Reforzar la seguridad del Edge.** Revisar que el broker MQTT local exija autenticación y cifrado, rotar el token de la API del Edge Gateway y hacer cumplir en IAM que solo el administrador acceda a las bitácoras y a la configuración de los dispositivos, tal como lo pidieron los entrevistados.
 - **Roadmap para los siguientes sprints.** Integrar el Edge Gateway con los microservicios en la nube (IAM, Residential Management, Reservation y Payment con Culqi) en lugar del backend simulado; conectar la Web Application y la aplicación móvil con esos servicios; y luego incorporar la iluminación inteligente, el riego automático y la telemetría con el dashboard IoT, priorizando según el valor que confirmen las validaciones.
+
+## Video About-the-Team
+
+> **[POR COMPLETAR: resumen del video, pauta de secuencias con el tiempo de inicio de cada sección (hh:mm:ss), cuadro representativo, URL en Microsoft Stream/Clipchamp y URL en YouTube usado en la Landing Page. El video incluye escenas del trabajo real del equipo con voz en off y el testimonio ante cámara de cada integrante.]**
 
 # Referencias Bibliográficas
 
@@ -9188,7 +9940,18 @@ Enlace de repositorio de Communications microservice: `https://github.com/IoT-UP
 Enlace de repositorio de ApiGateway: `https://github.com/IoT-UPC-202620/Edifika-ApiGateway.git`
 Enlace de repositorio de Payment microservice: `https://github.com/IoT-UPC-202620/Edifika-Microservice-Payment.git`
 Enlace de repositorio de esp32: `https://github.com/IoT-UPC-202620/esp32.git` 
+Enlace de repositorio de IoT Access Management microservice: `https://github.com/IoT-UPC-202620/Edifika-Microservice-IoT-Access-Management.git`
+Enlace de repositorio de IoT Telemetry microservice: `https://github.com/IoT-UPC-202620/Edifika-Microservice-IoT-Telemetry.git`
+Enlace de repositorio de IoT Platform (contratos, infraestructura y pruebas de punta a punta): `https://github.com/IoT-UPC-202620/Edifika-IoT-Platform.git`
 
 *Despliegues*
 Enlace de despliegue de Landing Page:`https://iot-upc-202620.github.io/Iot-LandingPage/`
 Enlace de despliegue de frontend:`https://edifika-frontend.vercel.app/`
+
+## Anexo A: Videos de Exposiciones
+
+| Entrega | Título | Enlace (Microsoft Stream/Clipchamp) |
+|---|---|---|
+| AV1 | **[POR COMPLETAR]** | **[POR COMPLETAR]** |
+| TB1 | **[POR COMPLETAR]** | **[POR COMPLETAR]** |
+| AV2 | **[POR COMPLETAR]** | **[POR COMPLETAR]** |
