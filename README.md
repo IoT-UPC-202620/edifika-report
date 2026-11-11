@@ -6,7 +6,7 @@
 <h3>Universidad Peruana de Ciencias Aplicadas</h3>
 <h3>Ingeniería de Software</h3>
 
-<h4>1ASI0572 - Desarrollo de Soluciones IOT<br>202620</h4>
+<h4>1ASI0572 - Desarrollo de Soluciones IoT<br>202620</h4>
 
 <h4>NRC: 8740</h4>
 
@@ -26,7 +26,7 @@
   <thead>
     <tr>
       <th style="border: 1px solid black;">Alumno</th>
-      <th style="border: 1px solid black;">Codigo</th>
+      <th style="border: 1px solid black;">Código</th>
     </tr>
   </thead>
   <tbody>
@@ -61,7 +61,7 @@
   </thead>
   <tbody>
     <tr>
-      <td>AVN1</td>
+      <td>AV1</td>
       <td>20/09/2026</td>
       <td>
         - Acuña Corahua, Jonatan Ariel <br>
@@ -99,14 +99,22 @@
     </tr>
     <tr>
       <td>AV2</td>
-      <td>29/10/2026</td>
+      <td>13/11/2026</td>
       <td>
-        - Acuña Corahua, Jonatan Ariel
+        - Acuña Corahua, Jonatan Ariel <br>
+        - Collantes Carrillo, Diego Mateo <br>
+        - Landa Ortiz, Sergio Javier <br>
+        - Ortiz Cardenas, Johanna Antuanete <br>
+        - Perez Tuesta, Gabriel <br>
+        - Lizarbe Alvarez, Ariana Nickole <br>
+        - Sarmiento Medina, Loreley
       </td>
       <td>
-        - Capítulo VI: 6.2.2 Sprint 2 (frente IoT: contratos v1, Edge Gateway integrado con la nube, IoT Access Management, IoT Telemetry, pruebas de punta a punta, rutas del ApiGateway y firmware ESP32) <br>
+        - Capítulo VI: 6.2.2 Sprint 2 (Sprint Planning, Aspect Leaders and Collaborators, Sprint Backlog con story points y tasks, evidencias de desarrollo, testing, ejecución, documentación de servicios y despliegue, y Team Collaboration Insights del frente IoT: contratos v1, Edge Gateway integrado con la nube, IoT Access Management, IoT Telemetry, pruebas de punta a punta, rutas del ApiGateway y firmware ESP32) <br>
         - Estructura de 6.3 Validation Interviews, 6.4 Video About-the-Product y Video About-the-Team <br>
-        - Actualización de Student Outcome y de la tabla de contenidos <br>
+        - Actualización de Conclusiones y Recomendaciones con los resultados del Sprint 2 <br>
+        - Actualización de Student Outcome, Project Report Collaboration Insights y tabla de contenidos <br>
+        - Correcciones de TB1: User Flow Diagrams (5.4.4) con más caminos alternativos y tres flujos del residente, referencia al tablero del Sprint 1, historia US48 en el Sprint Backlog 1, índice, encabezados duplicados, ortografía y redacción <br>
         - Anexos: enlaces de los repositorios IoT y anexo Videos de Exposiciones <br>
         - Corrección del enlace de despliegue de la Web Application en 6.2.1.8
       </td>
@@ -129,7 +137,7 @@ TB1 (10/10/2026):
   <img src="assets/img/in2.png" alt="logo" />
 </p>
 
-AV2 (**[POR COMPLETAR: fecha]**):
+AV2 (13/11/2026):
 <br>
 <p align="center">
   <b>[POR COMPLETAR: captura de los Insights del repositorio para AV2]</b>
@@ -304,12 +312,12 @@ AV2 (**[POR COMPLETAR: fecha]**):
   - [5.4. Applications UX/UI Design](#54-applications-uxui-design)
     - [5.4.1. Applications Wireframes](#541-applications-wireframes)
     - [5.4.1.1 Web Application Wireframes](#5411-web-application-wireframes)
-    - [5.4.1.2 Mobile Application Wireframes](#5412-mobile-applications-wireframes)  
+    - [5.4.1.2 Mobile Application Wireframes](#5412-mobile-application-wireframes)  
     - [5.4.2. Applications Wireflow Diagrams](#542-applications-wireflow-diagrams)
-    - [5.4.3. Applications Mock-ups](#5421-applications-mock-ups)
-    - [5.4.3.1 Web Application Mock-ups](#5411-web-application-mock-ups)
-    - [5.4.3.2 Mobile Application Mock-ups](#5412-mobile-applications-mock-ups) 
-    - [5.4.4. Applications User Flow Diagrams](#543-applications-user-flow-diagrams)
+    - [5.4.3. Applications Mock-ups](#543-applications-mock-ups)
+    - [5.4.3.1 Web Application Mock-ups](#5431-web-application-mock-ups)
+    - [5.4.3.2 Mobile Application Mock-ups](#5432-mobile-application-mock-ups) 
+    - [5.4.4. Applications User Flow Diagrams](#544-applications-user-flow-diagrams)
   - [5.5. Application Prototyping](#55-applications-prototyping)
   - [5.6. IoT Device Design](#56-iot-device-design)
 - [CAPÍTULO VI: Product Implementation, Validation & Deployment](#capítulo-vi-product-implementation-validation--deployment)
@@ -375,6 +383,8 @@ AV1: Desarrollé liderazgo compartido al coordinar colaborativamente la sección
 
 TB1: Coordiné la documentación de las secciones de diseño y entorno de desarrollo del informe. Completé la Information Architecture (5.2) con los mock-ups de login, registro, muro comunitario, áreas comunes, formulario de reserva, finanzas y unidades/residentes, y documenté el diseño de los dispositivos IoT (5.6). En el Capítulo VI documenté las herramientas y entornos de desarrollo (Trello, Discord, Figma, GitHub con GitFlow, Conventional Commits y Semantic Versioning, IntelliJ IDEA, VS Code, Angular, Spring Boot, Postman, Swagger, GitHub Pages y Render), las herramientas y el despliegue con Docker Compose del Edge Gateway, la matriz de líderes y colaboradores (LACX) y la evidencia de desarrollo, testing y ejecución del Sprint Review (6.2.1.4, 6.2.1.5 y 6.2.1.6).<br><br>
 
+AV2: Lideré las pruebas de punta a punta del Sprint 2. Armé el stack completo con Docker Compose (RabbitMQ, Mosquitto, TimescaleDB, WireMock, los microservicios IoT, el ApiGateway y el Edge Gateway) y los fixtures del suite (generador de JWT, cliente REST, nodo MQTT virtual y espía AMQP), y coordiné con el equipo los 7 escenarios de negocio que confirman el Sprint Goal. También apoyé la integración real del Edge Gateway con RabbitMQ y Mosquitto y la prueba de latencia del cierre de IoT Access Management.<br><br>
+
 
 Landa Ortiz, Sergio Javier<br><br>
 
@@ -382,11 +392,15 @@ AV1: <br>Desarrollé el Capítulo I del informe, incluyendo la definición del S
 
 TB1: Asumí el diseño de la Landing Page de la solución. Elaboré los wireframes y los mock-ups de sus secciones (primera vista, funciones, para quién, planes, equipo y solicitud de demo), que sirvieron como base visual común para el desarrollo de la Landing Page del Sprint 1 y mantienen coherencia con la propuesta de valor definida en el Capítulo I.<br>
 
+AV2: Lideré el firmware del nodo ESP32. Organicé su repositorio con GitFlow y un arnés de tests ejecutable en el host, conecté <code>EdifikaNode</code> al contrato v1 (heartbeats, lecturas de temperatura y humedad, acuses de comandos y reconexión), implementé la máquina de estados <code>DoorPresentation</code> y publiqué los releases v0.3.0 a v0.5.0. Además, coordiné con el frente del Edge Gateway el dialecto del firmware, la interpretación de los 9 comandos MQTT y la reconciliación del modo de puerta.<br>
+
 Lizarbe Alvarez, Ariana Nickole<br><br>
 
 AV1: Participé activamente en las entrevistas realizadas a los usuarios para recopilar información sobre sus necesidades, comportamientos y problemas. Además, elaboré los User Stories, el Product Backlog y el Impact Mapping, contribuyendo a organizar los requerimientos, priorizar funcionalidades y relacionar las necesidades identificadas con los objetivos del producto. Estas actividades permitieron aportar al trabajo colaborativo y facilitar la toma de decisiones del equipo durante la definición de la solución. <br><br>
 
 TB1: Revisé y reestructuré el diseño de las entrevistas (2.2.1). Redacté un guion semiestructurado para cada segmento objetivo (administradores de edificios y condominios, y propietarios e inquilinos) con preguntas abiertas que cubren la gestión administrativa y financiera, las reservas, la comunicación y los temas IoT (control de accesos, iluminación y riego automático), de modo que las entrevistas aportaran información útil para validar los requisitos del producto.<br><br>
+
+AV2: Lideré el microservicio IoT Telemetry. Definí su estructura en Spring Boot, el modelo de datos con una hypertable de TimescaleDB, los consumidores idempotentes de lecturas y alertas, la detección de temperaturas fuera de rango y la API REST de telemetría con series agregadas, y cerré el hito con sus métricas, su documentación y el release 0.1.0. También apoyé al Edge Gateway en la detección de fallas de los nodos.<br><br>
 
 Ortiz Cardenas, Johanna Antuanete<br><br>
 
@@ -394,22 +408,30 @@ AV1: Participé en el Design-Level EventStorming de la extensión IoT, identific
 
 TB1: Avancé en el desarrollo de los microservicios IAM, Residential Management y Payment, implementando sus funcionalidades principales e integrando Payment con la pasarela Culqi en ambiente de pruebas. Además, realicé correcciones en el informe para mantener la consistencia entre las historias de usuario, los bounded contexts y la arquitectura de la solución.<br><br>
 
+AV2: Participé como colaboradora en todos los aspectos del Sprint 2, apoyando a cada líder donde hacía falta. Levanté la infraestructura local con Docker Compose (RabbitMQ, Mosquitto y TimescaleDB), cableé los eventos y la sincronización del Edge Gateway, construí el simulador del nodo de puerta, el consumidor de eventos del edge y las vistas del residente y de auditoría de IoT Access Management, y participaré en la prueba de aceptación con la placa física.<br><br>
+
 Perez Tuesta, Gabriel<br><br>
 
 AV1: Asumí el desarrollo de los principales artefactos de investigación y análisis centrados en el usuario. Diseñé las entrevistas para la validación del segmento objetivo, elaboré el User Persona, el Customer Journey Map, el Análisis Competitivo y la User Task Matrix, contribuyendo a comprender las necesidades de los usuarios, identificar oportunidades de mejora y establecer una base sólida para la definición de requerimientos y funcionalidades del producto.<br><br>
 
 TB1: Asumí el desarrollo principal del Capítulo V (Solution UI/UX Design). Definí las Style Guidelines generales y para Web, Mobile e IoT, y la Information Architecture (sistemas de organización, etiquetado, SEO, búsqueda y navegación). Elaboré los wireframes y mock-ups de las aplicaciones web y móvil (inicio, login, anuncios, comunidad, reservas, pagos, deudas, notificaciones, perfil, documentación, dashboard y módulos IoT como control de accesos, iluminación y riego automático), los wireflows, los User Flow Diagrams y el prototipo de la aplicación con su video explicativo.<br><br>
 
+AV2: Preparé y dirigí el Sprint Planning 2 y lideré las rutas IoT y la documentación de la API. Configuré en el ApiGateway las rutas <code>/api/v1/iot/**</code>, <code>/api/v1/access/**</code> y de telemetría, preparé la colección Postman con su entorno local para la aplicación móvil y documenté los 35 endpoints IoT en la sección 6.2.2.7. También colaboré en la definición de los contratos v1 como JSON Schema.<br><br>
+
 Sarmiento Medina, Loreley<br><br>
 
-AV1:Participé en el Design-Level EventStorming, en la identificación de los Bounded Contexts y en la definición de sus capas Domain, Application, Interface e Infrastructure. Además, apoyé en la elaboración de User Stories y en correcciones generales del informe.<br><br>
+AV1: Participé en el Design-Level EventStorming, en la identificación de los Bounded Contexts y en la definición de sus capas Domain, Application, Interface e Infrastructure. Además, apoyé en la elaboración de User Stories y en correcciones generales del informe.<br><br>
 
-TB1: Amplié el diseño táctico del Capítulo IV con el Bounded Context Smart Irrigation (4.2.12), documentando los aggregates IrrigationZone e IrrigationRun, los value objects, enumeraciones, domain services, command handler, event handlers y repositorios. Actualicé el diagrama entidad-relación (ERD) y las referencias, corregí la sección de Interface Layer y actualicé el Capítulo I (antecedentes y problemática, Lean UX Problem Statements, Assumptions y Hypothesis Statements, Lean UX Canvas, segmentos objetivo y análisis de competidores).
+TB1: Amplié el diseño táctico del Capítulo IV con el Bounded Context Smart Irrigation (4.2.12), documentando los aggregates IrrigationZone e IrrigationRun, los value objects, enumeraciones, domain services, command handler, event handlers y repositorios. Actualicé el diagrama entidad-relación (ERD) y las referencias, corregí la sección de Interface Layer y actualicé el Capítulo I (antecedentes y problemática, Lean UX Problem Statements, Assumptions y Hypothesis Statements, Lean UX Canvas, segmentos objetivo y análisis de competidores).<br><br>
+
+AV2: Lideré el microservicio IoT Access Management. Desarrollé con el equipo su estructura en Spring Boot, el registro de Edge Gateways y dispositivos, las credenciales RFID con envío al edge, la suspensión automática por morosidad consultando Residential Management y Payment, las reservas de puerta con invitados, la decisión por rol de puerta y los comandos al LED RGB del nodo. También apoyé al Edge Gateway en la sincronización de los nodos y las reservas desde la nube.
 </td>
 <td>
 AV1: Durante esta entrega, el equipo desarrolló actividades de investigación y análisis orientadas a comprender el problema, identificar las necesidades de los usuarios y evaluar el contexto competitivo del producto. La elaboración del análisis competitivo, el diseño y ejecución de entrevistas, los User Personas, la User Task Matrix y el User Journey Map permitió obtener información relevante sobre los usuarios objetivo, sus necesidades, comportamientos y desafíos. Como resultado, se estableció una base sólida para la definición de requerimientos y la toma de decisiones en las siguientes etapas del proyecto, asegurando que la propuesta de solución estuviera alineada con las necesidades identificadas. Además, en el Capítulo IV el equipo pasó de la investigación al diseño de la solución: la arquitectura y los Bounded Contexts estratégicos quedaron definidos y sirvieron de base para el diseño táctico de cada contexto.<br><br>
 
 TB1: Durante esta entrega, el equipo trabajó de forma conjunta en el diseño UX/UI de la solución y en el primer sprint de desarrollo. Se definieron las guías de estilo, la arquitectura de información, los wireframes, mock-ups y prototipos de la landing page y de las aplicaciones web y móvil, así como el diseño de los dispositivos IoT. En paralelo, se avanzó en la implementación de los microservicios del Sprint 1, distribuyendo las responsabilidades entre los integrantes. Este trabajo compartido permitió llevar el diseño de la solución a una primera versión funcional del producto.<br><br>
+
+AV2: En esta entrega, el liderazgo se distribuyó por aspectos técnicos: cada uno de los siete aspectos del Sprint 2 tuvo un líder responsable y los demás integrantes participaron como colaboradores. Un documento único de contratos v1 permitió que el Edge Gateway, los microservicios IoT, el ApiGateway y el firmware avanzaran en paralelo sin bloquearse, y el resultado conjunto se validó con 7 escenarios de punta a punta a través del ApiGateway.<br><br>
 </td>
 </tr>
 <tr>
@@ -423,11 +445,14 @@ AV2: Planifiqué el Sprint 2 del frente IoT como siete hitos (H0 a H6), cada uno
 Collantes Carrillo, Diego Mateo<br><br>
 AV1: Fomenté un entorno colaborativo e inclusivo al coordinar la planificación y ejecución estratégica del dominio del proyecto (Strategic-Level Domain-Driven Design). Establecí metas claras facilitando el Design-Level EventStorming (Candidate Context Discovery, Domain Message Flows Modeling y Bounded Context Canvases) y organicé el trabajo en equipo para definir el Context Mapping, cumpliendo exitosamente con los objetivos planteados. <br><br>
 TB1: Establecí como meta que el equipo contara con un entorno de desarrollo, despliegue y seguimiento documentado y reproducible. Para ello definí el flujo de trabajo con GitFlow (ramas main, develop, feature, release y hotfix), las convenciones de commits y versionado, y los pasos de despliegue del Edge Gateway con Docker Compose, y registré en la matriz LACX las responsabilidades de cada integrante, incluidos quienes no tenían tareas propias. Además, consolidé en el Sprint Review las evidencias de commits de los repositorios de Landing Page, Web Application y Edge Gateway, cumpliendo con los objetivos de documentación del Sprint.<br><br>
+AV2: Me propuse que el Sprint Goal se pudiera confirmar con una prueba objetiva. Por ello planifiqué el suite de punta a punta en tres pasos (fixtures, stack y escenarios), redacté los escenarios en Gherkin antes de automatizarlos y fijé como criterio de cierre que los 7 pasaran en verde a través del ApiGateway y que un evento de acceso llegara a la nube en 6 segundos o menos, meta que se cumplió con ~0.5 s.<br><br>
 
 Landa Ortiz, Sergio Javier<br><br>
 AV1: <br>Planifiqué y desarrollé el Capítulo I del proyecto, organizando la información relacionada con la startup, la problemática, el proceso Lean UX y los segmentos objetivo. Establecí una estructura clara para documentar el contexto y la propuesta inicial del producto, permitiendo que el equipo trabajara sobre una base común y alineada. Gracias a ello, se cumplieron los objetivos de la etapa inicial del proyecto y se facilitó el desarrollo de las actividades posteriores de investigación, validación y diseño de la solución.<br>
 
 TB1: Planifiqué el diseño de la Landing Page en dos etapas, primero los wireframes de cada sección y luego los mock-ups con el diseño visual final, con el fin de validar la estructura antes de definir el aspecto. Cumplí la meta de entregar ambos artefactos dentro del Sprint, lo que permitió que el equipo contara con un diseño aprobado para la implementación de la Landing Page.<br>
+
+AV2: Planifiqué el firmware en releases pequeños (v0.3.0 a v0.5.0), cada uno con sus tests en el host antes de compilar para la placa, para que el equipo pudiera probar el contrato v1 sin depender del hardware. Cumplí la meta de dejar el firmware compilado (Flash 77 %, RAM 15 %) con 28 tests en verde, y dejé planificada la prueba de aceptación con la placa física para cuando se cuente con el hardware.<br>
 
 Lizarbe Alvarez, Ariana Nickole<br><br>
 
@@ -435,11 +460,15 @@ AV1: Participé en la planificación y desarrollo de las actividades de investig
 
 TB1: Planifiqué la revisión del instrumento de entrevistas de la sección 2.2 para el Sprint, diferenciando los guiones por segmento objetivo y corrigiendo la redacción de las preguntas para que fueran claras y no condicionaran las respuestas. Entregué la revisión mediante una rama propia (feature/cap-2) integrada al repositorio por pull request, cumpliendo con la meta de dejar el Capítulo II consistente con el alcance IoT del proyecto.<br><br>
 
+AV2: Establecí como meta que la telemetría pudiera consultarse sin afectar a los demás servicios, por lo que separé las lecturas en una hypertable de TimescaleDB y planifiqué el hito en cinco tasks secuenciales, desde la estructura del servicio hasta el release. Cumplí el objetivo: 100 lecturas se ingieren en 1.2 s sin duplicados y la API de telemetría queda documentada para el dashboard de la Web Application.<br><br>
+
 Ortiz Cardenas, Johanna Antuanete<br><br>
 
 AV1: Planifiqué las sesiones de Design-Level EventStorming para la extensión IoT, definiendo el alcance de eventos a modelar por cada Bounded Context. Cumplí con la meta de dejar documentado y homogéneo todo el Capítulo IV, redactando cada Bounded Context bajo el mismo formato y corrigiendo la numeración de secciones para mantener la trazabilidad del informe.<br><br>
 
-TB1: Avancé en el desarrollo de los microservicios IAM, Residential Management y Payment, implementando sus funcionalidades principales e integrando Payment con la pasarela Culqi en ambiente de pruebas. Además, realicé correcciones en el informe para mantener la consistencia entre las historias de usuario, los bounded contexts y la arquitectura de la solución.
+TB1: Me propuse que los microservicios IAM, Residential Management y Payment tuvieran sus funcionalidades principales operativas al cierre del Sprint 1, por lo que organicé su desarrollo servicio por servicio y dejé la integración con la pasarela Culqi, en ambiente de pruebas, como último paso. Cumplí esa meta y, al revisar el informe, corregí las inconsistencias entre las historias de usuario, los bounded contexts y la arquitectura para que el equipo trabajara sobre una base común.<br><br>
+
+AV2: Como colaboradora de todos los aspectos, me encargué de cubrir tasks de distintos hitos para que ningún líder quedara bloqueado y de mantener actualizado el estado de las tasks en el tablero del Sprint. Cumplí las tasks asignadas dentro del Sprint y mantuve la coordinación entre los frentes del Edge Gateway, IoT Access Management y el firmware.
 <br><br>
 
 Perez Tuesta, Gabriel
@@ -448,15 +477,19 @@ AV1: Planifiqué y desarrollé las actividades relacionadas con la investigació
 
 TB1: Planifiqué el Capítulo V como una estructura completa desde el inicio del Sprint (guías de estilo, arquitectura de información, interfaces de la landing y de las aplicaciones, prototipado y diseño IoT), lo que permitió que el equipo distribuyera y completara cada sección en paralelo. Cumplí los objetivos de diseño al entregar los wireframes, mock-ups, wireflows, User Flows y el prototipo con su video explicativo.<br><br>
 
+AV2: Preparé el Sprint Planning 2 a partir de la Review y la Retrospective del Sprint 1, definí con el equipo el Sprint Goal, la velocity y la distribución de aspectos, y organicé el tablero del Sprint en Trello con las 42 tasks. Me propuse que los desarrolladores web y móvil contaran con una API documentada sin depender del backend, y lo cumplí con la colección Postman, que cubre el 100 % de los endpoints del contrato, y con las rutas IoT del ApiGateway.<br><br>
+
 Sarmiento Medina, Loreley
 <br><br>
-AV1:Colaboré en la organización y revisión de los Bounded Contexts, User Stories y artefactos del proyecto, realizando correcciones generales para mantener la consistencia del informe y contribuir al cumplimiento de los objetivos de la entrega.
+AV1: Colaboré en la organización y revisión de los Bounded Contexts, User Stories y artefactos del proyecto, realizando correcciones generales para mantener la consistencia del informe y contribuir al cumplimiento de los objetivos de la entrega.
 <br><br>
-TB1: Me propuse que el modelo del sistema incluyera también el riego automático y que la investigación inicial reflejara los hallazgos de las entrevistas. Para ello incorporé el Bounded Context Smart Irrigation con todas sus capas, actualicé el ERD y las referencias, y revisé el Capítulo I (Lean UX, Lean UX Canvas, segmentos objetivo y competidores), cumpliendo con los objetivos del Sprint y manteniendo la coherencia entre el Capítulo I y el diseño de la solución.
+TB1: Me propuse que el modelo del sistema incluyera también el riego automático y que la investigación inicial reflejara los hallazgos de las entrevistas. Para ello incorporé el Bounded Context Smart Irrigation con todas sus capas, actualicé el ERD y las referencias, y revisé el Capítulo I (Lean UX, Lean UX Canvas, segmentos objetivo y competidores), cumpliendo con los objetivos del Sprint y manteniendo la coherencia entre el Capítulo I y el diseño de la solución.<br><br>
+AV2: Planifiqué el hito de IoT Access Management en tasks pequeñas y ordenadas por dependencia (estructura del servicio, gateways y dispositivos, credenciales, morosidad, reservas y comandos), de modo que cada una se pudiera revisar por separado. Cumplí el objetivo de cerrar la contraparte en la nube de las historias de credenciales, morosidad y reservas que quedaron en Parcial (edge) en el Sprint 1, con un p95 de ~85 ms en el alta de credenciales.
 </td>
 <td>
 AV1: Durante esta entrega, el equipo organizó y ejecutó las actividades correspondientes a la fase de investigación y análisis del proyecto. La planificación de entrevistas, el análisis del mercado y la construcción de artefactos centrados en el usuario permitieron recopilar información relevante y estructurar el conocimiento obtenido. Gracias a ello, se cumplieron los objetivos planteados para la etapa de descubrimiento, generando insumos que sirvieron como base para la definición de requerimientos y el diseño de la solución propuesta. Además, trabajar sobre un único repositorio del informe, con un pipeline automatizado para generar el PDF y un registro de versiones, permitió que los integrantes avanzaran en paralelo y que cada aporte quedara trazable en los commits.<br><br>
 TB1: El equipo estableció como metas de esta entrega completar el diseño UX/UI y avanzar el Sprint 1. Para ello, se planificaron y distribuyeron las tareas de diseño de interfaces e implementación de microservicios, y se realizaron correcciones en el informe para mantener la consistencia entre los requisitos, la arquitectura y el diseño. Como resultado, se cumplieron los objetivos planteados, obteniendo un diseño de interfaces validado y los primeros microservicios implementados como base para los siguientes sprints.<br><br>
+AV2: El equipo fijó un Sprint Goal medible y lo descompuso en 12 historias (65 story points) y 42 tasks, seguidas en el tablero del Sprint. Cada hito tuvo una métrica de cierre, lo que permitió verificar el avance de forma objetiva y repartir el trabajo sin bloqueos. Se cumplió el objetivo de conectar los dispositivos del edificio con la plataforma en la nube; queda pendiente solo la prueba de aceptación con la placa física.<br><br>
 </td>
 </tr>
 </tbody>
@@ -482,14 +515,14 @@ Asimismo, Condomia busca impulsar la evolución hacia comunidades residenciales 
 | ![team member profile photo](assets/img/profiles/jonatan_acuna.jpeg) **Acuña Corahua, Jonatan Ariel (u20211b995)** | Soy estudiante del 8vo ciclo de la carrera de Ingeniería de Software en la UPC. Me gustó la carrera tras aprender desarrollo web y desde entonces, sigo aprendiendo para mejorar mis habilidades cada vez más, actualmente me enfoco en aprender tecnologías relacionadas a DevSecOps. En mi tiempo libre juego videojuegos y de vez en cuando salir en bicicleta|
 | ![team member profile photo](assets/img/profiles/diego_collantes.png) **Collantes Carrillo, Diego Mateo (u202311823)** | Mi nombre es Diego Collantes. Tengo 21 años. Soy estudiante de octavo ciclo en la Universidad Peruana de Ciencias Aplicadas (UPC). Disfruto de leer, redactar y escuchar música en mi tiempo libre. Elegí esta carrera, ya que me interesó todo el proceso que hay detrás de cada aplicación o programa que usamos en nuestro día a día. Personalmente, espero ampliar mis conocimientos en este ámbito a lo largo de este curso. Además, estoy comprometido a contribuir en todo lo que sea posible con el equipo y a desempeñarme de manera adecuada. |
 | ![team member profile photo](assets/img/profiles/antuanete_ortiz.png) **Ortiz Cardenas, Johanna Antuanete (u202310358)** | Mi nombre es Johanna Antuanete Ortiz Cardenas, tengo 20 años y actualmente curso el octavo ciclo de la carrera de Ingeniería de Software en la Universidad Peruana de Ciencias Aplicadas. Me considero una persona proactiva, responsable y orientada a la calidad, con especial interés en el desarrollo frontend, área en la que disfruto crear interfaces intuitivas y visualmente atractivas. Me apasiona mantenerme actualizada sobre las últimas tendencias y avances tecnológicos, lo que me permite aportar soluciones modernas y fundamentadas a cada proyecto. En mi tiempo libre, disfruto escuchar música y leer cómics, actividades que nutren mi creatividad y perspectiva. En el marco de este proyecto grupal, me comprometo a colaborar de manera activa y responsable, aportando ideas de valor y cumpliendo con los entregables en los plazos establecidos, con el objetivo de alcanzar resultados de alta calidad. |
-| ![team member profile photo](assets/img//Sergio-Landa.jpeg) **Landa Ortiz, Sergio Javier (u202311086)** |Soy Sergio Landa Ortiz, tengo 20 años. Soy estudiante de la UPC de la carrera de Ingeniería de Software y me encuentro cursando el séptimo ciclo. Me considero una persona responsable y activa, siempre con la actitud de ofrecer ayuda al equipo, cuento con experiencia trabajando como desarrollador frontend. Asimismo, en cuanto a habilidades extracurriculares, soy bailarin y profesor de marinera norteña, me apasionan los deportes y estar actualizado con las nuevas tecnologias que se actualizan dia a dia en el mundo. || ![team member profile photo](assets/img/profiles/antuanete_ortiz.png) **Ortiz Cardenas, Johanna Antuanete (u202310358)** | Mi nombre es Johanna Antuanete Ortiz Cardenas, tengo 20 años y actualmente curso el octavo ciclo de la carrera de Ingeniería de Software en la Universidad Peruana de Ciencias Aplicadas. Me considero una persona proactiva, responsable y orientada a la calidad, con especial interés en el desarrollo frontend, área en la que disfruto crear interfaces intuitivas y visualmente atractivas. Me apasiona mantenerme actualizada sobre las últimas tendencias y avances tecnológicos, lo que me permite aportar soluciones modernas y fundamentadas a cada proyecto. En mi tiempo libre, disfruto escuchar música y leer cómics, actividades que nutren mi creatividad y perspectiva. En el marco de este proyecto grupal, me comprometo a colaborar de manera activa y responsable, aportando ideas de valor y cumpliendo con los entregables en los plazos establecidos, con el objetivo de alcanzar resultados de alta calidad. |
+| ![team member profile photo](assets/img//Sergio-Landa.jpeg) **Landa Ortiz, Sergio Javier (u202311086)** |Soy Sergio Landa Ortiz, tengo 20 años. Soy estudiante de la UPC de la carrera de Ingeniería de Software y me encuentro cursando el séptimo ciclo. Me considero una persona responsable y activa, siempre con la actitud de ofrecer ayuda al equipo, cuento con experiencia trabajando como desarrollador frontend. Asimismo, en cuanto a habilidades extracurriculares, soy bailarín y profesor de marinera norteña, me apasionan los deportes y estar actualizado con las nuevas tecnologías que se actualizan día a día en el mundo. || ![team member profile photo](assets/img/profiles/antuanete_ortiz.png) **Ortiz Cardenas, Johanna Antuanete (u202310358)** | Mi nombre es Johanna Antuanete Ortiz Cardenas, tengo 20 años y actualmente curso el octavo ciclo de la carrera de Ingeniería de Software en la Universidad Peruana de Ciencias Aplicadas. Me considero una persona proactiva, responsable y orientada a la calidad, con especial interés en el desarrollo frontend, área en la que disfruto crear interfaces intuitivas y visualmente atractivas. Me apasiona mantenerme actualizada sobre las últimas tendencias y avances tecnológicos, lo que me permite aportar soluciones modernas y fundamentadas a cada proyecto. En mi tiempo libre, disfruto escuchar música y leer cómics, actividades que nutren mi creatividad y perspectiva. En el marco de este proyecto grupal, me comprometo a colaborar de manera activa y responsable, aportando ideas de valor y cumpliendo con los entregables en los plazos establecidos, con el objetivo de alcanzar resultados de alta calidad. |
 | ![team member profile photo](assets/img/profiles/gabriel.png) **Perez Tuesta, Gabriel (u202321281)** | Soy Gabriel Perez Tuesta, tengo 23 años. Soy estudiante de la UPC de la carrera de Ingeniería de Software y me encuentro cursando el séptimo ciclo. Cuento con habilidades de programación en C++ y Python, así como aptitudes para el desarrollo en UX y UI. Asimismo, en cuanto a habilidades extracurriculares, he contribuido en proyectos con edición de video y fomentando una actitud colaborativa en el equipo. |
 | ![team member profile photo](assets/img/profiles/ariana_lizarbe.jpg) **Lizarbe Alvarez, Ariana Nickole (u202311704)** | Mi nombre es Ariana Lizarbe, tengo 21 años y me encuentro cursando el octavo ciclo de Ingeniería de Software en la UPC. Me considero una persona responsable y aplicada, siempre estoy dispuesta a aprender nuevos conceptos y tecnologías. Además de ello, trabajo muy bien en equipo, logrando dividir y delegar tareas a mis compañeros de manera eficiente. |
 | ![team member profile photo](assets/img/profiles/loreley_sarmiento.jpg) **Sarmiento Medina, Loreley (u202310005)** | Mi nombre es Loreley Sarmiento, tengo 20 años y actualmente curso la carrera de Ingeniería de Software. Me considero una persona responsable, organizada y con buena disposición para el trabajo en equipo, ya que valoro la comunicación y la colaboración como elementos clave para lograr buenos resultados. Me interesa seguir aprendiendo constantemente y asumir nuevos retos que me permitan fortalecer mis habilidades.En este proyecto, busco participar de manera activa, apoyar a mis compañeros, aportar ideas que contribuyan al desarrollo del equipo y cumplir con las tareas asignadas dentro de los plazos establecidos, con el objetivo de alcanzar un resultado de calidad. |
 
 ## 1.2. Solution Profile
 
-Edifika es una plataforma tecnológica orientada a centralizar y simplificar la gestión de condominios y edificios residenciales, ofreciendo a administradores y residentes un entorno digital accesible e intuitivo para organizar sus actividades cotidianas.La plataforma contempla funcionalidades para la gestión y seguimiento de pagos y deudas, la reserva de áreas comunes, la publicación de comunicados oficiales y la consulta de información administrativa. De esta manera, busca reducir la dependencia de procesos manuales y herramientas dispersas, facilitando la comunicación, la transparencia y la coordinación entre los miembros de la comunidad residencial.
+Edifika es una plataforma tecnológica orientada a centralizar y simplificar la gestión de condominios y edificios residenciales, ofreciendo a administradores y residentes un entorno digital accesible e intuitivo para organizar sus actividades cotidianas. La plataforma contempla funcionalidades para la gestión y seguimiento de pagos y deudas, la reserva de áreas comunes, la publicación de comunicados oficiales y la consulta de información administrativa. De esta manera, busca reducir la dependencia de procesos manuales y herramientas dispersas, facilitando la comunicación, la transparencia y la coordinación entre los miembros de la comunidad residencial.
 
 Como propuesta de innovación, Edifika incorpora tecnologías de Internet de las Cosas (IoT) para conectar determinados procesos digitales con operaciones físicas del edificio. Esta integración contempla el control inteligente de acceso a áreas comunes, la automatización de iluminación y la recopilación de información de dispositivos conectados para su monitoreo. Mediante una arquitectura que combina dispositivos IoT, Edge Computing y Cloud Computing, se busca facilitar la supervisión de espacios compartidos y mejorar la coordinación de las operaciones residenciales. La propuesta de valor de Edifika consiste en integrar la administración digital y la automatización inteligente dentro de un mismo ecosistema tecnológico, proporcionando herramientas que contribuyan a una gestión residencial más organizada, transparente y eficiente.
 
@@ -623,7 +656,7 @@ La validación de estas hipótesis permitirá identificar qué funcionalidades a
 
 ![Lean Ux Canvas](assets/img/lean_ux_canvas1.png)
 
- *Figura. Lean Ux Canvas. Elaborado por el equipo utilizando Figma (Figma, s.f.).*
+ *Figura. Lean UX Canvas. Elaborado por el equipo utilizando Figma (Figma, s.f.).*
 
 ## 1.3. Segmentos objetivo
 
@@ -951,7 +984,7 @@ En esta sección se presenta el resultado de la sesión de Big Picture EventStor
 
 *Figura. Big Picture EventStorming de Edifika. Elaborado por el equipo utilizando Miro (Miro, s.f.).*
 
-## 2.5 Ubiquitous Language
+## 2.5. Ubiquitous Language
 
 El Ubiquitous Language define un lenguaje común entre el equipo y los actores del negocio, de modo que los mismos términos se usen en las conversaciones, la documentación y el código. En este proyecto integra conceptos de administración de condominios y de automatización mediante IoT.
 
@@ -3201,11 +3234,11 @@ Finalmente, los eventos, comandos y políticas se agruparon en bounded contexts 
 
 ![Bounded Context Smart Building](assets/img/bc-smart-building.png)
 
-En la etapa de arquitectura, Smart Building se refina en cuatro bounded contexts: IoT Access Management, Smart Lighting & Automation, Smart Irrigation e IoT Telemetry & Analytics porque cada capacidad tiene reglas, lenguaje y perfil de carga distintos.
+En la etapa de arquitectura, Smart Building se refina en cuatro bounded contexts: IoT Access Management, Smart Lighting & Automation, Smart Irrigation e IoT Telemetry & Analytics, porque cada capacidad tiene reglas, lenguaje y perfil de carga distintos.
 
 #### 4.1.1.2. Domain Message Flows Modeling
 
-En esta sección se presenta el Domain Message Flows Modeling, técnica que modela cómo los bounded contexts colaboran entre sí para resolver un escenario del negocio, mostrando los mensajes que intercambian. Se apoya en la notación de Domain Storytelling: los actores y bounded contexts se conectan mediante mensajes numerados que indican el orden del flujo. Cada mensaje se clasifica según su tipo: los commands solicitan una acción que cambia el estado de un contexto, los events  informan algo que ya ocurrió y pueden ser consumidos por otros contextos, y las queries  solo leen información sin modificarla. Estos flujos permiten validar las relaciones definidas en el Context Mapping y confirmar qué integraciones son síncronas y cuáles se resuelven por eventos.
+En esta sección se presenta el Domain Message Flows Modeling, técnica que modela cómo los bounded contexts colaboran entre sí para resolver un escenario del negocio, mostrando los mensajes que intercambian. Se apoya en la notación de Domain Storytelling: los actores y bounded contexts se conectan mediante mensajes numerados que indican el orden del flujo. Cada mensaje se clasifica según su tipo: los commands solicitan una acción que cambia el estado de un contexto, los events informan algo que ya ocurrió y pueden ser consumidos por otros contextos, y las queries solo leen información sin modificarla. Estos flujos permiten validar las relaciones definidas en el Context Mapping y confirmar qué integraciones son síncronas y cuáles se resuelven por eventos.
 
 **Autenticación de administrador** (Command: `RegisterAdministrator` / `SignIn` → Event: `SessionStarted`)
 
@@ -3791,7 +3824,7 @@ El cloud concentra las reglas de negocio y la persistencia de largo plazo, el ed
 
 #### 4.1.3.4. Software Architecture Deployment Diagrams
 
-El Deployment Diagram muestra en qué infraestructura se ejecuta cada container. La solución se despliega en seis grupos de infraestructura: los dispositivos de cada segmento de usuario, el PaaS del backend, el proveedor gestionado de bases de datos transaccionales, el proveedor de series temporales, el broker gestionado y la diferencia central respecto de una solución puramente web, el sitio físico del condominio, donde viven el Edge Server y los dispositivos embebidos.
+El Deployment Diagram muestra en qué infraestructura se ejecuta cada container. La solución se despliega en seis grupos de infraestructura: los dispositivos de cada segmento de usuario, el PaaS del backend, el proveedor gestionado de bases de datos transaccionales, el proveedor de series temporales, el broker gestionado y el sitio físico del condominio, donde viven el Edge Server y los dispositivos embebidos, que es la diferencia central respecto de una solución puramente web.
 
 ![Deployment Diagram](assets/img/deployment-diagram.png)
 
@@ -3817,7 +3850,7 @@ El Deployment Diagram muestra en qué infraestructura se ejecuta cada container.
 
 El **Condominium Site** se instala una vez por edificio y hace viable la resiliencia: si se cae el enlace a internet, el Edge Server sigue validando credenciales RFID contra su caché local y accionando cerraduras, luminarias y válvulas; cuando el enlace se restablece, reenvía al broker los registros de acceso y la telemetría acumulada.
 
-La infraestructura responde al perfil de carga de cada pieza: los servicios de Render son *stateless* y escalan horizontalmente sin coordinación; la persistencia transaccional se aísla por schema dentro de Supabase; la telemetría se separa en TimescaleDB porque su perfil —escritura de alta frecuencia y consulta por series temporales, no es compatible con el transaccional; el broker se contrata gestionado para no asumir la operación de su alta disponibilidad; y el sitio del condominio es la única infraestructura que el equipo instala y mantiene físicamente.
+La infraestructura responde al perfil de carga de cada pieza: los servicios de Render son *stateless* y escalan horizontalmente sin coordinación; la persistencia transaccional se aísla por schema dentro de Supabase; la telemetría se separa en TimescaleDB porque su perfil (escritura de alta frecuencia y consulta por series temporales) no es compatible con el transaccional; el broker se contrata gestionado para no asumir la operación de su alta disponibilidad; y el sitio del condominio es la única infraestructura que el equipo instala y mantiene físicamente.
 
 ## 4.2. Tactical-Level Domain-Driven Design
 
@@ -4614,10 +4647,10 @@ Implementación JPA sobre PostgreSQL en la Communication Database; **Cloudinary 
 
 ##### 4.2.6.6.2. Bounded Context Database Design Diagram
 
-La Communication Database está compuesta por las tablas **Annoucenement** y **Annoucenement_read**.
+La Communication Database está compuesta por las tablas **Announcement** y **Announcement_read**.
 
-- `Annoucenement (1) —— (N) Annoucenement_read`: un comunicado registra muchas lecturas.
-- Restricción **UNIQUE** (`id_announcement`, `id_user`) en Annoucenement_read para no duplicar lecturas.
+- `Announcement (1) —— (N) Announcement_read`: un comunicado registra muchas lecturas.
+- Restricción **UNIQUE** (`id_announcement`, `id_user`) en Announcement_read para no duplicar lecturas.
 - `id_building` e `id_user` son referencias lógicas a Residential Management e IAM.
 
 ![ERD consolidado](assets/img/Edifika_ERD_03.png)
@@ -5506,8 +5539,8 @@ Las decisiones no son arbitrarias; cada una se sustenta en principios de diseño
 
 - **Principio de consistencia y reconocimiento (Nielsen, 2020):** el usuario debe reconocer los controles y su comportamiento a partir de vistas anteriores. Esto exige un único color de marca para toda acción primaria y un único patrón de badges de estado, de modo que un botón morado siempre signifique lo mismo.
 - **Principio de jerarquía visual:** la pantalla debe comunicar qué es lo importante primero. Se resuelve con una escala tipográfica, con el uso del color solo para elementos de acción o estado, y con densidad de información controlada (tarjetas KPI superiores, tabla como bloque dominante).
-- **Ley de Hick-Hyman:** al cubrir información crítica (deuda vencida, comentarios denunciados, espacios deshabilitados) se reduce el tiempo de decisión. Por eso los estados críticos usan color rojo/verde y no solo texto, y los elementos que requieren acción inmediata se aíslan en bloques separados (tarjetas "Outstanding Balances", "Mod Queue").
-- **Principio de correspondencia (Einstellung):** la lectura de una interfaz es más rápida cuando su estructura sigue el orden de lectura. De aquí que la composición se base en un layout de 12 columnas con cabecera de página (título + subtítulo + acciones), contenido principal y panel lateral contextual.
+- **Ley de Hick-Hyman:** al destacar la información crítica (deuda vencida, comentarios denunciados, espacios deshabilitados) se reduce el tiempo de decisión. Por eso los estados críticos usan color rojo/verde y no solo texto, y los elementos que requieren acción inmediata se aíslan en bloques separados (tarjetas "Outstanding Balances", "Mod Queue").
+- **Patrón de lectura en F:** la lectura de una interfaz es más rápida cuando su estructura sigue el orden natural de lectura (de izquierda a derecha y de arriba abajo). De aquí que la composición se base en un layout de 12 columnas con cabecera de página (título + subtítulo + acciones), contenido principal y panel lateral contextual.
 - **Principio de espacio en blanco (Larkin, 2015):** el espacio en blanco agrupa elementos relacionados y reduce la carga cognitiva. Se materializa en el espaciado interno de tarjetas y en los márgenes generosos de los formularios.
 - **Principio de la buena forma (Norman, 1986):** los componentes de la interfaz deben parecer presionables: bordes redondeados consistentes, sombras discretas y estados de hover/focus visibles.
 - **Accesibilidad y diseño universal:** contraste mínimo 4.5:1 en texto y 3:1 en elementos gráficos, tamaño mínimo de 14 px para texto de formulario, y nunca dependencia única del color para transmitir estado (siempre se acompaña de etiqueta textual, por ejemplo "PAID", "LATE (12D)", "OCCUPIED").
@@ -5538,11 +5571,11 @@ El tono de comunicación se definió como **serio, semi-formal, respetuoso y ser
 Además de las dimensiones anteriores, se establecen las siguientes **reglas de redacción de la interfaz (microcopy)**:
 
 - **Voz del producto:** el sistema se expresa con voz activa en primera persona del plural implícita ("Elevating Residential Living", "Seamless building management for the modern homeowner and administrator"), transmitiendo que la plataforma trabaja para el usuario.
-- **Títulos y etiquetas:** los títulos de vista y de tarjeta se escriben en **Title Case** ("Finance & Reports", "Units & Residents", "Reservations Calendar", "Manage Areas"); los encabezados de columna, etiquetas de formulario y títulos de bloque lateral van en **MAYÚSCAS** ("TOTAL REVENUE", "UNIT / RESIDENT", "ACTIVE POLLS"); los párrafos de contenido, en oración ("Join us this Saturday for our annual summer celebration!").
+- **Títulos y etiquetas:** los títulos de vista y de tarjeta se escriben en **Title Case** ("Finance & Reports", "Units & Residents", "Reservations Calendar", "Manage Areas"); los encabezados de columna, etiquetas de formulario y títulos de bloque lateral van en **MAYÚSCULAS** ("TOTAL REVENUE", "UNIT / RESIDENT", "ACTIVE POLLS"); los párrafos de contenido, en oración ("Join us this Saturday for our annual summer celebration!").
 - **Botones:** se escribe la acción con verbo en infinitivo o imperativo corto ("Post", "Vote Now", "Send Notice", "Export CSV", "Add New Unit", "Save Changes"), nunca etiquetas vagas ("Aceptar", "OK"). El botón principal de cada pantalla lleva la acción de mayor frecuencia de uso, y las secundarias se degradan a variantes outline o ghost.
 - **Mensajes de error y vacíos:** se indica qué pasó y qué hacer a continuación, sin culpar al usuario. El caso de la tarjeta "Flagged Comment" del Mod Queue ilustra el patrón: se muestra la cita del conflicto y se ofrecen las acciones "Dismiss" y "Review" para que el administrador resuelva sin salir del contexto.
 - **Textos auxiliares:** los toggles y campos complejos se acompañan de una línea de ayuda que explica la consecuencia de la acción ("Toggle to set as Active or Under Maintenance"), evitando que el usuario descubra el comportamiento a posteriori.
-- **Consistencia de mayúsculas en estados:** los badges de estado se escriben en MAYÚSCAS para ser escaneables de un vistazo ("OCCUPIED", "PAID", "LATE (12D)", "VACANT", "CANCELED", "MAINTENANCE"); los títulos de sección, en Title Case.
+- **Consistencia de mayúsculas en estados:** los badges de estado se escriben en MAYÚSCULAS para ser escaneables de un vistazo ("OCCUPIED", "PAID", "LATE (12D)", "VACANT", "CANCELED", "MAINTENANCE"); los títulos de sección, en Title Case.
 - **Sin emojis en la interfaz:** los íconos pertenecen a un set vectorial consistente; los emojis se reservan para la comunicación externa (redes, correos).
 
 Esta directriz se complementa con las dimensiones concretas por plataforma (web, móvil e IoT) descritas en la sección 5.1.2.
@@ -5637,7 +5670,7 @@ El espaciado sigue una **escala base de 4 px (múltiplos: 4, 8, 12, 16, 20, 24, 
 
 La sección 5.1.1 definió los tokens del producto: una paleta, una escala tipográfica, una escala de espaciado y un registro de texto. Esos tokens **no se duplican por plataforma**. Lo que cambia de una superficie a otra es la densidad de información, el modelo de navegación y la forma física de la interacción, y eso es precisamente lo que hay que fijar aquí, porque de lo contrario cada frente (web, móvil, firmware) interpretaría los mismos tokens por su cuenta y el producto se leería como tres aplicaciones distintas.
 
-Edifika tiene tres clientes que consumen los mismos datos: la **Web Application** en navegador, la **Mobile Application** en Flutter/Dart para iOS y Android, y los **nodos ESP32** gobernados por el Edge API on-premise (sección 4.1.3). Un mismo hecho de dominio, como una reserva confirmada, una credencial suspendida o una lectura de 340 lux, debe verse y leerse igual en los tres. Por eso el trabajo no consistió en inventar una guía nueva para cada plataforma, sino en bajar de la pantalla a los centímetros.
+Edifika tiene tres clientes que consumen los mismos datos: la **Web Application** en navegador, la **Mobile Application** en Flutter/Dart para iOS y Android, y los **nodos ESP32** gobernados por el Edge API on-premise (sección 4.1.3). Un mismo hecho de dominio, como una reserva confirmada, una credencial suspendida o una lectura de 340 lux, debe verse y leerse igual en los tres. Por eso el trabajo no consistió en inventar una guía nueva para cada plataforma, sino en llevar los mismos tokens a las medidas concretas de cada superficie.
 
 Las siete pantallas de referencia se diseñaron primero para escritorio, porque el segmento administrador trabaja con tablas densas: 428 unidades, 45 saldos pendientes y reservas de cuatro áreas comunes. A partir de ellas se derivaron las reglas siguientes. Cada decisión se justifica con lo que esas pantallas ya hacen, y cuando una regla no se observa en ninguna de ellas, se declara como regla nueva y no como observación.
 
@@ -5672,35 +5705,35 @@ La Web Application es la superficie de trabajo del segmento administrador y la �
 
 **Composición del contenido.** El ritmo vertical es fijo: cabecera de página con título, bajada y acciones a la derecha; fila de tarjetas KPI; bloque principal. La cantidad de tarjetas KPI varía según la información disponible y la fila no se estira para llenar el ancho: Finance muestra tres porque tiene tres métricas, mientras Units & Residents muestra cuatro. La tarjeta en `Danger` (ARREARS) se sostiene sola por su tinte y su etiqueta roja, sin competir con la acción primaria.
 
-**De la tabla a la tarjeta.** Por debajo de 768 px, las tablas de Units & Residents y de Residents with Outstanding Balances se rehacen como tarjetas apiladas en lugar de comprimirse con desplazamiento horizontal. Cada tarjeta conserva el avatar de 40 px, el nombre de la persona, la unidad, la píldora de estado y las acciones, con los mismos rótulos en `MAYÚSCAS` que antes servían de encabezado de columna. Los filtros y la paginación pasan a una barra fija al pie para que el alcance de los datos siga visible.
+**De la tabla a la tarjeta.** Por debajo de 768 px, las tablas de Units & Residents y de Residents with Outstanding Balances se rehacen como tarjetas apiladas en lugar de comprimirse con desplazamiento horizontal. Cada tarjeta conserva el avatar de 40 px, el nombre de la persona, la unidad, la píldora de estado y las acciones, con los mismos rótulos en `MAYÚSCULAS` que antes servían de encabezado de columna. Los filtros y la paginación pasan a una barra fija al pie para que el alcance de los datos siga visible.
 
 **Interacción.** El hover eleva la tarjeta de forma apenas perceptible y el foco de teclado se dibuja como un anillo `Primary` de 2 px con desfase de 2 px, de modo que recorrer la interfaz con el teclado sea tan visible como con el mouse. Cada pantalla conserva una sola acción primaria sólida: "Generate Report" es sólida y "Export PDF" y "Excel" quedan en outline. El diálogo de reglas de reserva es el patrón de referencia para cualquier confirmación en la web.
 
 El modal mide 512 px de ancho máximo, se centra, usa radio de 12 px y un scrim al 50 % que **atenúa pero no oculta** el calendario de fondo: el administrador tiene que seguir viendo sobre qué fecha y sobre qué área estaba trabajando cuando aparece "Reservation of Loreley". El foco queda atrapado dentro del diálogo, se cierra con la X, con la tecla Escape o con un clic en el scrim, y al cerrarse devuelve el foco al elemento que lo abrió. Las acciones irreversibles, como revocar una credencial o suspender un área, exigen un segundo paso de confirmación con el nombre del objeto en la frase.
 
-**Estados de carga, vacío y error.** Los skeletons respetan las dimensiones del contenido final para que la página no salte mientras llegan los datos. El pie de tabla siempre declara el alcance ("Showing 1–10 of 428 units", "Showing 4 of 45"), porque en tablas largas el usuario necesita saber dónde está antes de decidir si pagina. Los estados vacíos explican la causa y ofrecen la acción siguiente, del tipo "No hay reservas para este mes" con el botón para crearla. Nunca se deja un bloque blanco sin explicación, porque el usuario lo lee como una falla del sistema.
+**Estados de carga, vacío y error.** Los skeletons respetan las dimensiones del contenido final para que la página no salte mientras llegan los datos. El pie de tabla siempre declara el alcance ("Showing 1–10 of 428 units", "Showing 4 of 45"), porque en tablas largas el usuario necesita saber dónde está antes de decidir si pasa a la página siguiente. Los estados vacíos explican la causa y ofrecen la acción siguiente, del tipo "No hay reservas para este mes" con el botón para crearla. Nunca se deja un bloque blanco sin explicación, porque el usuario lo lee como una falla del sistema.
 
 **Muro comunitario.** La vista reparte el feed a la izquierda y tres tarjetas de moderación a la derecha, con la misma proporción 8/4 del resto del producto. Esa fila de KPIs y el panel lateral cumplen una función de jerarquía, no de adorno. En el Mod Queue, el comentario denunciado se separa con una barra roja a la izquierda y ofrece "Dismiss" y "Review" dentro del mismo bloque, de modo que la resolución no obliga a navegar. En ACTIVE POLLS, las opciones se leen como barras horizontales con su porcentaje en `Primary` y el conteo debajo ("142 votes · 2 days left"): es una lectura de decisión, no una lectura de datos crudos.
 
 **Áreas comunes.** El calendario es la vista más densa del producto y por eso concentra más reglas. El chip de color identifica área y estado, la leyenda textual de cuatro entradas está siempre visible al pie, y los días deshabilitados quedan en gris, nunca en blanco.
 
-**Acceso y registro.** Las dos vistas de entrada comparten una retícula de dos mitades que resuelve la responsividad sin código adicional: a partir de 1024 px el panel fotográfico ocupa la mitad y el formulario la otra; por debajo de 768 px el panel se oculta y el formulario toma el ancho completo con márgenes de 24 px. El formulario se escribe en columna única, con etiquetas en `MAYÚSCAS`, campos con ícono a la izquierda y separador inferior en lugar de caja completa, y un botón sólido seguido de su variante outline. Ambas vistas comparten el mismo esqueleto y solo cambian los campos, lo que hace que el paso entre una y otra se perciba como continuo.
+**Acceso y registro.** Las dos vistas de entrada comparten una retícula de dos mitades que resuelve la responsividad sin código adicional: a partir de 1024 px el panel fotográfico ocupa la mitad y el formulario la otra; por debajo de 768 px el panel se oculta y el formulario toma el ancho completo con márgenes de 24 px. El formulario se escribe en columna única, con etiquetas en `MAYÚSCULAS`, campos con ícono a la izquierda y separador inferior en lugar de caja completa, y un botón sólido seguido de su variante outline. Ambas vistas comparten el mismo esqueleto y solo cambian los campos, lo que hace que el paso entre una y otra se perciba como continuo.
 
 #### Mobile Style Guidelines
 
 La Mobile Application cubre al propietario y al inquilino en sus tareas de uso frecuente: pagos, reservas, comunicados y foro desde iOS y Android. Los datos y los tokens de color, tipografía y microcopy son los mismos que en la web, porque el residente no debería tener que aprender un segundo idioma visual. Lo que se rediseña es el modelo de navegación: una tabla de 428 unidades no cabe en 360 px, y el error fácil sería comprimirla hasta que quepa en lugar de cambiarla.
 
-**Densidad.** Se conserva la escala tipográfica, pero el cuerpo sube a 16 px, que es el tamaño base que las plataformas móviles esperan y el que evita el auto-zoom al enfocar un campo. El mínimo de 12 px de las tablas web desaparece: en móvil ningún texto baja de 14 px, y los metadatos como "Unit 402 · 5 hours ago" se mantienen en 13 px porque el nombre de la unidad es parte del dato, no decorado.
+**Densidad.** Se conserva la escala tipográfica, pero el cuerpo sube a 16 px, que es el tamaño base que las plataformas móviles esperan y el que evita el auto-zoom al enfocar un campo. El mínimo de 12 px de las tablas web desaparece: en móvil ningún texto baja de 14 px, y los metadatos como "Unit 402 · 5 hours ago" se mantienen en 13 px porque el nombre de la unidad es parte del dato, no decoración.
 
 **Navegación.** La barra inferior admite un máximo de cuatro destinos visibles, el número que un pulgar alcanza sin reposicionar la mano; un quinto destino abre una pantalla secundaria. La regla que gobierna la decisión es "un destino, una tarea". La web organiza por módulo (Finance, Common Areas) porque el administrador trabaja en sesiones largas frente al monitor, mientras la app móvil organiza por intención del momento: pagar, reservar, avisarme.
 
 **Objetivos táctiles.** Ningún control interactivo baja de 44 × 44 px, y los que ejecutan acciones destructivas suben a 48 px de lado. Las celdas de una tarjeta son un objetivo de 56 px de alto, la misma medida ya usada para las filas de tabla en escritorio, lo que preserva el ritmo visual entre las dos plataformas.
 
-**FAB.** El botón flotante violeta que aparece abajo a la derecha en Units & Residents, Finance y Community Wall se conserva como patrón de creación. En móvil se ancla encima de la barra inferior respetando el *safe area* del dispositivo, y no se muestra en las pantallas que no admiten creación, como Finance o la consulta de una reserva existente.
+**FAB.** El botón flotante violeta que aparece abajo a la derecha en Units & Residents, Finance y Community Wall se conserva como patrón de creación. En móvil se ancla encima de la barra inferior respetando el *safe area* del dispositivo, y no se muestra en las pantallas que no admiten creación, como el detalle de un pago o la consulta de una reserva existente.
 
 **Diálogos.** El modal centrado de la web se convierte en *bottom sheet*, porque en móvil el teclado ocupa la mitad superior de la pantalla y la acción principal quedaría fuera de vista. Los campos se apilan en una columna con separaciones de 16 px, la acción primaria queda anclada en el borde inferior dentro del alcance del pulgar, y el cierre por arrastre hacia abajo tiene su equivalente accesible en un botón de cerrar explícito.
 
-**Listas y tarjetas.** Cada fila de lista mantiene la composición de la tabla web, con avatar de 40 px, nombre primario, subunitario y píldora de estado, para que el residente reconozca una pantalla que ya conoce en el escritorio. Los filtros se aplican con un botón en la barra superior que muestra la cantidad activa como contador, en lugar de los tres desplegables en línea de la vista web.
+**Listas y tarjetas.** Cada fila de lista mantiene la composición de la tabla web, con avatar de 40 px, nombre principal, unidad y píldora de estado, para que el residente reconozca una pantalla que ya conoce en el escritorio. Los filtros se aplican con un botón en la barra superior que muestra la cantidad activa como contador, en lugar de los tres desplegables en línea de la vista web.
 
 **Gestos.** Deslizar para revelar acciones secundarias, tirar hacia abajo para refrescar telemetría y pulsación larga para el menú contextual. Cada gesto tiene una alternativa visible en un botón de tres puntos, porque no todo usuario descubre los gestos por sí solo, y esconder una acción tras un deslizamiento la deja inaccesible para quien no lo conoce. Por el mismo motivo se descarta el gesto de "deslizar para borrar": la confirmación en dos pasos es más segura y produce menos errores de precisión.
 
@@ -5715,7 +5748,7 @@ La Mobile Application cubre al propietario y al inquilino en sus tareas de uso f
 
 La interfaz IoT de Edifika es software: es el dashboard donde el administrador y el residente ven el estado de los dispositivos del edificio, y hereda la paleta sin excepciones. Lo que cambia es la naturaleza del dato. Las lecturas llegan por MQTT desde el Edge API con latencia variable, y un dispositivo puede simplemente no estar conectado. De ahí la regla que gobierna todo este bloque: **cuando no se sabe el estado de un dispositivo, la interfaz dice que no lo sabe**. Un vacío ambiguo es peor que un mensaje explícito de "sin conexión", porque se toman decisiones sobre puertas, luz y bombas de agua sobre la base de ese vacío.
 
-**Anatomía de la tarjeta de dispositivo.** Replica la tarjeta KPI ya usada en Finance: contenedor de ícono en `Primary Icon Tint`, nombre del dispositivo en Semibold de 18 a 20 px, rótulo de zona en `MAYÚSCAS` y fila de lectura con el valor en cifras tabulares. A eso se suman tres elementos que las pantallas web no necesitan: la píldora de conexión (ONLINE, OFFLINE, SYNCING), la hora de la última lectura y la antigüedad de esa lectura.
+**Anatomía de la tarjeta de dispositivo.** Replica la tarjeta KPI ya usada en Finance: contenedor de ícono en `Primary Icon Tint`, nombre del dispositivo en Semibold de 18 a 20 px, rótulo de zona en `MAYÚSCULAS` y fila de lectura con el valor en cifras tabulares. A eso se suman tres elementos que las pantallas web no necesitan: la píldora de conexión (ONLINE, OFFLINE, SYNCING), la hora de la última lectura y la antigüedad de esa lectura.
 
 **Color de estado.** Se reutilizan `Success`, `Danger` y `Neutral` con la semántica de 5.1.1. La única adición de todo el sistema es el token `Warning` (`#B45309` sobre `#FFFBEB`), y la razón es concreta: un dispositivo tiene estados intermedios que una tabla web no tiene. La batería baja del nodo de iluminación, un sensor intermitente o una calibración pendiente no son "todo bien" ni son "falla", y sin ese nivel intermedio el administrador se enfrenta a elegir entre mentir en verde o declarar una alarma donde no la hay.
 
@@ -5807,7 +5840,7 @@ El Dashboard aplica la jerarquía al revés de lo habitual: el contenido de meno
 La organización secuencial se aplica a las tareas que tienen un orden obligatorio, donde saltar un paso produce un error o una tarea incompleta. Se materializa en dos formatos.
 
 - **Paso a paso explícito (flujo guiado):** el alta de un nuevo residente o la configuración de un área común no puede completarse en un solo paso. El administrador configura primero el área (capacidad, tarifa, horario de apertura y cierre, reglas de uso y estado) y recién después la asocia a las unidades que la usan. Los campos del diálogo de reserva del mock-up siguen exactamente ese orden: "Area Name" → "Capacity" y "Fee/Cost ($)" → "Opening Hours" y "Closing Hours" → "Rules & Description" → "Status" → "Save Changes". Los campos derivados se completan solos al elegir el área (elegir "BBQ Area" carga su tarifa de $25.00, su capacidad de 12 y su horario de 08:00 AM a 10:00 PM), de modo que el usuario nunca pierde el contexto ni tiene que recordar lo que escribió.
-- **Secuencia de estados dentro de la vista:** en lugar de esconder información, cada entidad muestra su etapa actual en la propia fila. La reserva tiene cuatro estados visibles en la leyenda del calendario (Confirmed, Pending, Blocked, Maintenance); el pago de una unidad tiene cuatro (Paid, Pending Approval, Late, Overdue); y la unidad tiene cuatro estados de ocupación (Occupied, Vacant, In transition y su deuda asociada), mientras que el saldo global del condominio se resume en un quinto estado, ARREARS. La secuencia se comunica con posición en el espacio —de izquierda a derecha en el calendario, de arriba abajo en el flujo— y con color de badge, nunca con numeración de pasos, porque el usuario no necesita saber que va "por el paso 3": necesita saber en qué estado está lo que está viendo.
+- **Secuencia de estados dentro de la vista:** en lugar de esconder información, cada entidad muestra su etapa actual en la propia fila. La reserva tiene cuatro estados visibles en la leyenda del calendario (Confirmed, Pending, Blocked, Maintenance); el pago de una unidad tiene cuatro (Paid, Pending Approval, Late, Overdue); y la unidad tiene tres estados de ocupación (Occupied, Vacant e In transition), además de su deuda asociada, mientras que el saldo global del condominio se resume en un quinto estado, ARREARS. La secuencia se comunica con posición en el espacio —de izquierda a derecha en el calendario, de arriba abajo en el flujo— y con color de badge, nunca con numeración de pasos, porque el usuario no necesita saber que va "por el paso 3": necesita saber en qué estado está lo que está viendo.
 
 La secuencia se refuerza con mensajes de transición que explican el siguiente paso. Cuando una reserva entra en mantenimiento, el sistema muestra "System maintenance scheduled for Oct 25" en el panel *Manage Areas*, de modo que el administrador y el residente mencionen el mismo motivo y la misma fecha. Cuando un residente debe, el botón "Send Notice" ofrece el paso siguiente ("Remind") como acción secundaria en la misma fila, sin obligar al administrador a abandonar la tabla.
 
@@ -5820,7 +5853,7 @@ Cuando un registro debe leerse en dos dimensiones simultáneas —"¿qué pasa e
 La matriz tiene **un eje fijo y un eje cambiante**:
 
 - **Eje X (columnas):** los días de la semana, con el mes y año como contexto de cabecera ("Reservations Calendar · October 2023"). Este eje es cronológico y siempre ocupa la misma posición, de modo que leer en horizontal equivale a recorrer la línea de tiempo del mes.
-- **Eje Y (filas):** las semanas del mes. La intersección entre celda y día es la unidad de información: en cada celda caben uno o varios chips de reserva, cada uno rotulado con el área y, cuando corresponde, la unidad o el motivo ("BBQ Area · Unit 402", "Canceled · Renovation", "Gym Center · Tennis"). Hay un chip por celda cuando no existe conflicto, y varios cuando el área admite reservas simultáneas.
+- **Eje Y (filas):** las semanas del mes. La intersección entre semana y día es la unidad de información: en cada celda caben uno o varios chips de reserva, cada uno rotulado con el área y, cuando corresponde, la unidad o el motivo ("BBQ Area · Unit 402", "Canceled · Renovation", "Gym Center · Tennis"). Hay un chip por celda cuando no existe conflicto, y varios cuando el área admite reservas simultáneas.
 
 La matriz se vuelve navegable gracias a tres convenciones:
 
@@ -5868,7 +5901,7 @@ La organización por audiencia es el eje transversal más importante de Edifika,
 
 **d) En el muro comunitario, la audiencia define el derecho a actuar, no el derecho a leer.** Todos los residentes leen el mismo feed en el mismo orden (cronológico descendente). Lo que cambia es qué puede hacer cada quien: el ADMIN publica comunicados oficiales ("Official Announcement", firmados "Edifika Management"), modera ("MOD QUEUE" con "Dismiss" y "Review") y crea encuestas; el RESIDENT publica en su perfil ("Sarah Mitchell · Unit 402"), vota ("Vote Now") y confirma asistencia ("RSVP Now"). Las acciones disponibles sobre una publicación dependen del rol del lector, no de un menú distinto: el mismo post muestra "RSVP Now" al residente y "Dismiss"/"Review" al moderador.
 
-**e) El condominio como unidad de aislamiento.** Cuando una administración opera varios condominios, la audiencia se refina por condominio: el sidebar añade un selector que reordina el contenido completo (unidades, saldos, comunicados, reservas) sin duplicar la aplicación. La etiqueta del selector es el nombre del condominio y todo el contenido ajeno se retira de la vista en lugar de mostrarse atenuado, para que un administrador que trabaja entre dos edificios nunca arrastre datos de uno al contexto del otro.
+**e) El condominio como unidad de aislamiento.** Cuando una administración opera varios condominios, la audiencia se refina por condominio: el sidebar añade un selector que filtra el contenido completo (unidades, saldos, comunicados, reservas) sin duplicar la aplicación. La etiqueta del selector es el nombre del condominio y todo el contenido ajeno se retira de la vista en lugar de mostrarse atenuado, para que un administrador que trabaja entre dos edificios nunca arrastre datos de uno al contexto del otro.
 
 ### 5.2.2. Labelling Systems
 
@@ -5883,12 +5916,12 @@ Un botón debe decir qué hace, no ofrecer una posibilidad. La regla es **verbo 
 | Verbo + objeto | **Save Changes**, **Cancel**, **Dismiss**, **Review** | Acciones de un diálogo o de una cola. La confirmación nombra el contenido de la edición ("Save Changes") en lugar de un "OK" genérico. |
 | Verbo + recurso | **Add New Unit**, **New Alert** | Creación de entidades. El recurso se nombra como el usuario lo llama ("Unit", "Alert"), nunca con el nombre técnico del modelo de datos. |
 | Verbo + formato | **Export CSV**, **Export PDF**, **Excel** | Generación de archivos. El formato se declara en la propia etiqueta, de modo que el usuario sepa qué va a obtener antes de hacer clic. |
-| Verbo + destinatario | **Send Notice**, **Remind** | Comunicación con un resident. "Send Notice" es el aviso formal y "Remind" el recordatorio; se distinguen porque producen efectos distintos en la relación con la comunidad. |
+| Verbo + destinatario | **Send Notice**, **Remind** | Comunicación con un residente. "Send Notice" es el aviso formal y "Remind" el recordatorio; se distinguen porque producen efectos distintos en la relación con la comunidad. |
 | Verbo + intención | **Vote Now**, **RSVP Now**, **Post** | Interacción en el muro. El verbo es la acción concreta que el lector quiere realizar: votar, confirmar asistencia, publicar. |
 | Verbo + estado | **Edit Rules** | Modificación de una configuración. Se usa "Edit" y no "Manage" porque la acción es acotada y su resultado es un formulario. |
 | Verbo + periodicidad | **Export**, **Generate Report** | Acciones de la barra de Finance. El verbo señala que se produce un archivo nuevo, no que se navega a otra pantalla. |
 
-Dos reglas derivan de esta tabla completan el criterio:
+Dos reglas derivadas de esta tabla completan el criterio:
 
 - **El botón principal lleva el verbo de la acción más frecuente de esa pantalla, y solo hay uno.** En Finance el sólido es "Generate Report" (la tarea dominante del administrador) y "Export PDF" y "Excel" degradan a variante secundaria; en Units & Residents el sólido es "Add New Unit" y "Export CSV" es secundario. Nunca hay dos botones sólidos compitiendo en la misma vista, porque el usuario no puede jerarquizar por color lo que la pantalla no jerarquizó por orden.
 - **"Cancel" siempre devuelve, nunca borra.** En los diálogos, "Cancel" cierra sin aplicar cambios y el estado previo se conserva; la alternativa a "Save Changes" nunca se presenta como "Discard", porque el usuario no está destruyendo nada, solo está optando por no guardar todavía.
@@ -5922,17 +5955,17 @@ Los estados se nombran en **MAYÚSCULAS**, dentro de una píldora de baja satura
 | :--- | :--- | :--- | :--- |
 | Cuota pagada | **PAID** | La unidad está al día y no requiere acción. | Verde sobre fondo verde muy claro. |
 | Cuota vencida con retraso | **LATE (12D)** | Hay deuda y la cifra entre paréntesis cuantifica el retraso: el usuario sabe si es urgente o no. | Rojo; el número de días es lo que hace la etiqueta accionable. |
-| Deuda acumulada | **ARREARS**, **Action required** | Es la salud financiera del condominio, no la de una persona; el rótulo va en la tarjeta KPI, no junto al nombre de un resident. | Rojo intenso con icono de advertencia. |
-| Deuda en manos de la administración | **OVERDUE 15 DAYS** | La administración debe actuar; describe el hecho ("vencida hace 15 días") sin calificar al resident. | Rojo claro en la columna Debt de la tabla. |
+| Deuda acumulada | **ARREARS**, **Action required** | Es la salud financiera del condominio, no la de una persona; el rótulo va en la tarjeta KPI, no junto al nombre de un residente. | Rojo intenso con icono de advertencia. |
+| Deuda en manos de la administración | **OVERDUE 15 DAYS** | La administración debe actuar; describe el hecho ("vencida hace 15 días") sin calificar al residente. | Rojo claro en la columna Debt de la tabla. |
 | Pago registrado y pendiente de validación | **PENDING APPROVAL** | El pago ya existe pero falta confirmarlo, por eso dice "approval" y no "processing". | Neutro, con texto en dos líneas para no perder legibilidad. |
 | Unidad habitada o vacía | **OCCUPIED** / **VACANT** | Hay o no hay alguien residiendo; la diferencia entre propietario e inquilino vive en otra columna ("Owner", "Tenant (Corporate)"), no dentro del estado. | Violeta suave para el dato de ocupación, neutro para la vacancia. |
-| Sin resident asignado | **No Resident** + "In transition" | Explica que la vacancia es un proceso en curso y no un abandono; evita la lectura de "unidad abandonada". | Neutro, con avatar vacío. |
+| Sin residente asignado | **No Resident** + "In transition" | Explica que la vacancia es un proceso en curso y no un abandono; evita la lectura de "unidad abandonada". | Neutro, con avatar vacío. |
 | Reserva confirmada | **CONFIRMED** | La reserva podrá usarse en la fecha indicada; no requiere ninguna acción del usuario, por eso comparte color con la acción primaria. | Violeta sólido, el mismo de los botones. |
 | Reserva anulada | **CANCELED** + "Renovation" | La reserva ya no existe y el motivo acompaña a la etiqueta, de modo que nadie interpreta la baja como un rechazo. | Rojo claro con barra lateral. |
 | Espacio en mantenimiento | **MAINTENANCE** | El espacio no está disponible y hay fecha de retorno, expresada en el panel: "System maintenance scheduled for Oct 25". | Tinte neutro con icono de mantenimiento. |
 | Reglas de acceso de un área | **OPEN ACCESS**, **FEE APPLIES**, **CAPACITY: 15**, **PREMIUM AMENITY** | Cada línea del panel "Manage Areas" declara **una sola regla** y se lee como una frase corta, no como un parámetro del sistema. | Mayúsculas, texto secundario, una línea por regla. |
 | Encuesta con plazo | **142 votes · 2 days left** | Da el dato y el plazo juntos, porque "142 votes" sin tiempo no permite decidir. | Texto terciario bajo la barra de resultados. |
-| Contenido oficial frente a contenido de vecino | **Official Announcement** + "Edifika Management" / nombre propio + "Unit 402" | Distingue la voz institucional de la voz de un resident, y hace visible la unidad desde la que se escribe. | Avatar e ícono distintos: megafono oficial frente al ícono personal. |
+| Contenido oficial frente a contenido de vecino | **Official Announcement** + "Edifika Management" / nombre propio + "Unit 402" | Distingue la voz institucional de la voz de un residente, y hace visible la unidad desde la que se escribe. | Avatar e ícono distintos: megáfono oficial frente al ícono personal. |
 
 Los mensajes de sistema siguen la misma lógica. Los errores y los estados vacíos **dicen qué pasó y qué hacer a continuación, sin culpar al usuario**: en lugar de "No hay datos" se muestra "Unit not found. Check the code and try again."; en lugar de una tabla vacía, se muestra el motivo y la acción ("No outstanding balances in this period. All units are up to date." con el enlace a Finance); y el caso del comentario denunciado se resuelve dentro del contexto, mostrando el texto citado junto a las acciones "Dismiss" y "Review", para que el administrador decida sin salir de la pantalla.
 
@@ -6026,9 +6059,9 @@ El sistema de búsqueda persigue un objetivo único: **que ninguna tarea termine
 | :--- | :--- | :--- |
 | Community Wall | **Search community posts…** | Título y cuerpo de las publicaciones, nombre del autor, unidad desde la que se escribió y etiquetas del evento o comunicado. |
 | Common Areas | **Search reservations or units…** | Nombre del área común, código de unidad ("402", "Unit 1205") y motivo de la reserva o de la cancelación. |
-| Unidades y finanzas | **Search residents, units or invoices…** | Nombre del resident, código de unidad, número de comprobante y referencia del pago. |
+| Unidades y finanzas | **Search residents, units or invoices…** | Nombre del residente, código de unidad, número de comprobante y referencia del pago. |
 
-El uso del mismo campo con alcances distintos evita que el usuario aprenda un buscador diferente en cada pantalla, y el placeholder le dice en todo momento **qué tipo de contenido va a encontrar** antes de escribir. La búsqueda no distingue mayúsculas y tolera errores de tecleo, porque quien busca "julian" no debe fallar si escribió "Julian" o "julián"; los términos coincididos se resaltan dentro del resultado para que el usuario entienda por qué apareció.
+El uso del mismo campo con alcances distintos evita que el usuario aprenda un buscador diferente en cada pantalla, y el placeholder le dice en todo momento **qué tipo de contenido va a encontrar** antes de escribir. La búsqueda no distingue mayúsculas y tolera errores de tecleo, porque quien busca "julian" no debe fallar si escribió "Julian" o "julián"; los términos coincidentes se resaltan dentro del resultado para que el usuario entienda por qué apareció.
 
 **Filtros por facetas.** Cada módulo declara sus propios filtros, elegidos según el atributo que realmente segmenta la información de ese módulo:
 
@@ -6062,11 +6095,11 @@ La navegación de Edifika tiene cuatro capas que trabajan juntas: la **navegaci�
 
 **De la landing a la aplicación.** El recorrido de conversión tiene dos finales y ninguno obliga a buscar un enlace oculto:
 
-- **Anfitrión de un condominio (caso principal).** Home → **Get Started** (llamado a la acción del hero) → *Create Account* → *Register New Account* → Dashboard. Cuatro pasos visibles, cada uno con un único botón principal, y el formulario de registro se resuelve en una sola columna vertical (Email address, User, Cellphone, Password), de modo que la cantidad de lo que se pide resulta evidente antes de empezar.
+- **Administrador de un condominio (caso principal).** Home → **Get Started** (llamado a la acción del hero) → *Create Account* → *Register New Account* → Dashboard. Cuatro pasos visibles, cada uno con un único botón principal, y el formulario de registro se resuelve en una sola columna vertical (Email address, User, Cellphone, Password), de modo que la cantidad de lo que se pide resulta evidente antes de empezar.
 - **Residente invitado (caso secundario).** Home → **Iniciar sesión** → *Login to Dashboard*. El visitante que ya tiene cuenta nunca ve el registro como acción principal; "Register New Account" permanece disponible, pero como botón secundario.
 - **Ambos recorridos se entrelazan sin trampas.** Desde *Login to Dashboard* hay un enlace explícito a *Register New Account* y desde *Register New Account* a *Login to Dashboard*. Un usuario que tomó el camino equivocado lo corrige en un clic, sin volver a la home ni abrir el menú.
 
-La navegación del sitio público se apoya en una barra superior fija con enlaces ancla a las secciones de la página (#modulos, #planes, #contacto), de modo que el visitante salte al bloque que le interesa sin recorrerla completa, y en un pie con enlaces agrupados por sección y ordenados alfabéticamente dentro de cada grupo.
+La navegación del sitio público se apoya en una barra superior fija con enlaces ancla a las secciones de la página (`#modulos`, `#planes`, `#contacto`), de modo que el visitante salte al bloque que le interesa sin recorrerla completa, y en un pie con enlaces agrupados por sección y ordenados alfabéticamente dentro de cada grupo.
 
 **Navegación global dentro de la aplicación.** La posición del usuario es siempre legible porque cuatro elementos cooperan:
 
@@ -6077,7 +6110,7 @@ La navegación del sitio público se apoya en una barra superior fija con enlace
 | **New Alert** | Pie del sidebar, destacado | Acción primaria persistente que lleva a la tarea de mayor consecuencia en el producto: emitir un comunicado. Se separa visualmente de los destinos porque es una acción, no un lugar. |
 | **Settings / Support** | Pie del sidebar, bajo la línea divisoria | Utilidades de cuenta y de ayuda, fuera del flujo de trabajo principal. |
 
-**Indicación de ubicación.** El ítem activo del sidebar se marca con tres señales redundantes —fondo violeta claro, texto violeta y una barra vertical de 2 px en el borde izquierdo—, de modo que la posición actual se reconozca incluso si el usuario no distingue los tonos. La barra lateral no se colapsa ni se oculta: la visibilidad completa del mapa del producto es parte del principio de reconocimiento. Además, cada vista repite su nombre en el título y la bajada ("Units & Residents" / "Manage property inventory and resident information across all towers"), lo que funciona como una segunda confirmación de ubicación.
+**Indicación de ubicación.** El ítem activo del sidebar se marca con tres señales redundantes —fondo violeta claro, texto violeta y una barra vertical de 4 px en el borde izquierdo—, de modo que la posición actual se reconozca incluso si el usuario no distingue los tonos. La barra lateral no se colapsa ni se oculta: la visibilidad completa del mapa del producto es parte del principio de reconocimiento. Además, cada vista repite su nombre en el título y la bajada ("Units & Residents" / "Manage property inventory and resident information across all towers"), lo que funciona como una segunda confirmación de ubicación.
 
 **Navegación por contenido.** Dentro de una vista con muchos elementos, la navegación se resuelve con el control que corresponde a la naturaleza del contenido:
 
@@ -6178,7 +6211,7 @@ La navegación del sitio público se apoya en una barra superior fija con enlace
 
 
 ### 5.4.1. Applications Wireframes
-A continuación se presentan los wireframes de nuestra aplicación tanto en mobile como web
+A continuación se presentan los wireframes de nuestra aplicación, tanto en su versión móvil como en la web.
 
 ### 5.4.1.1 Web Application Wireframes
 
@@ -6292,13 +6325,13 @@ Link del Figma: https://www.figma.com/design/ty6TOS7jOtA6f0111hRNGo/Edifika---Lo
   <img src="assets/img/wtemaforo.jpeg" alt="Wtemaforo" width="400" />
 </p>
 
-**Nueva Publicacion**
+**Nueva Publicación**
 
 <p align="center">
   <img src="assets/img/wnuevapub.jpeg" alt="Wnuevapub" width="400" />
 </p>
 
-Link del figma: https://www.figma.com/design/1ksaEJeKckW1WPlgeNyTbH/Untitled?node-id=0-1&p=f&t=tIjJgbZzzg9sNfAf-0
+Link del Figma: https://www.figma.com/design/1ksaEJeKckW1WPlgeNyTbH/Untitled?node-id=0-1&p=f&t=tIjJgbZzzg9sNfAf-0
 
 ### 5.4.2. Applications Wireflow Diagrams
 **1. Wireflow 1: Registro e inicio de sesión del administrador**
@@ -6314,7 +6347,7 @@ Este flujo representa el acceso inicial del administrador a la aplicación web. 
 
 
 
-**2. Wireflow 2: Reserva de un área común **
+**2. Wireflow 2: Reserva de un área común**
 
 User Persona: Usuario  
 User goal: El usuario quiere reservar un área común en una fecha y horario disponibles, y ver su reserva en el calendario.
@@ -6413,7 +6446,7 @@ Este flujo parte del dashboard hacia la sección Finance, donde se revisan los i
   <img src="assets/img/controldeaccesos.jpg" alt="Controldeaccesos" width="800" />
 </p>
 
-**Iot Riego Automatico:**
+**IoT Riego Automático:**
 
 <p align="center">
   <img src="assets/img/riegoauto.jpg" alt="Riegoauto" width="800" />
@@ -6490,13 +6523,15 @@ Link del Figma: https://www.figma.com/design/ty6TOS7jOtA6f0111hRNGo/Edifika---Lo
   <img src="assets/img/wtemaforom.png" alt="Wtemaforom" width="400" />
 </p>
 
-**Nueva Publicacion**
+**Nueva Publicación**
 
 <p align="center">
   <img src="assets/img/wnuevapubm.png" alt="Wnuevapubm" width="400" />
 </p>
 
 ### 5.4.4. Applications User Flow Diagrams
+
+En esta sección se presentan los User Flow Diagrams de Edifika. Cada diagrama parte de un User Goal de uno de los dos segmentos objetivo y muestra, además del happy path, los caminos alternativos y de error que el usuario puede encontrar. Los flujos 1 a 3 corresponden al administrador en la Web Application y los flujos 4 a 6 al residente (propietario o inquilino) en la Mobile Application y en el punto de acceso físico. Los mensajes de error y las reglas de cada camino alternativo son los de los criterios de aceptación de las historias de usuario del Capítulo III.
 
 **User Flow 1: Registro e Inicio de Sesión del Administrador**
 
@@ -6517,15 +6552,20 @@ Link del Figma: https://www.figma.com/design/ty6TOS7jOtA6f0111hRNGo/Edifika---Lo
 4. Ingresa su correo y contraseña y pulsa "Login to Dashboard".
 5. El sistema valida las credenciales y muestra el Dashboard para gestionar el edificio.
 
-
 **Unhappy paths:**
 
-- Si el correo ya existe o faltan campos obligatorios en Register, el sistema muestra el error y el usuario corrige los datos.
+- Si el correo ya está registrado, el sistema muestra "El email ya está registrado" y no crea la cuenta; el usuario puede corregir el correo o ir a Login.
+- Si faltan campos obligatorios o la contraseña no cumple el formato, el formulario marca los campos con error y no se envía.
+- Si no acepta los términos, el botón "Create Admin Account" permanece deshabilitado.
 - Si las credenciales son incorrectas en Login, el sistema muestra el error y el usuario reintenta.
+- Si acumula 5 intentos fallidos, la cuenta se bloquea durante 15 minutos y el sistema lo informa.
+- Si la cuenta fue desactivada, el sistema rechaza el inicio de sesión e indica que debe contactar al soporte.
+- Si ya tiene una sesión activa, el sistema lo lleva directamente al Dashboard sin pasar por Login.
+- Si su sesión expira mientras navega, el sistema lo devuelve a Login con el mensaje "Su sesión ha expirado".
 - Si ya tiene cuenta, desde Register puede ir directo a Login con "Back to Login".
 
 <p align="center">
-  <img src="assets/img/userflow1.jpg" alt="Community" width="800" />
+  <img src="assets/img/userflow1.jpg" alt="User Flow 1: registro e inicio de sesión del administrador" width="800" />
 </p>
 
 **User Flow 2: Reserva de un Área Común**
@@ -6549,11 +6589,16 @@ Link del Figma: https://www.figma.com/design/ty6TOS7jOtA6f0111hRNGo/Edifika---Lo
 
 **Unhappy paths:**
 
-- Si el horario ya está reservado o faltan campos, el sistema muestra el error y el usuario corrige los datos en el modal.
-- Si cierra el modal sin confirmar, no se crea ninguna reserva.
+- Si el horario ya está reservado, el sistema muestra "Horario no disponible, elija otro" y el administrador elige otro horario en el mismo modal.
+- Si otro usuario reserva el mismo horario mientras el modal está abierto, el sistema otorga la reserva al primero en confirmar y el calendario se actualiza sin recargar la página.
+- Si el área está deshabilitada por mantenimiento, aparece sombreada en el calendario y no se puede seleccionar.
+- Si el horario está fuera del horario de apertura o supera la duración máxima del área, el sistema lo indica y no crea la reserva.
+- Si el residente seleccionado ya alcanzó su máximo de reservas diarias, el sistema muestra "Límite diario de reservas alcanzado".
+- Si faltan campos, el modal marca los campos con error y no permite confirmar.
+- Si cierra el modal sin confirmar, no se crea ninguna reserva y el calendario queda como estaba.
 
 <p align="center">
-  <img src="assets/img/userflow2.jpg" alt="Community" width="800" />
+  <img src="assets/img/userflow2.jpg" alt="User Flow 2: reserva de un área común" width="800" />
 </p>
 
 
@@ -6578,11 +6623,118 @@ Link del Figma: https://www.figma.com/design/ty6TOS7jOtA6f0111hRNGo/Edifika---Lo
 
 **Unhappy paths:**
 
-- Si no hay residentes con saldo pendiente, no se requiere acción.
+- Si no hay residentes con saldo pendiente, el sistema muestra "No outstanding balances in this period. All units are up to date." y no se requiere acción.
+- Si la lista es muy larga, el administrador filtra por torre o por estado de deuda (por ejemplo, más de 2 meses) y la lista se pagina sin perder el filtro.
+- Si el residente pagó por transferencia y su comprobante está pendiente de revisión, el administrador primero lo aprueba o lo rechaza antes de enviar un aviso.
+- Si el administrador necesita el listado fuera de la plataforma, lo descarga en PDF o Excel con los filtros aplicados.
+- Si el servicio de pagos no responde, el sistema muestra "Los montos podrían no estar actualizados" y permite reintentar.
 - Si falla el envío del aviso, el sistema muestra un error y permite reintentar.
 
 <p align="center">
-  <img src="assets/img/userflow3.jpg" alt="Community" width="800" />
+  <img src="assets/img/userflow3.jpg" alt="User Flow 3: seguimiento financiero y morosidad" width="800" />
+</p>
+
+**User Flow 4: Reserva de un Área Común desde la Aplicación Móvil**
+
+**User Persona: Residente (propietario o inquilino)**   
+**User goal: Reservar un área común para una fecha y hora y saber si la reserva fue aprobada.** 
+
+**Pantallas base:**
+
+- Inicio (app móvil)
+- Áreas comunes
+- Calendario del área
+- Confirmar reserva (bottom sheet)
+- Mis reservas
+
+**Happy path:**
+
+1. El residente abre la app y entra a Áreas comunes.
+2. Elige el área (por ejemplo, la zona de parrillas) y revisa el calendario con los bloques disponibles.
+3. Selecciona un bloque libre, revisa las reglas de uso y confirma la reserva.
+4. El sistema registra la reserva como solicitada y queda pendiente de aprobación.
+5. El administrador la aprueba y el residente recibe una notificación con el día y la hora reservados.
+6. La reserva aparece como confirmada en Mis reservas y su tarjeta RFID queda habilitada para ese horario.
+
+**Unhappy paths:**
+
+- Si el bloque se ocupa mientras el residente lo está viendo, el calendario se actualiza en tiempo real y el residente elige otro bloque.
+- Si el área está en mantenimiento, aparece sombreada con el mensaje "Mantenimiento" y no se puede reservar.
+- Si ya alcanzó su límite de reservas del día, el sistema muestra "Límite diario de reservas alcanzado".
+- Si el residente es moroso, el sistema no permite reservar y le muestra su deuda pendiente con el acceso directo para pagarla.
+- Si el administrador rechaza la solicitud, el residente recibe una notificación con el motivo y el horario queda libre.
+- Si la solicitud no se procesa antes de la hora de inicio, se marca como "Expirada".
+- Si desea cancelar con al menos 24 horas de anticipación, la reserva se cancela y se libera el horario; con menos de 24 horas, el sistema muestra "Plazo de cancelación vencido, contacte al administrador".
+- Si no tiene conexión, la app muestra los datos guardados con la hora de la última actualización y no permite confirmar hasta recuperar la conexión.
+
+<p align="center">
+  <b>[POR COMPLETAR: diagrama del User Flow 4]</b>
+</p>
+
+**User Flow 5: Pago de una Deuda en Línea**
+
+**User Persona: Residente (propietario o inquilino)**   
+**User goal: Pagar su cuota de mantenimiento desde el celular y obtener su constancia sin enviar comprobantes por WhatsApp.** 
+
+**Pantallas base:**
+
+- Inicio (app móvil)
+- Mis deudas
+- Pago con tarjeta
+- Resultado del pago
+- Historial de pagos
+
+**Happy path:**
+
+1. El residente entra a Mis deudas y ve sus deudas pendientes con periodo, monto, fecha de vencimiento y estado.
+2. Selecciona la deuda y elige pagar con tarjeta.
+3. Ingresa los datos de su tarjeta y confirma el pago.
+4. Culqi aprueba la transacción, el pago queda confirmado y la deuda se marca como pagada.
+5. El residente recibe su constancia de pago y el pago aparece en su Historial de pagos.
+
+**Unhappy paths:**
+
+- Si la tarjeta no tiene fondos suficientes, el sistema muestra "La tarjeta no tiene fondos suficientes", la deuda sigue pendiente y el residente puede pagar con otra tarjeta.
+- Si Culqi no responde a tiempo, el pago queda en verificación, la deuda se bloquea para nuevos intentos y el residente ve "Estamos verificando tu pago" hasta que el administrador lo resuelva.
+- Si la app reenvía el pago por una falla de red, el sistema devuelve el pago ya registrado y no vuelve a cobrar.
+- Si prefiere pagar por transferencia, adjunta la foto del voucher y el pago queda pendiente de revisión del administrador; si la imagen no se lee bien, el residente recibe una notificación para subir una imagen más clara.
+- Si el residente está al día, el sistema muestra "Saldo: S/ 0.00" y el botón para descargar la constancia de no adeudo.
+- Si el servicio de pagos no responde, la app muestra "Los montos podrían no estar actualizados".
+
+<p align="center">
+  <b>[POR COMPLETAR: diagrama del User Flow 5]</b>
+</p>
+
+**User Flow 6: Acceso a un Área Común con Tarjeta RFID**
+
+**User Persona: Residente (propietario o inquilino)**   
+**User goal: Ingresar al área común que reservó usando su tarjeta, sin pedir la llave al conserje.** 
+
+**Pantallas base:**
+
+- Mis reservas (app móvil)
+- Punto de acceso (lector RFID con LED y buzzer)
+- Notificaciones
+
+**Happy path:**
+
+1. El residente revisa en Mis reservas que su reserva está confirmada y que el horario está vigente.
+2. Llega a la puerta del área común y acerca su tarjeta RFID al lector.
+3. El Edge Gateway valida la tarjeta contra las credenciales, la reserva vigente y el estado de morosidad sincronizados.
+4. El LED parpadea en verde, la cerradura se abre y la puerta se vuelve a bloquear automáticamente después de unos segundos.
+5. El acceso queda registrado en la bitácora que consulta el administrador.
+
+**Unhappy paths:**
+
+- Si no tiene una reserva vigente para esa área y ese horario, el LED parpadea en rojo, suena un tono corto y el acceso se deniega.
+- Si el residente es moroso, el acceso se deniega y recibe una notificación con el motivo y el acceso directo a su deuda.
+- Si la tarjeta fue reportada como extraviada o suspendida, el acceso se deniega y el intento queda registrado para el administrador.
+- Si la tarjeta no está registrada, el acceso se deniega como "tarjeta desconocida".
+- Si el edificio pierde la conexión a internet, el Edge Gateway decide con su caché local y el acceso funciona igual; el evento se envía a la nube cuando vuelve la conexión.
+- Si el lector no responde, el residente pide al administrador una apertura remota desde la Web Application.
+
+<p align="center">
+  <b>[POR COMPLETAR: diagrama del User Flow 6]</b>
 </p>
 
 ## 5.5. Application Prototyping
@@ -6591,29 +6743,29 @@ Link del Figma: https://www.figma.com/design/ty6TOS7jOtA6f0111hRNGo/Edifika---Lo
   <img src="assets/img/prototipo.png" alt="Community" width="800" />
 </p>
 
-Link del video de explicacion: https://upcedupe-my.sharepoint.com/:v:/g/personal/u202321281_upc_edu_pe/IQBwU3GkseDaQ5ubFJ-E_1L0AUdz8f3R_OVEOXefxDbmJvE?e=Ue3wVO&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D
+Link del video de explicación: https://upcedupe-my.sharepoint.com/:v:/g/personal/u202321281_upc_edu_pe/IQBwU3GkseDaQ5ubFJ-E_1L0AUdz8f3R_OVEOXefxDbmJvE?e=Ue3wVO&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D
 
 
 ## 5.6. IoT Device Design
 
 ### 5.6.1. Introducción y criterios de diseño
 
-Edifika se ejecuta en el teléfono y en el navegador del administrador, pero la parte de la solución que decide sobre el mundo físico no es software: son cuatro tipos de nodo que se instalan dentro del condominio y que el usuario nunca configura, nunca ve y de los que depende para que un área tenga luz, una puerta se abra a la hora correcta y una fuga no se convierta en una inundación. El diseño de esos dispositivos es, por lo tanto, la decisión de diseño con las consecuencias más físicas del proyecto, y es donde los errores no se manifiestan como una excepción en la consola ni como un estado vacío en una tarjeta: se salen como una puerta que no abre con la visita dentro, o como un área común encendida a las tres de la mañana.
+Edifika se ejecuta en el teléfono y en el navegador del administrador, pero la parte de la solución que decide sobre el mundo físico no es software: son cuatro tipos de nodo que se instalan dentro del condominio y que el usuario nunca configura, nunca ve y de los que depende para que un área tenga luz, una puerta se abra a la hora correcta y una fuga no se convierta en una inundación. El diseño de esos dispositivos es, por lo tanto, la decisión de diseño con las consecuencias más físicas del proyecto, y es donde los errores no se manifiestan como una excepción en la consola ni como un estado vacío en una tarjeta: se manifiestan como una puerta que no abre con la visita dentro, o como un área común encendida a las tres de la mañana.
 
 La propuesta de diseño físico y de circuito de estos dispositivos se apoya en **ocho criterios**, que no son una lista de deseos sino el orden en que se resuelven las decisiones cuando dos criterios entran en conflicto.
 
 | Código | Criterio | Fundamento y consecuencia de diseño | Dónde se hace visible |
 | :--- | :--- | :--- | :--- |
-| **C1** | **A prueba de fallo por defecto** | El fallo más grave de un nodo no es que se apague, sino que se quede en un estado que perjudique a quien lo usa. Por eso cada actuador elige su posición en reposo según la consecuencia de quedarse sin alimentación: la cerradura abre y la luminaria se apaga. Un corte de energía no puede encerrar a un resident ni encender un área vacía. | Posición de reposo de los relés, sección 5.6.4 y 5.6.5 |
-| **C2** | **Decisión física sin ida y vuelta a la nube** | La arquitectura ya decidió que el cloud concentra reglas de negocio y el edge la autonomía operativa (4.1.3.3). Traducido al dispositivo, el criterio significa que un umbral de lux, una comparación de caudal o una validación de UID se resuelven en el nodo o en el Edge API: esperar al cloud para abrir una puerta agrega latencia a una acción que el resident mide en el tiempo que tarda en apoyar la tarjeta. | Caché local de credenciales, corte local de bomba, sección 5.6.4 a 5.6.7 |
+| **C1** | **A prueba de fallo por defecto** | El fallo más grave de un nodo no es que se apague, sino que se quede en un estado que perjudique a quien lo usa. Por eso cada actuador elige su posición en reposo según la consecuencia de quedarse sin alimentación: la cerradura abre y la luminaria se apaga. Un corte de energía no puede encerrar a un residente ni encender un área vacía. | Posición de reposo de los relés, sección 5.6.4 y 5.6.5 |
+| **C2** | **Decisión física sin ida y vuelta a la nube** | La arquitectura ya decidió que el cloud concentra reglas de negocio y el edge la autonomía operativa (4.1.3.3). Traducido al dispositivo, el criterio significa que un umbral de lux, una comparación de caudal o una validación de UID se resuelven en el nodo o en el Edge API: esperar al cloud para abrir una puerta agrega latencia a una acción que el residente mide en el tiempo que tarda en apoyar la tarjeta. | Caché local de credenciales, corte local de bomba, sección 5.6.4 a 5.6.7 |
 | **C3** | **Presupuesto de respuesta física** | La guía de estilos fija tres máximos medibles: LED en 200 ms, relé completo en 500 ms y tono antes de un segundo (5.1.2). Más allá de ese margen el usuario asume que el dispositivo no respondió y repite la acción, y una repetición sobre un actuador es un incidente. El firmware se evalúa contra esos tres números, no contra una impresión de rapidez. | Sección 5.6.8 |
-| **C4** | **Un solo vocabulario de estado** | El LED, la etiqueta, el serial del Edge y la tarjeta del dashboard describen el mismo hecho con el mismo nombre. No existe un estado que el dispositivo llame de una forma y la aplicación de otra, porque el resident solo conoce una versión de la plataforma. | Sección 5.6.2 |
+| **C4** | **Un solo vocabulario de estado** | El LED, la etiqueta, el serial del Edge y la tarjeta del dashboard describen el mismo hecho con el mismo nombre. No existe un estado que el dispositivo llame de una forma y la aplicación de otra, porque el residente solo conoce una versión de la plataforma. | Sección 5.6.2 |
 | **C5** | **Consumo, calor y mantenimiento** | Los nodos quedan conectados a la red eléctrica del edificio, pero se instalan en sitio y no se mantienen: la autonomía, el modo de bajo consumo y la posibilidad de diagnosticarlos importan tanto como el costo de la placa. Un nodo que hay que abrir para reconfigurar es un nodo que nadie reconfigura. | Suspensión profunda, ausencia de pantalla, reset sellado, sección 5.6.3 |
 | **C6** | **Aislamiento eléctrico** | Ningún conductor de 220 V debe entrar en la placa de control. La conmutación de cargas se delega a un relé o contactor y la medición de corriente se hace con una pinza sobre el conductor, de modo que el aislamiento entre la red y la lógica sea físico y no una convención del software. | Sección 5.6.5 y 5.6.7 |
 | **C7** | **Identidad y trazabilidad del objeto** | Un dispositivo instalado en un edificio real es un objeto físico que se pierde, se daña o se reemplaza. Cada nodo declara su identificador, su código QR y el tópico MQTT al que publica, porque el inventario de la aplicación y el objeto del pasillo tienen que poder reconocerse mutuamente. | Sección 5.6.2 |
-| **C8** | **Instalación y accesibilidad** | Las decisiones dimensionales no son detalles de carpintería: determinan si un resident puede usar el dispositivo. La altura de instalación, el tamaño de la superficie de lectura y la separación entre un pulso corto y uno sostenido salen de la experiencia de uso, no del datasheet. | Sección 5.6.2 |
+| **C8** | **Instalación y accesibilidad** | Las decisiones dimensionales no son detalles de carpintería: determinan si un residente puede usar el dispositivo. La altura de instalación, el tamaño de la superficie de lectura y la separación entre un pulso corto y uno sostenido salen de la experiencia de uso, no del datasheet. | Sección 5.6.2 |
 
-El criterio C4 merece una aclaración, porque es el que más restringe el diseño. Los tres contextos IoT del cloud —IoT Access Management, Smart Lighting & Automation e IoT Telemetry & Analytics— modelan el estado del dispositivo en su propio vocabulario (`ACTIVE`, `SUSPENDED`, `REVOKED`, `ON`, `OFF`, `OPEN`, `RESOLVED`, `LOW`, `MEDIUM`, `HIGH`), y el Edge API lo traduce al contrato MQTT. Ese vocabulario es correcto en el dominio, pero el resident frente a una puerta no conoce esos términos. La decisión de diseño que se adopta es que **el vocabulario físico es un subconjunto del vocabulario de la interfaz, nunca un tercero**: los términos que el usuario puede ver en la tarjeta de un dispositivo del dashboard son exactamente los que el LED codifica y los que el texto del Serial Monitor imprime. Un estado que solo existe en el firmware se considera un defecto de diseño, no una decisión de implementación.
+El criterio C4 merece una aclaración, porque es el que más restringe el diseño. Los tres contextos IoT del cloud —IoT Access Management, Smart Lighting & Automation e IoT Telemetry & Analytics— modelan el estado del dispositivo en su propio vocabulario (`ACTIVE`, `SUSPENDED`, `REVOKED`, `ON`, `OFF`, `OPEN`, `RESOLVED`, `LOW`, `MEDIUM`, `HIGH`), y el Edge API lo traduce al contrato MQTT. Ese vocabulario es correcto en el dominio, pero el residente frente a una puerta no conoce esos términos. La decisión de diseño que se adopta es que **el vocabulario físico es un subconjunto del vocabulario de la interfaz, nunca un tercero**: los términos que el usuario puede ver en la tarjeta de un dispositivo del dashboard son exactamente los que el LED codifica y los que el texto del Serial Monitor imprime. Un estado que solo existe en el firmware se considera un defecto de diseño, no una decisión de implementación.
 
 ### 5.6.2. Relación con la arquitectura de información y con la guía de estilos de interfaz física
 
@@ -6625,8 +6777,8 @@ La sección 5.1.2 (IoT Physical Interface Style Guidelines) define la interfaz f
 | **Organización por tópicos** en tres escalas (5.2.1). | La etiqueta declara "el tópico MQTT corto al que publica". | El espacio de nombres replica la taxonomía del producto en el orden `edifika/{edificio}/{módulo}/{dispositivo}`: el módulo es el mismo sidebar, el dispositivo es el mismo registro de inventario. Un técnico que lea la etiqueta entiende a qué parte del producto pertenece el nodo. |
 | **Estados en mayúsculas con etiqueta textual, nunca solo color** (5.2.2). | Código del LED: cada estado tiene color **y** patrón de parpadeo, para sobrevivir a la daltonía, al sol directo y a un LED quemado. | El WS2812B de cada nodo implementa la tabla completa de 5.1.2 (fijo, dos parpadeos lentos, tres rápidos, intermitente, un parpadeo cada 5 s, apagado). La redundancia no es decorativa: es la traducción literal de la regla "el estado nunca se transmite solo con color" al medio físico. |
 | **Cuando no se sabe el estado, la interfaz dice que no lo sabe** (5.1.2, IoT Style Guidelines). | Modo degradado: sin broker, el LED pasa a `Neutral` con parpadeo lento y el dispositivo conserva el último estado. | El firmware nunca re-publica un valor viejo con marca de tiempo reciente ni rellena un hueco por interpolación. La ausencia de lectura se publica como ausencia: `{ts, value: null, stale: true}`. Es la razón por la que el mensaje MQTT lleva el campo `stale` y no solo un número. |
-| **Acciones a dos clics o menos** y **una sola acción primaria por pantalla** (5.2). | La pulsación corta ejecuta el control manual local; la mantenida de 1.5 s empareja o restablece. | El pulsador del nodo es la excepción controlada a esa regla de interfaz, y por eso se distinguen las dos duraciones: el control manual es una emergencia cuando el teléfono no tiene cobertura, y el emparejamiento no puede ocurrir por accidente porque un resident apoye el pie en el pulsador de un pasillo. |
-| **Términos del Lenguaje Ubicuo** (2.5): "Acceso concedido", "Fuga detectada", "Corte automático", "Credencial suspendida". | El tono audible suena solo en tres casos: fuga detectada, corte automático de la bomba y apertura forzada. | El `Serial Monitor` del prototipo y el texto que el Edge reenvía a la notificación usan esas frases exactas. El firmware no emite "DENY", "TRIP" ni "ERR_07": esos nombres viven en el log técnico del Edge, no en el mensaje que ve el resident. |
+| **Acciones a dos clics o menos** y **una sola acción primaria por pantalla** (5.2). | La pulsación corta ejecuta el control manual local; la mantenida de 1.5 s empareja o restablece. | El pulsador del nodo es la excepción controlada a esa regla de interfaz, y por eso se distinguen las dos duraciones: el control manual es una emergencia cuando el teléfono no tiene cobertura, y el emparejamiento no puede ocurrir por accidente porque un residente apoye el pie en el pulsador de un pasillo. |
+| **Términos del Lenguaje Ubicuo** (2.5): "Acceso concedido", "Fuga detectada", "Corte automático", "Credencial suspendida". | El tono audible suena solo en tres casos: fuga detectada, corte automático de la bomba y apertura forzada. | El `Serial Monitor` del prototipo y el texto que el Edge reenvía a la notificación usan esas frases exactas. El firmware no emite "DENY", "TRIP" ni "ERR_07": esos nombres viven en el log técnico del Edge, no en el mensaje que ve el residente. |
 | **Anatomía de la tarjeta de dispositivo**: píldora de conexión, hora de la última lectura y antigüedad de esa lectura. | El LED baja al 10 % de brillo entre 23:00 y 06:00 pero nunca se apaga del todo. | El heartbeat de 60 s que publica el nodo es el mismo dato que permite a la tarjeta calcular la antigüedad de la lectura; el brillo nocturno existe para que la señal siga presente sin molestar, que es el compromiso equivalente a "no mostrar un vacío como si fuera un resultado". |
 | **Modo degradado**: banner "operando con datos locales" con la hora de la última sincronización. | A prueba de fallo: si el nodo pierde el broker, mantiene el último estado conocido y opera localmente. | La caché en SPIFFS del ESP32 es la contraparte física de ese banner. Sin él, el indicador "datos locales" de la aplicación sería una afirmación sin respaldo. |
 
@@ -6646,19 +6798,19 @@ Los cuatro nodos comparten la misma base de hardware y de software. Esa decisió
 | **Simulación y prototipado** | Wokwi, con ESP32 DevKit V1, MFRC522, sensor PIR, fotorresistencia, relé y buzzer | Es el entorno donde se ejercitan los flujos de interacción antes de tocar el hardware: presentación de credencial, disparo de movimiento, corte de bomba y pérdida de broker. |
 | **Identificación** | QR/NFC en la etiqueta con `edificio`, `dispositivo`, `tópico` y `firmware` | Responde al criterio C7 y permite que el inventario de la aplicación y el objeto del pasillo se reconozcan mutuamente. |
 
-Una decisión de diseño que atraviesa a los cuatro nodos y que conviene explicitar porque es contraintuitiva: **no hay pantalla en ningún dispositivo**. Una pantalla obligaría a cada nodo a resolver por su cuenta la composición de texto, los estados y la accesibilidad —es decir, a reimplementar dentro del firmware lo que 5.2 ya resolvió para el conjunto del producto—, y además habría que mantenerla encendida, lo que contradice el criterio de consumo. Toda la información que el resident necesita del objeto cabe en un LED codificado, un tono acotado y una etiqueta impresa.
+Una decisión de diseño que atraviesa a los cuatro nodos y que conviene explicitar porque es contraintuitiva: **no hay pantalla en ningún dispositivo**. Una pantalla obligaría a cada nodo a resolver por su cuenta la composición de texto, los estados y la accesibilidad —es decir, a reimplementar dentro del firmware lo que 5.2 ya resolvió para el conjunto del producto—, y además habría que mantenerla encendida, lo que contradice el criterio de consumo. Toda la información que el residente necesita del objeto cabe en un LED codificado, un tono acotado y una etiqueta impresa.
 
 ### 5.6.4. Dispositivo 01 — Controlador de acceso de áreas comunes (ACC-01)
 
 #### Descripción y criterios de diseño
 
-El ACC-01 es el nodo instalado junto a cada puerta de área común que admite reservas. Su función es materializar una decisión que ya está tomada antes de que el resident llegue: la reserva aprobada genera un `AccessPermission` acotado a su ventana horaria, `EdgeGatewaySyncClient` lo empuja al Edge API, y el Edge lo deja disponible para el nodo en un tópico `retained`. El ACC-01 **no consulta al cloud en cada intento**: resuelve la UID contra la caché local y publica el resultado.
+El ACC-01 es el nodo instalado junto a cada puerta de área común que admite reservas. Su función es materializar una decisión que ya está tomada antes de que el residente llegue: la reserva aprobada genera un `AccessPermission` acotado a su ventana horaria, `EdgeGatewaySyncClient` lo empuja al Edge API, y el Edge lo deja disponible para el nodo en un tópico `retained`. El ACC-01 **no consulta al cloud en cada intento**: resuelve la UID contra la caché local y publica el resultado.
 
 Los criterios que gobiernan su diseño son **C1** (la puerta no puede quedar cerrada a alguien dentro), **C2** (la decisión es local), **C4** (verde y rojo significan lo mismo que en la tarjeta) y **C8** (la lectura tiene que funcionar sin mirar el teléfono).
 
 #### Diseño físico
 
-La carcasa es de plástico ABS mate en `Neutral` con una franja frontal en `Primary`, con radios de 12 mm que replican las esquinas de las tarjetas de la aplicación, montada entre **1.2 y 1.6 m de altura** con iluminación suficiente y sin reflejos sobre la superficie del sensor. La superficie de lectura contactless se dimensiona a **25 mm o más**, de manera que el resident no dependa de la precisión de la alineación del dedo o de la tarjeta. No hay pantalla; hay LED, contactless, pulsador y orificio de reset.
+La carcasa es de plástico ABS mate en `Neutral` con una franja frontal en `Primary`, con radios de 12 mm que replican las esquinas de las tarjetas de la aplicación, montada entre **1.2 y 1.6 m de altura** con iluminación suficiente y sin reflejos sobre la superficie del sensor. La superficie de lectura contactless se dimensiona a **25 mm o más**, de manera que el residente no dependa de la precisión de la alineación del dedo o de la tarjeta. No hay pantalla; hay LED, contactless, pulsador y orificio de reset.
 
 El orden de los elementos en el frente responde a la frecuencia de uso, el mismo criterio que 5.2.1 aplica a las pantallas: el LED en la zona más visible del marco, el contactless a la altura natural de la mano, el pulsador debajo y el orificio de reset en la base, sellado con epoxy y alcanzable solo con una aguja por mantenimiento.
 
@@ -6666,10 +6818,10 @@ El orden de los elementos en el frente responde a la frecuencia de uso, el mismo
 | :--- | :--- | :--- |
 | Superficie contactless | ≥ 25 × 25 mm | Un área menor obliga a apuntar la tarjeta; el usuario interpreta el fallo como tarjeta no leída y repite el gesto, que en un lector bloqueado por anti-passback cuenta como intento adicional. |
 | LED WS2812B | Ø 8 mm, visible a 3 m | Único indicador que funciona en la oscuridad, a distancia y sin contacto físico. |
-| Pulsador tactil | Ø 12 mm, con recorrido distinguible | Permite el control manual local de emergencia y el emparejamiento, separados por duración. |
-| Orificio de reset | Ø 2 mm, sellado | Su presencia sin acceso evita que un resident reinicie el dispositivo y borre la caché de credenciales. |
+| Pulsador táctil | Ø 12 mm, con recorrido distinguible | Permite el control manual local de emergencia y el emparejamiento, separados por duración. |
+| Orificio de reset | Ø 2 mm, sellado | Su presencia sin acceso evita que un residente reinicie el dispositivo y borre la caché de credenciales. |
 | Etiqueta | Altura de letra ≥ 2.5 mm, mayúsculas, contraste > 4.5:1 | Se lee a distancia y con la linterna del teléfono, no a la distancia de un monitor. |
-| Altura de instalación | 1.2 – 1.6 m | Altura de uso de la mano adulta, y accesible para el resident mayor sin agacharse. |
+| Altura de instalación | 1.2 – 1.6 m | Altura de uso de la mano adulta, y accesible para el residente mayor sin agacharse. |
 
 #### Diseño de circuito
 
@@ -6686,7 +6838,7 @@ El orden de los elementos en el frente responde a la frecuencia de uso, el mismo
 
 La decisión eléctrica más importante del ACC-01 es la **posición de reposo del relé**. El criterio C1 se resuelve aquí de forma explícita: la cerradura se alimenta en reposo, de modo que un corte de energía, un reinicio del nodo o una falla del Edge dejan la puerta abierta. El peor escenario en un recinto común no es una puerta que se abre de más —que se audita y se registra— sino una persona encerrada en un área común sin cobertura. El control de acceso sigue existiendo en el sentido contrario, que es el que protege a la comunidad, y esa asunción está documentada porque es la que un instalador va a cuestionar.
 
-La segunda decisión es la **resolución por omisión**. Si la UID presentada no está en la caché local —porque el nodo acaba de encenderse, porque la caché está corrupta o porque el resident fue dado de baja hace minutos y la sincronización no ha llegado—, el resultado es `DENEGADO`, no "permitido por no saber". Un sistema de control de acceso que falla hacia la apertura no es un sistema con una tasa de error: es un sistema sin control de acceso.
+La segunda decisión es la **resolución por omisión**. Si la UID presentada no está en la caché local —porque el nodo acaba de encenderse, porque la caché está corrupta o porque el residente fue dado de baja hace minutos y la sincronización no ha llegado—, el resultado es `DENEGADO`, no "permitido por no saber". Un sistema de control de acceso que falla hacia la apertura no es un sistema con una tasa de error: es un sistema sin control de acceso.
 
 #### Flujos de interacción que cubre el prototipo
 
@@ -6704,9 +6856,9 @@ Los **caminos infelices** son los que justifican el diseño del hardware, y son 
 
 | Situación | Comportamiento diseñado | Por qué esa respuesta |
 | :--- | :--- | :--- |
-| Credencial **suspendida o revocada** (por morosidad, `ResidentMarkedDelinquent`) | LED rojo con tono corto; el relé no acciona; se publica `PhysicalAccessDenied` | Son dos situaciones distintas para el resident —“tarjeta no leída” y “me la suspendieron”— y exigen respuestas opuestas: repetir el gesto en el primer caso, llamar al administrador en el segundo. Un único tono genérico obligaría al resident a adivinar siempre. |
+| Credencial **suspendida o revocada** (por morosidad, `ResidentMarkedDelinquent`) | LED rojo con tono corto; el relé no acciona; se publica `PhysicalAccessDenied` | Son dos situaciones distintas para el residente —“tarjeta no leída” y “me la suspendieron”— y exigen respuestas opuestas: repetir el gesto en el primer caso, llamar al administrador en el segundo. Un único tono genérico obligaría al residente a adivinar siempre. |
 | **Sin broker** (WAN caído) | El nodo sigue resolviendo contra la caché, publica en cuanto vuelve el enlace y el LED pasa a `Neutral` con un parpadeo cada 5 s | Es el criterio C2: la operación del condominio no depende del cloud. Lo que se pierde es la inmediatez de la auditoría, no el acceso ya autorizado. |
-| **Puerta forzada o cable saboteado** | El reed dispara; LED rojo con tres parpadeos rápidos y tono, y se publica el estado de puerta | Es uno de los tres únicos casos que justifican el tono audible, porque exige una respuesta del resident en el momento y no puede resolverse en el dashboard de mañana. |
+| **Puerta forzada o cable saboteado** | El reed dispara; LED rojo con tres parpadeos rápidos y tono, y se publica el estado de puerta | Es uno de los tres únicos casos que justifican el tono audible, porque exige una respuesta del residente en el momento y no puede resolverse en el dashboard de mañana. |
 | **Sin permiso vigente** (la reserva ya terminó) | LED ámbar, dos parpadeos lentos, sin tono | Es el estado `Atención` de 5.1.2: no es una falla ni una alarma, es una explicación. El resident está en la puerta correcta pero fuera de horario, y el ámbar le dice que la respuesta está en la aplicación. |
 | **Reinicio del dispositivo** | Contacto NA: la puerta queda abierta y el LED vuelve a normal al reconectarse | El peor resultado posible de un corte de energía en un espacio común es dejar gente encerrada; el criterio C1 manda sobre la conveniencia de la puerta cerrada. |
 
@@ -6714,19 +6866,19 @@ Los **caminos infelices** son los que justifican el diseño del hardware, y son 
 
 #### Descripción y criterios de diseño
 
-El LGT-01 se instala embebido en cada luminaria de las áreas comunes. Mide presencia, nivel de lux y corriente, decide localmente el encendido y el apagado, y reporta telemetría al Edge. Es el nodo donde el criterio C2 es más estricto, porque la latencia de encendido es lo que el resident percibe como "la luz tarda": si el nodo consultara la nube antes de conmutar, cada vez que una persona cruza la puerta de la sala de fiestas esperaría en la oscuridad el tiempo de un viaje de ida y vuelta a los servidores.
+El LGT-01 se instala embebido en cada luminaria de las áreas comunes. Mide presencia, nivel de lux y corriente, decide localmente el encendido y el apagado, y reporta telemetría al Edge. Es el nodo donde el criterio C2 es más estricto, porque la latencia de encendido es lo que el residente percibe como "la luz tarda": si el nodo consultara la nube antes de conmutar, cada vez que una persona cruza la puerta de la sala de fiestas esperaría en la oscuridad el tiempo de un viaje de ida y vuelta a los servidores.
 
 Los criterios que gobiernan su diseño son **C2** (decisión local del umbral de luz), **C3** (presupuesto de respuesta física), **C6** (aislamiento de la red) y **C5** (el nodo queda encima de la luminaria, sin mantenimiento).
 
 #### Diseño físico
 
-El LGT-01 se monta en el techo o en el marco de la luminaria, con el sensor PIR orientado hacia el acceso y con el campo de detección ajustado para que no alcance el fondo de la sala, de modo que un resident que cruza la puerta active la luz sin que alguien sentado al fondo la apague desde el borde opuesto. El acabado mate del frente evita reflejos que confundan tanto al sensor infrarrojo como a quien intenta ver el LED a contraluz; el LED queda en el borde inferior de la carcasa, que es la única posición visible desde el suelo.
+El LGT-01 se monta en el techo o en el marco de la luminaria, con el sensor PIR orientado hacia el acceso y con el campo de detección ajustado para que no alcance el fondo de la sala, de modo que un residente que cruza la puerta active la luz sin que alguien sentado al fondo la apague desde el borde opuesto. El acabado mate del frente evita reflejos que confundan tanto al sensor infrarrojo como a quien intenta ver el LED a contraluz; el LED queda en el borde inferior de la carcasa, que es la única posición visible desde el suelo.
 
 | Elemento | Cota / material | Razón de la decisión |
 | :--- | :--- | :--- |
 | Frontal del sensor PIR | Orientado hacia el acceso, sin detectar el fondo de la sala | Detecta el cruce de una persona y no el movimiento de alguien ya sentado. |
 | Ventana del LDR | Opuesta al PIR, nunca tras la propia fuente de luz | Si el LDR midiera la luz emitida por la luminaria, la lectura dependería del estado del actuador y el umbral de lux nunca se estabilizaría. |
-| LED de estado | En el borde inferior de la carcasa, visible desde el suelo | Es la única forma de que el resident sepa si el nodo está vivo sin abrir el tablero del condominio. |
+| LED de estado | En el borde inferior de la carcasa, visible desde el suelo | Es la única forma de que el residente sepa si el nodo está vivo sin abrir el tablero del condominio. |
 | Etiqueta | Con el ID de nodo, QR y tópico | El inventario de la aplicación lista luminarias por ubicación; la etiqueta dice cuál de ellas es. |
 | Alimentación | Vía derivación de la propia luminaria | Evita un cable de red por punto de luz y por lo tanto una obra mayor por nodo instalado. |
 
@@ -6761,7 +6913,7 @@ La decisión de canal analógico es la que más restricciones impone al resto de
 | **Anulación manual desde la aplicación** | El nodo ejecuta la anulación con su duración y expiración, y lo registra como `OverrideTriggered` | Un resident que enciende la luz manualmente y se olvida de apagarla es un caso normal; la anulación tiene fecha de expiración justamente para que no quede una luminaria encendida hasta que alguien se fije. |
 | **Sin broker** | El nodo sigue encendiendo y apagando por su regla local, el LED pasa a `Neutral` con parpadeo de 5 s y acumula la telemetría en memoria | Un corte de internet en la noche no puede dejar el área común a oscuras. La telemetría pendiente se publica al restablecerse el enlace, marcada como local. |
 | **Reinicio del nodo** | La luminaria queda apagada y el nodo vuelve a su regla en menos de un minuto | Con contacto NA, un reinicio accidental no enciende un área vacía a las tres de la mañana. |
-| **Batería de respaldo degradada** (en las instalaciones con respaldo) | LED ámbar, dos parpadeos lentos; la automatización sigue operando | `Atención` es el estado intermedio entre "todo bien" y "falla": el administrador necesita verlo antes de que sea una falla, y el resident no debe presenciarla como una alarma sobre una luz que sí funciona. |
+| **Batería de respaldo degradada** (en las instalaciones con respaldo) | LED ámbar, dos parpadeos lentos; la automatización sigue operando | `Atención` es el estado intermedio entre "todo bien" y "falla": el administrador necesita verlo antes de que sea una falla, y el residente no debe presenciarla como una alarma sobre una luz que sí funciona. |
 | **Lectura de lux inválida** (LDR desconectado) | No se enciende por presencia en ese punto; publica `stale: true` y el LED pasa a ámbar | El firmware no rellena con el último valor ni interpola: un umbral de lux aplicado sobre una lectura muerta enciende la luz de día, que es el peor modo de falla visible para la comunidad. |
 
 ### 5.6.6. Dispositivo 03 — Nodo hidráulico de detección de fugas (HYD-01)
@@ -6774,7 +6926,7 @@ Los criterios que lo gobiernan se refuerzan: un corte de bomba es una molestia d
 
 #### Diseño físico
 
-La carcasa se monta en la pared de la cámara de agua, a la altura de la vista del operador de mantenimiento, con prensaestopa y entrada de cable con prensaestopa PG7 para que el agua no entre por el conector. A diferencia de los otros nodos, este puede tener un tono audible porque está en un espacio técnico y no en un pasillo: el criterio de 5.1.2 que limita el tono a tres casos se cumple íntegro, pero el tono de corte automático se emite sin silenciamiento nocturno, porque un corte de bomba a las 3 a. m. sí requiere que alguien lo sepa.
+La carcasa se monta en la pared de la cámara de agua, a la altura de la vista del operador de mantenimiento, con entrada de cable mediante prensaestopa PG7 para que el agua no entre por el conector. A diferencia de los otros nodos, este puede tener un tono audible porque está en un espacio técnico y no en un pasillo: el criterio de 5.1.2 que limita el tono a tres casos se cumple íntegro, pero el tono de corte automático se emite sin silenciamiento nocturno, porque un corte de bomba a las 3 a. m. sí requiere que alguien lo sepa.
 
 | Elemento | Cota / material | Razón de la decisión |
 | :--- | :--- | :--- |
@@ -6822,13 +6974,13 @@ La decisión de circuito que distingue a este nodo es el **corte por lectura loc
 
 #### Descripción y criterios de diseño
 
-El PWR-01 mide el consumo de las luminarias y de los equipos comunes de las áreas que las consumen, y es el dispositivo que alimenta el cálculo de kWh, las estadísticas y la detección de anomalías del contexto IoT Telemetry & Analytics. A diferencia de los otros tres nodos, **no actuá**: no enciende ni apaga nada. Su única salida es la lectura.
+El PWR-01 mide el consumo de las luminarias y de los equipos de las áreas comunes, y es el dispositivo que alimenta el cálculo de kWh, las estadísticas y la detección de anomalías del contexto IoT Telemetry & Analytics. A diferencia de los otros tres nodos, **no actúa**: no enciende ni apaga nada. Su única salida es la lectura.
 
 Los criterios que lo gobiernan son **C5** (consumo y ausencia total de mantenimiento en el punto de medición), **C6** (la pinza de corriente es el único punto de contacto con el conductor energizado) y **C4** (el valor que publica es el mismo que muestra la tarjeta, con su marca de tiempo).
 
 #### Diseño físico
 
-El PWR-01 se monta en el tablero del cuadro eléctrico del área, o en el tablero de la bomba cuando corresponde. La carcasa es más cerrada que la de los otros nodos, porque no hay ninguna superficie de interacción que proteger: no hay LED de estado para el resident ni contactless que esperar. Aun así conserva el LED en estado `Warning` de batería baja cuando la instalación usa respaldo, y la etiqueta con el ID del medidor, porque el inventario de telemetría lista medidores por ubicación igual que lista luminarias.
+El PWR-01 se monta en el tablero del cuadro eléctrico del área, o en el tablero de la bomba cuando corresponde. La carcasa es más cerrada que la de los otros nodos, porque no hay ninguna superficie de interacción que proteger: no hay LED de estado para el residente ni contactless que esperar. Aun así conserva el LED en estado `Warning` de batería baja cuando la instalación usa respaldo, y la etiqueta con el ID del medidor, porque el inventario de telemetría lista medidores por ubicación igual que lista luminarias.
 
 | Elemento | Cota / material | Razón de la decisión |
 | :--- | :--- | :--- |
@@ -6885,7 +7037,7 @@ Estos presupuestos son, además, el criterio con el que se evalúa el firmware a
 
 ### 5.6.9. Trazabilidad con las historias de usuario
 
-El diseño de los dispositivos no introduce funcionalidades nuevas: materializa las que ya están especificadas. La correspondencia completa está en TS16 y TS17, que fijan el registro y la comunicación de los dispositivos ESP32 por MQTT.
+El diseño de los dispositivos no introduce funcionalidades nuevas: materializa las que ya están especificadas. La correspondencia completa está en TS17 y TS26, que fijan la comunicación de los dispositivos ESP32 con el Edge Gateway por MQTT y su firmware base.
 
 | Historia | Requisito que fija el dispositivo | Dispositivo y decisión de diseño que lo satisface |
 | :--- | :--- | :--- |
@@ -6893,7 +7045,7 @@ El diseño de los dispositivos no introduce funcionalidades nuevas: materializa 
 | **TS16**, escenario 2 | Heartbeat periódico actualiza el estado a `ACTIVO` y la marca de última conexión | Heartbeat de 60 s en los cuatro nodos, que es el mismo dato con el que la tarjeta de la interfaz calcula la antigüedad de la lectura. |
 | **TS16**, escenario 3 | Ausencia de heartbeat marca `OFFLINE` y notifica al administrador | El LED pasa a `Neutral` con un parpadeo cada 5 s y el sistema no finge normalidad: la ausencia se declara como ausencia, en el objeto y en la pantalla. |
 | **TS17**, escenario 1 | Recibir lecturas por MQTT y evaluar el umbral en menos de 500 ms | El umbral se evalúa localmente (C2) y el corte de la bomba ocurre dentro de la ventana de 500 ms, sin esperar la ida y vuelta al cloud. |
-| **TS17**, escenario 2 | Recibir comandos de actuación y confirmar con un ACK | Los nodos suscribidos a `cmd` ejecutan el comando y publican el estado resultante; el comando manual desde la aplicación es la excepción controlada a la regla de "una sola acción primaria por pantalla", con confirmación en la vista de detalle. |
+| **TS17**, escenario 2 | Recibir comandos de actuación y confirmar con un ACK | Los nodos suscritos a `cmd` ejecutan el comando y publican el estado resultante; el comando manual desde la aplicación es la excepción controlada a la regla de "una sola acción primaria por pantalla", con confirmación en la vista de detalle. |
 | **TS17**, escenario 3 | Pérdida del broker marca `OFFLINE`, descarta comandos pendientes y notifica sin afectar a los demás dispositivos | La caché local por nodo permite que cada dispositivo siga operando de forma independiente; un nodo sin enlace no arrastra a los demás, y los comandos pendientes hacia él se descartan en lugar de acumularse. |
 
 # Capítulo VI: Product Implementation, Validation & Deployment
@@ -6902,23 +7054,23 @@ El diseño de los dispositivos no introduce funcionalidades nuevas: materializa 
 
 ### 6.1.1. Software Development Environment Configuration
 
-Antes de comenzar, es importante definir claramente los requisitos de la plataforma EDIFIKA. Esto incluye las funcionalidades relacionadas con la gestión de usuarios, autenticación, acceso al sistema, presentación del producto mediante la Landing Page y futura integración con los demás módulos de la solución.
+Antes de comenzar, es importante definir claramente los requisitos de la plataforma Edifika. Esto incluye las funcionalidades relacionadas con la gestión de usuarios, autenticación, acceso al sistema, presentación del producto mediante la Landing Page y futura integración con los demás módulos de la solución.
 
-Las herramientas se registran por tipo de actividad y, dentro de cada tipo, se incluyen las utilizadas en cada producto digital de EDIFIKA. Además de las de la Landing Page, el Frontend Web Application y los Web Services, esta sección incluye las del **Edge Gateway**, el servicio Edge del proyecto, que se incorporan a las mismas categorías junto con las de los productos digitales que se agreguen en el futuro.
+Las herramientas se registran por tipo de actividad y, dentro de cada tipo, se incluyen las utilizadas en cada producto digital de Edifika. Además de las de la Landing Page, el Frontend Web Application y los Web Services, esta sección incluye las del **Edge Gateway**, el servicio Edge del proyecto, que se incorporan a las mismas categorías junto con las de los productos digitales que se agreguen en el futuro.
 
 #### Project Management
 
 ##### Trello
 
 **Propósito de Uso:**  
-Gestión de tareas del equipo, seguimiento de actividades, organización del flujo de trabajo del proyecto y control del avance de las funcionalidades desarrolladas para EDIFIKA.
+Gestión de tareas del equipo, seguimiento de actividades, organización del flujo de trabajo del proyecto y control del avance de las funcionalidades desarrolladas para Edifika.
 
 **Ruta de Referencia/Descarga:**  
 Trello (SaaS)
 
 <img src="assets/img/trello.png" alt="context" width="200"/>
 
-*Figura. Plataforma Trello utilizada para la gestión y organización de tareas del proyecto EDIFIKA (Trello, s.f.).*
+*Figura. Plataforma Trello utilizada para la gestión y organización de tareas del proyecto Edifika (Trello, s.f.).*
 
 
 #### Team Communication
@@ -6926,14 +7078,14 @@ Trello (SaaS)
 ##### Discord
 
 **Propósito de Uso:**  
-Comunicación interna del equipo, coordinación de reuniones, resolución de dudas, revisión de avances y organización de acuerdos relacionados con el desarrollo de EDIFIKA.
+Comunicación interna del equipo, coordinación de reuniones, resolución de dudas, revisión de avances y organización de acuerdos relacionados con el desarrollo de Edifika.
 
 **Ruta de Referencia/Descarga:**  
 Discord (SaaS / Aplicación de escritorio)
 
 <img src="assets/img/discord.png" alt="context" width="200"/>
 
-*Figura. Plataforma Discord utilizada para la comunicación y coordinación interna del equipo de desarrollo de EDIFIKA (Discord, s.f.).*
+*Figura. Plataforma Discord utilizada para la comunicación y coordinación interna del equipo de desarrollo de Edifika (Discord, s.f.).*
 
 
 ### Product UX/UI Design
@@ -6941,35 +7093,35 @@ Discord (SaaS / Aplicación de escritorio)
 #### Figma
 
 **Propósito de Uso:**  
-Diseño de interfaces, wireframes, prototipos navegables y flujos visuales de la solución EDIFIKA. Se utiliza para definir la experiencia de usuario de la Landing Page y de las futuras interfaces del sistema.
+Diseño de interfaces, wireframes, prototipos navegables y flujos visuales de la solución Edifika. Se utiliza para definir la experiencia de usuario de la Landing Page y de las futuras interfaces del sistema.
 
 **Ruta de Referencia/Descarga:**  
 Figma (SaaS)
 
 <img src="assets/img/figma.png" alt="context" width="200"/>
 
-*Figura. Plataforma Figma utilizada para el diseño de interfaces, wireframes y prototipos visuales de la solución EDIFIKA (Figma, s.f.).*
+*Figura. Plataforma Figma utilizada para el diseño de interfaces, wireframes y prototipos visuales de la solución Edifika (Figma, s.f.).*
 
 ## Software Development
 
 ### GitHub con GitFlow
 
 **Propósito de Uso:**  
-Control de versiones, colaboración entre desarrolladores, organización mediante ramas y almacenamiento del código fuente de los productos digitales de EDIFIKA, incluyendo la Landing Page, el Frontend Web Application y los Web Services.
+Control de versiones, colaboración entre desarrolladores, organización mediante ramas y almacenamiento del código fuente de los productos digitales de Edifika, incluyendo la Landing Page, el Frontend Web Application y los Web Services.
 
 **Ruta de Referencia/Descarga:**  
 GitHub (SaaS)
 
 <img src="assets/img/github.png" alt="context" width="200"/>
 
-*Figura. Plataforma GitHub utilizada para el control de versiones y colaboración en el desarrollo de los productos digitales de EDIFIKA (GitHub, s.f.).*
+*Figura. Plataforma GitHub utilizada para el control de versiones y colaboración en el desarrollo de los productos digitales de Edifika (GitHub, s.f.).*
 
 
 
 ### IntelliJ IDEA
 
 **Propósito de Uso:**  
-Entorno de desarrollo utilizado para implementar el microservicio IAM de EDIFIKA, desarrollado con Java, Spring Boot y Maven. Permite gestionar la estructura del backend, ejecutar el proyecto, revisar dependencias y trabajar con archivos del proyecto Spring Boot.
+Entorno de desarrollo utilizado para implementar el microservicio IAM de Edifika, desarrollado con Java, Spring Boot y Maven. Permite gestionar la estructura del backend, ejecutar el proyecto, revisar dependencias y trabajar con archivos del proyecto Spring Boot.
 
 **Ruta de Referencia/Descarga:**  
 IntelliJ IDEA (Aplicación de escritorio)
@@ -6991,21 +7143,21 @@ Visual Studio Code (Aplicación de escritorio)
 
 <img src="assets/img/visualstudiocode.png" alt="context" width="200"/>
 
-*Figura. Editor Visual Studio Code utilizado para el desarrollo frontend, edición de archivos Markdown y documentación técnica del proyecto EDIFIKA (Microsoft, s.f.).*
+*Figura. Editor Visual Studio Code utilizado para el desarrollo frontend, edición de archivos Markdown y documentación técnica del proyecto Edifika (Microsoft, s.f.).*
 
 
 
 ### Angular
 
 **Propósito de Uso:**  
-Framework utilizado para el desarrollo de la aplicación web frontend de EDIFIKA. Permite construir vistas, componentes, rutas, servicios y la comunicación con los microservicios backend.
+Framework utilizado para el desarrollo de la aplicación web frontend de Edifika. Permite construir vistas, componentes, rutas, servicios y la comunicación con los microservicios backend.
 
 **Ruta de Referencia/Descarga:**  
 Angular Framework
 
 <img src="assets/img/angular.png" alt="context" width="200"/>
 
-*Figura. Framework Angular utilizado para el desarrollo de la aplicación web frontend de EDIFIKA (Angular, s.f.).*
+*Figura. Framework Angular utilizado para el desarrollo de la aplicación web frontend de Edifika (Angular, s.f.).*
 
 
 
@@ -7019,7 +7171,7 @@ Spring Boot Framework
 
 <img src="assets/img/springboot.png" alt="context" width="200"/>
 
-*Figura. Framework Spring Boot utilizado para la construcción y despliegue del microservicio IAM de EDIFIKA (Spring, s.f.).*
+*Figura. Framework Spring Boot utilizado para la construcción y despliegue del microservicio IAM de Edifika (Spring, s.f.).*
 
 
 
@@ -7033,7 +7185,7 @@ Python 3.12 (imagen Docker `python:3.12-slim`) — https://www.python.org/downlo
 
 <img src="assets/img/python.png" alt="context" width="200"/>
 
-*Figura. Lenguaje Python utilizado para desarrollar el Edge Gateway del proyecto EDIFIKA (Python Software Foundation, s.f.).*
+*Figura. Lenguaje Python utilizado para desarrollar el Edge Gateway del proyecto Edifika (Python Software Foundation, s.f.).*
 
 
 
@@ -7047,7 +7199,7 @@ Flask 3.1.3 — https://flask.palletsprojects.com/
 
 <img src="assets/img/flask.png" alt="context" width="200"/>
 
-*Figura. Framework Flask utilizado para implementar la API REST local del Edge Gateway de EDIFIKA (Pallets, s.f.).*
+*Figura. Framework Flask utilizado para implementar la API REST local del Edge Gateway de Edifika (Pallets, s.f.).*
 
 
 
@@ -7089,7 +7241,7 @@ Peewee ORM 4.5.2 — https://docs.peewee-orm.com/
 
 <img src="assets/img/peewee.png" alt="context" width="200"/>
 
-*Figura. ORM Peewee utilizado para la persistencia local del Edge Gateway de EDIFIKA (Peewee, s.f.).*
+*Figura. ORM Peewee utilizado para la persistencia local del Edge Gateway de Edifika (Peewee, s.f.).*
 
 
 
@@ -7176,7 +7328,7 @@ Swagger UI integrado en el microservicio IAM
 
 <img src="assets/img/swagger.png" alt="context" width="200"/>
 
-*Figura. Herramienta Swagger UI utilizada para la documentación y prueba visual de los endpoints expuestos por el backend de EDIFIKA (Swagger, s.f.).*
+*Figura. Herramienta Swagger UI utilizada para la documentación y prueba visual de los endpoints expuestos por el backend de Edifika (Swagger, s.f.).*
 
 
 
@@ -7190,7 +7342,7 @@ pytest 9.1.1 — https://docs.pytest.org/
 
 <img src="assets/img/pytest.png" alt="context" width="200"/>
 
-*Figura. Framework pytest utilizado para las pruebas automatizadas del Edge Gateway de EDIFIKA (pytest, s.f.).*
+*Figura. Framework pytest utilizado para las pruebas automatizadas del Edge Gateway de Edifika (pytest, s.f.).*
 
 
 
@@ -7199,7 +7351,7 @@ pytest 9.1.1 — https://docs.pytest.org/
 #### GitHub Pages
 
 **Propósito de Uso:**  
-Despliegue de la Landing Page de EDIFIKA, permitiendo su visualización pública desde el repositorio del proyecto.
+Despliegue de la Landing Page de Edifika, permitiendo su visualización pública desde el repositorio del proyecto.
 
 **Ruta de Referencia/Descarga:**  
 GitHub Pages (SaaS)
@@ -7207,21 +7359,21 @@ GitHub Pages (SaaS)
 
 <img src="assets/img/githubpages.png" alt="context" width="200"/>
 
-*Figura. Plataforma GitHub Pages utilizada para el despliegue y visualización pública de la Landing Page de EDIFIKA (GitHub, s.f.).*
+*Figura. Plataforma GitHub Pages utilizada para el despliegue y visualización pública de la Landing Page de Edifika (GitHub, s.f.).*
 
 
 
 #### Render
 
 **Propósito de Uso:**  
-Plataforma en la nube utilizada para desplegar el microservicio IAM de EDIFIKA. Permite ejecutar el backend desarrollado con Spring Boot, realizar despliegues desde GitHub y exponer públicamente los endpoints del servicio.
+Plataforma en la nube utilizada para desplegar el microservicio IAM de Edifika. Permite ejecutar el backend desarrollado con Spring Boot, realizar despliegues desde GitHub y exponer públicamente los endpoints del servicio.
 
 **Ruta de Referencia/Descarga:**  
 Render (PaaS - Plataforma como Servicio)
 
 <img src="assets/img/render.png" alt="context" width="200"/>
 
-*Figura. Plataforma Render utilizada para el despliegue en la nube del microservicio IAM desarrollado para EDIFIKA (Render, s.f.).*
+*Figura. Plataforma Render utilizada para el despliegue en la nube del microservicio IAM desarrollado para Edifika (Render, s.f.).*
 
 
 
@@ -7235,7 +7387,7 @@ Docker 29.8 y Docker Compose 5.5 — https://www.docker.com/products/docker-desk
 
 <img src="assets/img/docker.png" alt="context" width="200"/>
 
-*Figura. Docker y Docker Compose utilizados para el empaquetado y despliegue del Edge Gateway de EDIFIKA (Docker Inc., s.f.).*
+*Figura. Docker y Docker Compose utilizados para el empaquetado y despliegue del Edge Gateway de Edifika (Docker Inc., s.f.).*
 
 
 
@@ -7244,7 +7396,7 @@ Docker 29.8 y Docker Compose 5.5 — https://www.docker.com/products/docker-desk
 #### GitHub
 
 **Propósito de Uso:**  
-Almacenamiento, versionado y colaboración en la documentación técnica del proyecto. También permite organizar el código fuente, los README, guías de despliegue y archivos relacionados al desarrollo de EDIFIKA.
+Almacenamiento, versionado y colaboración en la documentación técnica del proyecto. También permite organizar el código fuente, los README, guías de despliegue y archivos relacionados al desarrollo de Edifika.
 
 **Ruta de Referencia/Descarga:**  
 GitHub (SaaS)
@@ -7252,7 +7404,7 @@ GitHub (SaaS)
 
 <img src="assets/img/github.png" alt="context" width="200"/>
 
-*Figura. Plataforma GitHub utilizada para el almacenamiento y versionado de la documentación técnica y código fuente del proyecto EDIFIKA (GitHub, s.f.).*
+*Figura. Plataforma GitHub utilizada para el almacenamiento y versionado de la documentación técnica y código fuente del proyecto Edifika (GitHub, s.f.).*
 
 
 
@@ -7266,19 +7418,19 @@ Visual Studio Code (Aplicación de escritorio)
 
 <img src="assets/img/visualstudiocode.png" alt="context" width="200"/>
 
-*Figura. Editor Visual Studio Code utilizado para la edición y organización de la documentación técnica y archivos Markdown del proyecto EDIFIKA (Microsoft, s.f.).*
+*Figura. Editor Visual Studio Code utilizado para la edición y organización de la documentación técnica y archivos Markdown del proyecto Edifika (Microsoft, s.f.).*
 
-Con esta configuración, nuestro equipo puede colaborar de manera eficiente y gestionar el ciclo de vida completo del desarrollo de EDIFIKA, desde la planificación y diseño hasta el desarrollo, pruebas, documentación, despliegue y mantenimiento.
+Con esta configuración, nuestro equipo puede colaborar de manera eficiente y gestionar el ciclo de vida completo del desarrollo de Edifika, desde la planificación y diseño hasta el desarrollo, pruebas, documentación, despliegue y mantenimiento.
 
 ### 6.1.2. Source Code Management
 
-En esta sección, nuestro equipo establece los medios y el esquema de organización que aplicará para el seguimiento de modificaciones, utilizando **GitHub** como plataforma y sistema de control de versiones. De esta manera, configuramos repositorios remotos para almacenar el código fuente de EDIFIKA y colaborar entre los miembros del equipo.
+En esta sección, nuestro equipo establece los medios y el esquema de organización que aplicará para el seguimiento de modificaciones, utilizando **GitHub** como plataforma y sistema de control de versiones. De esta manera, configuramos repositorios remotos para almacenar el código fuente de Edifika y colaborar entre los miembros del equipo.
 
 ### Plataforma de control de versiones
 
-El equipo utiliza GitHub para almacenar los productos digitales de EDIFIKA. Los repositorios se organizan según el tipo de producto desarrollado:
+El equipo utiliza GitHub para almacenar los productos digitales de Edifika. Los repositorios se organizan según el tipo de producto desarrollado:
 
-- **Landing Page:** contiene el sitio web informativo de EDIFIKA desplegado mediante GitHub Pages.
+- **Landing Page:** contiene el sitio web informativo de Edifika desplegado mediante GitHub Pages.
 - **Frontend Web Application:** contiene la aplicación web desarrollada con Angular.
 - **Backend Web Services:** contiene los microservicios backend, incluyendo el microservicio IAM desarrollado con Java, Spring Boot y Maven.
 - **Edge Gateway:** contiene el servicio Edge del proyecto IoT, desarrollado con Python, Flask, Peewee ORM y SQLite, junto con el simulador de nodos ESP32 y el backend simulado.
@@ -7316,7 +7468,7 @@ Organizamos el repositorio en ramas para diferentes entornos de trabajo. Para el
 
 ### Main branch
 
-Contiene la versión estable del producto. Esta rama representa el código listo para producción o despliegue. En el caso de EDIFIKA, puede contener la versión desplegada de la Landing Page o del microservicio IAM.
+Contiene la versión estable del producto. Esta rama representa el código listo para producción o despliegue. En el caso de Edifika, puede contener la versión desplegada de la Landing Page o del microservicio IAM.
 
 ##### Develop branch
 
@@ -7504,7 +7656,7 @@ hotfix/lock-timeout
 
 ### 6.1.3. Source Code Style Guide & Coding Conventions
 
-El equipo ha definido las siguientes convenciones de nombres y estilos de codificación, aplicadas en los lenguajes y tecnologías utilizados en la solución EDIFIKA. Todas las nomenclaturas están en inglés, buscando claridad, estandarización y buenas prácticas de desarrollo.
+El equipo ha definido las siguientes convenciones de nombres y estilos de codificación, aplicadas en los lenguajes y tecnologías utilizados en la solución Edifika. Todas las nomenclaturas están en inglés, buscando claridad, estandarización y buenas prácticas de desarrollo.
 
 ### HTML
 
@@ -7905,7 +8057,7 @@ edge_gateway/
 
 ### 6.1.4. Software Deployment Configuration
 
-Esta sección describe la configuración y los pasos necesarios para realizar el despliegue exitoso de los productos digitales desarrollados en EDIFIKA. Actualmente, la solución cuenta con la **Landing Page desplegada en GitHub Pages**, el **microservicio IAM desplegado en Render** y el **Edge Gateway desplegado on-premise con Docker Compose**.
+Esta sección describe la configuración y los pasos necesarios para realizar el despliegue exitoso de los productos digitales desarrollados en Edifika. Actualmente, la solución cuenta con la **Landing Page desplegada en GitHub Pages**, el **microservicio IAM desplegado en Render** y el **Edge Gateway desplegado on-premise con Docker Compose**.
 
 A continuación, se especifican los pasos para desplegar la Landing Page en GitHub Pages, los Web Services Backend en Render y el Edge Gateway en el servidor del condominio.
 
@@ -7971,7 +8123,7 @@ c. Validar que las imágenes, estilos, botones y secciones principales se muestr
 
 ### Despliegue de los Web Services Backend en Render
 
-El microservicio IAM de EDIFIKA se encuentra desplegado en Render. Este backend fue desarrollado con **Java, Spring Boot y Maven**, y expone documentación mediante Swagger UI.
+El microservicio IAM de Edifika se encuentra desplegado en Render. Este backend fue desarrollado con **Java, Spring Boot y Maven**, y expone documentación mediante Swagger UI.
 
 #### URL desplegada
 
@@ -8035,7 +8187,7 @@ c. Conectar la cuenta de GitHub si aún no está conectada.
 
 a. Seleccionar el repositorio del microservicio IAM.
 
-b. Verificar que el repositorio corresponda al backend correcto de EDIFIKA.
+b. Verificar que el repositorio corresponda al backend correcto de Edifika.
 
 ### 5. Configurar el servicio
 
@@ -8110,7 +8262,7 @@ d. Si hay errores, revisar los logs en la pestaña **Logs** de Render.
 
 ### Deployment Diagram del C4 Model
 
-Como parte de la configuración de despliegue, el equipo incluye el **Deployment Diagram del C4 Model**, donde se representa la distribución física de los productos digitales de EDIFIKA.
+Como parte de la configuración de despliegue, el equipo incluye el **Deployment Diagram del C4 Model**, donde se representa la distribución física de los productos digitales de Edifika.
 
 <img src="assets/img/edifika-deployment-c4.png" alt="context"/>
 
@@ -8158,7 +8310,7 @@ edifika-microservice-iot-gateway/
 
 Todas las variables del servicio se declaran con el prefijo `EDGE_`:
 
-- `EDGE_SERVICE_TOKEN`, por defecto `dev-service-token`: token Bearer de la API REST local. Es obligatoria.
+- `EDGE_SERVICE_TOKEN`, por defecto `dev-service-token`: token Bearer de la API REST local. Es obligatorio.
 - `EDGE_MQTT_HOST`, por defecto `mosquitto`: host del broker MQTT.
 - `EDGE_CLOUD_BASE_URL`, por defecto `http://mock-cloud:9000`: backend al que se envían los eventos.
 - `EDGE_CLOUD_TOKEN`, por defecto `dev-cloud-token`: credencial del Edge Gateway ante el backend.
@@ -8302,7 +8454,7 @@ La **Definition of Done** acordada para el Sprint 1 exige que cada historia cump
 
 #### 6.2.1.2. Aspect Leaders and Collaborators
 
-El Sprint 1 fue el primero del proyecto y puso a prueba una dificultad de coordinación que los Sprints anteriores no habían presentado: el equipo había trabajado siempre de forma conjunta sobre un mismo incremento y, al llegar a la etapa de implementación, esa práctica ya no era sostenible. El Sprint 1 comprometió 36 historias (165 story points) sobre tres productos digitales que viven en tres repositorios distintos y que, además, involucraban a personas con perfiles técnicos muy diferentes entre sí: frontend, backend, IoT y comunicación. Ante ese escenario, el equipo elaboró el Leadership-and-Collaboration Matrix (LACX), un artefacto que, por cada aspecto dentro del alcance del Sprint, indica quién actúa como líder (**L**) y quién o quiénes actúan como colaboradores (**C**), con el fin de brindar mayor claridad y efectividad en la comunicación al interior del equipo.
+El Sprint 1 fue el primero del proyecto y puso a prueba una dificultad de coordinación que las entregas anteriores no habían presentado: el equipo había trabajado siempre de forma conjunta sobre un mismo incremento y, al llegar a la etapa de implementación, esa práctica ya no era sostenible. El Sprint 1 comprometió 36 historias (165 story points) sobre tres productos digitales que viven en tres repositorios distintos y que, además, involucraban a personas con perfiles técnicos muy diferentes entre sí: frontend, backend, IoT y comunicación. Ante ese escenario, el equipo elaboró el Leadership-and-Collaboration Matrix (LACX), un artefacto que, por cada aspecto dentro del alcance del Sprint, indica quién actúa como líder (**L**) y quién o quiénes actúan como colaboradores (**C**), con el fin de brindar mayor claridad y efectividad en la comunicación al interior del equipo.
 
 La matriz no sustituye la auto-organización del Scrum Team: todos los integrantes son responsables del Sprint Goal y ninguno queda excluido de la entrega. Lo que la matriz hace es explicitar, antes de que empiece el trabajo, quién es la persona de referencia para cada aspecto. En la práctica esto evitó dos tipos de fricción observados durante el Sprint 1: preguntas dirigidas a la persona equivocada sobre una parte del producto que no dominaba, y bloqueos esperando una respuesta que la persona correcta no sabía que se le estaba pidiendo.
 
@@ -8409,8 +8561,8 @@ Los identificadores de historia y technical story empleados en esta tabla son lo
 
 | Artefacto | Referencia |
 |---|---|
-| Tablero del Sprint 1 en Trello | `https://trello.com/b/edifika-sprint-1` |
-| Captura del tablero | `assets/img/board/sprint-1-board.png` |
+| Tablero del Sprint 1 en Trello | **[POR COMPLETAR: URL pública del tablero del Sprint 1]** |
+| Captura del tablero | **[POR COMPLETAR: captura del tablero del Sprint 1]** |
 
 **Historias de usuario asignadas al Sprint**
 
@@ -8479,7 +8631,7 @@ Las historias marcadas como **Parcial (edge)** cubren la parte que corresponde a
 | T-W09 | US13 | Flujo de reserva | Selección de área y horario, confirmación y tarjetas de reserva | 12 | Perez Tuesta, Gabriel |
 | T-W10 | US15 | Cancelación de reserva | Acción de cancelación con confirmación y actualización del calendario | 4 | Perez Tuesta, Gabriel |
 | T-W11 | US16 | Administración de áreas comunes | CRUD de áreas, estados y reglas de uso por área | 12 | Perez Tuesta, Gabriel |
-| T-W12 | US18 | Consulta de deuda | Panel de deuda por unidad y detalle del resident | 8 | Perez Tuesta, Gabriel |
+| T-W12 | US18 | Consulta de deuda | Panel de deuda por unidad y detalle del residente | 8 | Perez Tuesta, Gabriel |
 | T-W13 | US20 | Registro de pagos | Formulario de pago manual con voucher y estado en verificación | 6 | Perez Tuesta, Gabriel |
 | T-W14 | US25 | Resolución de pagos | Acciones de confirmar o rechazar un pago pendiente | 4 | Perez Tuesta, Gabriel |
 | T-W15 | — | Fake API y despliegue en Vercel | `json-server` con datos semilla, rutas y reescrituras de `vercel.json` | 14 | Perez Tuesta, Gabriel |
@@ -8544,7 +8696,7 @@ Estos módulos no se incluyeron en los 165 story points comprometidos porque no 
 
 #### 6.2.1.4. Development Evidence for Sprint Review
 
-En esta sección se explica y presenta los avances en implementación con relación a los productos de la solución según el alcance del Sprint 1: **Landing Page**, **Web Application (FrontEnd)** y **Edge Gateway**. La sección inicia con una introducción que resume los principales avances en la implementación.
+En esta sección se explican y presentan los avances en implementación con relación a los productos de la solución según el alcance del Sprint 1: **Landing Page**, **Web Application (FrontEnd)** y **Edge Gateway**. La sección inicia con una introducción que resume los principales avances en la implementación.
 
 El Sprint 1 cerró con 36 historias comprometidas (3 para la Landing Page, 12 para la Web Application y 21 para el Edge Gateway) sobre un total de 165 story points. Cada incremento se corresponde con ramas `feature/` que parten de `develop` y se integran mediante merge con mensajes convencionales (`feat`, `docs`, `chore`, `test`, `fix`). A continuación se presenta la tabla con los commits relacionados con la implementación para cada repositorio.
 
@@ -8555,11 +8707,11 @@ El Sprint 1 cerró con 36 historias comprometidas (3 para la Landing Page, 12 pa
 - Ramas utilizadas: `main` (publicación) y trabajo colaborativo con commits convencionales.
 
 ###### Web Application (`IoT-UPC-202620/FrontEnd`)
-- Entrega de pantallas operativas: inicio de sesión (`US01`-`US04`), gestión de usuarios y edificios, foro (`US09`), reservas (`US12`-`US16`), finanzas (`US18`-`US25`) y despliegue en Vercel con `json-server`.
+- Entrega de pantallas operativas: inicio de sesión y gestión de usuarios y edificios (`US01`-`US04`), foro (`US09`), reservas (`US12`-`US16`), finanzas (`US18`-`US25`) y despliegue en Vercel con `json-server`.
 - Rama de integración principal: `main`; rama de trabajo colaborativo: `IOT` (merge PR #1).
 
 ###### Edge Gateway (`IoT-UPC-202620/Edifika-Microservice-IoT-Gateway`)
-- Servicio ejecutándose de extremo a extremo: Flask + Peewee + SQLite (WAL), contrato MQTT (`TS24`), persistencia local (`TS25`), motor de acceso (`US45`-`US46`), telemetría (`US43`-`US44`), sincronización con la nube (`TS21`, `TS33`), despliegue Docker Compose (`TS31`-`TS32`) y documentación de contratos (`TS16`).
+- Servicio ejecutándose de extremo a extremo: Flask + Peewee + SQLite (WAL), contrato MQTT (`TS24`), persistencia local (`TS25`), motor de acceso (`US45`-`US46`), telemetría (`US43`-`US44`), sincronización con la nube (`TS21`, `TS33`), despliegue con Docker Compose (`TS29`), contrato con el backend (`TS31`) y pruebas automatizadas (`TS32`).
 - Rama principal de desarrollo: `develop`; release: `release/0.1.0` (merge a `main`).
 
 ##### Tabla de commits relacionados con la implementación
@@ -8613,9 +8765,9 @@ El Sprint 1 cerró con 36 historias comprometidas (3 para la Landing Page, 12 pa
 
 ##### Rutas de los repositorios en control de versiones
 
-- Landing Page: `https://github.com/IoT-UPC-202620/Iot-LandingPage` (clonado en `C:\dev\iot\Iot-LandingPage`; rama `main`).
-- Web Application: `https://github.com/IoT-UPC-202620/FrontEnd` (clonado en `C:\dev\iot\FrontEnd`; rama `main`, trabajo colaborativo en `IOT`).
-- Edge Gateway: `https://github.com/IoT-UPC-202620/Edifika-Microservice-IoT-Gateway` (clonado en `C:\dev\iot\Edifika-Microservice-IoT-Gateway`; ramas `main`, `develop`, `release/0.1.0`).
+- Landing Page: `https://github.com/IoT-UPC-202620/Iot-LandingPage` (rama `main`).
+- Web Application: `https://github.com/IoT-UPC-202620/FrontEnd` (rama `main`, trabajo colaborativo en `IOT`).
+- Edge Gateway: `https://github.com/IoT-UPC-202620/Edifika-Microservice-IoT-Gateway` (ramas `main`, `develop` y `release/0.1.0`).
 
 #### 6.2.1.5. Testing Suite Evidence for Sprint Review
 
@@ -8632,7 +8784,7 @@ No existe un repositorio independiente exclusivo de Testing; los archivos de pru
 ##### Avances en Testing por producto
 
 ###### Edge Gateway (`IoT-UPC-202620/Edifika-Microservice-IoT-Gateway`)
-- **Unit e Integration Tests:** 166 funciones de test (`def test_...`) distribuidas en 11 archivos (`test_access.py`, `test_base.py`, `test_cloud_integration.py`, `test_commands.py`, `test_devices.py`, `test_mock_cloud.py`, `test_mqtt_contract.py`, `test_persistence.py`, `test_remote_and_maintenance.py`, `test_telemetry.py`).
+- **Unit e Integration Tests:** 166 funciones de test (`def test_...`) distribuidas en 10 archivos, que suman 188 casos al contar las pruebas parametrizadas (`test_access.py`, `test_base.py`, `test_cloud_integration.py`, `test_commands.py`, `test_devices.py`, `test_mock_cloud.py`, `test_mqtt_contract.py`, `test_persistence.py`, `test_remote_and_maintenance.py`, `test_telemetry.py`).
 - **Cobertura de historias:** `US71`-`US75` (acceso local), `US76`-`US78` (telemetría), `US79`-`US80` (registro de nodos), `US83` (comandos remotos), `US85` (sincronización de reloj), `US89` (mantenimiento), `US92` (alertas), `US93` (bitácora), `TS23` (base Flask), `TS24` (contrato MQTT), `TS25` (persistencia), `TS31`-`TS33` (despliegue y nube), `TS34` (suite automatizada).
 - **Clases y comportamientos relacionados:** `edge_gateway.gateway`, `mqtt.router`, `services.access`, `services.telemetry`, `models.db`, `api.rest`.
 
@@ -8676,7 +8828,7 @@ No existe un repositorio independiente exclusivo de Testing; los archivos de pru
 
 - **BDD / Gherkin:** No se incluyen archivos `.feature` o `.steps` para el Sprint 1 porque los Acceptance Tests con enfoque BDD dependen de los endpoints de los microservicios de la nube (`Web Services`) que no forman parte del Sprint Backlog 1. Se planifica su inclusión en el Sprint 2.
 - **Commits relacionados con Testing:** Los avances en Testing del Edge Gateway se reflejan principalmente en los commits que implementan `TS32` (pruebas automatizadas) y `TS34` (suite completa). El archivo `tests/test_access.py` (28 tests) cubre los escenarios de `US45` (`leer tarjeta RFID y resolver acceso`) y `US46` (`abrir cerradura eléctrica y re-bloquear`). El archivo `tests/test_telemetry.py` (22 tests) cubre `US43` (`detectar falla de dispositivo`) y `US44` (`monitorear estado de conexión`). El archivo `tests/test_cloud_integration.py` (34 tests) cubre `TS33` (`integración con backend`).
-- **Rutas de repositorios:** `C:\dev\iot\Edifika-Microservice-IoT-Gateway` (branch `develop`, release `release/0.1.0`, main); `C:\dev\iot\FrontEnd` (branch `main`, trabajo en `IOT`); `C:\dev\iot\Iot-LandingPage` (branch `main`).
+- **Rutas de repositorios:** `https://github.com/IoT-UPC-202620/Edifika-Microservice-IoT-Gateway` (ramas `develop`, `release/0.1.0` y `main`); `https://github.com/IoT-UPC-202620/FrontEnd` (rama `main`, trabajo en `IOT`); `https://github.com/IoT-UPC-202620/Iot-LandingPage` (rama `main`).
 
 #### 6.2.1.6. Execution Evidence for Sprint Review
 
@@ -8686,8 +8838,8 @@ Esta sección inicia con un resumen que explica lo alcanzado en el Sprint 1 y pr
 
 El Sprint 1 (21/09/2026 – 10/10/2026) cerró con los tres productos comprometidos:
 
-- **Landing Page (`IoT-UPC-202620/Iot-LandingPage`)**: publicado en su URL pública, con hero, propuesta de valor, secciones informativas, funcionalidades, galería de capturas, formulario de contacto, navegación responsiva y traducciones ES/EN. Se evidencia con los mockups disponibles en el repositorio.
-- **Web Application (`IoT-UPC-202620/FrontEnd`)**: desplegado en Vercel con pantallas operativas: inicio de sesión, registro, gestión de edificios y unidades, foro, reservas (calendario), finanzas (deuda y pagos), documentación y dashboard Smart IoT. Se utilizan datos semilla (`json-server`) y se evidencia mediante capturas de los mockups de diseño (`assets/img/mockups/`).
+- **Landing Page (`IoT-UPC-202620/Iot-LandingPage`)**: publicada en su URL pública, con hero, propuesta de valor, secciones informativas, funcionalidades, galería de capturas, formulario de contacto, navegación responsiva y traducciones ES/EN. Se evidencia con los mockups disponibles en el repositorio.
+- **Web Application (`IoT-UPC-202620/FrontEnd`)**: desplegada en Vercel con pantallas operativas: inicio de sesión, registro, gestión de edificios y unidades, foro, reservas (calendario), finanzas (deuda y pagos), documentación y dashboard Smart IoT. Se utilizan datos semilla (`json-server`) y se evidencia mediante capturas de los mockups de diseño (`assets/img/mockups/`).
 - **Edge Gateway (`IoT-UPC-202620/Edifika-Microservice-IoT-Gateway`)**: servicio ejecutándose de extremo a extremo dentro del edificio con Docker Compose (`mosquitto`, `edge-gateway`, `mock-cloud`). Se evidencia con los contratos MQTT, REST API (`/docs` Swagger), bitácora de accesos y simulador de nodos ESP32.
 
 ## Screenshots de las principales vistas implementadas
@@ -8721,11 +8873,11 @@ No se incluyen capturas de ejecución del Edge Gateway en este informe porque su
 
 #### 6.2.1.7. Services Documentation Evidence for Sprint Review
 
-Durante el Sprint 1 (21/09/2026 – 10/10/2026) el equipo documentó la API REST del **Edge Gateway** (`Edifika-Microservice-IoT-Gateway`) mediante la especificación **OpenAPI 3.0** (Swagger UI). La interfaz interactiva está disponible localmente en `http://localhost:8000/docs`, y la especificación completa se expone en `/openapi.json`. Todos los endpoints, excepto `/health`, requieren autenticación con token Bearer (`Authorization: Bearer <EDGE_SERVICE_TOKEN>`). La documentación está redactada en inglés y cubre los 14 endpoints implementados en esta entrega.
+Durante el Sprint 1 (21/09/2026 – 10/10/2026) el equipo documentó la API REST del **Edge Gateway** (`Edifika-Microservice-IoT-Gateway`) mediante la especificación **OpenAPI 3.0** (Swagger UI). La interfaz interactiva está disponible localmente en `http://localhost:8000/docs`, y la especificación completa se expone en `/openapi.json`. Todos los endpoints, excepto `/health`, requieren autenticación con token Bearer (`Authorization: Bearer <EDGE_SERVICE_TOKEN>`). La documentación está redactada en inglés y cubre los 15 endpoints implementados en esta entrega.
 
 **Logros de documentación del Sprint 1:**
-- Especificación OpenAPI (`openapi.json`) generada automáticamente desde los controladores Python (Flask + Flasgger / Flask-RESTX).
-- Documentación desplegada en el contenedor del Edge Gateway con acceso a `/docs` (Swagger UI) y `/redoc`.
+- Especificación OpenAPI (`openapi.json`) generada automáticamente desde los controladores Python (Flask + flask-smorest).
+- Documentación desplegada en el contenedor del Edge Gateway con acceso a `/docs` (Swagger UI) y a `/openapi.json`.
 - Todos los endpoints incluyen descripción, esquema de request/response, códigos de error (`400`, `401`, `409`, `422`, `500`) y ejemplos con datos de muestra.
 - Contrato MQTT (`edifika/v1`) documentado junto con los mensajes de comando, heartbeat, acceso y lectura de sensores.
 - Contrato entre Edge Gateway y backend (`POST /api/v1/edge/events`, `GET /api/v1/edge/sync`) documentado con formato de eventos y mecanismo de deduplicación.
@@ -8790,7 +8942,7 @@ A continuación se presenta la tabla de endpoints del Sprint 1 con las acciones 
     "version": "0.1.0"
   }
   ```
-- **Explicación:** Confirma que todos los servicios internos (SQLite, Mosquitto, Redis cache y cola de eventos) están operativos antes de aceptar tráfico.
+- **Explicación:** Confirma que todos los servicios internos (SQLite, Mosquitto, caché en memoria y cola de eventos) están operativos antes de aceptar tráfico.
 
 #### 2. `POST /api/v1/devices`
 - **Verbo HTTP:** `POST`
@@ -8951,7 +9103,7 @@ A continuación se presenta la tabla de endpoints del Sprint 1 con las acciones 
     "total": 2
   }
   ```
-- **Explicación:** Los datos de sensores (`humidity`, `ultrasonic`) se almacenan en TimescaleDB a través del backend y se consultan desde el Edge Gateway para validación local antes de sincronizar.
+- **Explicación:** Las lecturas de sensores (`humidity`, `ultrasonic`) se almacenan en la base SQLite local del Edge Gateway y se reenvían a la nube cuando hay conexión.
 
 #### 13. `POST /api/v1/sync`
 - **Verbo HTTP:** `POST`
@@ -9028,7 +9180,7 @@ A continuación se describen las capturas realizadas con datos de muestra, utili
 
 **Captura 1 — Interfaz Swagger UI (`assets/img/swagger.png`)**
 - Se observa la lista de todos los endpoints organizados por tags (`health`, `devices`, `credentials`, `access`, `readings`, `sync`, `status`, `outbox`).
-- Cada endpoint muestra su método (`GET`, `POST`, `PATCH`, `PUT`) con el color correspondiente (azul para `GET`, verde para `POST`, naranja para `PUT`, morado para `PATCH`).
+- Cada endpoint muestra su método (`GET`, `POST`, `PATCH`, `PUT`) con el color correspondiente (azul para `GET`, verde para `POST`, naranja para `PUT`, verde azulado para `PATCH`).
 - La sección de `securitySchemes` indica `bearerAuth` con tipo `http`, esquema `bearer` y formato `JWT`, coincidiendo con el token `EDGE_SERVICE_TOKEN`.
 
 **Captura 2 — Ejecución de `GET /health` (`assets/img/postman.png`)**
@@ -9114,7 +9266,7 @@ Durante el Sprint 1 (21/09/2026 – 10/10/2026) se completó el despliegue inici
 - Captura de la página publicada (`https://iot-upc-202620.github.io/Iot-LandingPage/`). Se observa la sección `#showcase` con las pantallas operativas del FrontEnd (`login.jpg`, `register.jpg`, `units-residents.jpg`, `community-wall.jpg`, etc.) y la navegación responsiva. La publicación se realiza automáticamente mediante `gh-pages` en cada push a `main`.
 
 **Paso 2 — Configuración de despliegue en Vercel (`assets/img/render.png`)**
-- Captura del panel de Vercel (`https://vercel.com/`). Se observa el proyecto `edifika-front`, la rama `main` vinculada, el dominio `edifika-front.vercel.app` y los últimos despliegues (`10/10/2026`). Las variables de entorno (`API_URL`, `EDGE_SERVICE_TOKEN`) se configuraron en la sección **Settings > Environment Variables**.
+- Captura del panel de Vercel (`https://vercel.com/`). Se observa el proyecto `edifika-frontend`, la rama `main` vinculada, el dominio `edifika-frontend.vercel.app` y los últimos despliegues (`10/10/2026`). Las variables de entorno (`API_URL`, `EDGE_SERVICE_TOKEN`) se configuraron en la sección **Settings > Environment Variables**.
 
 **Paso 3 — Configuración del Edge Gateway en Render (`assets/img/render.png` — servicio web)**
 - En Render se creó un servicio web (`Web Service`) vinculado al repositorio `Edifika-Microservice-IoT-Gateway`, con `Dockerfile` como build command (`docker build -t edge-gateway .`). Se configuraron las variables `EDGE_SERVICE_TOKEN`, `MQTT_HOST` (`mosquitto`), `DB_PATH` (`/data/edge.db`) y `PORT` (`8000`). El servicio está disponible en `https://edifika-edge-gateway.onrender.com/`.
@@ -9206,7 +9358,7 @@ En esta sección se definen los líderes y colaboradores de cada aspecto conside
 
 #### 6.2.2.3. Sprint Backlog 2
 
-El objetivo principal del Sprint 2 es **conectar los dispositivos físicos del edificio con la plataforma en la nube**, cerrando la contraparte en la nube de las historias que el Sprint 1 dejó en estado **Parcial (edge)** y entregando la primera versión de los microservicios IoT y del firmware del nodo ESP32. El Sprint Backlog contiene las 12 historias seleccionadas (65 story points) y las 42 tasks que resultaron de su descomposición, estimadas en 181 horas. Los identificadores de historia son los del Product Backlog de la sección 3.3. Las tasks provienen de los planes de implementación del Sprint (`docs/superpowers/plans/`). La única task que no está en *Done* es la prueba de aceptación con la placa física, que queda en proceso hasta contar con el hardware.
+El objetivo principal del Sprint 2 es **conectar los dispositivos físicos del edificio con la plataforma en la nube**, cerrando la contraparte en la nube de las historias que el Sprint 1 dejó en estado **Parcial (edge)** y entregando la primera versión de los microservicios IoT y del firmware del nodo ESP32. El Sprint Backlog contiene las 12 historias seleccionadas (65 story points) y las 42 tasks que resultaron de su descomposición, estimadas en 181 horas. Los identificadores de historia son los del Product Backlog de la sección 3.3. Las tasks provienen de los planes de implementación del Sprint (`docs/superpowers/plans/`). Junto al identificador de cada historia se indica su estimación en story points, tomada del Product Backlog; la suma de las 12 historias coincide con la velocity comprometida en el Sprint Planning. La única task que no está en *Done* es T-42, la prueba de aceptación con la placa física, que queda en *To-do* hasta contar con el hardware; por ello la historia US47 se considera implementada, pero aún no aceptada.
 
 **[POR COMPLETAR: captura del tablero del Sprint 2]**
 
@@ -9232,7 +9384,7 @@ Enlace público del Board en Trello: [https://trello.com/b/N0u8fyeR/sprint-2](ht
     <td><strong>Status (To-do / In-Process / To-Review / Done)</strong></td>
   </tr>
   <tr>
-    <td rowspan="3">TS16</td>
+    <td rowspan="3">TS16<br>(5 SP)</td>
     <td rowspan="3">Configuración base del microservicio IoT Access Management</td>
     <td>T-01</td>
     <td>Esqueleto del servicio</td>
@@ -9258,7 +9410,7 @@ Enlace público del Board en Trello: [https://trello.com/b/N0u8fyeR/sprint-2](ht
     <td>Done</td>
   </tr>
   <tr>
-    <td rowspan="3">TS19</td>
+    <td rowspan="3">TS19<br>(8 SP)</td>
     <td rowspan="3">Configuración base del microservicio IoT Telemetry & Analytics con TimescaleDB</td>
     <td>T-04</td>
     <td>Esqueleto</td>
@@ -9284,7 +9436,7 @@ Enlace público del Board en Trello: [https://trello.com/b/N0u8fyeR/sprint-2](ht
     <td>Done</td>
   </tr>
   <tr>
-    <td rowspan="8">TS22</td>
+    <td rowspan="8">TS22<br>(5 SP)</td>
     <td rowspan="8">Publicación y consumo de eventos de dominio mediante el broker</td>
     <td>T-07</td>
     <td>Infraestructura local</td>
@@ -9350,7 +9502,7 @@ Enlace público del Board en Trello: [https://trello.com/b/N0u8fyeR/sprint-2](ht
     <td>Done</td>
   </tr>
   <tr>
-    <td rowspan="7">TS17</td>
+    <td rowspan="7">TS17<br>(8 SP)</td>
     <td rowspan="7">Comunicación con dispositivos ESP32 a través del Edge Gateway</td>
     <td>T-15</td>
     <td>Configuración y TLS MQTT</td>
@@ -9408,7 +9560,7 @@ Enlace público del Board en Trello: [https://trello.com/b/N0u8fyeR/sprint-2](ht
     <td>Done</td>
   </tr>
   <tr>
-    <td rowspan="4">TS26</td>
+    <td rowspan="4">TS26<br>(8 SP)</td>
     <td rowspan="4">Firmware base del ESP32 con lectura de sensores y reconexión</td>
     <td>T-22</td>
     <td>Firmware del informe obsoleto</td>
@@ -9442,7 +9594,7 @@ Enlace público del Board en Trello: [https://trello.com/b/N0u8fyeR/sprint-2](ht
     <td>Done</td>
   </tr>
   <tr>
-    <td rowspan="2">TS14</td>
+    <td rowspan="2">TS14<br>(3 SP)</td>
     <td rowspan="2">Documentación de API con Swagger y autenticación JWT</td>
     <td>T-26</td>
     <td>Rutas IoT en el ApiGateway</td>
@@ -9460,7 +9612,7 @@ Enlace público del Board en Trello: [https://trello.com/b/N0u8fyeR/sprint-2](ht
     <td>Done</td>
   </tr>
   <tr>
-    <td rowspan="3">US29</td>
+    <td rowspan="3">US29<br>(5 SP)</td>
     <td rowspan="3">Registrar tarjeta RFID de acceso a áreas comunes</td>
     <td>T-28</td>
     <td>Credenciales RFID</td>
@@ -9486,7 +9638,7 @@ Enlace público del Board en Trello: [https://trello.com/b/N0u8fyeR/sprint-2](ht
     <td>Done</td>
   </tr>
   <tr>
-    <td rowspan="2">US30</td>
+    <td rowspan="2">US30<br>(5 SP)</td>
     <td rowspan="2">Desactivar acceso a áreas comunes por morosidad</td>
     <td>T-31</td>
     <td>Estado del residente y deudas</td>
@@ -9504,7 +9656,7 @@ Enlace público del Board en Trello: [https://trello.com/b/N0u8fyeR/sprint-2](ht
     <td>Done</td>
   </tr>
   <tr>
-    <td rowspan="5">US33</td>
+    <td rowspan="5">US33<br>(5 SP)</td>
     <td rowspan="5">Otorgar acceso temporal por reserva aprobada</td>
     <td>T-33</td>
     <td>Nodos y reservas desde la nube</td>
@@ -9546,7 +9698,7 @@ Enlace público del Board en Trello: [https://trello.com/b/N0u8fyeR/sprint-2](ht
     <td>Done</td>
   </tr>
   <tr>
-    <td rowspan="1">US44</td>
+    <td rowspan="1">US44<br>(5 SP)</td>
     <td rowspan="1">Monitorear estado de conexión de dispositivos</td>
     <td>T-38</td>
     <td>Consumidores de eventos</td>
@@ -9556,7 +9708,7 @@ Enlace público del Board en Trello: [https://trello.com/b/N0u8fyeR/sprint-2](ht
     <td>Done</td>
   </tr>
   <tr>
-    <td rowspan="2">US43</td>
+    <td rowspan="2">US43<br>(5 SP)</td>
     <td rowspan="2">Detectar falla de dispositivo</td>
     <td>T-39</td>
     <td>Temperatura y estado del nodo</td>
@@ -9574,7 +9726,7 @@ Enlace público del Board en Trello: [https://trello.com/b/N0u8fyeR/sprint-2](ht
     <td>Done</td>
   </tr>
   <tr>
-    <td rowspan="2">US47</td>
+    <td rowspan="2">US47<br>(3 SP)</td>
     <td rowspan="2">Mostrar el resultado del acceso en el punto de acceso</td>
     <td>T-41</td>
     <td><code>DoorPresentation</code></td>
@@ -9589,7 +9741,7 @@ Enlace público del Board en Trello: [https://trello.com/b/N0u8fyeR/sprint-2](ht
     <td>Prueba manual con el hardware real</td>
     <td>3</td>
     <td>Acuña Corahua, Jonatan Ariel / Landa Ortiz, Sergio Javier / Ortiz Cardenas, Johanna Antuanete</td>
-    <td>In-Process</td>
+    <td>To-do</td>
   </tr>
 </table>
 
@@ -10157,7 +10309,6 @@ En esta sección se analizan las evidencias de colaboración del equipo durante 
 > **[POR COMPLETAR: introducción y resumen del contenido del video, al menos un testimonio positivo de un usuario de las entrevistas de validación, captura del video, URL en Microsoft Stream/Clipchamp, URL en YouTube usado en la Landing Page y duración.]**
 
 
-# Conclusiones
 # Conclusiones y Recomendaciones
 
 **Conclusiones**
@@ -10166,24 +10317,25 @@ En esta sección se analizan las evidencias de colaboración del equipo durante 
 - **Supuestos e hipótesis.** Los seis entrevistados valoraron el control de accesos con cerraduras inteligentes, la iluminación por sensores de presencia y el riego automático, y los tres administradores indicaron que los registros y la configuración de los dispositivos deben quedar bajo su control. Esto respalda los supuestos UA03, UOB04 y UOB05 y la necesidad detrás de las hipótesis HS04, HS05 y HS06. Las dificultades en pagos, reservas y comunicados que describieron respaldan la necesidad detrás de HS01, HS02 y HS03. Los administradores consideraron aceptable una tarifa de 2 a 5 USD mensuales por departamento, dato inicial a favor de BA02. Sin embargo, las entrevistas confirman la necesidad, pero no el efecto de la solución.
 - **Alcance definido.** El trabajo de requisitos dejó un alcance organizado en diez épicas, que combinan la gestión administrativa (autenticación, comunicados, áreas comunes, finanzas y reportes) con la capa IoT (accesos y riego, iluminación, telemetría y Edge Gateway). El diseño de la solución se cubrió con 12 bounded contexts, con una trazabilidad entre las historias de usuario, los bounded contexts y la arquitectura.
 - **Diseño UX/UI.** Se definieron guías de estilo, arquitectura de información, wireframes y mock-ups de la Landing Page y de las aplicaciones web y móvil, wireflows, User Flow Diagrams, un prototipo y el diseño de cuatro dispositivos IoT (control de accesos, iluminación y sensado, detección de fugas y medición de consumo). Con ello, el equipo tiene una referencia visual común para implementar el producto, aunque este diseño aún no se ha sometido a pruebas de usabilidad con usuarios.
-- **Edge Gateway.** Es el componente con mayor avance en el Sprint 1. Se implementó con ramas de GitFlow y se verificó con 188 pruebas automatizadas que no necesitan broker ni internet. La eficacia de la suite se comprobó introduciendo tres fallos a propósito, y las tres veces al menos una prueba falló. Además, se ejecutó de extremo a extremo con broker MQTT real, backend simulado y nodos ESP32 virtuales: una tarjeta con reserva vigente abrió la puerta, una desconocida fue rechazada, el servicio siguió decidiendo accesos con el backend caído y entregó los eventos pendientes en orden al restablecerse la conexión, y un nodo en mantenimiento rechazó comandos remotos.
-- **Diseño del dispositivo.** El nodo ESP32 se diseñó con su mapa de pines, sus decisiones de cableado y un firmware de prueba. La simulación en Wokwi difiere del montaje físico en la cerradura, el sensor de humedad, el lector RC522 y el reloj RTC, por lo que su comportamiento definitivo se confirmará con el hardware real.
-- **Despliegue.** El Edge Gateway quedó definido para desplegarse de forma reproducible con Docker Compose (seis servicios, validados con `docker compose config`). Falta la evidencia de su ejecución con los contenedores en estado `healthy`.
+- **Edge Gateway.** En el Sprint 1 se implementó con ramas de GitFlow y se verificó con 188 pruebas automatizadas, incluida la comprobación de su eficacia mediante tres fallos introducidos a propósito, y se ejecutó de extremo a extremo con un backend simulado. En el Sprint 2 se reemplazó ese backend por la plataforma real: publica sus eventos en RabbitMQ con confirmaciones, sincroniza credenciales, nodos y reservas desde la nube y ejecuta las órdenes remotas. Su suite creció a 251 pruebas, un evento de acceso llega a la nube en ~0.5 s (meta: 6 s o menos) y 20 accesos registrados durante una caída se recuperan sin duplicados.
+- **Plataforma IoT en la nube.** El Sprint 2 cerró la contraparte en la nube de las historias que quedaron en **Parcial (edge)**. IoT Access Management gestiona las credenciales RFID, las suspende automáticamente cuando Payment reporta morosidad y administra las reservas de puerta con invitados y los comandos al LED del nodo; IoT Telemetry almacena las lecturas en TimescaleDB, genera alertas y expone series agregadas. Fijar primero un documento único de contratos v1, validado con JSON Schema, permitió que siete líneas de trabajo avanzaran en paralelo y que los 7 escenarios de punta a punta pasaran a través del ApiGateway contra el stack completo.
+- **Diseño del dispositivo.** El nodo ESP32 cuenta ahora con un firmware de referencia que habla el contrato v1, con 28 pruebas ejecutadas en el host y compilado para la placa (Flash 77 %, RAM 15 %). La prueba de aceptación con el hardware real sigue pendiente, por lo que la historia US47 está implementada pero no aceptada, y las diferencias entre la simulación en Wokwi y el montaje físico aún deben confirmarse.
+- **Despliegue.** Los microservicios IoT, la infraestructura de mensajería y el stack de punta a punta se levantan de forma reproducible con Docker Compose y se configuran por variables de entorno, y se publicaron nueve versiones con Semantic Versioning. Falta desplegar los microservicios IoT en un entorno público en la nube y registrar la evidencia de los contenedores en estado `healthy`.
+- **Documentación de la API.** Los 35 endpoints IoT quedaron documentados con OpenAPI y en una colección Postman que cubre el 100 % de los endpoints del contrato, lo que permite a la Web Application y a la aplicación móvil construir sus vistas IoT sin depender del equipo de backend.
 - El diseño por bounded context aísla reglas de negocio distintas (facturación, reservas, IoT) sin que un cambio en un contexto obligue a tocar otro; la comunicación entre Reservation, Smart Lighting y IoT Access Management ocurre solo por eventos, no por acoplamiento directo.
 - Separar PostgreSQL (datos transaccionales) de TimescaleDB (series de tiempo) resuelve el problema de escala de las lecturas de sensores, que crecen de forma continua y degradarían los dashboards de consumo si se consultaran contra un modelo relacional normal.
 - La regla de morosidad (`ResidentMarkedDelinquent`) es un acoplamiento intencional bien resuelto: Payment decide quién es moroso y IoT Access Management actúa sobre esa decisión suspendiendo credenciales, sin que ninguno duplique la lógica del otro.
-- **Trabajo en equipo.** Los siete integrantes aportaron al informe y al código mediante ramas por funcionalidad, pull requests, GitFlow, Conventional Commits y versionado semántico. Un único repositorio, con un pipeline que genera el PDF y un Registro de Versiones, permitió trabajar en paralelo y dejar cada aporte trazable en el historial de commits.
+- **Trabajo en equipo.** Los siete integrantes aportaron al informe y al código mediante ramas por funcionalidad, pull requests, GitFlow, Conventional Commits y versionado semántico. En el Sprint 2, la matriz de líderes y colaboradores asignó un líder a cada aspecto y las 42 tasks se siguieron en el tablero del Sprint. Sin embargo, los commits de implementación se concentran en pocas cuentas, por lo que conviene que cada líder integre sus propias ramas para que su aporte quede trazable en el historial de cada repositorio.
 
 **Recomendaciones**
 
-- Definir un límite explícito de reintentos y de tiempo para `EdgeGatewaySyncClient`: si el Edge API pierde conexión, conviene declarar cuánto tiempo es aceptable operar en modo degradado con la última lista de credenciales sincronizada.
-- Formalizar un contrato de eventos versionado (Schema Registry o versión en el payload) para el Message & Event Broker, ya que varios contextos consumen los mismos eventos de Reservation y Payment; un cambio de esquema sin control rompería a todos a la vez.
-- Incorporar pruebas de contrato entre publicadores y consumidores de eventos (por ejemplo `ReservationApproved` y sus consumidores) para detectar incompatibilidades antes de desplegar, ya que la comunicación asíncrona no falla en tiempo de compilación.
-- **Validar las hipótesis con el producto.** Medir antes de implementar más funcionalidades: levantar una línea base del tiempo de conciliación de pagos, de las reservas superpuestas y de las horas de luminarias encendidas sin necesidad en un edificio piloto, y compararla luego con el uso del producto. Aplicar pruebas de usabilidad al prototipo y una evaluación heurística, e incluir esos resultados en el informe (sección 6.3).
-- **Completar la evidencia pendiente.** Agregar las capturas de `docker compose up --build` con los contenedores `healthy` y de la interfaz Swagger, y completar la sección 6.2.1.9 con las capturas de colaboración de cada repositorio y su interpretación.
-- **Probar el nodo con hardware real.** Verificar con el montaje físico las diferencias respecto de la simulación (cerradura de 12 V, sensor de humedad de suelo, lector RC522 y reloj RTC), en particular que la cerradura quede bloqueada al arrancar y ante un corte de energía.
-- **Reforzar la seguridad del Edge.** Revisar que el broker MQTT local exija autenticación y cifrado, rotar el token de la API del Edge Gateway y hacer cumplir en IAM que solo el administrador acceda a las bitácoras y a la configuración de los dispositivos, tal como lo pidieron los entrevistados.
-- **Roadmap para los siguientes sprints.** Integrar el Edge Gateway con los microservicios en la nube (IAM, Residential Management, Reservation y Payment con Culqi) en lugar del backend simulado; conectar la Web Application y la aplicación móvil con esos servicios; y luego incorporar la iluminación inteligente, el riego automático y la telemetría con el dashboard IoT, priorizando según el valor que confirmen las validaciones.
+- Definir un límite explícito de tiempo para la operación sin conexión del Edge Gateway: si pierde la conexión con la nube, conviene declarar cuánto tiempo es aceptable decidir accesos con la última lista de credenciales sincronizada.
+- Mantener el versionado del contrato v1 (campo `"v"` en cada mensaje y esquemas JSON Schema) como regla para todos los contextos que consuman los eventos de Reservation y Payment, y extender las pruebas de contrato a los demás microservicios a medida que se integren con el broker.
+- **Validar las hipótesis con el producto.** Medir antes de implementar más funcionalidades: levantar una línea base del tiempo de conciliación de pagos, de las reservas superpuestas y de las horas de luminarias encendidas sin necesidad en un edificio piloto, y compararla luego con el uso del producto. Completar las entrevistas de validación y la evaluación heurística de la sección 6.3.
+- **Completar la evidencia pendiente.** Agregar las capturas de los contenedores en estado `healthy`, de la interfaz Swagger y de los analíticos de colaboración de cada repositorio, y registrar el despliegue de los microservicios IoT en la nube.
+- **Probar el nodo con hardware real.** Ejecutar la prueba de aceptación con la placa física (T-42) y verificar las diferencias respecto de la simulación (cerradura de 12 V, sensor de humedad de suelo, lector RC522 y reloj RTC), en particular que la cerradura quede bloqueada al arrancar y ante un corte de energía.
+- **Reforzar la seguridad del Edge.** Exigir autenticación y TLS en el broker MQTT en todos los entornos, rotar las API keys de los Edge Gateways y hacer cumplir en IAM que solo el administrador acceda a las bitácoras y a la configuración de los dispositivos, tal como lo pidieron los entrevistados.
+- **Roadmap para los siguientes sprints.** Conectar la Web Application y la aplicación móvil con los endpoints IoT ya documentados (control de accesos, reservas de puerta y dashboard de telemetría), desplegar la plataforma IoT en la nube y luego incorporar la iluminación inteligente y el riego automático, priorizando según el valor que confirmen las validaciones.
 
 ## Video About-the-Team
 
