@@ -6566,7 +6566,13 @@ En esta sección se presentan los User Flow Diagrams de Edifika. Cada diagrama p
 - Si ya tiene cuenta, desde Register puede ir directo a Login con "Back to Login".
 
 <p align="center">
-  <img src="assets/img/userflow1.jpg" alt="User Flow 1: registro e inicio de sesión del administrador" width="800" />
+  <img src="assets/img/userflow1.jpg" alt="User Flow 1: registro e inicio de sesión del administrador (con wireframes)" width="800" />
+</p>
+
+**Diagrama completo (happy path y unhappy paths):**
+
+<p align="center">
+  <img src="assets/img/userflow1-completo.png" alt="User Flow 1: registro e inicio de sesión del administrador (caminos alternativos)" width="900" />
 </p>
 
 **User Flow 2: Reserva de un Área Común**
@@ -6599,7 +6605,13 @@ En esta sección se presentan los User Flow Diagrams de Edifika. Cada diagrama p
 - Si cierra el modal sin confirmar, no se crea ninguna reserva y el calendario queda como estaba.
 
 <p align="center">
-  <img src="assets/img/userflow2.jpg" alt="User Flow 2: reserva de un área común" width="800" />
+  <img src="assets/img/userflow2.jpg" alt="User Flow 2: reserva de un área común (con wireframes)" width="800" />
+</p>
+
+**Diagrama completo (happy path y unhappy paths):**
+
+<p align="center">
+  <img src="assets/img/userflow2-completo.png" alt="User Flow 2: reserva de un área común (caminos alternativos)" width="900" />
 </p>
 
 
@@ -6632,7 +6644,13 @@ En esta sección se presentan los User Flow Diagrams de Edifika. Cada diagrama p
 - Si falla el envío del aviso, el sistema muestra un error y permite reintentar.
 
 <p align="center">
-  <img src="assets/img/userflow3.jpg" alt="User Flow 3: seguimiento financiero y morosidad" width="800" />
+  <img src="assets/img/userflow3.jpg" alt="User Flow 3: seguimiento financiero y morosidad (con wireframes)" width="800" />
+</p>
+
+**Diagrama completo (happy path y unhappy paths):**
+
+<p align="center">
+  <img src="assets/img/userflow3-completo.png" alt="User Flow 3: seguimiento financiero y morosidad (caminos alternativos)" width="900" />
 </p>
 
 **User Flow 4: Reserva de un Área Común desde la Aplicación Móvil**
@@ -6669,7 +6687,13 @@ En esta sección se presentan los User Flow Diagrams de Edifika. Cada diagrama p
 - Si no tiene conexión, la app muestra los datos guardados con la hora de la última actualización y no permite confirmar hasta recuperar la conexión.
 
 <p align="center">
-  <b>[POR COMPLETAR: diagrama del User Flow 4]</b>
+  <img src="assets/img/userflow4-wireframes.png" alt="User Flow 4: reserva desde la aplicación móvil (con wireframes)" width="900" />
+</p>
+
+**Diagrama completo (happy path y unhappy paths):**
+
+<p align="center">
+  <img src="assets/img/userflow4-completo.png" alt="User Flow 4: reserva desde la aplicación móvil (caminos alternativos)" width="900" />
 </p>
 
 **User Flow 5: Pago de una Deuda en Línea**
@@ -6703,7 +6727,13 @@ En esta sección se presentan los User Flow Diagrams de Edifika. Cada diagrama p
 - Si el servicio de pagos no responde, la app muestra "Los montos podrían no estar actualizados".
 
 <p align="center">
-  <b>[POR COMPLETAR: diagrama del User Flow 5]</b>
+  <img src="assets/img/userflow5-wireframes.png" alt="User Flow 5: pago de una deuda en línea (con wireframes)" width="900" />
+</p>
+
+**Diagrama completo (happy path y unhappy paths):**
+
+<p align="center">
+  <img src="assets/img/userflow5-completo.png" alt="User Flow 5: pago de una deuda en línea (caminos alternativos)" width="900" />
 </p>
 
 **User Flow 6: Acceso a un Área Común con Tarjeta RFID**
@@ -6735,7 +6765,13 @@ En esta sección se presentan los User Flow Diagrams de Edifika. Cada diagrama p
 - Si el lector no responde, el residente pide al administrador una apertura remota desde la Web Application.
 
 <p align="center">
-  <b>[POR COMPLETAR: diagrama del User Flow 6]</b>
+  <img src="assets/img/userflow6-wireframes.png" alt="User Flow 6: acceso a un área común con tarjeta RFID (con wireframes)" width="900" />
+</p>
+
+**Diagrama completo (happy path y unhappy paths):**
+
+<p align="center">
+  <img src="assets/img/userflow6-completo.png" alt="User Flow 6: acceso a un área común con tarjeta RFID (caminos alternativos)" width="450" />
 </p>
 
 ## 5.5. Application Prototyping
