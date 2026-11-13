@@ -10,7 +10,7 @@
 
 <h4>NRC: 8740</h4>
 
-<h4>Docente: Verla Olivera, David Carlos</h4>
+<h4>Docente: Vera Olivera, David Carlos</h4>
 
 <h3>Informe de Trabajo Final</h3>
 
@@ -10339,7 +10339,310 @@ En esta sección se analizan las evidencias de colaboración del equipo durante 
 
 ### 6.3.3. Evaluaciones según heurísticas
 
-> **[POR COMPLETAR: evaluación de las sesiones de validación con el formato de evaluación heurística del Anexo D del enunciado (usabilidad, arquitectura de información e inclusive design).]**
+En esta sección se presenta la auditoría de experiencia de usuario que el equipo de Condomia realizó al producto **HydroGuard** de la startup **HydroLink**, asignado por el docente dentro de la misma sección del curso. La evaluación sigue el formato de evaluación heurística del curso y revisa tres dimensiones: **usabilidad** (las 10 heurísticas de Nielsen), **arquitectura de información** (los principios de Morville: encontrable, accesible, claro, comunicativo, útil, creíble, controlable, valioso, aprendible y agradable) e **inclusive design** (experiencias comparables, considerar la situación, consistencia, dar control, ofrecer opciones, priorizar el contenido y agregar valor).
+
+La Landing Page y las pantallas públicas de la Web Application (inicio de sesión y registro de empresa) se evaluaron sobre las versiones desplegadas. Como la Web Application publicada no permitió iniciar sesión (problema #1), las pantallas internas de la Web Application y las de la Mobile Application se evaluaron sobre los mock-ups que el equipo de HydroLink presenta en la sección 5.4.3 de su informe, que representan la interfaz implementada.
+
+**UX Heuristics & Principles Evaluation**  
+**Usability – Inclusive Design – Information Architecture**
+
+| | |
+|---|---|
+| **CARRERA** | Ingeniería de Software |
+| **CURSO** | 1ASI0572 - Desarrollo de Soluciones IoT |
+| **SECCIÓN** | 8740 |
+| **PROFESOR** | Vera Olivera, David Carlos |
+| **AUDITOR** | Condomia (Edifika): Acuña Corahua, Jonatan Ariel; Collantes Carrillo, Diego Mateo; Landa Ortiz, Sergio Javier; Lizarbe Alvarez, Ariana Nickole; Ortiz Cardenas, Johanna Antuanete; Perez Tuesta, Gabriel; Sarmiento Medina, Loreley |
+| **CLIENTE(S)** | HydroLink (HydroGuard): Gomez Hurtado, Miguel Angel; Rodriguez Macedo, Sebastian; Santur Tello, Andrea Elizabeth; Prieto Mantari, Leonardo Fabrizzio Junior; Rios Pacheco, Hector Javier; Olivera Barzola, Eric Marlon |
+| **FECHA DE EVALUACIÓN** | 12/11/2026 |
+
+**SITE o APP A EVALUAR:**
+
+- Landing Page: [https://1asi0572-2620-8740-iot.github.io/LandingPage/](https://1asi0572-2620-8740-iot.github.io/LandingPage/)
+- Web Application del Administrador: [https://hydroguard-admin-web-frontend.vercel.app](https://hydroguard-admin-web-frontend.vercel.app)
+- Mobile Application del Operario: mock-ups M01 a M10 del informe de HydroLink (sección 5.4.3)
+- Repositorios: [https://github.com/1ASI0572-2620-8740-IOT](https://github.com/1ASI0572-2620-8740-IOT)
+
+**TAREAS A EVALUAR:**
+
+El alcance de la evaluación comprende las siguientes tareas:
+
+1. Conocer la propuesta de valor de HydroGuard desde la Landing Page.
+2. Ver el video del producto y conocer al equipo desde la Landing Page.
+3. Enviar una solicitud de contacto desde la Landing Page.
+4. Acceder a la aplicación desde la Landing Page.
+5. Registrar una empresa y su administrador en la Web Application.
+6. Iniciar sesión como administrador en la Web Application.
+7. Gestionar las cuentas de los operarios (listar, crear y consultar el detalle).
+8. Supervisar el estado operacional de los dispositivos y revisar las alertas.
+9. Consultar la trazabilidad de un dispositivo y exportar el reporte.
+10. Ingresar como operario en la Mobile Application y revisar el estado de su reservorio.
+11. Configurar los parámetros operativos de un reservorio desde la Mobile Application.
+
+**ESCALA DE SEVERIDAD:**
+
+Los errores se califican en una escala del 1 al 4 según su impacto en la tarea del usuario:
+
+| Nivel | Descripción |
+|---|---|
+| 1 | Problema superficial: puede ser fácilmente superado por el usuario o ocurre con muy poca frecuencia. No necesita ser arreglado a menos que exista disponibilidad de tiempo. |
+| 2 | Problema menor: puede ocurrir un poco más frecuentemente o es un poco más difícil de superar para el usuario. Se le debería asignar una prioridad baja resolverlo de cara al siguiente release. |
+| 3 | Problema mayor: ocurre frecuentemente o los usuarios no son capaces de resolverlo. Es importante que sea corregido y se le debe asignar una prioridad alta. |
+| 4 | Problema muy grave: un error de gran impacto que impide al usuario continuar con el uso de la herramienta. Es imperativo que sea corregido antes del lanzamiento. |
+
+**TABLA RESUMEN:**
+
+| # | Problema | Escala de severidad | Heurística / Principio violado |
+|---|---|---|---|
+| 1 | La Web Application publicada no permite iniciar sesión y muestra un error genérico del servidor | 4 | Usability: Ayuda a los usuarios a reconocer, diagnosticar y recuperarse de errores |
+| 2 | El formulario de contacto de la Landing Page no envía el mensaje | 3 | Usability: Visibilidad del estado del sistema |
+| 3 | El Centro de monitoreo informa una alerta activa, pero la pantalla Alertas indica que no hay alertas activas | 3 | Information Architecture: Is it credible? |
+| 4 | La interfaz mezcla inglés, español y códigos técnicos internos | 2 | Usability: Coincidencia entre el sistema y el mundo real |
+| 5 | Tras iniciar sesión, el administrador llega a Operarios en lugar de un resumen del monitoreo | 2 | Information Architecture: Is it findable? |
+| 6 | La Landing Page y la Web Application usan identidades visuales distintas | 2 | Usability: Consistencia y estándares |
+| 7 | Los botones de video de la Landing Page abren un modal sin contenido | 2 | Usability: Visibilidad del estado del sistema |
+| 8 | Las imágenes de la Landing Page no representan el producto ni a sus usuarios | 2 | Information Architecture: Is it credible? |
+| 9 | La sección del equipo no presenta a sus integrantes | 2 | Information Architecture: Is it credible? |
+| 10 | La Landing Page desborda horizontalmente en celulares | 2 | Inclusive Design: Considerar la situación |
+| 11 | La Landing Page publicada no ofrece selector de idioma ni términos y condiciones | 2 | Inclusive Design: Ofrecer opciones |
+| 12 | El registro de empresa no indica el formato esperado de cada campo antes de enviarlo | 2 | Usability: Prevención de errores |
+| 13 | Los textos secundarios y de tablas son pequeños y de bajo contraste | 2 | Inclusive Design: Proporcionar experiencias comparables |
+| 14 | En la configuración operativa móvil, los selectores muestran textos ambiguos | 2 | Usability: Reconocer antes que recordar |
+| 15 | Error de redacción en el hero de la Landing Page | 1 | Usability: Estética y diseño minimalista |
+| 16 | El nombre del menú no coincide con el título de la pantalla y la app móvil muestra códigos de pantalla | 1 | Usability: Consistencia y estándares |
+
+**DESCRIPCIÓN DE PROBLEMAS:**
+
+**PROBLEMA #1: La Web Application publicada no permite iniciar sesión y muestra un error genérico del servidor**
+
+**Severidad:** 4  
+**Heurística violada:** Usability - Ayuda a los usuarios a reconocer, diagnosticar y recuperarse de errores
+
+**Problema:**  
+Al ingresar las credenciales de demostración documentadas por el equipo en su guía de pruebas, el botón cambia a "Ingresando..." y luego se muestra "Error interno del servidor. Por favor, intente más tarde.". El mensaje no indica qué ocurrió ni qué puede hacer el usuario, y el error se repite en cada intento. La causa está en la configuración del despliegue: las peticiones a `/api` se redirigen a `hydroguard-academic-mock-api.onrender.com`, que responde 404, mientras que el servicio activo del mock está en `hydroguard-mock-api-8740.onrender.com`. Ningún administrador puede ingresar al panel desde la URL pública.
+
+<p align="center">
+  <img src="assets/img/audit-web-login-error.png" alt="Error interno del servidor al iniciar sesión en HydroGuard" width="380" />
+</p>
+
+**Recomendación:**  
+Corregir el destino del `rewrite` de `/api` en `vercel.json` para que apunte al servicio desplegado y verificar el inicio de sesión después de cada despliegue. Además, distinguir en el mensaje los errores de credenciales de los errores de conexión (por ejemplo, "No pudimos conectar con el servidor. Revisa tu conexión o inténtalo en unos minutos.") y ofrecer una acción de reintento.
+
+**PROBLEMA #2: El formulario de contacto de la Landing Page no envía el mensaje**
+
+**Severidad:** 3  
+**Heurística violada:** Usability - Visibilidad del estado del sistema
+
+**Problema:**  
+El visitante completa nombre, correo y descripción de su operación y pulsa "Enviar mensaje". La página responde "Gracias, [nombre]. Este formulario aún no realiza envíos; escríbenos a hola@hydroguard.pe.". El usuario descubre que el formulario no funciona solo después de escribir su mensaje, y la información que ingresó se pierde. Para una MYPE que evalúa el producto, este es el principal punto de contacto con la startup.
+
+<p align="center">
+  <img src="assets/img/audit-landing-contacto.png" alt="Formulario de contacto de la Landing Page de HydroGuard" width="800" />
+</p>
+
+**Recomendación:**  
+Conectar el formulario a un servicio de envío (por ejemplo, un endpoint propio o un servicio de formularios) y confirmar el envío con un mensaje claro. Mientras no esté disponible, reemplazar el formulario por un botón "Escríbenos" que abra el correo con el asunto ya completado, para no pedir datos que no se usarán.
+
+**PROBLEMA #3: El Centro de monitoreo informa una alerta activa, pero la pantalla Alertas indica que no hay alertas activas**
+
+**Severidad:** 3  
+**Heurística violada:** Information Architecture - Is it credible?
+
+**Problema:**  
+En el Centro de monitoreo, la tarjeta "Alertas activas" muestra 1 y el panel "Alertas recientes" lista una alerta alta del dispositivo ESP32-HG-TX-002 (pH 9.1 fuera de rango). Sin embargo, la pantalla Alertas, filtrada por Estado "Activa", muestra "No existen alertas para los filtros seleccionados.". El administrador no puede confiar en ninguna de las dos pantallas para decidir si debe intervenir, y en un sistema que controla la liberación de agua esa duda tiene consecuencias.
+
+<p align="center">
+  <img src="assets/img/audit-web-monitoreo-alertas.png" alt="Centro de monitoreo con una alerta activa y pantalla Alertas vacía" width="900" />
+</p>
+
+**Recomendación:**  
+Obtener el conteo del Centro de monitoreo y el listado de Alertas de la misma consulta y con el mismo criterio de estado. Hacer que la tarjeta "Alertas activas" y el enlace "Ver todas" lleven a la pantalla Alertas con el filtro ya aplicado, para que el número y la lista coincidan siempre.
+
+**PROBLEMA #4: La interfaz mezcla inglés, español y códigos técnicos internos**
+
+**Severidad:** 2  
+**Heurística violada:** Usability - Coincidencia entre el sistema y el mundo real
+
+**Problema:**  
+Las pantallas combinan textos en español con encabezados en inglés ("OPERATIONAL MONITORING & TRACEABILITY", "Items per page") y con valores internos del sistema: estados como `ACTIVE` y `PENDING_FIRST_ACCESS`, identificadores como `usr-marcelino`, `grp-1` o `rep-faf4cfcc-8404-412d-900e-6ca6e46b5837`, y frases como "IAM no modifica estos vínculos". Un responsable de planta o un productor hidropónico no conoce estos términos, y el idioma cambia de una pantalla a otra.
+
+<p align="center">
+  <img src="assets/img/audit-web-terminos-tecnicos.png" alt="Trazabilidad operacional y detalle de operario con códigos técnicos" width="900" />
+</p>
+
+**Recomendación:**  
+Usar un solo idioma en toda la aplicación y traducir los estados a etiquetas comprensibles ("Activo", "Pendiente de primer acceso"). Mostrar los identificadores internos solo cuando el usuario los necesite (por ejemplo, en un detalle técnico desplegable) y reemplazar las referencias a componentes del sistema (IAM, Configuration) por explicaciones en lenguaje de negocio.
+
+**PROBLEMA #5: Tras iniciar sesión, el administrador llega a Operarios en lugar de un resumen del monitoreo**
+
+**Severidad:** 2  
+**Heurística violada:** Information Architecture - Is it findable?
+
+**Problema:**  
+La ruta inicial de la aplicación redirige a la gestión de cuentas de operarios. El objetivo principal del administrador es saber si el agua de sus reservorios está en rango y si hay alertas, pero esa información está en "Estado operacional", la sexta opción del menú, dentro del grupo "Monitoreo". El wireframe W03 "Resumen" del propio informe de HydroLink planteaba una pantalla de inicio con este resumen, pero no llegó a la aplicación.
+
+<p align="center">
+  <img src="assets/img/audit-web-inicio-operarios.png" alt="Pantalla de Operarios que se muestra al iniciar sesión" width="700" />
+</p>
+
+**Recomendación:**  
+Usar el Centro de monitoreo (o una pantalla Resumen) como página de inicio después del login y ubicar el grupo "Monitoreo" al inicio del menú lateral. La gestión de operarios, grupos y dispositivos es una tarea de configuración menos frecuente y puede quedar debajo.
+
+**PROBLEMA #6: La Landing Page y la Web Application usan identidades visuales distintas**
+
+**Severidad:** 2  
+**Heurística violada:** Usability - Consistencia y estándares
+
+**Problema:**  
+La Landing Page usa un logotipo de tres barras, una paleta verde agua sobre fondo crema y tipografía serif en los titulares. Al pulsar "Acceder", el usuario llega a una pantalla con fondo azul marino, un logotipo de gota sobre un cuadro azul y otra paleta de colores. El cambio brusco hace dudar al usuario de si sigue en el mismo producto.
+
+<p align="center">
+  <img src="assets/img/audit-identidad-visual.png" alt="Comparación entre la Landing Page y el login de la Web Application de HydroGuard" width="900" />
+</p>
+
+**Recomendación:**  
+Unificar el logotipo, la paleta y la tipografía de ambas superficies según la guía de estilo de la sección 5.1 del informe de HydroLink, o al menos mantener el mismo logotipo y color principal en el login.
+
+**PROBLEMA #7: Los botones de video de la Landing Page abren un modal sin contenido**
+
+**Severidad:** 2  
+**Heurística violada:** Usability - Visibilidad del estado del sistema
+
+**Problema:**  
+La sección "El producto en acción" muestra un gran botón de reproducción sobre una imagen, y la sección del equipo incluye el enlace "Conoce a nuestro equipo". Ambos abren un modal sin video. La etiqueta "Próximamente" es pequeña y aparece en una esquina, por lo que el usuario intenta reproducir el video y no obtiene nada.
+
+<p align="center">
+  <img src="assets/img/audit-landing-video.png" alt="Sección de video del producto con la etiqueta Próximamente" width="800" />
+</p>
+
+**Recomendación:**  
+Publicar los videos About-the-Product y About-the-Team e insertarlos en la sección. Mientras no estén disponibles, ocultar el botón de reproducción o reemplazarlo por un mensaje visible ("Video disponible pronto") que no simule una acción.
+
+**PROBLEMA #8: Las imágenes de la Landing Page no representan el producto ni a sus usuarios**
+
+**Severidad:** 2  
+**Heurística violada:** Information Architecture - Is it credible?
+
+**Problema:**  
+La sección del video usa una imagen de aerogeneradores al atardecer, y la sección "La información correcta, en el momento decisivo" muestra a una persona en un laboratorio de electrónica. Ninguna de las dos se relaciona con el tratamiento de agua en un taller textil o en un cultivo hidropónico, que son los segmentos del producto. El visitante no reconoce su contexto de trabajo.
+
+<p align="center">
+  <img src="assets/img/audit-landing-imagen.png" alt="Imagen de laboratorio de electrónica en la Landing Page de HydroGuard" width="800" />
+</p>
+
+**Recomendación:**  
+Reemplazar las imágenes genéricas por fotografías del prototipo (ESP32 con los sensores de pH y temperatura), de un reservorio o poza de teñido y de un módulo hidropónico, como ya se hace en las tarjetas de la sección "Diseñado para flujos reales".
+
+**PROBLEMA #9: La sección del equipo no presenta a sus integrantes**
+
+**Severidad:** 2  
+**Heurística violada:** Information Architecture - Is it credible?
+
+**Problema:**  
+La sección "Las personas detrás de HydroGuard" muestra una foto de stock y un texto sobre la startup, pero no menciona a ningún integrante, sus roles ni su experiencia. El visitante no sabe quién está detrás del producto, lo que resta confianza a una solución que controla un proceso crítico.
+
+<p align="center">
+  <img src="assets/img/audit-landing-equipo.png" alt="Sección del equipo de la Landing Page de HydroGuard" width="800" />
+</p>
+
+**Recomendación:**  
+Agregar tarjetas con la foto, el nombre y el rol de cada integrante del equipo, y el video About-the-Team cuando esté disponible.
+
+**PROBLEMA #10: La Landing Page desborda horizontalmente en celulares**
+
+**Severidad:** 2  
+**Heurística violada:** Inclusive Design - Considerar la situación
+
+**Problema:**  
+En una pantalla de 390 px de ancho, el contenido de la página mide 408 px. La tarjeta de la "Estación 01" y los círculos decorativos del hero sobresalen del borde derecho, por lo que la página se desplaza hacia los lados al deslizar. El operario y el productor consultarán la página principalmente desde el celular.
+
+<p align="center">
+  <img src="assets/img/audit-landing-mobile.png" alt="Hero de la Landing Page de HydroGuard en un celular" width="300" />
+</p>
+
+**Recomendación:**  
+Limitar el ancho de los elementos decorativos del hero (por ejemplo, con `max-width: 100%` y `overflow-x: clip` en la sección) y verificar la página en anchos de 360 px a 414 px.
+
+**PROBLEMA #11: La Landing Page publicada no ofrece selector de idioma ni términos y condiciones**
+
+**Severidad:** 2  
+**Heurística violada:** Inclusive Design - Ofrecer opciones
+
+**Problema:**  
+La versión publicada en GitHub Pages solo está en español y su pie de página no enlaza a términos y condiciones. En el repositorio sí existen un selector de idioma (inglés y español), la página `terms.html` y el enlace en el pie de página (commit del 11/11/2026), pero esos cambios no se ven en la URL pública, por lo que el usuario no puede usarlos.
+
+**Recomendación:**  
+Publicar la última versión del repositorio en GitHub Pages y comprobar en la URL pública que el selector de idioma y el enlace a términos y condiciones estén visibles.
+
+**PROBLEMA #12: El registro de empresa no indica el formato esperado de cada campo antes de enviarlo**
+
+**Severidad:** 2  
+**Heurística violada:** Usability - Prevención de errores
+
+**Problema:**  
+El formulario "Crear una cuenta empresarial" pide RUC, teléfono empresarial, correo y contraseña, pero no indica los requisitos de cada campo: los 11 dígitos del RUC, el formato del teléfono o el mínimo de 8 caracteres de la contraseña. El usuario los conoce solo cuando el formulario rechaza los datos.
+
+<p align="center">
+  <img src="assets/img/audit-web-registro.png" alt="Formulario de registro de empresa de HydroGuard" width="600" />
+</p>
+
+**Recomendación:**  
+Agregar textos de ayuda debajo de cada campo ("11 dígitos", "+51 seguido de 9 dígitos", "Mínimo 8 caracteres") y validar mientras el usuario escribe, mostrando el error junto al campo.
+
+**PROBLEMA #13: Los textos secundarios y de tablas son pequeños y de bajo contraste**
+
+**Severidad:** 2  
+**Heurística violada:** Inclusive Design - Proporcionar experiencias comparables
+
+**Problema:**  
+En la Landing Page, las descripciones de las tarjetas usan texto gris claro de tamaño reducido sobre fondo crema. En la Web Application, las tablas, los subtítulos de los dispositivos y las fechas de las líneas de tiempo usan texto gris de 10 a 12 px. Las personas con baja visión, o quienes revisan el panel en planta con poca luz, tienen dificultad para leerlos.
+
+**Recomendación:**  
+Usar un tamaño mínimo de 14 px para el texto de lectura y verificar que el contraste cumpla la relación 4.5:1 de las WCAG 2.1 (nivel AA), oscureciendo los grises de los textos secundarios.
+
+**PROBLEMA #14: En la configuración operativa móvil, los selectores muestran textos ambiguos**
+
+**Severidad:** 2  
+**Heurística violada:** Usability - Reconocer antes que recordar
+
+**Problema:**  
+En la pantalla M06 "Configuración operativa", los selectores muestran el valor y la instrucción en el mismo texto, por ejemplo "Dosificación correctiva [Seleccionar]" o "Manual / Automático · Manual [Seleccionar]". El operario no distingue si el valor ya está elegido o si todavía debe seleccionarlo, y esta pantalla define cuándo se libera el agua.
+
+<p align="center">
+  <img src="assets/img/audit-mobile.png" alt="Pantallas M03, M06 y M10 de la aplicación móvil de HydroGuard" width="700" />
+</p>
+
+**Recomendación:**  
+Mostrar en cada selector solo el valor actual y usar la etiqueta del campo para la instrucción. Para el modo de liberación, usar un control segmentado con las opciones "Manual" y "Automático".
+
+**PROBLEMA #15: Error de redacción en el hero de la Landing Page**
+
+**Severidad:** 1  
+**Heurística violada:** Usability - Estética y diseño minimalista
+
+**Problema:**  
+Debajo de los botones del hero se lee "Diseñado para optimizar tu trabajo y tiempo cuente.". La frase está incompleta y es lo primero que lee el visitante junto a la propuesta de valor.
+
+**Recomendación:**  
+Corregir la frase, por ejemplo: "Diseñado para que tu trabajo y tu tiempo cuenten.".
+
+**PROBLEMA #16: El nombre del menú no coincide con el título de la pantalla y la app móvil muestra códigos de pantalla**
+
+**Severidad:** 1  
+**Heurística violada:** Usability - Consistencia y estándares
+
+**Problema:**  
+En la Web Application, la opción de menú "Estado operacional" abre una pantalla titulada "Centro de monitoreo". En la Mobile Application, la barra superior muestra los códigos de diseño de cada pantalla ("M03 · Inicio", "M10 · Perfil y cuenta"), y en Perfil y cuenta la barra inferior resalta la pestaña "Inicio".
+
+**Recomendación:**  
+Usar el mismo nombre en el menú y en el título de cada pantalla, retirar los códigos de pantalla de la interfaz y resaltar en la barra inferior solo la sección en la que se encuentra el usuario.
+
+**TAREAS QUE NO SE INCLUYEN EN ESTA VERSIÓN:**
+
+- Operación con el dispositivo físico (ESP32 con sensores de pH y temperatura y válvula), porque la evaluación se realizó de forma remota.
+- Uso de la Mobile Application instalada en un dispositivo, porque no se encontró una versión publicada; se evaluó sobre sus mock-ups.
+- Pantallas internas de la Web Application en ejecución, por el problema #1; se evaluaron sobre los mock-ups de la sección 5.4.3 del informe de HydroLink.
+- Recuperación de acceso y cierre de emergencia, porque no se pudieron ejecutar sin una sesión activa.
 
 ## 6.4. Video About-the-Product
 
