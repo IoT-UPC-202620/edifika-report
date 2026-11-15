@@ -10975,7 +10975,9 @@ En esta sección se analizan las evidencias de colaboración y coordinación del
 
 - Mobile Application:
 
-**[POR COMPLETAR: captura de GitHub Insights del repositorio de la Mobile Application]**
+<div align="center">
+  <img src="assets/img/movile.jpeg" alt="Team Collaboration Insights" width="75%">
+</div>
 
 - Web Application:
 
