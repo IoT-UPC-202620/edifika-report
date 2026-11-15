@@ -11013,7 +11013,7 @@ API Gateway:
 
 ## 6.3. Validation Interviews
 
-En esta sección se presentan las entrevistas de validación realizadas con usuarios de los dos segmentos objetivo de Edifika: administradores de edificios y condominios, y propietarios e inquilinos. Durante cada sesión, el entrevistado navegó por la Landing Page y por la aplicación correspondiente a su perfil, realizó tareas concretas siguiendo los user flows definidos en la sección 5.4.4 y respondió preguntas sencillas sobre su experiencia. El objetivo es comprobar si la propuesta de valor se entiende, si las funcionalidades resuelven los problemas identificados en las entrevistas iniciales y qué aspectos deben mejorarse antes de la siguiente iteración.
+En esta sección se presentan las entrevistas de validación realizadas con usuarios de los dos segmentos objetivo de Edifika: administradores de edificios y condominios, y propietarios e inquilinos. Las sesiones se realizaron de forma remota por videollamada. En cada una, un integrante del equipo recorrió junto al entrevistado los flujos principales de la aplicación correspondiente a su perfil, incluido el acceso con tarjeta RFID en la maqueta del nodo de puerta, y al final se le pidió su opinión sobre lo que más le gustó, lo que no le gustó y lo que agregaría. El objetivo es comprobar si las funcionalidades resuelven los problemas identificados en las entrevistas iniciales y qué aspectos deben mejorarse en las siguientes versiones.
 
 ### 6.3.1. Diseño de Entrevistas
 
@@ -11021,59 +11021,83 @@ En esta sección se presentan las entrevistas de validación realizadas con usua
 
 ##### *Preguntas dirigidas a administradores que gestionan pagos, reservas, comunicados y accesos de uno o varios edificios.*
 
-**Elementos de la sesión:** Landing Page, Web Application (panel del administrador) y Mobile Application (vista del administrador).
+**Elementos de la sesión:** Web Application (panel del administrador), Mobile Application (vista del administrador) y nodo de puerta con lector RFID.
 
-**User flows evaluados:** registro de edificio y unidades, registro de residentes, revisión de deudas en Finanzas, gestión de áreas comunes y reservas, y registro de tarjetas RFID y control de accesos.
+**User flows evaluados:** revisión del dashboard, registro de edificio, unidades y residentes, configuración de áreas comunes y sus reglas, consulta de finanzas, publicación en el muro de la comunidad, centro de documentación, revisión de accesos, iluminación y riego en SmartIoT, y registro de una tarjeta RFID desde la Mobile Application.
 
-1. Al ver la Landing Page, ¿entendiste rápidamente qué es Edifika y para quién es?
+1. ¿Te presentas y nos cuentas cuántos edificios administras?
 
-2. ¿Te resultó fácil registrar un edificio y sus unidades?
+2. ¿El dashboard te da una idea rápida de cómo está tu edificio?
 
-3. ¿Pudiste agregar un residente y asignarlo a su unidad sin ayuda?
+3. ¿Te resultó claro cómo registrar un edificio, sus unidades y asignar a un residente?
 
-4. En la vista de Finanzas, ¿te queda claro quién debe y cuánto debe?
+4. ¿Las reglas de las áreas comunes (precio, horas y ocupantes) cubren lo que necesitas controlar?
 
-5. ¿Te pareció sencillo configurar las áreas comunes y revisar las reservas en el calendario?
+5. En la vista de finanzas, ¿te queda claro quién debe y cuánto se ha recaudado?
 
-6. ¿Te resultó fácil registrar una tarjeta RFID y ver los accesos a las puertas?
+6. ¿Usarías el muro de la comunidad en lugar de WhatsApp para comunicarte con los residentes?
 
-7. ¿Hubo alguna pantalla o botón que te confundiera?
+7. ¿Te parece útil dar o quitar el acceso con la tarjeta RFID y ver los intentos denegados?
 
-8. ¿Qué tarea de tu día a día te ahorraría más tiempo con Edifika?
+8. ¿Qué te pareció registrar una tarjeta desde el celular?
 
-9. ¿Usarías Edifika para administrar tus edificios? ¿Por qué?
+9. ¿Qué es lo que más te gustó, qué no te gustó y qué agregarías?
 
 #### Segmento Objetivo #2: Propietarios e Inquilinos
 
 ##### *Preguntas dirigidas a residentes que pagan sus cuotas, reservan áreas comunes y usan su tarjeta para ingresar al edificio.*
 
-**Elementos de la sesión:** Landing Page y Mobile Application (vista del residente).
+**Elementos de la sesión:** Mobile Application (vista del residente) y nodo de puerta con lector RFID.
 
-**User flows evaluados:** inicio de sesión, consulta de deudas, reserva de un área común, lectura de anuncios, publicación en la comunidad y consulta de accesos y tarjetas.
+**User flows evaluados:** consulta del inicio con la deuda total y la próxima reserva, revisión del detalle de deudas e historial de pagos, reserva de un área común, publicación en la comunidad y acceso al edificio con la tarjeta RFID.
 
-1. Al ver la Landing Page, ¿entendiste qué puedes hacer con Edifika como residente?
+1. ¿Te presentas y nos cuentas en qué edificio vives?
 
-2. ¿Te resultó fácil iniciar sesión en la aplicación?
+2. Al entrar a la aplicación, ¿entiendes rápido cuánto debes y cuál es tu próxima reserva?
 
-3. ¿Encontraste rápido cuánto debes y hasta cuándo puedes pagar?
+3. ¿Te resulta claro el detalle de tus deudas y tu historial de pagos?
 
-4. ¿Pudiste reservar un área común sin ayuda? ¿Cuántos pasos te parecieron?
+4. ¿Pudiste seguir sin problemas los pasos para reservar un área común?
 
-5. ¿Te resultan útiles los anuncios del edificio y la opción de confirmar su lectura?
+5. ¿Te queda clara la función de la sección de comunidad y quiénes ven tus publicaciones?
 
-6. ¿Publicarías algo en la sección de comunidad para comunicarte con tus vecinos?
+6. ¿Usarías la comunidad en lugar del grupo de WhatsApp del edificio?
 
-7. ¿Te da confianza ver tus tarjetas y los intentos de acceso a las puertas?
+7. ¿Qué te parece ingresar al edificio con tu tarjeta en lugar de pasar por recepción?
 
-8. ¿Hubo algo en la aplicación que no entendiste o que te costó encontrar?
+8. ¿Cómo te gustaría pagar tus cuotas desde la aplicación?
 
-9. ¿Recomendarías Edifika a otros vecinos de tu edificio? ¿Por qué?
+9. ¿Qué es lo que más te gustó, qué no te gustó y qué agregarías?
 
 <br>
 
 ### 6.3.2. Registro de Entrevistas
 
-> **[POR COMPLETAR: de 3 a 5 entrevistas por segmento. Para cada una: nombres, apellidos, edad, distrito, captura de un cuadro del video, URL del video en Microsoft Stream/Clipchamp con el minuto de inicio y la duración, y un resumen de las apreciaciones del entrevistado sobre las tareas asignadas.]**
+#### Segmento objetivo: Administradores de edificios y condominios
+
+| **ENTREVISTA 1** | |
+|---|---|
+| **Nombre entrevistado** | César Villalobos |
+| **Edad** | 51 años |
+| **Distrito** | Cercado de Lima |
+| **Fecha y hora** | 14 de noviembre de 2026 – 08:07 p. m. |
+| **Duración** | 00:08:42 |
+| **Link del video** | [Ver video de la entrevista](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202310358_upc_edu_pe/IQCMWyDfh3GjSJxI7tyfzjDjAUxvfiOOBlz39_am3KL7yeo?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=xTeDdS) |
+| **Foto entrevista** | <img src="assets/img/validacion-administrador.png" alt="César Villalobos" /> |
+| **Resumen** | César, administrador de edificios en la empresa GWM EIRL, recorrió la Web Application desde el dashboard, la gestión de unidades y residentes, el calendario y las reglas de las áreas comunes, la vista de finanzas, el muro de la comunidad, el centro de documentación y el módulo SmartIoT, y luego la vista del administrador en la Mobile Application, donde se registró una tarjeta RFID y se abrió la puerta del nodo. Felicitó al equipo y consideró que la demo está bien estructurada y que la tecnología es un beneficio para la labor del administrador. Valoró especialmente el manejo de tarjetas, porque la opción de otorgar o retirar el acceso a una persona es un método fuerte de presión para la cobranza y permite controlar el uso de las áreas compartidas y de las reservas. Señaló que la aplicación móvil está ordenada y que muestra información puntual sin sobrecargar la pantalla, algo que considera clave para que ni el administrador ni el residente se confundan al navegar. Como mejora, sugirió incorporar códigos QR en cuartos de máquinas y de bombas de agua para registrar automáticamente quién ingresa y consultar el historial de mantenimiento de cada equipo, una funcionalidad que su empresa ya busca. |
+
+#### Segmento objetivo: Propietarios e Inquilinos
+
+| **ENTREVISTA 2** | |
+|---|---|
+| **Nombre entrevistado** | Alejandra Pollack |
+| **Edad** | 45 años |
+| **Distrito** | San Miguel |
+| **Fecha y hora** | 14 de noviembre de 2026 – 08:48 p. m. |
+| **Duración** | 00:07:52 |
+| **Link del video** | [Ver video de la entrevista](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202310358_upc_edu_pe/IQAKo52ws3fIT4ydDvMAIxRDAR1unsFeWHGjhMqPuKdPLNo?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=SRJkk2) |
+| **Foto entrevista** | <img src="assets/img/validacion-residente.png" alt="Alejandra Pollack" /> |
+| **Resumen** | Alejandra, propietaria y residente de la Residencial Oceánica, recorrió la vista del residente en la Mobile Application: el inicio con su deuda total y su próxima reserva, el detalle de deudas e historial de pagos, la creación de una reserva de área común, la sección de comunidad y el acceso con tarjeta. Consultó la función de la sección de comunidades y quiénes pueden ver las publicaciones, y le quedó claro que reemplaza los grupos de WhatsApp para comunicar temas del edificio como ruidos o personas sospechosas, con un historial que todos los residentes y el administrador pueden consultar. Destacó la importancia de pagar desde el aplicativo con Culqi, QR o tarjetas de crédito, porque hoy debe hacer transferencias interbancarias o acercarse al banco cuando su cuenta es de un banco distinto al de la junta. Como mejora, sugirió enviar recordatorios automáticos por correo cuando una deuda tiene pocos días de vencida, ya que no todos los propietarios ingresan a la plataforma con frecuencia. Concluyó que es un buen aplicativo y que está completo, porque reúne reservas, deudas, anuncios y pagos. |
 
 ### 6.3.3. Evaluaciones según heurísticas
 
