@@ -11132,7 +11132,29 @@ esp32                                       v0.3.0, v0.4.0, v0.5.0
 
 **7. Despliegue en la nube**
 
-**[POR COMPLETAR: proveedor de nube, pasos realizados, URL pública de los microservicios IoT y capturas del despliegue]**
+El backend se publicó en internet con **Cloudflare Tunnel**. Se levantó el stack completo de la plataforma con Docker Compose y se crearon túneles de Cloudflare para el API Gateway, la consola de RabbitMQ y el broker MQTT.
+
+Arranque de los microservicios: cada servicio inicia Spring Boot y se conecta a su base de datos en PostgreSQL.
+
+![Deployment Evidence](assets/img/deployment/logs1.jpeg)
+
+![Deployment Evidence](assets/img/deployment/logs2.jpeg)
+
+Servicios en ejecución: los microservicios inician Tomcat en sus puertos, el ApiGateway arranca y Mosquitto acepta conexiones en el puerto 1883.
+
+![Deployment Evidence](assets/img/deployment/logs3.jpeg)
+
+Túnel del API Gateway: las verificaciones de conectividad pasan y el túnel queda registrado en Cloudflare.
+
+![Deployment Evidence](assets/img/deployment/apigateway-tunnel.jpeg)
+
+Túnel de la consola de RabbitMQ: las verificaciones de conectividad pasan y el túnel queda registrado en Cloudflare.
+
+![Deployment Evidence](assets/img/deployment/rabbitmq-tunnel.jpeg)
+
+Túnel del broker MQTT: se muestra la URL pública generada por Cloudflare y el túnel queda registrado.
+
+![Deployment Evidence](assets/img/deployment/mosquito-tunnel.jpeg)
 
 ---
 
@@ -11146,6 +11168,7 @@ Como resultado del Sprint, el frente IoT quedó empaquetado y reproducible:
 * Rutas IoT del ApiGateway configurables por variables de entorno.
 * Firmware ESP32 compilado para la placa.
 * Nueve versiones etiquetadas en GitHub con GitFlow y Semantic Versioning.
+* Backend publicado en internet con Cloudflare Tunnel.
 
 #### 6.2.2.9. Team Collaboration Insights during Sprint
 
