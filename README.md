@@ -10344,7 +10344,7 @@ Feature: Integración de los dispositivos del edificio con la plataforma en la n
 
 #### 6.2.2.6. Execution Evidence for Sprint Review
 
-En esta sección se presentan las evidencias de ejecución correspondientes al Sprint 2, mostrando las principales funcionalidades y vistas implementadas en la Landing Page, la aplicación web, la aplicación móvil y los servicios web. Asimismo, se incluyen capturas de pantalla que evidencian la navegación, interacción y funcionamiento general de los componentes desarrollados durante el sprint, permitiendo validar el cumplimiento de los objetivos establecidos para esta iteración.
+En esta sección se presentan las evidencias de ejecución correspondientes al Sprint 2, mostrando las principales funcionalidades y vistas implementadas en la Landing Page, la aplicación web, la aplicación móvil, los servicios web y la aplicación embebida del nodo ESP32 simulada en Wokwi. Asimismo, se incluyen capturas de pantalla que evidencian la navegación, interacción y funcionamiento general de los componentes desarrollados durante el sprint, permitiendo validar el cumplimiento de los objetivos establecidos para esta iteración.
 
 **Landing Page:**
 
@@ -10600,6 +10600,54 @@ Servicio de Dispositivos de Telemetría:
 Servicio de Lecturas de Telemetría:
 
 ![Execution Evidence](assets/img/swagger-telemetry-telemetry-readings.png)
+
+**Embedded Application (nodo ESP32 en Wokwi):**
+
+El firmware del nodo de acceso (repositorio `esp32`, construido sobre el framework ModestIoT) se ejecuta en una simulación de Wokwi con los mismos componentes del nodo físico: ESP32 DevKit, lector RFID MFRC522, relé de la cerradura, buzzer, LED RGB de estado, malla de LEDs 3x3, sensor DHT22, sensor ultrasónico HC-SR04 con luces de presencia y una pantalla LCD 20x4. Como Wokwi no puede alcanzar el broker local del Edge Gateway, la simulación incluye un gateway local dentro del propio ESP32 que responde con los mensajes del contrato v1 (`announce`, `access`, `access_result`, `mode`, `ack`, `heartbeat`, `readings`) y los imprime en el Monitor serie con su tópico MQTT.
+
+Proyecto en Wokwi: [https://wokwi.com/projects/480757330574642177](https://wokwi.com/projects/480757330574642177)
+
+Vista del Circuito:
+
+En reposo, con la puerta en acceso libre, la pantalla muestra temperatura, humedad, distancia medida y estado de las luces de presencia.
+
+![Execution Evidence](assets/img/wokwi-circuito.png)
+
+Vista de Acceso Concedido:
+
+Al acercar una tarjeta registrada (Green Card, UID `11223344`), el gateway responde `GRANTED`: la pantalla saluda al residente, el relé abre la cerradura, la fila verde de la malla indica la cerradura abierta y el buzzer emite el tono de confirmación.
+
+![Execution Evidence](assets/img/wokwi-acceso-concedido.png)
+
+Vista de Acceso Denegado:
+
+Con la tarjeta de un residente moroso (Red Card, UID `AABBCCDD`), el gateway responde `DENIED` con el motivo, la cerradura permanece cerrada y suena el patrón de denegación.
+
+![Execution Evidence](assets/img/wokwi-acceso-denegado.png)
+
+Vista de Área Reservada:
+
+El comando `mode` con `RESERVED` y un color pone la puerta en modo reserva: la pantalla muestra `RESERVADO` y el LED RGB toma el color asignado a la reserva. El Monitor serie registra el comando recibido y el `ack` del nodo.
+
+![Execution Evidence](assets/img/wokwi-modo-reservado.png)
+
+Vista de Gateway no Disponible:
+
+Si el gateway no responde a un intento de acceso en 5 segundos, el nodo deniega de forma local y muestra `Gateway no disponible`, sin abrir la cerradura.
+
+![Execution Evidence](assets/img/wokwi-gateway-no-disponible.png)
+
+Vista de Sensores de Presencia y Clima:
+
+Cuando el HC-SR04 detecta a una persona a menos de 80 cm se encienden las luces de presencia. Con temperatura de 28 °C o más y humedad de 70 % o más se encienden las filas naranja y azul de la malla.
+
+![Execution Evidence](assets/img/wokwi-sensores-presencia-clima.png)
+
+Vista del Monitor Serie (intercambio MQTT de un acceso):
+
+Secuencia completa de un acceso concedido: el nodo publica el intento en `access`, el gateway decide, envía `access_result` por `commands`, el nodo abre la cerradura, confirma con `ack` y vuelve a cerrar al cumplirse el tiempo de apertura.
+
+![Execution Evidence](assets/img/wokwi-monitor-serie-mqtt.png)
 
 #### 6.2.2.7. Services Documentation Evidence for Sprint Review
 
