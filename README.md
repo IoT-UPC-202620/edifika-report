@@ -11648,7 +11648,15 @@ Usar el mismo nombre en el menú y en el título de cada pantalla, retirar los c
 
 ## Video About-the-Team
 
-> **[POR COMPLETAR: resumen del video, pauta de secuencias con el tiempo de inicio de cada sección (hh:mm:ss), cuadro representativo, URL en Microsoft Stream/Clipchamp y URL en YouTube usado en la Landing Page. El video incluye escenas del trabajo real del equipo con voz en off y el testimonio ante cámara de cada integrante.]**
+En el Video About-the-Team, cada uno de los siete integrantes de Condomia presenta ante cámara su aporte al desarrollo de Edifika y su apreciación sobre el trabajo en equipo. Se abordan la Landing Page y el informe, la Web Application, la aplicación móvil, la integración de los microservicios, el dispositivo IoT con el ESP32, el diseño de wireframes y mockups, y la organización de los sprints con la matriz de líderes y colaboradores. Los integrantes coinciden en que la comunicación, el apoyo entre compañeros y la responsabilidad permitieron cumplir los objetivos del proyecto en los plazos acordados.
+
+<p align="center">
+  <img src="assets/img/video-about-the-team.png" alt="Portada del Video About-the-Team de Edifika" width="800" />
+</p>
+
+URL del video en Microsoft Stream: [Video About-the-Team – Edifika](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202321281_upc_edu_pe/IQAFHGPjvqCfSbLuTEl9PjF8AZZo9DtOweceLhFspC-pODo?e=e5DwYf)
+
+Duración: 00:09:44
 
 # Referencias Bibliográficas
 
