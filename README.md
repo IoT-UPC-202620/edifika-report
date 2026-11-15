@@ -11615,7 +11615,23 @@ Usar el mismo nombre en el menú y en el título de cada pantalla, retirar los c
 
 ## 6.4. Video About-the-Product
 
-> **[POR COMPLETAR: introducción y resumen del contenido del video, al menos un testimonio positivo de un usuario de las entrevistas de validación, captura del video, URL en Microsoft Stream/Clipchamp, URL en YouTube usado en la Landing Page y duración.]**
+En esta sección se presenta el Video About-the-Product de Edifika, que muestra en menos de dos minutos el problema que resuelve la plataforma y cómo lo resuelve para cada segmento objetivo.
+
+El video parte de una escena cotidiana: el grupo de WhatsApp del edificio a las 8:47 de la noche, con mensajes que se pierden, pagos que nadie confirma y áreas comunes sin control, y la administración repartida entre hojas de Excel, cuadernos de portería y luces encendidas sin necesidad. A partir de ahí presenta Edifika como la plataforma que reúne el edificio en un solo lugar: en la Web Application, el administrador revisa los pagos del mes, aprueba comprobantes y detecta deudas; en la aplicación móvil, el residente consulta y paga su deuda desde el celular y reserva las áreas comunes sin cruces de horario; el control de accesos con tarjeta RFID registra cada ingreso en la bitácora; y los comunicados del administrador llegan a todos los residentes con confirmación de lectura.
+
+<p align="center">
+  <img src="assets/img/video-about-the-product.png" alt="Captura del Video About-the-Product de Edifika" width="800" />
+</p>
+
+URL del video en YouTube (usado en la Landing Page): [Edifika - About the Product](https://youtu.be/CJinGEn0ado)
+
+Duración: 00:01:45
+
+**Testimonios de las entrevistas de validación:**
+
+> "La demo está bien estructurada. Para un administrador siempre es muy bueno tener este beneficio de la tecnología, y mucho más el manejo de tarjetas." — César Villalobos, administrador de edificios
+
+> "Me parece un buen aplicativo. Veo que tienen todo lo que se necesita: reservas, deudas, anuncios, pagos." — Alejandra Pollack, residente y propietaria
 
 
 # Conclusiones y Recomendaciones
@@ -11704,10 +11720,29 @@ Enlace de repositorio de esp32: `https://github.com/IoT-UPC-202620/esp32.git`
 Enlace de repositorio de IoT Access Management microservice: `https://github.com/IoT-UPC-202620/Edifika-Microservice-IoT-Access-Management.git`
 Enlace de repositorio de IoT Telemetry microservice: `https://github.com/IoT-UPC-202620/Edifika-Microservice-IoT-Telemetry.git`
 Enlace de repositorio de IoT Platform (contratos, infraestructura y pruebas de punta a punta): `https://github.com/IoT-UPC-202620/Edifika-IoT-Platform.git`
+Enlace de repositorio de Mobile Application: `https://github.com/IoT-UPC-202620/Edifika-MobileApp.git`
 
 *Despliegues*
 Enlace de despliegue de Landing Page:`https://iot-upc-202620.github.io/Iot-LandingPage/`
 Enlace de despliegue de frontend:`https://edifika-frontend.vercel.app/`
+
+*Gestión del proyecto*
+Enlace del tablero del Sprint 1 en Trello: `https://trello.com/b/5AcYs0X0/sprint-1`
+Enlace del tablero del Sprint 2 en Trello: `https://trello.com/b/N0u8fyeR/sprint-2`
+
+*Diseño*
+Enlace de Figma de Web Application Wireframes: `https://www.figma.com/design/ty6TOS7jOtA6f0111hRNGo/Edifika---Login-Mockup?node-id=19-339&t=GfR39Vruiix1XYFB-0`
+Enlace de Figma de Mobile Application Wireframes: `https://www.figma.com/design/1ksaEJeKckW1WPlgeNyTbH/Untitled?node-id=0-1&p=f&t=tIjJgbZzzg9sNfAf-0`
+Enlace de Figma de Web Application Mock-ups: `https://www.figma.com/design/ty6TOS7jOtA6f0111hRNGo/Edifika---Login-Mockup?node-id=0-1&p=f&t=GfR39Vruiix1XYFB-0`
+
+*Simulación IoT*
+Enlace de simulación del nodo ESP32 en Wokwi: `https://wokwi.com/projects/480757330574642177`
+
+*Videos*
+Enlace del video de la entrevista de validación con administrador: `https://upcedupe-my.sharepoint.com/:v:/g/personal/u202310358_upc_edu_pe/IQCMWyDfh3GjSJxI7tyfzjDjAUxvfiOOBlz39_am3KL7yeo?e=xTeDdS`
+Enlace del video de la entrevista de validación con residente: `https://upcedupe-my.sharepoint.com/:v:/g/personal/u202310358_upc_edu_pe/IQAKo52ws3fIT4ydDvMAIxRDAR1unsFeWHGjhMqPuKdPLNo?e=SRJkk2`
+Enlace del Video About-the-Product: `https://youtu.be/CJinGEn0ado`
+Enlace del Video About-the-Team: `https://upcedupe-my.sharepoint.com/:v:/g/personal/u202321281_upc_edu_pe/IQAFHGPjvqCfSbLuTEl9PjF8AZZo9DtOweceLhFspC-pODo?e=e5DwYf`
 
 ## Anexo A: Videos de Exposiciones
 
@@ -11715,4 +11750,4 @@ Enlace de despliegue de frontend:`https://edifika-frontend.vercel.app/`
 |---|---|---|
 | AV1 | Exposición AV1 – Edifika | [Ver video de la exposición AV1](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202321281_upc_edu_pe/IQBHHj3H8TDCQpLVtAo_Flu6AVjs78yLC6ugw3EqQVYJUKo?e=UGnZPV&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D) |
 | TB1 | Exposición TB1 – Edifika | [Ver video de la exposición TB1](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202321281_upc_edu_pe/IQC0njbQIY10SIn0E9zrjsQsATjded8zOAnY-KvbKcK9de8?e=VIJPSK&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D) |
-| AV2 | **[POR COMPLETAR]** | **[POR COMPLETAR]** |
+| AV2 | Exposición AV2 – Edifika | [Ver video de la exposición AV2](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202310358_upc_edu_pe/IQDghobUwUFSRYHhXgJ_Vb3LAbJP7SWSs9YmZCSUPQZRmIs?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=zxd9gp) |
