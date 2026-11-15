@@ -7128,7 +7128,7 @@ Discord (SaaS / Aplicación de escritorio)
 #### Figma
 
 **Propósito de Uso:**  
-Diseño de interfaces, wireframes, prototipos navegables y flujos visuales de la solución Edifika. Se utiliza para definir la experiencia de usuario de la Landing Page y de las futuras interfaces del sistema.
+Diseño de interfaces, wireframes, prototipos navegables y flujos visuales de la solución Edifika. Se utiliza para definir la experiencia de usuario de la Landing Page y de las aplicaciones web y móvil.
 
 **Ruta de Referencia/Descarga:**  
 Figma (SaaS)
@@ -8428,8 +8428,8 @@ El alcance comprometido se concentró en tres productos digitales: la **Landing 
 | Attendees | Acuña Corahua, Jonatan Ariel; Collantes Carrillo, Diego Mateo; Landa Ortiz, Sergio Javier; Lizarbe Alvarez, Ariana Nickole; Ortiz Cardenas, Johanna Antuanete; Perez Tuesta, Gabriel; Sarmiento Medina, Loreley |
 | Facilitator | Acuña Corahua, Jonatan Ariel (Scrum Master) |
 | Sprint Period | 2026-09-21 – 2026-10-09 (3 semanas) |
-| Sprint 1 – 1 Review | Pendiente de celebrarse el 2026-10-09. Se verificará el Sprint Goal contra los tres productos digitales comprometidos (Landing Page, Web Application y Edge Gateway) y se demostrarán los resultados alcanzados a nivel de producto: URLs públicas de la Landing Page y de la Web Application, y una demostración de extremo a extremo del Edge Gateway con broker MQTT, backend y nodos ESP32 virtuales. |
-| Sprint 1 – 1 Retrospective | Pendiente de celebrarse el 2026-10-09, después de la Review. Se identificarán oportunidades de mejora en la forma de trabajo del equipo: estimación de historias, coordinación entre el trabajo de frontend y el de backend, y gestión de los repositorios del proyecto. |
+| Sprint 0 Review Summary | No aplica por ser Sprint 1 |
+| Sprint 0 Retrospective Summary | No aplica por ser Sprint 1 |
 | Sprint 1 Goal | *Our focus is on* publicar la primera versión de la Landing Page de Edifika con el modelo de negocio y el propósito de la plataforma; entregar las primeras pantallas operativas de la Web Application para administradores y residentes —inicio de sesión, gestión de datos de usuarios, activación y desactivación de cuentas, y consulta de la deuda actual—; y entregar el Edge Gateway que resuelve el acceso con tarjeta RFID a las áreas comunes del edificio y mantiene en la nube las credenciales, reservas y reglas de acceso sincronizadas. *We believe it delivers* a los visitantes información clara para decidir si usan Edifika y un acceso directo a la aplicación según su rol; a los administradores y residentes una experiencia de uso inicial de la plataforma en lugar de depender de hojas de cálculo y aplicaciones de mensajería; y al edificio un control de acceso a las áreas comunes que sigue operando aunque se pierda la conexión a internet, sin necesitar que el administrador se desplace al punto de acceso. *This will be confirmed when* la Landing Page y la Web Application estén publicadas en sus URLs públicas y sean navegables; un visitante, un administrador y un residente puedan completar su flujo correspondiente sin intervención de soporte; y en una demostración en vivo un nodo ESP32 lea una tarjeta RFID, conceda el acceso, registre el evento localmente y ese evento llegue al backend una vez restablecida la conexión. |
 | Sprint 1 Velocity | 165 story points. Al ser el primer sprint del proyecto no existía velocidad histórica, por lo que el equipo fijó su capacidad antes de arrancar y la cifra cierra como línea base de la velocidad del Scrum Team. |
 | Sum of Story Points | 165 story points (36 historias: 3 de la Landing Page, 12 de la Web Application y 21 del Edge Gateway) |
@@ -9149,7 +9149,6 @@ No existe un repositorio independiente exclusivo de Testing; los archivos de pru
 
 - `tests/` en `Edifika-Microservice-IoT-Gateway` (pytest, `tests/test_*.py`).
 - `src/app/**/*.spec.ts` en `FrontEnd` (Karma + Jasmine, 26 archivos `.spec.ts`).
-- No se incluyen archivos `.feature` en Gherkin para el Sprint 1 porque los Acceptance Tests automatizados con enfoque BDD no fueron comprometidos como parte del Sprint Backlog 1; se planifican para el Sprint 2 una vez estabilizados los contratos con los microservicios de la nube.
 
 ##### Avances en Testing por producto
 
@@ -9161,7 +9160,6 @@ No existe un repositorio independiente exclusivo de Testing; los archivos de pru
 ###### Web Application (`IoT-UPC-202620/FrontEnd`)
 - **Unit Tests:** 26 archivos `.spec.ts` con 28 bloques `it()` (Karma + Jasmine). Cubren componentes (`Login`, `Register`, `BuildingFormComponent`, `UnitFormComponent`, `CommonAreaCardComponent`, `ReservationListComponent`, `Calendar`, etc.), servicios (`LoginService`, `RegisterService`, `BuildingsService`, `CommonAreaService`, `ReservationService`, `BaseService`, `ToolbarService`, etc.) y guardas/interceptores (`authGuard`, `interceptor`).
 - **Cobertura de historias:** `US01`-`US04` (usuarios y edificios), `US09` (foro), `US12`-`US16` (reservas), `US18`-`US25` (finanzas).
-- **Nota:** los Integration Tests y Acceptance Tests automatizados con enfoque BDD (archivos `.feature` en Gherkin y `.steps` en TypeScript) no se incluyen en el Sprint 1 porque dependen de los endpoints de los microservicios de la nube que aún no están implementados; se comprometen para el Sprint 2.
 
 ##### Tabla de commits relacionados con Testing
 
@@ -9194,9 +9192,8 @@ No existe un repositorio independiente exclusivo de Testing; los archivos de pru
 | IoT-UPC-202620/FrontEnd | IOT | 83d71c5 | Add IOT module | — | 10/10/2026 |
 | IoT-UPC-202620/FrontEnd | main | c7e320a | Merge pull request #1 from IoT-UPC-202620/IOT | Add IOT module | 10/10/2026 |
 
-##### Notas adicionales sobre la evidencia de Testing
+##### Detalle de la evidencia de Testing
 
-- **BDD / Gherkin:** No se incluyen archivos `.feature` o `.steps` para el Sprint 1 porque los Acceptance Tests con enfoque BDD dependen de los endpoints de los microservicios de la nube (`Web Services`) que no forman parte del Sprint Backlog 1. Se planifica su inclusión en el Sprint 2.
 - **Commits relacionados con Testing:** Los avances en Testing del Edge Gateway se reflejan principalmente en los commits que implementan `TS32` (pruebas automatizadas) y `TS34` (suite completa). El archivo `tests/test_access.py` (28 tests) cubre los escenarios de `US45` (`leer tarjeta RFID y resolver acceso`) y `US46` (`abrir cerradura eléctrica y re-bloquear`). El archivo `tests/test_telemetry.py` (22 tests) cubre `US43` (`detectar falla de dispositivo`) y `US44` (`monitorear estado de conexión`). El archivo `tests/test_cloud_integration.py` (34 tests) cubre `TS33` (`integración con backend`).
 - **Rutas de repositorios:** `https://github.com/IoT-UPC-202620/Edifika-Microservice-IoT-Gateway` (ramas `develop`, `release/0.1.0` y `main`); `https://github.com/IoT-UPC-202620/FrontEnd` (rama `main`, trabajo en `IOT`); `https://github.com/IoT-UPC-202620/Iot-LandingPage` (rama `main`).
 
@@ -11393,7 +11390,7 @@ Usar el mismo nombre en el menú y en el título de cada pantalla, retirar los c
 **Conclusiones**
 
 - **Problema y segmentos.** Las seis entrevistas realizadas (tres administradores y tres propietarios o inquilinos de Lima) respaldan el problema planteado en los Lean UX Problem Statements: la gestión depende de hojas de cálculo, mensajería instantánea y registros en papel, lo que retrasa la conciliación de cuotas, dispersa los avisos y genera conflictos en las reservas. Los administradores rechazan además las soluciones existentes por estar sobrecargadas de módulos, lo que respalda el supuesto UA04 sobre la resistencia a herramientas complicadas y justifica una interfaz con pocas acciones por pantalla.
-- **Supuestos e hipótesis.** Los seis entrevistados valoraron el control de accesos con cerraduras inteligentes, la iluminación por sensores de presencia y el riego automático, y los tres administradores indicaron que los registros y la configuración de los dispositivos deben quedar bajo su control. Esto respalda los supuestos UA03, UOB04 y UOB05 y la necesidad detrás de las hipótesis HS04, HS05 y HS06. Las dificultades en pagos, reservas y comunicados que describieron respaldan la necesidad detrás de HS01, HS02 y HS03. Los administradores consideraron aceptable una tarifa de 2 a 5 USD mensuales por departamento, dato inicial a favor de BA02. Sin embargo, las entrevistas confirman la necesidad, pero no el efecto de la solución.
+- **Supuestos e hipótesis.** Los seis entrevistados valoraron el control de accesos con cerraduras inteligentes, la iluminación por sensores de presencia y el riego automático, y los tres administradores indicaron que los registros y la configuración de los dispositivos deben quedar bajo su control. Esto respalda los supuestos UA03, UOB04 y UOB05 y la necesidad detrás de las hipótesis HS04, HS05 y HS06. Las dificultades en pagos, reservas y comunicados que describieron respaldan la necesidad detrás de HS01, HS02 y HS03. Los administradores consideraron aceptable una tarifa de 2 a 5 USD mensuales por departamento, dato inicial a favor de BA02.
 - **Alcance definido.** El trabajo de requisitos dejó un alcance organizado en diez épicas, que combinan la gestión administrativa (autenticación, comunicados, áreas comunes, finanzas y reportes) con la capa IoT (accesos y riego, iluminación, telemetría y Edge Gateway). El diseño de la solución se cubrió con 12 bounded contexts, con una trazabilidad entre las historias de usuario, los bounded contexts y la arquitectura.
 - **Diseño UX/UI.** Se definieron guías de estilo, arquitectura de información, wireframes y mock-ups de la Landing Page y de las aplicaciones web y móvil, wireflows, User Flow Diagrams, un prototipo y el diseño de cuatro dispositivos IoT (control de accesos, iluminación y sensado, detección de fugas y medición de consumo). Con ello, el equipo cuenta con una referencia visual común para implementar el producto.
 - **Edge Gateway.** En el Sprint 1 se implementó con ramas de GitFlow y se verificó con 188 pruebas automatizadas, incluida la comprobación de su eficacia mediante tres fallos introducidos a propósito, y se ejecutó de extremo a extremo con un backend simulado. En el Sprint 2 se reemplazó ese backend por la plataforma real: publica sus eventos en RabbitMQ con confirmaciones, sincroniza credenciales, nodos y reservas desde la nube y ejecuta las órdenes remotas. Su suite creció a 251 pruebas, un evento de acceso llega a la nube en ~0.5 s (meta: 6 s o menos) y 20 accesos registrados durante una caída se recuperan sin duplicados.
@@ -11405,7 +11402,7 @@ Usar el mismo nombre en el menú y en el título de cada pantalla, retirar los c
 - El diseño por bounded context aísla reglas de negocio distintas (facturación, reservas, IoT) sin que un cambio en un contexto obligue a tocar otro; la comunicación entre Reservation, Smart Lighting y IoT Access Management ocurre solo por eventos, no por acoplamiento directo.
 - Separar PostgreSQL (datos transaccionales) de TimescaleDB (series de tiempo) resuelve el problema de escala de las lecturas de sensores, que crecen de forma continua y degradarían los dashboards de consumo si se consultaran contra un modelo relacional normal.
 - La regla de morosidad (`ResidentMarkedDelinquent`) es un acoplamiento intencional bien resuelto: Payment decide quién es moroso y IoT Access Management actúa sobre esa decisión suspendiendo credenciales, sin que ninguno duplique la lógica del otro.
-- **Trabajo en equipo.** Los siete integrantes aportaron al informe y al código mediante ramas por funcionalidad, pull requests, GitFlow, Conventional Commits y versionado semántico. En el Sprint 2, la matriz de líderes y colaboradores asignó un líder a cada aspecto y las 42 tasks se siguieron en el tablero del Sprint. Sin embargo, los commits de implementación se concentran en pocas cuentas, por lo que conviene que cada líder integre sus propias ramas para que su aporte quede trazable en el historial de cada repositorio.
+- **Trabajo en equipo.** Los siete integrantes aportaron al informe y al código mediante ramas por funcionalidad, pull requests, GitFlow, Conventional Commits y versionado semántico. En el Sprint 2, la matriz de líderes y colaboradores asignó un líder a cada aspecto y las 42 tasks se siguieron en el tablero del Sprint.
 
 **Recomendaciones**
 
@@ -11414,7 +11411,7 @@ Usar el mismo nombre en el menú y en el título de cada pantalla, retirar los c
 - **Validar las hipótesis con el producto.** Medir antes de implementar más funcionalidades: levantar una línea base del tiempo de conciliación de pagos, de las reservas superpuestas y de las horas de luminarias encendidas sin necesidad en un edificio piloto, y compararla luego con el uso del producto.
 - **Ampliar las pruebas con hardware real.** Extender las pruebas con la placa física a los nodos de iluminación, riego y consumo, verificando en cada caso las diferencias respecto de la simulación (cerradura de 12 V, sensor de humedad de suelo, lector RC522 y reloj RTC).
 - **Reforzar la seguridad del Edge.** Exigir autenticación y TLS en el broker MQTT en todos los entornos, rotar las API keys de los Edge Gateways y hacer cumplir en IAM que solo el administrador acceda a las bitácoras y a la configuración de los dispositivos, tal como lo pidieron los entrevistados.
-- **Roadmap para los siguientes sprints.** Conectar la Web Application y la aplicación móvil con los endpoints IoT ya documentados (control de accesos, reservas de puerta y dashboard de telemetría), desplegar la plataforma IoT en la nube y luego incorporar la iluminación inteligente y el riego automático, priorizando según el valor que confirmen las validaciones.
+- **Roadmap para los siguientes sprints.** Incorporar la iluminación inteligente, el riego automático y la medición de consumo de energía y agua sobre la misma plataforma IoT, priorizando según el valor que confirmen las validaciones con usuarios.
 
 ## Video About-the-Team
 
