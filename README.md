@@ -8549,20 +8549,20 @@ La organización de líderes y colaboradores tiene relación directa con la post
 
 | Aspecto | Historias del Sprint | Tasks derivadas | Responsable de la descomposición |
 | --- | --- | --- | --- |
-| A1. Landing Page | US26, US27, US28 (EP06) | T-L01 a T-L08 | Sergio (L) |
-| A2. Usuarios, unidades y comunicación | US01 a US04, US09 (EP01, EP02) | T-W01 a T-W07 | Loreley (L) |
-| A3. Reservas, áreas comunes y pagos | US12, US13, US15, US16, US18, US20, US25 (EP03, EP04) | T-W08 a T-W14 | Loreley (L) |
-| A4. Núcleo offline, contratos e integración | TS21, TS23, TS24, TS25, TS29, TS30, TS31, US48, US50 (EP05, EP10) | T-E01 a T-E04, T-E10, T-E14 | Jonatan (L) |
-| A5. Acceso y monitoreo de dispositivos | TS28, US29, US30, US33, US34, US35, US43, US44, US45, US46, US49 (EP07, EP09, EP10) | T-E05 a T-E09, T-E11, T-E12 | Jonatan (L) |
-| A6. Pruebas y calidad | TS32 (EP05) | T-E15, T-W17 | Diego (L) |
-| A7. Integración, despliegue y documentación | — | T-W15, T-E13, T-E16, T-E17 | Diego (L) |
-| **Total** | **36 historias · 165 story points** | **42 tasks** | |
+| A1. Landing Page | US26, US27, US28 (EP06) | T-01 a T-08 | Sergio (L) |
+| A2. Usuarios, unidades y comunicación | US01 a US04, US09 (EP01, EP02) | T-09 a T-12, T-17 a T-21 | Loreley (L) |
+| A3. Reservas, áreas comunes y pagos | US12, US13, US15, US16, US18, US20, US25 (EP03, EP04) | T-22 a T-31 | Loreley (L) |
+| A4. Núcleo offline, contratos e integración | TS21, TS23, TS24, TS25, TS29, TS30, TS31, US48, US50 (EP05, EP10) | T-32 a T-36, T-38 a T-41, T-45, T-63, T-65 | Jonatan (L) |
+| A5. Acceso y monitoreo de dispositivos | TS28, US29, US30, US33, US34, US35, US43, US44, US45, US46, US49 (EP07, EP09, EP10) | T-42, T-49 a T-62, T-64 | Jonatan (L) |
+| A6. Pruebas y calidad | TS32 (EP05) | T-15, T-16, T-47, T-48 | Diego (L) |
+| A7. Integración, despliegue y documentación | — | T-13, T-14, T-37, T-43, T-44, T-46 | Diego (L) |
+| **Total** | **36 historias · 165 story points** | **65 tasks** | |
 
 La asignación de responsables que aparece en las columnas *Assigned To* del Sprint Backlog 1 (sección 6.2.1.3) respeta esta organización: las tasks de cada aspecto fueron ejecutadas por su líder o por sus colaboradores, nunca por alguien ajeno al aspecto.
 
 ##### Ejemplo de aplicación
 
-La task **T-E03 — Contrato MQTT y puente paho-mqtt** pertenece al aspecto **A4**, cuyo líder es Jonatan y cuyo colaborador es Diego. La descomposición de la historia TS24 la hizo el líder del aspecto y la implementación se repartió entre ambos según la parte del contrato que correspondía. Del mismo modo, la task **T-W09 — Flujo de reserva** pertenece al aspecto **A3**, cuyo líder es Loreley; la descomposición de la historia US13 la hizo Loreley y la implementaron Loreley, Gabriel y Diego. Este patrón se repitió en los 42 casos del Sprint 1: cada task tiene un aspecto de origen y ese aspecto tiene un líder.
+Las tasks **T-38 — Contrato MQTT** y **T-39 — Puente paho-mqtt** pertenecen al aspecto **A4**, cuyo líder es Jonatan y cuyo colaborador es Diego. La descomposición de la historia TS24 la hizo el líder del aspecto y la implementación se repartió entre ambos según la parte del contrato que correspondía. Del mismo modo, las tasks **T-24 — Selección de área y horario** y **T-25 — Confirmación y tarjetas de reserva** pertenecen al aspecto **A3**, cuyo líder es Loreley; la descomposición de la historia US13 la hizo Loreley y la implementaron Loreley, Gabriel y Diego. Este patrón se repitió en las 65 tasks del Sprint 1: cada task tiene un aspecto de origen y ese aspecto tiene un líder.
 
 ##### Participación de los integrantes sin tareas propias
 
@@ -8609,7 +8609,7 @@ Enlace público del Board en Trello: [https://trello.com/b/5AcYs0X0/sprint-1](ht
   <tr>
     <td rowspan="5">US26</td>
     <td rowspan="5">Visualizar hero y navegar en la Landing Page</td>
-    <td>T-L01</td>
+    <td>T-01</td>
     <td>Maquetación del hero</td>
     <td>Sección principal con propuesta de valor, subtítulo y botón de llamada a la acción</td>
     <td>6</td>
@@ -8617,7 +8617,7 @@ Enlace público del Board en Trello: [https://trello.com/b/5AcYs0X0/sprint-1](ht
     <td>Done</td>
   </tr>
   <tr>
-    <td>T-L02</td>
+    <td>T-02</td>
     <td>Barra de navegación responsiva</td>
     <td>Menú con anclas a secciones, menú hamburguesa en móvil y desplazamiento suave</td>
     <td>5</td>
@@ -8625,15 +8625,23 @@ Enlace público del Board en Trello: [https://trello.com/b/5AcYs0X0/sprint-1](ht
     <td>Done</td>
   </tr>
   <tr>
-    <td>T-L03</td>
-    <td>Secciones informativas</td>
-    <td>Secciones de cómo funciona, segmentos objetivo, estadísticas, precios y equipo</td>
-    <td>10</td>
+    <td>T-03</td>
+    <td>Secciones de cómo funciona y segmentos</td>
+    <td>Secciones de cómo funciona y segmentos objetivo con su contenido e iconografía</td>
+    <td>6</td>
     <td>Landa Ortiz, Sergio Javier</td>
     <td>Done</td>
   </tr>
   <tr>
-    <td>T-L04</td>
+    <td>T-04</td>
+    <td>Secciones de estadísticas, precios y equipo</td>
+    <td>Secciones de estadísticas, planes de precios y equipo, con metaetiquetas SEO y pie de página con enlace al repositorio</td>
+    <td>6</td>
+    <td>Landa Ortiz, Sergio Javier</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>T-05</td>
     <td>Traducciones es / en</td>
     <td>Diccionarios i18n y conmutación de idioma en todos los textos visibles</td>
     <td>6</td>
@@ -8641,17 +8649,9 @@ Enlace público del Board en Trello: [https://trello.com/b/5AcYs0X0/sprint-1](ht
     <td>Done</td>
   </tr>
   <tr>
-    <td>T-L08</td>
-    <td>Metadatos SEO</td>
-    <td>Metaetiquetas de descripción y viewport, y pie de página con enlace al repositorio</td>
-    <td>2</td>
-    <td>Landa Ortiz, Sergio Javier</td>
-    <td>Done</td>
-  </tr>
-  <tr>
     <td rowspan="2">US27</td>
     <td rowspan="2">Visualizar sección de funcionalidades</td>
-    <td>T-L05</td>
+    <td>T-06</td>
     <td>Sección de funcionalidades</td>
     <td>Tarjetas de pagos, reservas y comunicados con iconografía y descripción</td>
     <td>6</td>
@@ -8659,7 +8659,7 @@ Enlace público del Board en Trello: [https://trello.com/b/5AcYs0X0/sprint-1](ht
     <td>Done</td>
   </tr>
   <tr>
-    <td>T-L06</td>
+    <td>T-07</td>
     <td>Galería de capturas</td>
     <td>Lightbox con las siete pantallas de la aplicación y navegación entre imágenes</td>
     <td>7</td>
@@ -8669,7 +8669,7 @@ Enlace público del Board en Trello: [https://trello.com/b/5AcYs0X0/sprint-1](ht
   <tr>
     <td>US28</td>
     <td>Acceder a la aplicación desde la Landing Page</td>
-    <td>T-L07</td>
+    <td>T-08</td>
     <td>Formulario de contacto</td>
     <td>Campos de nombre, correo y edificio con validación y mensaje de éxito</td>
     <td>5</td>
@@ -8677,19 +8677,27 @@ Enlace público del Board en Trello: [https://trello.com/b/5AcYs0X0/sprint-1](ht
     <td>Done</td>
   </tr>
   <tr>
-    <td>US01</td>
-    <td>Registrar residente y vincularlo a su unidad</td>
-    <td>T-W03</td>
-    <td>Formulario de unidad y vinculación</td>
-    <td>Alta de unidad, asignación de titular y asociación usuario–unidad</td>
-    <td>10</td>
+    <td rowspan="2">US01</td>
+    <td rowspan="2">Registrar residente y vincularlo a su unidad</td>
+    <td>T-09</td>
+    <td>Formulario de unidad</td>
+    <td>Alta de unidad con validaciones y asignación de titular</td>
+    <td>5</td>
     <td>Perez Tuesta, Gabriel</td>
     <td>Done</td>
   </tr>
   <tr>
-    <td rowspan="4">US02</td>
-    <td rowspan="4">Inicio de sesión</td>
-    <td>T-W01</td>
+    <td>T-10</td>
+    <td>Vinculación usuario–unidad</td>
+    <td>Asociación del residente registrado con su unidad y actualización del listado</td>
+    <td>5</td>
+    <td>Perez Tuesta, Gabriel</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td rowspan="6">US02</td>
+    <td rowspan="6">Inicio de sesión</td>
+    <td>T-11</td>
     <td>Pantalla de inicio de sesión</td>
     <td>Formulario reactivo, validación de credenciales y almacenamiento del token</td>
     <td>8</td>
@@ -8697,7 +8705,7 @@ Enlace público del Board en Trello: [https://trello.com/b/5AcYs0X0/sprint-1](ht
     <td>Done</td>
   </tr>
   <tr>
-    <td>T-W02</td>
+    <td>T-12</td>
     <td>Guardia de rutas e interceptor</td>
     <td><code>authGuard</code> para el layout privado e interceptor que adjunta el token Bearer</td>
     <td>5</td>
@@ -8705,25 +8713,41 @@ Enlace público del Board en Trello: [https://trello.com/b/5AcYs0X0/sprint-1](ht
     <td>Done</td>
   </tr>
   <tr>
-    <td>T-W15</td>
-    <td>Fake API y despliegue en Vercel</td>
-    <td><code>json-server</code> con datos semilla, rutas y reescrituras de <code>vercel.json</code></td>
-    <td>14</td>
+    <td>T-13</td>
+    <td>Fake API con json-server</td>
+    <td>json-server con datos semilla y rutas para los módulos de la aplicación</td>
+    <td>7</td>
     <td>Perez Tuesta, Gabriel</td>
     <td>Done</td>
   </tr>
   <tr>
-    <td>T-W17</td>
-    <td>Suite de pruebas unitarias</td>
-    <td>26 archivos <code>.spec.ts</code> con Karma para servicios, componentes y guardas</td>
-    <td>10</td>
+    <td>T-14</td>
+    <td>Despliegue en Vercel</td>
+    <td>Configuración del proyecto en Vercel con rutas y reescrituras de vercel.json</td>
+    <td>7</td>
+    <td>Perez Tuesta, Gabriel</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>T-15</td>
+    <td>Pruebas de servicios y guardas</td>
+    <td>Archivos .spec.ts con Karma para los servicios, guardas e interceptor</td>
+    <td>5</td>
+    <td>Perez Tuesta, Gabriel / Sarmiento Medina, Loreley</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>T-16</td>
+    <td>Pruebas de componentes</td>
+    <td>Archivos .spec.ts con Karma para los componentes de las vistas</td>
+    <td>5</td>
     <td>Perez Tuesta, Gabriel / Sarmiento Medina, Loreley</td>
     <td>Done</td>
   </tr>
   <tr>
     <td>US03</td>
     <td>Actualizar información de usuarios</td>
-    <td>T-W04</td>
+    <td>T-17</td>
     <td>Listado y edición de usuarios</td>
     <td>Tabla de usuarios con formulario de edición y actualización</td>
     <td>8</td>
@@ -8731,17 +8755,25 @@ Enlace público del Board en Trello: [https://trello.com/b/5AcYs0X0/sprint-1](ht
     <td>Done</td>
   </tr>
   <tr>
-    <td rowspan="2">US04</td>
-    <td rowspan="2">Registrar edificio y unidades</td>
-    <td>T-W05</td>
-    <td>Formulario de edificio y unidades</td>
-    <td>Alta de torres y unidades con validaciones de dominio</td>
-    <td>12</td>
+    <td rowspan="3">US04</td>
+    <td rowspan="3">Registrar edificio y unidades</td>
+    <td>T-18</td>
+    <td>Formulario de edificio y torres</td>
+    <td>Alta del edificio y sus torres con validaciones de dominio</td>
+    <td>6</td>
     <td>Perez Tuesta, Gabriel</td>
     <td>Done</td>
   </tr>
   <tr>
-    <td>T-W06</td>
+    <td>T-19</td>
+    <td>Registro de unidades</td>
+    <td>Alta de unidades por torre con validaciones de dominio</td>
+    <td>6</td>
+    <td>Perez Tuesta, Gabriel</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>T-20</td>
     <td>Página de unidades y residentes</td>
     <td>Listado con filtros por torre y estado</td>
     <td>8</td>
@@ -8751,7 +8783,7 @@ Enlace público del Board en Trello: [https://trello.com/b/5AcYs0X0/sprint-1](ht
   <tr>
     <td>US09</td>
     <td>Publicar mensaje en la comunidad</td>
-    <td>T-W07</td>
+    <td>T-21</td>
     <td>Publicación en el foro</td>
     <td>Composición de publicaciones y listado del hilo</td>
     <td>6</td>
@@ -8759,29 +8791,45 @@ Enlace público del Board en Trello: [https://trello.com/b/5AcYs0X0/sprint-1](ht
     <td>Done</td>
   </tr>
   <tr>
-    <td>US12</td>
-    <td>Ver disponibilidad de áreas comunes</td>
-    <td>T-W08</td>
-    <td>Calendario de disponibilidad</td>
-    <td>Vista de calendario con los cupos ocupados por área y fecha</td>
-    <td>12</td>
+    <td rowspan="2">US12</td>
+    <td rowspan="2">Ver disponibilidad de áreas comunes</td>
+    <td>T-22</td>
+    <td>Vista de calendario</td>
+    <td>Componente de calendario por área común y fecha</td>
+    <td>6</td>
     <td>Perez Tuesta, Gabriel</td>
     <td>Done</td>
   </tr>
   <tr>
-    <td>US13</td>
-    <td>Reservar área común</td>
-    <td>T-W09</td>
-    <td>Flujo de reserva</td>
-    <td>Selección de área y horario, confirmación y tarjetas de reserva</td>
-    <td>12</td>
+    <td>T-23</td>
+    <td>Cupos ocupados</td>
+    <td>Marcado de los cupos ocupados por área y fecha a partir de las reservas</td>
+    <td>6</td>
+    <td>Perez Tuesta, Gabriel</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td rowspan="2">US13</td>
+    <td rowspan="2">Reservar área común</td>
+    <td>T-24</td>
+    <td>Selección de área y horario</td>
+    <td>Formulario de reserva con selección de área común, fecha y horario</td>
+    <td>6</td>
+    <td>Perez Tuesta, Gabriel</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>T-25</td>
+    <td>Confirmación y tarjetas de reserva</td>
+    <td>Confirmación de la reserva y tarjetas con el detalle de cada reserva</td>
+    <td>6</td>
     <td>Perez Tuesta, Gabriel</td>
     <td>Done</td>
   </tr>
   <tr>
     <td>US15</td>
     <td>Cancelar reserva</td>
-    <td>T-W10</td>
+    <td>T-26</td>
     <td>Cancelación de reserva</td>
     <td>Acción de cancelación con confirmación y actualización del calendario</td>
     <td>4</td>
@@ -8789,19 +8837,27 @@ Enlace público del Board en Trello: [https://trello.com/b/5AcYs0X0/sprint-1](ht
     <td>Done</td>
   </tr>
   <tr>
-    <td>US16</td>
-    <td>Configurar reglas y estado de área común</td>
-    <td>T-W11</td>
-    <td>Administración de áreas comunes</td>
-    <td>CRUD de áreas, estados y reglas de uso por área</td>
-    <td>12</td>
+    <td rowspan="2">US16</td>
+    <td rowspan="2">Configurar reglas y estado de área común</td>
+    <td>T-27</td>
+    <td>CRUD de áreas comunes</td>
+    <td>Alta, edición y baja de áreas comunes</td>
+    <td>6</td>
+    <td>Perez Tuesta, Gabriel</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>T-28</td>
+    <td>Estados y reglas de uso</td>
+    <td>Configuración de estados y reglas de uso por área</td>
+    <td>6</td>
     <td>Perez Tuesta, Gabriel</td>
     <td>Done</td>
   </tr>
   <tr>
     <td>US18</td>
     <td>Ver deuda actual</td>
-    <td>T-W12</td>
+    <td>T-29</td>
     <td>Consulta de deuda</td>
     <td>Panel de deuda por unidad y detalle del residente</td>
     <td>8</td>
@@ -8811,7 +8867,7 @@ Enlace público del Board en Trello: [https://trello.com/b/5AcYs0X0/sprint-1](ht
   <tr>
     <td>US20</td>
     <td>Registrar pagos en el sistema</td>
-    <td>T-W13</td>
+    <td>T-30</td>
     <td>Registro de pagos</td>
     <td>Formulario de pago manual con voucher y estado en verificación</td>
     <td>6</td>
@@ -8821,7 +8877,7 @@ Enlace público del Board en Trello: [https://trello.com/b/5AcYs0X0/sprint-1](ht
   <tr>
     <td>US25</td>
     <td>Resolver pago en verificación</td>
-    <td>T-W14</td>
+    <td>T-31</td>
     <td>Resolución de pagos</td>
     <td>Acciones de confirmar o rechazar un pago pendiente</td>
     <td>4</td>
@@ -8831,7 +8887,7 @@ Enlace público del Board en Trello: [https://trello.com/b/5AcYs0X0/sprint-1](ht
   <tr>
     <td>TS21</td>
     <td>Implementación del Edge Gateway con operación sin conexión y sincronización</td>
-    <td>T-E10a</td>
+    <td>T-32</td>
     <td>Transporte al backend</td>
     <td>Envío por lotes con reintentos desde la cola de salida</td>
     <td>5</td>
@@ -8839,25 +8895,41 @@ Enlace público del Board en Trello: [https://trello.com/b/5AcYs0X0/sprint-1](ht
     <td>Done</td>
   </tr>
   <tr>
-    <td rowspan="3">TS23</td>
-    <td rowspan="3">Configuración base del Edge Gateway con Python, Flask, Peewee ORM y SQLite</td>
-    <td>T-E01</td>
-    <td>Aplicación Flask y endpoint de salud</td>
-    <td>Estructura de la aplicación, configuración por entorno, <code>/health</code> y Swagger con flask-smorest</td>
-    <td>10</td>
+    <td rowspan="5">TS23</td>
+    <td rowspan="5">Configuración base del Edge Gateway con Python, Flask, Peewee ORM y SQLite</td>
+    <td>T-33</td>
+    <td>Aplicación Flask</td>
+    <td>Estructura de la aplicación y configuración por entorno</td>
+    <td>5</td>
     <td>Acuña Corahua, Jonatan Ariel</td>
     <td>Done</td>
   </tr>
   <tr>
-    <td>T-E04</td>
-    <td>Endpoints REST del servicio</td>
-    <td>Blueprints de dispositivos, credenciales, lecturas, estado y sincronización</td>
-    <td>14</td>
+    <td>T-34</td>
+    <td>Endpoint de salud y Swagger</td>
+    <td>Endpoint /health y documentación Swagger con flask-smorest</td>
+    <td>5</td>
     <td>Acuña Corahua, Jonatan Ariel</td>
     <td>Done</td>
   </tr>
   <tr>
-    <td>T-E17</td>
+    <td>T-35</td>
+    <td>Endpoints de dispositivos y credenciales</td>
+    <td>Blueprints REST de dispositivos y credenciales</td>
+    <td>7</td>
+    <td>Acuña Corahua, Jonatan Ariel</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>T-36</td>
+    <td>Endpoints de lecturas, estado y sincronización</td>
+    <td>Blueprints REST de lecturas, estado y sincronización</td>
+    <td>7</td>
+    <td>Acuña Corahua, Jonatan Ariel</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>T-37</td>
     <td>Flujo de trabajo y versionado</td>
     <td>Ramas <code>feature/</code>, <code>release/0.1.0</code>, <code>CHANGELOG.md</code> y README del repositorio</td>
     <td>6</td>
@@ -8865,29 +8937,45 @@ Enlace público del Board en Trello: [https://trello.com/b/5AcYs0X0/sprint-1](ht
     <td>Done</td>
   </tr>
   <tr>
-    <td>TS24</td>
-    <td>Contrato de mensajes MQTT entre el Edge Gateway y los ESP32</td>
-    <td>T-E03</td>
-    <td>Contrato MQTT y puente paho-mqtt</td>
-    <td>Esquemas versionados, router tolerante a mensajes inválidos y confirmación con <code>ack</code></td>
-    <td>12</td>
+    <td rowspan="2">TS24</td>
+    <td rowspan="2">Contrato de mensajes MQTT entre el Edge Gateway y los ESP32</td>
+    <td>T-38</td>
+    <td>Contrato MQTT</td>
+    <td>Esquemas versionados de los mensajes entre el Edge Gateway y los ESP32</td>
+    <td>6</td>
     <td>Acuña Corahua, Jonatan Ariel</td>
     <td>Done</td>
   </tr>
   <tr>
-    <td>TS25</td>
-    <td>Persistencia local con SQLite y cola de salida</td>
-    <td>T-E02</td>
-    <td>Esquema SQLite y cola de salida</td>
-    <td>Modelos Peewee en modo WAL y cola de salida durable con escritura transaccional</td>
-    <td>12</td>
+    <td>T-39</td>
+    <td>Puente paho-mqtt</td>
+    <td>Router tolerante a mensajes inválidos y confirmación con ack</td>
+    <td>6</td>
+    <td>Acuña Corahua, Jonatan Ariel</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td rowspan="2">TS25</td>
+    <td rowspan="2">Persistencia local con SQLite y cola de salida</td>
+    <td>T-40</td>
+    <td>Esquema SQLite</td>
+    <td>Modelos Peewee sobre SQLite en modo WAL</td>
+    <td>6</td>
+    <td>Acuña Corahua, Jonatan Ariel</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>T-41</td>
+    <td>Cola de salida</td>
+    <td>Cola de salida durable con escritura transaccional</td>
+    <td>6</td>
     <td>Acuña Corahua, Jonatan Ariel</td>
     <td>Done</td>
   </tr>
   <tr>
     <td>TS28</td>
     <td>Estandarización de marcas de tiempo y sincronización de reloj</td>
-    <td>T-E08</td>
+    <td>T-42</td>
     <td>Sincronización de reloj</td>
     <td>Cálculo de deriva, <code>time_sync</code> y marcado de relojes sospechosos</td>
     <td>6</td>
@@ -8895,19 +8983,27 @@ Enlace público del Board en Trello: [https://trello.com/b/5AcYs0X0/sprint-1](ht
     <td>Done</td>
   </tr>
   <tr>
-    <td>TS29</td>
-    <td>Despliegue del Edge Gateway con Docker Compose</td>
-    <td>T-E13</td>
-    <td>Stack de Docker Compose</td>
-    <td>Servicios <code>mosquitto</code>, <code>edge-gateway</code> y <code>mock-cloud</code> con volúmenes y healthchecks</td>
-    <td>10</td>
+    <td rowspan="2">TS29</td>
+    <td rowspan="2">Despliegue del Edge Gateway con Docker Compose</td>
+    <td>T-43</td>
+    <td>Servicios del stack</td>
+    <td>Servicios mosquitto, edge-gateway y mock-cloud en Docker Compose</td>
+    <td>5</td>
+    <td>Acuña Corahua, Jonatan Ariel</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>T-44</td>
+    <td>Volúmenes y healthchecks</td>
+    <td>Volúmenes persistentes y healthchecks de cada servicio</td>
+    <td>5</td>
     <td>Acuña Corahua, Jonatan Ariel</td>
     <td>Done</td>
   </tr>
   <tr>
     <td>TS30</td>
     <td>Simulador de nodos ESP32 para pruebas sin hardware</td>
-    <td>T-E14</td>
+    <td>T-45</td>
     <td>Simulador de nodos ESP32</td>
     <td>Nodos virtuales que respetan el contrato MQTT, con comandos de siembra y lectura de tarjeta</td>
     <td>8</td>
@@ -8917,7 +9013,7 @@ Enlace público del Board en Trello: [https://trello.com/b/5AcYs0X0/sprint-1](ht
   <tr>
     <td>TS31</td>
     <td>Contrato de integración entre el Edge Gateway y el backend</td>
-    <td>T-E16</td>
+    <td>T-46</td>
     <td>Documentación de contratos</td>
     <td>Contrato MQTT, contrato Edge–backend y documentación de la API REST</td>
     <td>8</td>
@@ -8925,19 +9021,27 @@ Enlace público del Board en Trello: [https://trello.com/b/5AcYs0X0/sprint-1](ht
     <td>Done</td>
   </tr>
   <tr>
-    <td>TS32</td>
-    <td>Pruebas automatizadas del Edge Gateway</td>
-    <td>T-E15</td>
-    <td>Suite de pruebas automatizadas</td>
-    <td>188 pruebas con dobles de prueba para broker, nube y reloj, sin red</td>
-    <td>16</td>
+    <td rowspan="2">TS32</td>
+    <td rowspan="2">Pruebas automatizadas del Edge Gateway</td>
+    <td>T-47</td>
+    <td>Dobles de prueba</td>
+    <td>Dobles de prueba para el broker, la nube y el reloj</td>
+    <td>8</td>
+    <td>Acuña Corahua, Jonatan Ariel</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>T-48</td>
+    <td>Casos de prueba</td>
+    <td>188 pruebas automatizadas del servicio, ejecutables sin red</td>
+    <td>8</td>
     <td>Acuña Corahua, Jonatan Ariel</td>
     <td>Done</td>
   </tr>
   <tr>
     <td>US29</td>
     <td>Registrar tarjeta RFID de acceso a áreas comunes</td>
-    <td>T-E06a</td>
+    <td>T-49</td>
     <td>Alta de credenciales en caché</td>
     <td>Registro manual de tarjetas RFID sin conexión y revocación</td>
     <td>4</td>
@@ -8947,35 +9051,51 @@ Enlace público del Board en Trello: [https://trello.com/b/5AcYs0X0/sprint-1](ht
   <tr>
     <td>US30</td>
     <td>Desactivar acceso a áreas comunes por morosidad</td>
-    <td>T-E06b</td>
+    <td>T-50</td>
     <td>Suspensión por morosidad</td>
     <td>Suspensión de credenciales y lista negra de unidades morosas</td>
-    <td>3</td>
+    <td>4</td>
     <td>Acuña Corahua, Jonatan Ariel</td>
     <td>Done</td>
   </tr>
   <tr>
     <td>US33</td>
     <td>Otorgar acceso temporal por reserva aprobada</td>
-    <td>T-E06c</td>
+    <td>T-51</td>
     <td>Acceso temporal por reserva</td>
     <td>Credencial válida solo en el horario de la reserva aprobada</td>
-    <td>3</td>
+    <td>4</td>
     <td>Acuña Corahua, Jonatan Ariel</td>
     <td>Done</td>
   </tr>
   <tr>
-    <td rowspan="2">US34</td>
-    <td rowspan="2">Consultar bitácora de accesos</td>
-    <td>T-W16</td>
-    <td>Módulos Smart IoT y Centro de Documentación</td>
-    <td>Dashboard de accesos, iluminación y riego, y centro de documentación</td>
-    <td>16</td>
+    <td rowspan="4">US34</td>
+    <td rowspan="4">Consultar bitácora de accesos</td>
+    <td>T-52</td>
+    <td>Dashboard de accesos</td>
+    <td>Módulo Smart IoT con el dashboard y la bitácora de accesos</td>
+    <td>6</td>
     <td>Sarmiento Medina, Loreley</td>
     <td>Done</td>
   </tr>
   <tr>
-    <td>T-E11</td>
+    <td>T-53</td>
+    <td>Módulos de iluminación y riego</td>
+    <td>Vistas de iluminación y riego dentro del módulo Smart IoT</td>
+    <td>5</td>
+    <td>Sarmiento Medina, Loreley</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>T-54</td>
+    <td>Centro de Documentación</td>
+    <td>Vista del centro de documentación del edificio</td>
+    <td>5</td>
+    <td>Sarmiento Medina, Loreley</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>T-55</td>
     <td>Bitácora de accesos</td>
     <td>Endpoint de intentos de acceso con credencial enmascarada</td>
     <td>5</td>
@@ -8983,29 +9103,45 @@ Enlace público del Board en Trello: [https://trello.com/b/5AcYs0X0/sprint-1](ht
     <td>Done</td>
   </tr>
   <tr>
-    <td>US35</td>
-    <td>Apertura remota de acceso</td>
-    <td>T-E12</td>
-    <td>Comandos remotos y mantenimiento</td>
-    <td>Envío de comandos con espera de confirmación y modo mantenimiento completo</td>
-    <td>10</td>
+    <td rowspan="2">US35</td>
+    <td rowspan="2">Apertura remota de acceso</td>
+    <td>T-56</td>
+    <td>Comandos remotos</td>
+    <td>Envío de comandos remotos con espera de confirmación</td>
+    <td>5</td>
     <td>Acuña Corahua, Jonatan Ariel</td>
     <td>Done</td>
   </tr>
   <tr>
-    <td>US43</td>
-    <td>Detectar falla de dispositivo</td>
-    <td>T-E09</td>
-    <td>Validación de lecturas y alertas</td>
-    <td>Lecturas de humedad y ultrasonido, conversión a nivel de agua y alertas con histéresis</td>
-    <td>12</td>
+    <td>T-57</td>
+    <td>Modo mantenimiento</td>
+    <td>Modo mantenimiento completo de los dispositivos</td>
+    <td>5</td>
+    <td>Acuña Corahua, Jonatan Ariel</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td rowspan="2">US43</td>
+    <td rowspan="2">Detectar falla de dispositivo</td>
+    <td>T-58</td>
+    <td>Validación de lecturas</td>
+    <td>Lecturas de humedad y ultrasonido con conversión a nivel de agua</td>
+    <td>6</td>
+    <td>Acuña Corahua, Jonatan Ariel</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>T-59</td>
+    <td>Alertas con histéresis</td>
+    <td>Generación de alertas con histéresis a partir de las lecturas</td>
+    <td>6</td>
     <td>Acuña Corahua, Jonatan Ariel</td>
     <td>Done</td>
   </tr>
   <tr>
     <td>US44</td>
     <td>Monitorear estado de conexión de dispositivos</td>
-    <td>T-E07b</td>
+    <td>T-60</td>
     <td>Seguimiento de nodos</td>
     <td><code>heartbeat</code>, detección de desconexión, recuperación y estado de cada nodo</td>
     <td>5</td>
@@ -9015,7 +9151,7 @@ Enlace público del Board en Trello: [https://trello.com/b/5AcYs0X0/sprint-1](ht
   <tr>
     <td>US45</td>
     <td>Leer tarjeta RFID y resolver el acceso</td>
-    <td>T-E05a</td>
+    <td>T-61</td>
     <td>Motor de decisión de acceso</td>
     <td>Resolución local con credencial, reserva, horario y estado del área</td>
     <td>7</td>
@@ -9025,7 +9161,7 @@ Enlace público del Board en Trello: [https://trello.com/b/5AcYs0X0/sprint-1](ht
   <tr>
     <td>US46</td>
     <td>Abrir la cerradura eléctrica y re-bloquearla automáticamente</td>
-    <td>T-E05b</td>
+    <td>T-62</td>
     <td>Apertura y re-bloqueo de la cerradura</td>
     <td>Retorno de <code>lockMs</code> al nodo para abrir la cerradura y re-bloquearla automáticamente</td>
     <td>7</td>
@@ -9035,7 +9171,7 @@ Enlace público del Board en Trello: [https://trello.com/b/5AcYs0X0/sprint-1](ht
   <tr>
     <td>US48</td>
     <td>Registrar y sincronizar datos generados sin conexión</td>
-    <td>T-E10b</td>
+    <td>T-63</td>
     <td>Reenvío de datos sin conexión</td>
     <td>Eventos con <code>eventId</code> idempotente que se sincronizan al recuperar la conexión</td>
     <td>5</td>
@@ -9045,7 +9181,7 @@ Enlace público del Board en Trello: [https://trello.com/b/5AcYs0X0/sprint-1](ht
   <tr>
     <td>US49</td>
     <td>Registrar y autenticar nodos ESP32</td>
-    <td>T-E07a</td>
+    <td>T-64</td>
     <td>Registro de nodos</td>
     <td>Registro y autenticación de los nodos ESP32 en el Edge Gateway</td>
     <td>5</td>
@@ -9055,7 +9191,7 @@ Enlace público del Board en Trello: [https://trello.com/b/5AcYs0X0/sprint-1](ht
   <tr>
     <td>US50</td>
     <td>Sincronizar credenciales, reservas, reglas y blacklist desde la nube</td>
-    <td>T-E10c</td>
+    <td>T-65</td>
     <td>Sincronización de caché</td>
     <td>Sincronización por pull y push de credenciales, reservas, reglas y blacklist</td>
     <td>4</td>
@@ -9757,7 +9893,7 @@ Enlace público del Board en Trello: [https://trello.com/b/N0u8fyeR/sprint-2](ht
     <td>T-01</td>
     <td>Esqueleto del servicio</td>
     <td>Proyecto Spring Boot desde la plantilla de Payment, con arquitectura por capas y perfiles</td>
-    <td>3</td>
+    <td>4</td>
     <td>Acuña Corahua, Jonatan Ariel / Sarmiento Medina, Loreley</td>
     <td>Done</td>
   </tr>
@@ -9773,7 +9909,7 @@ Enlace público del Board en Trello: [https://trello.com/b/N0u8fyeR/sprint-2](ht
     <td>T-03</td>
     <td>Cierre de IoT Access Management</td>
     <td>Prueba de latencia, documentación y release 0.1.0</td>
-    <td>3</td>
+    <td>4</td>
     <td>Acuña Corahua, Jonatan Ariel / Collantes Carrillo, Diego Mateo</td>
     <td>Done</td>
   </tr>
@@ -9783,7 +9919,7 @@ Enlace público del Board en Trello: [https://trello.com/b/N0u8fyeR/sprint-2](ht
     <td>T-04</td>
     <td>Esqueleto</td>
     <td>Proyecto Spring Boot del microservicio de telemetría</td>
-    <td>2</td>
+    <td>4</td>
     <td>Acuña Corahua, Jonatan Ariel / Lizarbe Alvarez, Ariana Nickole</td>
     <td>Done</td>
   </tr>
@@ -9799,7 +9935,7 @@ Enlace público del Board en Trello: [https://trello.com/b/N0u8fyeR/sprint-2](ht
     <td>T-06</td>
     <td>Cierre de IoT Telemetry</td>
     <td>Métricas, documentación y release 0.1.0</td>
-    <td>2</td>
+    <td>4</td>
     <td>Acuña Corahua, Jonatan Ariel / Lizarbe Alvarez, Ariana Nickole</td>
     <td>Done</td>
   </tr>
@@ -9875,7 +10011,7 @@ Enlace público del Board en Trello: [https://trello.com/b/N0u8fyeR/sprint-2](ht
     <td>T-15</td>
     <td>Configuración y TLS MQTT</td>
     <td>Endpoints configurables, TLS para MQTT, client ID propio y broker independiente</td>
-    <td>3</td>
+    <td>4</td>
     <td>Acuña Corahua, Jonatan Ariel</td>
     <td>Done</td>
   </tr>
@@ -9891,7 +10027,7 @@ Enlace público del Board en Trello: [https://trello.com/b/N0u8fyeR/sprint-2](ht
     <td>T-17</td>
     <td>Dialecto del firmware de referencia</td>
     <td>Soporte del formato del firmware (<code>"v": "1"</code>, marcas de tiempo ISO) y recuperación del rol al reconectar</td>
-    <td>3</td>
+    <td>4</td>
     <td>Acuña Corahua, Jonatan Ariel / Landa Ortiz, Sergio Javier</td>
     <td>Done</td>
   </tr>
@@ -9907,7 +10043,7 @@ Enlace público del Board en Trello: [https://trello.com/b/N0u8fyeR/sprint-2](ht
     <td>T-19</td>
     <td>Reconciliación del modo de puerta</td>
     <td>Reenvío de la configuración cuando el heartbeat del nodo reporta un modo distinto (release 0.3.0)</td>
-    <td>3</td>
+    <td>4</td>
     <td>Acuña Corahua, Jonatan Ariel / Landa Ortiz, Sergio Javier</td>
     <td>Done</td>
   </tr>
@@ -9923,7 +10059,7 @@ Enlace público del Board en Trello: [https://trello.com/b/N0u8fyeR/sprint-2](ht
     <td>T-21</td>
     <td>Broker y documentación</td>
     <td>Broker de pruebas del repositorio, script de comandos con Mosquitto y documentación</td>
-    <td>3</td>
+    <td>4</td>
     <td>Acuña Corahua, Jonatan Ariel / Landa Ortiz, Sergio Javier</td>
     <td>Done</td>
   </tr>
@@ -9933,7 +10069,7 @@ Enlace público del Board en Trello: [https://trello.com/b/N0u8fyeR/sprint-2](ht
     <td>T-22</td>
     <td>Firmware del informe obsoleto</td>
     <td>Nota de obsoleto en <code>wokwi/README.md</code>; el firmware vigente es el del repositorio <code>esp32</code></td>
-    <td>1</td>
+    <td>4</td>
     <td>Acuña Corahua, Jonatan Ariel / Perez Tuesta, Gabriel</td>
     <td>Done</td>
   </tr>
@@ -9941,7 +10077,7 @@ Enlace público del Board en Trello: [https://trello.com/b/N0u8fyeR/sprint-2](ht
     <td>T-23</td>
     <td>GitFlow y arnés de tests en el host</td>
     <td>Ramas del repositorio y tests del firmware ejecutables en el host con <code>g++</code></td>
-    <td>3</td>
+    <td>4</td>
     <td>Acuña Corahua, Jonatan Ariel / Landa Ortiz, Sergio Javier</td>
     <td>Done</td>
   </tr>
@@ -9957,7 +10093,7 @@ Enlace público del Board en Trello: [https://trello.com/b/N0u8fyeR/sprint-2](ht
     <td>T-25</td>
     <td>Compilación de la placa y release</td>
     <td>Compilación con <code>arduino-cli</code> y releases v0.3.0 a v0.5.0</td>
-    <td>2</td>
+    <td>4</td>
     <td>Acuña Corahua, Jonatan Ariel / Landa Ortiz, Sergio Javier</td>
     <td>Done</td>
   </tr>
@@ -9967,7 +10103,7 @@ Enlace público del Board en Trello: [https://trello.com/b/N0u8fyeR/sprint-2](ht
     <td>T-26</td>
     <td>Rutas IoT en el ApiGateway</td>
     <td>Rutas <code>/api/v1/iot/**</code>, <code>/api/v1/access/**</code>, <code>/api/v1/edge/**</code> y <code>/api/v1/telemetry/**</code> con tests</td>
-    <td>3</td>
+    <td>4</td>
     <td>Acuña Corahua, Jonatan Ariel / Perez Tuesta, Gabriel</td>
     <td>Done</td>
   </tr>
@@ -10107,7 +10243,7 @@ Enlace público del Board en Trello: [https://trello.com/b/N0u8fyeR/sprint-2](ht
     <td>T-42</td>
     <td>Checklist de aceptación con la placa</td>
     <td>Prueba manual con el hardware real</td>
-    <td>3</td>
+    <td>4</td>
     <td>Acuña Corahua, Jonatan Ariel / Landa Ortiz, Sergio Javier / Ortiz Cardenas, Johanna Antuanete</td>
     <td>Done</td>
   </tr>
