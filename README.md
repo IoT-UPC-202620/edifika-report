@@ -141,7 +141,7 @@ TB1 (10/10/2026):
 AV2 (13/11/2026):
 <br>
 <p align="center">
-  <b>[POR COMPLETAR: captura de los Insights del repositorio para AV2]</b>
+  <img src="assets/img/insightsav2.jpeg" alt="logo" />
 </p>
 
 ## **Contenido**
@@ -453,7 +453,7 @@ AV1: <br>Planifiqué y desarrollé el Capítulo I del proyecto, organizando la i
 
 TB1: Planifiqué el diseño de la Landing Page en dos etapas, primero los wireframes de cada sección y luego los mock-ups con el diseño visual final, con el fin de validar la estructura antes de definir el aspecto. Cumplí la meta de entregar ambos artefactos dentro del Sprint, lo que permitió que el equipo contara con un diseño aprobado para la implementación de la Landing Page.<br>
 
-AV2: Planifiqué el firmware en releases pequeños (v0.3.0 a v0.5.0), cada uno con sus tests en el host antes de compilar para la placa, para que el equipo pudiera probar el contrato v1 sin depender del hardware. Cumplí la meta de dejar el firmware compilado (Flash 77 %, RAM 15 %) con 28 tests en verde, y cerré el hito con la prueba de aceptación en la placa física.<br>
+AV2: Planifiqué el firmware en releases pequeños (v0.3.0 a v0.5.0), cada uno con sus tests en el host antes de compilar para la placa, para que el equipo pudiera probar el contrato v1 sin depender del hardware. Cumplí la meta de dejar el firmware compilado (Flash 78 %, RAM 15 %) con 28 tests en verde, y cerré el hito con la prueba de aceptación en la placa física.<br>
 
 Lizarbe Alvarez, Ariana Nickole<br><br>
 
@@ -485,7 +485,7 @@ Sarmiento Medina, Loreley
 AV1: Colaboré en la organización y revisión de los Bounded Contexts, User Stories y artefactos del proyecto, realizando correcciones generales para mantener la consistencia del informe y contribuir al cumplimiento de los objetivos de la entrega.
 <br><br>
 TB1: Me propuse que el modelo del sistema incluyera también el riego automático y que la investigación inicial reflejara los hallazgos de las entrevistas. Para ello incorporé el Bounded Context Smart Irrigation con todas sus capas, actualicé el ERD y las referencias, y revisé el Capítulo I (Lean UX, Lean UX Canvas, segmentos objetivo y competidores), cumpliendo con los objetivos del Sprint y manteniendo la coherencia entre el Capítulo I y el diseño de la solución.<br><br>
-AV2: Planifiqué el hito de IoT Access Management en tasks pequeñas y ordenadas por dependencia (estructura del servicio, gateways y dispositivos, credenciales, morosidad, reservas y comandos), de modo que cada una se pudiera revisar por separado. Cumplí el objetivo de cerrar la contraparte en la nube de las historias de credenciales, morosidad y reservas que quedaron en Parcial (edge) en el Sprint 1, con un p95 de ~85 ms en el alta de credenciales.
+AV2: Planifiqué el hito de IoT Access Management en tasks pequeñas y ordenadas por dependencia (estructura del servicio, gateways y dispositivos, credenciales, morosidad, reservas y comandos), de modo que cada una se pudiera revisar por separado. Cumplí el objetivo de llevar a la nube la gestión de credenciales, morosidad y reservas que el Edge Gateway resolvía localmente, con un p95 de ~85 ms en el alta de credenciales.
 </td>
 <td>
 AV1: Durante esta entrega, el equipo organizó y ejecutó las actividades correspondientes a la fase de investigación y análisis del proyecto. La planificación de entrevistas, el análisis del mercado y la construcción de artefactos centrados en el usuario permitieron recopilar información relevante y estructurar el conocimiento obtenido. Gracias a ello, se cumplieron los objetivos planteados para la etapa de descubrimiento, generando insumos que sirvieron como base para la definición de requerimientos y el diseño de la solución propuesta. Además, trabajar sobre un único repositorio del informe, con un pipeline automatizado para generar el PDF y un registro de versiones, permitió que los integrantes avanzaran en paralelo y que cada aporte quedara trazable en los commits.<br><br>
@@ -5742,8 +5742,6 @@ La Mobile Application cubre al propietario y al inquilino en sus tareas de uso f
 
 **Sin conexión.** La app muestra los datos en caché con su marca de tiempo ("actualizado hace 4 min") y un banner en `Neutral` cuando el Edge API o la nube no responden. Nunca se muestra un vacío como si fuera un resultado. Esta es la traducción en pantalla de la decisión de arquitectura del capítulo IV: el condominio sigue operando con la última lista de credenciales sincronizadas.
 
-**Estado de madurez.** Las decisiones anteriores se derivan de los mismos tokens de las siete pantallas de referencia aplicados sobre las convenciones de Material Design 3. El juego de pantallas específico de la app móvil todavía no está formalizado, así que estas reglas quedan fijadas aquí como contrato de diseño para esa etapa y no como descripción de pantallas ya construidas.
-
 
 #### IoT Style Guidelines
 
@@ -8487,7 +8485,7 @@ Por su importancia, el equipo dedicó una parte específica de la sesión a iden
 
 **Relación del Sprint Goal con la selección de épicas e historias.** El Sprint Goal se estableció **en conjunto** por el Scrum Team antes de seleccionar el trabajo del Sprint. Esa decisión fue la que permitió decidir qué épicas e historias debían considerarse en la iteración en función de su contribución al objetivo, y no únicamente por su posición en el Product Backlog. Como resultado, las historias que no contribuyen de forma directa al Outcome quedaron fuera del Sprint 1 y se arrastraron al Sprint 2.
 
-La **Definition of Done** acordada para el Sprint 1 exige que cada historia cumpla sus escenarios de aceptación en Gherkin, que tenga cobertura de pruebas automatizadas cuando aplique, que sus criterios de estilo se respeten según la guía de la sección 6.1.3, que el código esté integrado en la rama `develop` mediante un commit convencional y que el producto esté desplegado y accesible desde su URL pública. El Sprint Goal se formuló sobre la base de features concretas, pero no sobre ítems del backlog. Por esa razón, el detalle de las historias comprometidas, su estimación en story points, sus responsables y su estado se presentan en el **Sprint Backlog 1** de la sección 6.2.1.3.
+La **Definition of Done** acordada para el Sprint 1 exige que cada historia cumpla sus escenarios de aceptación en Gherkin, que tenga cobertura de pruebas automatizadas cuando aplique, que sus criterios de estilo se respeten según la guía de la sección 6.1.3, que el código esté integrado en la rama `develop` mediante un commit convencional y que el producto esté desplegado y accesible desde su URL pública. El Sprint Goal se formuló sobre la base de features concretas, pero no sobre ítems del backlog. Por esa razón, el detalle de las historias comprometidas, sus tasks, su estimación, sus responsables y su estado se presentan en el **Sprint Backlog 1** de la sección 6.2.1.3.
 
 #### 6.2.1.2. Aspect Leaders and Collaborators
 
@@ -8568,7 +8566,7 @@ La task **T-E03 — Contrato MQTT y puente paho-mqtt** pertenece al aspecto **A4
 
 ##### Participación de los integrantes sin tareas propias
 
-Ariana Lizarbe Alvarez y Johanna Ortiz Cardenas participaron en el Sprint 1 en calidad de colaboradoras de apoyo en los aspectos A2, A3 y A6. Su aporte principal fue la revisión, la construcción de casos de prueba y el acompañamiento a los aspectos de reservas y pagos (A3) y del Edge Gateway (A4) en lo relativo a la verificación de criterios de aceptación. Ninguna de las dos tuvo tareas asignadas en el Sprint Backlog 1, por lo que su aportación no aparece en la columna *Assigned To* de la sección 6.2.1.3; se registran aquí para que la matriz refleje el esfuerzo real del equipo y no solo el trabajo con task asignado.
+Ariana Lizarbe Alvarez y Johanna Ortiz Cardenas participaron en el Sprint 1 en calidad de colaboradoras de apoyo en los aspectos A2, A3 y A6. Su aporte principal fue la revisión, la construcción de casos de prueba y el acompañamiento a los aspectos de reservas y pagos (A3) y del Edge Gateway (A4) en lo relativo a la verificación de criterios de aceptación.
 
 ##### Mantenimiento de la matriz durante el Sprint
 
@@ -8581,155 +8579,490 @@ La matriz LACX se elaboró en el Sprint Planning del 21 de septiembre de 2026 y 
 
 #### 6.2.1.3. Sprint Backlog 1
 
-El Sprint Backlog 1 recoge el trabajo comprometido en el Sprint Planning del 21 de septiembre de 2026, cuya descripción completa se encuentra en la sección 6.2.1.1. El objetivo principal del Sprint fue **publicar la primera versión de la Landing Page de Edifika, entregar las primeras pantallas operativas de la Web Application y dejar el Edge Gateway ejecutándose de extremo a extremo dentro del edificio**, para demostrar la propuesta de valor de la plataforma de extremo a extremo ante la TB1.
+En esta sección se presenta el Sprint Backlog correspondiente al Sprint 1, el cual contiene las historias de usuario seleccionadas y las tareas definidas por el equipo para alcanzar el Sprint Goal establecido. Asimismo, se incluye el Board de trabajo utilizado para la gestión y seguimiento de las actividades del Sprint, permitiendo visualizar el estado de avance de cada tarea y la distribución del trabajo entre los integrantes del equipo durante el desarrollo de la primera versión de la Landing Page, la Web Application y el Edge Gateway.
 
-El Sprint cerró con **36 historias comprometidas y 165 story points** repartidos entre tres productos digitales, desarrollados en tres repositorios independientes:
+<p align="center">
+  <img src="assets/img/sprint1.jpeg" alt="Tablero del Sprint 1 en Trello" width="900" />
+</p>
 
-| Producto digital | Repositorio | Historias | Story Points |
-|---|---|---|---|
-| Landing Page | `IoT-UPC-202620/Iot-LandingPage` | 3 | 5 |
-| Web Application | `IoT-UPC-202620/FrontEnd` | 12 | 53 |
-| Edge Gateway | `IoT-UPC-202620/Edifika-Microservice-IoT-Gateway` | 21 | 107 |
-| **Total** | | **36** | **165** |
+Enlace público del Board en Trello: [https://trello.com/b/5AcYs0X0/sprint-1](https://trello.com/b/5AcYs0X0/sprint-1)
 
-Los identificadores de historia y technical story empleados en esta tabla son los del Product Backlog del Capítulo III (sección 3.3). El Edge Gateway se desarrolló además con un desglose interno más fino (`US71`–`US93`, `TS33`, `TS34`) que no figura en el Capítulo III; en esta sección ese desglose se **consolida** en las historias correspondientes del informe, y la columna *Referencia interna* permite trazarlo.
-
-**Sprint Board**
-
-| Artefacto | Referencia |
-|---|---|
-| Tablero del Sprint 1 en Trello | **[POR COMPLETAR: URL pública del tablero del Sprint 1]** |
-| Captura del tablero | **[POR COMPLETAR: captura del tablero del Sprint 1]** |
-
-**Historias de usuario asignadas al Sprint**
-
-| Story Id | Story Title | Epic | Producto digital | Story Points | Estado | Assigned To |
-|---|---|---|---|---|---|---|
-| US26 | Visualizar hero y navegar en la Landing Page | EP06 | Landing Page | 2 | Completado | Landa Ortiz, Sergio Javier |
-| US27 | Visualizar sección de funcionalidades | EP06 | Landing Page | 2 | Completado | Landa Ortiz, Sergio Javier; Collantes Carrillo, Diego Mateo |
-| US28 | Acceder a la aplicación desde la Landing Page | EP06 | Landing Page | 1 | Completado | Landa Ortiz, Sergio Javier |
-| US01 | Registrar residente y vincularlo a su unidad | EP01 | Web Application | 5 | Completado | Perez Tuesta, Gabriel |
-| US02 | Inicio de sesión | EP01 | Web Application | 2 | Completado | Perez Tuesta, Gabriel |
-| US03 | Actualizar información de usuarios | EP01 | Web Application | 2 | Completado | Perez Tuesta, Gabriel |
-| US04 | Registrar edificio y unidades | EP01 | Web Application | 8 | Completado | Perez Tuesta, Gabriel |
-| US09 | Publicar mensaje en la comunidad | EP02 | Web Application | 3 | Completado | Perez Tuesta, Gabriel |
-| US12 | Ver disponibilidad de áreas comunes | EP03 | Web Application | 5 | Completado | Perez Tuesta, Gabriel |
-| US13 | Reservar área común | EP03 | Web Application | 8 | Completado | Perez Tuesta, Gabriel |
-| US15 | Cancelar reserva | EP03 | Web Application | 3 | Completado | Perez Tuesta, Gabriel |
-| US16 | Configurar reglas y estado de área común | EP03 | Web Application | 8 | Completado | Perez Tuesta, Gabriel |
-| US18 | Ver deuda actual | EP04 | Web Application | 3 | Completado | Perez Tuesta, Gabriel |
-| US20 | Registrar pagos en el sistema | EP04 | Web Application | 3 | Completado | Perez Tuesta, Gabriel |
-| US25 | Resolver pago en verificación | EP04 | Web Application | 3 | Completado | Perez Tuesta, Gabriel |
-| TS21 | Implementación del Edge Gateway con operación sin conexión y sincronización | EP05 | Edge Gateway | 8 | Completado | Acuña Corahua, Jonatan Ariel |
-| TS23 | Configuración base del Edge Gateway con Python, Flask, Peewee ORM y SQLite | EP05 | Edge Gateway | 5 | Completado | Acuña Corahua, Jonatan Ariel |
-| TS24 | Contrato de mensajes MQTT entre el Edge Gateway y los ESP32 | EP05 | Edge Gateway | 5 | Completado | Acuña Corahua, Jonatan Ariel |
-| TS25 | Persistencia local con SQLite y cola de salida | EP05 | Edge Gateway | 5 | Completado | Acuña Corahua, Jonatan Ariel |
-| TS28 | Estandarización de marcas de tiempo y sincronización de reloj | EP05 | Edge Gateway | 5 | Completado | Acuña Corahua, Jonatan Ariel |
-| TS29 | Despliegue del Edge Gateway con Docker Compose | EP05 | Edge Gateway | 5 | Completado | Acuña Corahua, Jonatan Ariel |
-| TS30 | Simulador de nodos ESP32 para pruebas sin hardware | EP05 | Edge Gateway | 3 | Completado | Acuña Corahua, Jonatan Ariel |
-| TS31 | Contrato de integración entre el Edge Gateway y el backend | EP05 | Edge Gateway | 5 | Completado | Acuña Corahua, Jonatan Ariel |
-| TS32 | Pruebas automatizadas del Edge Gateway | EP05 | Edge Gateway | 5 | Completado | Acuña Corahua, Jonatan Ariel |
-| US29 | Registrar tarjeta RFID de acceso a áreas comunes | EP07 | Edge Gateway | 5 | Parcial (edge) | Acuña Corahua, Jonatan Ariel |
-| US30 | Desactivar acceso a áreas comunes por morosidad | EP07 | Edge Gateway | 5 | Parcial (edge) | Acuña Corahua, Jonatan Ariel |
-| US33 | Otorgar acceso temporal por reserva aprobada | EP07 | Edge Gateway | 5 | Parcial (edge) | Acuña Corahua, Jonatan Ariel |
-| US34 | Consultar bitácora de accesos | EP07 | Edge Gateway | 3 | Completado | Acuña Corahua, Jonatan Ariel |
-| US35 | Apertura remota de acceso | EP07 | Edge Gateway | 5 | Parcial (edge) | Acuña Corahua, Jonatan Ariel |
-| US43 | Detectar falla de dispositivo | EP09 | Edge Gateway | 5 | Parcial (edge) | Acuña Corahua, Jonatan Ariel |
-| US44 | Monitorear estado de conexión de dispositivos | EP09 | Edge Gateway | 5 | Parcial (edge) | Acuña Corahua, Jonatan Ariel |
-| US45 | Leer tarjeta RFID y resolver el acceso | EP10 | Edge Gateway | 5 | Completado | Acuña Corahua, Jonatan Ariel |
-| US46 | Abrir la cerradura eléctrica y re-bloquearla automáticamente | EP10 | Edge Gateway | 5 | Completado | Acuña Corahua, Jonatan Ariel |
-| US48 | Registrar y sincronizar datos generados sin conexión | EP10 | Edge Gateway | 8 | Completado | Acuña Corahua, Jonatan Ariel |
-| US49 | Registrar y autenticar nodos ESP32 | EP10 | Edge Gateway | 5 | Completado | Acuña Corahua, Jonatan Ariel |
-| US50 | Sincronizar credenciales, reservas, reglas y blacklist desde la nube | EP10 | Edge Gateway | 5 | Completado | Acuña Corahua, Jonatan Ariel |
-| **Total** | | | | **165** | | |
-
-Las historias marcadas como **Parcial (edge)** cubren la parte que corresponde al Edge Gateway; su contraparte en la nube depende de microservicios que no se implementaron en el Sprint 1 y quedan comprometidas para el Sprint 2.
-
-**Work-items / Tasks**
-
-| Task Id | Story Id | Task Title | Task Description | Estimation (Hours) | Assigned To |
-|---|---|---|---|---|---|
-| T-L01 | US26 | Maquetación del hero | Sección principal con propuesta de valor, subtítulo y botón de llamada a la acción | 6 | Landa Ortiz, Sergio Javier |
-| T-L02 | US26 | Barra de navegación responsiva | Menú con anclas a secciones, menú hamburguesa en móvil y desplazamiento suave | 5 | Landa Ortiz, Sergio Javier |
-| T-L03 | US26 | Secciones informativas | Secciones de cómo funciona, segmentos objetivo, estadísticas, precios y equipo | 10 | Landa Ortiz, Sergio Javier |
-| T-L04 | US26 | Traducciones es / en | Diccionarios i18n y conmutación de idioma en todos los textos visibles | 6 | Landa Ortiz, Sergio Javier |
-| T-L05 | US27 | Sección de funcionalidades | Tarjetas de pagos, reservas y comunicados con iconografía y descripción | 6 | Landa Ortiz, Sergio Javier |
-| T-L06 | US27 | Galería de capturas | Lightbox con las siete pantallas de la aplicación y navegación entre imágenes | 7 | Collantes Carrillo, Diego Mateo |
-| T-L07 | US28 | Formulario de contacto | Campos de nombre, correo y edificio con validación y mensaje de éxito | 5 | Landa Ortiz, Sergio Javier |
-| T-L08 | — | Metadatos SEO | Metaetiquetas de descripción y viewport, y pie de página con enlace al repositorio | 2 | Landa Ortiz, Sergio Javier |
-| T-W01 | US02 | Pantalla de inicio de sesión | Formulario reactivo, validación de credenciales y almacenamiento del token | 8 | Perez Tuesta, Gabriel |
-| T-W02 | US02 | Guardia de rutas e interceptor | `authGuard` para el layout privado e interceptor que adjunta el token Bearer | 5 | Perez Tuesta, Gabriel |
-| T-W03 | US01 | Formulario de unidad y vinculación | Alta de unidad, asignación de titular y asociación usuario–unidad | 10 | Perez Tuesta, Gabriel |
-| T-W04 | US03 | Listado y edición de usuarios | Tabla de usuarios con formulario de edición y actualización | 8 | Perez Tuesta, Gabriel |
-| T-W05 | US04 | Formulario de edificio y unidades | Alta de torres y unidades con validaciones de dominio | 12 | Perez Tuesta, Gabriel |
-| T-W06 | US04 | Página de unidades y residentes | Listado con filtros por torre y estado | 8 | Perez Tuesta, Gabriel |
-| T-W07 | US09 | Publicación en el foro | Composición de publicaciones y listado del hilo | 6 | Perez Tuesta, Gabriel |
-| T-W08 | US12 | Calendario de disponibilidad | Vista de calendario con los cupos ocupados por área y fecha | 12 | Perez Tuesta, Gabriel |
-| T-W09 | US13 | Flujo de reserva | Selección de área y horario, confirmación y tarjetas de reserva | 12 | Perez Tuesta, Gabriel |
-| T-W10 | US15 | Cancelación de reserva | Acción de cancelación con confirmación y actualización del calendario | 4 | Perez Tuesta, Gabriel |
-| T-W11 | US16 | Administración de áreas comunes | CRUD de áreas, estados y reglas de uso por área | 12 | Perez Tuesta, Gabriel |
-| T-W12 | US18 | Consulta de deuda | Panel de deuda por unidad y detalle del residente | 8 | Perez Tuesta, Gabriel |
-| T-W13 | US20 | Registro de pagos | Formulario de pago manual con voucher y estado en verificación | 6 | Perez Tuesta, Gabriel |
-| T-W14 | US25 | Resolución de pagos | Acciones de confirmar o rechazar un pago pendiente | 4 | Perez Tuesta, Gabriel |
-| T-W15 | — | Fake API y despliegue en Vercel | `json-server` con datos semilla, rutas y reescrituras de `vercel.json` | 14 | Perez Tuesta, Gabriel |
-| T-W16 | — | Módulos Smart IoT y Centro de Documentación | Dashboard de accesos, iluminación y riego, y centro de documentación | 16 | Sarmiento Medina, Loreley |
-| T-W17 | — | Suite de pruebas unitarias | 26 archivos `.spec.ts` con Karma para servicios, componentes y guardas | 10 | Perez Tuesta, Gabriel; Sarmiento Medina, Loreley |
-| T-E01 | TS23 | Aplicación Flask y endpoint de salud | Estructura de la aplicación, configuración por entorno, `/health` y Swagger con flask-smorest | 10 | Acuña Corahua, Jonatan Ariel |
-| T-E02 | TS25 | Esquema SQLite y cola de salida | Modelos Peewee en modo WAL y cola de salida durable con escritura transaccional | 12 | Acuña Corahua, Jonatan Ariel |
-| T-E03 | TS24 | Contrato MQTT y puente paho-mqtt | Esquemas versionados, router tolerante a mensajes inválidos y confirmación con `ack` | 12 | Acuña Corahua, Jonatan Ariel |
-| T-E04 | TS23, TS24, TS25 | Endpoints REST del servicio | Blueprints de dispositivos, credenciales, lecturas, estado y sincronización | 14 | Acuña Corahua, Jonatan Ariel |
-| T-E05 | US45, US46 | Motor de decisión de acceso | Resolución local con credencial, reserva, horario y estado, más retorno de `lockMs` | 14 | Acuña Corahua, Jonatan Ariel |
-| T-E06 | US29, US30, US33 | Gestión de credenciales en caché | Alta manual sin conexión, suspensión, revocación y lista negra por morosidad | 10 | Acuña Corahua, Jonatan Ariel |
-| T-E07 | US49, US44 | Registro y seguimiento de nodos | Registro, `heartbeat`, detección de desconexión, recuperación y estado | 10 | Acuña Corahua, Jonatan Ariel |
-| T-E08 | TS28 | Sincronización de reloj | Cálculo de deriva, `time_sync` y marcado de relojes sospechosos | 6 | Acuña Corahua, Jonatan Ariel |
-| T-E09 | US43 | Validación de lecturas y alertas | Lecturas de humedad y ultrasonido, conversión a nivel de agua y alertas con histéresis | 12 | Acuña Corahua, Jonatan Ariel |
-| T-E10 | TS21, US48, US50 | Transporte al backend y caché | Envío por lotes con reintentos, `eventId` idempotente y sincronización por pull y push | 14 | Acuña Corahua, Jonatan Ariel |
-| T-E11 | US34 | Bitácora de accesos | Endpoint de intentos de acceso con credencial enmascarada | 5 | Acuña Corahua, Jonatan Ariel |
-| T-E12 | US35 | Comandos remotos y mantenimiento | Envío de comandos con espera de confirmación y modo mantenimiento completo | 10 | Acuña Corahua, Jonatan Ariel |
-| T-E13 | TS29 | Stack de Docker Compose | Servicios `mosquitto`, `edge-gateway` y `mock-cloud` con volúmenes y healthchecks | 10 | Acuña Corahua, Jonatan Ariel |
-| T-E14 | TS30 | Simulador de nodos ESP32 | Nodos virtuales que respetan el contrato MQTT, con comandos de siembra y lectura de tarjeta | 8 | Acuña Corahua, Jonatan Ariel |
-| T-E15 | TS32 | Suite de pruebas automatizadas | 188 pruebas con dobles de prueba para broker, nube y reloj, sin red | 16 | Acuña Corahua, Jonatan Ariel |
-| T-E16 | TS31 | Documentación de contratos | Contrato MQTT, contrato Edge–backend y documentación de la API REST | 8 | Acuña Corahua, Jonatan Ariel |
-| T-E17 | — | Flujo de trabajo y versionado | Ramas `feature/`, `release/0.1.0`, `CHANGELOG.md` y README del repositorio | 6 | Acuña Corahua, Jonatan Ariel |
-| **Total** | | | | **379** | |
-
-**Estructura de control de estado del Sprint**
-
-| Sprint # | Sprint 1 |
-|---|---|
-| User Story | Work-Item / Task |
-| Story Id | Task Id · Task Title · Task Description · Estimation (Hours) · Assigned To |
-| US26 · US27 · US28 (EP06) | T-L01 a T-L08 |
-| US01 a US25 (EP01–EP04) | T-W01 a T-W17 |
-| TS21 a TS32 · US29 a US50 (EP05–EP10) | T-E01 a T-E17 |
-
-**Trabajo realizado sin historia asociada.** El Sprint incluyó dos módulos del Frontend que no corresponden a ninguna historia del Product Backlog y que, además, se implementaron con datos locales en lugar de consumir la API:
-
-| Módulo | Descripción | Estado |
-|---|---|---|
-| Centro de Documentación | Protocolos de emergencia, contactos críticos y repositorio documental, con datos de demostración (`isDemo: true`) | Demostración, sin persistencia |
-| Dashboard Smart IoT | Paneles de control de accesos, iluminación y riego, con datos de demostración (`isDemo: true`) | Demostración, sin integración con el Edge Gateway |
-
-Estos módulos no se incluyeron en los 165 story points comprometidos porque no existía una historia asociada en el Capítulo III y porque su comportamiento se planifica conectar con los servicios reales en el Sprint 2.
-
-**Historias del Product Backlog revisadas y no comprometidas**
-
-| Historia | Motivo |
-|---|---|
-| TS01 a TS05 | Configuración de IAM y API Gateway; es la base del backend y se implementa antes que las historias funcionales del Sprint 2 |
-| TS06 a TS20 | Configuración base de los microservicios de Residential Management, Payment, Reservation, Communication, Notification, Report, Forum, IoT Access Management, Smart Lighting, Telemetry e Irrigation |
-| TS22 | Comunicación por broker de eventos de dominio entre microservicios |
-| TS26 | Firmware base de los nodos ESP32; requiere los contratos MQTT y de cloud ya estabilizados |
-| TS27 | Seguridad de la comunicación del Edge Gateway (autenticación del broker y TLS) |
-| US05 | Activar o desactivar cuentas; el listado de usuarios solo fija el estado de verificación |
-| US06, US07, US08 | Comunicados oficiales; la API de comunicados aún no expone los endpoints que el frontend consume |
-| US11, US17 | Notificaciones de reservas y recordatorios de pago |
-| US14 | Aprobar o rechazar reservas; no se implementó la vista de aprobación |
-| US22 | Generar y exportar reportes financieros; el endpoint de reportes aún no existe en la API |
-| US24 | Pagar la deuda en línea con Culqi; no se implementó la integración con la pasarela de pago |
-| US31, US32, US36, US37, US38, US39, US40 | Riego e iluminación automática del lado del cloud |
-| US41 | Visualizar consumo de energía y agua en el dashboard del administrador |
-| US42 | Alertar consumo anómalo en la nube |
+<table>
+  <tr>
+    <td colspan="1"><strong>Sprint #</strong></td>
+    <td colspan="7"><strong>Sprint 1</strong></td>
+  </tr>
+  <tr>
+    <td colspan="2"><strong>User Story</strong></td>
+    <td colspan="6"><strong>Work-Item / Task</strong></td>
+  </tr>
+  <tr>
+    <td colspan="1"><strong>Id</strong></td>
+    <td colspan="1"><strong>Title</strong></td>
+    <td colspan="1"><strong>Id</strong></td>
+    <td colspan="1"><strong>Title</strong></td>
+    <td colspan="1"><strong>Description</strong></td>
+    <td colspan="1"><strong>Estimation (Hours)</strong></td>
+    <td colspan="1"><strong>Assigned To</strong></td>
+    <td colspan="1"><strong>Status (To-do / In-Process / To-Review / Done)</strong></td>
+  </tr>
+  <tr>
+    <td rowspan="5">US26</td>
+    <td rowspan="5">Visualizar hero y navegar en la Landing Page</td>
+    <td>T-L01</td>
+    <td>Maquetación del hero</td>
+    <td>Sección principal con propuesta de valor, subtítulo y botón de llamada a la acción</td>
+    <td>6</td>
+    <td>Landa Ortiz, Sergio Javier</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>T-L02</td>
+    <td>Barra de navegación responsiva</td>
+    <td>Menú con anclas a secciones, menú hamburguesa en móvil y desplazamiento suave</td>
+    <td>5</td>
+    <td>Landa Ortiz, Sergio Javier</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>T-L03</td>
+    <td>Secciones informativas</td>
+    <td>Secciones de cómo funciona, segmentos objetivo, estadísticas, precios y equipo</td>
+    <td>10</td>
+    <td>Landa Ortiz, Sergio Javier</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>T-L04</td>
+    <td>Traducciones es / en</td>
+    <td>Diccionarios i18n y conmutación de idioma en todos los textos visibles</td>
+    <td>6</td>
+    <td>Landa Ortiz, Sergio Javier</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>T-L08</td>
+    <td>Metadatos SEO</td>
+    <td>Metaetiquetas de descripción y viewport, y pie de página con enlace al repositorio</td>
+    <td>2</td>
+    <td>Landa Ortiz, Sergio Javier</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td rowspan="2">US27</td>
+    <td rowspan="2">Visualizar sección de funcionalidades</td>
+    <td>T-L05</td>
+    <td>Sección de funcionalidades</td>
+    <td>Tarjetas de pagos, reservas y comunicados con iconografía y descripción</td>
+    <td>6</td>
+    <td>Landa Ortiz, Sergio Javier</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>T-L06</td>
+    <td>Galería de capturas</td>
+    <td>Lightbox con las siete pantallas de la aplicación y navegación entre imágenes</td>
+    <td>7</td>
+    <td>Collantes Carrillo, Diego Mateo</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>US28</td>
+    <td>Acceder a la aplicación desde la Landing Page</td>
+    <td>T-L07</td>
+    <td>Formulario de contacto</td>
+    <td>Campos de nombre, correo y edificio con validación y mensaje de éxito</td>
+    <td>5</td>
+    <td>Landa Ortiz, Sergio Javier</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>US01</td>
+    <td>Registrar residente y vincularlo a su unidad</td>
+    <td>T-W03</td>
+    <td>Formulario de unidad y vinculación</td>
+    <td>Alta de unidad, asignación de titular y asociación usuario–unidad</td>
+    <td>10</td>
+    <td>Perez Tuesta, Gabriel</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td rowspan="4">US02</td>
+    <td rowspan="4">Inicio de sesión</td>
+    <td>T-W01</td>
+    <td>Pantalla de inicio de sesión</td>
+    <td>Formulario reactivo, validación de credenciales y almacenamiento del token</td>
+    <td>8</td>
+    <td>Perez Tuesta, Gabriel</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>T-W02</td>
+    <td>Guardia de rutas e interceptor</td>
+    <td><code>authGuard</code> para el layout privado e interceptor que adjunta el token Bearer</td>
+    <td>5</td>
+    <td>Perez Tuesta, Gabriel</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>T-W15</td>
+    <td>Fake API y despliegue en Vercel</td>
+    <td><code>json-server</code> con datos semilla, rutas y reescrituras de <code>vercel.json</code></td>
+    <td>14</td>
+    <td>Perez Tuesta, Gabriel</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>T-W17</td>
+    <td>Suite de pruebas unitarias</td>
+    <td>26 archivos <code>.spec.ts</code> con Karma para servicios, componentes y guardas</td>
+    <td>10</td>
+    <td>Perez Tuesta, Gabriel / Sarmiento Medina, Loreley</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>US03</td>
+    <td>Actualizar información de usuarios</td>
+    <td>T-W04</td>
+    <td>Listado y edición de usuarios</td>
+    <td>Tabla de usuarios con formulario de edición y actualización</td>
+    <td>8</td>
+    <td>Perez Tuesta, Gabriel</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td rowspan="2">US04</td>
+    <td rowspan="2">Registrar edificio y unidades</td>
+    <td>T-W05</td>
+    <td>Formulario de edificio y unidades</td>
+    <td>Alta de torres y unidades con validaciones de dominio</td>
+    <td>12</td>
+    <td>Perez Tuesta, Gabriel</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>T-W06</td>
+    <td>Página de unidades y residentes</td>
+    <td>Listado con filtros por torre y estado</td>
+    <td>8</td>
+    <td>Perez Tuesta, Gabriel</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>US09</td>
+    <td>Publicar mensaje en la comunidad</td>
+    <td>T-W07</td>
+    <td>Publicación en el foro</td>
+    <td>Composición de publicaciones y listado del hilo</td>
+    <td>6</td>
+    <td>Perez Tuesta, Gabriel</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>US12</td>
+    <td>Ver disponibilidad de áreas comunes</td>
+    <td>T-W08</td>
+    <td>Calendario de disponibilidad</td>
+    <td>Vista de calendario con los cupos ocupados por área y fecha</td>
+    <td>12</td>
+    <td>Perez Tuesta, Gabriel</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>US13</td>
+    <td>Reservar área común</td>
+    <td>T-W09</td>
+    <td>Flujo de reserva</td>
+    <td>Selección de área y horario, confirmación y tarjetas de reserva</td>
+    <td>12</td>
+    <td>Perez Tuesta, Gabriel</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>US15</td>
+    <td>Cancelar reserva</td>
+    <td>T-W10</td>
+    <td>Cancelación de reserva</td>
+    <td>Acción de cancelación con confirmación y actualización del calendario</td>
+    <td>4</td>
+    <td>Perez Tuesta, Gabriel</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>US16</td>
+    <td>Configurar reglas y estado de área común</td>
+    <td>T-W11</td>
+    <td>Administración de áreas comunes</td>
+    <td>CRUD de áreas, estados y reglas de uso por área</td>
+    <td>12</td>
+    <td>Perez Tuesta, Gabriel</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>US18</td>
+    <td>Ver deuda actual</td>
+    <td>T-W12</td>
+    <td>Consulta de deuda</td>
+    <td>Panel de deuda por unidad y detalle del residente</td>
+    <td>8</td>
+    <td>Perez Tuesta, Gabriel</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>US20</td>
+    <td>Registrar pagos en el sistema</td>
+    <td>T-W13</td>
+    <td>Registro de pagos</td>
+    <td>Formulario de pago manual con voucher y estado en verificación</td>
+    <td>6</td>
+    <td>Perez Tuesta, Gabriel</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>US25</td>
+    <td>Resolver pago en verificación</td>
+    <td>T-W14</td>
+    <td>Resolución de pagos</td>
+    <td>Acciones de confirmar o rechazar un pago pendiente</td>
+    <td>4</td>
+    <td>Perez Tuesta, Gabriel</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>TS21</td>
+    <td>Implementación del Edge Gateway con operación sin conexión y sincronización</td>
+    <td>T-E10a</td>
+    <td>Transporte al backend</td>
+    <td>Envío por lotes con reintentos desde la cola de salida</td>
+    <td>5</td>
+    <td>Acuña Corahua, Jonatan Ariel</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td rowspan="3">TS23</td>
+    <td rowspan="3">Configuración base del Edge Gateway con Python, Flask, Peewee ORM y SQLite</td>
+    <td>T-E01</td>
+    <td>Aplicación Flask y endpoint de salud</td>
+    <td>Estructura de la aplicación, configuración por entorno, <code>/health</code> y Swagger con flask-smorest</td>
+    <td>10</td>
+    <td>Acuña Corahua, Jonatan Ariel</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>T-E04</td>
+    <td>Endpoints REST del servicio</td>
+    <td>Blueprints de dispositivos, credenciales, lecturas, estado y sincronización</td>
+    <td>14</td>
+    <td>Acuña Corahua, Jonatan Ariel</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>T-E17</td>
+    <td>Flujo de trabajo y versionado</td>
+    <td>Ramas <code>feature/</code>, <code>release/0.1.0</code>, <code>CHANGELOG.md</code> y README del repositorio</td>
+    <td>6</td>
+    <td>Acuña Corahua, Jonatan Ariel</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>TS24</td>
+    <td>Contrato de mensajes MQTT entre el Edge Gateway y los ESP32</td>
+    <td>T-E03</td>
+    <td>Contrato MQTT y puente paho-mqtt</td>
+    <td>Esquemas versionados, router tolerante a mensajes inválidos y confirmación con <code>ack</code></td>
+    <td>12</td>
+    <td>Acuña Corahua, Jonatan Ariel</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>TS25</td>
+    <td>Persistencia local con SQLite y cola de salida</td>
+    <td>T-E02</td>
+    <td>Esquema SQLite y cola de salida</td>
+    <td>Modelos Peewee en modo WAL y cola de salida durable con escritura transaccional</td>
+    <td>12</td>
+    <td>Acuña Corahua, Jonatan Ariel</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>TS28</td>
+    <td>Estandarización de marcas de tiempo y sincronización de reloj</td>
+    <td>T-E08</td>
+    <td>Sincronización de reloj</td>
+    <td>Cálculo de deriva, <code>time_sync</code> y marcado de relojes sospechosos</td>
+    <td>6</td>
+    <td>Acuña Corahua, Jonatan Ariel</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>TS29</td>
+    <td>Despliegue del Edge Gateway con Docker Compose</td>
+    <td>T-E13</td>
+    <td>Stack de Docker Compose</td>
+    <td>Servicios <code>mosquitto</code>, <code>edge-gateway</code> y <code>mock-cloud</code> con volúmenes y healthchecks</td>
+    <td>10</td>
+    <td>Acuña Corahua, Jonatan Ariel</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>TS30</td>
+    <td>Simulador de nodos ESP32 para pruebas sin hardware</td>
+    <td>T-E14</td>
+    <td>Simulador de nodos ESP32</td>
+    <td>Nodos virtuales que respetan el contrato MQTT, con comandos de siembra y lectura de tarjeta</td>
+    <td>8</td>
+    <td>Acuña Corahua, Jonatan Ariel</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>TS31</td>
+    <td>Contrato de integración entre el Edge Gateway y el backend</td>
+    <td>T-E16</td>
+    <td>Documentación de contratos</td>
+    <td>Contrato MQTT, contrato Edge–backend y documentación de la API REST</td>
+    <td>8</td>
+    <td>Acuña Corahua, Jonatan Ariel</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>TS32</td>
+    <td>Pruebas automatizadas del Edge Gateway</td>
+    <td>T-E15</td>
+    <td>Suite de pruebas automatizadas</td>
+    <td>188 pruebas con dobles de prueba para broker, nube y reloj, sin red</td>
+    <td>16</td>
+    <td>Acuña Corahua, Jonatan Ariel</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>US29</td>
+    <td>Registrar tarjeta RFID de acceso a áreas comunes</td>
+    <td>T-E06a</td>
+    <td>Alta de credenciales en caché</td>
+    <td>Registro manual de tarjetas RFID sin conexión y revocación</td>
+    <td>4</td>
+    <td>Acuña Corahua, Jonatan Ariel</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>US30</td>
+    <td>Desactivar acceso a áreas comunes por morosidad</td>
+    <td>T-E06b</td>
+    <td>Suspensión por morosidad</td>
+    <td>Suspensión de credenciales y lista negra de unidades morosas</td>
+    <td>3</td>
+    <td>Acuña Corahua, Jonatan Ariel</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>US33</td>
+    <td>Otorgar acceso temporal por reserva aprobada</td>
+    <td>T-E06c</td>
+    <td>Acceso temporal por reserva</td>
+    <td>Credencial válida solo en el horario de la reserva aprobada</td>
+    <td>3</td>
+    <td>Acuña Corahua, Jonatan Ariel</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td rowspan="2">US34</td>
+    <td rowspan="2">Consultar bitácora de accesos</td>
+    <td>T-W16</td>
+    <td>Módulos Smart IoT y Centro de Documentación</td>
+    <td>Dashboard de accesos, iluminación y riego, y centro de documentación</td>
+    <td>16</td>
+    <td>Sarmiento Medina, Loreley</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>T-E11</td>
+    <td>Bitácora de accesos</td>
+    <td>Endpoint de intentos de acceso con credencial enmascarada</td>
+    <td>5</td>
+    <td>Acuña Corahua, Jonatan Ariel</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>US35</td>
+    <td>Apertura remota de acceso</td>
+    <td>T-E12</td>
+    <td>Comandos remotos y mantenimiento</td>
+    <td>Envío de comandos con espera de confirmación y modo mantenimiento completo</td>
+    <td>10</td>
+    <td>Acuña Corahua, Jonatan Ariel</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>US43</td>
+    <td>Detectar falla de dispositivo</td>
+    <td>T-E09</td>
+    <td>Validación de lecturas y alertas</td>
+    <td>Lecturas de humedad y ultrasonido, conversión a nivel de agua y alertas con histéresis</td>
+    <td>12</td>
+    <td>Acuña Corahua, Jonatan Ariel</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>US44</td>
+    <td>Monitorear estado de conexión de dispositivos</td>
+    <td>T-E07b</td>
+    <td>Seguimiento de nodos</td>
+    <td><code>heartbeat</code>, detección de desconexión, recuperación y estado de cada nodo</td>
+    <td>5</td>
+    <td>Acuña Corahua, Jonatan Ariel</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>US45</td>
+    <td>Leer tarjeta RFID y resolver el acceso</td>
+    <td>T-E05a</td>
+    <td>Motor de decisión de acceso</td>
+    <td>Resolución local con credencial, reserva, horario y estado del área</td>
+    <td>7</td>
+    <td>Acuña Corahua, Jonatan Ariel</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>US46</td>
+    <td>Abrir la cerradura eléctrica y re-bloquearla automáticamente</td>
+    <td>T-E05b</td>
+    <td>Apertura y re-bloqueo de la cerradura</td>
+    <td>Retorno de <code>lockMs</code> al nodo para abrir la cerradura y re-bloquearla automáticamente</td>
+    <td>7</td>
+    <td>Acuña Corahua, Jonatan Ariel</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>US48</td>
+    <td>Registrar y sincronizar datos generados sin conexión</td>
+    <td>T-E10b</td>
+    <td>Reenvío de datos sin conexión</td>
+    <td>Eventos con <code>eventId</code> idempotente que se sincronizan al recuperar la conexión</td>
+    <td>5</td>
+    <td>Acuña Corahua, Jonatan Ariel</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>US49</td>
+    <td>Registrar y autenticar nodos ESP32</td>
+    <td>T-E07a</td>
+    <td>Registro de nodos</td>
+    <td>Registro y autenticación de los nodos ESP32 en el Edge Gateway</td>
+    <td>5</td>
+    <td>Acuña Corahua, Jonatan Ariel</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>US50</td>
+    <td>Sincronizar credenciales, reservas, reglas y blacklist desde la nube</td>
+    <td>T-E10c</td>
+    <td>Sincronización de caché</td>
+    <td>Sincronización por pull y push de credenciales, reservas, reglas y blacklist</td>
+    <td>4</td>
+    <td>Acuña Corahua, Jonatan Ariel</td>
+    <td>Done</td>
+  </tr>
+</table>
 
 #### 6.2.1.4. Development Evidence for Sprint Review
 
@@ -9324,8 +9657,7 @@ Durante el Sprint 1 (21/09/2026 – 10/10/2026) se completó el despliegue inici
 
 **Observaciones adicionales sobre Deployment:**
 - La configuración de `GitFlow` (`main`, `develop`, `feature/*`) garantiza que cada incremento de despliegue vaya acompañado de un commit convencional (`feat`, `docs`, `test`, `chore`, `fix`) y de una rama de integración validada antes del merge a `main`.
-- El archivo `.env.example` del repositorio del Edge Gateway (`https://github.com/IoT-UPC-202620/Edifika-Microservice-IoT-Gateway/blob/develop/.env.example`) documenta todas las variables requeridas para la replicación del despliegue, facilitando la transición entre entornos locales, de desarrollo (`Render`) y de producción futura.
-- Se recomienda, para el Sprint 2, configurar un pipeline de CI/CD completo en GitHub Actions que ejecute `docker compose config`, `pytest` y `docker build` antes de cualquier despliegue en producción, asegurando la trazabilidad de cambios y la reproducibilidad del entorno.
+- El archivo `.env.example` del repositorio del Edge Gateway (`https://github.com/IoT-UPC-202620/Edifika-Microservice-IoT-Gateway/blob/develop/.env.example`) documenta todas las variables requeridas para la replicación del despliegue, facilitando la transición entre entornos locales, de desarrollo (`Render`) y de producción.
 
 #### 6.2.1.9. Team Collaboration Insights during Sprint
 
@@ -9348,7 +9680,7 @@ En esta sección el equipo explica cómo se han desarrollado las actividades de 
 
 #### 6.2.2.1. Sprint Planning 2
 
-En este Sprint Planning, el equipo definió los objetivos, el alcance y las actividades del Sprint 2 a partir del resultado del Sprint 1: la Landing Page y la Web Application publicadas, y el Edge Gateway funcionando de extremo a extremo dentro del edificio, pero conversando con un backend simulado (`mock-cloud`). Las historias del Sprint 1 marcadas como **Parcial (edge)** —registro de tarjetas, suspensión por morosidad, acceso por reserva y monitoreo de dispositivos— tenían resuelta la parte del edificio, pero no su contraparte en la nube.
+En este Sprint Planning, el equipo definió los objetivos, el alcance y las actividades del Sprint 2 a partir del resultado del Sprint 1: la Landing Page y la Web Application publicadas, y el Edge Gateway funcionando de extremo a extremo dentro del edificio, pero conversando con un backend simulado (`mock-cloud`). A partir de ese resultado, el Sprint 2 se enfocó en llevar a la nube el registro de tarjetas, la suspensión por morosidad, el acceso por reserva y el monitoreo de dispositivos.
 
 Por esa razón, el Sprint 2 se planificó alrededor de un objetivo concreto: **conectar los dispositivos físicos del edificio con la plataforma en la nube**. Para que varias líneas de trabajo avanzaran en paralelo sin bloquearse entre sí, el equipo fijó primero un documento único de contratos de comunicación (versión v1) y dividió el trabajo en siete hitos verificables, cada uno con su propio repositorio, su rama de GitFlow y una métrica de cierre medible: H0, contratos e infraestructura local (`Edifika-IoT-Platform`); H1, Edge Gateway integrado con la nube (`Edifika-Microservice-IoT-Gateway`); H2, microservicio IoT Access Management; H3, microservicio IoT Telemetry; H4, pruebas de punta a punta; H5, rutas IoT en el ApiGateway y colección Postman; y H6, firmware de referencia del nodo ESP32 (`esp32`). La hoja de ruta y los planes por hito se encuentran versionados en este mismo repositorio (`docs/superpowers/plans/` y `docs/superpowers/specs/`).
 
@@ -9361,7 +9693,7 @@ Por esa razón, el Sprint 2 se planificó alrededor de un objetivo concreto: **c
 | Prepared By | Perez Tuesta, Gabriel |
 | Attendees | Acuña Corahua, Jonatan Ariel / Collantes Carrillo, Diego Mateo / Landa Ortiz, Sergio Javier / Lizarbe Alvarez, Ariana Nickole / Ortiz Cardenas, Johanna Antuanete / Perez Tuesta, Gabriel / Sarmiento Medina, Loreley |
 | Sprint Period | 2026-10-10 – 2026-11-13 (5 semanas) |
-| Sprint 2 – 1 Review | En la Review del Sprint 1 se presentaron la primera versión de la Landing Page, publicada en GitHub Pages, y de la Web Application, publicada en Vercel, junto con el Edge Gateway funcionando de extremo a extremo con broker MQTT real, nodos ESP32 virtuales y 188 pruebas automatizadas. Se completaron 36 historias (165 story points). Las historias de acceso y monitoreo de dispositivos quedaron en estado **Parcial (edge)**, porque el Edge Gateway se comunicaba con un backend simulado, y quedaron pendientes las evidencias del despliegue con los contenedores en estado saludable. A partir de esa revisión, el Product Owner priorizó para el Sprint 2 la contraparte en la nube de esas historias. |
+| Sprint 2 – 1 Review | En la Review del Sprint 1 se presentaron la primera versión de la Landing Page, publicada en GitHub Pages, y de la Web Application, publicada en Vercel, junto con el Edge Gateway funcionando de extremo a extremo con broker MQTT real, nodos ESP32 virtuales y 188 pruebas automatizadas. Se completaron 36 historias (165 story points). A partir de esa revisión, el Product Owner priorizó para el Sprint 2 los microservicios IoT en la nube que se integran con el Edge Gateway. |
 | Sprint 2 – 1 Retrospective | **Start**: acordar los contratos de comunicación antes de programar, para que cada línea de trabajo avance en paralelo sin bloquearse. <br> Cerrar cada hito con una métrica medida y registrada. <br> **Stop**: dejar las capturas y evidencias para el final del Sprint. <br> Depender del backend simulado para validar las historias del edificio. <br> **Continue**: trabajar con GitFlow, Conventional Commits y versionado semántico. <br> Desarrollar con pruebas automatizadas y revisar los avances en reuniones cortas por Discord. |
 | Sprint 2 Goal | *Nuestro enfoque está en* conectar los dispositivos del edificio con la plataforma en la nube. *Creemos que esto brinda* control centralizado del acceso a áreas comunes a los administradores, acceso y reservas sin trámites a los residentes al día, y endpoints documentados a los desarrolladores web y móvil. *Esto se confirmará cuando* los 7 escenarios de punta a punta pasen a través del ApiGateway contra el stack completo. |
 | Sprint 2 Velocity | 65 |
@@ -9375,7 +9707,7 @@ El Sprint Goal se redactó en conjunto con la plantilla de Scrum.org. Su versió
 >
 > **_Esto se confirmará cuando_** los 7 escenarios de punta a punta (acceso libre, residente moroso, reserva, roles de titular e invitado, LED, fin de reserva sin conexión y telemetría) pasen a través del ApiGateway contra el stack completo, un evento de acceso llegue a la nube en 6 segundos o menos, y la colección de la API cubra el 100 % de los endpoints del contrato.
 
-El *Outcome* son los dispositivos ESP32, el Edge Gateway y los microservicios IoT integrados en un mismo flujo; el *Impact* es que los administradores dejan de gestionar tarjetas y morosidad a mano y los residentes reservan y comparten el acceso; los *Customers* son los administradores, los residentes y los desarrolladores web y móvil; y el *Event* es la ejecución en verde de los 7 escenarios de punta a punta. El objetivo es medible porque cada hito tiene una métrica de cierre (sección 6.2.2.5), alcanzable porque reutiliza el Edge Gateway del Sprint 1, relevante porque cierra las historias que quedaron en **Parcial (edge)**, y acotado en el tiempo porque se revisa al cierre del Sprint 2, antes de la entrega de AV2.
+El *Outcome* son los dispositivos ESP32, el Edge Gateway y los microservicios IoT integrados en un mismo flujo; el *Impact* es que los administradores dejan de gestionar tarjetas y morosidad a mano y los residentes reservan y comparten el acceso; los *Customers* son los administradores, los residentes y los desarrolladores web y móvil; y el *Event* es la ejecución en verde de los 7 escenarios de punta a punta. El objetivo es medible porque cada hito tiene una métrica de cierre (sección 6.2.2.5), alcanzable porque reutiliza el Edge Gateway del Sprint 1, relevante porque conecta el Edge Gateway con la plataforma en la nube, y acotado en el tiempo porque se revisa al cierre del Sprint 2, antes de la entrega de AV2.
 
 #### 6.2.2.2. Aspect Leaders and Collaborators
 
@@ -9395,9 +9727,11 @@ En esta sección se definen los líderes y colaboradores de cada aspecto conside
 
 #### 6.2.2.3. Sprint Backlog 2
 
-El objetivo principal del Sprint 2 es **conectar los dispositivos físicos del edificio con la plataforma en la nube**, cerrando la contraparte en la nube de las historias que el Sprint 1 dejó en estado **Parcial (edge)** y entregando la primera versión de los microservicios IoT y del firmware del nodo ESP32. El Sprint Backlog contiene las 12 historias seleccionadas (65 story points) y las 42 tasks que resultaron de su descomposición, estimadas en 181 horas. Los identificadores de historia son los del Product Backlog de la sección 3.3. Las tasks provienen de los planes de implementación del Sprint (`docs/superpowers/plans/`). Junto al identificador de cada historia se indica su estimación en story points, tomada del Product Backlog; la suma de las 12 historias coincide con la velocity comprometida en el Sprint Planning. Las 42 tasks del Sprint terminaron en *Done*, incluida T-42, la prueba de aceptación con la placa física que cierra la historia US47.
+En esta sección se presenta el Sprint Backlog correspondiente al Sprint 2, el cual contiene las historias de usuario seleccionadas y las tareas definidas por el equipo para alcanzar el Sprint Goal establecido. Asimismo, se incluye el Board de trabajo utilizado para la gestión y seguimiento de las actividades del Sprint, permitiendo visualizar el estado de avance de cada tarea y la distribución del trabajo entre los integrantes del equipo durante el desarrollo de los microservicios IoT, el firmware de los nodos ESP32 y su integración con el Edge Gateway.
 
-**[POR COMPLETAR: captura del tablero del Sprint 2]**
+<p align="center">
+  <img src="assets/img/sprint2.jpeg" alt="Tablero del Sprint 2 en Trello" width="900" />
+</p>
 
 Enlace público del Board en Trello: [https://trello.com/b/N0u8fyeR/sprint-2](https://trello.com/b/N0u8fyeR/sprint-2)
 
@@ -9421,7 +9755,7 @@ Enlace público del Board en Trello: [https://trello.com/b/N0u8fyeR/sprint-2](ht
     <td><strong>Status (To-do / In-Process / To-Review / Done)</strong></td>
   </tr>
   <tr>
-    <td rowspan="3">TS16<br>(5 SP)</td>
+    <td rowspan="3">TS16</td>
     <td rowspan="3">Configuración base del microservicio IoT Access Management</td>
     <td>T-01</td>
     <td>Esqueleto del servicio</td>
@@ -9447,7 +9781,7 @@ Enlace público del Board en Trello: [https://trello.com/b/N0u8fyeR/sprint-2](ht
     <td>Done</td>
   </tr>
   <tr>
-    <td rowspan="3">TS19<br>(8 SP)</td>
+    <td rowspan="3">TS19</td>
     <td rowspan="3">Configuración base del microservicio IoT Telemetry & Analytics con TimescaleDB</td>
     <td>T-04</td>
     <td>Esqueleto</td>
@@ -9473,7 +9807,7 @@ Enlace público del Board en Trello: [https://trello.com/b/N0u8fyeR/sprint-2](ht
     <td>Done</td>
   </tr>
   <tr>
-    <td rowspan="8">TS22<br>(5 SP)</td>
+    <td rowspan="8">TS22</td>
     <td rowspan="8">Publicación y consumo de eventos de dominio mediante el broker</td>
     <td>T-07</td>
     <td>Infraestructura local</td>
@@ -9539,7 +9873,7 @@ Enlace público del Board en Trello: [https://trello.com/b/N0u8fyeR/sprint-2](ht
     <td>Done</td>
   </tr>
   <tr>
-    <td rowspan="7">TS17<br>(8 SP)</td>
+    <td rowspan="7">TS17</td>
     <td rowspan="7">Comunicación con dispositivos ESP32 a través del Edge Gateway</td>
     <td>T-15</td>
     <td>Configuración y TLS MQTT</td>
@@ -9597,7 +9931,7 @@ Enlace público del Board en Trello: [https://trello.com/b/N0u8fyeR/sprint-2](ht
     <td>Done</td>
   </tr>
   <tr>
-    <td rowspan="4">TS26<br>(8 SP)</td>
+    <td rowspan="4">TS26</td>
     <td rowspan="4">Firmware base del ESP32 con lectura de sensores y reconexión</td>
     <td>T-22</td>
     <td>Firmware del informe obsoleto</td>
@@ -9631,7 +9965,7 @@ Enlace público del Board en Trello: [https://trello.com/b/N0u8fyeR/sprint-2](ht
     <td>Done</td>
   </tr>
   <tr>
-    <td rowspan="2">TS14<br>(3 SP)</td>
+    <td rowspan="2">TS14</td>
     <td rowspan="2">Documentación de API con Swagger y autenticación JWT</td>
     <td>T-26</td>
     <td>Rutas IoT en el ApiGateway</td>
@@ -9649,7 +9983,7 @@ Enlace público del Board en Trello: [https://trello.com/b/N0u8fyeR/sprint-2](ht
     <td>Done</td>
   </tr>
   <tr>
-    <td rowspan="3">US29<br>(5 SP)</td>
+    <td rowspan="3">US29</td>
     <td rowspan="3">Registrar tarjeta RFID de acceso a áreas comunes</td>
     <td>T-28</td>
     <td>Credenciales RFID</td>
@@ -9675,7 +10009,7 @@ Enlace público del Board en Trello: [https://trello.com/b/N0u8fyeR/sprint-2](ht
     <td>Done</td>
   </tr>
   <tr>
-    <td rowspan="2">US30<br>(5 SP)</td>
+    <td rowspan="2">US30</td>
     <td rowspan="2">Desactivar acceso a áreas comunes por morosidad</td>
     <td>T-31</td>
     <td>Estado del residente y deudas</td>
@@ -9693,7 +10027,7 @@ Enlace público del Board en Trello: [https://trello.com/b/N0u8fyeR/sprint-2](ht
     <td>Done</td>
   </tr>
   <tr>
-    <td rowspan="5">US33<br>(5 SP)</td>
+    <td rowspan="5">US33</td>
     <td rowspan="5">Otorgar acceso temporal por reserva aprobada</td>
     <td>T-33</td>
     <td>Nodos y reservas desde la nube</td>
@@ -9735,7 +10069,7 @@ Enlace público del Board en Trello: [https://trello.com/b/N0u8fyeR/sprint-2](ht
     <td>Done</td>
   </tr>
   <tr>
-    <td rowspan="1">US44<br>(5 SP)</td>
+    <td rowspan="1">US44</td>
     <td rowspan="1">Monitorear estado de conexión de dispositivos</td>
     <td>T-38</td>
     <td>Consumidores de eventos</td>
@@ -9745,7 +10079,7 @@ Enlace público del Board en Trello: [https://trello.com/b/N0u8fyeR/sprint-2](ht
     <td>Done</td>
   </tr>
   <tr>
-    <td rowspan="2">US43<br>(5 SP)</td>
+    <td rowspan="2">US43</td>
     <td rowspan="2">Detectar falla de dispositivo</td>
     <td>T-39</td>
     <td>Temperatura y estado del nodo</td>
@@ -9763,7 +10097,7 @@ Enlace público del Board en Trello: [https://trello.com/b/N0u8fyeR/sprint-2](ht
     <td>Done</td>
   </tr>
   <tr>
-    <td rowspan="2">US47<br>(3 SP)</td>
+    <td rowspan="2">US47</td>
     <td rowspan="2">Mostrar el resultado del acceso en el punto de acceso</td>
     <td>T-41</td>
     <td><code>DoorPresentation</code></td>
@@ -9885,7 +10219,7 @@ Durante el Sprint 2 se implementó la suite de pruebas automatizadas del frente 
 - **H3 (IoT Telemetry):** `mvnw -B verify` en verde. 100 lecturas se ingieren en 1.2 s (~12.1 ms por lectura) y el reenvío no genera duplicados.
 - **H4 (punta a punta):** `pytest integration-tests/test_h4_scenarios.py -v` ejecuta los 7 escenarios en verde a través del ApiGateway.
 - **H5 (rutas y documentación):** `pytest tests/test_postman_collection.py -v` verifica que la colección cubre el 100 % de los endpoints del contrato (55 tests en verde en la suite de la plataforma).
-- **H6 (firmware):** `bash test/run_tests.sh` ejecuta 28 tests del host en verde y `arduino-cli compile` compila la placa (Flash 77 %, RAM 15 %).
+- **H6 (firmware):** `bash test/run_tests.sh` ejecuta 28 tests del host en verde y `arduino-cli compile` compila la placa (Flash 78 %, RAM 15 %).
 
 **Unit Tests.** Se relacionan con las siguientes clases y comportamientos:
 
@@ -9956,8 +10290,6 @@ Feature: Integración de los dispositivos del edificio con la plataforma en la n
     Then la respuesta incluye la temperatura y la humedad del nodo
 ```
 
-**[POR COMPLETAR: captura de la ejecución de la suite de pruebas en verde]**
-
 **Plataforma IoT (pruebas de contratos y de punta a punta):** [https://github.com/IoT-UPC-202620/Edifika-IoT-Platform](https://github.com/IoT-UPC-202620/Edifika-IoT-Platform)
 
 | Repository | Branch | Commit Id | Commit Message | Commit Message Body | Committed on (Date) |
@@ -10015,53 +10347,262 @@ Feature: Integración de los dispositivos del edificio con la plataforma en la n
 
 #### 6.2.2.6. Execution Evidence for Sprint Review
 
-En esta sección se presentan las evidencias de ejecución del Sprint 2. El frente IoT dejó funcionando el flujo completo entre el dispositivo y la nube: un nodo ESP32 (real o simulado) lee una tarjeta RFID, el Edge Gateway decide el acceso en el propio edificio en ~15 ms y publica el evento en RabbitMQ en ~0.5 s; IoT Access Management aplica la morosidad y las reservas y envía las órdenes de vuelta al edificio; e IoT Telemetry almacena las lecturas de temperatura y humedad y expone el estado de cada dispositivo. Todo el flujo es accesible desde el ApiGateway y está verificado por los 7 escenarios de la sección 6.2.2.5.
+En esta sección se presentan las evidencias de ejecución correspondientes al Sprint 2, mostrando las principales funcionalidades y vistas implementadas en la Landing Page, la aplicación web, la aplicación móvil y los servicios web. Asimismo, se incluyen capturas de pantalla que evidencian la navegación, interacción y funcionamiento general de los componentes desarrollados durante el sprint, permitiendo validar el cumplimiento de los objetivos establecidos para esta iteración.
 
-**Plataforma IoT:**
+**Landing Page:**
 
-Stack de punta a punta levantado con `docker compose ps`:
+Sección Principal:
 
-**[POR COMPLETAR: captura del stack de punta a punta con los contenedores en ejecución]**
+![Execution Evidence](assets/img/parteprincipal.jpeg)
 
-Ejecución de los 7 escenarios de punta a punta en verde:
+Sección de Funcionalidades:
 
-**[POR COMPLETAR: captura de la ejecución de `test_h4_scenarios.py`]**
+![Execution Evidence](assets/img/funcionalidades.jpeg)
+
+Sección Para Quién es Edifika:
+
+![Execution Evidence](assets/img/paraquienes.jpeg)
+
+Sección de Cómo Funciona:
+
+![Execution Evidence](assets/img/comofunciona.jpeg)
+
+Sección de La Plataforma:
+
+![Execution Evidence](assets/img/laplataforma.jpeg)
+
+Sección de Video:
+
+![Execution Evidence](assets/img/conoce.jpeg)
+
+Sección de Testimonios:
+
+![Execution Evidence](assets/img/testimonios.jpeg)
+
+Sección de Planes:
+
+![Execution Evidence](assets/img/planes.jpeg)
+
+Sección de Contacto:
+
+![Execution Evidence](assets/img/contacto.jpeg)
 
 ---
 
-**Edge Gateway:**
+**Web Application:**
 
-Eventos del edificio publicados en el exchange `edifika.events`:
+Segmento Administradores:
 
-**[POR COMPLETAR: captura de la consola de RabbitMQ con los eventos del edge]**
+Vista de Inicio de Sesión:
+
+![Execution Evidence](assets/img/1.jpeg)
+
+Vista de Dashboard:
+
+![Execution Evidence](assets/img/2.jpeg)
+![Execution Evidence](assets/img/3.jpeg)
+
+Vista de Unidades y Residentes:
+
+![Execution Evidence](assets/img/4.jpeg)
+
+Vista de Registro de Edificio:
+
+![Execution Evidence](assets/img/5.jpeg)
+
+Vista de Registro de Unidad:
+
+![Execution Evidence](assets/img/6.jpeg)
+
+Vista de Registro de Residente:
+
+![Execution Evidence](assets/img/7.jpeg)
+
+Vista de Asignación de Residente a Unidad:
+
+![Execution Evidence](assets/img/8.jpeg)
+
+Vista de Áreas Comunes:
+
+![Execution Evidence](assets/img/9.jpeg)
+
+Vista de Finanzas:
+
+![Execution Evidence](assets/img/10.jpeg)
+
+Vista de Muro de la Comunidad:
+
+![Execution Evidence](assets/img/11.jpeg)
+
+Vista de Centro de Documentación:
+
+![Execution Evidence](assets/img/12.jpeg)
+
+Vista de SmartIoT:
+
+![Execution Evidence](assets/img/13.jpeg)
+![Execution Evidence](assets/img/14.jpeg)
+
+Vista de Iluminaria:
+
+![Execution Evidence](assets/img/15.jpeg)
+
+Vista de Control de Accesos:
+
+![Execution Evidence](assets/img/16.jpeg)
+
+Vista de Tarjetas de Acceso:
+
+![Execution Evidence](assets/img/17.jpeg)
+
+Vista de Riego Automático:
+
+![Execution Evidence](assets/img/18.jpeg)
 
 ---
 
-**Firmware ESP32:**
+**Mobile Application:**
 
-Nodo de puerta en modo reservado con el LED RGB encendido:
+Segmento Propietarios e Inquilinos (Residentes):
 
-**[POR COMPLETAR: foto o captura del nodo de puerta reservado]**
+Vista de Inicio de Sesión:
 
+<p align="center">
+  <img src="assets/img/mobile-login.jpeg" alt="Execution Evidence" width="300" />
+</p>
+
+Vista de Inicio:
+
+<p align="center">
+  <img src="assets/img/mobile-inicio.jpeg" alt="Execution Evidence" width="300" />
+</p>
+
+Vista de Mis Deudas:
+
+<p align="center">
+  <img src="assets/img/mobile-deudas.jpeg" alt="Execution Evidence" width="300" />
+</p>
+
+Vista de Reservas:
+
+<p align="center">
+  <img src="assets/img/mobile-reservas.jpeg" alt="Execution Evidence" width="300" />
+</p>
+
+Vista de Anuncios:
+
+<p align="center">
+  <img src="assets/img/mobile-anuncios.jpeg" alt="Execution Evidence" width="300" />
+</p>
+
+Vista de Comunidades:
+
+<p align="center">
+  <img src="assets/img/mobile-comunidad.jpeg" alt="Execution Evidence" width="300" />
+</p>
+
+Vista de Mis Accesos:
+
+<p align="center">
+  <img src="assets/img/mobile-accesos.jpeg" alt="Execution Evidence" width="300" />
+</p>
+
+Segmento Administradores:
+
+Vista de Inicio:
+
+<p align="center">
+  <img src="assets/img/mobile-admin-inicio.jpeg" alt="Execution Evidence" width="300" />
+</p>
+
+Vista de Gestión IoT:
+
+<p align="center">
+  <img src="assets/img/mobile-admin-gestion-iot.jpeg" alt="Execution Evidence" width="300" />
+</p>
+
+Vista de Tarjetas RFID:
+
+<p align="center">
+  <img src="assets/img/mobile-admin-tarjetas.jpeg" alt="Execution Evidence" width="300" />
+</p>
+
+Vista de Detalle de Dispositivo:
+
+<p align="center">
+  <img src="assets/img/mobile-admin-dispositivo-1.jpeg" alt="Execution Evidence" width="300" />
+</p>
+
+<p align="center">
+  <img src="assets/img/mobile-admin-dispositivo-2.jpeg" alt="Execution Evidence" width="300" />
+</p>
 ---
 
-**Web Services Application**
+**Web Services Application:**
 
-Servicios ejecutados:
+IoT Access Management:
 
-- IoT Access Management:
+Servicio de Edge Gateways:
 
-**[POR COMPLETAR: captura de Swagger UI de IoT Access Management]**
+![Execution Evidence](assets/img/swagger-access-edge-gateways.png)
 
-- IoT Telemetry:
+Servicio de Descubrimiento de Dispositivos:
 
-**[POR COMPLETAR: captura de Swagger UI de IoT Telemetry]**
+![Execution Evidence](assets/img/swagger-access-device-discovery.png)
 
-- Respuesta de telemetría a través del ApiGateway:
+Servicio de Credenciales de Acceso:
 
-**[POR COMPLETAR: captura de la respuesta de `GET /api/v1/telemetry/devices/{deviceCode}/latest`]**
+![Execution Evidence](assets/img/swagger-access-access-credentials.png)
 
-**Demo del Sprint 2:** **[POR COMPLETAR: URL del video en Microsoft Stream/Clipchamp]**
+Servicio de Estado del Residente:
+
+![Execution Evidence](assets/img/swagger-access-resident-status.png)
+
+Servicio de Autorizaciones de Reserva:
+
+![Execution Evidence](assets/img/swagger-access-reservation-authorizations.png)
+
+Servicio de Control de Dispositivos:
+
+![Execution Evidence](assets/img/swagger-access-device-control.png)
+
+Servicio de Auditoría de Accesos:
+
+![Execution Evidence](assets/img/swagger-access-access-audit.png)
+
+Servicio de Reservas de Puerta:
+
+![Execution Evidence](assets/img/swagger-access-door-reservations.png)
+
+Servicio de Dispositivos IoT:
+
+![Execution Evidence](assets/img/swagger-access-iot-devices.png)
+
+Servicio de Sincronización del Edge:
+
+![Execution Evidence](assets/img/swagger-access-edge-sync.png)
+
+Servicio de Registro de Tarjetas:
+
+![Execution Evidence](assets/img/swagger-access-card-enrollment.png)
+
+Servicio de Vistas del Residente:
+
+![Execution Evidence](assets/img/swagger-access-resident-views.png)
+
+IoT Telemetry:
+
+Servicio de Alertas de Telemetría:
+
+![Execution Evidence](assets/img/swagger-telemetry-telemetry-alerts.png)
+
+Servicio de Dispositivos de Telemetría:
+
+![Execution Evidence](assets/img/swagger-telemetry-telemetry-devices.png)
+
+Servicio de Lecturas de Telemetría:
+
+![Execution Evidence](assets/img/swagger-telemetry-telemetry-readings.png)
 
 #### 6.2.2.7. Services Documentation Evidence for Sprint Review
 
@@ -10076,7 +10617,21 @@ En esta sección se presentan las evidencias de documentación de los Web Servic
 | /api/v1/iot/gateways/{id} | Obtener un Edge Gateway | GET | `/api/v1/iot/gateways/1` | Path: `id` | Mismo objeto del listado | `http://localhost:8089/swagger-ui/index.html` |
 | /api/v1/iot/gateways/{id}/api-key | Rotar la API key del gateway | POST | `/api/v1/iot/gateways/1/api-key` | Path: `id` | `{ "gatewayId": 1, "gatewayCode": "gw-torre-a", "apiKey": "<nueva-api-key>" }` | `http://localhost:8089/swagger-ui/index.html` |
 
-**[POR COMPLETAR: capturas de Swagger UI con la ejecución de los endpoints de Edge Gateways (request y response)]**
+Registrar un Edge Gateway:
+
+![Services Documentation Evidence](assets/img/exec-gw-post.png)
+
+Listar los Edge Gateways:
+
+![Services Documentation Evidence](assets/img/exec-gw-list.png)
+
+Obtener un Edge Gateway:
+
+![Services Documentation Evidence](assets/img/exec-gw-get.png)
+
+Rotar la API key del gateway:
+
+![Services Documentation Evidence](assets/img/exec-gw-apikey.png)
 
 **Dispositivos IoT**
 
@@ -10089,7 +10644,29 @@ En esta sección se presentan las evidencias de documentación de los Web Servic
 | /api/v1/iot/devices/{id}/maintenance | Activar o finalizar el modo mantenimiento | PUT | `/api/v1/iot/devices/3/maintenance` | Path: `id`; body: `{ "enabled": true }` | Dispositivo con `"status": "MAINTENANCE"` | `http://localhost:8089/swagger-ui/index.html` |
 | /api/v1/iot/devices/{id} | Dar de baja un dispositivo | DELETE | `/api/v1/iot/devices/3` | Path: `id` | `204 No Content`; el dispositivo queda `DECOMMISSIONED` y se retira del edge | `http://localhost:8089/swagger-ui/index.html` |
 
-**[POR COMPLETAR: capturas de Swagger UI con la ejecución de los endpoints de Dispositivos IoT (request y response)]**
+Registrar un dispositivo IoT:
+
+![Services Documentation Evidence](assets/img/exec-dev-post.png)
+
+Listar los dispositivos:
+
+![Services Documentation Evidence](assets/img/exec-dev-list.png)
+
+Obtener un dispositivo:
+
+![Services Documentation Evidence](assets/img/exec-dev-get.png)
+
+Actualizar un dispositivo:
+
+![Services Documentation Evidence](assets/img/exec-dev-patch.png)
+
+Activar el modo mantenimiento:
+
+![Services Documentation Evidence](assets/img/exec-dev-maintenance.png)
+
+Dar de baja un dispositivo:
+
+![Services Documentation Evidence](assets/img/exec-dev-delete.png)
 
 **Credenciales RFID**
 
@@ -10099,7 +10676,17 @@ En esta sección se presentan las evidencias de documentación de los Web Servic
 | /api/v1/access/credentials | Listar las credenciales | GET | `/api/v1/access/credentials?buildingId=12` | Query: `buildingId`, `userId` | Lista de objetos con la forma del `POST` | `http://localhost:8089/swagger-ui/index.html` |
 | /api/v1/access/credentials/{id}/status | Activar, suspender o revocar una credencial | PATCH | `/api/v1/access/credentials/9/status` | Path: `id`; body: `{ "status": "REVOKED" }` | Credencial con el nuevo estado; el cambio se envía al Edge Gateway | `http://localhost:8089/swagger-ui/index.html` |
 
-**[POR COMPLETAR: capturas de Swagger UI con la ejecución de los endpoints de Credenciales RFID (request y response)]**
+Registrar una tarjeta RFID:
+
+![Services Documentation Evidence](assets/img/exec-cred-post.png)
+
+Listar las credenciales:
+
+![Services Documentation Evidence](assets/img/exec-cred-list.png)
+
+Revocar una credencial:
+
+![Services Documentation Evidence](assets/img/exec-cred-status.png)
 
 **Reservas de puerta**
 
@@ -10111,7 +10698,25 @@ En esta sección se presentan las evidencias de documentación de los Web Servic
 | /api/v1/access/reservations/{id} | Obtener una reserva | GET | `/api/v1/access/reservations/7` | Path: `id` | Reserva con la forma del `POST` | `http://localhost:8089/swagger-ui/index.html` |
 | /api/v1/access/reservations/{id} | Cancelar una reserva | DELETE | `/api/v1/access/reservations/7` | Path: `id` | `204 No Content`; la reserva queda `CANCELLED` y, si estaba en curso, la puerta vuelve a `FREE_ACCESS` | `http://localhost:8089/swagger-ui/index.html` |
 
-**[POR COMPLETAR: capturas de Swagger UI con la ejecución de los endpoints de Reservas de puerta (request y response)]**
+Reservar una puerta:
+
+![Services Documentation Evidence](assets/img/exec-res-post.png)
+
+Ver la disponibilidad de una puerta:
+
+![Services Documentation Evidence](assets/img/exec-res-availability.png)
+
+Listar las reservas (administrador):
+
+![Services Documentation Evidence](assets/img/exec-res-list.png)
+
+Obtener una reserva:
+
+![Services Documentation Evidence](assets/img/exec-res-get.png)
+
+Cancelar una reserva:
+
+![Services Documentation Evidence](assets/img/exec-res-delete.png)
 
 **Invitados de la reserva**
 
@@ -10121,7 +10726,17 @@ En esta sección se presentan las evidencias de documentación de los Web Servic
 | /api/v1/access/reservations/{id}/authorizations | Listar los invitados | GET | `/api/v1/access/reservations/7/authorizations` | Path: `id` | Lista de objetos con la forma del `POST` | `http://localhost:8089/swagger-ui/index.html` |
 | /api/v1/access/reservations/{id}/authorizations/{userId} | Quitar un invitado | DELETE | `/api/v1/access/reservations/7/authorizations/16` | Path: `id`, `userId` | `204 No Content` | `http://localhost:8089/swagger-ui/index.html` |
 
-**[POR COMPLETAR: capturas de Swagger UI con la ejecución de los endpoints de Invitados de la reserva (request y response)]**
+Agregar un invitado a la reserva:
+
+![Services Documentation Evidence](assets/img/exec-auth-post.png)
+
+Listar los invitados:
+
+![Services Documentation Evidence](assets/img/exec-auth-list.png)
+
+Quitar un invitado:
+
+![Services Documentation Evidence](assets/img/exec-auth-delete.png)
 
 **Control del nodo**
 
@@ -10130,7 +10745,13 @@ En esta sección se presentan las evidencias de documentación de los Web Servic
 | /api/v1/iot/devices/{id}/led | Cambiar el color del LED (titular de la reserva) | PUT | `/api/v1/iot/devices/3/led` | Path: `id`; body: `{ "color": "#00ff88" }` | `202` `{ "commandId": "5b0e0000000000000000000000000001", "deviceId": 3, "type": "SET_LED", "params": { "color": "#00FF88" }, "status": "PENDING", "detail": null, "requestedBy": 15, "requestedAt": "2026-10-23T15:00:00Z", "expiresAt": "2026-10-23T15:00:10Z", "resolvedAt": null }`; `403` si no es el titular | `http://localhost:8089/swagger-ui/index.html` |
 | /api/v1/iot/device-commands/{commandId} | Consultar el estado de un comando | GET | `/api/v1/iot/device-commands/5b0e0000000000000000000000000001` | Path: `commandId` | Comando con la forma anterior y `"status"` actualizado según el acuse del nodo | `http://localhost:8089/swagger-ui/index.html` |
 
-**[POR COMPLETAR: capturas de Swagger UI con la ejecución de los endpoints de Control del nodo (request y response)]**
+Cambiar el color del LED:
+
+![Services Documentation Evidence](assets/img/exec-led-put.png)
+
+Consultar el estado de un comando:
+
+![Services Documentation Evidence](assets/img/exec-cmd-get.png)
 
 **Vistas del residente**
 
@@ -10141,7 +10762,21 @@ En esta sección se presentan las evidencias de documentación de los Web Servic
 | /api/v1/access/me/reservations | Mis reservas | GET | `/api/v1/access/me/reservations` | Ninguno (usuario del token) | Lista de reservas con la forma de `POST .../reservations` | `http://localhost:8089/swagger-ui/index.html` |
 | /api/v1/access/me/attempts | Mis intentos de acceso | GET | `/api/v1/access/me/attempts?limit=20` | Query: `limit` | `[ { "id": 51, "deviceId": 3, "deviceCode": "esp32-acc-01", "userId": 15, "credentialId": 9, "rfidUidMasked": "****B2C3", "accessMode": "FREE_ACCESS", "result": "GRANTED", "reason": "GRANTED", "occurredAt": "2026-10-23T15:02:00Z", "receivedAt": "2026-10-23T15:02:01Z" } ]` | `http://localhost:8089/swagger-ui/index.html` |
 
-**[POR COMPLETAR: capturas de Swagger UI con la ejecución de los endpoints de Vistas del residente (request y response)]**
+Mis puertas asignadas:
+
+![Services Documentation Evidence](assets/img/exec-me-doors.png)
+
+Mis credenciales RFID:
+
+![Services Documentation Evidence](assets/img/exec-me-credentials.png)
+
+Mis reservas:
+
+![Services Documentation Evidence](assets/img/exec-me-reservations.png)
+
+Mis intentos de acceso:
+
+![Services Documentation Evidence](assets/img/exec-me-attempts.png)
 
 **Auditoría y estado del residente**
 
@@ -10151,7 +10786,17 @@ En esta sección se presentan las evidencias de documentación de los Web Servic
 | /api/v1/access/residents/{userId}/status | Estado y deudas del residente | GET | `/api/v1/access/residents/15/status` | Path: `userId` | `{ "userId": 15, "buildingId": 12, "unitIds": [101], "delinquent": true, "overdueDebtCount": 2, "checkedAt": "2026-10-23T15:00:00Z", "lastError": null }` | `http://localhost:8089/swagger-ui/index.html` |
 | /api/v1/access/residents/{userId}/debt-check | Forzar la verificación de deudas | POST | `/api/v1/access/residents/15/debt-check` | Path: `userId` | Estado del residente recalculado con la forma anterior; si es moroso, sus credenciales quedan `SUSPENDED` | `http://localhost:8089/swagger-ui/index.html` |
 
-**[POR COMPLETAR: capturas de Swagger UI con la ejecución de los endpoints de Auditoría y estado del residente (request y response)]**
+Auditoría de accesos:
+
+![Services Documentation Evidence](assets/img/exec-audit-attempts.png)
+
+Estado del residente:
+
+![Services Documentation Evidence](assets/img/exec-resident-status.png)
+
+Forzar la verificación de deudas:
+
+![Services Documentation Evidence](assets/img/exec-debt-check.png)
 
 **Sincronización del Edge Gateway**
 
@@ -10159,7 +10804,9 @@ En esta sección se presentan las evidencias de documentación de los Web Servic
 |---|---|---|---|---|---|---|
 | /api/v1/edge/sync | Sincronizar el caché del Edge Gateway | GET | `/api/v1/edge/sync?since=14` | Query: `since` (versión); cabecera con la API key del gateway | `{ "version": 15, "full": false, "credentials": [ ... ], "devices": [ ... ], "removedDeviceCodes": [], "reservations": [ ... ], "removedReservationIds": [], "permissions": [], "areaSchedules": [] }`: solo incluye los cambios posteriores a `since` | `http://localhost:8089/swagger-ui/index.html` |
 
-**[POR COMPLETAR: captura de Swagger UI o Postman con la ejecución de `GET /api/v1/edge/sync`]**
+Sincronizar el caché del Edge Gateway:
+
+![Services Documentation Evidence](assets/img/exec-edge-sync.png)
 
 **IoT Telemetry**
 
@@ -10170,9 +10817,25 @@ En esta sección se presentan las evidencias de documentación de los Web Servic
 | /api/v1/telemetry/readings | Serie de lecturas, cruda o agregada por intervalo | GET | `/api/v1/telemetry/readings?deviceCode=esp32-acc-01&magnitude=TEMPERATURE&bucket=1m` | Query: `deviceCode`, `magnitude`, `bucket`, `from`, `to` | `{ "deviceCode": "esp32-acc-01", "magnitude": "TEMPERATURE", "unit": "°C", "bucket": "1m", "from": "2026-10-23T14:00:00Z", "to": "2026-10-23T15:00:00Z", "points": [ { "t": "2026-10-23T15:04:00Z", "value": 24.4, "min": 24.1, "max": 24.6, "count": 6 } ] }` | `http://localhost:8090/swagger-ui.html` |
 | /api/v1/telemetry/alerts | Consultar las alertas de telemetría | GET | `/api/v1/telemetry/alerts` | Ninguno | `[ { "id": 4, "deviceCode": "esp32-acc-01", "kind": "SENSOR_FAULTY", "state": "RAISED", "details": { "magnitude": "TEMPERATURE" }, "occurredAt": "2026-10-23T15:06:00Z" } ]` | `http://localhost:8090/swagger-ui.html` |
 
-**[POR COMPLETAR: capturas de Swagger UI con la ejecución de los endpoints de IoT Telemetry (request y response)]**
+Listar los dispositivos con telemetría:
 
-**[POR COMPLETAR: captura de la colección Postman ejecutada contra el ApiGateway]**
+![Services Documentation Evidence](assets/img/exec-tel-devices.png)
+
+Última lectura del dispositivo:
+
+![Services Documentation Evidence](assets/img/exec-tel-latest.png)
+
+Serie de lecturas agregada:
+
+![Services Documentation Evidence](assets/img/exec-tel-readings.png)
+
+Consultar las alertas de telemetría:
+
+![Services Documentation Evidence](assets/img/exec-tel-alerts.png)
+
+Ejecución de la colección Postman contra el ApiGateway:
+
+![Services Documentation Evidence](assets/img/postman-newman-apigateway.png)
 
 **Commits relacionados con la documentación.** Repositorios: [Edifika-IoT-Platform](https://github.com/IoT-UPC-202620/Edifika-IoT-Platform), [Edifika-Microservice-IoT-Gateway](https://github.com/IoT-UPC-202620/Edifika-Microservice-IoT-Gateway), [Edifika-Microservice-IoT-Telemetry](https://github.com/IoT-UPC-202620/Edifika-Microservice-IoT-Telemetry) y [esp32](https://github.com/IoT-UPC-202620/esp32).
 
@@ -10225,7 +10888,7 @@ docker compose up -d --wait --wait-timeout 120
 
 Los tres servicios quedaron saludables en 11.5 s.
 
-**[POR COMPLETAR: captura de los contenedores de infraestructura en estado saludable]**
+![Deployment Evidence](assets/img/deploy-infra-ps.png)
 
 ---
 
@@ -10240,7 +10903,7 @@ pytest integration-tests/test_h4_scenarios.py -v
 
 Este stack es el que utilizan los 7 escenarios de punta a punta de la sección 6.2.2.5.
 
-**[POR COMPLETAR: captura de `docker compose -f docker-compose.e2e.yml ps` con todos los servicios en ejecución]**
+![Deployment Evidence](assets/img/deploy-e2e-ps.png)
 
 ---
 
@@ -10266,9 +10929,9 @@ arduino-cli compile -b esp32:esp32:esp32 .
 arduino-cli upload  -b esp32:esp32:esp32 -p <puerto> .
 ```
 
-La compilación fue exitosa (Flash 77 %, RAM 15 %), y el firmware se cargó en la placa física para ejecutar la prueba de aceptación del nodo de puerta (T-42).
+La compilación fue exitosa (Flash 78 %, RAM 15 %), y el firmware se cargó en la placa física para ejecutar la prueba de aceptación del nodo de puerta (T-42).
 
-**[POR COMPLETAR: captura de la compilación del firmware con `arduino-cli`]**
+![Deployment Evidence](assets/img/deploy-firmware-compile.png)
 
 ---
 
@@ -10283,8 +10946,6 @@ Edifika-Microservice-IoT-Access-Management  v0.1.0
 Edifika-Microservice-IoT-Telemetry          v0.1.0
 esp32                                       v0.3.0, v0.4.0, v0.5.0
 ```
-
-**[POR COMPLETAR: captura de las releases de los repositorios IoT en GitHub]**
 
 ---
 
@@ -10303,35 +10964,113 @@ Como resultado del Sprint, el frente IoT quedó empaquetado y reproducible:
 * Stack de punta a punta con los microservicios, el ApiGateway, el Edge Gateway, un nodo simulado y WireMock, usado por las pruebas de aceptación.
 * Rutas IoT del ApiGateway configurables por variables de entorno.
 * Firmware ESP32 compilado para la placa.
-* Nueve versiones publicadas en GitHub con GitFlow y Semantic Versioning.
+* Nueve versiones etiquetadas en GitHub con GitFlow y Semantic Versioning.
 
 #### 6.2.2.9. Team Collaboration Insights during Sprint
 
-En esta sección se analizan las evidencias de colaboración del equipo durante el Sprint 2, a partir de los analíticos de GitHub de cada repositorio del frente IoT. La implementación se organizó en carriles paralelos que solo dependían del documento de contratos v1: cada hito avanzó en su propio repositorio y en ramas `feature/*`, y se integró en `develop` recién al quedar su suite en verde. Los commits de implementación se concentran en la cuenta del líder de los aspectos B1 y B2, que integró cada rama en el repositorio correspondiente, mientras que los líderes de los demás aspectos, según la matriz de la sección 6.2.2.2, participaron en la definición de los criterios de aceptación, la revisión de los avances y la validación de las métricas de cierre de cada hito. Los analíticos muestran además que el trabajo se integró de forma continua mediante ramas cortas por task, lo que permitió publicar nueve versiones durante el Sprint sin conflictos entre los carriles.
+En esta sección se analizan las evidencias de colaboración y coordinación del equipo durante el desarrollo del Sprint 2, considerando la participación de los integrantes en las actividades de implementación y control de versiones del proyecto. Para ello, se presentan las capturas y analíticos obtenidos de GitHub, los cuales permiten visualizar la distribución del trabajo y el nivel de contribución de cada miembro en el reporte, la aplicación móvil, la aplicación web y los servicios Backend desarrollados durante el sprint.
 
-- Plataforma IoT:
+- Reporte:
 
-**[POR COMPLETAR: captura de GitHub Insights de `Edifika-IoT-Platform`]**
+<div align="center">
+  <img src="assets/img/insightsav2.jpeg" alt="Team Collaboration Insights" width="75%">
+</div>
 
-- Edge Gateway:
+- Mobile Application:
 
-**[POR COMPLETAR: captura de GitHub Insights de `Edifika-Microservice-IoT-Gateway`]**
+**[POR COMPLETAR: captura de GitHub Insights del repositorio de la Mobile Application]**
 
-- Application Web Services:
+- Web Application:
 
-**[POR COMPLETAR: capturas de GitHub Insights de `Edifika-Microservice-IoT-Access-Management`, `Edifika-Microservice-IoT-Telemetry` y `Edifika-ApiGateway`]**
+<div align="center">
+  <img src="assets/img/frontav2.jpeg" alt="Team Collaboration Insights" width="75%">
+</div>
 
-- Firmware ESP32:
+- Backend:
 
-**[POR COMPLETAR: captura de GitHub Insights de `esp32`]**
+IAM:
+
+<div align="center">
+  <img src="assets/img/iam.jpeg" alt="Team Collaboration Insights" width="75%">
+</div>
+
+Residential Management:
+
+<div align="center">
+  <img src="assets/img/residencia.jpeg" alt="Team Collaboration Insights" width="75%">
+</div>
+
+IoT Access Management:
+
+<div align="center">
+  <img src="assets/img/access.jpeg" alt="Team Collaboration Insights" width="75%">
+</div>
+
+API Gateway:
+
+<div align="center">
+  <img src="assets/img/api.jpeg" alt="Team Collaboration Insights" width="75%">
+</div>
 
 ## 6.3. Validation Interviews
 
-> **[POR COMPLETAR: introducción a las entrevistas de validación, en las que usuarios de los segmentos objetivo interactúan con la Landing Page y con las aplicaciones.]**
+En esta sección se presentan las entrevistas de validación realizadas con usuarios de los dos segmentos objetivo de Edifika: administradores de edificios y condominios, y propietarios e inquilinos. Durante cada sesión, el entrevistado navegó por la Landing Page y por la aplicación correspondiente a su perfil, realizó tareas concretas siguiendo los user flows definidos en la sección 5.4.4 y respondió preguntas sencillas sobre su experiencia. El objetivo es comprobar si la propuesta de valor se entiende, si las funcionalidades resuelven los problemas identificados en las entrevistas iniciales y qué aspectos deben mejorarse antes de la siguiente iteración.
 
 ### 6.3.1. Diseño de Entrevistas
 
-> **[POR COMPLETAR: por cada segmento objetivo, los elementos de la sesión de validación (Landing Page y aplicaciones) y los user flows que se evaluarán.]**
+#### Segmento Objetivo #1: Administradores de edificios y condominios
+
+##### *Preguntas dirigidas a administradores que gestionan pagos, reservas, comunicados y accesos de uno o varios edificios.*
+
+**Elementos de la sesión:** Landing Page, Web Application (panel del administrador) y Mobile Application (vista del administrador).
+
+**User flows evaluados:** registro de edificio y unidades, registro de residentes, revisión de deudas en Finanzas, gestión de áreas comunes y reservas, y registro de tarjetas RFID y control de accesos.
+
+1. Al ver la Landing Page, ¿entendiste rápidamente qué es Edifika y para quién es?
+
+2. ¿Te resultó fácil registrar un edificio y sus unidades?
+
+3. ¿Pudiste agregar un residente y asignarlo a su unidad sin ayuda?
+
+4. En la vista de Finanzas, ¿te queda claro quién debe y cuánto debe?
+
+5. ¿Te pareció sencillo configurar las áreas comunes y revisar las reservas en el calendario?
+
+6. ¿Te resultó fácil registrar una tarjeta RFID y ver los accesos a las puertas?
+
+7. ¿Hubo alguna pantalla o botón que te confundiera?
+
+8. ¿Qué tarea de tu día a día te ahorraría más tiempo con Edifika?
+
+9. ¿Usarías Edifika para administrar tus edificios? ¿Por qué?
+
+#### Segmento Objetivo #2: Propietarios e Inquilinos
+
+##### *Preguntas dirigidas a residentes que pagan sus cuotas, reservan áreas comunes y usan su tarjeta para ingresar al edificio.*
+
+**Elementos de la sesión:** Landing Page y Mobile Application (vista del residente).
+
+**User flows evaluados:** inicio de sesión, consulta de deudas, reserva de un área común, lectura de anuncios, publicación en la comunidad y consulta de accesos y tarjetas.
+
+1. Al ver la Landing Page, ¿entendiste qué puedes hacer con Edifika como residente?
+
+2. ¿Te resultó fácil iniciar sesión en la aplicación?
+
+3. ¿Encontraste rápido cuánto debes y hasta cuándo puedes pagar?
+
+4. ¿Pudiste reservar un área común sin ayuda? ¿Cuántos pasos te parecieron?
+
+5. ¿Te resultan útiles los anuncios del edificio y la opción de confirmar su lectura?
+
+6. ¿Publicarías algo en la sección de comunidad para comunicarte con tus vecinos?
+
+7. ¿Te da confianza ver tus tarjetas y los intentos de acceso a las puertas?
+
+8. ¿Hubo algo en la aplicación que no entendiste o que te costó encontrar?
+
+9. ¿Recomendarías Edifika a otros vecinos de tu edificio? ¿Por qué?
+
+<br>
 
 ### 6.3.2. Registro de Entrevistas
 
@@ -10658,10 +11397,10 @@ Usar el mismo nombre en el menú y en el título de cada pantalla, retirar los c
 - **Alcance definido.** El trabajo de requisitos dejó un alcance organizado en diez épicas, que combinan la gestión administrativa (autenticación, comunicados, áreas comunes, finanzas y reportes) con la capa IoT (accesos y riego, iluminación, telemetría y Edge Gateway). El diseño de la solución se cubrió con 12 bounded contexts, con una trazabilidad entre las historias de usuario, los bounded contexts y la arquitectura.
 - **Diseño UX/UI.** Se definieron guías de estilo, arquitectura de información, wireframes y mock-ups de la Landing Page y de las aplicaciones web y móvil, wireflows, User Flow Diagrams, un prototipo y el diseño de cuatro dispositivos IoT (control de accesos, iluminación y sensado, detección de fugas y medición de consumo). Con ello, el equipo cuenta con una referencia visual común para implementar el producto.
 - **Edge Gateway.** En el Sprint 1 se implementó con ramas de GitFlow y se verificó con 188 pruebas automatizadas, incluida la comprobación de su eficacia mediante tres fallos introducidos a propósito, y se ejecutó de extremo a extremo con un backend simulado. En el Sprint 2 se reemplazó ese backend por la plataforma real: publica sus eventos en RabbitMQ con confirmaciones, sincroniza credenciales, nodos y reservas desde la nube y ejecuta las órdenes remotas. Su suite creció a 251 pruebas, un evento de acceso llega a la nube en ~0.5 s (meta: 6 s o menos) y 20 accesos registrados durante una caída se recuperan sin duplicados.
-- **Plataforma IoT en la nube.** El Sprint 2 cerró la contraparte en la nube de las historias que quedaron en **Parcial (edge)**. IoT Access Management gestiona las credenciales RFID, las suspende automáticamente cuando Payment reporta morosidad y administra las reservas de puerta con invitados y los comandos al LED del nodo; IoT Telemetry almacena las lecturas en TimescaleDB, genera alertas y expone series agregadas. Fijar primero un documento único de contratos v1, validado con JSON Schema, permitió que siete líneas de trabajo avanzaran en paralelo y que los 7 escenarios de punta a punta pasaran a través del ApiGateway contra el stack completo.
+- **Plataforma IoT en la nube.** El Sprint 2 conectó el Edge Gateway con la plataforma en la nube. IoT Access Management gestiona las credenciales RFID, las suspende automáticamente cuando Payment reporta morosidad y administra las reservas de puerta con invitados y los comandos al LED del nodo; IoT Telemetry almacena las lecturas en TimescaleDB, genera alertas y expone series agregadas. Fijar primero un documento único de contratos v1, validado con JSON Schema, permitió que siete líneas de trabajo avanzaran en paralelo y que los 7 escenarios de punta a punta pasaran a través del ApiGateway contra el stack completo.
 - **Validación con usuarios.** En el Sprint 2 se realizaron entrevistas de validación con usuarios de los dos segmentos objetivo, quienes recorrieron la Landing Page y los flujos principales de la solución. Las sesiones se registraron en video y se evaluaron con heurísticas de usabilidad, arquitectura de información e inclusive design (sección 6.3), y sus hallazgos orientan las mejoras de los siguientes sprints. Los testimonios obtenidos se incorporaron al Video About-the-Product y a la Landing Page.
-- **Diseño del dispositivo.** El nodo ESP32 cuenta con un firmware de referencia que habla el contrato v1, con 28 pruebas ejecutadas en el host y compilado para la placa (Flash 77 %, RAM 15 %). La prueba de aceptación con el hardware real (T-42) cierra la historia US47 y confirma el comportamiento del montaje físico frente a la simulación en Wokwi.
-- **Despliegue.** Los microservicios IoT, la infraestructura de mensajería y el stack de punta a punta se levantan de forma reproducible con Docker Compose y se configuran por variables de entorno, y se publicaron nueve versiones con Semantic Versioning. La Landing Page se publicó en una nueva versión en GitHub Pages, con el video del producto, testimonios, información de contacto y enlaces a redes sociales.
+- **Diseño del dispositivo.** El nodo ESP32 cuenta con un firmware de referencia que habla el contrato v1, con 28 pruebas ejecutadas en el host y compilado para la placa (Flash 78 %, RAM 15 %). La prueba de aceptación con el hardware real (T-42) cierra la historia US47 y confirma el comportamiento del montaje físico frente a la simulación en Wokwi.
+- **Despliegue.** Los microservicios IoT, la infraestructura de mensajería y el stack de punta a punta se levantan de forma reproducible con Docker Compose y se configuran por variables de entorno, y se etiquetaron nueve versiones con Semantic Versioning. La Landing Page se publicó en una nueva versión en GitHub Pages, con el video del producto, testimonios, información de contacto y enlaces a redes sociales.
 - **Documentación de la API.** Los 35 endpoints IoT quedaron documentados con OpenAPI y en una colección Postman que cubre el 100 % de los endpoints del contrato, lo que permite a la Web Application y a la aplicación móvil construir sus vistas IoT sin depender del equipo de backend.
 - El diseño por bounded context aísla reglas de negocio distintas (facturación, reservas, IoT) sin que un cambio en un contexto obligue a tocar otro; la comunicación entre Reservation, Smart Lighting y IoT Access Management ocurre solo por eventos, no por acoplamiento directo.
 - Separar PostgreSQL (datos transaccionales) de TimescaleDB (series de tiempo) resuelve el problema de escala de las lecturas de sensores, que crecen de forma continua y degradarían los dashboards de consumo si se consultaran contra un modelo relacional normal.
@@ -10736,6 +11475,6 @@ Enlace de despliegue de frontend:`https://edifika-frontend.vercel.app/`
 
 | Entrega | Título | Enlace (Microsoft Stream/Clipchamp) |
 |---|---|---|
-| AV1 | **[POR COMPLETAR]** | **[POR COMPLETAR]** |
-| TB1 | **[POR COMPLETAR]** | **[POR COMPLETAR]** |
+| AV1 | Exposición AV1 – Edifika | [Ver video de la exposición AV1](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202321281_upc_edu_pe/IQBHHj3H8TDCQpLVtAo_Flu6AVjs78yLC6ugw3EqQVYJUKo?e=UGnZPV&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D) |
+| TB1 | Exposición TB1 – Edifika | [Ver video de la exposición TB1](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202321281_upc_edu_pe/IQC0njbQIY10SIn0E9zrjsQsATjded8zOAnY-KvbKcK9de8?e=VIJPSK&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D) |
 | AV2 | **[POR COMPLETAR]** | **[POR COMPLETAR]** |
